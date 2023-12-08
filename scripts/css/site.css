@@ -3425,11 +3425,16 @@ body ::-webkit-scrollbar-thumb {
 }
 
 .nav-link,
-.nav-link1,
 .nav-text {
     border-radius: 3px;
     display: block;
-    padding: .4rem 28px .4rem .5rem
+    padding: .4rem 28px .4rem .5rem;
+	color: #7dc246
+}
+.nav-link1{
+    border-radius: 3px;
+    display: block;
+    padding: .4rem 28px .4rem .5rem;
 }
 
 .nav-link:hover,
@@ -6036,7 +6041,7 @@ mark {
 }
 
 .doc a {
-    color: var(--asciidoctor-link-font-color)
+    color: #7dc246
 }
 
 .doc a:hover {

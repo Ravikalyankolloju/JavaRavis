@@ -3435,6 +3435,7 @@ body ::-webkit-scrollbar-thumb {
     border-radius: 3px;
     display: block;
     padding: .4rem 28px .4rem .5rem;
+	color: #7dc246
 }
 
 .nav-link:hover,

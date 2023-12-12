@@ -3,7 +3,6 @@
     font-family: Metropolis;
     font-style: normal;
     font-weight: 400;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/metropolis-regular-webfont.woff2) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/metropolis-regular-webfont.woff) format("woff")
 }
 
 @font-face {
@@ -11,7 +10,6 @@
     font-family: Metropolis;
     font-style: normal;
     font-weight: 500;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/metropolis-bold-webfont.woff2) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/metropolis-bold-webfont.woff) format("woff")
 }
 
 @font-face {
@@ -19,7 +17,6 @@
     font-family: Metropolis;
     font-style: normal;
     font-weight: 600;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/metropolis-extrabold-webfont.woff2) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/metropolis-extrabold-webfont.woff) format("woff")
 }
 
 @font-face {
@@ -27,8 +24,6 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: 400;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-regular.eot);
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-regular.eot?#iefix) format("embedded-opentype"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-regular.woff2) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-regular.woff) format("woff"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-regular.ttf) format("truetype"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-regular.svg#OpenSans) format("svg")
 }
 
 @font-face {
@@ -36,8 +31,6 @@
     font-family: Open Sans;
     font-style: italic;
     font-weight: 400;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-italic.eot);
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-italic.eot?#iefix) format("embedded-opentype"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-italic.woff2) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-italic.woff) format("woff"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-italic.ttf) format("truetype"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-italic.svg#OpenSans) format("svg")
 }
 
 @font-face {
@@ -45,8 +38,6 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-600.eot);
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-600.eot?#iefix) format("embedded-opentype"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-600.woff2) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-600.woff) format("woff"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-600.ttf) format("truetype"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-600.svg#OpenSans) format("svg")
 }
 
 @font-face {
@@ -54,8 +45,6 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: 700;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-700.eot);
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-700.eot?#iefix) format("embedded-opentype"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-700.woff2) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-700.woff) format("woff"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-700.ttf) format("truetype"), url(https://docs.spring.io/spring-framework/reference/_/font/open-sans-v17-latin-700.svg#OpenSans) format("svg")
 }
 
 @font-face {
@@ -63,8 +52,6 @@
     font-family: Work Sans;
     font-style: normal;
     font-weight: 400;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-regular.eot);
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-regular.eot?#iefix) format("embedded-opentype"), url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-regular.woff2) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-regular.woff) format("woff"), url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-regular.ttf) format("truetype"), url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-regular.svg#WorkSans) format("svg")
 }
 
 @font-face {
@@ -72,16 +59,12 @@
     font-family: Work Sans;
     font-style: normal;
     font-weight: 700;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-700.eot);
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-700.eot?#iefix) format("embedded-opentype"), url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-700.woff2) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-700.woff) format("woff"), url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-700.ttf) format("truetype"), url(https://docs.spring.io/spring-framework/reference/_/font/work-sans-v5-latin-700.svg#WorkSans) format("svg")
 }
 
 @font-face {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: 400;
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/fontawesome-webfont.eot?v=4.7.0);
-    src: url(https://docs.spring.io/spring-framework/reference/_/font/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"), url(https://docs.spring.io/spring-framework/reference/_/font/fontawesome-webfont.woff2?v=4.7.0) format("woff2"), url(https://docs.spring.io/spring-framework/reference/_/font/fontawesome-webfont.woff?v=4.7.0) format("woff"), url(https://docs.spring.io/spring-framework/reference/_/font/fontawesome-webfont.ttf?v=4.7.0) format("truetype"), url(https://docs.spring.io/spring-framework/reference/_/font/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg")
 }
 
 .fa {
@@ -3393,7 +3376,6 @@ body ::-webkit-scrollbar-thumb {
 }
 
 .nav-item-toggle {
-    background: transparent url(https://docs.spring.io/spring-framework/reference/_/img/chevron.svg) no-repeat 50%/50%;
     border: none;
     height: calc(var(--nav-line-height)*1.5em);
     line-height: inherit;
@@ -3408,7 +3390,6 @@ body ::-webkit-scrollbar-thumb {
 
 .dark-theme .nav-item-toggle,
 .nav-item.is-current-page>.nav-item-toggle {
-    background: transparent url(https://docs.spring.io/spring-framework/reference/_/img/chevron-white.svg) no-repeat 50%/50%
 }
 
 .nav-item.is-current-page>.nav-item-toggle {
@@ -3416,7 +3397,6 @@ body ::-webkit-scrollbar-thumb {
 }
 
 .dark-theme .nav-item.is-current-page>.nav-item-toggle {
-    background: transparent url(https://docs.spring.io/spring-framework/reference/_/img/chevron.svg) no-repeat 50%/50%
 }
 
 .dark-theme .nav-item.is-active>.nav-item-toggle,
@@ -3429,13 +3409,14 @@ body ::-webkit-scrollbar-thumb {
     border-radius: 3px;
     display: block;
     padding: .4rem 28px .4rem .5rem;
-	color: #7dc246
+    color: #7dc246
 }
-.nav-link1{
+
+.nav-link1 {
     border-radius: 3px;
     display: block;
     padding: .4rem 28px .4rem .5rem;
-	color: #7dc246
+    color: #7dc246
 }
 
 .nav-link:hover,
@@ -3443,8 +3424,8 @@ body ::-webkit-scrollbar-thumb {
     background: #ebf2f2;
     color: #06c;
     text-decoration: none;
-	padding: 0.3rem 1rem;
-	transition: .3s ease;
+    padding: 0.3rem 1rem;
+    transition: .3s ease;
 }
 
 .nav-link1:hover {
@@ -3595,13 +3576,11 @@ html.dark-theme button.browse-version:hover {
 }
 
 .nav-collapse button span {
-    background: transparent url(https://docs.spring.io/spring-framework/reference/_/img/chevron.svg) no-repeat 50%/50%;
     display: block;
     transform: rotate(90deg)
 }
 
 .dark-theme .nav-collapse button span {
-    background: transparent url(https://docs.spring.io/spring-framework/reference/_/img/chevron-white.svg) no-repeat 50%/50%
 }
 
 @media screen and (min-width:1024px) {
@@ -3748,32 +3727,12 @@ body.nav-sm .nav-panel-menu {
     padding: 0 20px
 }
 
-#springlogo,
-#springlogo-foot {
+#logo{
     height: 45px;
     max-width: 250px
 }
 
-footer #social-icons {
-    flex-shrink: 0;
-    width: 160px
-}
-
-footer #social-icons a {
-    height: 40px;
-    margin-left: 15px
-}
-
-footer #social-icons svg {
-    width: 40px
-}
-
-footer #social-icons a:focus svg .cls-1,
-footer #social-icons a:hover svg .cls-1 {
-    fill: var(--color-accent-3)
-}
-
-footer #spring-links a:hover {
+footer a:hover {
     color: #086dc3;
     text-decoration: underline
 }
@@ -3988,7 +3947,6 @@ html.dark-theme #modal-versions .modal-versions-close .cls-1h {
 }
 
 .nav-toggle {
-    background: url(https://docs.spring.io/spring-framework/reference/_/img/menu.svg) no-repeat 50% 47.5%;
     background-size: 49%;
     border: none;
     height: var(--toolbar-height);
@@ -4018,7 +3976,6 @@ html.dark-theme #modal-versions .modal-versions-close .cls-1h {
 }
 
 html.dark-theme .nav-toggle {
-    background: url(https://docs.spring.io/spring-framework/reference/_/img/menu-dark.svg) no-repeat 50% 47.5%;
     background-size: 49%
 }
 
@@ -4031,17 +3988,14 @@ html.dark-theme .nav-toggle {
 }
 
 .nav-toggle.is-active {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/back.svg);
     background-size: 41.5%
 }
 
 html.dark-theme .nav-toggle.is-active {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/back-dark.svg);
     background-size: 41.5%
 }
 
 .home-link {
-    background: url(https://docs.spring.io/spring-framework/reference/_/img/home-o.svg) no-repeat 50%;
     display: block;
     height: calc(var(--toolbar-height)/2);
     margin: calc(var(--toolbar-height)/4);
@@ -4050,7 +4004,6 @@ html.dark-theme .nav-toggle.is-active {
 
 .home-link.is-current,
 .home-link:hover {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/home.svg)
 }
 
 .breadcrumbs {
@@ -4098,7 +4051,6 @@ a+.breadcrumbs {
 }
 
 .page-versions .version-menu-toggle {
-    background: url(https://docs.spring.io/spring-framework/reference/_/img/chevron.svg) no-repeat;
     background-position: right .5rem top 50%;
     background-size: auto .75em;
     border: none;
@@ -4111,14 +4063,12 @@ a+.breadcrumbs {
 }
 
 .dark-theme .page-versions .version-menu-toggle {
-    background: url(https://docs.spring.io/spring-framework/reference/_/img/chevron-white.svg) no-repeat;
     background-position: right .5rem top 50%;
     background-size: auto .75em
 }
 
 .page-versions .version-menu {
     align-items: flex-end;
-    background: linear-gradient(to bottom, var(--page-version-menu-background) 0, var(--page-version-menu-background) 100%) no-repeat;
     display: flex;
     flex-direction: column;
     min-width: 100%;
@@ -4672,15 +4622,12 @@ h1.page+aside.toc.embedded {
 }
 
 .doc .source-toolbox .copy-button {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-clippy)
 }
 
 .doc .source-toolbox .fold-button {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-unfold)
 }
 
 .doc code.is-unfolded+.source-toolbox .fold-button {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-fold)
 }
 
 .doc .source-toolbox .copy-toast {
@@ -4926,14 +4873,14 @@ body {
     background-color: var(--navbar-font-color);
     height: 1.5px;
     width: 1rem;
-	transition: .6s ease;
+    transition: .6s ease;
 }
 
 .nav-toggle span {
     background-color: var(--navbar-font-color);
     height: 1.5px;
     width: 1rem;
-	transition: .6s ease;
+    transition: .6s ease;
 }
 
 .navbar-burger:not(.is-active) span {
@@ -5795,7 +5742,7 @@ html.dark-theme {
     --nav-heading-font-color: var(--color-white);
     --navbar-background: var(--body-background-color);
     --navbar-font-color: var(--color-white);
-    --navbar-menu-background: #000;
+    --navbar-menu-background: #1b1f23;
     --navbar-menu-boxshadow: 0 5px 30px 0 rgb(0 0 0 0/50%);
     --navbar-menu-font-color: var(--color-white);
     --toolbar-background: var(--body-background-color);
@@ -5807,12 +5754,10 @@ html.dark-theme {
 }
 
 html.dark-theme .home-link {
-    background: url(https://docs.spring.io/spring-framework/reference/_/img/home-o-dark.svg) no-repeat 50%
 }
 
 html.dark-theme .home-link.is-current,
 html.dark-theme .home-link:hover {
-    background: url(https://docs.spring.io/spring-framework/reference/_/img/home-dark.svg) no-repeat 50%
 }
 
 html {
@@ -5890,7 +5835,6 @@ mark {
 
 #doc {
     background: no-repeat 100% 0/305px 147px;
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/doc-background.svg)
 }
 
 .doc #header {
@@ -6269,23 +6213,18 @@ i.fa {
 }
 
 i.fa.icon-caution {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-flame)
 }
 
 i.fa.icon-important {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-stop)
 }
 
 i.fa.icon-note {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-info)
 }
 
 i.fa.icon-tip {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-light-bulb)
 }
 
 i.fa.icon-warning {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-alert)
 }
 
 .doc .admonitionblock.caution td.icon {
@@ -6740,18 +6679,15 @@ i.fa.icon-warning {
 
 html.dark-theme #doc {
     background: no-repeat 100% 0/305px 147px;
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/doc-background-dark.svg)
 }
 
 @media screen and (max-width:1024px) {
     #doc {
         background: no-repeat 100% 0/203px 95px;
-        background-image: url(https://docs.spring.io/spring-framework/reference/_/img/doc-background.svg)
     }
 
     html.dark-theme #doc {
         background: no-repeat 100% 0/203px 95px;
-        background-image: url(https://docs.spring.io/spring-framework/reference/_/img/doc-background-dark.svg)
     }
 }
 
@@ -6941,7 +6877,6 @@ body.fixed-toc #toc {
 
 #back-to-index a::before {
     background: no-repeat 50%/16px 16px;
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-chevron-left);
     content: "";
     display: block;
     filter: var(--toc-back-to-index-filter);
@@ -6974,7 +6909,6 @@ body.fixed-toc #tocbar-container {
 
 button#toggle-toc {
     background: no-repeat 50%/16px 16px;
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-three-bars);
     border: none;
     display: block;
     filter: var(--toc-bar-button-filter);
@@ -6985,7 +6919,6 @@ button#toggle-toc {
 }
 
 body.show-toc button#toggle-toc {
-    background-image: url(https://docs.spring.io/spring-framework/reference/_/img/octicons-16.svg#view-x)
 }
 
 @media screen and (max-width:800px) {
@@ -7086,8 +7019,8 @@ body.show-toc button#toggle-toc {
 @media screen and (max-width:1024px) {
     .theme-toggler {
         position: absolute;
-        right: 0;
-        top: 90px
+        right:60px;
+        top: 30px
     }
 }
 

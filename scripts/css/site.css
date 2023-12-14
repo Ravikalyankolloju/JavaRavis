@@ -3644,7 +3644,7 @@ body.nav-sm .nav-panel-menu {
     overflow: visible
 }
 
-@media screen and (min-width:769px) {
+@media screen and (min-width:100px) {
     .nav-container {
         width: var(--nav-width)
     }

@@ -20,6 +20,18 @@
             }(this.checked ? "dark" : "light"), this.checked ? this.parentElement.classList.add("active") : this.parentElement.classList.remove("active")
     }.bind(e)))
 }();
+
+! function() {
+    "use strict";
+    var e;
+    (e = document.getElementById("switch-theme-mobile")) && (e.checked = document.documentElement.classList.contains("dark-theme"), e.addEventListener("change", function() {
+        document.documentElement.classList.toggle("dark-theme", this.checked), document.documentElement.setAttribute("data-theme", this.checked ? "dark" : "light"),
+            function(e) {
+                window.localStorage && window.localStorage.setItem("theme", e)
+            }(this.checked ? "dark" : "light"), this.checked ? this.parentElement.classList.add("active") : this.parentElement.classList.remove("active")
+    }.bind(e)))
+}();
+
 ! function() {
     "use strict";
     var a, c, s, r = /^sect(\d)$/,

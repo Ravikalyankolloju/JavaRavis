@@ -1,91 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Java Variables</title>
+	<title>Variables</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
-	<link rel="canonical" href="#">
-	<link rel="prev" href="#">
-	<link rel="next" href="#">
-	<script>
-		!function (theme, navWidth) {
-			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
-			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
-		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
-			localStorage && localStorage.getItem('nav-width'))
-	</script>
-	<script>
-		!function (theme) {
-			if (theme === 'dark') {
-				document.getElementById('switch-theme-checkbox').parentElement.classList.add('active')
-			}
-		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'))
-	</script>
-	<script>
-		!function (sidebar) {
-			if (sidebar) {
-				document.body.classList.add('nav-sm')
-			}
-		}(localStorage && localStorage.getItem('sidebar') === 'close')
-	</script>
 	<link rel="stylesheet" href="../scripts/css/site.css">
+	<style>
+		@media screen and (min-width: 1025px) {
+			.div-to-desk {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+
+		@media screen and (max-width: 1025px) {
+			.div-to-hide {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+	</style>
 </head>
 
-<body class="article">
-	<header class="header">
-		<nav class="navbar">
-			<div class="navbar-brand">
-				<a class="navbar-item" href="../home.html">
-					<img id="springlogo" class="block" src="../scripts/images/logo.jpg" alt="Java" />
-				</a>
-				<button class="navbar-burger" data-target="topbar-nav">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-			<div id="topbar-nav" class="navbar-menu">
-				<div class="navbar-end">
-					<div class="navbar-item" style="text-align: center;">
-						<li class="nav-item"><a class="nav-link1" href="../home.html"><img
-									src="../scripts/images/home.jpg"></i></a>
-						</li>
-						<li class="nav-item"><a class="nav-link1" href="../java/introduction.html">Java</a></li>
-						<li class="nav-item"><a class="nav-link1" href="../spring/introduction.html">Spring</a>
-						</li>
-						<li class="nav-item"><a class="nav-link1"
-								href="../springboot/sb-introduction.html">SpringBoot</a>
-						</li>
-						<li class="nav-item"><a class="nav-link1" href="../springboot/sb-introduction.html">Java 8
-								Features</a>
-						<li class="nav-item"><a class="nav-link1" href="../springboot/sb-introduction.html">Design
-								Patterns</a>
-						</li>
-						</li>
-						<li class="nav-item"><a class="nav-link1" href="../main/interview-questions.html">Interview
-								Questions</a></li>
-					</div>
+<body>
+	<nav class="navbar">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="../home.html">
+				<img width="150" height="50" src="../scripts/images/logo.jpg" alt="Home" />
+			</a>
+			<button class="navbar-burger" data-target="topbar-nav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<div id="topbar-nav" class="navbar-menu">
+			<div class="navbar-end">
+				<div class="navbar-item" style="text-align: center;">
+					<li class="nav-item"><a class="nav-link1" href="../home.html"><img
+								src="../scripts/images/home.jpg"></i></a>
+					</li>
+					<li class="nav-item"><a class="nav-link1" href="../java/introduction.html">Java</a></li>
+					<li class="nav-item"><a class="nav-link1" href="../spring/introduction.html">Spring</a>
+					</li>
+					<li class="nav-item"><a class="nav-link1" href="../springboot/introduction.html">SpringBoot</a>
+					</li>
+					<li class="nav-item"><a class="nav-link1" href="../java/java8.html">Java 8
+							Features</a>
+					<li class="nav-item"><a class="nav-link1" href="../designpatterns/introduction.html">Design
+							Patterns</a>
+					</li>
+					</li>
+					<li class="nav-item"><a class="nav-link1" href="../interview/interview-questions.html">Interview
+							Questions</a></li>
+					<label class="theme-toggler div-to-hide">
+						<input type="checkbox" id="switch-theme-checkbox" />
+						<span class="icon"></span>
+					</label>
 				</div>
 			</div>
-			<label class="theme-toggler">
-				<input type="checkbox" type="checkbox" id="switch-theme-checkbox" name="switch-theme-checkbox" />
-				<span class="icon"></span>
-			</label>
-		</nav>
-	</header>
+		</div>
+		<label class="theme-toggler div-to-desk" style="top: 22px;">
+			<input type="checkbox" id="switch-theme-mobile" />
+			<span class="icon"></span>
+		</label>
+	</nav>
 
 	<div class="body">
 		<div class="nav-container">
 			<aside class="nav">
 				<div class="nav-panel-menu is-active" data-panel="menu">
-					<div class="context">
-						<a id="browse-version">
-						</a>
-					</div>
 					<li class="nav-item" data-depth="0">
 						<ul class="nav-list">
 							<h4>Java Basic</h4>
@@ -267,117 +253,120 @@
 									Interview Questions</a></li>
 						</ul>
 					</li>
-					<a id="nav-toggle-2" class="nav-toggle"></a>
 				</div>
-				<p id="nav-collapse-toggle"></p>
-				<div class="nav-resize"></div>
 			</aside>
 		</div>
 		<main class="article">
-			<div class="toolbar" role="navigation">
-				<button id="nav-toggle-1" class="nav-toggle">
+			<div class="toolbar">
+				<button class="navbar-burger" id="nav-toggle-1">
 					<span></span>
 					<span></span>
 					<span></span>
 				</button>
+				<nav class="breadcrumbs">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../home.html">Java</a></li>
+						<li><a href="../java/variables.html">Variables</a></li>
+					</ul>
+				</nav>
 			</div>
-			<div class="content">
-				<div class="doc">
-					<nav class="breadcrumbs" aria-label="breadcrumbs">
-						<ul>
-							<li><a href="../home.html">Home</a></li>
-							<li><a href="../java/introduction.html">Java</a></li>
-							<li><a href="#">Variables</a></li>
-						</ul>
-					</nav>
-					<article>
-						<div class="entry-content" itemprop="text">
-							<p>This article covers the basics of Java variables, including variable declaration, scope,
-								naming conventions and types of variable. It explains the types of variable in Java with
-								the help of examples.</p>
+			<div class="doc">
+				<nav class="breadcrumbs div-to-hide">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../home.html">Java</a></li>
+						<li><a href="../java/variables.html">Variables</a></li>
+					</ul>
+				</nav>
+				<a class="div-to-desk">
+					<br>
+				</a>
+				<article>
+					<div class="entry-content" itemprop="text">
+						<p>This article covers the basics of Java variables, including variable declaration, scope,
+							naming conventions and types of variable. It explains the types of variable in Java with the
+							help of examples.</p>
 
 
 
-							<h2 class="wp-block-heading" id="h-what-is-a-variable">What is a variable?</h2>
+						<h2 class="wp-block-heading" id="h-what-is-a-variable">What is a variable?</h2>
 
 
 
-							<p>In Java, <strong>a variable is a name of the memory location that holds a value of a
-									particular data type</strong>. It is a fundamental concept in java programming that
-								allows you to store and manipulate data during the execution of a program.</p>
+						<p>In Java, <strong>a variable is a name of the memory location that holds a value of a
+								particular data type</strong>. It is a fundamental concept in java programming that
+							allows you to store and manipulate data during the execution of a program.</p>
 
 
 
-							<p>Variables in Java can hold various types of data, including integers, floating-point
-								numbers, characters, and booleans. You can also use variables to hold more complex data
-								types, such as arrays, objects, and strings.</p>
+						<p>Variables in Java can hold various types of data, including integers, floating-point numbers,
+							characters, and booleans. You can also use variables to hold more complex data types, such
+							as arrays, objects, and strings.</p>
 
 
 
-							<p>A variable is a name which is associated with a value that can be changed. For example
-								when I write <code>int i=10;</code> here variable name is <strong>i</strong> which has
-								the value 10, int is a data type that represents that this variable can hold integer
-								values. We have covered the <a
-									href="https://beginnersbook.com/2017/08/data-types-in-java/">data types in this
-									tutorial</a>. In this tutorial, we will discuss about variables.</p>
+						<p>A variable is a name which is associated with a value that can be changed. For example when I
+							write <code>int i=10;</code> here variable name is <strong>i</strong> which has the value
+							10, int is a data type that represents that this variable can hold integer values. We have
+							covered the <a href="https://beginnersbook.com/2017/08/data-types-in-java/">data types in
+								this tutorial</a>. In this tutorial, we will discuss about variables.</p>
 
 
 
-							<h2 class="wp-block-heading" id="h-java-variable-declaration-syntax-and-best-practices">Java
-								Variable Declaration: Syntax and Best Practices</h2>
+						<h2 class="wp-block-heading" id="h-java-variable-declaration-syntax-and-best-practices">Java
+							Variable Declaration: Syntax and Best Practices</h2>
 
 
 
-							<p>In Java, you can declare a variable using the following syntax:</p>
+						<p>In Java, you can declare a variable using the following syntax:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="pln">data_type variable_name </span><span class="pun">=</span><span class="pln"> value</span><span class="pun">;</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="pln">data_type variable_name </span><span class="pun">=</span><span class="pln"> value</span><span class="pun">;</span></pre>
 
 
 
-							<p>Here value is optional because in java, you can declare the variable first and then later
-								assign the value to it.</p>
+						<p>Here value is optional because in java, you can declare the variable first and then later
+							assign the value to it.</p>
 
 
 
-							<p>Here, <code>data_type</code> represents the type of data that the variable will hold,
-								such as <code>int</code>, <code>double</code>, <code>String</code>,
-								<code>boolean</code>, etc. <code>variable_name</code> is the name you want to give to
-								the variable.
-							</p>
+						<p>Here, <code>data_type</code> represents the type of data that the variable will hold, such as
+							<code>int</code>, <code>double</code>, <code>String</code>, <code>boolean</code>, etc.
+							<code>variable_name</code> is the name you want to give to the variable.
+						</p>
 
 
 
-							<p>For example: In the following code, the num is a variable and int is a data type. You can
-								read <a href="https://beginnersbook.com/2017/08/data-types-in-java/">data types</a> here
-								but I would recommend you to finish reading this guide before proceeding to the next
-								one.</p>
+						<p>For example: In the following code, the num is a variable and int is a data type. You can
+							read <a href="https://beginnersbook.com/2017/08/data-types-in-java/">data types</a> here but
+							I would recommend you to finish reading this guide before proceeding to the next one.</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">int</span><span class="pln"> num</span><span class="pun">;</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">int</span><span class="pln"> num</span><span class="pun">;</span></pre>
 
 
 
-							<p>Similarly we can assign the values to the variables while declaring them, like this:</p>
+						<p>Similarly we can assign the values to the variables while declaring them, like this:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">char</span><span class="pln"> ch </span><span class="pun">=</span><span class="pln"> </span><span class="str">'A'</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">char</span><span class="pln"> ch </span><span class="pun">=</span><span class="pln"> </span><span class="str">'A'</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">int</span><span class="pln"> number </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span></pre>
 
 
 
-							<p>or we can do it like this:</p>
+						<p>or we can do it like this:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">char</span><span class="pln"> ch</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">char</span><span class="pln"> ch</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">int</span><span class="pln"> number</span><span class="pun">;</span><span class="pln">
 </span><span class="pun">...</span><span class="pln">
 ch </span><span class="pun">=</span><span class="pln"> </span><span class="str">'A'</span><span class="pun">;</span><span class="pln">
@@ -385,284 +374,279 @@ number  </span><span class="pun">=</span><span class="pln"> </span><span class="
 
 
 
-							<p><strong>Note:</strong></p>
+						<p><strong>Note:</strong></p>
 
 
 
-							<p>By default, the value of the variable will be set to 0 for numeric types,
-								<code>false</code> for booleans, and <code>null</code> for objects.
-							</p>
+						<p>By default, the value of the variable will be set to 0 for numeric types, <code>false</code>
+							for booleans, and <code>null</code> for objects.</p>
 
 
 
-							<p>It is a good practice to initialize variables at the time of declaration to avoid
-								unexpected behaviour or errors in the code.</p>
+						<p>It is a good practice to initialize variables at the time of declaration to avoid unexpected
+							behaviour or errors in the code.</p>
 
 
 
-							<p>In the following section, I am sharing the syntax of different types of variables.
-								Although I have discussed the types of variables later in this same article, I thought
-								it is a good idea to discuss the syntax of these variables here –</p>
+						<p>In the following section, I am sharing the syntax of different types of variables. Although I
+							have discussed the types of variables later in this same article, I thought it is a good
+							idea to discuss the syntax of these variables here –</p>
 
 
 
-							<p><strong>Syntax of local variables declaration:</strong></p>
+						<p><strong>Syntax of local variables declaration:</strong></p>
 
 
 
-							<p>Variables declared inside a method or block. For example: </p>
+						<p>Variables declared inside a method or block. For example: </p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">int</span><span class="pln"> myAge</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">int</span><span class="pln"> myAge</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">double</span><span class="pln"> mySalary</span><span class="pun">;</span><span class="pln">
 </span><span class="typ">String</span><span class="pln"> myName</span><span class="pun">;</span></pre>
 
 
 
-							<p><strong>Syntax of instance variables declaration:</strong></p>
+						<p><strong>Syntax of instance variables declaration:</strong></p>
 
 
 
-							<p>These variables are declared inside the class but outside a method or a block. Examples
-								are:</p>
+						<p>These variables are declared inside the class but outside a method or a block. Examples are:
+						</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> myAge</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> myAge</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">double</span><span class="pln"> mySalary</span><span class="pun">;</span><span class="pln">
 </span><span class="typ">String</span><span class="pln"> myName</span><span class="pun">;</span></pre>
 
 
 
-							<p><strong>Syntax of class variables declaration:</strong></p>
+						<p><strong>Syntax of class variables declaration:</strong></p>
 
 
 
-							<p>These are also known as static variables. These variables are declared in the class but
-								outside any method or block. Read more about <a
-									href="https://beginnersbook.com/2013/05/static-variable/">static variables here</a>.
-							</p>
+						<p>These are also known as static variables. These variables are declared in the class but
+							outside any method or block. Read more about <a
+								href="https://beginnersbook.com/2013/05/static-variable/">static variables here</a>.</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> counter</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> counter</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">double</span><span class="pln"> rateOfInterest</span><span class="pun">;</span></pre>
 
 
 
-							<h3 class="wp-block-heading"
-								id="h-java-variable-naming-convention-best-practices-for-readable-and-maintainable-code">
-								Java Variable Naming Convention: Best Practices for Readable and Maintainable Code</h3>
+						<h3 class="wp-block-heading"
+							id="h-java-variable-naming-convention-best-practices-for-readable-and-maintainable-code">
+							Java Variable Naming Convention: Best Practices for Readable and Maintainable Code</h3>
 
 
 
-							<ul>
-								<li>Variables naming cannot contain white spaces, for example:
-									<code>int num ber = 100</code>; is invalid because the variable name has space in
-									it.
-								</li>
+						<ul>
+							<li>Variables naming cannot contain white spaces, for example:
+								<code>int num ber = 100</code>; is invalid because the variable name has space in it.
+							</li>
 
 
 
-								<li>Variables should not start with a digit or contain special characters like
-									<code>@</code>, <code>#</code>, <code>$</code>, <code>%</code>, <code>^</code>,
-									<code>&amp;</code>, <code>*</code>, <code>(</code>, <code>)</code>, <code>-</code>,
-									<code>+</code>, <code>/</code>, <code>\</code>, <code>|</code>, <code>?</code>,
-									<code>:</code> or <code>;</code>.
-								</li>
+							<li>Variables should not start with a digit or contain special characters like
+								<code>@</code>, <code>#</code>, <code>$</code>, <code>%</code>, <code>^</code>,
+								<code>&amp;</code>, <code>*</code>, <code>(</code>, <code>)</code>, <code>-</code>,
+								<code>+</code>, <code>/</code>, <code>\</code>, <code>|</code>, <code>?</code>,
+								<code>:</code> or <code>;</code>.
+							</li>
 
 
 
-								<li>As per the java coding standards the variable name should begin with a lower case
-									letter, for example <code>int number;</code> For lengthy variables names that has
-									more than one words do it like this: int smallNumber; int bigNumber; (start the
-									second word with capital letter).</li>
+							<li>As per the java coding standards the variable name should begin with a lower case
+								letter, for example <code>int number;</code> For lengthy variables names that has more
+								than one words do it like this: int smallNumber; int bigNumber; (start the second word
+								with capital letter).</li>
 
 
 
-								<li>Constants (variables whose values do not change during runtime) should be written in
-									all capital letters with underscores separating words. For example:
-									<code>MAX_VALUE</code>, <code>PI</code>.
-								</li>
+							<li>Constants (variables whose values do not change during runtime) should be written in all
+								capital letters with underscores separating words. For example: <code>MAX_VALUE</code>,
+								<code>PI</code>.
+							</li>
 
 
 
-								<li>Variable names are case sensitive in Java. For example, the variables
-									<code>myNum</code> and <code>mynum</code> are two different variables.
-								</li>
+							<li>Variable names are case sensitive in Java. For example, the variables <code>myNum</code>
+								and <code>mynum</code> are two different variables.</li>
 
 
 
-								<li>Variables should not use reserved keywords or class names as their name. For
-									example, you should not name a variable “int” or “String”.</li>
-							</ul>
+							<li>Variables should not use reserved keywords or class names as their name. For example,
+								you should not name a variable “int” or “String”.</li>
+						</ul>
 
 
 
-							<h2 class="wp-block-heading" id="h-default-values-for-java-variables">Default Values for
-								Java Variables</h2>
+						<h2 class="wp-block-heading" id="h-default-values-for-java-variables">Default Values for Java
+							Variables</h2>
 
 
 
-							<p>In Java, variables are automatically assigned default values if they are not explicitly
-								initialized. The default value depends on the data type of the variable, as shown in the
-								following table:</p>
+						<p>In Java, variables are automatically assigned default values if they are not explicitly
+							initialized. The default value depends on the data type of the variable, as shown in the
+							following table:</p>
 
 
 
-							<figure class="wp-block-table">
-								<table>
-									<tbody>
-										<tr>
-											<td>Data Type</td>
-											<td>Default Value</td>
-										</tr>
-										<tr>
-											<td>byte</td>
-											<td>0</td>
-										</tr>
-										<tr>
-											<td>short</td>
-											<td>0</td>
-										</tr>
-										<tr>
-											<td>int</td>
-											<td>0</td>
-										</tr>
-										<tr>
-											<td>long</td>
-											<td>0L</td>
-										</tr>
-										<tr>
-											<td>float</td>
-											<td>0.0f</td>
-										</tr>
-										<tr>
-											<td>double</td>
-											<td>0.0d</td>
-										</tr>
-										<tr>
-											<td>char</td>
-											<td>‘\u0000’</td>
-										</tr>
-										<tr>
-											<td>boolean</td>
-											<td>false</td>
-										</tr>
-										<tr>
-											<td>object</td>
-											<td>null</td>
-										</tr>
-									</tbody>
-								</table>
-							</figure>
+						<figure class="wp-block-table">
+							<table>
+								<tbody>
+									<tr>
+										<td>Data Type</td>
+										<td>Default Value</td>
+									</tr>
+									<tr>
+										<td>byte</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>short</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>0</td>
+									</tr>
+									<tr>
+										<td>long</td>
+										<td>0L</td>
+									</tr>
+									<tr>
+										<td>float</td>
+										<td>0.0f</td>
+									</tr>
+									<tr>
+										<td>double</td>
+										<td>0.0d</td>
+									</tr>
+									<tr>
+										<td>char</td>
+										<td>‘\u0000’</td>
+									</tr>
+									<tr>
+										<td>boolean</td>
+										<td>false</td>
+									</tr>
+									<tr>
+										<td>object</td>
+										<td>null</td>
+									</tr>
+								</tbody>
+							</table>
+						</figure>
 
 
 
-							<p>For example, if you declare an integer variable without initializing it, it will be
-								assigned a default value of 0:</p>
+						<p>For example, if you declare an integer variable without initializing it, it will be assigned
+							a default value of 0:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">int</span><span class="pln"> num</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">int</span><span class="pln"> num</span><span class="pun">;</span><span class="pln">
 </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">num</span><span class="pun">);</span><span class="pln"> </span><span class="com">// prints 0</span></pre>
 
 
 
-							<p>Similarly, if you declare a boolean variable without initializing it, it will be assigned
-								a default value of <code>false</code>:</p>
+						<p>Similarly, if you declare a boolean variable without initializing it, it will be assigned a
+							default value of <code>false</code>:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">boolean</span><span class="pln"> </span><span class="kwd">bool</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">boolean</span><span class="pln"> </span><span class="kwd">bool</span><span class="pun">;</span><span class="pln">
 </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="kwd">bool</span><span class="pun">);</span><span class="pln"> </span><span class="com">// prints false</span></pre>
 
 
 
-							<p>Note that for object types, the default value is <code>null</code>, which means that the
-								variable does not reference any object. If you try to access an uninitialized object
-								variable, you will get a <code>NullPointerException</code> at runtime:</p>
+						<p>Note that for object types, the default value is <code>null</code>, which means that the
+							variable does not reference any object. If you try to access an uninitialized object
+							variable, you will get a <code>NullPointerException</code> at runtime:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="typ">String</span><span class="pln"> str</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="typ">String</span><span class="pln"> str</span><span class="pun">;</span><span class="pln">
 </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">str</span><span class="pun">);</span><span class="pln"> </span><span class="com">// throws NullPointerException</span></pre>
 
 
 
-							<p>It’s always a good practice to initialize your variables at the time of declaration to
-								avoid unexpected behaviour or errors in the code.</p>
+						<p>It’s always a good practice to initialize your variables at the time of declaration to avoid
+							unexpected behaviour or errors in the code.</p>
 
 
 
-							<h2 class="wp-block-heading" id="h-types-of-variables-in-java">Types of Variables in Java
-							</h2>
+						<h2 class="wp-block-heading" id="h-types-of-variables-in-java">Types of Variables in Java</h2>
 
 
 
-							<p>There are <strong>three types of variables</strong> in Java.</p>
+						<p>There are <strong>three types of variables</strong> in Java.</p>
 
 
 
-							<ul>
-								<li>Static (or class) variable</li>
+						<ul>
+							<li>Static (or class) variable</li>
 
 
 
-								<li>Global variable (Instance variable)</li>
+							<li>Global variable (Instance variable)</li>
 
 
 
-								<li>Local variable</li>
-							</ul>
+							<li>Local variable</li>
+						</ul>
 
 
 
-							<h3 class="wp-block-heading" id="h-1-static-or-class-variable">1. Static (or class) Variable
-							</h3>
+						<h3 class="wp-block-heading" id="h-1-static-or-class-variable">1. Static (or class) Variable
+						</h3>
 
 
 
-							<p>Static variables are also known as class variable because they are associated with the
-								class and common for all the instances of class. To declare a static variable in Java,
-								you use the <code>static</code> keyword before the variable’s data type in the class
-								definition, like this:</p>
+						<p>Static variables are also known as class variable because they are associated with the class
+							and common for all the instances of class. To declare a static variable in Java, you use the
+							<code>static</code> keyword before the variable’s data type in the class definition, like
+							this:
+						</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyClass</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyClass</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> myStaticVariable </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">
 </span><span class="pun">}</span></pre>
 
 
 
-							<p>Static variables can be accessed using the class name, rather than the instance name,
-								like this:</p>
+						<p>Static variables can be accessed using the class name, rather than the instance name, like
+							this:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">int</span><span class="pln"> num </span><span class="pun">=</span><span class="pln"> </span><span class="typ">MyClass</span><span class="pun">.</span><span class="pln">myStaticVariable</span><span class="pun">;</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">int</span><span class="pln"> num </span><span class="pun">=</span><span class="pln"> </span><span class="typ">MyClass</span><span class="pun">.</span><span class="pln">myStaticVariable</span><span class="pun">;</span></pre>
 
 
 
-							<p>For example, If I create three objects of a class and access this static variable, it
-								would be same for all, the changes made to the variable using one of the object would
-								reflect when you access it through other objects.</p>
+						<p>For example, If I create three objects of a class and access this static variable, it would
+							be same for all, the changes made to the variable using one of the object would reflect when
+							you access it through other objects.</p>
 
 
 
-							<h3 class="wp-block-heading" id="h-example-of-static-variable">Example of static variable
-							</h3>
+						<h3 class="wp-block-heading" id="h-example-of-static-variable">Example of static variable</h3>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">StaticVarExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">StaticVarExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> myClassVar</span><span class="pun">=</span><span class="str">"class or static variable"</span><span class="pun">;</span><span class="pln">
 	
    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> args</span><span class="pun">[]){</span><span class="pln">
@@ -687,11 +671,11 @@ number  </span><span class="pun">=</span><span class="pln"> </span><span class="
 
 
 
-							<p><strong>Output:</strong></p>
+						<p><strong>Output:</strong></p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> variable
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> variable
 </span><span class="kwd">class</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> variable
 </span><span class="kwd">class</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> variable
 </span><span class="typ">Changed</span><span class="pln"> </span><span class="typ">Text</span><span class="pln">
@@ -700,55 +684,54 @@ number  </span><span class="pun">=</span><span class="pln"> </span><span class="
 
 
 
-							<p>As you can see all three statements displayed the same output irrespective of the
-								instance through which it is being accessed. That’s is why we can access the static
-								variables without using the objects like this:</p>
+						<p>As you can see all three statements displayed the same output irrespective of the instance
+							through which it is being accessed. That’s is why we can access the static variables without
+							using the objects like this:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">myClassVar</span><span class="pun">);</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">myClassVar</span><span class="pun">);</span></pre>
 
 
 
-							<blockquote class="wp-block-quote">
-								<p>Do note that only static variables can be accessed like this (without using object).
-									This doesn’t apply for instance and local variables.</p>
-							</blockquote>
+						<blockquote class="wp-block-quote">
+							<p>Do note that only static variables can be accessed like this (without using object). This
+								doesn’t apply for instance and local variables.</p>
+						</blockquote>
 
 
 
-							<h3 class="wp-block-heading" id="h-2-global-variable-or-instance-variable">2. Global
-								variable or Instance variable</h3>
+						<h3 class="wp-block-heading" id="h-2-global-variable-or-instance-variable">2. Global variable or
+							Instance variable</h3>
 
 
 
-							<p>A global variable is also known as instance variable. It is declared at the class level
-								and is accessible to all methods and <a
-									href="https://beginnersbook.com/2013/03/constructors-in-java/">constructors</a>
-								within the class. </p>
+						<p>A global variable is also known as instance variable. It is declared at the class level and
+							is accessible to all methods and <a
+								href="https://beginnersbook.com/2013/03/constructors-in-java/">constructors</a> within
+							the class. </p>
 
 
 
-							<p>Each instance(objects) of class has its own copy of instance variable. Unlike static
-								variable, instance variables have their own separate copy of instance variable. </p>
+						<p>Each instance(objects) of class has its own copy of instance variable. Unlike static
+							variable, instance variables have their own separate copy of instance variable. </p>
 
 
 
-							<p>In the following example, we have changed the instance variable
-								<code>myInstanceVar</code> value of the object obj2 and when we displayed the variable
-								using all three objects, only the obj2 value got changed, others remain unchanged. This
-								shows that they have their own copy of instance variable.
-							</p>
+						<p>In the following example, we have changed the instance variable <code>myInstanceVar</code>
+							value of the object obj2 and when we displayed the variable using all three objects, only
+							the obj2 value got changed, others remain unchanged. This shows that they have their own
+							copy of instance variable.</p>
 
 
 
-							<h3 class="wp-block-heading" id="h-example-of-instance-variable">Example of Instance
-								variable</h3>
+						<h3 class="wp-block-heading" id="h-example-of-instance-variable">Example of Instance variable
+						</h3>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">InstanceVarExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">InstanceVarExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
    </span><span class="typ">String</span><span class="pln"> myInstanceVar</span><span class="pun">=</span><span class="str">"instance variable"</span><span class="pun">;</span><span class="pln">
 	
    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> args</span><span class="pun">[]){</span><span class="pln">
@@ -772,11 +755,11 @@ number  </span><span class="pun">=</span><span class="pln"> </span><span class="
 
 
 
-							<p><strong>Output:</strong></p>
+						<p><strong>Output:</strong></p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="pln">instance variable
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="pln">instance variable
 instance variable
 instance variable
 instance variable
@@ -785,46 +768,46 @@ instance variable</span></pre>
 
 
 
-							<h3 class="wp-block-heading" id="h-3-local-variable">3. Local Variable</h3>
+						<h3 class="wp-block-heading" id="h-3-local-variable">3. Local Variable</h3>
 
 
 
-							<p>In Java, a local variable is a variable that is declared inside a method, constructor, or
-								block of code, and is only accessible within that block. Their scope is limited to the
-								method which means that You can’t change their values and access them outside of the
-								method.</p>
+						<p>In Java, a local variable is a variable that is declared inside a method, constructor, or
+							block of code, and is only accessible within that block. Their scope is limited to the
+							method which means that You can’t change their values and access them outside of the method.
+						</p>
 
 
 
-							<p>Local variables are used to store temporary values that are needed to perform a specific
-								task within a method or block. They have a limited scope and lifetime, and are destroyed
-								once the method or block finishes executing.</p>
+						<p>Local variables are used to store temporary values that are needed to perform a specific task
+							within a method or block. They have a limited scope and lifetime, and are destroyed once the
+							method or block finishes executing.</p>
 
 
 
-							<p>Here’s an example of a local variable declared in a method:</p>
+						<p>Here’s an example of a local variable declared in a method:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> myMethod</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> myMethod</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">int</span><span class="pln"> num </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">
     </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">num</span><span class="pun">);</span><span class="pln">
 </span><span class="pun">}</span></pre>
 
 
 
-							<p>In this above example, the variable <code>num</code> is a local variable that is declared
-								inside the <code>myMethod()</code> method. It is assigned the value of 100 which gets
-								printed to the console using println() method. Once the method finishes executing, the
-								variable is destroyed and its value is no longer accessible.</p>
+						<p>In this above example, the variable <code>num</code> is a local variable that is declared
+							inside the <code>myMethod()</code> method. It is assigned the value of 100 which gets
+							printed to the console using println() method. Once the method finishes executing, the
+							variable is destroyed and its value is no longer accessible.</p>
 
 
 
-							<h3 class="wp-block-heading" id="h-example-of-local-variable">Example of Local variable</h3>
+						<h3 class="wp-block-heading" id="h-example-of-local-variable">Example of Local variable</h3>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">VariableExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">VariableExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
    </span><span class="com">// instance variable</span><span class="pln">
    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> myVar</span><span class="pun">=</span><span class="str">"instance variable"</span><span class="pun">;</span><span class="pln">
     
@@ -850,76 +833,75 @@ instance variable</span></pre>
 
 
 
-							<p><strong>Output:</strong></p>
+						<p><strong>Output:</strong></p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="typ">Calling</span><span class="pln"> </span><span class="typ">Method</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="typ">Calling</span><span class="pln"> </span><span class="typ">Method</span><span class="pln">
 </span><span class="typ">Inside</span><span class="pln"> </span><span class="typ">Method</span><span class="pln">
 instance variable</span></pre>
 
 
 
-							<blockquote class="wp-block-quote">
-								<p>If I hadn’t declared the instance variable and only declared the local variable
-									inside method then the statement System.out.println(obj.myVar); would have thrown
-									compilation error. As you cannot change and access local variables outside the
-									method.</p>
-							</blockquote>
+						<blockquote class="wp-block-quote">
+							<p>If I hadn’t declared the instance variable and only declared the local variable inside
+								method then the statement System.out.println(obj.myVar); would have thrown compilation
+								error. As you cannot change and access local variables outside the method.</p>
+						</blockquote>
 
 
 
-							<h2 class="wp-block-heading"
-								id="h-difference-between-global-variable-and-local-variable-in-java">Difference between
-								Global variable and local variable in Java</h2>
+						<h2 class="wp-block-heading"
+							id="h-difference-between-global-variable-and-local-variable-in-java">Difference between
+							Global variable and local variable in Java</h2>
 
 
 
-							<p>In Java, a global variable is a variable that is declared at the class level and is
-								accessible to all methods and constructors within the class. On the other hand, a local
-								variable is a variable that is declared within a method or block and is only accessible
-								within that method or block.</p>
+						<p>In Java, a global variable is a variable that is declared at the class level and is
+							accessible to all methods and constructors within the class. On the other hand, a local
+							variable is a variable that is declared within a method or block and is only accessible
+							within that method or block.</p>
 
 
 
-							<p>Here are some key differences between global and local variables:</p>
+						<p>Here are some key differences between global and local variables:</p>
 
 
 
-							<ul>
-								<li><strong>Scope</strong>: Global variables have a wider scope as they are accessible
-									throughout the class. Local variables, on the other hand, have a narrower scope as
-									they are only accessible within the method or block in which they are declared.</li>
+						<ul>
+							<li><strong>Scope</strong>: Global variables have a wider scope as they are accessible
+								throughout the class. Local variables, on the other hand, have a narrower scope as they
+								are only accessible within the method or block in which they are declared.</li>
 
 
 
-								<li><strong>Lifetime</strong>: Global variables have a longer lifetime as they are
-									created when the object is instantiated and are destroyed when the object is
-									destroyed. Local variables have a shorter lifetime as they are created when the
-									method or block is executed and are destroyed when the method or block exits.</li>
+							<li><strong>Lifetime</strong>: Global variables have a longer lifetime as they are created
+								when the object is instantiated and are destroyed when the object is destroyed. Local
+								variables have a shorter lifetime as they are created when the method or block is
+								executed and are destroyed when the method or block exits.</li>
 
 
 
-								<li><strong>Access</strong>: Global variables can be accessed from any method or
-									constructor within the class, which means they can be modified by any method or
-									constructor that has access to them. Local variables can only be accessed within the
-									method or block in which they are declared.</li>
+							<li><strong>Access</strong>: Global variables can be accessed from any method or constructor
+								within the class, which means they can be modified by any method or constructor that has
+								access to them. Local variables can only be accessed within the method or block in which
+								they are declared.</li>
 
 
 
-								<li><strong>Initialization</strong>: Global variables are initialized to default values
-									(e.g., 0 for numeric types, false for boolean, and null for objects) if no explicit
-									initialization is provided. Local variables must be initialized explicitly before
-									they can be used.</li>
-							</ul>
+							<li><strong>Initialization</strong>: Global variables are initialized to default values
+								(e.g., 0 for numeric types, false for boolean, and null for objects) if no explicit
+								initialization is provided. Local variables must be initialized explicitly before they
+								can be used.</li>
+						</ul>
 
 
 
-							<p>Let’s take an example to understand the differences:</p>
+						<p>Let’s take an example to understand the differences:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
   </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> myGlobalVariable </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">
 
   </span><span class="com">//a method</span><span class="pln">
@@ -944,52 +926,23 @@ instance variable</span></pre>
 
 
 
-							<p>In general, it is recommended to use local variables whenever possible, as they promote
-								good coding practices and reduces the risk of errors caused by unintended modifications
-								to global variables. <strong>Global variables should be used sparingly</strong> and only
-								when they are truly necessary.</p>
-
-
-
-							<p>Check out these related <a href="https://beginnersbook.com/2017/09/java-examples/">java
-									examples</a> before proceeding to the next topic:</p>
-
-
-
-							<ol>
-								<li><a
-										href="https://beginnersbook.com/2017/09/java-program-to-find-ascii-value-of-a-character/">Java
-										Program to Find ASCII value of a Character</a></li>
-
-
-
-								<li><a href="https://beginnersbook.com/2017/09/java-program-to-multiply-two-numbers/">Java
-										Program to Multiply two Numbers</a></li>
-
-
-
-								<li><a
-										href="https://beginnersbook.com/2014/01/java-program-to-calculate-area-of-triangle/">Java
-										Program to Calculate Area of Triangle</a></li>
-							</ol>
-						</div>
-						<nav class="pagination">
-							<span class="prev"><a href="../java/jvm.html">JVM</a></span>
-							<span class="next"><a href="../java/datatypes.html">Java Data Types</a></span>
-						</nav>
-					</article>
-				</div>
+						<p>In general, it is recommended to use local variables whenever possible, as they promote good
+							coding practices and reduces the risk of errors caused by unintended modifications to global
+							variables. <strong>Global variables should be used sparingly</strong> and only when they are
+							truly necessary.</p>
+					</div>
+				</article>
 			</div>
 		</main>
 	</div>
-	<footer class="footer">
-		<p>©
-			<script>var d = new Date();
-				document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
-			Kalyan Kolloju.
-		</p>
-	</footer>
 	<script src="../scripts/js/site.js"></script>
 </body>
+<footer class="footer">
+	<p>©
+		<script>var d = new Date();
+			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
+		Kalyan Kolloju.
+	</p>
+</footer>
 
 </html>

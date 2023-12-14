@@ -1,91 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Java Data Types</title>
+	<title>Datatypes</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
-	<link rel="canonical" href="#">
-	<link rel="prev" href="#">
-	<link rel="next" href="#">
-	<script>
-		!function (theme, navWidth) {
-			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
-			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
-		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
-			localStorage && localStorage.getItem('nav-width'))
-	</script>
-	<script>
-		!function (theme) {
-			if (theme === 'dark') {
-				document.getElementById('switch-theme-checkbox').parentElement.classList.add('active')
-			}
-		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'))
-	</script>
-	<script>
-		!function (sidebar) {
-			if (sidebar) {
-				document.body.classList.add('nav-sm')
-			}
-		}(localStorage && localStorage.getItem('sidebar') === 'close')
-	</script>
 	<link rel="stylesheet" href="../scripts/css/site.css">
+	<style>
+		@media screen and (min-width: 1025px) {
+			.div-to-desk {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+
+		@media screen and (max-width: 1025px) {
+			.div-to-hide {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+	</style>
 </head>
 
-<body class="article">
-	<header class="header">
-		<nav class="navbar">
-			<div class="navbar-brand">
-				<a class="navbar-item" href="../home.html">
-					<img id="springlogo" class="block" src="../scripts/images/logo.jpg" alt="Java" />
-				</a>
-				<button class="navbar-burger" data-target="topbar-nav">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-			<div id="topbar-nav" class="navbar-menu">
-				<div class="navbar-end">
-					<div class="navbar-item" style="text-align: center;">
-						<li class="nav-item"><a class="nav-link1" href="../home.html"><img
-									src="../scripts/images/home.jpg"></i></a>
-						</li>
-						<li class="nav-item"><a class="nav-link1" href="../java/introduction.html">Java</a></li>
-						<li class="nav-item"><a class="nav-link1" href="../spring/introduction.html">Spring</a>
-						</li>
-						<li class="nav-item"><a class="nav-link1"
-								href="../springboot/sb-introduction.html">SpringBoot</a>
-						</li>
-						<li class="nav-item"><a class="nav-link1" href="../springboot/sb-introduction.html">Java 8
-								Features</a>
-						<li class="nav-item"><a class="nav-link1" href="../springboot/sb-introduction.html">Design
-								Patterns</a>
-						</li>
-						</li>
-						<li class="nav-item"><a class="nav-link1" href="../main/interview-questions.html">Interview
-								Questions</a></li>
-					</div>
+<body>
+	<nav class="navbar">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="../home.html">
+				<img width="150" height="50" src="../scripts/images/logo.jpg" alt="Home" />
+			</a>
+			<button class="navbar-burger" data-target="topbar-nav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<div id="topbar-nav" class="navbar-menu">
+			<div class="navbar-end">
+				<div class="navbar-item" style="text-align: center;">
+					<li class="nav-item"><a class="nav-link1" href="../home.html"><img
+								src="../scripts/images/home.jpg"></i></a>
+					</li>
+					<li class="nav-item"><a class="nav-link1" href="../java/introduction.html">Java</a></li>
+					<li class="nav-item"><a class="nav-link1" href="../spring/introduction.html">Spring</a>
+					</li>
+					<li class="nav-item"><a class="nav-link1" href="../springboot/introduction.html">SpringBoot</a>
+					</li>
+					<li class="nav-item"><a class="nav-link1" href="../java/java8.html">Java 8
+							Features</a>
+					<li class="nav-item"><a class="nav-link1" href="../designpatterns/introduction.html">Design
+							Patterns</a>
+					</li>
+					</li>
+					<li class="nav-item"><a class="nav-link1" href="../interview/interview-questions.html">Interview
+							Questions</a></li>
+					<label class="theme-toggler div-to-hide">
+						<input type="checkbox" id="switch-theme-checkbox" />
+						<span class="icon"></span>
+					</label>
 				</div>
 			</div>
-			<label class="theme-toggler">
-				<input type="checkbox" type="checkbox" id="switch-theme-checkbox" name="switch-theme-checkbox" />
-				<span class="icon"></span>
-			</label>
-		</nav>
-	</header>
+		</div>
+		<label class="theme-toggler div-to-desk" style="top: 22px;">
+			<input type="checkbox" id="switch-theme-mobile" />
+			<span class="icon"></span>
+		</label>
+	</nav>
 
 	<div class="body">
 		<div class="nav-container">
 			<aside class="nav">
 				<div class="nav-panel-menu is-active" data-panel="menu">
-					<div class="context">
-						<a id="browse-version">
-						</a>
-					</div>
 					<li class="nav-item" data-depth="0">
 						<ul class="nav-list">
 							<h4>Java Basic</h4>
@@ -267,99 +253,102 @@
 									Interview Questions</a></li>
 						</ul>
 					</li>
-					<a id="nav-toggle-2" class="nav-toggle"></a>
 				</div>
-				<p id="nav-collapse-toggle"></p>
-				<div class="nav-resize"></div>
 			</aside>
 		</div>
 		<main class="article">
-			<div class="toolbar" role="navigation">
-				<button id="nav-toggle-1" class="nav-toggle">
+			<div class="toolbar">
+				<button class="navbar-burger" id="nav-toggle-1">
 					<span></span>
 					<span></span>
 					<span></span>
 				</button>
+				<nav class="breadcrumbs">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../home.html">Java</a></li>
+						<li><a href="../java/datatypes.html">Datatypes</a></li>
+					</ul>
+				</nav>
 			</div>
-			<div class="content">
-				<div class="doc">
-					<nav class="breadcrumbs" aria-label="breadcrumbs">
-						<ul>
-							<li><a href="../home.html">Home</a></li>
-							<li><a href="../java/introduction.html">Java</a></li>
-							<li><a href="#">Data Types</a></li>
-						</ul>
-					</nav>
-					<article>
-						<div class="entry-content" itemprop="text">
-							<p><strong>Data type</strong> defines the values that a variable can take, for example if a
-								variable has int data type, it can only take integer values. In java we have two
-								categories of data type: 1) Primitive data types 2) Non-primitive data types – Arrays
-								and Strings are non-primitive data types, we will discuss them later in the coming
-								tutorials. Here we will discuss primitive data types and literals in Java.</p>
+			<div class="doc">
+				<nav class="breadcrumbs div-to-hide">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../home.html">Java</a></li>
+						<li><a href="../java/datatypes.html">Datatypes</a></li>
+					</ul>
+				</nav>
+				<a class="div-to-desk">
+					<br>
+				</a>
+				<article>
+					<div class="entry-content" itemprop="text">
+						<p><strong>Data type</strong> defines the values that a variable can take, for example if a
+							variable has int data type, it can only take integer values. In java we have two categories
+							of data type: 1) Primitive data types 2) Non-primitive data types – Arrays and Strings are
+							non-primitive data types, we will discuss them later in the coming tutorials. Here we will
+							discuss primitive data types and literals in Java.</p>
 
 
 
-							<p>Java is a statically typed language. A language is statically typed, if the data type of
-								a variable is known at compile time. This means that you must specify the type of the
-								variable (Declare the variable) before you can use it.<br>In the last tutorial about <a
-									href="https://beginnersbook.com/2017/08/variables-in-java/">Java Variables</a>, we
-								learned how to declare a variable, lets recall it:</p>
+						<p>Java is a statically typed language. A language is statically typed, if the data type of a
+							variable is known at compile time. This means that you must specify the type of the variable
+							(Declare the variable) before you can use it.<br>In the last tutorial about <a
+								href="https://beginnersbook.com/2017/08/variables-in-java/">Java Variables</a>, we
+							learned how to declare a variable, lets recall it:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">int</span><span class="pln"> num</span><span class="pun">;</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">int</span><span class="pln"> num</span><span class="pun">;</span></pre>
 
 
 
-							<p>So in order to use the variable num in our program, we must declare it first as shown
-								above. It is a good programming practice to declare all the variables ( that you are
-								going to use) in the beginning of the program.</p>
+						<p>So in order to use the variable num in our program, we must declare it first as shown above.
+							It is a good programming practice to declare all the variables ( that you are going to use)
+							in the beginning of the program.</p>
 
 
 
-							<h2 class="wp-block-heading" id="h-1-primitive-data-types">1) Primitive data types</h2>
+						<h2 class="wp-block-heading" id="h-1-primitive-data-types">1) Primitive data types</h2>
 
 
 
-							<p>In Java, we have eight primitive data types: boolean, char, byte, short, int, long, float
-								and double. Java developers included these data types to maintain the portability of
-								java as the size of these primitive data types do not change from one operating system
-								to another.</p>
+						<p>In Java, we have eight primitive data types: boolean, char, byte, short, int, long, float and
+							double. Java developers included these data types to maintain the portability of java as the
+							size of these primitive data types do not change from one operating system to another.</p>
 
 
 
-							<p><strong>byte</strong>, <strong>short</strong>, <strong>int</strong> and
-								<strong>long</strong> data types are used for storing whole numbers.
-							</p>
+						<p><strong>byte</strong>, <strong>short</strong>, <strong>int</strong> and <strong>long</strong>
+							data types are used for storing whole numbers.</p>
 
 
 
-							<p><strong>float</strong> and <strong>double</strong> are used for fractional numbers.</p>
+						<p><strong>float</strong> and <strong>double</strong> are used for fractional numbers.</p>
 
 
 
-							<p><strong>char</strong> is used for storing characters(letters).</p>
+						<p><strong>char</strong> is used for storing characters(letters).</p>
 
 
 
-							<p><strong>boolean</strong> data type is used for variables that holds either true or false.
-							</p>
+						<p><strong>boolean</strong> data type is used for variables that holds either true or false.</p>
 
 
 
-							<h3 class="wp-block-heading" id="h-byte">byte</h3>
+						<h3 class="wp-block-heading" id="h-byte">byte</h3>
 
 
 
-							<p>This can hold whole number between -128 and 127. Mostly used to save memory and when you
-								are certain that the numbers would be in the limit specified by byte data
-								type.<br>Default size of this data type: 1 byte.<br>Default value: 0<br>Example:</p>
+						<p>This can hold whole number between -128 and 127. Mostly used to save memory and when you are
+							certain that the numbers would be in the limit specified by byte data type.<br>Default size
+							of this data type: 1 byte.<br>Default value: 0<br>Example:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     	
     	</span><span class="kwd">byte</span><span class="pln"> num</span><span class="pun">;</span><span class="pln">
@@ -371,48 +360,47 @@
 
 
 
-							<p>Output:</p>
+						<p>Output:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="lit">113</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="lit">113</span></pre>
 
 
 
-							<blockquote class="wp-block-quote">
-								<p>Try the same program by assigning value assigning 150 value to variable num, you
-									would get <strong>type mismatch</strong> error because the value 150 is out of the
-									range of byte data type. The range of byte as I mentioned above is -128 to 127.</p>
-							</blockquote>
+						<blockquote class="wp-block-quote">
+							<p>Try the same program by assigning value assigning 150 value to variable num, you would
+								get <strong>type mismatch</strong> error because the value 150 is out of the range of
+								byte data type. The range of byte as I mentioned above is -128 to 127.</p>
+						</blockquote>
 
 
 
-							<h3 class="wp-block-heading" id="h-short">short</h3>
+						<h3 class="wp-block-heading" id="h-short">short</h3>
 
 
 
-							<p>This is greater than byte in terms of size and less than integer. Its range is -32,768 to
-								32767.<br>Default size of this data type: 2 byte</p>
+						<p>This is greater than byte in terms of size and less than integer. Its range is -32,768 to
+							32767.<br>Default size of this data type: 2 byte</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">short</span><span class="pln"> num </span><span class="pun">=</span><span class="pln"> </span><span class="lit">45678</span><span class="pun">;</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">short</span><span class="pln"> num </span><span class="pun">=</span><span class="pln"> </span><span class="lit">45678</span><span class="pun">;</span></pre>
 
 
 
-							<h3 class="wp-block-heading" id="h-int">int</h3>
+						<h3 class="wp-block-heading" id="h-int">int</h3>
 
 
 
-							<p>Used when short is not large enough to hold the number, it has a wider range:
-								-2,147,483,648 to 2,147,483,647<br>Default size: 4 byte<br>Default value: 0<br>Example:
-							</p>
+						<p>Used when short is not large enough to hold the number, it has a wider range: -2,147,483,648
+							to 2,147,483,647<br>Default size: 4 byte<br>Default value: 0<br>Example:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     	
     	</span><span class="kwd">short</span><span class="pln"> num</span><span class="pun">;</span><span class="pln">
@@ -424,31 +412,31 @@
 
 
 
-							<p>Output:</p>
+						<p>Output:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="lit">150</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="lit">150</span></pre>
 
 
 
-							<p>The byte data type couldn’t hold the value 150 but a short data type can because it has a
-								wider range.</p>
+						<p>The byte data type couldn’t hold the value 150 but a short data type can because it has a
+							wider range.</p>
 
 
 
-							<h3 class="wp-block-heading" id="h-long">long</h3>
+						<h3 class="wp-block-heading" id="h-long">long</h3>
 
 
 
-							<p>Used when int is not large enough to hold the value, it has wider range than int data
-								type, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.<br>size: 8
-								bytes<br>Default value: 0<br>Example:</p>
+						<p>Used when int is not large enough to hold the value, it has wider range than int data type,
+							ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.<br>size: 8
+							bytes<br>Default value: 0<br>Example:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     	
     	</span><span class="kwd">long</span><span class="pln"> num </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">12332252626L</span><span class="pun">;</span><span class="pln">
@@ -458,24 +446,24 @@
 
 
 
-							<p>Output:</p>
+						<p>Output:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="pun">-</span><span class="lit">12332252626</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="pun">-</span><span class="lit">12332252626</span></pre>
 
 
 
-							<h3 class="wp-block-heading" id="h-double">double</h3>
+						<h3 class="wp-block-heading" id="h-double">double</h3>
 
 
 
-							<p>Sufficient for holding 15 decimal digits<br>size: 8 bytes<br>Example:</p>
+						<p>Sufficient for holding 15 decimal digits<br>size: 8 bytes<br>Example:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     	
     	</span><span class="kwd">double</span><span class="pln"> num </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">42937737.9d</span><span class="pun">;</span><span class="pln">
@@ -485,24 +473,24 @@
 
 
 
-							<p>Output:</p>
+						<p>Output:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="pun">-</span><span class="lit">4.29377379E7</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="pun">-</span><span class="lit">4.29377379E7</span></pre>
 
 
 
-							<h3 class="wp-block-heading" id="h-float">float</h3>
+						<h3 class="wp-block-heading" id="h-float">float</h3>
 
 
 
-							<p>Sufficient for holding 6 to 7 decimal digits<br>size: 4 bytes</p>
+						<p>Sufficient for holding 6 to 7 decimal digits<br>size: 4 bytes</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     	
     	</span><span class="kwd">float</span><span class="pln"> num </span><span class="pun">=</span><span class="pln"> </span><span class="lit">19.98f</span><span class="pun">;</span><span class="pln">
@@ -512,24 +500,24 @@
 
 
 
-							<p>Output:</p>
+						<p>Output:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="lit">19.98</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="lit">19.98</span></pre>
 
 
 
-							<h3 class="wp-block-heading" id="h-boolean">boolean</h3>
+						<h3 class="wp-block-heading" id="h-boolean">boolean</h3>
 
 
 
-							<p>It holds either true of false.</p>
+						<p>It holds either true of false.</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     	
     	</span><span class="kwd">boolean</span><span class="pln"> b </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
@@ -539,24 +527,24 @@
 
 
 
-							<p>Output:</p>
+						<p>Output:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">false</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">false</span></pre>
 
 
 
-							<h3 class="wp-block-heading" id="h-char">char</h3>
+						<h3 class="wp-block-heading" id="h-char">char</h3>
 
 
 
-							<p>It holds characters.<br>size: 2 bytes</p>
+						<p>It holds characters.<br>size: 2 bytes</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted" style=""><span class="kwd">class</span><span class="pln"> </span><span class="typ">JavaExample</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> main</span><span class="pun">(</span><span class="typ">String</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
     	
     	</span><span class="kwd">char</span><span class="pln"> ch </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Z'</span><span class="pun">;</span><span class="pln">
@@ -566,110 +554,118 @@
 
 
 
-							<p>Output:</p>
+						<p>Output:</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="pln">Z</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="pln">Z</span></pre>
 
 
 
-							<h2 class="wp-block-heading" id="h-literals-in-java">Literals in Java</h2>
+						<h2 class="wp-block-heading" id="h-literals-in-java">Literals in Java</h2>
 
 
 
-							<p>A literal is a fixed value that we assign to a variable in a Program.</p>
+						<p>A literal is a fixed value that we assign to a variable in a Program.</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">int</span><span class="pln"> num</span><span class="pun">=</span><span class="lit">10</span><span class="pun">;</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">int</span><span class="pln"> num</span><span class="pun">=</span><span class="lit">10</span><span class="pun">;</span></pre>
 
 
 
-							<p>Here value 10 is a Integer literal.</p>
+						<p>Here value 10 is a Integer literal.</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">char</span><span class="pln"> ch </span><span class="pun">=</span><span class="pln"> </span><span class="str">'A'</span><span class="pun">;</span></pre>
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">char</span><span class="pln"> ch </span><span class="pun">=</span><span class="pln"> </span><span class="str">'A'</span><span class="pun">;</span></pre>
 
 
 
-							<p>Here A is a char literal</p>
+						<p>Here A is a char literal</p>
 
 
 
-							<h3 class="wp-block-heading" id="h-integer-literal">Integer Literal</h3>
+						<h3 class="wp-block-heading" id="h-integer-literal">Integer Literal</h3>
 
 
 
-							<p>Integer literals are assigned to the variables of data type <code>byte</code>,
-								<code>short</code>, <code>int</code> and <code>long</code>.
-							</p>
+						<p>Integer literals are assigned to the variables of data type <code>byte</code>,
+							<code>short</code>, <code>int</code> and <code>long</code>.
+						</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">byte</span><span class="pln"> b </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">byte</span><span class="pln"> b </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">short</span><span class="pln"> s </span><span class="pun">=</span><span class="pln"> </span><span class="lit">200</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">int</span><span class="pln"> num </span><span class="pun">=</span><span class="pln"> </span><span class="lit">13313131</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">long</span><span class="pln"> l </span><span class="pun">=</span><span class="pln"> </span><span class="lit">928389283L</span><span class="pun">;</span></pre>
 
 
 
-							<h3 class="wp-block-heading" id="h-float-literals">Float Literals</h3>
+						<h3 class="wp-block-heading" id="h-float-literals">Float Literals</h3>
 
 
 
-							<p>Used for data type <code>float</code> and <code>double</code>.</p>
+						<p>Used for data type <code>float</code> and <code>double</code>.</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">double</span><span class="pln"> num1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">22.4</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">double</span><span class="pln"> num1 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">22.4</span><span class="pun">;</span><span class="pln">
 </span><span class="kwd">float</span><span class="pln"> num2 </span><span class="pun">=</span><span class="pln"> </span><span class="lit">22.4f</span><span class="pun">;</span></pre>
 
 
 
-							<p>Note: Always suffix float value with the “f” else compiler will consider it as double.
-							</p>
+						<p>Note: Always suffix float value with the “f” else compiler will consider it as double.</p>
 
 
 
-							<h3 class="wp-block-heading" id="h-char-and-string-literal">Char and String Literal</h3>
+						<h3 class="wp-block-heading" id="h-char-and-string-literal">Char and String Literal</h3>
 
 
 
-							<p>Used for char and String type.</p>
+						<p>Used for char and String type.</p>
 
 
 
-							<pre class="wp-block-preformatted prettyprint prettyprinted"
-								style=""><span class="kwd">char</span><span class="pln"> ch </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Z'</span><span class="pun">;</span><span class="pln">
+						<pre class="wp-block-preformatted prettyprint prettyprinted"
+							style=""><span class="kwd">char</span><span class="pln"> ch </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Z'</span><span class="pun">;</span><span class="pln">
 </span><span class="typ">String</span><span class="pln"> str </span><span class="pun">=</span><span class="pln"> </span><span class="str">"BeginnersBook"</span><span class="pun">;</span></pre>
 
 
 
-						</div>
-						<nav class="pagination">
-							<span class="prev"><a href="../java/variables.html">Java Variables</a></span>
-							<span class="next"><a href="../java/operators.html">Java Operators</a></span>
-						</nav>
-					</article>
-				</div>
+						<p>Check out these <a href="https://beginnersbook.com/2017/09/java-examples/">basic java
+								programs</a> before proceeding to the next topic:</p>
+
+
+
+						<ol>
+							<li><a href="https://beginnersbook.com/2017/09/java-program-to-add-two-numbers/">Java
+									Program to Add two Numbers</a></li>
+							<li><a href="https://beginnersbook.com/2017/09/java-program-to-multiply-two-numbers/">Java
+									Program to Multiply two numbers</a></li>
+							<li><a
+									href="https://beginnersbook.com/2017/09/java-program-to-read-integer-value-from-the-standard-input/">Java
+									Program to read a number (entered by user)</a></li>
+						</ol>
+					</div>
+				</article>
 			</div>
 		</main>
 	</div>
-	<footer class="footer">
-		<p>©
-			<script>var d = new Date();
-				document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
-			Kalyan Kolloju.
-		</p>
-	</footer>
 	<script src="../scripts/js/site.js"></script>
 </body>
+<footer class="footer">
+	<p>©
+		<script>var d = new Date();
+			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
+		Kalyan Kolloju.
+	</p>
+</footer>
 
 </html>

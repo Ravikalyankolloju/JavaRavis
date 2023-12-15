@@ -938,6 +938,15 @@ instance variable</span></pre>
 		</main>
 	</div>
 	<script>
+		window.addEventListener('popstate', function (event) {
+			// Check if navigating back within your website
+			if (event.state && event.state.website === true) {
+				// Close the sidebar menu
+				document.getElementById("nav-panel-menu").style.display = "none";
+			}
+		});
+	</script>
+	<script>
 		window.addEventListener('DOMContentLoaded', () => {
 			window.scrollTo(0, 0);
 		})

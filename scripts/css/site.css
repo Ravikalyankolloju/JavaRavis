@@ -5765,7 +5765,6 @@ body {
 	font-weight: var(--font-weight);
 	margin: 0;
 	overflow-wrap: anywhere;
-	overscroll-behavior: none
 }
 
 a {

@@ -979,6 +979,45 @@ instance variable</span></pre>
 			document.documentElement.scrollTop = 0;
 		}
 	</script>
+	<script>
+		const container = document.querySelector('.body');
+		const refreshIndicator = document.querySelector('.nav-container');
+
+		let startY = 0;
+
+		container.addEventListener('touchstart', (event) => {
+			startY = event.touches[0].pageY;
+		});
+
+		container.addEventListener('touchmove', (event) => {
+			const currentY = event.touches[0].pageY;
+			const pullDistance = currentY - startY;
+
+			if (pullDistance > 50) {
+				container.style.marginTop = `${pullDistance}px`;
+				refreshIndicator.style.display = 'block';
+			} else {
+				container.style.marginTop = '0';
+				refreshIndicator.style.display = 'none';
+			}
+		});
+
+		container.addEventListener('touchend', () => {
+			if (container.style.marginTop) {
+				// Trigger your refresh action here (e.g., AJAX request)
+				console.log('Refreshing data...');
+				refreshIndicator.style.display = 'block';
+
+				// Simulate data update after 1 second for demo purposes
+				setTimeout(() => {
+					container.style.marginTop = '0';
+					refreshIndicator.style.display = 'none';
+					// Update your content with new data
+					console.log('Data refreshed!');
+				}, 1000);
+			}
+		});
+	</script>
 	<script src="../scripts/js/site.js"></script>
 </body>
 <footer class="footer">

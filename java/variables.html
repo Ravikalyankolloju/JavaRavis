@@ -4,24 +4,10 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="google" content="notranslate">
-	<meta name="robots" content="all">
-	<meta name="author" content="JDriven">
-	<meta name="contact" content="info@jdriven.com">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="msapplication-TileColor" content="#2dcd4d">
-	<meta name="msapplication-square70x70logo" content="/favi-mobile.png">
-	<!-- H: open graph-->
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="Home - JDriven Blog">
-	<meta property="og:url" content="https://blog.jdriven.com/index.html">
-	<meta property="og:site_name" content="JDriven Blog">
-	<meta property="og:locale" content="en_US">
-	<meta property="article:author" content="JDriven">
-	<meta name="twitter:card" content="summary">
-	<title>Variables</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="RaviKalyan">
+	<title>Datatypes</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
 	<link rel="stylesheet" href="../scripts/css/site.css">
 	<style>
@@ -950,6 +936,14 @@ instance variable</span></pre>
 					</div>
 				</article>
 			</div>
+			<div class="card-footer">
+				<ul class="pagination justify-content-center mb-4">
+					<li class="page-item"><a class="page-link btn-outline-primary"
+							href="../java/jvm.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link" href="../java/datatypes.html">Next
+							&rArr;</a></li>
+				</ul>
+			</div>
 			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
 					src="../scripts/images/top.jpeg" /></button>
 		</main>
@@ -978,45 +972,6 @@ instance variable</span></pre>
 			document.body.scrollTop = 0;
 			document.documentElement.scrollTop = 0;
 		}
-	</script>
-	<script>
-		const container = document.querySelector('.body');
-		const refreshIndicator = document.querySelector('.nav-container');
-
-		let startY = 0;
-
-		container.addEventListener('touchstart', (event) => {
-			startY = event.touches[0].pageY;
-		});
-
-		container.addEventListener('touchmove', (event) => {
-			const currentY = event.touches[0].pageY;
-			const pullDistance = currentY - startY;
-
-			if (pullDistance > 50) {
-				container.style.marginTop = `${pullDistance}px`;
-				refreshIndicator.style.display = 'block';
-			} else {
-				container.style.marginTop = '0';
-				refreshIndicator.style.display = 'none';
-			}
-		});
-
-		container.addEventListener('touchend', () => {
-			if (container.style.marginTop) {
-				// Trigger your refresh action here (e.g., AJAX request)
-				console.log('Refreshing data...');
-				refreshIndicator.style.display = 'block';
-
-				// Simulate data update after 1 second for demo purposes
-				setTimeout(() => {
-					container.style.marginTop = '0';
-					refreshIndicator.style.display = 'none';
-					// Update your content with new data
-					console.log('Data refreshed!');
-				}, 1000);
-			}
-		});
 	</script>
 	<script src="../scripts/js/site.js"></script>
 </body>

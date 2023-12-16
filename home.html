@@ -28,7 +28,7 @@
 	<nav class="navbar">
 		<div class="navbar-brand">
 			<a class="navbar-item" href="./home.html">
-				<img width="150" height="50" src="./scripts/images/logo.jpg" alt="Home" />
+				<img width="140" height="55" src="./scripts/images/logo100.png" alt="Home" />
 			</a>
 			<button class="navbar-burger" data-target="topbar-nav">
 				<span></span>
@@ -40,7 +40,7 @@
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
 					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
-								width="25" src="../scripts/images/home.png"></i></a>
+								width="25" src="./scripts/images/home.png"></i></a>
 					</li>
 					<li class="nav-item"><a class="nav-link1" href="./java/introduction.html">Java</a></li>
 					<li class="nav-item"><a class="nav-link1" href="./spring/introduction.html">Spring</a>
@@ -117,15 +117,6 @@
 			</div>
 		</main>
 	</div>
-	<script>
-		window.addEventListener('popstate', function (event) {
-			// Check if navigating back within your website
-			if (event.state && event.state.website === true) {
-				// Close the sidebar menu
-				document.getElementById("nav-panel-menu").style.display = "none";
-			}
-		});
-	</script>
 	<script>
 		window.addEventListener('DOMContentLoaded', () => {
 			window.scrollTo(0, 0);

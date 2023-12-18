@@ -8,8 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="RaviKalyan">
 	<title>Home</title>
-	<link rel="shortcut icon" type="image/x-icon" href="./scripts/images/tab_logo.png" />
-	<link rel="stylesheet" href="./scripts/css/site.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
+	<link rel="stylesheet" href="../scripts/css/site.css">
 	<style>
 		@media screen and (min-width: 1025px) {
 			.div-to-desk {
@@ -30,8 +30,8 @@
 <body>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<a class="navbar-item" href="./home.html">
-				<img width="140" height="55" src="./scripts/images/logo100.png" alt="Home" />
+			<a class="navbar-item" href="../home.html">
+				<img width="140" height="55" src="../scripts/images/logo100.png" alt="Home" />
 			</a>
 			<button class="navbar-burger" data-target="topbar-nav">
 				<span></span>
@@ -43,20 +43,20 @@
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
 					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
-								width="25" src="./scripts/images/home.png"></i></a>
+								width="25" src="../scripts/images/home.png"></i></a>
 					</li>
-					<li class="nav-item"><a class="nav-link1" href="./java/introduction.html">Java</a></li>
-					<li class="nav-item"><a class="nav-link1" href="./spring/introduction.html">Spring</a>
+					<li class="nav-item"><a class="nav-link1" href="../java/introduction.html">Java</a></li>
+					<li class="nav-item"><a class="nav-link1" href="../spring/introduction.html">Spring</a>
 					</li>
-					<li class="nav-item"><a class="nav-link1" href="./springboot/introduction.html">SpringBoot</a>
+					<li class="nav-item"><a class="nav-link1" href="../springboot/introduction.html">SpringBoot</a>
 					</li>
-					<li class="nav-item"><a class="nav-link1" href="./java/java8.html">Java 8
+					<li class="nav-item"><a class="nav-link1" href="../java/java8.html">Java 8
 							Features</a>
-					<li class="nav-item"><a class="nav-link1" href="./springboot/introduction.html">Design
+					<li class="nav-item"><a class="nav-link1" href="../springboot/introduction.html">Design
 							Patterns</a>
 					</li>
 					</li>
-					<li class="nav-item"><a class="nav-link1" href="./interview/interview-questions.html">Interview
+					<li class="nav-item"><a class="nav-link1" href="../interview/interview-questions.html">Interview
 							Questions</a></li>
 					<label class="theme-toggler div-to-hide">
 						<input type="checkbox" id="switch-theme-checkbox" />
@@ -78,15 +78,14 @@
 					<li class="nav-item" data-depth="0">
 						<ul class="nav-list">
 							<h4>Tutorials</h4>
-							<li class="nav-item"><a class="nav-link" href="./java/introduction.html">Java</a></li>
-							<li class="nav-item"><a class="nav-link" href="./spring/introduction.html">Spring</a></li>
+							<li class="nav-item"><a class="nav-link" href="../java/introduction.html">Java</a></li>
+							<li class="nav-item"><a class="nav-link" href="../spring/introduction.html">Spring</a></li>
 							<li class="nav-item"><a class="nav-link"
-									href="./springboot/introduction.html">SpringBoot</a></li>
-							<li class="nav-item"><a class="nav-link" href="./java/java8.html">Java 8 Features</a>
-							<li class="nav-item"><a class="nav-link" href="./designpatterns/introduction.html">Design
+									href="../springboot/introduction.html">SpringBoot</a></li>
+							<li class="nav-item"><a class="nav-link" href="../java/java8.html">Java 8 Features</a>
+							<li class="nav-item"><a class="nav-link" href="../designpatterns/introduction.html">Design
 									Patterns</a></li>
-							<li class="nav-item"><a class="nav-link"
-									href="./interview/interview-questions.html">Interview
+							<li class="nav-item"><a class="nav-link" href="../interview/interview-questions.html">Interview
 									Questions</a></li>
 						</ul>
 					</li>
@@ -100,32 +99,47 @@
 					<span></span>
 					<span></span>
 				</button>
+				<nav class="breadcrumbs">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+					</ul>
+				</nav>
 			</div>
 			<div class="doc">
+				<nav class="breadcrumbs div-to-hide">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+					</ul>
+				</nav>
 				<a class="div-to-desk">
 					<br>
 				</a>
 				<article>
-					<h3>Home Page</h3>
-					<div class="card-body">
-						<a class="navbar-brand pull-left figure" href="./java/introduction.html"><img
-								src="./scripts/images/java_round.jpeg"
-								style="height: 100px; max-width: 100%;margin: 10px;" alt="java Tutorials"
-								title="Java Tutorials">
-							<figcaption>Java</figcaption>
-						</a>
-						<a class="navbar-brand pull-left figure" href="./spring/spring-introduction.html"><img
-								src="./scripts/images/spring-round.png"
-								style="height: 96px; max-width: 100%;margin: 10px;" alt="spring Tutorials"
-								title="Spring Tutorials">
-							<figcaption>Spring</figcaption>
-						</a>
-						<a class="navbar-brand pull-left figure" href="./springboot/sb-introduction.html"><img
-								src="./scripts/images/spring-boot-round.webp"
-								style="height: 103px; max-width: 100%;margin: 10px;" alt="spring Tutorials"
-								title="SpringBoot Tutorials">
-							<figcaption>Springboot</figcaption>
-						</a>
+					<div class="col-lg-9 mb-4">
+						<div class="card h-100">
+							<h2>Interview Questions Page
+							</h2>
+							<div class="card-body figure">
+								<a class="navbar-brand pull-left" href="../java/java-interview-questions.html"><img
+										src="../scripts/images/questions_answer.png"
+										style="height: 100px; max-width: 100%;margin: 10px;" alt="java Interview"
+										title="Java Interview">
+									<figcaption>Java</figcaption>
+								</a>
+								<a class="navbar-brand pull-left" href="../spring/spring-interview-questions.html"><img
+										src="../scripts/images/questions_answer.png"
+										style="height: 100px; max-width: 100%;margin: 10px;" alt="Spring Interview"
+										title="Spring Interview">
+									<figcaption>Spring</figcaption>
+								</a>
+								<a class="navbar-brand pull-left" href="../springboot/sb-interview-questions.html"><img
+										src="../scripts/images/questions_answer.png"
+										style="height: 95px; max-width: 100%;margin: 10px;" alt="Spring Interview"
+										title="SpringBoot Interview">
+									<figcaption>Springboot</figcaption>
+								</a>
+							</div>
+						</div>
 					</div>
 				</article>
 			</div>
@@ -156,7 +170,7 @@
 			document.documentElement.scrollTop = 0;
 		}
 	</script>
-	<script src="./scripts/js/site.js"></script>
+	<script src="../scripts/js/site.js"></script>
 </body>
 <footer class="footer">
 	<p>©

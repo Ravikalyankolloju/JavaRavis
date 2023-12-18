@@ -4046,3 +4046,19 @@ body.show-toc button#toggle-toc {}
 	list-style: none;
 	border-radius: .25rem;
 }
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    color: #006d00;
+}
+summary {
+    display: list-item;
+    cursor: pointer;
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+}

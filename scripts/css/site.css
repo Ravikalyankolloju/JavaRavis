@@ -116,7 +116,7 @@
 	--nav-height--desktop: var(--body-min-height);
 	--nav-panel-menu-height: calc(100% - var(--drawer-height));
 	--nav-panel-explore-height: calc(50% + var(--drawer-height));
-	--nav-width: calc(260/var(--rem-base)*1rem);
+	--nav-width: calc(250/var(--rem-base)*1rem);
 	--toc-top: calc(var(--body-top));
 	--toc-height: calc(100vh - var(--toc-top) - 2.5rem);
 	--toc-width: calc(162/var(--rem-base)*1rem);
@@ -1248,7 +1248,7 @@ a+.breadcrumbs {
 	-webkit-hyphens: auto;
 	hyphens: auto;
 	line-height: var(--doc-line-height);
-	margin: var(--doc-margin);
+	--margin: var(--doc-margin);
 	max-width: var(--doc-max-width);
 	padding: 0 1rem 4rem
 }
@@ -1834,7 +1834,7 @@ body {
 	font-size: 15.2px;
 	font-weight: 500;
 	line-height: var(--doc-line-height);
-	padding: 0 1rem;
+	--padding: 0 1rem;
 	transition: color .2s
 }
 

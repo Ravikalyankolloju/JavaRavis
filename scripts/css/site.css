@@ -148,6 +148,12 @@ body {
 	tab-size: 4
 }
 
+img {
+	max-width: 100%;
+	object-fit: contain;
+}
+
+
 body ::-webkit-scrollbar {
 	height: .25rem;
 	width: .25rem

@@ -141,7 +141,7 @@ html {
 body {
 	word-wrap: anywhere;
 	background: var(--body-background);
-	font-family: var(--font-family);
+	font-family: var(--body-font-family);
 	line-height: var(--body-line-height);
 	-moz-tab-size: 4;
 	-o-tab-size: 4;

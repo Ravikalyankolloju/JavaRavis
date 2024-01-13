@@ -15,7 +15,7 @@
 	--color-jet-70: #222;
 	--color-jet-80: #191919;
 	--color-black: #000;
-	--font-family: "Open Sans", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 	--font-family-special: "Metropolis", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--link_hover-font-color: #104d92;
 	--mark-background-color: #39ff14;
@@ -1316,4 +1316,35 @@ code,kbd,pre,samp {
     background: #fefefe;
     color: #545454;
     padding: .5em
+}
+
+.ba {
+    background: #F9F9F9;
+}
+.oh {
+    border: 1px solid #E5E5E5;
+}
+.hljs-section, .hljs-meta {
+    color: #643820;
+}
+.hljs-tag, .hljs-attribute, .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-name {
+    color: #aa0d91;
+}
+.hljs-title.class_, .hljs-class .hljs-title, .hljs-type, .hljs-built_in, .hljs-params {
+    color: #5c2699;
+}
+.hljs-comment, .hljs-quote {
+    color: #007400;
+}
+.og {
+    padding: 32px;
+}
+.oe {
+    overflow-x: auto;
+}
+.hljs-title, .hljs-symbol, .hljs-bullet, .hljs-number {
+    color: #1c00cf;
+}
+.hljs-code, .hljs-string, .hljs-meta .hljs-string {
+    color: #c41a16;
 }

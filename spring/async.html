@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="RaviKalyan">
-	<title>Introduction</title>
+	<title>Async</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
 	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
 	<link rel='stylesheet' id='blogus-fonts-css'
@@ -55,7 +55,7 @@
 		</div>
 		<div id="topbar-nav" class="navbar-menu">
 			<div class="navbar-end">
-					<div class="navbar-item" style="text-align: center;">
+				<div class="navbar-item" style="text-align: center;">
 					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
 								width="25" src="../scripts/images/home.png"></i></a>
 					</li>
@@ -104,8 +104,8 @@
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../spring/transactions.html">Spring Transactions</a></li>
 							<h4>Spring Async</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/async.html">Spring Async</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/async.html">Spring
+									Async</a></li>
 						</ul>
 					</li>
 				</div>
@@ -122,7 +122,7 @@
 					<ul>
 						<li><a href="../home.html">Home</a></li>
 						<li><a href="../spring/introduction.html">Spring</a></li>
-						<li><a href="../spring/introduction.html">Introduction</a></li>
+						<li><a href="../spring/introduction.html">Async</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -131,7 +131,7 @@
 					<ul>
 						<li><a href="../home.html">Home</a></li>
 						<li><a href="../spring/introduction.html">Spring</a></li>
-						<li><a href="../spring/introduction.html">Introduction</a></li>
+						<li><a href="../spring/introduction.html">Async</a></li>
 					</ul>
 					<hr>
 				</nav>
@@ -140,14 +140,69 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<p>The<strong> @Async </strong>annotation<strong> </strong>lets us
+							run code in the background, so our main thread can keep
+							chugging along without waiting for slower tasks to finish. But, like all secret weapons,
+							it’s important to use it wisely and know its limits. In this post, we’re gonna dive deep
+							into the <strong>@Async</strong> magic and the gotchas we should watch out for
+							when we are using it in our Spring Boot projects. Let’s get started!</p>
+						<p>First let’s learn the basics of how to use @Async in our
+							application.</p>
+						<pre
+							class="nz oa ob oc od oe of og bo oh ba bj"><span id="e63b" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph=""><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-meta">@EnableAsync</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title.class">BackendAsjApplication</span> {<br>}</span></pre>
+						<p>First of all, we need to enable <strong>@Async</strong> in our Spring Boot application. To do
+							this, we will need
+							to add the <strong>@EnableAsync</strong> annotation to a configuration class
+							or to our main application file. This will enable asynchronous behavior for all methods
+							annotated with <strong>@Async</strong> in the application.</p>
+						<p>We will also need to create a Bean specifying the configurations for methods annotated with
+							@Async. We can set things like max threadpool size, queue size etc. Be careful while adding
+							these configurations though. Otherwise, we might run out of memory very soon. I usually also
+							add a log to warn me when the queue size is full and there are no more threads to pick up
+							the new incoming task.</p>
+						<pre
+							class="nz oa ob oc od oe of og bo oh ba bj"><span id="9489" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph=""> <span class="hljs-meta">@Bean</span><br> <span class="hljs-keyword">public</span> ThreadPoolTaskExecutor <span class="hljs-title.function">taskExecutor</span><span class="hljs-params">()</span> {<br>  <span class="hljs-type">ThreadPoolTaskExecutor</span> <span class="hljs-variable">executor</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title.class">ThreadPoolTaskExecutor</span>();<br>  executor.setCorePoolSize(<span class="hljs-number">2</span>);<br>  executor.setMaxPoolSize(<span class="hljs-number">2</span>);<br>  executor.setQueueCapacity(<span class="hljs-number">500</span>);<br>  executor.setThreadNamePrefix(<span class="hljs-string">"MyAsyncThread-"</span>);<br>  executor.setRejectedExecutionHandler((r, executor1) -&gt; log.warn(<span class="hljs-string">"Task rejected, thread pool is full and queue is also full"</span>));<br>  executor.initialize();<br>  <span class="hljs-keyword">return</span> executor;<br> }</span></pre>
+						<p>Now, let’s use it. Suppose we have a service class that contains a method that we want to
+							make asynchronous. We will annotate this method with @Async.</p>
+						<pre
+							class="nz oa ob oc od oe of og bo oh ba bj"><span id="d9d8" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph=""><span class="hljs-meta">@Service</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title.class">PurchaseService</span> {<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title.function">purchase</span><span class="hljs-params">()</span>{<br>        sendEmail();<br>    }<br><br>    <span class="hljs-meta">@Async</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title.function">sendEmail</span><span class="hljs-params">()</span>{<br>        <span class="hljs-comment">// Asynchronous code</span><br>    }<br>}</span></pre>
+						<p>
+							Now, when we call this method, it will return immediately, freeing up the calling thread
+							(usually the main thread) to continue with other tasks. The method will continue to execute
+							in the background and the result will be returned to the calling thread at a later time.
+							Since we have marked our @Async method here with void, we are not really interested in when
+							it completes.
+						</p>
+						<p>
+							Pretty easy and pretty powerful, right? (Of course there are a lot more configurations that
+							we can do but the above code is enough to run a task fully async)
+						</p>
+						<p>
+							But, before we start annotating all of our methods with @Async, there are a few gotchas that
+							we need to be aware of.
+						</p>
+						<h4>@Async method needs to be in a different class</h4>
+						<p>When using the @Async annotation, it is important to note that we cannot call an @Async
+							method from within the same class. This is because doing so will lead to an infinite loop
+							and cause the application to hang.</p>
+						<p>Now you might be wondering, can I call an async method from within another async method? The
+							short answer is no. When an async method is called, it’s executed in a different thread and
+							the calling thread moves on to the next task. If the calling thread itself is an async
+							method, it has no way of waiting for the called async method to finish before moving on,
+							which can lead to unexpected behavior.</p>
+						<h4>@Async and @Transcational don’t play well</h4>
+						<p>In conclusion, the @Async annotation in Spring Boot is a
+							powerful tool for improving the performance and scalability of your application. But, it’s
+							important to use it with care and be aware of its limitations. By understanding these
+							gotchas and using techniques like <code class="cw pn po pp of b">CompletableFuture</code>
+							and an <code class="cw pn po pp of b">Executor</code>, you can make the most of the @Async
+							annotation and take your application to the next level.</p>
 					</div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link" href="#">Previous
-							&rArr;</a></li>
+					<li class="page-item"><a class="page-link btn-outline-primary" href="#">&lArr; Previous</a></li>
 					<li class="page-item"><a class="page-link" href="#">Next
 							&rArr;</a></li>
 				</ul>

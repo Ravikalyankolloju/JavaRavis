@@ -16,7 +16,7 @@
 	--color-jet-80: #191919;
 	--color-black: #000;
 	--font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
-	--font-family-special: "Metropolis", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-family-special: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 	--link_hover-font-color: #104d92;
 	--mark-background-color: #39ff14;
 	--rem-base: 18;

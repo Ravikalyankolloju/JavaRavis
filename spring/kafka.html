@@ -181,20 +181,487 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<h2>What is Apache Kafka?</h2>
+						<p>Apache Kafka is an open-source distributed event streaming platform used by thousands of
+							companies for high-performance data pipelines, streaming analytics, data integration, and
+							mission-critical applications.</p>
+						<h2>Apache Kafka Core Concepts</h2>
+						<div>
+							<p>We will discuss following Apache Kafka core concepts:</p>1. Kafka Cluster<br>2. Kafka
+							Broker<br>3. Kafka Producer<br>4. Kafka Consumer<br>5. Kafka Topic<br>6. Kafka
+							Partitions<br>7. Kafka Offsets<br>8. Kafka Consumer Group
+						</div>
+						<p>Let's begin with Kafka cluster.</p>
+						<h1>1. Kafka Cluster</h1>
+						<p>Since Kafka is a distributed system, it acts as a cluster. A Kafka cluster consists of a set
+							of brokers. A cluster has a minimum of 3 brokers</p>
+						<p>The following diagram shows Kafka cluster with three Kafka brockers:</p>
+						<img
+							src="https://blogger.googleusercontent.com/img/a/AVvXsEi9hrIWpPIyRZ5rVEc0K3UZ7_s2IUxnZvF5DB0W5Pp9mfZQFKuiwVsasWAlUOueWCQv9z8qR8DcoZqIxImgjEpmDrQHAne1y7odpkE87e-QGzwWCarB2k8ZA_ZH07AMft9ZPj7xLZXz8cu4ugCDU5c2XCeJTChNwJ-8zb9MWxdvkzAx-Z1wEPqZK2JZ" />
+						<h1>2. Kafka Broker</h1>
+						<p>The broker is the Kafka server. It's just a meaningful name given to the Kafka server. And
+							this name makes sense as well because all that Kafka does is act as a message broker between
+							producer and consumer. </p>
+						<p>The producer and consumer don't interact directly. They use the Kafka server as an agent or a
+							broker to exchange messages.</p>
+						<p>The following diagram shows a Kafka broker, it acts as an agent or broker to exchange
+							messages between Producer and Consumer:</p>
+						<img
+							src="https://blogger.googleusercontent.com/img/a/AVvXsEiBTAZMBDniTdXHsiadf7DJbypCOFO0WjQhj5PnWAYTF58saqG6sbQu6CJBXFuB3mvbtm_D29IXzwScxUwyXGyuT3Sq3XCzymEGVUBReiEWfn7EcV-mPpRRXCIvIiSs6FBGLkcjb7YJRV3ysSoUMc5unD7G5867FY77MLxk95I_LeHYi1cH71TOPe8w" />
+						<h1>3. Kafka Producer</h1>
+						<p>Producer is an application that sends messages. It does not send messages directly to the
+							recipient. It sends messages only to the Kafka server.</p>
+						<p>The following diagram shows Producer sends messages directly to Kafka broker:</p>
+						<img
+							src="https://blogger.googleusercontent.com/img/a/AVvXsEiBTAZMBDniTdXHsiadf7DJbypCOFO0WjQhj5PnWAYTF58saqG6sbQu6CJBXFuB3mvbtm_D29IXzwScxUwyXGyuT3Sq3XCzymEGVUBReiEWfn7EcV-mPpRRXCIvIiSs6FBGLkcjb7YJRV3ysSoUMc5unD7G5867FY77MLxk95I_LeHYi1cH71TOPe8w" />
+						<h1>4. Kafka Consumer</h1>
+						<p>Consumer is an application that reads messages from the Kafka server.</p>
+						<p>If producers are sending data, they must be sending it to someone, right? The consumers are
+							the recipients. But remember that the producers don't send data to a recipient address. They
+							just send it to the Kafka server. </p>
+						<p>Anyone who is interested in that data can come forward and take it from the Kafka server. So,
+							any application that requests data from a Kafka server is a consumer, and they can ask for
+							data sent by any producer provided they have permission to read it.</p>
+						<p>The following diagram shows Producer sends messages directly to the Kafka broker and the
+							Consumer consumes or reads messages from the Kafka broker:</p>
+						<img
+							src="https://blogger.googleusercontent.com/img/a/AVvXsEiBTAZMBDniTdXHsiadf7DJbypCOFO0WjQhj5PnWAYTF58saqG6sbQu6CJBXFuB3mvbtm_D29IXzwScxUwyXGyuT3Sq3XCzymEGVUBReiEWfn7EcV-mPpRRXCIvIiSs6FBGLkcjb7YJRV3ysSoUMc5unD7G5867FY77MLxk95I_LeHYi1cH71TOPe8w" />
+						<h1>5. Kafka Topic</h1>
+						<p>We learned that producer sends data to the Kafka broker. Then a consumer can ask for data
+							from the Kafka broker. But the question is, Which data? We need to have some identification
+							mechanism to request data from a broker. There comes the Kafka topic.</p>
+						<ul>
+							<li>Topic is like a table in a database or folder in a file system.&nbsp;</li>
+							<li>Topic is identified by a name.&nbsp;</li>
+							<li>You can have any number of topics.</li>
+						</ul>
+						<p>The following diagram shows two Topics are created in a Kafka broker:</p>
+						<img
+							src="https://blogger.googleusercontent.com/img/a/AVvXsEhlKR0H-usK8tqw4l6ZBotEdj0GlufBMIYymVIarTvZdq0mRwm4tmB0zZIuSFFEGh2r_c5oK2J2TYVxbzufIs3leif1K0ZOOG6gTZPI7_5vsGcSlvEHMBJVGM-WjSudn17PTFwcu4BBqb2Ip8Q9vZke57l7DmVOqOJXYyRaPGhjpX4yw47yOagYN_ws" />
+						<h1>6. Kafka Partitions</h1>
+						<p>Kafka topics are divided into a number of partitions, which contain records in an
+							unchangeable sequence.</p>
+						<p>Kafka Brokers will store messages for a topic. But the capacity of data can be enormous and
+							it may not be possible to store in a single computer. Therefore it will be partitioned into
+							multiple parts and distributed among multiple computers since Kafka is a distributed system.
+						</p>
+						<p>The following diagram shows Kafka's topic is further divided into a number of partitions:</p>
+						<img
+							src="https://blogger.googleusercontent.com/img/a/AVvXsEjy5qEhC7_hrTlauMSEdhjOkybBZVp44eVVIpASv-s3-llmp_lqf9MqArwSu-LhIq6qovoOBXwcYz0VZK7fjsniTCjxUi09UlhhO4-R6VYZSpA9ZJyskfGXZaOJQTnt93fvcUdaoY9KEyph6QfeTQegZ5Os5Y_tVoV-UwPl1Ca-jrTpx89SnmWkh3L3" />
+						<h1>7. Kafka Offsets</h1>
+						<p>Offset is a sequence of ids given to messages as they arrive at a partition. Once the offset
+							is assigned it will never be changed. The first message gets an offset zero. The next
+							message receives an offset one and so on.</p>
+						<img
+							src="https://blogger.googleusercontent.com/img/a/AVvXsEgLjNHk8K7-N07M7jGV7a_pSMB94bH0e1S4iWghXORilNuVztnJiKMZsbHLt9rQvjoEY8tz4vCafPTwBecVEwO1z5lDXqdI2qOGsnxWwVEjNoL1U_SYGcQdsigcSuRHYzBxNaG4yF0G7cU82nxHRaIA6YtNueBwVyTonbD8t8cmrJ_SK-NppnLXuqoZ" />
+						<h1>8. Kafka Consumer Group</h1>
+						<p>A consumer group contains one or more consumers working together to process the messages.</p>
+						<img
+							src="https://blogger.googleusercontent.com/img/a/AVvXsEipRZwK4ijG2kIS4YhFXs0tSxXxRneQwp_BID8Kr5uPRQTWL6ps8F2z-bukwkGDJVTE-EBK8u2poCdJ-He4_O0Sie_KOPChIOZACHBA6A-1T4lqSVe_qO2064m-A93pPK4y6YhJYhyEXxInPw8I04qLxFFrrUcfV8q2ZNl7LrmFXB3XHc_D1lupVKwP" />
+						<h1>Spring Boot Kafka Producer and Consumer Example</h1>
+						<p>In this section of the tutorial, we will learn how to create&nbsp;<b>Kafka
+								Producer</b>&nbsp;and&nbsp;<b>Consumer</b>&nbsp;in Spring Boot Kafka project.</p>
+						<p>The Spring Team provides <b>Spring for Apache Kafka</b> dependency to work with the
+							development of
+							Kafka-based messaging solutions. </p>
+						<p>In this tutorial, we use Kafka as a messaging system to send messages between Producers and
+							Consumers.</p>
+						<h1>1. Install and Setup Apache Kafka</h1>
+						<p>1. Download Kafka from the official website at <a
+								href="https://kafka.apache.org/downloads">https://kafka.apache.org/downloads</a>
+						</p>
+						<p>2. Extract Kafka zip in the local file system</p>
+						<p>Run the following commands in order to start all services in the correct order:</p>
+						<p>3. Start Zookeeper service.</p>
+						<p>Use the below command to start the Zookeeper service:</p>
+						<pre class="line-numbers language-bash"
+							style="background: rgb(245, 242, 240); border-color: rgb(229, 229, 229); border-style: solid; border-width: 0.1rem 0.5rem; box-sizing: border-box; counter-reset: linenumber 0; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 15px; hyphens: none; line-height: 1.5; margin-bottom: 0.5em; margin-top: 0.5em; overflow-wrap: normal; overflow: auto; padding: 1em 1em 1em 3.8em; position: relative; tab-size: 4; text-shadow: rgb(255, 255, 255) 0px 1px; word-break: normal;"><code class="language-bash hljs" style="background: 0px 0px; border-radius: 0px; border: none; box-sizing: border-box; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; hyphens: none; line-height: 1.5; margin: 0px; overflow-wrap: normal; padding: 0px; position: relative; tab-size: 4; text-shadow: rgb(255, 255, 255) 0px 1px; white-space: inherit; word-break: normal; word-spacing: normal;"><span class="token comment" style="box-sizing: border-box; color: slategrey;"><span class="hljs-comment"># Start the ZooKeeper service</span></span>
+<span class="token comment" style="box-sizing: border-box; color: slategrey;"><span class="hljs-comment"># Note: Soon, ZooKeeper will no longer be required by Apache Kafka.</span></span>
+$ bin/zookeeper-server-start.sh config/zookeeper.properties</code></pre>
+						<p>4. Start Kafka Broker</p>
+						<p>Open another terminal session and run the below command to start the Kafka broker:
+						</p>
+						<pre class="line-numbers language-bash"
+							style="background: rgb(245, 242, 240); border-color: rgb(229, 229, 229); border-style: solid; border-width: 0.1rem 0.5rem; box-sizing: border-box; counter-reset: linenumber 0; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 15px; hyphens: none; line-height: 1.5; margin-bottom: 0.5em; margin-top: 0.5em; overflow-wrap: normal; overflow: auto; padding: 1em 1em 1em 3.8em; position: relative; tab-size: 4; text-shadow: rgb(255, 255, 255) 0px 1px; word-break: normal;"><code class="language-bash hljs" style="background: 0px 0px; border-radius: 0px; border: none; box-sizing: border-box; font-family: Consolas, Monaco, &quot;Andale Mono&quot;, &quot;Ubuntu Mono&quot;, monospace; font-size: 1em; hyphens: none; line-height: 1.5; margin: 0px; overflow-wrap: normal; padding: 0px; position: relative; tab-size: 4; text-shadow: rgb(255, 255, 255) 0px 1px; white-space: inherit; word-break: normal; word-spacing: normal;"><span class="token comment" style="box-sizing: border-box; color: slategrey;"><span class="hljs-comment"># Start the Kafka broker service</span></span>
+$ bin/kafka-server-start.sh config/server.properties<span aria-hidden="true" class="line-numbers-rows" style="border-right: 1px solid rgb(153, 153, 153); box-sizing: border-box; left: -3.8em; letter-spacing: -1px; pointer-events: none; position: absolute; top: 0px; user-select: none; width: 3em;"><span style="box-sizing: border-box; counter-increment: linenumber 1; display: block;"></span><span style="box-sizing: border-box; counter-increment: linenumber 1; display: block;"></span></span></code></pre>
+						<p>Once all services have successfully launched, you will have a basic Kafka environment
+							running
+							and ready to use.</p>
+						<h1>2. Create and Setup Spring Boot Project in IntelliJ</h1>
+						<P>Create a Spring boot project using <a
+								href="https://start.spring.io/">https://start.spring.io/</a></P>
+						<p>Add dependencies:</p>
+						<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
+							style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code class="notranslate hljs xml" style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+   
+ <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.kafka<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-kafka<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+						<p>Import in IntelliJ and run the spring boot application</p>
+						<h1>3. Configure Kafka Producer and Consumer in an application.properties File</h1>
+						<p style="background-color: white; box-sizing: border-box; color: #24292f;">In
+							the&nbsp;<i>application.properties</i>&nbsp;file, add Kafka broker address as well as
+							Consumer and Producer related configuration.</p>
+						<p style="background-color: white; box-sizing: border-box; color: #24292f;">
+							Open the&nbsp;<i>application.properties</i>&nbsp;file and the following content to it:</p>
+						<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
+							style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code class="notranslate hljs css" style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"><span class="hljs-selector-tag">spring</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.consumer</span><span class="hljs-selector-class">.bootstrap-servers</span>: <span class="hljs-selector-tag">localhost</span><span class="hljs-selector-pseudo">:9092</span>
+<span class="hljs-selector-tag">spring</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.consumer</span><span class="hljs-selector-class">.group-id</span>: <span class="hljs-selector-tag">group-id</span>
+<span class="hljs-selector-tag">spring</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.consumer</span><span class="hljs-selector-class">.auto-offset-reset</span>: <span class="hljs-selector-tag">earliest</span>
+<span class="hljs-selector-tag">spring</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.consumer</span><span class="hljs-selector-class">.key-deserializer</span>: <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.apache</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.common</span><span class="hljs-selector-class">.serialization</span><span class="hljs-selector-class">.StringDeserializer</span>
+<span class="hljs-selector-tag">spring</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.consumer</span><span class="hljs-selector-class">.value-deserializer</span>: <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.apache</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.common</span><span class="hljs-selector-class">.serialization</span><span class="hljs-selector-class">.StringDeserializer</span>
 
+<span class="hljs-selector-tag">spring</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.producer</span><span class="hljs-selector-class">.bootstrap-servers</span>: <span class="hljs-selector-tag">localhost</span><span class="hljs-selector-pseudo">:9092</span>
+<span class="hljs-selector-tag">spring</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.producer</span><span class="hljs-selector-class">.key-serializer</span>: <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.apache</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.common</span><span class="hljs-selector-class">.serialization</span><span class="hljs-selector-class">.StringSerializer</span>
+<span class="hljs-selector-tag">spring</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.producer</span><span class="hljs-selector-class">.value-serializer</span>: <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.apache</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.common</span><span class="hljs-selector-class">.serialization</span><span class="hljs-selector-class">.StringSerializer</span>
+</code></pre>
+						<p>Let's understand the above spring boot provided Kafka properties:</p>
+						<p style="background-color: white; box-sizing: border-box; color: #24292f;">
+							&nbsp;<i>spring.kafka.consumer.group-id</i>&nbsp;- specifies a unique string that identifies
+							the consumer group this consumer belongs to.</p>
+						<p style="background-color: white; box-sizing: border-box; color: #24292f;">
+							&nbsp;<i>spring.kafka.consumer.auto-offset-reset property</i>&nbsp;- specifies what to do
+							when there is no initial offset in Kafka or if</p>
+						<p>the current offset does not exist anymore on the server (e.g. because that data has been
+							deleted):</p>
+						<ul
+							style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px; padding-left: 2em;">
+							<li style="box-sizing: border-box;">earliest: automatically reset the offset to the earliest
+								offset</li>
+							<li style="box-sizing: border-box; margin-top: 0.25em;">latest: automatically reset the
+								offset to the latest offset</li>
+							<li style="box-sizing: border-box; margin-top: 0.25em;">none: throw an exception to the
+								consumer if no previous offset is found for the consumer’s group</li>
+							<li style="box-sizing: border-box; margin-top: 0.25em;">anything else: throw an exception to
+								the consumer.</li>
+						</ul>
+						<div>
+
+							<h2 style="text-align: left;">4. Create Kafka Topic</h2>
+							<div>
+								<p
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									To create a topic on startup, add a bean of type&nbsp;<i>NewTopic</i>.
+									If the topic already exists, the bean is ignored. We will use the topic
+									name "javaguides" in this example.</p>Let's create
+								a&nbsp;<i>KafkaTopicConfig</i>&nbsp;file and add the following content:<div
+									class="snippet-clipboard-content position-relative overflow-auto"
+									style="box-sizing: border-box; overflow: auto; position: relative;">
+									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
+										style="border-radius: 6px; box-sizing: border-box; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code class="notranslate hljs css" style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; color: #24292f; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"><span class="hljs-selector-tag">package</span> <span class="hljs-selector-tag">net</span><span class="hljs-selector-class">.javaguides</span><span class="hljs-selector-class">.springbootkafka</span>;
+
+<span class="hljs-selector-tag">import</span> <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.apache</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.clients</span><span class="hljs-selector-class">.admin</span><span class="hljs-selector-class">.NewTopic</span>;
+<span class="hljs-selector-tag">import</span> <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.springframework</span><span class="hljs-selector-class">.context</span><span class="hljs-selector-class">.annotation</span><span class="hljs-selector-class">.Bean</span>;
+<span class="hljs-selector-tag">import</span> <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.springframework</span><span class="hljs-selector-class">.context</span><span class="hljs-selector-class">.annotation</span><span class="hljs-selector-class">.Configuration</span>;
+<span class="hljs-selector-tag">import</span> <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.springframework</span><span class="hljs-selector-class">.kafka</span><span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.TopicBuilder</span>;
+
+<span class="hljs-keyword">@Configuration</span>
+public class KafkaTopicConfig {
+
+    <span class="hljs-keyword">@Bean</span>
+    public NewTopic javaguidesTopic(){
+        <span class="hljs-selector-tag">return</span> <span class="hljs-selector-tag">TopicBuilder</span><span class="hljs-selector-class">.name</span>("<span class="hljs-selector-tag">javaguides</span>")
+                <span class="hljs-selector-class">.build</span>();
+    }
+}</code></pre>
+									<h2 style="text-align: left;">5. Create Kafka Producer</h2>
+									<div>
+										<p
+											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+											Creating a producer will write our messages on the topic.</p>
+										<h3 style="text-align: left;">KafkaTemplate</h3>
+										<h3
+											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 1.25em; line-height: 1.25; margin-bottom: 16px; margin-top: 24px;">
+											<a aria-hidden="true" class="anchor"
+												href="https://github.com/RameshMF/springboot-kafka-tutorial/wiki/6.-Create-Kafka-Producer#kafkatemplate"
+												id="user-content-kafkatemplate"
+												style="background-color: transparent; box-sizing: border-box; float: left; line-height: 1; margin-left: -20px; padding-right: 4px; text-decoration-line: none; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s;"><svg
+													aria-hidden="true" class="octicon octicon-link" height="16"
+													version="1.1" viewBox="0 0 16 16" width="16">
+													<path
+														d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"
+														fill-rule="evenodd"></path>
+												</svg></a>
+										</h3>
+										<p
+											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+											Well, Spring boot provides an auto-configuration for
+											Spring’s&nbsp;<i>KafkaTemplate</i>&nbsp;so&nbsp;you can autowire
+											it directly in your own beans.</p>
+										<p
+											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+											For example:</p>
+										<div class="snippet-clipboard-content position-relative overflow-auto"
+											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+											<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
+												style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code class="notranslate hljs typescript" style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">package net.javaguides.springbootkafka.kafka;
+
+<span class="hljs-keyword">import</span> net.javaguides.springbootkafka.utils.AppConstants;
+<span class="hljs-keyword">import</span> org.apache.kafka.clients.admin.NewTopic;
+<span class="hljs-keyword">import</span> org.slf4j.Logger;
+<span class="hljs-keyword">import</span> org.slf4j.LoggerFactory;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.kafka.core.KafkaTemplate;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KafkaProducer</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> final Logger LOGGER = LoggerFactory.getLogger(KafkaProducer.class);
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> KafkaTemplate&lt;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span>&gt; kafkaTemplate;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">sendMessage</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> message</span>)</span>{
+        LOGGER.info(<span class="hljs-built_in">String</span>.format(<span class="hljs-string">"Message sent -&gt; %s"</span>, message));
+        kafkaTemplate.send(AppConstants.TOPIC_NAME, message);
+    }
+}
+</code></pre>
+										</div>
+										<p
+											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+											Create a <i>utils </i>package and within this package
+											create&nbsp;<i>AppConstants</i>&nbsp;with the following content:
+										</p>
+										<div class="snippet-clipboard-content position-relative overflow-auto"
+											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+											<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
+												style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code class="notranslate hljs java" style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"><span class="hljs-keyword">package</span> net.javaguides.springbootkafka.utils;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppConstants</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String TOPIC_NAME = <span class="hljs-string">"javaguides"</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String GROUP_ID = <span class="hljs-string">"group_id"</span>;
+}
+</code></pre>
+										</div>
+										<p
+											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
+											<i>KafKaProducer</i>&nbsp;class
+											uses&nbsp;<i>KafkaTemplate</i>&nbsp;to send messages to the
+											configured topic name.
+										</p>
+									</div>
+								</div>
+							</div>
+							<h2 style="text-align: left;">6. Create REST API to Send Message</h2>
+							<div>
+								<p
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									Create controller package, within controller package
+									create&nbsp;<i>KafkaProducerController</i>&nbsp;with the following
+									content to it:</p>
+								<div class="snippet-clipboard-content position-relative overflow-auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
+										style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code class="notranslate hljs kotlin" style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"><span class="hljs-keyword">package</span> net.javaguides.springbootkafka;
+
+<span class="hljs-keyword">import</span> net.javaguides.springbootkafka.kafka.KafkaProducer;
+<span class="hljs-keyword">import</span> org.springframework.http.ResponseEntity;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.<span class="hljs-keyword">annotation</span>.*;
+
+<span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping(<span class="hljs-meta-string">"/api/v1/kafka"</span>)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KafkaProducerController</span> </span>{
+
+    <span class="hljs-keyword">private</span> KafkaProducer kafkaProducer;
+
+    <span class="hljs-keyword">public</span> KafkaProducerController(KafkaProducer kafkaProducer) {
+        <span class="hljs-keyword">this</span>.kafkaProducer = kafkaProducer;
+    }
+
+    <span class="hljs-meta">@GetMapping(<span class="hljs-meta-string">"/publish"</span>)</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;String&gt; publish(<span class="hljs-meta">@RequestParam(<span class="hljs-meta-string">"message"</span>)</span> String message){
+        kafkaProducer.sendMessage(message);
+        <span class="hljs-keyword">return</span> ResponseEntity.ok(<span class="hljs-string">"Message sent to kafka topic"</span>);
+    }
+}</code></pre>
+								</div>
+							</div>
+							<div>
+								<h3
+									style="background-color: white; border-bottom: 1px solid var(--color-border-muted); box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; line-height: 1.25; margin: 24px 0px 16px; padding-bottom: 0.3em;">
+									See Topic Messages via Command Line:</h3>
+								<div class="snippet-clipboard-content position-relative overflow-auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
+										style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code class="notranslate hljs coffeescript" style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">bin/kafka-<span class="hljs-built_in">console</span>-consumer.sh --topic javaguides --<span class="hljs-keyword">from</span>-beginning --bootstrap-server localhost:<span class="hljs-number">9092</span>
+</code></pre>
+								</div>
+								<p
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
+									Make sure to change the topic name. In our case "javaguides" is the
+									topic name.</p>
+							</div>
+							<h2 style="text-align: left;">7. Create Kafka Consumer</h2>
+							<div>
+								<p
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									Kafka Consumer is &hairsp;the service that will be responsible for
+									reading messages and processing them according to the needs of your own
+									business logic.&nbsp;</p>
+								<p
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									To set it up, enter the following:</p>
+								<div class="snippet-clipboard-content position-relative overflow-auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
+										style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code class="notranslate hljs java" style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"><span class="hljs-keyword">package</span> net.javaguides.springbootkafka.kafka;
+
+<span class="hljs-keyword">import</span> net.javaguides.springbootkafka.utils.AppConstants;
+<span class="hljs-keyword">import</span> org.slf4j.Logger;
+<span class="hljs-keyword">import</span> org.slf4j.LoggerFactory;
+<span class="hljs-keyword">import</span> org.springframework.kafka.annotation.KafkaListener;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KafKaConsumer</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(KafKaConsumer.class);
+
+    <span class="hljs-meta">@KafkaListener(topics = AppConstants.TOPIC_NAME,
+                    groupId = AppConstants.GROUP_ID)</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">consume</span><span class="hljs-params">(String message)</span></span>{
+        LOGGER.info(String.format(<span class="hljs-string">"Message received -&gt; %s"</span>, message));
+    }
+}
+</code></pre>
+									<div class="zeroclipboard-container position-absolute right-0 top-0"
+										style="animation: 200ms ease 0s 1 normal both running fade-in; box-sizing: border-box; position: absolute; right: 0px; top: 0px;">
+										<clipboard-copy aria-label="Copy"
+											class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+											data-copy-feedback="Copied!" data-tooltip-direction="w" role="button"
+											style="appearance: none; background-color: var(--color-btn-bg); border-color: var(--color-btn-border); border-image: initial; border-radius: 6px; border-style: solid; border-width: 1px; box-shadow: var(--color-btn-shadow),var(--color-btn-inset-shadow); box-sizing: border-box; color: var(--color-btn-text); cursor: pointer; display: inline-block; font-size: 14px; line-height: 20px; margin: 8px; padding: 0px; position: relative; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s; user-select: none; vertical-align: middle; white-space: nowrap;"
+											tabindex="0" value="package net.javaguides.springbootkafka.kafka;
+
+import net.javaguides.springbootkafka.utils.AppConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
+
+@Service
+public class KafKaConsumer {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(KafKaConsumer.class);
+
+    @KafkaListener(topics = AppConstants.TOPIC_NAME,
+                    groupId = AppConstants.GROUP_ID)
+    public void consume(String message){
+        LOGGER.info(String.format(&quot;Message received -> %s&quot;, message));
+    }
+}"><svg aria-hidden="true" class="octicon octicon-copy js-clipboard-copy-icon m-2" data-view-component="true"
+												height="16" version="1.1" viewBox="0 0 16 16" width="16">
+												<path
+													d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+													fill-rule="evenodd"></path>
+												<path
+													d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+													fill-rule="evenodd"></path>
+											</svg></clipboard-copy>
+									</div>
+								</div>
+								<p
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									Here, we told our method void to consume (String message) to subscribe
+									to the user’s topic and just emit every message to the application log.
+									In your real application, you can handle messages the way your business
+									requires you to.</p>
+								<p
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									KafkaListener endpoint:</p>
+								<div class="snippet-clipboard-content position-relative overflow-auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 0px; overflow: auto; position: relative;">
+									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
+										style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code class="notranslate hljs typescript" style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">    <span class="hljs-meta">@KafkaListener</span>(topics = AppConstants.TOPIC_NAME,
+                    groupId = AppConstants.GROUP_ID)
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">consume</span>(<span class="hljs-params"><span class="hljs-built_in">String</span> message</span>)</span>{
+        LOGGER.info(<span class="hljs-built_in">String</span>.format(<span class="hljs-string">"Message received -&gt; %s"</span>, message));
+    }</code></pre>
+								</div>
+							</div>
+							<h2 style="text-align: left;">8. Demo</h2>
+							<div><span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+									style="background-color: white; color: #24292f; font-size: 16px;">Let's
+									run the Spring boot application and have the demo. Make sure
+									that&nbsp;</span><span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+									style="background-color: white; color: #24292f; font-size: 16px;">Zookeeper
+									and Kafka services should be up and running.</span></div>
+							<div><span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+									style="background-color: white; color: #24292f; font-size: 16px;"><br></span>
+							</div>
+							<div><span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+									style="background-color: white; color: #24292f; font-size: 16px;">Open a
+									browser and hit the below link to call a REST API:</span></div>
+							<div><span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+									style="background-color: white; color: #24292f; font-size: 16px;"><br></span>
+							</div>
+							<div><span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+									style="background-color: white; color: #24292f; font-size: 16px;"><a
+										href="http://localhost:8080/api/v1/kafka/publish?message=hello%20world"
+										target="_blank">http://localhost:8080/api/v1/kafka/publish?message=hello%20world</a><br></span>
+							</div>
+							<div><span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+									style="background-color: white; color: #24292f; font-size: 16px;"><br></span>
+							</div>
+							<div><span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+									style="background-color: white; color: #24292f; font-size: 16px;">
+									<div class="separator" style="clear: both; text-align: center;"><a
+											href="https://blogger.googleusercontent.com/img/a/AVvXsEjfrZCZCa4lHPnRB5At6ri4CT-TSXDVzeGLDyriGcidkQ7t__OvmzYpfJe3Gpd5mxLF0a7cRIg9RhPRZLxold1TXRIfjvpy4OsJgEdfLUXYF3G4li99ogA5tkWa9iIXzXJsMlkpJDcoD3qUNrXwgP2G7eH2VvYbEjTDelmnyuxPIYGSdDcLR5ACQqGl"
+											style="margin-left: 1em; margin-right: 1em;"><img data-original-height="556"
+												data-original-width="1544" height="230"
+												src="https://blogger.googleusercontent.com/img/a/AVvXsEjfrZCZCa4lHPnRB5At6ri4CT-TSXDVzeGLDyriGcidkQ7t__OvmzYpfJe3Gpd5mxLF0a7cRIg9RhPRZLxold1TXRIfjvpy4OsJgEdfLUXYF3G4li99ogA5tkWa9iIXzXJsMlkpJDcoD3qUNrXwgP2G7eH2VvYbEjTDelmnyuxPIYGSdDcLR5ACQqGl=w640-h230"
+												width="640"></a></div>From the command line, you can view
+									the topic messages:<br>
+									<div class="separator" style="clear: both; text-align: center;"><a
+											href="https://blogger.googleusercontent.com/img/a/AVvXsEg0oQmc-05_QZwddp_V-q13IQCJG7HapWksTMcMbAi-0rugHzWtCXc-3Dr6TR8E3vyCWSr3r-sni0y_gM4X5USnyMgCX9EKghCvuXuZbCNUHwT14sX2DPnu2X73V9Og710ChVik90bvnM7kmogpBQ3YLyAnIkEhDCtUX7E6yhw8vdNtXjAjJrprMcoU"
+											style="margin-left: 1em; margin-right: 1em;"><img data-original-height="654"
+												data-original-width="1562" height="268"
+												src="https://blogger.googleusercontent.com/img/a/AVvXsEg0oQmc-05_QZwddp_V-q13IQCJG7HapWksTMcMbAi-0rugHzWtCXc-3Dr6TR8E3vyCWSr3r-sni0y_gM4X5USnyMgCX9EKghCvuXuZbCNUHwT14sX2DPnu2X73V9Og710ChVik90bvnM7kmogpBQ3YLyAnIkEhDCtUX7E6yhw8vdNtXjAjJrprMcoU=w640-h268"
+												width="640"></a></div>
+									<div><span
+											face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+											style="color: #24292f;"><br></span></div>You can view the topic
+									messages in a console:<br>
+									<div class="separator" style="clear: both; text-align: center;"><a
+											href="https://blogger.googleusercontent.com/img/a/AVvXsEi8tqsFPfhaudMkZshdUA5sBdftljK_Wup3F3s0PD7CQztpW9d0NwQD18sOULirPC53geInAowP-3vuGIL9IEawmmYoehU8sM20TN_euxJlopPOhBh5x3kgSRw4yY2LZj4LHdkZIMBWt4Ttp9q9Ny9baarQ5I_9Pv97mdQX_ITQVgoeAL3MIr_-1mRp"
+											style="margin-left: 1em; margin-right: 1em;"><img data-original-height="984"
+												data-original-width="2256" height="280"
+												src="https://blogger.googleusercontent.com/img/a/AVvXsEi8tqsFPfhaudMkZshdUA5sBdftljK_Wup3F3s0PD7CQztpW9d0NwQD18sOULirPC53geInAowP-3vuGIL9IEawmmYoehU8sM20TN_euxJlopPOhBh5x3kgSRw4yY2LZj4LHdkZIMBWt4Ttp9q9Ny9baarQ5I_9Pv97mdQX_ITQVgoeAL3MIr_-1mRp=w640-h280"
+												width="640"></a></div><br>
+								</span>
+							</div>
+						</div>
 					</div>
-				</article>
 			</div>
-			<div class="card-footer">
-				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link btn-outline-primary" href="../spring/aspect.html">&lArr; Previous</a></li>
-					<li class="page-item"><a class="page-link" href="../spring/logging.html">Next
-							&rArr;</a></li>
-				</ul>
-			</div>
-			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
-					src="../scripts/images/top.jpeg" /></button>
-		</main>
+	</div>
+	</div>
+	</article>
+	</div>
+	<div class="card-footer">
+		<ul class="pagination justify-content-center mb-4">
+			<li class="page-item"><a class="page-link btn-outline-primary" href="../spring/aspect.html">&lArr;
+					Previous</a></li>
+			<li class="page-item"><a class="page-link" href="../spring/logging.html">Next
+					&rArr;</a></li>
+		</ul>
+	</div>
+	<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
+			src="../scripts/images/top.jpeg" /></button>
+	</main>
 	</div>
 	<script>
 		window.addEventListener('DOMContentLoaded', () => {

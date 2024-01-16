@@ -175,13 +175,160 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div class="ch bg fw fx fy fz">
+							<div>
+								<h1 id="4c79"
+									class="pw-post-title gp gq gr be gs gt gu gv gw gx gy gz ha hb hc hd he hf hg hh hi hj hk hl hm hn bj"
+									data-testid="storyTitle" data-selectable-paragraph="">How does Spring MVC Web
+									Framework work Internally?</h1>
+							</div>
+							<div>
+								<h3 id="e96a"
+									class="pw-subtitle-paragraph ho gq gr be b hp hq hr hs ht hu hv hw hx hy hz ia ib ic id cp dt"
+									data-selectable-paragraph="">How HTTP Request is processed? What happens when you
+									send HTTP request to a Spring MVC based web application</h3>
+							</div>
+							<figure class="np nq nr ns nt nu nm nn paragraph-image">
+								<div role="button" tabindex="0" class="nv nw fg nx bg ny">
+									<div class="nm nn no">
+										<picture>
+											<img alt="How does Spring MVC Web Framework work Internally?"
+												class="bg mu nz c" width="700" height="449" loading="eager"
+												src="https://miro.medium.com/v2/resize:fit:700/1*Po1j6eDF5YFr4dp8bLLtzw.png" />
+										</picture>
+									</div>
+								</div>
+							</figure>
+							<p>When that request hits the web container like Tomcat it
+								looks into web.xml and finds the Servlet or Filter which is mapped to that particular
+								URL. It the delegate that Servlet or Filter to process the request.</p>
+							<p>Since <a><strong class="oc gs">Spring
+										MVC</strong></a> is built on top of Servlet, this is also the initial flow of
+								requests in any Spring MVC based Java web application.</p>
+							<p>Remember, Web container like Tomcat is responsible for
+								creating Servlet and Filter instances and invoking their various life-cycle methods like
+								<a>init()</a>, <code class="cw ox oy oz pa b">service()</code>, <code
+									class="cw ox oy oz pa b">destroy()</code>.
+							</p>
+							<p>In the case of an HTTP request, <code class="cw ox oy oz pa b">HttpServlet </code>handles
+								that, and depending upon the
+								HTTP request method various <code class="cw ox oy oz pa b">doXXX()</code> method is
+								invoked by container like <code class="cw ox oy oz pa b">doGet()</code> to process GET
+								request and<code class="cw ox oy oz pa b"> doPost()</code> to process POST request.<br>
+								<br>If you remember, to enable Spring MVC, we need to declare the
+								<a>DispatcherServlet</strong></a> from the Spring MVC jar into
+								web.xml. This <a>Servlet </a>listens for a URL
+								pattern<code class="cw ox oy oz pa b"> *</code> as shown in below web.xml, which means
+								all request is mapped to DispatcherServlet.<br> <br>Though it is not mandatory, you can
+								have other servlet mapped to other URL if you want to, but if you are using Spring MVC
+								to develop a web application or RESTful web service, it makes sense to pass through all
+								requests via <code class="cw ox oy oz pa b">DispatcherServlet</code>.<br> <br>
+							</p>
+							<h1>How does Spring MVC process an HTTP Request?</h1>
+							<p>Here is the web.xml configuration for <a>Spring MVC</a>, you can see that <em
+									class="qw">DispatcherServlet</em> is mapped to all request using URL pattern <code
+									class="cw ox oy oz pa b">*</code></p>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span id="55b8" class="ra pw gr pa b bf rb rc l rd re" data-selectable-paragraph=""><span class="hljs-tag">&lt;<span class="hljs-name">web-app</span>&gt;</span><br><span class="hljs-comment">&lt;!-- The front controller of this Spring Web application, responsible <br>for handling all application requests --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>Spring MVC Dispatcher Servlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-class</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>contextConfigLocation<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>/WEB-INF/config/web-application-config.xml<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">load-on-startup</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">load-on-startup</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">servlet-mapping</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>example<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">servlet-mapping</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">web-app</span>&gt;</span></span></pre>
+							<p>The URL pattern is important, if the request matches the
+								URL pattern of DispatcherServlet then it will be processed by <a>Spring MVC</a>
+								otherwise not. The <a><strong class="oc gs">DispatcherServlet</strong></a> passes the
+								request to a specific
+								controller depending on the URL requested. How does DispatcherServlet know which request
+								needs to be passed to which controller?</p>
+							<p>Well, it uses the <strong class="oc gs">@RequestMapping</strong> annotation or Spring MVC
+								configuration file
+								to find out the mapping of the request URL to different controllers.</p>
+							<p>It can also use specific request processing annotations
+								like @GetMapping or @PostMapping. Controller classes are also identified using
+								@Controller and @RestController (in the case of RESTful Web Services) annotations. See
+								<a>REST with
+									Spring</strong></a> course by Eugen to learn how to develop RESTful Web Service
+								using Spring in depth.
+							</p>
+							<figure class="np nq nr ns nt nu nm nn paragraph-image">
+								<div role="button" tabindex="0" class="nv nw fg nx bg ny">
+									<div class="nm nn rf">
+										<picture>
+											<source
+												srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 1400w"
+												sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px"
+												type="image/webp">
+											<source data-testid="og"
+												srcset="https://miro.medium.com/v2/resize:fit:640/1*ryU-g7oR7YNomJzLnRSFhA.png 640w, https://miro.medium.com/v2/resize:fit:720/1*ryU-g7oR7YNomJzLnRSFhA.png 720w, https://miro.medium.com/v2/resize:fit:750/1*ryU-g7oR7YNomJzLnRSFhA.png 750w, https://miro.medium.com/v2/resize:fit:786/1*ryU-g7oR7YNomJzLnRSFhA.png 786w, https://miro.medium.com/v2/resize:fit:828/1*ryU-g7oR7YNomJzLnRSFhA.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*ryU-g7oR7YNomJzLnRSFhA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/1*ryU-g7oR7YNomJzLnRSFhA.png 1400w"
+												sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px">
+											<img alt="REST With Spring course" class="bg mu nz c" width="700"
+												height="421" loading="lazy"
+												src="https://miro.medium.com/v2/resize:fit:700/1*ryU-g7oR7YNomJzLnRSFhA.png">
+										</picture>
+									</div>
+								</div>
+							</figure>
+							<p>For example, the below class is a Controller that will
+								process any request having URI “/appointments”. It also has <a>@GetMapping</a>, which
+								means that the
+								method will be invoked when a GET request is received for this URL. The method annotated
+								with @PostMapping will be invoked if the client sends a <a>POST request</a> to the <code
+									class="cw ox oy oz pa b">“/appointments”</code> URI.</p>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span id="36c0" class="ra pw gr pa b bf rb rc l rd re" data-selectable-paragraph=""><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(<span class="hljs-string">"/appointments"</span>)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title.class">AppointmentsController</span> {<br><span class="hljs-meta">@GetMapping</span><br><span class="hljs-keyword">public</span> Map <span class="hljs-keyword">get</span>() {<br><span class="hljs-keyword">return</span> appointmentBook.getAppointmentsForToday();<br>}<br><br><span class="hljs-meta">@PostMapping</span><br><span class="hljs-keyword">public</span> String add(<span class="hljs-meta">@Valid</span> AppointmentForm appointment, BindingResult result) {<br><span class="hljs-keyword">if</span> (result.hasErrors()) {<br><span class="hljs-keyword">return</span> <span class="hljs-string">"appointments/new"</span>;<br>}<br>appointmentBook.addAppointment(appointment);<br><span class="hljs-keyword">return</span> <span class="hljs-string">"redirect:/appointments"</span>;<br>}<br>}</span></pre>
+							<p>After processing the request, the Controller returns a
+								<strong class="oc gs">logical view name</strong> and model to <a>DispatcherServlet
+								</a>and it consults
+								view resolvers until an actual View is determined to render the output.
+							</p>
+							<p>DispatcherServlet then contacts the chosen view e.g. <a>Freemarker </a>or JSP with model
+								data
+								and it renders the output depending on the model data.<br> <br> This Rendered output is
+								returned to the client as an HTTP response. On its way back it can pass to any
+								configured Filter as well like<strong class="oc gs"> </strong><a>Spring Security filter
+									chain</a> or
+								Filters configured to convert the response to JSON or XML.</p>
+							<p>The DispatcherServlet from Spring MVC framework is an
+								implementation of Front Controller Pattern and it’s also a single point
+								of entry — handle all incoming requests, but again that depends upon your URL pattern
+								mapping and your application.<br> <br>It delegates requests for further processing to
+								additional components like Controllers, Views, View Resolvers, handler mappers,
+								exception handlers, etc. It can also map directly to /, but then the exception for
+								handling static resources needs to be configured. If you look at the web.xml
+								configuration it also pre-loaded using the <a>load-on-startup</a> tag.</p>
+							<p>
+								In summary, here is the flow of an HTTP request in Java application created using the
+								Spring MVC framework:</p>
+							<p>
+								1. The client sends an HTTP request to a specific URL</p>
+							<p>
+								2. DispatcherServlet of Spring MVC receives the request</p>
+							<p>
+								3. It passes the request to a specific controller depending on the URL requested using
+								@Controller and @RequestMapping annotations.</p>
+							<p>
+								4. Spring MVC Controller then returns a logical view name and model to
+								DispatcherServlet.</p>
+							<p>
+								5. DispatcherServlet consults view resolvers until actual View is determined to render
+								the output</p>
+							<p>
+								6. DispatcherServlet contacts the chosen view (like Thymeleaf, Freemarker, JSP) with
+								model data and it renders the output depending on the model data</p>
+							<p>
+								7. The rendered output is returned to the client as a response</p>
+							<p>
+								That’s all about what is the flow of Spring MVC or how an HTTP request is processed by
+								Spring MVC. This is very basic but important knowledge about the Spring MVC framework
+								and every Java and Spring developer should be familiar with this.</p>
+							<p>
+								If you know how your HTTP request is processed then you can not only understand the
+								issues better but also troubleshoot them easily and quickly.
+							</p>
+						</div>
 					</div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link btn-outline-primary" href="../spring/introduction.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link btn-outline-primary"
+							href="../spring/introduction.html">&lArr; Previous</a></li>
 					<li class="page-item"><a class="page-link" href="../spring/exceptions.html">Next
 							&rArr;</a></li>
 				</ul>

@@ -1345,6 +1345,10 @@ code,kbd,pre,samp {
 .hljs-title, .hljs-symbol, .hljs-bullet, .hljs-number {
     color: #1c00cf;
 }
-.hljs-code, .hljs-string, .hljs-meta .hljs-string {
+.hljs-attr, .hljs-code, .hljs-string, .hljs-meta .hljs-string {
     color: #c41a16;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }

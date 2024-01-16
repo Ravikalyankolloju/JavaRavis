@@ -175,13 +175,292 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<h1>1. Spring Boot Actuator Example</h1>
+						<p>Spring Boot Actuator is a powerful tool that provides a set of built-in endpoints that expose
+							various information about our Spring application, including health status, application
+							metrics, environment information, and more.
 
+							In this article, we will explore the Health Check and Metrics endpoints provided by Spring
+							Boot Actuator, and how we can leverage them to ensure the health and performance of our
+							Spring Boot applications.</p>
+						<h1>2. Getting Started with Spring Boot Actuator Module</h1>
+						<p>Spring boot’s module Actuator allows you to monitor and manage application usages in the
+							production environment, without coding and configuration for any of them. This monitoring
+							and management information is exposed via REST-like endpoint URLs.</p>
+						<h3>2.1. Maven</h5>
+							<p>The spring-boot-starter-actuator is a starter module for the actuator. It automatically
+								configures various Actuator endpoints and features, making them available
+								out-of-the-box.
+							</p>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span id="fbc9" class="aez aef xi aew b bf afa afb l afc afd" data-selectable-paragraph=""><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span></pre>
+							<h3>2.2. Default Configuration</h3>
+							<p>By default, all endpoints (except /shutdown) are enabled. Only the /health and /info are
+								exposed via Web APIs. Rest are exposed via JMX.</p>
+							<p>To enable the /shutdown endpoint also, we can use the following property:</p>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span><span class="hljs-attr">management.endpoint.shutdown.enabled</span>=true</span></pre>
+							<p>Also, we can use management.endpoints.web.exposure.include=* to expose all endpoints
+								through
+								the Web APIs</p>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><span><span class="hljs-attr">management.endpoints.web.exposure.include</span>=*</span><br><span># To expose only selected endpoints
+</span><span># management.endpoints.jmx.exposure.include=health,info,env,beans</span></pre>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span><span class="hljs-attr">An endpoint is considered to be available when it is both enabled and exposed.</span></span></pre>
+
+							<h3>2.3. Enabling Only Specific Endpoints</h3>
+							<p>If we prefer to disable all endpoints, by default, and only expose certain endpoints then
+								we
+								can set the property management.endpoints.enabled-by-default to false and then use the
+								only
+								required endpoints that the application needs to expose using the pattern
+								management.endpoint.<id>.enabled.</p>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span><span class="hljs-attr">management.endpoints.enabled-by-default</span>=false</span><br><span><span class="hljs-attr">management.endpoint.info.enabled</span>=true</span><br><span><span class="hljs-attr">management.endpoint.health.enabled</span>=true</span><br><span><span class="hljs-attr">management.endpoint.loggers.enabled</span>=true</span></pre>
+
+							<h1>3. Important Actuator Endpoints</h1>
+							<p>Actuator endpoints let us monitor and interact with our application. Most applications
+								expose
+								endpoints via HTTP, where the ID of the endpoint along with a prefix of /actuator is
+								mapped
+								to a URL. For example, by default, the health endpoint is mapped to /actuator/health.
+							</p>
+							<p>Some of the important and widely used actuator endpoints are given below:</p>
+							<figure class="wp-block-table">
+								<table>
+									<tbody>
+										<tr>
+											<th>Endpoint</th>
+											<th>Usage</th>
+										</tr>
+										<tr>
+											<td><code>/auditevents</code></td>
+											<td>Returns all auto-configuration candidates and the reason why they ‘were’
+												or
+												‘were not’ applied.</td>
+										</tr>
+										<tr>
+											<td><code>/beans</code></td>
+											<td>Returns a complete list of all the Spring beans in your application.
+											</td>
+										</tr>
+										<tr>
+											<td><code>/mappings</code></td>
+											<td>Displays a collated list of all <code>@RequestMapping</code> paths.</td>
+										</tr>
+										<tr>
+											<td><code>/env</code></td>
+											<td>Exposes the application’s environment properties and configuration. It’s
+												useful for inspecting the configuration values of your application.</td>
+										</tr>
+										<tr>
+											<td><code>/info</code></td>
+											<td>Allows us to expose arbitrary application information. We can configure
+												custom properties to be displayed here, providing metadata about the
+												application.</td>
+										</tr>
+										<tr>
+											<td><code>/health</code></td>
+											<td>Returns application health information. It checks various indicators,
+												such
+												as database connectivity, disk space, and custom health indicators, and
+												presents the overall health status as “UP” or “DOWN.”</td>
+										</tr>
+										<tr>
+											<td><code>/caches</code></td>
+											<td>It exposes available caches.</td>
+										</tr>
+										<tr>
+											<td><code>/conditions</code></td>
+											<td>Shows the conditions that were evaluated on configuration and
+												auto-configuration.</td>
+										</tr>
+										<tr>
+											<td><code>/configprops</code></td>
+											<td>It displays a collated list of all
+												<code>@ConfigurationProperties</code>.
+											</td>
+										</tr>
+										<tr>
+											<td><code>/integrationgraph</code></td>
+											<td>It shows the Spring Integration graph. Requires a dependency on
+												<code>spring-integration-core</code>.
+											</td>
+										</tr>
+										<tr>
+											<td><code>/loggers</code></td>
+											<td>The configuration of loggers in the application.</td>
+										</tr>
+										<tr>
+											<td><code>/logfile</code></td>
+											<td>Allows us to view and download the application’s log file content.</td>
+										</tr>
+										<tr>
+											<td><code>/scheduledtasks</code></td>
+											<td>Displays the scheduled tasks in the application.</td>
+										</tr>
+										<tr>
+											<td><code>/sessions</code></td>
+											<td>Returns trace logs (by default the last 100 HTTP requests). Requires an
+												<code>HttpTraceRepository</code> bean.
+											</td>
+										</tr>
+										<tr>
+											<td><code>/httptrace</code></td>
+											<td>It allows retrieval and deletion of user sessions from a Spring
+												Session-backed session store. Requires a Servlet-based web application
+												using
+												Spring Session.</td>
+										</tr>
+										<tr>
+											<td><code>/shutdown</code></td>
+											<td>Allows the application to gracefully shut down. Disabled by default.
+											</td>
+										</tr>
+										<tr>
+											<td><code>/threaddump</code></td>
+											<td>It performs a thread dump and returns a snapshot of the application’s
+												thread
+												states, which can be valuable for diagnosing thread-related issues.</td>
+										</tr>
+										<tr>
+											<td><code>/metrics</code></td>
+											<td>It shows several useful metrics information like JVM memory used, system
+												CPU
+												usage, open files, HTTP request statistics and more.</td>
+										</tr>
+										<tr>
+											<td><code>/httpexchanges</code></td>
+											<td>Displays HTTP exchange information. Requires
+												an&nbsp;<code>HttpExchangeRepository</code>&nbsp;bean.</td>
+										</tr>
+									</tbody>
+								</table>
+							</figure>
+							<p>The Spring web applications (Spring MVC, Spring WebFlux, or Jersey) provide the following
+								additional endpoints:</p>
+							<figure class="wp-block-table">
+								<table>
+									<tbody>
+										<tr>
+											<th>Endpoint</th>
+											<th>Usage</th>
+										</tr>
+										<tr>
+											<td><code>/heapdump</code></td>
+											<td>Returns an <code>hprof</code> heap dump file.</td>
+										</tr>
+										<tr>
+											<td><code>/logfile</code></td>
+											<td>Returns the contents of the logfile if <code>logging.file.name</code> or
+												<code>logging.file.path</code> properties have been set.
+											</td>
+										</tr>
+										<tr>
+											<td><code>/prometheus</code></td>
+											<td>Exposes metrics in a format that can be scraped by a Prometheus server.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</figure>
+							<h1>4. Actuator Configurations</h1>
+							<p>Apart from enabling and disabling endpoints, we can also configure the following
+								behaviors.
+							</p>
+							<h3>4.1. Securing Endpoints</h3>
+							<p>By default, spring security is enabled for all actuator endpoints if it is available in
+								the
+								classpath. If we wish to configure custom security for HTTP endpoints, for example, only
+								allow users with a certain role to access then configure in the following manner.</p>
+							<p>The following configuration ensures that only users with the role ADMIN have access to
+								actuation endpoints.</p>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj" tabindex="0"><code lang="java" class="language-java"><span class="token annotation punctuation">@Configuration</span><span class="token punctuation">(</span>proxyBeanMethods <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ActuatorSecurity</span> <span class="token keyword">extends</span> <span class="token class-name">WebSecurityConfigurerAdapter</span> <span class="token punctuation">{</span>
+ 
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">configure</span><span class="token punctuation">(</span><span class="token class-name">HttpSecurity</span> http<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        http<span class="token punctuation">.</span><span class="token function">requestMatcher</span><span class="token punctuation">(</span><span class="token class-name">EndpointRequest</span><span class="token punctuation">.</span><span class="token function">toAnyEndpoint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">authorizeRequests</span><span class="token punctuation">(</span><span class="token punctuation">(</span>requests<span class="token punctuation">)</span> <span class="token operator">-&gt;</span>
+                requests<span class="token punctuation">.</span><span class="token function">anyRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span><span class="token string">"ADMIN"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        http<span class="token punctuation">.</span><span class="token function">httpBasic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+
+
+							<p>In Spring Boot 3, we can rewrite the configuration as follows:</p>
+
+
+
+
+							<pre class="nz oa ob oc od oe of og bo oh ba bj" tabindex="0"><code lang="java" class="language-java"><span class="token annotation punctuation">@Configuration</span><span class="token punctuation">(</span>proxyBeanMethods <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MySecurityConfiguration</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">SecurityFilterChain</span> <span class="token function">securityFilterChain</span><span class="token punctuation">(</span><span class="token class-name">HttpSecurity</span> http<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+        http<span class="token punctuation">.</span><span class="token function">securityMatcher</span><span class="token punctuation">(</span><span class="token class-name">EndpointRequest</span><span class="token punctuation">.</span><span class="token function">toAnyEndpoint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        http<span class="token punctuation">.</span><span class="token function">authorizeHttpRequests</span><span class="token punctuation">(</span><span class="token punctuation">(</span>requests<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> requests<span class="token punctuation">.</span><span class="token function">anyRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span><span class="token string">"ADMIN"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        http<span class="token punctuation">.</span><span class="token function">httpBasic</span><span class="token punctuation">(</span><span class="token function">withDefaults</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> http<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+
+							<p>If the application is already behind the firewall, we can disable the security altogether
+								by setting the management.security.enabled to false.</p>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span><span class="hljs-attr">management.security.enabled</span>=false</span></pre>
+							<h3>4.2. CORS Support</h3>
+							<p>CORS support is disabled by default and is only enabled once we have set the
+								management.endpoints.web.cors.allowed-origins property as follows.</p>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span><span class="hljs-attr">management.endpoints.web.cors.allowed-origins</span>=https://example.com</span><br><span><span class="hljs-attr">management.endpoints.web.cors.allowed-methods</span>=GET,POST</span></pre>
+
+							<h3>4.3. Caching the Response</h3>
+							<p>Actuator endpoints automatically cache the responses to read operations that do not take
+								any
+								parameters. Use cache.time-to-live property to configure the amount of time for which an
+								endpoint will cache the response.</p>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span><span class="hljs-attr">management.endpoint.info.cache.time-to-live</span>=10s</span></pre>
+
+							<h1>5. Advanced Configurations</h1>
+							<h3>5.1. Change the Management Endpoint Context Path</h3>
+							<p>By default, all endpoints are accessible by the default context path of the application,
+								suffixed with /actuator. If for some reason, we have existing endpoints in the
+								application
+								starting with /actuator then we can customize the base path to something else.</p>
+							<p>All we need to specify the new base path in the application.properties.</p>
+							<pre
+								class="nz oa ob oc od oe of og bo oh ba bj"><span><span class="hljs-attr">management.endpoints.web.base-path</span>=/manage</span></pre>
+							<p>Now you will be able to access all actuator endpoints under a new URL. e.g.</p>
+							<ul>
+								<li>/manage/health</li>
+								<li>/manage/dump</li>
+								<li>/manage/env</li>
+								<li>/manage/beans</li>
+							</ul>
+							<h3>5.2. Customize the Management Server Port</h3>
+							<p>To customize the management endpoint port, we need to add this entry to the
+								application.properties file.</p>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><span><span
+									class="hljs-attr">management.server.port</span>=8081</span></pre>
+							<h1>6. Conclusion</h1>
+							<p>In this <strong>spring boot actuator example</strong>, we learned to configure management
+								and
+								monitoring endpoints with a few easy configurations. By including
+								<code>spring-boot-starter-actuator</code> and configuring the properties as needed, we
+								can
+								easily harness the power of Spring Boot Actuator’s default autoconfiguration to monitor
+								and
+								manage our Spring Boot applications in a production-ready manner.
+							</p>
 					</div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link btn-outline-primary" href="../spring/exceptions.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link btn-outline-primary"
+							href="../spring/exceptions.html">&lArr;
+							Previous</a></li>
 					<li class="page-item"><a class="page-link" href="../spring/annotations.html">Next
 							&rArr;</a></li>
 				</ul>

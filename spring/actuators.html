@@ -226,144 +226,140 @@
 								to a URL. For example, by default, the health endpoint is mapped to /actuator/health.
 							</p>
 							<p>Some of the important and widely used actuator endpoints are given below:</p>
-							<figure class="wp-block-table">
-								<table>
-									<tbody>
-										<tr>
-											<th>Endpoint</th>
-											<th>Usage</th>
-										</tr>
-										<tr>
-											<td><code>/auditevents</code></td>
-											<td>Returns all auto-configuration candidates and the reason why they ‘were’
-												or
-												‘were not’ applied.</td>
-										</tr>
-										<tr>
-											<td><code>/beans</code></td>
-											<td>Returns a complete list of all the Spring beans in your application.
-											</td>
-										</tr>
-										<tr>
-											<td><code>/mappings</code></td>
-											<td>Displays a collated list of all <code>@RequestMapping</code> paths.</td>
-										</tr>
-										<tr>
-											<td><code>/env</code></td>
-											<td>Exposes the application’s environment properties and configuration. It’s
-												useful for inspecting the configuration values of your application.</td>
-										</tr>
-										<tr>
-											<td><code>/info</code></td>
-											<td>Allows us to expose arbitrary application information. We can configure
-												custom properties to be displayed here, providing metadata about the
-												application.</td>
-										</tr>
-										<tr>
-											<td><code>/health</code></td>
-											<td>Returns application health information. It checks various indicators,
-												such
-												as database connectivity, disk space, and custom health indicators, and
-												presents the overall health status as “UP” or “DOWN.”</td>
-										</tr>
-										<tr>
-											<td><code>/caches</code></td>
-											<td>It exposes available caches.</td>
-										</tr>
-										<tr>
-											<td><code>/conditions</code></td>
-											<td>Shows the conditions that were evaluated on configuration and
-												auto-configuration.</td>
-										</tr>
-										<tr>
-											<td><code>/configprops</code></td>
-											<td>It displays a collated list of all
-												<code>@ConfigurationProperties</code>.
-											</td>
-										</tr>
-										<tr>
-											<td><code>/integrationgraph</code></td>
-											<td>It shows the Spring Integration graph. Requires a dependency on
-												<code>spring-integration-core</code>.
-											</td>
-										</tr>
-										<tr>
-											<td><code>/loggers</code></td>
-											<td>The configuration of loggers in the application.</td>
-										</tr>
-										<tr>
-											<td><code>/logfile</code></td>
-											<td>Allows us to view and download the application’s log file content.</td>
-										</tr>
-										<tr>
-											<td><code>/scheduledtasks</code></td>
-											<td>Displays the scheduled tasks in the application.</td>
-										</tr>
-										<tr>
-											<td><code>/sessions</code></td>
-											<td>Returns trace logs (by default the last 100 HTTP requests). Requires an
-												<code>HttpTraceRepository</code> bean.
-											</td>
-										</tr>
-										<tr>
-											<td><code>/httptrace</code></td>
-											<td>It allows retrieval and deletion of user sessions from a Spring
-												Session-backed session store. Requires a Servlet-based web application
-												using
-												Spring Session.</td>
-										</tr>
-										<tr>
-											<td><code>/shutdown</code></td>
-											<td>Allows the application to gracefully shut down. Disabled by default.
-											</td>
-										</tr>
-										<tr>
-											<td><code>/threaddump</code></td>
-											<td>It performs a thread dump and returns a snapshot of the application’s
-												thread
-												states, which can be valuable for diagnosing thread-related issues.</td>
-										</tr>
-										<tr>
-											<td><code>/metrics</code></td>
-											<td>It shows several useful metrics information like JVM memory used, system
-												CPU
-												usage, open files, HTTP request statistics and more.</td>
-										</tr>
-										<tr>
-											<td><code>/httpexchanges</code></td>
-											<td>Displays HTTP exchange information. Requires
-												an&nbsp;<code>HttpExchangeRepository</code>&nbsp;bean.</td>
-										</tr>
-									</tbody>
-								</table>
-							</figure>
+							<table>
+								<tbody>
+									<tr>
+										<th>Endpoint</th>
+										<th>Usage</th>
+									</tr>
+									<tr>
+										<td><code>/auditevents</code></td>
+										<td>Returns all auto-configuration candidates and the reason why they ‘were’
+											or
+											‘were not’ applied.</td>
+									</tr>
+									<tr>
+										<td><code>/beans</code></td>
+										<td>Returns a complete list of all the Spring beans in your application.
+										</td>
+									</tr>
+									<tr>
+										<td><code>/mappings</code></td>
+										<td>Displays a collated list of all <code>@RequestMapping</code> paths.</td>
+									</tr>
+									<tr>
+										<td><code>/env</code></td>
+										<td>Exposes the application’s environment properties and configuration. It’s
+											useful for inspecting the configuration values of your application.</td>
+									</tr>
+									<tr>
+										<td><code>/info</code></td>
+										<td>Allows us to expose arbitrary application information. We can configure
+											custom properties to be displayed here, providing metadata about the
+											application.</td>
+									</tr>
+									<tr>
+										<td><code>/health</code></td>
+										<td>Returns application health information. It checks various indicators,
+											such
+											as database connectivity, disk space, and custom health indicators, and
+											presents the overall health status as “UP” or “DOWN.”</td>
+									</tr>
+									<tr>
+										<td><code>/caches</code></td>
+										<td>It exposes available caches.</td>
+									</tr>
+									<tr>
+										<td><code>/conditions</code></td>
+										<td>Shows the conditions that were evaluated on configuration and
+											auto-configuration.</td>
+									</tr>
+									<tr>
+										<td><code>/configprops</code></td>
+										<td>It displays a collated list of all
+											<code>@ConfigurationProperties</code>.
+										</td>
+									</tr>
+									<tr>
+										<td><code>/integrationgraph</code></td>
+										<td>It shows the Spring Integration graph. Requires a dependency on
+											<code>spring-integration-core</code>.
+										</td>
+									</tr>
+									<tr>
+										<td><code>/loggers</code></td>
+										<td>The configuration of loggers in the application.</td>
+									</tr>
+									<tr>
+										<td><code>/logfile</code></td>
+										<td>Allows us to view and download the application’s log file content.</td>
+									</tr>
+									<tr>
+										<td><code>/scheduledtasks</code></td>
+										<td>Displays the scheduled tasks in the application.</td>
+									</tr>
+									<tr>
+										<td><code>/sessions</code></td>
+										<td>Returns trace logs (by default the last 100 HTTP requests). Requires an
+											<code>HttpTraceRepository</code> bean.
+										</td>
+									</tr>
+									<tr>
+										<td><code>/httptrace</code></td>
+										<td>It allows retrieval and deletion of user sessions from a Spring
+											Session-backed session store. Requires a Servlet-based web application
+											using
+											Spring Session.</td>
+									</tr>
+									<tr>
+										<td><code>/shutdown</code></td>
+										<td>Allows the application to gracefully shut down. Disabled by default.
+										</td>
+									</tr>
+									<tr>
+										<td><code>/threaddump</code></td>
+										<td>It performs a thread dump and returns a snapshot of the application’s
+											thread
+											states, which can be valuable for diagnosing thread-related issues.</td>
+									</tr>
+									<tr>
+										<td><code>/metrics</code></td>
+										<td>It shows several useful metrics information like JVM memory used, system
+											CPU
+											usage, open files, HTTP request statistics and more.</td>
+									</tr>
+									<tr>
+										<td><code>/httpexchanges</code></td>
+										<td>Displays HTTP exchange information. Requires
+											an&nbsp;<code>HttpExchangeRepository</code>&nbsp;bean.</td>
+									</tr>
+								</tbody>
+							</table>
 							<p>The Spring web applications (Spring MVC, Spring WebFlux, or Jersey) provide the following
 								additional endpoints:</p>
-							<figure class="wp-block-table">
-								<table>
-									<tbody>
-										<tr>
-											<th>Endpoint</th>
-											<th>Usage</th>
-										</tr>
-										<tr>
-											<td><code>/heapdump</code></td>
-											<td>Returns an <code>hprof</code> heap dump file.</td>
-										</tr>
-										<tr>
-											<td><code>/logfile</code></td>
-											<td>Returns the contents of the logfile if <code>logging.file.name</code> or
-												<code>logging.file.path</code> properties have been set.
-											</td>
-										</tr>
-										<tr>
-											<td><code>/prometheus</code></td>
-											<td>Exposes metrics in a format that can be scraped by a Prometheus server.
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</figure>
+							<table>
+								<tbody>
+									<tr>
+										<th>Endpoint</th>
+										<th>Usage</th>
+									</tr>
+									<tr>
+										<td><code>/heapdump</code></td>
+										<td>Returns an <code>hprof</code> heap dump file.</td>
+									</tr>
+									<tr>
+										<td><code>/logfile</code></td>
+										<td>Returns the contents of the logfile if <code>logging.file.name</code> or
+											<code>logging.file.path</code> properties have been set.
+										</td>
+									</tr>
+									<tr>
+										<td><code>/prometheus</code></td>
+										<td>Exposes metrics in a format that can be scraped by a Prometheus server.
+										</td>
+									</tr>
+								</tbody>
+							</table>
 							<h1>4. Actuator Configurations</h1>
 							<p>Apart from enabling and disabling endpoints, we can also configure the following
 								behaviors.

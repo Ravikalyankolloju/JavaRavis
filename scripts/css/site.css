@@ -1349,7 +1349,9 @@ code,kbd,pre,samp {
     color: #c41a16;
 }
 table, th, td {
-  width: 100%;
   border: 1px solid black;
   border-collapse: collapse;
+}
+table {
+	width: 100%;
 }

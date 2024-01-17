@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="RaviKalyan">
+	<title>WebClient</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel="stylesheet" href="../scripts/css/site.css">
+	<script>
+		!function (theme, navWidth) {
+			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
+			localStorage && localStorage.getItem('nav-width'))
+	</script>
+	<style>
+		@media screen and (min-width: 1025px) {
+			.div-to-desk {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+
+		@media screen and (max-width: 1025px) {
+			.div-to-hide {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar-brand">
+			<a class="navbar-item doc1" href="../home.html">
+				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			</a>
+			<button class="navbar-burger" data-target="topbar-nav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<div id="topbar-nav" class="navbar-menu">
+			<div class="navbar-end">
+				<div class="navbar-item" style="text-align: center;">
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
+								width="25" src="../scripts/images/home.png"></i></a>
+					</li>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/introduction.html">Java</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../spring/introduction.html">Spring</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+					</div>
+					<label class="theme-toggler div-to-hide">
+						<input type="checkbox" id="switch-theme-checkbox" />
+						<span class="icon"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<label class="theme-toggler div-to-desk" style="top: 22px;">
+			<input type="checkbox" id="switch-theme-mobile" />
+			<span class="icon"></span>
+		</label>
+	</nav>
+
+	<div class="body">
+		<div class="nav-container">
+			<aside class="nav">
+				<div class="nav-panel-menu is-active" data-panel="menu">
+					<li class="nav-item" data-depth="0">
+						<ul class="nav-list">
+							<h4>Springboot</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/introduction.html">Introduction</a></li>
+							<h4>Microservice</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/ms-intro.html">Introduction</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/ms-architecture.html">Microservices Architecture</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/registry-discovery.html">Service Registry and Discovery</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/config-server.html">Config Server</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/api-gateway.html">API Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/web-client.html">WebClient</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/open-feign.html">Open Feign</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/sleuth.html">Cloud Sleuth</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/security.html">Cloud Security</a></li>
+							<h4>Interview Questions</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/springboot-interview-questions.html">Springboot Interview
+									Questions
+								</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/microservices-interview.html">Microservices Interview
+									Questions</a></li>
+						</ul>
+					</li>
+				</div>
+			</aside>
+		</div>
+		<main class="article">
+			<div class="toolbar">
+				<button class="navbar-burger" id="nav-toggle-1">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<nav class="breadcrumbs">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
+						<li><a href="../springboot/web-client.html">WebClient</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="doc">
+				<nav class="breadcrumbs div-to-hide">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
+						<li><a href="../springboot/web-client.html">WebClient</a></li>
+					</ul>
+					<hr>
+				</nav>
+				<a class="div-to-desk">
+					<br>
+				</a>
+				<article>
+					<div class="entry-content" itemprop="text">
+						<div class="post-body entry-content float-container" id="post-body-3731040599078800479">
+							<style>
+								pre {
+									background-color: white !important;
+								}
+
+								code {
+									background-color: white !important;
+								}
+							</style>
+
+							<div>As of 5.0, the <i>RestTemplate</i> class is in maintenance mode and soon will be
+								deprecated. So the Spring team recommended using
+								<i>org.springframework.web.reactive.client.WebClient&nbsp;</i>that has a modern API and
+								supports sync, async, and streaming scenarios.<br><br>In this tutorial, we will learn
+								how to use <i>WebClient </i>to make REST API calls (Synchronous communication) between
+								multiple microservices.
+							</div>
+							<div><br></div>
+							<div><i>WebClient</i> is a non-blocking, reactive client to perform HTTP requests, exposing
+								a fluent, reactive API over underlying HTTP client libraries such as Reactor
+								Netty.<br><br>To use <i>WebClient</i> in our Spring boot project, we have to add
+								<i>Spring WebFlux</i> dependency to the classpath.
+							</div>
+							<div>
+								<h1
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; margin: 0.67em 0px;">
+									What we will Build?</h1>
+								<div
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+									Well, we will create two microservices such as&nbsp;<span
+										style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">department-service</span>&nbsp;and&nbsp;<span
+										style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">user-service</span>&nbsp;and
+									we will make a REST API call using <i>WebClient</i> from&nbsp;<span
+										style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">user-service</span>&nbsp;to&nbsp;<span
+										style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">department-service</span>&nbsp;to
+									fetch a particular user department.</div>
+							</div>
+							<div class="separator" style="clear: both; text-align: center;"><a
+									href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWzRS7-WFTVyowyDD5FxP5WInviF_mVbjHPP0tCjNfjjZP6c7l5qVOE-Z6wm5eX6pNzTASSXH0VzLCthSPU4r0AYpcbipXwYsnXiPZUbZepVfJLp2go8kCTQeh1t94dwhHeJXplyXtfDAA4gD_xd7IvbD3aswxvkugshJy_xtzr0SZDOSMb0GI6sD-/s1920/Spring%20Boot%20Microservices.007.jpeg"
+									style="margin-left: 1em; margin-right: 1em;"><img border="0"
+										data-original-height="1080" data-original-width="1920"
+										src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWzRS7-WFTVyowyDD5FxP5WInviF_mVbjHPP0tCjNfjjZP6c7l5qVOE-Z6wm5eX6pNzTASSXH0VzLCthSPU4r0AYpcbipXwYsnXiPZUbZepVfJLp2go8kCTQeh1t94dwhHeJXplyXtfDAA4gD_xd7IvbD3aswxvkugshJy_xtzr0SZDOSMb0GI6sD-/s16000/Spring%20Boot%20Microservices.007.jpeg"></a>
+							</div>
+							<div>
+								<h1 style="text-align: left;">Step 1: Add Spring WebFlux Dependency</h1>
+								<div>Open the <i>pom.xml</i> file of the <i>user-service</i> project and add the below
+									dependency:</div>
+								<div><br></div>
+								<div>
+									<pre class="notranslate"
+										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml">		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-webflux<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+								</div>
+								<h1 style="text-align: left;">Step 2:&nbsp;Configure WebClient as Spring Bean</h1>
+								<div>
+									<pre class="notranslate"
+										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs typescript">package net.javaguides.userservice;
+
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.Bean;
+<span class="hljs-keyword">import</span> org.springframework.web.reactive.function.client.WebClient;
+
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserServiceApplication</span> </span>{
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">main</span>(<span class="hljs-params"><span class="hljs-built_in">String</span>[] args</span>)</span> {
+        SpringApplication.run(UserServiceApplication.class, args);
+    }
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-keyword">public</span> WebClient <span class="hljs-function"><span class="hljs-title">webClient</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">return</span> WebClient.builder().build();
+    }
+}</code></pre>
+								</div>
+								<div>We have configured <i>WebClient</i> as Spring bean:</div>
+								<div>
+									<pre class="notranslate"
+										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs typescript">    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-keyword">public</span> WebClient <span class="hljs-function"><span class="hljs-title">webClient</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">return</span> WebClient.builder().build();
+    }</code></pre>
+								</div>
+								<h1 style="text-align: left;">Step 3: Inject and Use WebClient to Call the REST API</h1>
+								<div>Let's inject <i>WebClient</i> and use it to make a REST API call:</div>
+								<div>
+									<pre class="notranslate"
+										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs csharp">        DepartmentDto departmentDto = webClient.<span class="hljs-keyword">get</span>()
+                 .uri(<span class="hljs-string">"http://localhost:8080/api/departments/"</span> + user.getDepartmentId())
+                         .retrieve()
+                                 .bodyToMono(DepartmentDto.<span class="hljs-keyword">class</span>)
+                                         .block();</code></pre>
+								</div>
+								<div>Here is the complete code of the&nbsp;<i>UserServiceImpl</i> class for your
+									reference:</div>
+								<div>
+									<pre class="notranslate"
+										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs java"><span class="hljs-keyword">package</span> net.javaguides.userservice.service.impl;
+
+<span class="hljs-keyword">import</span> lombok.AllArgsConstructor;
+<span class="hljs-keyword">import</span> net.javaguides.userservice.dto.DepartmentDto;
+<span class="hljs-keyword">import</span> net.javaguides.userservice.dto.ResponseDto;
+<span class="hljs-keyword">import</span> net.javaguides.userservice.dto.UserDto;
+<span class="hljs-keyword">import</span> net.javaguides.userservice.entity.User;
+<span class="hljs-keyword">import</span> net.javaguides.userservice.repository.UserRepository;
+<span class="hljs-keyword">import</span> net.javaguides.userservice.service.UserService;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+<span class="hljs-keyword">import</span> org.springframework.web.reactive.function.client.WebClient;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-meta">@AllArgsConstructor</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UserService</span> </span>{
+
+    <span class="hljs-keyword">private</span> UserRepository userRepository;
+    <span class="hljs-keyword">private</span> RestTemplate restTemplate;
+    <span class="hljs-keyword">private</span> WebClient webClient;
+
+    <span class="hljs-keyword">private</span> APIClient apiClient;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">saveUser</span><span class="hljs-params">(User user)</span> </span>{
+        <span class="hljs-keyword">return</span> userRepository.save(user);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ResponseDto <span class="hljs-title">getUser</span><span class="hljs-params">(Long userId)</span> </span>{
+
+        ResponseDto responseDto = <span class="hljs-keyword">new</span> ResponseDto();
+        User user = userRepository.findById(userId).get();
+        UserDto userDto = mapToUser(user);
+
+        DepartmentDto departmentDto = webClient.get()
+                 .uri(<span class="hljs-string">"http://localhost:8080/api/departments/"</span> + user.getDepartmentId())
+                         .retrieve()
+                                 .bodyToMono(DepartmentDto.class)
+                                         .block();
+        responseDto.setUser(userDto);
+        responseDto.setDepartment(departmentDto);
+
+        <span class="hljs-keyword">return</span> responseDto;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> UserDto <span class="hljs-title">mapToUser</span><span class="hljs-params">(User user)</span></span>{
+        UserDto userDto = <span class="hljs-keyword">new</span> UserDto();
+        userDto.setId(user.getId());
+        userDto.setFirstName(user.getFirstName());
+        userDto.setLastName(user.getLastName());
+        userDto.setEmail(user.getEmail());
+        <span class="hljs-keyword">return</span> userDto;
+    }
+}</code></pre>
+								</div>
+								<div>That's it. Now run both the Microservices and let's test.</div>
+								<h1 style="text-align: left;">Demo: Start Both Microservices</h1>
+							</div>
+							<div>First, start the <i>department-service</i> project and then start a <i>user-service</i>
+								project.</div>
+							<div><br></div>
+							<div>Once both the projects are up and running on different ports. Next, let's call the
+								<b>Get User REST API</b> to test the <i>user-service</i> REST API call to the
+								<i>department-service</i>.
+							</div>
+							<div>
+								<h3
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">
+									Get User REST API:&nbsp;<a
+										href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5Ne62jYh063QLbcEI7bSTBWOyv4-31Ht9_A7j5krua3K-wDneTKMy9DyJqH8WujxMe0ICrGwES_rfwz1CVCbfcSWRw4b1OYhPBfHUkfjwX1KMZBXhxVbI43bvIf6zt7orS01KU_tB6hgnDzRQbRQm2A2ndPh9IN4m_AkPjiwHpElLH7fnFznJacOw/s1732/Screenshot%202022-10-02%20at%2012.46.45%20PM.png"
+										style="background: transparent; color: red; margin-left: 1em; margin-right: 1em; outline: 0px; text-align: center; text-decoration-line: none;"><img
+											border="0" data-original-height="1164" data-original-width="1732"
+											src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5Ne62jYh063QLbcEI7bSTBWOyv4-31Ht9_A7j5krua3K-wDneTKMy9DyJqH8WujxMe0ICrGwES_rfwz1CVCbfcSWRw4b1OYhPBfHUkfjwX1KMZBXhxVbI43bvIf6zt7orS01KU_tB6hgnDzRQbRQm2A2ndPh9IN4m_AkPjiwHpElLH7fnFznJacOw/s16000/Screenshot%202022-10-02%20at%2012.46.45%20PM.png"
+											style="border: 0px; height: inherit; max-width: 100%;"></a></h3>
+								<div
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+									Note that the response contains a Department for a User.&nbsp; This demonstrates
+									that we have successfully made a REST API call from <i>user-service</i> to
+									<i>department-service</i> using <i>WebClient</i>.
+								</div>
+								<h1
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; margin: 0.67em 0px;">
+									Conclusion</h1>
+								<div
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+									In this tutorial, we learned<span style="background-color: transparent;">&nbsp;how
+										to use</span><span style="background-color: transparent;">&nbsp;</span><i
+										style="background-color: transparent;">WebClient&nbsp;</i><span
+										style="background-color: transparent;">to make REST API calls (Synchronous
+										communication) between multiple microservices.</span></div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="card-footer">
+				<ul class="pagination justify-content-center mb-4">
+					<li class="page-item"><a class="page-link btn-outline-primary"
+							href="../springboot/circuit-breaker.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link" href="../springboot/open-feign.html">Next
+							&rArr;</a></li>
+				</ul>
+			</div>
+			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
+					src="../scripts/images/top.jpeg" /></button>
+		</main>
+	</div>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			window.scrollTo(0, 0);
+		})
+	</script>
+	<script>
+		// Get the button
+		let mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function () {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<script src="../scripts/js/site.js"></script>
+</body>
+<footer class="footer">
+	<p>©
+		<script>var d = new Date();
+			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
+		Kalyan Kolloju.
+	</p>
+</footer>
+
+</html>

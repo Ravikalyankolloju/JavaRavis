@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="RaviKalyan">
-	<title>Microservices</title>
+	<title>Introduction</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
 	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
 	<link rel="stylesheet" href="../scripts/css/site.css">
@@ -92,11 +92,28 @@
 						<ul class="nav-list">
 							<h4>Springboot</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/introduction.html">Spring Boot
-									Introduction</a></li>
+									href="../springboot/introduction.html">Introduction</a></li>
 							<h4>Microservice</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/microservices.html">topic-1</a></li>
+									href="../springboot/ms-intro.html">Introduction</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/ms-architecture.html">Microservices Architecture</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/registry-discovery.html">Service Registry and Discovery</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/config-server.html">Config Server</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/api-gateway.html">API Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/web-client.html">WebClient</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/open-feign.html">Open Feign</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/sleuth.html">Cloud Sleuth</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/security.html">Cloud Security</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/springboot-interview-questions.html">Springboot Interview
@@ -120,7 +137,8 @@
 				<nav class="breadcrumbs">
 					<ul>
 						<li><a href="../home.html">Home</a></li>
-						<li><a href="../springboot/microservices.html">Microservices</a></li>
+						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
+						<li><a href="../springboot/ms-intro.html">Introduction</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -128,7 +146,8 @@
 				<nav class="breadcrumbs div-to-hide">
 					<ul>
 						<li><a href="../home.html">Home</a></li>
-						<li><a href="../springboot/microservices.html">Microservices</a></li>
+						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
+						<li><a href="../springboot/ms-intro.html">Introduction</a></li>
 					</ul>
 					<hr>
 				</nav>
@@ -137,15 +156,81 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div class="post-body entry-content float-container" id="post-body-3734298751576407583">
+							<p>This page contains a list of Microservices tutorials using Spring Boot and Spring Cloud.
+							</p>
+							<h1 style="text-align: left;"><span><a name="more"></a></span>What are Microservices?</h1>
+							<div>Microservices are a software architectural style in which a large
+								application is built as a collection of small, independent services that
+								communicate with each other over a network.&nbsp;</div>
+							<div><br></div>
+							<div>Each service is a
+								self-contained unit of functionality that can be developed, tested, and
+								deployed independently of the other services. This allows for more
+								flexibility and scalability than a monolithic architecture, where all
+								the functionality is contained in a single, large codebase.&nbsp;</div>
+							<div><br></div>
+							<div>Microservices can be written in different programming languages and use
+								different technologies, as long as they can communicate with each other
+								through a common API.&nbsp;</div>
+							<div><br></div>
+							<div>They are designed to be loosely coupled, meaning
+								that changes to one service should not affect the other services. This
+								makes it easier to update, maintain, and scale the application.
+								Microservices architecture is best suited for large and complex
+								applications that need to handle a high volume of traffic and need to be
+								scaled horizontally.</div>
+							<h1 style="text-align: left;">Key Components of a Microservices Architecture</h1>
+							<div>
+								<p>Key components of a microservices architecture include:</p>
+								<ol>
+									<li>
+										<p><b>Core Services</b>: Each service is a self-contained unit of functionality
+											that can be developed, tested, and deployed independently of the other
+											services.</p>
+									</li>
+									<li>
+										<p><b>Service registry</b>: A service registry is a database of all the services
+											in the system, along with their locations and capabilities. It allows
+											services to discover and communicate with each other.</p>
+									</li>
+									<li>
+										<p><b>API Gateway:</b> An API gateway is a single entry point for all incoming
+											requests to the microservices. It acts as a reverse proxy, routing requests
+											to the appropriate service and handling tasks such as authentication and
+											rate limiting.</p>
+									</li>
+									<li>
+										<p><b>Message bus:</b> A message bus is a messaging system that allows services
+											to communicate asynchronously with each other. This can be done through
+											protocols like HTTP, RabbitMQ, or Kafka.</p>
+									</li>
+									<li>
+										<p><b>Monitoring and logging:</b> Monitoring and logging are necessary to track
+											the health of the services and troubleshoot problems.</p>
+									</li>
+									<li>
+										<p><b>Service discovery and load balancing:</b> This component is responsible
+											for discovering service instances and directing traffic to the appropriate
+											service instances based on load and availability.</p>
+									</li>
+									<li>
+										<p><b>Continuous integration and continuous deployment (CI/CD): </b>To make the
+											development and deployment process of microservices as smooth as possible,
+											it is recommended to use a tool such as Jenkins, TravisCI, or CircleCI to
+											automate the process of building, testing, and deploying microservices.</p>
+									</li>
+								</ol>
+							</div>
+						</div>
 					</div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link btn-outline-primary" href="#">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link btn-outline-primary" href="../springboot/introduction.html">&lArr; Previous</a></li>
 					<li class="page-item"><a class="page-link"
-							href="../springboot/springboot-interview-questions.html">Next
+							href="../springboot/ms-architecture.html">Next
 							&rArr;</a></li>
 				</ul>
 			</div>

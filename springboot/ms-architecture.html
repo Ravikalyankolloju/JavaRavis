@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="RaviKalyan">
+	<title>Microservices Architecture</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel="stylesheet" href="../scripts/css/site.css">
+	<script>
+		!function (theme, navWidth) {
+			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
+			localStorage && localStorage.getItem('nav-width'))
+	</script>
+	<style>
+		@media screen and (min-width: 1025px) {
+			.div-to-desk {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+
+		@media screen and (max-width: 1025px) {
+			.div-to-hide {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar-brand">
+			<a class="navbar-item doc1" href="../home.html">
+				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			</a>
+			<button class="navbar-burger" data-target="topbar-nav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<div id="topbar-nav" class="navbar-menu">
+			<div class="navbar-end">
+				<div class="navbar-item" style="text-align: center;">
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
+								width="25" src="../scripts/images/home.png"></i></a>
+					</li>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/introduction.html">Java</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../spring/introduction.html">Spring</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+					</div>
+					<label class="theme-toggler div-to-hide">
+						<input type="checkbox" id="switch-theme-checkbox" />
+						<span class="icon"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<label class="theme-toggler div-to-desk" style="top: 22px;">
+			<input type="checkbox" id="switch-theme-mobile" />
+			<span class="icon"></span>
+		</label>
+	</nav>
+
+	<div class="body">
+		<div class="nav-container">
+			<aside class="nav">
+				<div class="nav-panel-menu is-active" data-panel="menu">
+					<li class="nav-item" data-depth="0">
+						<ul class="nav-list">
+							<h4>Springboot</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/introduction.html">Introduction</a></li>
+							<h4>Microservice</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/ms-intro.html">Introduction</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/ms-architecture.html">Microservices Architecture</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/registry-discovery.html">Service Registry and Discovery</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/config-server.html">Config Server</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/api-gateway.html">API Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/web-client.html">WebClient</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/open-feign.html">Open Feign</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/sleuth.html">Cloud Sleuth</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/security.html">Cloud Security</a></li>
+							<h4>Interview Questions</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/springboot-interview-questions.html">Springboot Interview
+									Questions
+								</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/microservices-interview.html">Microservices Interview
+									Questions</a></li>
+						</ul>
+					</li>
+				</div>
+			</aside>
+		</div>
+		<main class="article">
+			<div class="toolbar">
+				<button class="navbar-burger" id="nav-toggle-1">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<nav class="breadcrumbs">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
+						<li><a href="../springboot/ms-architecture.html">Microservices Architecture</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="doc">
+				<nav class="breadcrumbs div-to-hide">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
+						<li><a href="../springboot/ms-architecture.html">Microservices Architecture</a></li>
+					</ul>
+					<hr>
+				</nav>
+				<a class="div-to-desk">
+					<br>
+				</a>
+				<article>
+					<div class="entry-content" itemprop="text">
+						<div class="post-body entry-content float-container" id="post-body-6364877011564702432">
+							<p>In this tutorial, we will discuss how to create a typical microservices architecture
+								using Spring boot and Spring cloud.</p><b>Spring Boot</b> is a very popular Java
+							framework for building Restful web services and microservices. The main goal of Spring Boot
+							is to quickly create Spring-based applications without requiring developers to write the
+							same boilerplate configuration again and again.<br><br><b>Spring Cloud</b> provides various
+							tools or modules for developers to build common design patterns to solve different
+							infrastructural concerns in Microservices projects and focus on their main business
+							problems.<div><br></div>
+							<div>In the Java community, Spring Boot and Spring Cloud become a de-facto standard for
+								building microservices architecture.<br>
+								<h1 style="text-align: left;"><span><a name="more"></a></span>What are Microservices or
+									Microservices Architecture?</h1>Well, a microservice architecture enables large
+								teams to build scalable applications that are composed of many loosely coupled services.
+								<br><br>Here is what a typical microservice architecture looks like. For example,
+								consider this microservice architecture for a simple shopping cart application. It has
+								different services like <b>product service</b>, <b>inventory service</b>, and <b>stock
+									service</b>, and these are the independent and loosely coupled services in the
+								microservices projects.
+								Each microservice has its own
+								database. For example, <b>product service</b> has its own database, <b>inventory
+									service</b> has its own database, and <b>stock service</b> has its own database.
+								<br><br>In the microservices project, all the microservices are loosely coupled. So
+								loosely coupled, meaning all the services in a microservices project are independent of
+								each other and each microservice should be developed independently and each microservice
+								should be deployed independently and each microservice should be scaled independently.
+								<br><br>So basically Microservice following characteristics:<br>
+								<ul style="text-align: left;">
+									<li>Each microservice can have its own database. </li>
+									<li>Each microservice should be developed independently</li>
+									<li>Each microservice should be deployed independently </li>
+									<li>Each microservice should be scaled independently</li>
+								</ul>
+								<p
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+								</p>
+								<h1 style="text-align: left;">Microservices Architecture using Spring Boot and Spring
+									Cloud</h1>Well, we are going to use the <b>Employee Management </b>Project as an
+								example to create a microservices architecture. <div class="separator"
+									style="clear: both; text-align: center;"><a
+										href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0dZa58zPwU8Sav__6W7bfjSXtREOyR1NcHtnlcoeMb6DP_Dht-jbeGZlWhTUz64KIC7vtaMiZV6tbRv9AAOwxCIh4sfCfuYTEsHD56IOoMy9EXC5YUnZVjOka6e-0iJZiOXca6AqRQJ-jNGXG9yI6O4AKgUJeJ-IkHdBRFNKh1m73m9B8TgE7prTi/s2500/Screenshot%202023-01-19%20at%205.03.26%20PM.png"
+										style="margin-left: 1em; margin-right: 1em;"><img border="0"
+											data-original-height="1278" data-original-width="2500"
+											src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0dZa58zPwU8Sav__6W7bfjSXtREOyR1NcHtnlcoeMb6DP_Dht-jbeGZlWhTUz64KIC7vtaMiZV6tbRv9AAOwxCIh4sfCfuYTEsHD56IOoMy9EXC5YUnZVjOka6e-0iJZiOXca6AqRQJ-jNGXG9yI6O4AKgUJeJ-IkHdBRFNKh1m73m9B8TgE7prTi/s16000/Screenshot%202023-01-19%20at%205.03.26%20PM.png"></a>
+								</div>Well, you can take any example of any project. For example, you can take an
+								e-commerce application or you can take any healthcare domain-related application. So you
+								can take any project as an example, but follow the same steps to create a microservice
+								architecture using Spring Boot and Spring Cloud. <h2
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">
+									Core Microservices</h2>Consider we have developed three core backend Spring boot
+								microservices such as <b>employee service</b>, <b>department service,</b> and
+								<b>organization service,</b> and all these three microservices have their own databases.
+								You can use a relational database or NoSQL database as a database for these
+								microservices. So whenever you create a microservice in your project, make sure that
+								each microservice should have its own database. All right. <h2
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">
+									Microservices Communication</h2>Once we build these 3 microservices. Next, we'll see
+								how these microservices communicate with each other. Well, there are different ways to
+								make a REST API call from one microservice to another Microservice. For example, we can
+								use a RestTemplate or WebClient or Spring cloud-provided open feign library. All right.
+								<br><br>Well, there are two types of communication styles. One is synchronous and
+								another is asynchronous. <br><br>In the case of synchronous, we can use the HTTP
+								protocol to make an HTTP request from one microservice to the microservice. <br><br>And
+								in the case of asynchronous communication, we have to use a message broker for
+								asynchronous communication between multiple microservices. For example, we can use
+								RabbitMQ or Apache Kafka as a message broker in order to make an asynchronous
+								communication between multiple microservices and each microservice in a microservices
+								project can expose REST APIs.
+							</div>
+							<div><br></div>
+							<div><br></div>
+							<div>Well, Spring Cloud provides a Spring
+									Cloud Netflix Eureka Based Service Registry module that we can use to implement
+								service registry and discovery patterns in our microservices project. Well, service
+								Registry and discovery is a really essential pattern that we can use to avoid hard
+								coding hostnames and ports. <h2
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">
+									Config-Server to Externalize the Configurations</h2>Next, we will implement a config
+								server to externalize the configurations of all these three microservices into a central
+								place which is the git repository.&nbsp;</div>
+							<div><br></div>
+							<div>Well, Spring cloud provides a Spring cloud config module that we can use to implement a
+								config server to externalize the configuration files of all these three microservices
+								into a central place. We are going to use the git repository as storage for the config
+								server. <h2
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">
+									API Gateway Pattern</h2>
+								<div>Well, once we know how to use the config server to externalize the configuration
+									files. Next, we have to implement an API gateway.&nbsp;</div>
+								<div><br></div>
+								<div>Well, API Gateway plays a very important role in our microservices architecture. So
+									whenever a client wants to make a call to different microservices, the client has to
+									remember the host names and ports of all these microservices. So there should be a
+									solution where a client can send a request to the central component so that is where
+									the API gateway comes into the picture. So whenever a client sends a request to the
+									backend microservices, then the client has to send a request to the API gateway
+									first, and then the API gateway based on the routing rules will route that request
+									to the appropriate microservice. So this is how the API gateway plays an important
+									role in a microservices architecture.</div><br>Well, Spring Cloud provides Spring
+									Cloud Gateway module to implement API gateway patterns in a microservices
+								architecture. <h2
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">
+									Distributed Tracing</h2>Next, once you know how to implement an API gateway in a
+								microservices project, next you can implement distributed tracing in a microservices
+								architecture. Well, Spring Cloud provides a Spring Cloud sleuth module, which we can use
+								to implement distributed tracing in our microservices project. <br><br>Well, along with
+								Spring Cloud Sleuth, we'll also use Zipkin to visualize the tracing log information in a
+								user interface. Well, Zipkin provides a user interface to track and trace information
+								through web applications. <h2
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">
+									React Front Service</h2>Next, you can use React/Angular to create a client-side
+								service that will make a call to backend microservices. <h2
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">
+									Circuit Breaker Pattern</h2>Next, you can implement a circuit breaker pattern in an
+								employee service because the employee service is internally calling department service,
+								and let's say due to some reason, department service is down then employee service won't
+								get a response from the department server, isn't it? And then again, employee service
+								will send an internal server error to the API gateway and then API Gateway will send
+								that response back to the client. All right. So in order to avoid this kind of issue, we
+								can use a circuit breaker pattern. <br><br>So this circuit breaker pattern helps the
+								employee service to avoid continuous calls to the department service Whenever department
+								service is done and this circuit breaker pattern will help employee service to return
+								some default response back to the API Gateway and the API Gateway will send that default
+								response to the client. <br><br>All right. So this is a simple microservices
+								architecture using Spring Boot and Spring Cloud.
+							</div>
+						</div>
+				</article>
+			</div>
+			<div class="card-footer">
+				<ul class="pagination justify-content-center mb-4">
+					<li class="page-item"><a class="page-link btn-outline-primary"
+							href="../springboot/ms-intro.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link" href="../springboot/registry-discovery.html">Next
+							&rArr;</a></li>
+				</ul>
+			</div>
+			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
+					src="../scripts/images/top.jpeg" /></button>
+		</main>
+	</div>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			window.scrollTo(0, 0);
+		})
+	</script>
+	<script>
+		// Get the button
+		let mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function () {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<script src="../scripts/js/site.js"></script>
+</body>
+<footer class="footer">
+	<p>©
+		<script>var d = new Date();
+			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
+		Kalyan Kolloju.
+	</p>
+</footer>
+
+</html>

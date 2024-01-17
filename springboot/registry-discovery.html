@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="RaviKalyan">
+	<title>Service Registry and Discovery</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel="stylesheet" href="../scripts/css/site.css">
+	<script>
+		!function (theme, navWidth) {
+			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
+			localStorage && localStorage.getItem('nav-width'))
+	</script>
+	<style>
+		@media screen and (min-width: 1025px) {
+			.div-to-desk {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+
+		@media screen and (max-width: 1025px) {
+			.div-to-hide {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar-brand">
+			<a class="navbar-item doc1" href="../home.html">
+				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			</a>
+			<button class="navbar-burger" data-target="topbar-nav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<div id="topbar-nav" class="navbar-menu">
+			<div class="navbar-end">
+				<div class="navbar-item" style="text-align: center;">
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
+								width="25" src="../scripts/images/home.png"></i></a>
+					</li>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/introduction.html">Java</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../spring/introduction.html">Spring</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+					</div>
+					<label class="theme-toggler div-to-hide">
+						<input type="checkbox" id="switch-theme-checkbox" />
+						<span class="icon"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<label class="theme-toggler div-to-desk" style="top: 22px;">
+			<input type="checkbox" id="switch-theme-mobile" />
+			<span class="icon"></span>
+		</label>
+	</nav>
+
+	<div class="body">
+		<div class="nav-container">
+			<aside class="nav">
+				<div class="nav-panel-menu is-active" data-panel="menu">
+					<li class="nav-item" data-depth="0">
+						<ul class="nav-list">
+							<h4>Springboot</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/introduction.html">Introduction</a></li>
+							<h4>Microservice</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/ms-intro.html">Introduction</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/ms-architecture.html">Microservices Architecture</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/registry-discovery.html">Service Registry and Discovery</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/config-server.html">Config Server</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/api-gateway.html">API Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/web-client.html">WebClient</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/open-feign.html">Open Feign</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/sleuth.html">Cloud Sleuth</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/security.html">Cloud Security</a></li>
+							<h4>Interview Questions</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/springboot-interview-questions.html">Springboot Interview
+									Questions
+								</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/microservices-interview.html">Microservices Interview
+									Questions</a></li>
+						</ul>
+					</li>
+				</div>
+			</aside>
+		</div>
+		<main class="article">
+			<div class="toolbar">
+				<button class="navbar-burger" id="nav-toggle-1">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<nav class="breadcrumbs">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
+						<li><a href="../springboot/registry-discovery.html">Service Registry and Discovery</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="doc">
+				<nav class="breadcrumbs div-to-hide">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
+						<li><a href="../springboot/registry-discovery.html">Service Registry and Discovery</a></li>
+					</ul>
+					<hr>
+				</nav>
+				<a class="div-to-desk">
+					<br>
+				</a>
+				<article>
+					<div class="entry-content" itemprop="text">
+						<div class="post-body entry-content float-container" id="post-body-5188235442253115013">
+							<style>
+								pre {
+									background-color: white !important;
+								}
+
+								code {
+									background-color: white !important;
+								}
+							</style>
+							<h1> Registry and Discovery
+								Overview</h1>In the microservices projects, Service Registry and Discovery play an
+							important role because we most likely run multiple instances of services and we need a
+							mechanism to call other services without hardcoding their hostnames or port numbers. In
+							addition to that, in Cloud environments service instances may come up and go down anytime.
+							So we need some automatic service registration and discovery mechanism.<div><br>
+								<div><b>Spring Cloud addresses this problem</b> by providing <b>Spring Cloud Netflix
+										Eureka</b> project to create Service Registry and Discovery.&nbsp;</div>
+								<div><br></div>
+								<div>In this tutorial, we will learn how to use <b>SpringCloud Netflix Eureka</b> for
+									Service Registry and Discovery.</div>
+								<h1 style="text-align: left;">What we will build?</h1>We can use Netflix Eureka Server
+								to create a Service Registry and make our microservices (<i>department-service</i> and
+								<i>user-service</i>) as Eureka Clients so that as soon as we start a microservice it
+								will get registered with Eureka Server automatically with a logical Service ID. Then,
+								the other microservices, which are also Eureka Clients, can use Service ID to invoke
+								REST endpoints.
+							</div><br>
+							<div class="separator" style="clear: both; text-align: center;"><a
+									href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcMZBv7AZQvpLEMR7kO9p7QAR6gN7EsYQnkDJz6rG0m2sgCnflPr4rZoXwW8HZv2Y7KU9mMa_JHVen62eYiG81hNZYm1saPpfuBJGjlD-XMS0sMkpn9nHQYbFSaBoXwnPzxA0ac8j-L0irv85FEuu7KG2jFzzWMtl6FRnY0bv1XTVYTugS_SK9lDGD/s1920/Spring%20Boot%20Microservices.012.jpeg"
+									style="margin-left: 1em; margin-right: 1em;"><img
+										alt="Spring Boot Microservices - Spring Cloud Netflix Eureka based Service Registry"
+										border="0" data-original-height="1080" data-original-width="1920"
+										src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcMZBv7AZQvpLEMR7kO9p7QAR6gN7EsYQnkDJz6rG0m2sgCnflPr4rZoXwW8HZv2Y7KU9mMa_JHVen62eYiG81hNZYm1saPpfuBJGjlD-XMS0sMkpn9nHQYbFSaBoXwnPzxA0ac8j-L0irv85FEuu7KG2jFzzWMtl6FRnY0bv1XTVYTugS_SK9lDGD/s16000/Spring%20Boot%20Microservices.012.jpeg"
+										title="Spring Boot Microservices - Spring Cloud Netflix Eureka based Service Registry"></a>
+							</div>
+							<div><br>Spring Cloud makes it very easy to create a Service Registry and discover other
+								services using Load Balanced <i>RestTemplate:</i></div>
+							<div>
+								<pre
+									style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 0px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px; word-break: normal;">    <span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">@</span><span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">Bean</span>
+    <span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">@</span><span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">LoadBalanced</span>
+    <span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">public</span> <span class="pl-smi" color="var(--color-prettylights-syntax-storage-modifier-import)" style="box-sizing: border-box;">RestTemplate</span> <span class="pl-s1" style="box-sizing: border-box;">restTemplate</span>(){
+        <span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">return</span> <span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">new</span> <span class="pl-smi" color="var(--color-prettylights-syntax-storage-modifier-import)" style="box-sizing: border-box;">RestTemplate</span>();
+    }</pre>
+							</div>
+							<h1 style="text-align: left;">1. Create and Setup Spring boot project in IntelliJ IDEA</h1>
+							<div><span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+									style="background-color: white; color: #24292f; font-size: 16px;">Let us create a
+									Service Registry using Netflix Eureka which is nothing but a SpringBoot application
+									with a Eureka Server starter.</span></div>
+							<div>
+								<pre class="notranslate"
+									style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml">		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-server<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+							</div>
+							<div>
+								<p
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+									<span
+										face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+										style="color: #24292f;">Let's create a Spring boot project using
+										the&nbsp;</span><a href="https://start.spring.io/" rel="nofollow"
+										style="background: transparent; box-sizing: border-box; color: #3d85c6; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-weight: bold; text-decoration-line: none; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s;">spring
+										initializr</a>.
+								</p>
+								<p
+									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+									Refer to the below screenshot to enter details while creating the spring boot
+									application&nbsp;<span
+										face="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;"
+										style="color: #24292f;">using the&nbsp;</span><a href="https://start.spring.io/"
+										rel="nofollow"
+										style="background: transparent; box-sizing: border-box; color: #3d85c6; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-weight: bold; text-decoration-line: none; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s;">spring
+										initializr</a>:</p>
+							</div>
+							<div class="separator" style="clear: both; text-align: center;"><a
+									href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia_lrZoxT7dmGfBehXKeWI1FkD1eczuDDi2I-Un9u1VBgRMoPk2k_YcVg0qeDB5czDbdZg-XUDkz_nN9gXnmU3ZpMc8m6q0xsmzC8joqqPxu60hqLHxAG0wsR3bJyTbiMBz5jHWmM7zs0IssfIjO3sgU4cPqzYo8qpvfM2_i0dkKofcKGR2aO8zKPj/s2560/Screenshot%202022-10-02%20at%204.00.51%20PM.png"
+									style="margin-left: 1em; margin-right: 1em;"><img border="0"
+										data-original-height="1522" data-original-width="2560"
+										src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia_lrZoxT7dmGfBehXKeWI1FkD1eczuDDi2I-Un9u1VBgRMoPk2k_YcVg0qeDB5czDbdZg-XUDkz_nN9gXnmU3ZpMc8m6q0xsmzC8joqqPxu60hqLHxAG0wsR3bJyTbiMBz5jHWmM7zs0IssfIjO3sgU4cPqzYo8qpvfM2_i0dkKofcKGR2aO8zKPj/s16000/Screenshot%202022-10-02%20at%204.00.51%20PM.png"></a>
+							</div>
+							<div
+								style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+								<span
+									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;">Click
+									on Generate button to download the Spring boot project as a zip file. Unzip the zip
+									file and import the Spring boot project in IntelliJ IDEA.</span>
+							</div>
+							<div
+								style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+								<br>
+							</div><span
+								face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;"
+								style="background-color: white; font-size: 16px;">Here is the&nbsp;</span><span
+								style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">pom.xml</span><span
+								face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;"
+								style="background-color: white; font-size: 16px;">&nbsp;file for your reference:</span>
+							<div>
+								<pre class="notranslate"
+									style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://maven.apache.org/POM/4.0.0"</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+	<span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">parent</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.7.4<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">relativePath</span>/&gt;</span> <span class="hljs-comment">&lt;!-- lookup parent from repository --&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">parent</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>net.javaguide<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>service-registry<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>service-registry<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>service-registry<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">java.version</span>&gt;</span>17<span class="hljs-tag">&lt;/<span class="hljs-name">java.version</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">spring-cloud.version</span>&gt;</span>2021.0.4<span class="hljs-tag">&lt;/<span class="hljs-name">spring-cloud.version</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-server<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">dependencyManagement</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${spring-cloud.version}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>pom<span class="hljs-tag">&lt;/<span class="hljs-name">type</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">dependencyManagement</span>&gt;</span>
+
+	<span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span></code></pre>
+								<h1 style="text-align: left;">2. Add @EnableEurekaServer annotation</h1>
+								<div>
+									<p dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										We need to add <i>@EnableEurekaServer</i> annotation to make our SpringBoot
+										application a Eureka Server-based Service Registry.</p>
+									<pre class="notranslate"
+										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs typescript">package net.javaguides.serviceregistry;
+
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+<span class="hljs-keyword">import</span> org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableEurekaServer</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ServiceRegistryApplication</span> </span>{
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">main</span>(<span class="hljs-params"><span class="hljs-built_in">String</span>[] args</span>)</span> {
+		SpringApplication.run(ServiceRegistryApplication.class, args);
+	}
+
+}</code></pre>
+								</div>
+								<div>
+									<h1 style="text-align: left;">3. Disable Eureka Server as Eureka Client</h1>
+									<p dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										By default, each Eureka Server is also a Eureka client and needs at least one
+										service URL to locate a peer. As we are going to have a single Eureka Server
+										node (Standalone Mode), we are going to disable this client-side behavior by
+										configuring the following properties in the <i>application.properties</i> file.
+									</p>
+									<pre class="notranslate"
+										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs ini"><span class="hljs-attr">spring.application.name</span>=service-registry
+<span class="hljs-attr">server.port</span>=<span class="hljs-number">8761</span>
+<span class="hljs-attr">eureka.client.register-with-eureka</span>=<span class="hljs-literal">false</span>
+<span class="hljs-attr">eureka.client.fetch-registry</span>=<span class="hljs-literal">false</span></code></pre>
+								</div>
+								<div>
+									<h1 style="text-align: left;">4. Launch Eureka Server (Demo)</h1>
+									<p dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Netflix Eureka Service provides UI where we can see all the details about
+										registered services.</p>
+									<p dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Now run <i>ServiceRegistryApplication</i> and access&nbsp;<a
+											href="http://localhost:8761/" rel="nofollow"
+											style="background-color: transparent; box-sizing: border-box; text-decoration-line: none;">http://localhost:8761</a>&nbsp;which
+										will display the UI similar to the below screenshot.</p>
+								</div>
+								<div class="separator" style="clear: both; text-align: center;"><a
+										href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjywBofNaOkTGIWkeG-Ec7xaFW9mhGoaeFlk_Yx_iWLNzZm1iv_ohfDpcooZErA6ox-JxqrDRHCU89euHr3I7TjGr1dj7j1wdAyWb0SXbWcGgovtgr5GlFW2pG5BIfIZRe4ZriwQiI2a0fg4reaVnmypJGsZIiDbYUos9a2caeAUGfvODcxnBPV7FsM/s2560/Screenshot%202022-10-02%20at%204.04.34%20PM.png"
+										style="margin-left: 1em; margin-right: 1em;"><img border="0"
+											data-original-height="1522" data-original-width="2560"
+											src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjywBofNaOkTGIWkeG-Ec7xaFW9mhGoaeFlk_Yx_iWLNzZm1iv_ohfDpcooZErA6ox-JxqrDRHCU89euHr3I7TjGr1dj7j1wdAyWb0SXbWcGgovtgr5GlFW2pG5BIfIZRe4ZriwQiI2a0fg4reaVnmypJGsZIiDbYUos9a2caeAUGfvODcxnBPV7FsM/s16000/Screenshot%202022-10-02%20at%204.04.34%20PM.png"></a>
+								</div>
+								<h1 style="text-align: left;">5. Registering Department-Service Microservice as Eureka
+									Client</h1>
+								<div>
+									<div
+										style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+										Refer to this tutorial to create<span
+											style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">&nbsp;department-service</span>&nbsp;and&nbsp;<span
+											style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">user-service</span>&nbsp;microservices:&nbsp;<a
+											href="https://www.javaguides.net/2022/10/spring-boot-microservices-communication-using-resttemplate.html"
+											style="background: transparent; color: #3d85c6; font-weight: bold; text-decoration-line: none;">Spring
+											Boot Microservices Communication Example using RestTemplate</a>.</div>
+								</div>
+								<div><br></div>
+								<div>
+									<p dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Let us make this <i>department-service</i>&nbsp;as a Eureka Client and register
+										with the Eureka Server.</p>
+									<p dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Add the&nbsp;Eureka Discovery&nbsp;starter to <i>department-service</i>:</p>
+								</div>
+								<div>
+									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										<pre class="notranslate"
+											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+									</div>
+									<p data-sourcepos="114:1-114:40" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Also, add the Spring cloud dependencies:</p>
+									<pre class="notranslate"
+										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependencyManagement</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${spring-cloud.version}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>pom<span class="hljs-tag">&lt;/<span class="hljs-name">type</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependencyManagement</span>&gt;</span></code></pre>
+									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										<div class="zeroclipboard-container position-absolute right-0 top-0"
+											style="animation: 200ms ease 0s 1 normal both running fade-in; box-sizing: border-box; position: absolute; right: 0px; top: 0px;">
+											<clipboard-copy aria-label="Copy"
+												class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+												data-copy-feedback="Copied!" data-tooltip-direction="w" role="button"
+												style="appearance: none; background-color: var(--color-btn-bg); border-color: var(--color-btn-border); border-image: initial; border-radius: 6px; border-style: solid; border-width: 1px; box-shadow: var(--color-btn-shadow),var(--color-btn-inset-shadow); box-sizing: border-box; color: var(--color-btn-text); cursor: pointer; display: inline-block; font-size: 14px; line-height: 20px; margin: 8px; padding: 0px; position: relative; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s; user-select: none; vertical-align: middle; white-space: nowrap;"
+												tabindex="0" value="<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-dependencies</artifactId>
+			<version>${spring-cloud.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+	</dependencies>
+</dependencyManagement>"><svg aria-hidden="true" class="octicon octicon-copy js-clipboard-copy-icon m-2"
+													data-view-component="true" height="16" version="1.1"
+													viewBox="0 0 16 16" width="16">
+													<path
+														d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+														fill-rule="evenodd"></path>
+													<path
+														d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+														fill-rule="evenodd"></path>
+												</svg></clipboard-copy>
+										</div>
+									</div>
+									<p data-sourcepos="128:1-128:24" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Add version as property:</p>
+									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										<pre class="notranslate"
+											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs apache"><span class="hljs-section">&lt;properties&gt;</span>
+	<span class="hljs-section">&lt;java.version&gt;</span><span class="hljs-attribute">17</span>&lt;/java.version&gt;
+	<span class="hljs-section">&lt;spring-cloud.version&gt;</span><span class="hljs-attribute">2021</span>.<span class="hljs-number">0</span>.<span class="hljs-number">4</span>&lt;/spring-cloud.version&gt;
+<span class="hljs-section">&lt;/properties
+</span></code></pre>
+									</div>
+									<p data-sourcepos="136:1-136:210" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										With <i>spring-cloud-starter-netflix-eureka-client</i> on the classpath, we just
+										need to configure <i>eureka.client.service-url.defaultZone</i> property in
+										<i>application.properties</i> to automatically register with the Eureka Server.
+									</p>
+									<div class="highlight highlight-source-ini notranslate position-relative overflow-auto"
+										dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; overflow: auto; position: relative;">
+										<pre
+											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 0px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px; word-break: normal;"><span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">spring.application.name</span>=DEPARTMENT-SERVICE
+<span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">eureka.instance.client.serviceUrl.defaultZone</span>=http://localhost:8761/eureka/</pre>
+									</div>
+									<p data-sourcepos="141:1-141:238" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										When a service is registered with Eureka Server it keeps sending heartbeats for
+										certain intervals. If the Eureka server didn’t receive a heartbeat from any
+										service instance it will assume the service instance is down and take it out
+										from the pool.</p><a
+										href="https://github.com/RameshMF/microservices-learnings/blob/main/Spring%20Cloud%20Service%20Registry%20and%20Discovery.md#spring-cloud-netflix-eureka-based-service-registry"></a>
+									<h1 style="text-align: left;">6. Run department-service Eureka Client (Demo)</h1>
+									<p data-sourcepos="143:1-143:310" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										With this configuration in place, start <i>department-service</i> and
+										visit&nbsp;<a href="http://localhost:8761/" rel="nofollow"
+											style="background-color: transparent; box-sizing: border-box; text-decoration-line: none;">http://localhost:8761</a>.&nbsp;
+									</p>
+									<p data-sourcepos="143:1-143:310" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										You should see that <i>department-service</i> is registered with SERVICE ID as
+										DEPARTMENT-SERVICE. You can also notice the status as UP(1) which means the
+										services are up and running and one instance of <i>department-service</i> is
+										running.</p>
+								</div>
+								<div class="separator" style="clear: both; text-align: center;"><a
+										href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-yqg5yTS-Vesuftw7EGQJumye42QUyP3o1F8TSItNz_a6RzjK84N_t-51GBeK7vxy64kGgq5YwyLsGyxqWSSHIo7avg1_ZQCwOZwaAN07kNl-whqaO8jvl6cL4VCeBJ2gr56NSOvrztBwIFtTmPI-ShhW3qhOwOwT7vHPyrkf54wjtQpwHUqyvfnC/s2560/Screenshot%202022-10-02%20at%204.13.46%20PM.png"
+										style="margin-left: 1em; margin-right: 1em;"><img border="0"
+											data-original-height="1522" data-original-width="2560"
+											src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-yqg5yTS-Vesuftw7EGQJumye42QUyP3o1F8TSItNz_a6RzjK84N_t-51GBeK7vxy64kGgq5YwyLsGyxqWSSHIo7avg1_ZQCwOZwaAN07kNl-whqaO8jvl6cL4VCeBJ2gr56NSOvrztBwIFtTmPI-ShhW3qhOwOwT7vHPyrkf54wjtQpwHUqyvfnC/s16000/Screenshot%202022-10-02%20at%204.13.46%20PM.png"></a>
+								</div><br>
+							</div>
+							<div>
+								<h1>7. Registering User-Service Microservice as Eureka Client</h1>
+								<div>
+									<div
+										style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
+										Refer to this tutorial to create<span
+											style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">&nbsp;department-service</span>&nbsp;and&nbsp;<span
+											style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">user-service</span>&nbsp;microservices:&nbsp;<a
+											href="https://www.javaguides.net/2022/10/spring-boot-microservices-communication-using-resttemplate.html"
+											style="background: transparent; color: #3d85c6; font-weight: bold; text-decoration-line: none;">Spring
+											Boot Microservices Communication Example using RestTemplate</a>.</div>
+								</div>
+								<div><br></div>
+								<div>
+									<p dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Let us make this&nbsp;<i>user-service</i>&nbsp;as a Eureka Client and register
+										with the Eureka Server.</p>
+									<p dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Add the&nbsp;Eureka Discovery&nbsp;starter to&nbsp;<i>user-service</i>:</p>
+								</div>
+								<div>
+									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										<pre class="notranslate"
+											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+									</div>
+									<p data-sourcepos="114:1-114:40" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Also, add the Spring cloud dependencies:</p>
+									<pre class="notranslate"
+										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependencyManagement</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${spring-cloud.version}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>pom<span class="hljs-tag">&lt;/<span class="hljs-name">type</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependencyManagement</span>&gt;</span></code></pre>
+									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										<div class="zeroclipboard-container position-absolute right-0 top-0"
+											style="animation: 200ms ease 0s 1 normal both running fade-in; box-sizing: border-box; position: absolute; right: 0px; top: 0px;">
+											<clipboard-copy aria-label="Copy"
+												class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+												data-copy-feedback="Copied!" data-tooltip-direction="w" role="button"
+												style="appearance: none; background-color: var(--color-btn-bg); border-color: var(--color-btn-border); border-image: initial; border-radius: 6px; border-style: solid; border-width: 1px; box-shadow: var(--color-btn-shadow),var(--color-btn-inset-shadow); box-sizing: border-box; color: var(--color-btn-text); cursor: pointer; display: inline-block; font-size: 14px; line-height: 20px; margin: 8px; padding: 0px; position: relative; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s; user-select: none; vertical-align: middle; white-space: nowrap;"
+												tabindex="0" value="<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-dependencies</artifactId>
+			<version>${spring-cloud.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+	</dependencies>
+</dependencyManagement>"><svg aria-hidden="true" class="octicon octicon-copy js-clipboard-copy-icon m-2"
+													data-view-component="true" height="16" version="1.1"
+													viewBox="0 0 16 16" width="16">
+													<path
+														d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+														fill-rule="evenodd"></path>
+													<path
+														d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+														fill-rule="evenodd"></path>
+												</svg></clipboard-copy>
+										</div>
+									</div>
+									<p data-sourcepos="128:1-128:24" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Add version as property:</p>
+									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										<pre class="notranslate"
+											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs apache"><span class="hljs-section">&lt;properties&gt;</span>
+	<span class="hljs-section">&lt;java.version&gt;</span><span class="hljs-attribute">17</span>&lt;/java.version&gt;
+	<span class="hljs-section">&lt;spring-cloud.version&gt;</span><span class="hljs-attribute">2021</span>.<span class="hljs-number">0</span>.<span class="hljs-number">4</span>&lt;/spring-cloud.version&gt;
+<span class="hljs-section">&lt;/properties
+</span></code></pre>
+									</div>
+									<p data-sourcepos="136:1-136:210" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										With&nbsp;<i>spring-cloud-starter-netflix-eureka-client</i>&nbsp;on the
+										classpath, we just need to
+										configure&nbsp;<i>eureka.client.service-url.defaultZone</i>&nbsp;property
+										in&nbsp;<i>application.properties</i>&nbsp;to automatically register with the
+										Eureka Server.</p>
+									<div class="highlight highlight-source-ini notranslate position-relative overflow-auto"
+										dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; overflow: auto; position: relative;">
+										<pre
+											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 0px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px; word-break: normal;"><span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">spring.application.name</span>=USER-SERVICE
+<span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">eureka.instance.client.serviceUrl.defaultZone</span>=http://localhost:8761/eureka/</pre>
+									</div>
+									<h1 style="text-align: left;">8. Run user-service Eureka Client (Demo)</h1>
+									<p data-sourcepos="183:1-183:292" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										With this configuration in place, start user-service and visit&nbsp;<a
+											href="http://localhost:8761/" rel="nofollow"
+											style="background-color: transparent; box-sizing: border-box; text-decoration-line: none;">http://localhost:8761</a>.
+										You should see <i>user-service</i> is registered with SERVICE ID as
+										USER-SERVICE.&nbsp;</p>
+									<p data-sourcepos="183:1-183:292" dir="auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										You can also notice the status as UP(1) which means the services are up and
+										running and one instance of <i>user-service</i> is running.</p>
+								</div>
+							</div>
+							<div class="separator" style="clear: both; text-align: center;"><a
+									href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJAT3MxvQgVYr8i4-yZOtLURB-_55uNt7N3lcIGSnjpU4TChMW9bBVzARJUDmyH2uhFSRV-zS20K7DJxNQvZffMoHwYkQMc63fscPJWID044mNCVmc7P6_mDvtdbGFbz70t-SW7C8rxquDyg4nYcY0uFK4ZttmriG4id5P9fQ_btq40QmUlNlxQjYN/s2560/Screenshot%202022-10-02%20at%204.18.22%20PM.png"
+									style="margin-left: 1em; margin-right: 1em;"><img border="0"
+										data-original-height="1522" data-original-width="2560"
+										src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJAT3MxvQgVYr8i4-yZOtLURB-_55uNt7N3lcIGSnjpU4TChMW9bBVzARJUDmyH2uhFSRV-zS20K7DJxNQvZffMoHwYkQMc63fscPJWID044mNCVmc7P6_mDvtdbGFbz70t-SW7C8rxquDyg4nYcY0uFK4ZttmriG4id5P9fQ_btq40QmUlNlxQjYN/s16000/Screenshot%202022-10-02%20at%204.18.22%20PM.png"></a>
+							</div><br>
+							<div>
+								<h1 style="text-align: left;">Multiple Instances of Department-Service</h1>
+								<p data-sourcepos="185:1-185:100" dir="auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									Let us start another instance of <i>department-service</i> on a different port using
+									the following command.</p>
+								<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+									<pre class="notranslate"
+										style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs apache"><span class="hljs-attribute">java</span> -jar -Dserver.port=<span class="hljs-number">8082</span> department-service-<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span>-SNAPSHOT.jar
+</code></pre>
+								</div>
+								<p data-sourcepos="189:1-189:160" dir="auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									Suppose we want to invoke the <i>department-service</i> REST endpoint from
+									the&nbsp;<i>user-service</i>. We can use <i>RestTemplate</i> to invoke the REST
+									endpoint but there are 2 instances running.</p>
+								<p data-sourcepos="191:1-191:249" dir="auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									We can register RestTemplate as a Spring bean with <i>@LoadBalanced</i> annotation:
+								</p>
+								<pre
+									style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 0px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px; word-break: normal;">    <span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">@</span><span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">Bean</span>
+    <span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">@</span><span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">LoadBalanced</span>
+    <span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">public</span> <span class="pl-smi" color="var(--color-prettylights-syntax-storage-modifier-import)" style="box-sizing: border-box;">RestTemplate</span> <span class="pl-s1" style="box-sizing: border-box;">restTemplate</span>(){
+        <span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">return</span> <span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">new</span> <span class="pl-smi" color="var(--color-prettylights-syntax-storage-modifier-import)" style="box-sizing: border-box;">RestTemplate</span>();
+    }</pre>
+								<p data-sourcepos="191:1-191:249" dir="auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									The <i>RestTemplate</i> with <i>@LoadBalanced</i> annotation will internally use
+									<b>Ribbon LoadBalancer</b> to resolve the ServiceID and invoke the REST endpoint
+									using one of the available servers.
+								</p>
+								<p data-sourcepos="193:1-193:40" dir="auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+									Change the URL in <i>UserServiceImpl</i> class:</p>
+								<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+									<pre class="notranslate"
+										style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs coffeescript">        ResponseEntity&lt;DepartmentDto&gt; responseEntity = restTemplate
+                .getForEntity(<span class="hljs-string">"http://DEPARTMENT-SERVICE/api/departments/"</span> + user.getDepartmentId(),
+                DepartmentDto.<span class="hljs-keyword">class</span>);
+</code></pre>
+								</div>
+								<p data-sourcepos="200:1-200:173" dir="auto"
+									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
+									With this kind of automatic Service Registration and Discovery mechanism, we no need
+									to worry about how many instances are running and what are their hostnames and
+									ports, etc</p>
+							</div>
+							<h1 style="text-align: left;">Conclusion</h1>
+							<div>In this tutorial, we learned how to create a Service Registry using&nbsp;<b>Spring
+									Cloud Netflix Eureka</b>&nbsp;in the Spring boot microservices project.</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="card-footer">
+				<ul class="pagination justify-content-center mb-4">
+					<li class="page-item"><a class="page-link btn-outline-primary"
+							href="../springboot/ms-architecture.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link" href="../springboot/config-server.html">Next
+							&rArr;</a></li>
+				</ul>
+			</div>
+			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
+					src="../scripts/images/top.jpeg" /></button>
+		</main>
+	</div>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			window.scrollTo(0, 0);
+		})
+	</script>
+	<script>
+		// Get the button
+		let mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function () {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<script src="../scripts/js/site.js"></script>
+</body>
+<footer class="footer">
+	<p>©
+		<script>var d = new Date();
+			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
+		Kalyan Kolloju.
+	</p>
+</footer>
+
+</html>

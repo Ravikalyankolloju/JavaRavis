@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="RaviKalyan">
-	<title>SpringBoot</title>
+	<title>SpringBoot Introduction</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
 	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
 	<link rel="stylesheet" href="../scripts/css/site.css">
@@ -92,11 +92,28 @@
 						<ul class="nav-list">
 							<h4>Springboot</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/introduction.html">Spring Boot
-									Introduction</a></li>
+									href="../springboot/introduction.html">Introduction</a></li>
 							<h4>Microservice</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/microservices.html">topic-1</a></li>
+									href="../springboot/ms-intro.html">Introduction</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/ms-architecture.html">Microservices Architecture</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/registry-discovery.html">Service Registry and Discovery</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/config-server.html">Config Server</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/api-gateway.html">API Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/web-client.html">WebClient</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/open-feign.html">Open Feign</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/sleuth.html">Cloud Sleuth</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/security.html">Cloud Security</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/springboot-interview-questions.html">Springboot Interview
@@ -266,12 +283,14 @@
 									<h2 style="text-align: left;">3. Elegant Configuration Management</h2>
 									<div
 										style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
-										Spring supports externalizing configurable properties using the <a>@PropertySource</a> configuration. Spring Boot takes it even
+										Spring supports externalizing configurable properties using the
+										<a>@PropertySource</a> configuration. Spring Boot takes it even
 										further by using sensible defaults and powerful type-safe property binding to
 										bean
 										properties. Spring Boot supports having separate configuration files for
 										different
-										profiles without requiring many configurations.</div>
+										profiles without requiring many configurations.
+									</div>
 								</div>
 								<div>
 									<h2 style="text-align: left;">4. Spring Boot Actuator</h2>
@@ -293,72 +312,83 @@
 										<li style="box-sizing: border-box; margin-top: 0.25em;">Can view the registered
 											health check metrics</li>
 									</ul>
-								<div>
-									<h2 style="text-align: left;">5. Easy-to-Use Embedded Servlet Container Support</h2>
-									<div
-										style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
-										Traditionally, while building web applications, you need to create
-										<i>WAR-type</i>&nbsp;modules and then deploy them on external servers like
-										<i>Tomcat</i>, <i>WildFly</i>, etc. But by using Spring Boot, you can create a
-										<i>JAR-type</i>&nbsp;module and embed the servlet container in the application
-										very
-										easily so that the application will be a self-contained deployment unit.&nbsp;
+									<div>
+										<h2 style="text-align: left;">5. Easy-to-Use Embedded Servlet Container Support
+										</h2>
+										<div
+											style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+											Traditionally, while building web applications, you need to create
+											<i>WAR-type</i>&nbsp;modules and then deploy them on external servers like
+											<i>Tomcat</i>, <i>WildFly</i>, etc. But by using Spring Boot, you can create
+											a
+											<i>JAR-type</i>&nbsp;module and embed the servlet container in the
+											application
+											very
+											easily so that the application will be a self-contained deployment
+											unit.&nbsp;
+										</div>
+										<div
+											style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+											Also, during development, you can easily run the Spring Boot JAR type module
+											as
+											a
+											Java application from the IDE or from the command line using a build tool
+											like
+											<a>Maven</a> or
+											Gradle.
+										</div>
 									</div>
-									<div
-										style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
-										Also, during development, you can easily run the Spring Boot JAR type module as
-										a
-										Java application from the IDE or from the command line using a build tool like
-										<a>Maven</a> or
-										Gradle.</div>
+									<div>
+										<h1 style="text-align: left;">System Requirements</h1>
+										<div
+											style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+											Spring Boot 2+ requires Java 8 or 9 and Spring Framework 5.1.0.RELEASE or
+											above.
+										</div>
+										<div
+											style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+											Explicit build support is provided for the following build tools:</div>
+										<div class="separator" style="clear: both; text-align: center;">
+											<a href="https://2.bp.blogspot.com/-kW0hSn1inuI/W7B8qDvCBxI/AAAAAAAAEA8/pp7Bm3gWNlgGxD3EL61LS3BkVsd8noR5ACLcBGAs/s1600/build-tool-support.PNG"
+												style="margin-left: 1em; margin-right: 1em;"><img border="0"
+													data-original-height="152" data-original-width="435"
+													src="https://2.bp.blogspot.com/-kW0hSn1inuI/W7B8qDvCBxI/AAAAAAAAEA8/pp7Bm3gWNlgGxD3EL61LS3BkVsd8noR5ACLcBGAs/s1600/build-tool-support.PNG"></a>
+										</div>
+										<h1 style="text-align: left;">Servlet Containers</h1>
+										<div
+											style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+											Spring Boot supports the following embedded servlet containers:</div>
+										<div class="separator" style="clear: both; text-align: center;">
+											<a href="https://3.bp.blogspot.com/-kArn3r6WYlU/W7B8vX76_TI/AAAAAAAAEBA/BNh_hsHaJB8QnerlJD9erkkDMOXmdGl8wCLcBGAs/s1600/servlet-containers.PNG"
+												style="margin-left: 1em; margin-right: 1em;"><img border="0"
+													data-original-height="203" data-original-width="428"
+													src="https://3.bp.blogspot.com/-kArn3r6WYlU/W7B8vX76_TI/AAAAAAAAEBA/BNh_hsHaJB8QnerlJD9erkkDMOXmdGl8wCLcBGAs/s1600/servlet-containers.PNG"></a>
+										</div>
+										<div
+											style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+											You can also deploy Spring Boot applications to any Servlet 3.1+ compatible
+											container.</div>
+										<h1 style="text-align: left;">What's Next?</h1>
+									</div>
+									<div>In this article, we had a quick overview of Spring boot, w<span
+											style="background-color: white; color: #24292e; font-size: 16px;">hat is
+											Spring
+											Boot, w</span><span
+											style="background-color: white; color: #24292e; font-size: 16px;">hat are
+											its
+											goals,
+											and&nbsp;</span><span
+											style="background-color: white; color: #24292e; font-size: 16px;">Spring
+											Boot's
+											key
+											features.</span></div>
 								</div>
-								<div>
-									<h1 style="text-align: left;">System Requirements</h1>
-									<div
-										style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
-										Spring Boot 2+ requires Java 8 or 9 and Spring Framework 5.1.0.RELEASE or above.
-									</div>
-									<div
-										style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
-										Explicit build support is provided for the following build tools:</div>
-									<div class="separator" style="clear: both; text-align: center;">
-										<a href="https://2.bp.blogspot.com/-kW0hSn1inuI/W7B8qDvCBxI/AAAAAAAAEA8/pp7Bm3gWNlgGxD3EL61LS3BkVsd8noR5ACLcBGAs/s1600/build-tool-support.PNG"
-											style="margin-left: 1em; margin-right: 1em;"><img border="0"
-												data-original-height="152" data-original-width="435"
-												src="https://2.bp.blogspot.com/-kW0hSn1inuI/W7B8qDvCBxI/AAAAAAAAEA8/pp7Bm3gWNlgGxD3EL61LS3BkVsd8noR5ACLcBGAs/s1600/build-tool-support.PNG"></a>
-									</div>
-									<h1 style="text-align: left;">Servlet Containers</h1>
-									<div
-										style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
-										Spring Boot supports the following embedded servlet containers:</div>
-									<div class="separator" style="clear: both; text-align: center;">
-										<a href="https://3.bp.blogspot.com/-kArn3r6WYlU/W7B8vX76_TI/AAAAAAAAEBA/BNh_hsHaJB8QnerlJD9erkkDMOXmdGl8wCLcBGAs/s1600/servlet-containers.PNG"
-											style="margin-left: 1em; margin-right: 1em;"><img border="0"
-												data-original-height="203" data-original-width="428"
-												src="https://3.bp.blogspot.com/-kArn3r6WYlU/W7B8vX76_TI/AAAAAAAAEBA/BNh_hsHaJB8QnerlJD9erkkDMOXmdGl8wCLcBGAs/s1600/servlet-containers.PNG"></a>
-									</div>
-									<div
-										style="background-color: white; box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
-										You can also deploy Spring Boot applications to any Servlet 3.1+ compatible
-										container.</div>
-									<h1 style="text-align: left;">What's Next?</h1>
-								</div>
-								<div>In this article, we had a quick overview of Spring boot, w<span
-										style="background-color: white; color: #24292e; font-size: 16px;">hat is Spring
-										Boot, w</span><span
-										style="background-color: white; color: #24292e; font-size: 16px;">hat are its
-										goals,
-										and&nbsp;</span><span
-										style="background-color: white; color: #24292e; font-size: 16px;">Spring Boot's
-										key
-										features.</span></div>
 							</div>
-						</div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link" href="#">Next
+					<li class="page-item"><a class="page-link" href="../springboot/ms-intro.html">Next
 							&rArr;</a></li>
 				</ul>
 			</div>

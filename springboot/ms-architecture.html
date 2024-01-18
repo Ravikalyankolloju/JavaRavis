@@ -104,8 +104,8 @@
 									href="../springboot/config-server.html">Config Server</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/api-gateway.html">API Gateway</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/zuul.html">Zuul API Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/zuul.html">Zuul
+									API Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
@@ -232,7 +232,7 @@
 							<div><br></div>
 							<div><br></div>
 							<div>Well, Spring Cloud provides a Spring
-									Cloud Netflix Eureka Based Service Registry module that we can use to implement
+								Cloud Netflix Eureka Based Service Registry module that we can use to implement
 								service registry and discovery patterns in our microservices project. Well, service
 								Registry and discovery is a really essential pattern that we can use to avoid hard
 								coding hostnames and ports. <h2
@@ -259,7 +259,7 @@
 									first, and then the API gateway based on the routing rules will route that request
 									to the appropriate microservice. So this is how the API gateway plays an important
 									role in a microservices architecture.</div><br>Well, Spring Cloud provides Spring
-									Cloud Gateway module to implement API gateway patterns in a microservices
+								Cloud Gateway module to implement API gateway patterns in a microservices
 								architecture. <h2
 									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;">
 									Distributed Tracing</h2>Next, once you know how to implement an API gateway in a
@@ -286,6 +286,184 @@
 								response to the client. <br><br>All right. So this is a simple microservices
 								architecture using Spring Boot and Spring Cloud.
 							</div>
+							<style>
+								table {
+									font-family: arial, sans-serif;
+									border-collapse: collapse;
+									width: 100%;
+								}
+
+								td,
+								th {
+									border: 1px solid rgb(0, 64, 128);
+									text-align: left;
+									padding: 6px;
+								}
+
+								tr:nth-child(even) {
+									background-color: #dddddd;
+								}
+							</style>
+							<p>Table for Microservice all services</p>
+							<table style="width: 100%;">
+								<tr>
+									<th>Service</th>
+									<th>Dependency</th>
+									<th>Properties</th>
+									<th>Annotations</th>
+									<th>Notes</th>
+								</tr>
+								<tr>
+									<td>Eureka Server</td>
+									<td>
+										<dependency>
+											<groupId>org.springframework.cloud</groupId>
+											<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+										</dependency>
+									</td>
+									<td>eureka.client.registerWithEureka = false<br>
+										eureka.client.fetchRegistry = false
+									</td>
+									<td>@EnableEurekaServer</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Eureka Client</td>
+									<td>
+										<dependency>
+											<groupId>org.springframework.cloud</groupId>
+											<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+										</dependency>
+									</td>
+									<td>eureka.instance.prefer-ip-address = true<br>
+										eureka.client.registerWithEureka = true<br>
+										eureka.client.fetchRegistry = true<br>
+										eureka.client.service-url.defaultZone = http://localhost:8761/eureka</td>
+									<td>@EnableEurekaClient</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Config Server</td>
+									<td>
+										<dependency>
+											<groupId>org.springframework.cloud</groupId>
+											<artifactId>spring-cloud-starter-config</artifactId>
+										</dependency>
+									</td>
+									<td>spring.cloud.config.server.git.uri=https://github.com/RameshMF/microservices-config-repo.git<br>
+										spring.cloud.config.server.git.skipSslValidation=true<br>
+										spring.cloud.config.server.git.clone-on-start=true</td>
+									<td>@EnableConfigServer</td>
+									<td>spring.config.import=optional:configserver:http://localhost:8888</td>
+								</tr>
+								<tr>
+									<td>API Gateway</td>
+									<td>
+										<dependency>
+											<groupId>org.springframework.cloud</groupId>
+											<artifactId>spring-cloud-starter-gateway</artifactId>
+										</dependency>
+										<dependency>
+											<groupId>org.springframework.cloud</groupId>
+											<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+										</dependency>
+									</td>
+									<td>eureka.instance.client.serviceUrl.defaultZone=http://localhost:8761/eureka/<br>
+										<br>
+										spring.cloud.gateway.routes[0].id=USER-SERVICE<br>
+										spring.cloud.gateway.routes[0].uri=lb://USER-SERVICE<br>
+										spring.cloud.gateway.routes[0].predicates[0]=Path=/api/users/**
+									</td><br>
+									<td>@EnableEurekaClient</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Circuit Breaker</td>
+									<td>
+										<dependency>
+											<groupId>org.springframework.cloud</groupId>
+											<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+										</dependency>
+									</td>
+									<td></td>
+									<td>@EnableCircuitBreaker
+										@HystrixCommand(fallbackMethod = "getDefaultProductInventoryByCode",
+										commandProperties = {
+										@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",
+										value = "3000"),
+										@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value="60")
+										}
+										)</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Resilience4j</td>
+									<td>
+										<dependency>
+											<groupId>org.springframework.boot</groupId>
+											<artifactId>spring-boot-starter-aop</artifactId>
+										</dependency>
+
+										<dependency>
+											<groupId>io.github.resilience4j</groupId>
+											<artifactId>resilience4j-spring-boot2</artifactId>
+										</dependency>
+										<dependency>
+											<groupId>io.github.resilience4j</groupId>
+											<artifactId>resilience4j-reactor</artifactId>
+										</dependency>
+									</td>
+									<td>resilience4j.circuitbreaker.configs.shared.register-health-indicator=true<br>
+										resilience4j.circuitbreaker.configs.shared.sliding-window-type=count_based<br>
+										resilience4j.circuitbreaker.configs.shared.sliding-window-size=5<br>
+										resilience4j.circuitbreaker.configs.shared.failure-rate-threshold=40<br>
+										resilience4j.circuitbreaker.configs.shared.slow-call-rate-threshold=40<br>
+										resilience4j.circuitbreaker.configs.shared.permitted-number-of-calls-in-half-open-state=1<br>
+										resilience4j.circuitbreaker.configs.shared.max-wait-duration-in-half-open-state=10s<br>
+										resilience4j.circuitbreaker.configs.shared.wait-duration-in-open-state=10s<br>
+										resilience4j.circuitbreaker.configs.shared.slow-call-duration-threshold=2s<br>
+										resilience4j.circuitbreaker.configs.shared.writable-stack-trace-enabled=true<br>
+										resilience4j.circuitbreaker.configs.shared.automatic-transition-from-open-to-half-open-enabled=true<br>
+
+										resilience4j.circuitbreaker.instances.example.base-config=shared</td>
+									<td>@CircuitBreaker(name = RESILIENCE4J_INSTANCE_NAME, fallbackMethod =
+										FALLBACK_METHOD)</td>
+									<td>In the circuit breaker, there are 3 states Closed, Open, and Half-Open.</td>
+								</tr>
+								<tr>
+									<td>Zipkin and Sleuth</td>
+									<td>
+										<dependency>
+											<groupId>org.springframework.cloud</groupId>
+											<artifactId>spring-cloud-starter-zipkin</artifactId>
+										</dependency>
+										<dependency>
+											<groupId>org.springframework.cloud</groupId>
+											<artifactId>spring-cloud-starter-sleuth</artifactId>
+										</dependency>
+									</td>
+									<td>spring.zipkin.base-url=http://localhost:9411/</td>
+									<td>@EnableSleuth</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Feign client</td>
+									<td>
+										<dependency>
+											<groupId>org.springframework.cloud</groupId>
+											<artifactId>spring-cloud-starter-openfeign</artifactId>
+										</dependency>
+									</td>
+									<td></td>
+									<td>@EnableFeignClients
+										@FeignClient(value = "DEPARTMENT-SERVICE", url = "http://localhost:8080")
+										public interface APIClient {
+										@GetMapping(value = "/api/departments/{id}")
+										DepartmentDto getDepartmentById(@PathVariable("id") Long departmentId);
+										}</td>
+									<td></td>
+								</tr>
+							</table>
 						</div>
 				</article>
 			</div>

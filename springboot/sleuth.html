@@ -105,13 +105,17 @@
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/api-gateway.html">API Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/zuul.html">Zuul API Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../springboot/resilience4j.html">Resilience4j</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/web-client.html">WebClient</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/open-feign.html">Open Feign</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/sleuth.html">Cloud Sleuth</a></li>
+									href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/security.html">Cloud Security</a></li>
 							<h4>Interview Questions</h4>
@@ -156,7 +160,45 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<h1>Spring Cloud Tutorial - Distributed Log Tracing using Sleuth and Zipkin Example</h1>
+						<p>Microservices architecture involve multiple services which interact with each other. So a
+							functionality may involve call to multiple microservices. Usually for systems developed
+							using Microservices architecture, there are many microservices involved. These microservices
+							collaborate with each other.</p>
+						<p>If suppose during such calls there are some issues like exception has occurred. Or may be
+							there are latency issues due to a particular service taking more than expected time. How do
+							we identify where the issue is occurring. <b>In regular project we would have used logging
+								to analyze the logs to know more about occurred exceptions and also performance timing.
+								But since microservices involves multiple services we cannot use regular logging. Each
+								Service will be having its own separate logs. </b>So we will need to go through the logs
+							of each service. Also how do we correlate the logs to a request call chain i.e which logs of
+							microservices are related to Request1, which are related to Request2. To resolve these
+							issues we make use of Spring Cloud Sleuth and Zipkin</p>
+						<ul>
+							<li>
+								<b>Spring Cloud Sleuth</b> is used to generate and attach the trace id, span id to the
+								logs so that these can then be used by tools like Zipkin and ELK for storage and
+								analysis
+							</li>
+							<li>
+								<b>Zipkin</b> is a distributed tracing system. It helps gather timing data needed to
+								troubleshoot latency problems in service architectures. Features include both the
+								collection and lookup of this data.
+							</li>
+						</ul>
+						<p>We will be dividing this tutorial into 3 parts-</p>
+						<ul>
+							<li>1. Develop four Spring Boot Microservices modules which interact with each other.
+							</li>
+							<li>2. Implement distributed tracing using Spring Cloud Sleuth
+							</li>
+							<li>3. View distributed tracing using Zipkin
+							</li>
+						</ul>
+						<h2>Develop four Spring Boot Microservices modules which interact with each other</h2>
+						<p>We will be developing the spring boot microservices as follows-</p>
+						<img loading="lazy" src="../springboot/images/micro.jpeg" alt="Spring Cloud Sleuth Tutorial"
+							class="responsive" title="Spring Cloud Sleuth Tutorial">
 					</div>
 				</article>
 			</div>

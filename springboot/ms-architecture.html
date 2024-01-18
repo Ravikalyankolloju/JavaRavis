@@ -312,7 +312,6 @@
 										<col style="width: 20%;">
 										<col style="width: 25%;">
 										<col style="width: 10%;">
-										<col style="width: 8%;">
 									</colgroup>
 
 									<tr>
@@ -320,7 +319,6 @@
 										<th>Dependency</th>
 										<th>Properties</th>
 										<th>Annotations</th>
-										<th>Notes</th>
 									</tr>
 									<tr>
 										<td>Eureka Server</td>
@@ -350,7 +348,6 @@
 											eureka.client.fetchRegistry = true<br>
 											eureka.client.service-url.defaultZone = http://localhost:8761/eureka</td>
 										<td>@EnableEurekaClient</td>
-										<td></td>
 									</tr>
 									<tr>
 										<td>Config Server</td>
@@ -364,8 +361,10 @@
 											spring.cloud.config.server.git.uri=https://github.com/RameshMF/microservices-config-repo.git<br>
 											spring.cloud.config.server.git.skipSslValidation=true<br>
 											spring.cloud.config.server.git.clone-on-start=true</td>
+											<br>
+											<br>
+											spring.config.import=optional:configserver:http://localhost:8888
 										<td>@EnableConfigServer</td>
-										<td>spring.config.import=optional:configserver:http://localhost:8888</td>
 									</tr>
 									<tr>
 										<td>API Gateway</td>
@@ -387,7 +386,6 @@
 											spring.cloud.gateway.routes[0].predicates[0]=Path=/api/users/**
 										</td><br>
 										<td>@EnableEurekaClient</td>
-										<td></td>
 									</tr>
 									<tr>
 										<td>Circuit Breaker</td>
@@ -407,7 +405,6 @@
 											value="60")
 											}
 											)</td>
-										<td></td>
 									</tr>
 									<tr>
 										<td>Resilience4j</td>
@@ -425,6 +422,10 @@
 												<groupId>io.github.resilience4j</groupId>
 												<artifactId>resilience4j-reactor</artifactId>
 											</dependency>
+											<br>
+											<br>
+											In the circuit breaker, there are 3 states
+											Closed, Open, and Half-Open.
 										</td>
 										<td>
 											resilience4j.circuitbreaker.configs.shared.register-health-indicator=true<br>
@@ -443,8 +444,6 @@
 										<td>@CircuitBreaker(name =
 											RESILIENCE4J_INSTANCE_NAME, fallbackMethod =
 											FALLBACK_METHOD)</td>
-										<td>In the circuit breaker, there are 3 states
-											Closed, Open, and Half-Open.</td>
 									</tr>
 									<tr>
 										<td>Zipkin and Sleuth</td>

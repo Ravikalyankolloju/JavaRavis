@@ -1351,4 +1351,26 @@ code,kbd,pre,samp {
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+  border: 1px solid rgb(0, 64, 128);
+  text-align: left;
+  padding: 6px;
+  overflow-x: auto;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.cell {
+  max-width: 50px; /* tweak me please */
+  white-space : nowrap;
+  overflow : hidden;
+}
+
+.expand-small-on-hover:hover {
+  max-width : 200px; 
+  text-overflow: ellipsis;
+}
+
+.expand-maximum-on-hover:hover {
+  max-width : initial; 
 }

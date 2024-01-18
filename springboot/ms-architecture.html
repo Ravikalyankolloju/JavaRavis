@@ -286,26 +286,8 @@
 								response to the client. <br><br>All right. So this is a simple microservices
 								architecture using Spring Boot and Spring Cloud.
 							</div>
-							<style>
-								table {
-									font-family: arial, sans-serif;
-									border-collapse: collapse;
-									width: 100%;
-								}
-
-								td,
-								th {
-									border: 1px solid rgb(0, 64, 128);
-									text-align: left;
-									padding: 6px;
-								}
-
-								tr:nth-child(even) {
-									background-color: #dddddd;
-								}
-							</style>
 							<p>Table for Microservice all services</p>
-							<table style="width: 100%;">
+							<table class="nz oa ob oc od oe of og bo oh ba bj">
 								<tr>
 									<th>Service</th>
 									<th>Dependency</th>
@@ -314,51 +296,51 @@
 									<th>Notes</th>
 								</tr>
 								<tr>
-									<td>Eureka Server</td>
-									<td>
+									<td class="cell expand-maximum-on-hover">Eureka Server</td>
+									<td class="cell expand-maximum-on-hover">
 										<dependency>
 											<groupId>org.springframework.cloud</groupId>
 											<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 										</dependency>
 									</td>
-									<td>eureka.client.registerWithEureka = false<br>
+									<td class="cell expand-maximum-on-hover">eureka.client.registerWithEureka = false<br>
 										eureka.client.fetchRegistry = false
 									</td>
-									<td>@EnableEurekaServer</td>
+									<td class="cell expand-maximum-on-hover">@EnableEurekaServer</td>
 									<td></td>
 								</tr>
 								<tr>
-									<td>Eureka Client</td>
-									<td>
+									<td class="cell expand-maximum-on-hover">Eureka Client</td>
+									<td class="cell expand-maximum-on-hover">
 										<dependency>
 											<groupId>org.springframework.cloud</groupId>
 											<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 										</dependency>
 									</td>
-									<td>eureka.instance.prefer-ip-address = true<br>
+									<td class="cell expand-maximum-on-hover">eureka.instance.prefer-ip-address = true<br>
 										eureka.client.registerWithEureka = true<br>
 										eureka.client.fetchRegistry = true<br>
 										eureka.client.service-url.defaultZone = http://localhost:8761/eureka</td>
-									<td>@EnableEurekaClient</td>
+									<td class="cell expand-maximum-on-hover">@EnableEurekaClient</td>
 									<td></td>
 								</tr>
 								<tr>
-									<td>Config Server</td>
-									<td>
+									<td class="cell expand-maximum-on-hover">Config Server</td>
+									<td class="cell expand-maximum-on-hover">
 										<dependency>
 											<groupId>org.springframework.cloud</groupId>
 											<artifactId>spring-cloud-starter-config</artifactId>
 										</dependency>
 									</td>
-									<td>spring.cloud.config.server.git.uri=https://github.com/RameshMF/microservices-config-repo.git<br>
+									<td class="cell expand-maximum-on-hover">spring.cloud.config.server.git.uri=https://github.com/RameshMF/microservices-config-repo.git<br>
 										spring.cloud.config.server.git.skipSslValidation=true<br>
 										spring.cloud.config.server.git.clone-on-start=true</td>
 									<td>@EnableConfigServer</td>
 									<td>spring.config.import=optional:configserver:http://localhost:8888</td>
 								</tr>
 								<tr>
-									<td>API Gateway</td>
-									<td>
+									<td class="cell expand-maximum-on-hover">API Gateway</td>
+									<td class="cell expand-maximum-on-hover">
 										<dependency>
 											<groupId>org.springframework.cloud</groupId>
 											<artifactId>spring-cloud-starter-gateway</artifactId>
@@ -368,25 +350,25 @@
 											<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 										</dependency>
 									</td>
-									<td>eureka.instance.client.serviceUrl.defaultZone=http://localhost:8761/eureka/<br>
+									<td class="cell expand-maximum-on-hover">eureka.instance.client.serviceUrl.defaultZone=http://localhost:8761/eureka/<br>
 										<br>
 										spring.cloud.gateway.routes[0].id=USER-SERVICE<br>
 										spring.cloud.gateway.routes[0].uri=lb://USER-SERVICE<br>
 										spring.cloud.gateway.routes[0].predicates[0]=Path=/api/users/**
 									</td><br>
-									<td>@EnableEurekaClient</td>
+									<td class="cell expand-maximum-on-hover">@EnableEurekaClient</td>
 									<td></td>
 								</tr>
 								<tr>
-									<td>Circuit Breaker</td>
-									<td>
+									<td class="cell expand-maximum-on-hover">Circuit Breaker</td>
+									<td class="cell expand-maximum-on-hover">
 										<dependency>
 											<groupId>org.springframework.cloud</groupId>
 											<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 										</dependency>
 									</td>
-									<td></td>
-									<td>@EnableCircuitBreaker
+									<td class="cell expand-maximum-on-hover"></td>
+									<td class="cell expand-maximum-on-hover">@EnableCircuitBreaker
 										@HystrixCommand(fallbackMethod = "getDefaultProductInventoryByCode",
 										commandProperties = {
 										@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",
@@ -397,8 +379,8 @@
 									<td></td>
 								</tr>
 								<tr>
-									<td>Resilience4j</td>
-									<td>
+									<td class="cell expand-maximum-on-hover">Resilience4j</td>
+									<td class="cell expand-maximum-on-hover">
 										<dependency>
 											<groupId>org.springframework.boot</groupId>
 											<artifactId>spring-boot-starter-aop</artifactId>
@@ -413,7 +395,7 @@
 											<artifactId>resilience4j-reactor</artifactId>
 										</dependency>
 									</td>
-									<td>resilience4j.circuitbreaker.configs.shared.register-health-indicator=true<br>
+									<td class="cell expand-maximum-on-hover">resilience4j.circuitbreaker.configs.shared.register-health-indicator=true<br>
 										resilience4j.circuitbreaker.configs.shared.sliding-window-type=count_based<br>
 										resilience4j.circuitbreaker.configs.shared.sliding-window-size=5<br>
 										resilience4j.circuitbreaker.configs.shared.failure-rate-threshold=40<br>
@@ -426,13 +408,13 @@
 										resilience4j.circuitbreaker.configs.shared.automatic-transition-from-open-to-half-open-enabled=true<br>
 
 										resilience4j.circuitbreaker.instances.example.base-config=shared</td>
-									<td>@CircuitBreaker(name = RESILIENCE4J_INSTANCE_NAME, fallbackMethod =
+									<td class="cell expand-maximum-on-hover">@CircuitBreaker(name = RESILIENCE4J_INSTANCE_NAME, fallbackMethod =
 										FALLBACK_METHOD)</td>
-									<td>In the circuit breaker, there are 3 states Closed, Open, and Half-Open.</td>
+									<td class="cell expand-maximum-on-hover">In the circuit breaker, there are 3 states Closed, Open, and Half-Open.</td>
 								</tr>
 								<tr>
-									<td>Zipkin and Sleuth</td>
-									<td>
+									<td class="cell expand-maximum-on-hover">Zipkin and Sleuth</td>
+									<td class="cell expand-maximum-on-hover">
 										<dependency>
 											<groupId>org.springframework.cloud</groupId>
 											<artifactId>spring-cloud-starter-zipkin</artifactId>
@@ -442,20 +424,20 @@
 											<artifactId>spring-cloud-starter-sleuth</artifactId>
 										</dependency>
 									</td>
-									<td>spring.zipkin.base-url=http://localhost:9411/</td>
-									<td>@EnableSleuth</td>
+									<td class="cell expand-maximum-on-hover">spring.zipkin.base-url=http://localhost:9411/</td>
+									<td class="cell expand-maximum-on-hover">@EnableSleuth</td>
 									<td></td>
 								</tr>
 								<tr>
-									<td>Feign client</td>
-									<td>
+									<td class="cell expand-maximum-on-hover">Feign client</td>
+									<td class="cell expand-maximum-on-hover">
 										<dependency>
 											<groupId>org.springframework.cloud</groupId>
 											<artifactId>spring-cloud-starter-openfeign</artifactId>
 										</dependency>
 									</td>
 									<td></td>
-									<td>@EnableFeignClients
+									<td class="cell expand-maximum-on-hover">@EnableFeignClients
 										@FeignClient(value = "DEPARTMENT-SERVICE", url = "http://localhost:8080")
 										public interface APIClient {
 										@GetMapping(value = "/api/departments/{id}")

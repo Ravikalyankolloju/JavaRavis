@@ -164,7 +164,492 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div class="l">
+							<div class="l"><span
+									style="display: block; position: absolute; left: 643.398px; top: 2743.14px; height: 25px; width: 0px;"><span
+										class="l dv" aria-hidden="true"></span></span>
+								<section>
+									<div>
+										<div class="fp gf gg gh gi gj"></div>
+										<div class="gk gl gm gn go">
+											<div class="ab ca">
+												<div class="ch bg fw fx fy fz">
+													<div>
+														<h1 id="3680"
+															class="pw-post-title gp gq gr be gs gt gu gv gw gx gy gz ha hb hc hd he hf hg hh hi hj hk hl hm hn ho hp hq hr bj"
+															data-testid="storyTitle" data-selectable-paragraph="">
+															Resilience4J: Circuit Breaker Implementation on Spring Boot
+														</h1>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="gk gl gm gn go">
+											<div class="ab ca">
+												<div class="ch bg fw fx fy fz">
+													<h2 id="201e"
+														class="oi oj gr be ok ol om dx on oo op dz oq nn or os ot nr ou ov ow nv ox oy oz pa bj"
+														data-selectable-paragraph=""><strong
+															class="al">Introduction</strong></h2>
+													<figure class="pe pf pg ph pi pj pb pc paragraph-image">
+														<div role="button" tabindex="0" class="pk pl fg pm bg pn">
+															<div class="pb pc pd">
+																<picture>
+																	<source
+																		srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*kxu-whApstY7reRghowWAw.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*kxu-whApstY7reRghowWAw.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*kxu-whApstY7reRghowWAw.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*kxu-whApstY7reRghowWAw.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*kxu-whApstY7reRghowWAw.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*kxu-whApstY7reRghowWAw.png 1100w, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*kxu-whApstY7reRghowWAw.png 1400w"
+																		sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px"
+																		type="image/webp">
+																	<source data-testid="og"
+																		srcset="https://miro.medium.com/v2/resize:fit:640/1*kxu-whApstY7reRghowWAw.png 640w, https://miro.medium.com/v2/resize:fit:720/1*kxu-whApstY7reRghowWAw.png 720w, https://miro.medium.com/v2/resize:fit:750/1*kxu-whApstY7reRghowWAw.png 750w, https://miro.medium.com/v2/resize:fit:786/1*kxu-whApstY7reRghowWAw.png 786w, https://miro.medium.com/v2/resize:fit:828/1*kxu-whApstY7reRghowWAw.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*kxu-whApstY7reRghowWAw.png 1100w, https://miro.medium.com/v2/resize:fit:1400/1*kxu-whApstY7reRghowWAw.png 1400w"
+																		sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px">
+																	<img alt="" class="bg mf po c" width="700"
+																		height="350" loading="eager" role="presentation"
+																		src="https://miro.medium.com/v2/resize:fit:700/1*kxu-whApstY7reRghowWAw.png">
+																</picture>
+															</div>
+														</div>
+														<figcaption class="pp fc pq pb pc pr ps be b bf z dt"
+															data-selectable-paragraph="">Microservices illustration
+														</figcaption>
+													</figure>
+													<p id="93e9"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">Let’s take a look at example cases
+														below.</p>
+													<ul class="">
+														<li id="0106"
+															class="nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz pt pu pv bj"
+															data-selectable-paragraph="">When <strong
+																class="ne gs">microservice B</strong> calls <strong
+																class="ne gs">microservice C </strong>and <strong
+																class="ne gs">microservice C</strong> unavailable or
+															unable to respond, <strong class="ne gs">microservice
+																B</strong> may have encountered an error. And if <strong
+																class="ne gs">microservice A</strong> calls <strong
+																class="ne gs">microservice B</strong> which is
+															encountered an error, this causes <strong
+																class="ne gs">microservice A</strong> is just
+															wasting<strong class="ne gs"> </strong>its resources, <em
+																class="nd">right?</em> <br>Actually, we can tune or
+															optimize the microservice, ‘cause it’s still within the
+															scope of our workspace.</li>
+														<li id="66a6"
+															class="nb nc gr ne b nf pw nh ni nj px nl nm nn py np nq nr pz nt nu nv qa nx ny nz pt pu pv bj"
+															data-selectable-paragraph="">When <strong
+																class="ne gs">microservice B</strong> calls the <strong
+																class="ne gs">external microservice</strong> and
+															unfortunately the <strong class="ne gs">external
+																microservice</strong> is down. Actually, <strong
+																class="ne gs">microservice B</strong> is just wasting
+															its resources. This will also definitely affect <strong
+																class="ne gs">microservice B</strong> when called by
+															<strong class="ne gs">microservice A</strong>. In this case,
+															there is nothing to do except wait for a third party to
+															check what’s wrong with their microservice.
+														</li>
+													</ul>
+													<p id="74b3"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">From the 2 cases above, we can
+														conclude that when a microservice encounters an error, it will
+														have an impact on other microservices that call it, and will
+														also have a <em class="nd">domino</em> effect. Then, what can be
+														done to prevent a <em class="nd">domino</em> effect like the
+														cases above? Well, the answer is a <strong class="ne gs">circuit
+															breaker</strong> mechanism.</p>
+													<h2 id="f17f"
+														class="oi oj gr be ok ol om dx on oo op dz oq nn or os ot nr ou ov ow nv ox oy oz pa bj"
+														data-selectable-paragraph=""><strong class="al">What is Circuit
+															Breaker?</strong></h2>
+													<p id="f811"
+														class="pw-post-body-paragraph nb nc gr ne b nf qb nh ni nj qc nl nm nn qd np nq nr qe nt nu nv qf nx ny nz gk bj"
+														data-selectable-paragraph="">The concept of a circuit breaker is
+														to prevent calls to microservice when it’s known the call may
+														fail or time out. This is done so that clients don’t waste their
+														valuable resources handling requests that are likely to fail.
+														Using this concept, you can give the server some spare time to
+														recover.</p>
+													<p id="3db1"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">So, how do we know if a request is
+														likely to fail? Yeah, this can be known by recording the results
+														of several previous requests sent to other microservices. For
+														example, 4 out of 5 requests sent failed or timeout, then most
+														likely the next request will also encounter the same thing.</p>
+													<h2 id="1052"
+														class="oi oj gr be ok ol om dx on oo op dz oq nn or os ot nr ou ov ow nv ox oy oz pa bj"
+														data-selectable-paragraph=""><strong class="al">Circuit Breaker
+															State</strong></h2>
+													<figure class="pe pf pg ph pi pj pb pc paragraph-image">
+														<div class="pb pc qg">
+															<picture>
+																<source
+																	srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*dEHnwH8uQwxEK7mPUYSdKg.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*dEHnwH8uQwxEK7mPUYSdKg.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*dEHnwH8uQwxEK7mPUYSdKg.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*dEHnwH8uQwxEK7mPUYSdKg.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*dEHnwH8uQwxEK7mPUYSdKg.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*dEHnwH8uQwxEK7mPUYSdKg.png 1100w, https://miro.medium.com/v2/resize:fit:1000/format:webp/1*dEHnwH8uQwxEK7mPUYSdKg.png 1000w"
+																	sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 500px"
+																	type="image/webp">
+																<source data-testid="og"
+																	srcset="https://miro.medium.com/v2/resize:fit:640/1*dEHnwH8uQwxEK7mPUYSdKg.png 640w, https://miro.medium.com/v2/resize:fit:720/1*dEHnwH8uQwxEK7mPUYSdKg.png 720w, https://miro.medium.com/v2/resize:fit:750/1*dEHnwH8uQwxEK7mPUYSdKg.png 750w, https://miro.medium.com/v2/resize:fit:786/1*dEHnwH8uQwxEK7mPUYSdKg.png 786w, https://miro.medium.com/v2/resize:fit:828/1*dEHnwH8uQwxEK7mPUYSdKg.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*dEHnwH8uQwxEK7mPUYSdKg.png 1100w, https://miro.medium.com/v2/resize:fit:1000/1*dEHnwH8uQwxEK7mPUYSdKg.png 1000w"
+																	sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 500px">
+																<img alt="" class="bg mf po c" width="500" height="450"
+																	loading="lazy" role="presentation"
+																	src="https://miro.medium.com/v2/resize:fit:500/1*dEHnwH8uQwxEK7mPUYSdKg.png">
+															</picture>
+														</div>
+														<figcaption class="pp fc pq pb pc pr ps be b bf z dt"
+															data-selectable-paragraph="">Circuit Breaker State
+														</figcaption>
+													</figure>
+													<p id="0131"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">In the circuit breaker, there are 3
+														states <strong class="ne gs">Closed</strong>, <strong
+															class="ne gs">Open</strong>, and <strong
+															class="ne gs">Half-Open</strong>.</p>
+													<ul class="">
+														<li id="992f"
+															class="nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong
+																class="ne gs">Closed</strong>: when everything is
+															normal. Initially, the circuit breaker is in a <strong
+																class="ne gs">Closed state.</strong></li>
+														<li id="dc2a"
+															class="nb nc gr ne b nf pw nh ni nj px nl nm nn py np nq nr pz nt nu nv qa nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong class="ne gs">Open:
+															</strong>when a failure occurs above predetermined criteria.
+															In this state, requests to other microservices will not be
+															executed and <em class="nd">fail-fast </em>or <em
+																class="nd">fallback </em>will be performed if available.
+															When this state has passed a certain time limit, it will
+															automatically or according to certain criteria will be
+															returned to the <strong class="ne gs">Half-Open
+																state.</strong></li>
+														<li id="81f0"
+															class="nb nc gr ne b nf pw nh ni nj px nl nm nn py np nq nr pz nt nu nv qa nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong
+																class="ne gs">Half-Open: </strong>several requests will
+															be executed to find out whether the microservices that we
+															are calling are working normally. If successful, the state
+															will be returned to the <strong
+																class="ne gs">Closed</strong> <strong
+																class="ne gs">state</strong>. However, if it still fails
+															it will be returned to the <strong class="ne gs">Open
+																state</strong>.</li>
+													</ul>
+													<h2 id="26ac"
+														class="oi oj gr be ok ol om dx on oo op dz oq nn or os ot nr ou ov ow nv ox oy oz pa bj"
+														data-selectable-paragraph=""><strong class="al">Circuit Breaker
+															Type</strong></h2>
+													<p id="c3fb"
+														class="pw-post-body-paragraph nb nc gr ne b nf qb nh ni nj qc nl nm nn qd np nq nr qe nt nu nv qf nx ny nz gk bj"
+														data-selectable-paragraph="">There are 2 types of circuit
+														breaker patterns, <strong class="ne gs">Count-based</strong> and
+														<strong class="ne gs">Time-based.</strong>
+													</p>
+													<ul class="">
+														<li id="6765"
+															class="nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong
+																class="ne gs">Count-based</strong>: the circuit breaker
+															switches from a closed state to an open state when the last
+															N requests have failed or timeout.</li>
+														<li id="f03d"
+															class="nb nc gr ne b nf pw nh ni nj px nl nm nn py np nq nr pz nt nu nv qa nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong
+																class="ne gs">Time-based</strong>: the circuit breaker
+															switches from a closed state to an open state when the last
+															N time unit has failed or timeout.</li>
+													</ul>
+													<p id="41a7"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">In both types of circuit breakers,
+														we can determine what the threshold for failure or timeout is.
+														Suppose we specify that the circuit breaker will trip and go to
+														the <strong class="ne gs">Open state</strong> when 50% of the
+														last 20 requests took more than 2s, or for a time-based, we can
+														specify that 50% of the last 60 seconds of requests took more
+														than 5s.</p>
+													<p id="9f61"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">After we know how the circuit
+														breaker works, then we will try to implement it in the spring
+														boot project.</p>
+												</div>
+											</div>
+										</div>
+										<div class="ab ca oa ob oc od" role="separator"><span
+												class="oe bx bl of og oh"></span><span
+												class="oe bx bl of og oh"></span><span class="oe bx bl of og"></span>
+										</div>
+										<div class="gk gl gm gn go">
+											<div class="ab ca">
+												<div class="ch bg fw fx fy fz">
+													<h2 id="4e28"
+														class="oi oj gr be ok ol om dx on oo op dz oq nn or os ot nr ou ov ow nv ox oy oz pa bj"
+														data-selectable-paragraph="">Prerequisites</h2>
+													<p id="487b"
+														class="pw-post-body-paragraph nb nc gr ne b nf qb nh ni nj qc nl nm nn qd np nq nr qe nt nu nv qf nx ny nz gk bj"
+														data-selectable-paragraph="">One of the libraries that offer a
+														circuit breaker features is <a class="af qh"
+															href="https://resilience4j.readme.io/"
+															rel="noopener ugc nofollow" target="_blank"><strong
+																class="ne gs">Resilience4J</strong></a><strong
+															class="ne gs">. </strong>So, for the example project, we’ll
+														use this library. First, we create a spring boot project with
+														these required dependencies:</p>
+													<figure class="pe pf pg ph pi pj">
+														<div class="qi jh l fg">
+															<div class="adz qk l"><iframe
+																	src="https://medium.com/media/0e6fd83f6571619b62e32e371802b6cf"
+																	allowfullscreen="" frameborder="0" height="457"
+																	width="680" title="Circuit Breaker"
+																	class="fp n gf dv bg" scrolling="no"></iframe></div>
+														</div>
+													</figure>
+													<p id="d9c4"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph=""><strong
+															class="ne gs">Implementation</strong></p>
+													<p id="4b01"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">We will create a simple REST API to
+														start simulating a circuit breaker. This REST API will provide a
+														response with a time delay according to the parameter of the
+														request we sent. For example, if we send a request with a delay
+														of 5 seconds, then it will return a response after 5 seconds. In
+														the other words, we will make the circuit breaker trips to an
+														<strong class="ne gs">Open State</strong> when the response from
+														the request has passed the time unit threshold that we specify.
+													</p>
+													<figure class="pe pf pg ph pi pj">
+														<div class="qi jh l fg">
+															<div class="aea qk l"><iframe
+																	src="https://medium.com/media/390d35f8f6214fe481eebf50e77b574a"
+																	allowfullscreen="" frameborder="0" height="193"
+																	width="680" title="Circuit Breaker"
+																	class="fp n gf dv bg" scrolling="no"></iframe></div>
+														</div>
+													</figure>
+													<p id="4484"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">Pay attention to line 3. An API
+														with a circuit breaker is simply marked using the <strong
+															class="ne gs">@CircuitBreaker </strong>annotation followed
+														by the name of the circuit breaker.</p>
+													<p id="43ee"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">Next, we will configure what
+														conditions will cause the circuit breaker to trip to the <strong
+															class="ne gs">Open State</strong>.</p>
+													<figure class="pe pf pg ph pi pj">
+														<div class="qi jh l fg">
+															<div class="aeb qk l"><iframe
+																	src="https://medium.com/media/edfc40e9e268352e1f63285feba064b7"
+																	allowfullscreen="" frameborder="0" height="364"
+																	width="680" title="Circuit Breaker"
+																	class="fp n gf dv bg" scrolling="no"></iframe></div>
+														</div>
+													</figure>
+													<p id="92c6"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">The above configuration will create
+														a shared circuit breaker configuration. It can be used for any
+														circuit breaker instance we want to create. Notice that we
+														created an instance named <strong
+															class="ne gs">example</strong>, which we use when we
+														annotate <strong class="ne gs">@CircuitBreaker</strong> on the
+														REST API.</p>
+													<p id="1bcb"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">Let’s look at the following
+														configurations:</p>
+													<ul class="">
+														<li id="c4d3"
+															class="nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong
+																class="ne gs">Sliding-window-type</strong>: we will use
+															a <strong class="ne gs">count-based</strong> circuit breaker
+															type. In this type, the circuit will trip or move to an open
+															state based on each incoming request.</li>
+														<li id="6918"
+															class="nb nc gr ne b nf pw nh ni nj px nl nm nn py np nq nr pz nt nu nv qa nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong
+																class="ne gs">Sliding-window-size</strong>: we will use
+															this parameter to record the last N requests to make the
+															circuit breaker trip or open. Here, we will record the last
+															5 requests.</li>
+														<li id="d964"
+															class="nb nc gr ne b nf pw nh ni nj px nl nm nn py np nq nr pz nt nu nv qa nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong
+																class="ne gs">Failure-rate-threshold</strong>: it shows
+															the percentage of the total <strong
+																class="ne gs">sliding-window-size</strong> that fails
+															and will cause the circuit breaker trips to open state. This
+															means, with a configuration of 40%, 2 out of 5 failed
+															requests will cause the circuit breaker trips to open state.
+														</li>
+														<li id="9d78"
+															class="nb nc gr ne b nf pw nh ni nj px nl nm nn py np nq nr pz nt nu nv qa nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong
+																class="ne gs">Slow-call-rate-threshold</strong>: it
+															shows the percentage of the total <strong
+																class="ne gs">sliding-window-size</strong> that fails
+															which will cause the circuit breaker trips to open state.
+															From the configuration above, it can be seen that 2 out of 5
+															failed requests will cause the circuit breaker trips to open
+															state.</li>
+														<li id="1cea"
+															class="nb nc gr ne b nf pw nh ni nj px nl nm nn py np nq nr pz nt nu nv qa nx ny nz pt pu pv bj"
+															data-selectable-paragraph=""><strong
+																class="ne gs">Slow-call-duration-threshold</strong>: is
+															the time taken to indicate the received response exceeds
+															this configuration time will be recorded as an error count.
+														</li>
+													</ul>
+													<p id="eb2d"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">For other configurations, please
+														refer to the <a class="af qh"
+															href="https://resilience4j.readme.io/"
+															rel="noopener ugc nofollow" target="_blank">Resilience4J
+															documentation</a>.</p>
+													<h2 id="54b0"
+														class="oi oj gr be ok ol om dx on oo op dz oq nn or os ot nr ou ov ow nv ox oy oz pa bj"
+														data-selectable-paragraph=""><strong class="al">Testing</strong>
+													</h2>
+													<p id="9b80"
+														class="pw-post-body-paragraph nb nc gr ne b nf qb nh ni nj qc nl nm nn qd np nq nr qe nt nu nv qf nx ny nz gk bj"
+														data-selectable-paragraph="">To simulate the circuit breaker
+														above, I will use the Integration Test on the REST API that has
+														been created.</p>
+													<figure class="pe pf pg ph pi pj">
+														<div class="qi jh l fg">
+															<div class="aec qk l"><iframe
+																	src="https://medium.com/media/041c4f984440fab35c4b6feeb6a399aa"
+																	allowfullscreen="" frameborder="0" height="435"
+																	width="680" title="Circuit Breaker"
+																	class="fp n gf dv bg" scrolling="no"></iframe></div>
+														</div>
+													</figure>
+													<p id="c970"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">Pay attention to the code. I am
+														using <strong class="ne gs">@RepeatedTest</strong> annotation
+														from Junit5. With this annotation, we can test with as many
+														iterations as we want. The above code will do 10 iterations to
+														call the API that we created earlier. <br>Each iteration will be
+														delayed for N seconds. When the iteration is odd, then the
+														response will be delayed for 2s which will increase the failure
+														counter on the circuit breaker. Whereas when the iteration is
+														even then the response will be delayed for 1s. When the above
+														test is run, it will produce the following output:</p>
+													<figure class="pe pf pg ph pi pj pb pc paragraph-image">
+														<div class="pb pc ql">
+															<picture>
+																<source
+																	srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*cpQMp9kTNlpx531Z8Tfzeg.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*cpQMp9kTNlpx531Z8Tfzeg.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*cpQMp9kTNlpx531Z8Tfzeg.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*cpQMp9kTNlpx531Z8Tfzeg.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*cpQMp9kTNlpx531Z8Tfzeg.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*cpQMp9kTNlpx531Z8Tfzeg.png 1100w, https://miro.medium.com/v2/resize:fit:846/format:webp/1*cpQMp9kTNlpx531Z8Tfzeg.png 846w"
+																	sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 423px"
+																	type="image/webp">
+																<source data-testid="og"
+																	srcset="https://miro.medium.com/v2/resize:fit:640/1*cpQMp9kTNlpx531Z8Tfzeg.png 640w, https://miro.medium.com/v2/resize:fit:720/1*cpQMp9kTNlpx531Z8Tfzeg.png 720w, https://miro.medium.com/v2/resize:fit:750/1*cpQMp9kTNlpx531Z8Tfzeg.png 750w, https://miro.medium.com/v2/resize:fit:786/1*cpQMp9kTNlpx531Z8Tfzeg.png 786w, https://miro.medium.com/v2/resize:fit:828/1*cpQMp9kTNlpx531Z8Tfzeg.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*cpQMp9kTNlpx531Z8Tfzeg.png 1100w, https://miro.medium.com/v2/resize:fit:846/1*cpQMp9kTNlpx531Z8Tfzeg.png 846w"
+																	sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 423px">
+																<img alt="" class="bg mf po c" width="423" height="264"
+																	loading="lazy" role="presentation"
+																	src="https://miro.medium.com/v2/resize:fit:423/1*cpQMp9kTNlpx531Z8Tfzeg.png">
+															</picture>
+														</div>
+													</figure>
+													<p id="0e58"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">Let’s look at iterations 6, 7,
+														through 10. <em class="nd">Failed right? </em>Why are that
+														happened? Yaps, because the counter for circuit breaker trips to
+														open state has been fulfilled (≥ 40% of the last 5 requests).
+														This causes the next request to be considered a failure. If we
+														look in more detail at the 6th iteration log we will find the
+														following log:</p>
+													<figure class="pe pf pg ph pi pj">
+														<div class="qi jh l fg">
+															<div class="aed qk l"><iframe
+																	src="https://medium.com/media/f0b28efc4d7137f46b29a95c3c4f950b"
+																	allowfullscreen="" frameborder="0" height="474"
+																	width="680" title="Circuit Breaker"
+																	class="fp n gf dv bg" scrolling="no"></iframe></div>
+														</div>
+													</figure>
+													<p id="d27a"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">Resilience4J will <em
+															class="nd">fail-fast</em> by throwing a <strong
+															class="ne gs">CallNotPermittedException</strong>,<strong
+															class="ne gs"> </strong>until the state changes to closed or
+														according to the configuration we made. So how do we handle it
+														when it’s <strong class="ne gs">Open State</strong> but we don’t
+														want to throw an exception, but instead make it return a certain
+														response? It’s easy enough to add a fallback to the <strong
+															class="ne gs">@CircuitBreaker</strong> annotation and create
+														a function with the same name. Let’s add the following line of
+														code on the CircuitBreakerController file.</p>
+													<figure class="pe pf pg ph pi pj">
+														<div class="qi jh l fg">
+															<div class="aee qk l"><iframe
+																	src="https://medium.com/media/fc6c4ff8d4ccdd49971ab7f277e01343"
+																	allowfullscreen="" frameborder="0" height="325"
+																	width="680" title="Circuit Breaker"
+																	class="fp n gf dv bg" scrolling="no"></iframe></div>
+														</div>
+													</figure>
+													<p id="4dec"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">We will create a function with the
+														name fallback, and register it in the <strong
+															class="ne gs">@CircuitBreaker</strong> annotation. So, when
+														the circuit breaker trips to <strong class="ne gs">Open
+															state,</strong> it will no longer throw a <strong
+															class="ne gs">CallNotPermittedException</strong> but instead
+														will return the response <strong
+															class="ne gs">INTERNAL_SERVER_ERROR</strong>. We try to
+														prove it by re-running the integration test that was previously
+														made, and will get the following results:</p>
+													<figure class="pe pf pg ph pi pj pb pc paragraph-image">
+														<div class="pb pc qm">
+															<picture>
+																<source
+																	srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*zi31du-6VVJJqfq4za573Q.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*zi31du-6VVJJqfq4za573Q.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*zi31du-6VVJJqfq4za573Q.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*zi31du-6VVJJqfq4za573Q.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*zi31du-6VVJJqfq4za573Q.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*zi31du-6VVJJqfq4za573Q.png 1100w, https://miro.medium.com/v2/resize:fit:862/format:webp/1*zi31du-6VVJJqfq4za573Q.png 862w"
+																	sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 431px"
+																	type="image/webp">
+																<source data-testid="og"
+																	srcset="https://miro.medium.com/v2/resize:fit:640/1*zi31du-6VVJJqfq4za573Q.png 640w, https://miro.medium.com/v2/resize:fit:720/1*zi31du-6VVJJqfq4za573Q.png 720w, https://miro.medium.com/v2/resize:fit:750/1*zi31du-6VVJJqfq4za573Q.png 750w, https://miro.medium.com/v2/resize:fit:786/1*zi31du-6VVJJqfq4za573Q.png 786w, https://miro.medium.com/v2/resize:fit:828/1*zi31du-6VVJJqfq4za573Q.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*zi31du-6VVJJqfq4za573Q.png 1100w, https://miro.medium.com/v2/resize:fit:862/1*zi31du-6VVJJqfq4za573Q.png 862w"
+																	sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 431px">
+																<img alt="" class="bg mf po c" width="431" height="267"
+																	loading="lazy" role="presentation"
+																	src="https://miro.medium.com/v2/resize:fit:431/1*zi31du-6VVJJqfq4za573Q.png">
+															</picture>
+														</div>
+													</figure>
+													<p id="80c7"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">As we can see, all integration
+														tests were executed successfully. That way the client from our
+														application can handle when an <strong class="ne gs">Open State
+														</strong>occurs, and will not waste their resources for requests
+														that might be failed.</p>
+													<p id="9012"
+														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
+														data-selectable-paragraph="">Actually, the <strong
+															class="ne gs">Resilience4J</strong> library doesn’t only
+														have features for circuit breakers, but there are other features
+														that are very useful when we create microservices, if you want
+														to take a look please visit the <a class="af qh"
+															href="https://resilience4j.readme.io/"
+															rel="noopener ugc nofollow" target="_blank">Resilience4J
+															Documentation</a>.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
 					</div>
 				</article>
 			</div>

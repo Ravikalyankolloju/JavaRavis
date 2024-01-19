@@ -164,7 +164,185 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<h1>1. Introduction to Zuul Gateway</h1>
+						<p></strong>Zuul</strong> is a dynamic routing and filtering gateway built by Netflix, often
+							used as an API gateway in Spring Boot microservice architectures. It provides a single entry
+							point for all incoming requests, routing them to the appropriate backend services based on
+							configuration. It also offers various filtering capabilities for authentication,
+							authorization, rate limiting, and more.</p>
+						<h1>Why Use Zuul?</h1>
+						<ul data-sourcepos="9:1-9:156"><span>
+							</span>
+							<li data-sourcepos="9:1-9:156"><strong>Centralized Service Routing:</strong><span> Manages
+									request routing centrally,</span><span> simplifying client-side interaction and
+									reducing direct exposure of internal services.</span></li><span>
+							</span>
+							<li data-sourcepos="10:1-10:144"><strong>Security and Access Control:</strong><span>
+									Implements authentication,</span><span> authorization,</span><span> and other
+									security measures before requests reach backend services.</span></li><span>
+							</span>
+							<li data-sourcepos="11:1-11:149"><strong>Filtering and Transformation:</strong><span>
+									Filters requests and responses for tasks like logging,</span><span> load
+									balancing,</span><span> security checks,</span><span> and content
+									modification.</span></li><span>
+							</span>
+							<li data-sourcepos="12:1-12:103"><strong>Monitoring and Metrics:</strong><span> Provides
+									insights into traffic patterns,</span><span> service health,</span><span> and
+									performance.</span></li><span>
+							</span>
+							<li data-sourcepos="13:1-13:113"><strong>Dynamic Routing:</strong><span> Updates routes
+									without restarting services,</span><span> enabling flexible load balancing and
+									failover.</span></li><span>
+							</span>
+							<li data-sourcepos="14:1-15:0"><strong>API Versioning:</strong><span> Manages different API
+									versions through routing rules.</span></li><span>
+							</span>
+						</ul>
+						<h1>3. When to Use Zuul</h1>
+						<ul data-sourcepos="22:1-22:38"><span>
+							</span>
+							<li data-sourcepos="22:1-22:38"><strong>Managing multiple microservices:</strong><span>
+								</span>
+								<ul data-sourcepos="23:5-23:54"><span>
+									</span>
+									<li data-sourcepos="23:5-23:54"><span>Essential for managing communication and
+											routing in a distributed microservices system.
+											. Streamlines access and coordination for
+											clients.</span></li><span>
+									</span>
+								</ul><span>
+								</span>
+							</li><span>
+							</span>
+							<li data-sourcepos="24:1-25:81"><strong>Implementing cross-cutting concerns:</strong><span>
+								</span>
+								<ul data-sourcepos="25:5-25:81"><span>
+									</span>
+									<li data-sourcepos="25:5-25:81"><span>Centralizes authentication,</span><span>
+											authorization,</span><span> logging,</span><span> and other common
+											tasks.</span></li><span>
+									</span>
+								</ul><span>
+								</span>
+							</li><span>
+							</span>
+							<li data-sourcepos="24:1-25:81"><strong>Load Balancing and Fault Tolerance:</strong><span>
+								</span>
+								<ul data-sourcepos="25:5-25:81"><span>
+									</span>
+									<li data-sourcepos="25:5-25:81"><span>Distributes load across multiple instances and
+											handles failures gracefully.
+										</span></li><span>
+									</span>
+								</ul><span>
+								</span>
+							</li><span>
+							</span>
+							<li data-sourcepos="24:1-25:81"><strong>Dynamic Routing:</strong><span>
+								</span>
+								<ul data-sourcepos="25:5-25:81"><span>
+									</span>
+									<li data-sourcepos="25:5-25:81"><span>Enables routing based on request paths or
+											other criteria.</span></li><span>
+									</span>
+								</ul><span>
+								</span>
+							</li><span>
+							</span>
+							<li data-sourcepos="24:1-25:81"><strong>Filtering:</strong><span>
+								</span>
+								<ul data-sourcepos="25:5-25:81"><span>
+									</span>
+									<li data-sourcepos="25:5-25:81"><span>Allows custom pre- and post-processing of
+											requests and responses for logging, security, caching,
+											or other purposes.</span></li><span>
+									</span>
+								</ul><span>
+								</span>
+							</li><span>
+							</span>
+							<li data-sourcepos="26:1-27:77"><strong>Enhancing security:</strong><span>
+								</span>
+								<ul data-sourcepos="27:5-27:77"><span>
+									</span>
+									<li data-sourcepos="27:5-27:77"><span>Acts as aCentralizes authentication,
+											authorization, and CORS configuration.
+											. firewall,</span><span> protecting
+											internal services from external threats.</span></li><span>
+									</span>
+								</ul><span>
+								</span>
+							</li><span>
+							</span>
+							<li data-sourcepos="28:1-29:77"><strong>Optimizing performance:</strong><span>
+								</span>
+								<ul data-sourcepos="29:5-29:77"><span>
+									</span>
+									<li data-sourcepos="29:5-29:77"><span>Can cache responses and streamline
+											communication for better efficiency.</span></li><span>
+									</span>
+								</ul><span>
+								</span>
+							</li><span>
+							</span>
+							<li data-sourcepos="30:1-32:0"><strong>Gaining visibility and control:</strong><span>
+								</span>
+								<ul data-sourcepos="31:5-32:0"><span>
+									</span>
+									<li data-sourcepos="31:5-32:0"><span>Monitors traffic and service health for better
+											insights and management.</span></li><span>
+									</span>
+								</ul><span>
+								</span>
+							</li><span>
+							</span>
+						</ul>
+						<h1>Implementation of Zuul</h1>
+						<h4>Add Zuul dependency:</h4>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text" class="code-container"><span class="hljs-tag">&lt;<span class="hljs-name"><span class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;</span><span class="hljs-name"><span class="citation-0">groupId</span></span><span class="citation-0">&gt;</span></span><span class="citation-0">org.springframework.cloud</span><span class="hljs-tag"><span class="citation-0">&lt;/</span><span class="hljs-name"><span class="citation-0">groupId</span></span><span class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;</span><span class="hljs-name"><span class="citation-0">artifactId</span></span><span class="citation-0">&gt;</span></span><span class="citation-0">spring-cloud-starter-netflix-zuul</span><span class="hljs-tag"><span class="citation-0">&lt;/</span><span class="hljs-name"><span class="citation-0">artifactId</span></span><span class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;/</span><span class="hljs-name"><span class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><span class="citation-0 citation-end-0"></span>
+</code></pre>
+						<h4>Enable Zuul:</h4>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text" class="code-container"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableZuulProxy</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YourApplicationClass</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+						<h4>Configure routes:</h4>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text" class="code-container"><span class="hljs-attr">zuul:</span>
+    <span class="hljs-attr">routes:</span>
+        <span class="hljs-attr">product-service:</span>
+            <span class="hljs-attr">path:</span> <span class="hljs-string">/products/**</span>
+            <span class="hljs-attr">serviceId:</span> <span class="hljs-string">product-service</span>
+        <span class="hljs-attr">order-service:</span>
+            <span class="hljs-attr">path:</span> <span class="hljs-string">/orders/**</span>
+            <span class="hljs-attr">serviceId:</span> <span class="hljs-string">order-service</span>
+</code></pre>
+						<h4>Implement filters (optional):</h4>
+						<p>Create custom filters to handle authentication, logging, rate limiting, etc.</p>
+						<h4>Key Points</h4>
+						<ul data-sourcepos="73:1-78:0"><span>
+							</span>
+							<li data-sourcepos="73:1-73:71"><span>Acts as a reverse proxy,</span><span> forwarding
+									requests to appropriate services.</span></li><span>
+							</span>
+							<li data-sourcepos="74:1-74:47"><span>Integrates with Eureka for service discovery.</span>
+							</li><span>
+							</span>
+							<li data-sourcepos="75:1-75:63"><span>Supports various filtering mechanisms for request
+									processing.</span></li><span>
+							</span>
+							<li data-sourcepos="76:1-76:57"><span>Offers load balancing and health checks for
+									resilience.</span></li><span>
+							</span>
+							<li data-sourcepos="77:1-78:0"><span>Provides metrics and monitoring for visibility.</span>
+							</li><span>
+							</span>
+						</ul>
+						<h4>Important Note:</h4>
+						<p>End of Life for Zuul: Spring Cloud no longer supports Zuul as of Spring Cloud 2020.0.0. The
+							recommended replacement is Spring Cloud Gateway, a more modern and feature-rich gateway
+							built on Spring WebFlux.</p>
 					</div>
 				</article>
 			</div>

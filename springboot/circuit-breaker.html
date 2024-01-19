@@ -104,15 +104,15 @@
 									href="../springboot/config-server.html">Config Server</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/api-gateway.html">API Gateway</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/zuul.html">Zuul Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/zuul.html">Zuul
+									Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/resilience4j.html">Resilience4j</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/web-client.html">WebClient</a></li>
-									<li class="nav-item" data-depth="1"><a class="nav-link"
+							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/resttemplate.html">RestTemplate</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/open-feign.html">Feign Client</a></li>
@@ -120,8 +120,8 @@
 									href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/security.html">Cloud Security</a></li>
-									<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/saga.html">Saga Pattern</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/saga.html">Saga
+									Pattern</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/springboot-interview-questions.html">Springboot Interview
@@ -164,14 +164,157 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<h1>1. Introduction to Circuit Breaker Hystrix</h1>
+						<p>Hystrix is a fault tolerance library developed by Netflix, designed to bring resilience and
+							responsiveness to distributed systems. In Spring Boot, it integrates seamlessly with your
+							microservices, providing protection against failures and unexpected delays.</p>
+						<p>Hystrix operates around the concept of circuit breakers, which act as protective switches for
+							your service calls. Imagine a faulty service being bombarded with requests, further
+							worsening its performance. Hystrix intervenes by tripping the circuit breaker, preventing
+							further calls to the failing service and allowing it to recover.</p>
+						<h1>2. Why Use Hystrix?</h1>
+						<p>These services are prone to failure or delayed responses. If a service fails it may impact on
+							other services affecting performance and possibly making other parts of application
+							inaccessible or in the worst case bring down the whole application.</p>
+						<p>Here are some key reasons to consider using Hystrix in your Spring Boot microservices:</p>
+						<ul data-sourcepos="13:1-14:112"><span>
+							</span>
+							<li data-sourcepos="13:1-13:189"><strong>Fault Tolerance:</strong><span> Hystrix protects
+									your system from cascading failures.</span><span> When a service experiences
+									issues,</span><span> Hystrix isolates it to prevent the problems from spreading to
+									other services.</span></li><span>
+							</span>
+							<li data-sourcepos="14:1-14:112"><strong>Latency Management:</strong><span> Hystrix helps
+									avoid slow,</span><span> unresponsive services.</span><span> It can fall back to
+									alternate methods or graceful degradation when response times exceed
+									thresholds.</span></li><span>
+							</span>
+							<li data-sourcepos="15:1-15:209"><strong>Increased Availability:</strong><span> Hystrix
+									ensures your entire application remains available even if some services encounter
+									temporary issues.</span><span> Users experience minimal disruption while the failing
+									service recovers.</span></li><span>
+							</span>
+							<li data-sourcepos="16:1-17:0"><strong>Improved Developer Experience:</strong><span> Hystrix
+									simplifies handling service failures.</span><span> Its dashboard provides real-time
+									monitoring and insights into service health,</span><span> enabling you to quickly
+									identify and troubleshoot problems.</span></li><span>
+							</span>
+						</ul>
+						<h1>3. When to Use Hystrix</h1>
+						<p>The Hystrix framework library helps to control the interaction between services by providing
+							fault tolerance and latency tolerance. It improves overall resilience of the system by
+							isolating the failing services and stopping the cascading effect of failures.</p>
+						<strong>Service unavailable</strong> − The service which is being called is down for some
+						reason, for
+						example − bug, deployment, etc.</p>
+						<p>
+							<strong>Service taking time to respond</strong> − The service which is being called can
+							be slow due to
+							high load or resource consumption or it is in the middle of initializing the services.
+						</p>
+						<p><strong>Netflix Hystrix, Resilince4j</strong> are two well-known circuit breakers which are
+							used to handle
+							such situations. In this tutorial, we will use Hystrix.</p>
+						<p>Hystrix is not a one-size-fits-all solution. Consider using it in these scenarios:</p>
+						<ul data-sourcepos="22:1-24:26"><span>
+							</span>
+							<li data-sourcepos="22:1-22:184"><strong>Communication with external
+									services:</strong><span> When relying on third-party APIs or services you don't
+									directly control,</span><span> Hystrix can protect your application from their
+									potential failures.</span></li><span>
+							</span>
+							<li data-sourcepos="23:1-23:232"><strong>Services with high call volume or critical
+									functionality:</strong><span> For services constantly bombarded with requests or
+									those crucial for your application's core functionality,</span><span> Hystrix
+									provides additional reliability and fault tolerance.</span></li><span>
+							</span>
+							<li data-sourcepos="24:1-24:26"><strong>Microservices prone to intermittent
+									issues:</strong><span> If your services occasionally experience latency or
+									temporary
+									breakdowns,</span><span> Hystrix can handle graceful degradation and prevent
+									cascading failures.</span></li><span>
+							</span>
+						</ul>
+						<h1>4. Implementing Circuit Breaker with Hystrix</h1>
+						<h4>1. Add Hystrix dependency:</h4>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj"><span class="hljs-tag"><span class="citation-0">&lt;</span><span class="hljs-name"><span class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;</span><span class="hljs-name"><span class="citation-0">groupId</span></span><span class="citation-0">&gt;</span></span><span class="citation-0">org.springframework.cloud</span><span class="hljs-tag"><span class="citation-0">&lt;/</span><span class="hljs-name"><span class="citation-0">groupId</span></span><span class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;</span><span class="hljs-name"><span class="citation-0">artifactId</span></span><span class="citation-0">&gt;</span></span><span class="citation-0">spring-cloud-starter-netflix-hystrix</span><span class="hljs-tag"><span class="citation-0">&lt;/</span><span class="hljs-name"><span class="citation-0">artifactId</span></span><span class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;/</span><span class="hljs-name"><span class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><span class="citation-0 citation-end-0"></span>
+</code></pre>
+						<h4>2. Enable Hystrix:</h4>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text" class="code-container"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableHystrix</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YourApplicationClass</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+						<p><strong>@EnableHystrix</strong> − This annotation scans our packages and looks out for
+							methods which are
+							using <strong>@HystrixCommand</strong> annotation.</p>
+						<h4>3. Apply Hystrix to a method:</h4>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text" class="code-container"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyService</span> </span>{
 
+    <span class="hljs-meta">@HystrixCommand(fallbackMethod = "reliable")</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">callExternalService</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// Call a potentially unreliable external service</span>
+        <span class="hljs-keyword">return</span> externalService.doSomething();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">reliable</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// Fallback method in case of failure</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"External service is down, using fallback"</span>;
+    }
+}
+</code></pre>
+						<h4>4. Customize Hystrix behavior (optional):</h4>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text" class="code-container"><span class="hljs-meta">@<span class="citation-1 citation-end-1">HystrixCommand(fallbackMethod = "reliable",
+                commandProperties = {
+                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",</span> value = "5000")
+                })</span>
+</code></pre>
+						<p>Now, let us understand couple of points from the above code −</p>
+						<p><strong>HystrixCommand annotation</strong> − This is responsible for wrapping the function
+							call that is
+							callExternalService and provide a proxy around it. The proxy then gives various hooks through
+							which we can control our call to the doSomething service. For example, timing out the
+							request,pooling of request, providing a fallback method, etc.</p>
+
+						<p><strong>Fallback method</strong> − We can specify the method we want to call when Hystrix
+							determines that
+							something is wrong with the caller. This method needs to have same signature as the method
+							which is annotated. In our case, we have decided to provide the data back to our controller.</p>
+						<p>Couple of useful options this annotation provides −</p>
+						<p><strong>Error threshold percent</strong> − Percentage of request allowed to fail before the
+							circuit is
+							tripped, that is, fallback methods are called. This can be controlled by using
+							cicutiBreaker.errorThresholdPercentage</p>
+
+						<p><strong>Giving up on the network request after timeout</strong> − If the callee service, in
+							our case Customer
+							service, is slow, we can set the timeout after which we will drop the request and move to
+							fallback method. This is controlled by setting
+							execution.isolation.thread.timeoutInMilliseconds.</p>
+							<h4>Key Points</h4>
+						<ul><span>
+							</span>
+							<li><strong>@HystrixCommand</strong><span> annotates a
+									method to wrap it with a circuit breaker.</span></li>
+							<li><strong>fallbackMethod</strong><span> specifies a
+									method to execute if the primary method fails.</span></li>
+							<li><strong>commandProperties</strong><span> customize
+									Hystrix behavior (e.</span><span>g.,</span><span> timeouts,</span><span> error
+									thresholds).</span></li>
+							<li><strong>Hystrix dashboard</strong>
+									(http:</span><span>//localhost:</span><span>8080/hystrix) provides monitoring and
+									insights.</li><span>
+							</span>
+						</ul>
 					</div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link btn-outline-primary"
-							href="../springboot/zuul.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link btn-outline-primary" href="../springboot/zuul.html">&lArr;
+							Previous</a></li>
 					<li class="page-item"><a class="page-link" href="../springboot/resilience4j.html">Next
 							&rArr;</a></li>
 				</ul>

@@ -164,7 +164,219 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<h1>1. What is the Saga Pattern?</h1>
+						<p>The Saga architecture pattern&nbsp;<strong>provides transaction management using a sequence
+								of local transactions.</strong></p>
+						<p>A local transaction is the unit of work performed by a Saga participant. Every operation that
+							is part of the Saga can be rolled back by a compensating transaction. Further, the Saga
+							pattern guarantees that either all operations complete successfully or the corresponding
+							compensation transactions are run to undo the work previously completed.</p>
+						<p>In the Saga pattern,&nbsp;<strong>a compensating transaction must
+								be&nbsp;<em>idempotent</em>&nbsp;and&nbsp;<em>retryable</em>.</strong> These two
+							principles ensure that we can manage transactions without any manual intervention.</p>
+						<p>A saga is a sequence of local transactions. Each service in a saga performs its own
+							transaction and publishes an event. The other services listen to that event and perform the
+							next local transaction. If one transaction fails for some reason, the saga also executes
+							compensating transactions to undo the impact of the preceding transactions.</p>
+						<ul data-sourcepos="11:1-12:84"><span>
+							</span>
+							<li data-sourcepos="11:1-11:137"><strong>Distributed Transactions:</strong><span>
+									Traditional ACID transactions don't work well in distributed systems.</span><span>
+									Sagas offer a flexible alternative.</span></li><span>
+							</span>
+							<li data-sourcepos="12:1-12:84"><strong>Resilience and Fault Tolerance:</strong><span>
+									Handles failures gracefully by rolling back or compensating for completed
+									steps,</span><span> preventing inconsistencies.</span></li><span>
+							</span>
+							<li data-sourcepos="13:1-13:124"><strong>Data Consistency:</strong><span> Maintains
+									consistency across multiple services without relying on a centralized transaction
+									manager.</span></li><span>
+							</span>
+							<li data-sourcepos="14:1-15:0"><strong>Asynchronous Operations:</strong><span> Supports
+									asynchronous communication between services,</span><span> improving performance and
+									scalability.</span></li><span>
+							</span>
+						</ul>
+						<h1>2. Why Use the Saga Pattern?</h1>
+						<ul data-sourcepos="18:1-20:117"><span>
+							</span>
+							<li data-sourcepos="18:1-18:132"><strong>Transactions Spanning Multiple
+									Microservices:</strong><span> Essential for multi-service operations like order
+									processing or booking systems.</span></li><span>
+							</span>
+							<li data-sourcepos="19:1-19:129"><strong>Long-Running Transactions:</strong><span> Ideal for
+									operations that take time to complete,</span><span> like user registration with
+									email verification.</span></li><span>
+							</span>
+							<li data-sourcepos="20:1-20:117"><strong>Need for Resilience and Fault
+									Tolerance:</strong><span> Crucial in systems where failures are expected and data
+									consistency is paramount.</span></li><span>
+							</span>
+						</ul>
+						<h1>3. When to Use the Saga Pattern:</h1>
+						<ul data-sourcepos="18:1-20:117"><span>
+							</span>
+							<li data-sourcepos="18:1-18:132"><strong>Transactions Spanning Multiple
+									Microservices:</strong><span> Essential for multi-service operations like order
+									processing or booking systems.</span></li><span>
+							</span>
+							<li data-sourcepos="19:1-19:129"><strong>Long-Running Transactions:</strong><span> Ideal for
+									operations that take time to complete,</span><span> like user registration with
+									email verification.</span></li><span>
+							</span>
+							<li data-sourcepos="20:1-20:117"><strong>Need for Resilience and Fault
+									Tolerance:</strong><span> Crucial in systems where failures are expected and data
+									consistency is paramount.</span></li><span>
+							</span>
+						</ul>
+						<p>Let's see a simple example in a typical food delivery app flow.</p>
 
+						<p>When a user places an order, below could be the sequence of actions that happen.</p>
+						<ul>
+							<li>The food ordering service creates an order<em>.</em> At this point, the order is in a
+								PENDING state. A saga manages the chain of events.</li>
+							<li>The saga contacts the restaurant via the restaurant service.</li>
+							<li>The restaurant service attempts to place the order with the chosen restaurant. After
+								getting a confirmation, it sends back a reply.</li>
+							<li>The saga receives the reply. And depending on the reply, it can approve the order or
+								reject the order.</li>
+							<li>The food order service then changes the state of the order. If the order was approved,
+								it would inform the customer with the next details. If rejected, it will also inform the
+								customer with an apology message.</li>
+						</ul>
+						<p>As you can see, this is a pretty different approach from the usual point-to-point call
+							approach in typical workflows.</p>
+						<h1>4. Types of Sagas</h1>
+						<p>There are two types of Sagas:</p>
+						<h3>1. Choreography-Based Saga (decentralized coordination)</h3>
+						<p>In this approach, there is no central orchestrator. Each service participating in the Saga
+							performs their transaction and publish events. The other services act upon those events and
+							perform their transactions. Also, they may or not publish other events based on the
+							situation.</p>
+						<h3>2. Orchestration-Based Saga (centralized control)</h3>
+						<p>In this approach, there is a Saga orchestrator that manages all the transactions and directs
+							the participant services to execute local transactions based on events. This orchestrator
+							can also be though of as a Saga Manager.</p>
+						<img loading="lazy" src="../springboot/images/saga-pattern.webp" alt="saga pattern" />
+						<p>The above diagram shows how to visualize the Saga pattern for the online order processing
+							scenario.</p>
+						<h1>5. Implementing Saga Choreography Pattern</h1>
+						<p>In the Saga Choreography pattern,&nbsp;<strong>each microservice that is part of the
+								transaction publishes an event that is processed by the next microservice.</strong></p>
+						<p>To use this pattern, we need to decide if the microservice will be part of the Saga.
+							Accordingly, the microservice needs to use the appropriate framework to implement Saga. In
+							this pattern, the Saga Execution Coordinator is either embedded within the microservice or
+							can be a standalone component.</p>
+
+						<p>In the Saga, choreography flow is successful if all the microservices complete their local
+							transaction, and none of the microservices reported any failure.</p>
+
+						<p>The following diagram demonstrates the successful Saga flow for the online order processing
+							application:</p>
+						<img loading="lazy" src="../springboot/images/saga-coreography-768x943.webp"
+							alt="saga coreography">
+						<p>In the event of a failure,&nbsp;<strong>the microservice reports the failure to SEC, and it
+								is the SEC’s responsibility to invoke the relevant compensation transactions</strong>:
+						</p>
+						<img loading="lazy" decoding="async" src="..//springboot/images/saga-coreography-2-768x786.webp"
+							alt="saga coreography 2">
+						<p>In this example, the Payment microservice reports a failure, and the SEC invokes the
+							compensating transaction to unblock the seat. If the call to the compensating transaction
+							fails, it is the SEC’s responsibility to retry it until it is successfully completed. Recall
+							that in Saga, a compensating transaction must be
+							<em>idempotent</em>&nbsp;and&nbsp;<em>retryable</em>.
+						</p>
+						<p>The Choreography pattern <strong>works&nbsp;for greenfield microservice application
+								development.</strong> Also, this pattern is suitable when there are fewer participants
+							in the transaction.</p>
+						<p>Here are a few frameworks available to implement the choreography pattern:</p>
+						<ul>
+							<li><a href="https://docs.axoniq.io/reference-guide/v/3.1/part-ii-domain-logic/sagas">Axon
+									Saga</a> – a lightweight framework and widely used with Spring Boot-based
+								microservices</li>
+							<li><a href="https://github.com/eclipse/microprofile-lra">Eclipse MicroProfile
+									LRA</a>&nbsp;– implementation of distributed transactions in Saga for HTTP transport
+								based on REST principles</li>
+							<li><a
+									href="https://eventuate.io/docs/manual/eventuate-tram/latest/getting-started-eventuate-tram-sagas.html">Eventuate
+									Tram Saga</a> – Saga orchestration framework for Spring Boot and Micronaut-based
+								microservices</li>
+							<li><a href="http://seata.io/en-us/docs/dev/mode/saga-mode.html">Seata</a> – open-source
+								distributed transaction framework with high-performance and easy-to-use distributed
+								transaction services</li>
+						</ul>
+						<h1>6. Implementing Saga Orchestration Pattern</h1>
+						<p>In the Orchestration pattern,&nbsp;<strong>a single orchestrator is responsible for managing
+								the overall transaction status.</strong></p>
+						<p>If any of the microservices encounter a failure, the orchestrator is responsible for invoking
+							the necessary compensating transactions:</p>
+						<img loading="lazy" src="..//springboot/images/saga-orchestration.webp"
+							alt="saga orchestration">
+						<p>The Saga orchestration pattern is&nbsp;<strong>useful for brownfield microservice application
+								development architecture.</strong> In other words, this pattern works when we already
+							have a set of microservices and would like to implement the Saga pattern in the application.
+							We need to define the appropriate compensating transactions to proceed with this pattern.
+						</p>
+						<p>Here are a few frameworks available to implement the orchestrator pattern:</p>
+						<ul>
+							<li><a href="https://camunda.com/">Camunda</a>&nbsp;is a Java-based framework that supports
+								Business Process Model and Notation (BPMN) standard for workflow and process automation.
+							</li>
+							<li><a href="https://camel.apache.org/components/latest/eips/saga-eip.html">Apache Camel</a>
+								provides the implementation for Saga Enterprise Integration Pattern (EIP).</li>
+						</ul>
+						<h1>7. Advantages and Disadvantages of SAGA Pattern</h1>
+						<p>The main benefit of the Saga Pattern is that it helps maintain data consistency across
+							multiple services without tight coupling. This is an extremely important aspect for a
+							microservices architecture.</p>
+
+						<p>However, the main disadvantage of the Saga Pattern is the apparent complexity from a
+							programming point of view. Also, developers are not as well accustomed to writing Sagas as
+							traditional transactions. The other challenge is that compensating transactions also have to
+							be designed to make Sagas work.</p>
+
+						<p>In my opinion, Sagas can help solve certain challenges and scenarios. They should be adopted
+							or explored if the need arises. However, I would love to hear if others have also used Saga
+							Pattern and how was the experience? What frameworks (if any) did you use?</p>
+						<table>
+							<thead></thead>
+							<tbody>
+								<tr>
+									<td>
+										<p style="text-align:center;"><strong>Advantage of SAGA Pattern</strong></p>
+									</td>
+									<td>
+										<p style="text-align:center;"><strong>Disadvantage of SAGA Pattern</strong></p>
+									</td>
+								</tr>
+								<tr>
+									<td>Provides better fault tolerance: With SAGA, if one step fails, the entire
+										process can be rolled back or compensated without affecting other steps.</td>
+									<td>Increased complexity: Implementing SAGA requires additional coding and
+										architecture to handle compensation and rollback steps.</td>
+								</tr>
+								<tr>
+									<td>Simplifies error handling: SAGA provides a clear and standardized way to handle
+										errors and compensations, making it easier to debug and maintain.</td>
+									<td>Limited support: Not all frameworks or platforms support SAGA out of the box,
+										which can make implementation more difficult.</td>
+								</tr>
+								<tr>
+									<td>Allows for asynchronous processing: SAGA can support asynchronous processing,
+										allowing for greater concurrency and performance.</td>
+									<td>Requires careful design: The SAGA pattern requires careful design to ensure that
+										the compensations and rollbacks are implemented correctly and can handle all
+										possible failure scenarios.</td>
+								</tr>
+								<tr>
+									<td>Supports distributed transactions: SAGA can handle transactions across multiple
+										services or databases, allowing for more scalable and distributed architectures.
+									</td>
+									<td>Increased latency: SAGA may result in additional latency due to the need to
+										coordinate between different services or databases.</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</article>
 			</div>
@@ -172,8 +384,7 @@
 				<ul class="pagination justify-content-center mb-4">
 					<li class="page-item"><a class="page-link btn-outline-primary"
 							href="../springboot/security.html">&lArr; Previous</a></li>
-					<li class="page-item"><a class="page-link"
-							href="../springboot/microservices-interview.html">Next
+					<li class="page-item"><a class="page-link" href="../springboot/microservices-interview.html">Next
 							&rArr;</a></li>
 				</ul>
 			</div>

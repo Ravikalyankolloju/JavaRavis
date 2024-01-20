@@ -214,7 +214,7 @@
 									dependency:</div>
 								<div><br></div>
 								<div>
-									<pre class="notranslate"
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"
 										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml">		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
 			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
 			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-webflux<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
@@ -222,7 +222,7 @@
 								</div>
 								<h1 style="text-align: left;">Step 2:&nbsp;Configure WebClient as Spring Bean</h1>
 								<div>
-									<pre class="notranslate"
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"
 										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs typescript">package net.javaguides.userservice;
 
 <span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
@@ -245,7 +245,7 @@
 								</div>
 								<div>We have configured <i>WebClient</i> as Spring bean:</div>
 								<div>
-									<pre class="notranslate"
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"
 										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs typescript">    <span class="hljs-meta">@Bean</span>
     <span class="hljs-keyword">public</span> WebClient <span class="hljs-function"><span class="hljs-title">webClient</span>(<span class="hljs-params"></span>)</span>{
         <span class="hljs-keyword">return</span> WebClient.builder().build();
@@ -254,7 +254,7 @@
 								<h1 style="text-align: left;">Step 3: Inject and Use WebClient to Call the REST API</h1>
 								<div>Let's inject <i>WebClient</i> and use it to make a REST API call:</div>
 								<div>
-									<pre class="notranslate"
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"
 										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs csharp">        DepartmentDto departmentDto = webClient.<span class="hljs-keyword">get</span>()
                  .uri(<span class="hljs-string">"http://localhost:8080/api/departments/"</span> + user.getDepartmentId())
                          .retrieve()
@@ -264,7 +264,7 @@
 								<div>Here is the complete code of the&nbsp;<i>UserServiceImpl</i> class for your
 									reference:</div>
 								<div>
-									<pre class="notranslate"
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"
 										style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs java"><span class="hljs-keyword">package</span> net.javaguides.userservice.service.impl;
 
 <span class="hljs-keyword">import</span> lombok.AllArgsConstructor;

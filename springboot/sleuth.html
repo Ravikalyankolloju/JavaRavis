@@ -104,15 +104,15 @@
 									href="../springboot/config-server.html">Config Server</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/api-gateway.html">API Gateway</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/zuul.html">Zuul Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/zuul.html">Zuul
+									Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/resilience4j.html">Resilience4j</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/web-client.html">WebClient</a></li>
-									<li class="nav-item" data-depth="1"><a class="nav-link"
+							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/resttemplate.html">RestTemplate</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/open-feign.html">Feign Client</a></li>
@@ -120,8 +120,8 @@
 									href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/security.html">Cloud Security</a></li>
-									<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/saga.html">Saga Pattern</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/saga.html">Saga
+									Pattern</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/springboot-interview-questions.html">Springboot Interview
@@ -202,7 +202,181 @@
 						<h2>Develop four Spring Boot Microservices modules which interact with each other</h2>
 						<p>We will be developing the spring boot microservices as follows-</p>
 						<img loading="lazy" src="../springboot/images/micro.jpeg" alt="Spring Cloud Sleuth Tutorial"
-							class="responsive" title="Spring Cloud Sleuth Tutorial">
+							class="responsive" title="Spring Cloud Sleuth Tutorial" />
+						<h1>1. Zipkin</h1>
+						<p>Zipkin was originally developed at Twitter, based on a concept of a Google paper that
+							described Google’s internally-built distributed app debugger – <a
+								href="https://research.google/pubs/dapper-a-large-scale-distributed-systems-tracing-infrastructure/">dapper</a>.
+							It manages both the collection and lookup of this data. To use Zipkin, applications are
+							instrumented to report timing data to it.</p>
+						<p>If you are troubleshooting latency problems or errors in an ecosystem, you can filter or sort
+							all traces based on the application, length of trace, annotation, or timestamp. By analyzing
+							these traces, you can decide which components are not performing as per expectations, and
+							you can fix them.</p>
+						<p>Internally it has 4 modules –</p>
+						<ol>
+							<li><strong>Collector</strong> – Once any component sends the trace data, it arrives to
+								Zipkin collector daemon. Here the <em>trace data is validated, stored, and indexed for
+									lookups by the Zipkin collector</em>.</li>
+							<li><strong>Storage</strong> – This module store and index the lookup data in backend. <a
+									href="https://cassandra.apache.org/_/index.html" target="_blank"
+									rel="noopener noreferrer">Cassandra</a>, <a href="https://www.elastic.co/"
+									target="_blank" rel="noopener noreferrer">ElasticSearch</a> and MySQL are supported.
+							</li>
+							<li><strong>Search</strong> – This module provides a simple JSON API for finding and
+								retrieving traces stored in backend. The primary consumer of this API is the Web UI.
+							</li>
+							<li><strong>Web UI</strong> – A very nice UI interface for viewing traces.</li>
+						</ol>
+						<h4>1.1. Installing Zipkin</h4>
+						<p>Detailed installation steps can be found for different operating systems including the Docker
+							image on the quickstart page. For windows installation, just download the latest Zipkin
+							server from the maven repository and run the executable jar file using the below command.
+						</p>
+						<pre title="Start Zipkin on Windows" class="nz oa ob oc od oe of og bo oh ba bj"
+							tabindex="0"><div class="prism-titlename">Start Zipkin on Windows</div><code lang="bash" class="language-bash">java -jar zipkin-server-1.30.3-exec.jar</code></pre>
+						<p>Once Zipkin is started, we can see the Web UI at <a href="http://localhost:9411/zipkin/"
+								target="_blank" rel="noopener noreferrer">http://localhost:9411/zipkin/</a>.</p>
+						<p>The above command will <strong>start the Zipkin server with the default
+								configuration</strong>. For advanced configuration, we can configure many other things
+							like storage, collector listeners etc.</p>
+						<p>To <strong>install Zipkin in the </strong>spring boot application, we need to add <a
+								href="https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-zipkin"
+								target="_blank" rel="noreferrer noopener">Zipkin starter dependency</a>.</p>
+						<pre title="pom.xml" class="nz oa ob oc od oe of og bo oh ba bj"
+							tabindex="0"><div class="prism-titlename">pom.xml</div><code lang="xml" class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-zipkin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre>
+						<h1>2. Sleuth</h1>
+
+						<p><a href="https://cloud.spring.io/spring-cloud-sleuth/" target="_blank"
+								rel="noopener noreferrer">Sleuth</a> is another tool from the Spring cloud family. It is
+							<strong>used to generate the <em>trace id</em>, <em>span id</em> and add this information to
+								the service calls in the headers and MDC</strong>, so that It can be used by tools like
+							Zipkin and <a
+								href="https://howtodoinjava.com/spring-cloud/elk-stack-tutorial-example/">ELK</a> etc.
+							to store, index and process log files.
+						</p>
+						<p>As it is from the spring cloud family, once added to the <code>CLASSPATH</code>, it
+							automatically integrated to the common communication channels like –</p>
+						<ul>
+							<li>requests made with the <a
+									href="https://howtodoinjava.com/spring-boot2/resttemplate/spring-restful-client-resttemplate-example/"
+									target="_blank" rel="noreferrer noopener">RestTemplate</a> etc.</li>
+							<li>requests that pass through a <a
+									href="https://howtodoinjava.com/spring-cloud/spring-cloud-api-gateway-zuul/"
+									target="_blank" rel="noreferrer noopener">Netflix Zuul</a> microproxy</li>
+							<li>HTTP headers received at <a
+									href="https://howtodoinjava.com/series/spring-mvc-tutorials/" target="_blank"
+									rel="noreferrer noopener">Spring MVC</a> controllers</li>
+							<li>requests over messaging technologies like <a
+									href="https://howtodoinjava.com/kafka/getting-started-windows-10/">Apache Kafka</a>
+								or RabbitMQ etc.</li>
+						</ul>
+						<p>Using Sleuth is very easy. We just need to add it’s started pom in the spring boot project.
+							It will add the Sleuth to the project and so in its runtime.</p>
+						<pre title="pom.xml" class="nz oa ob oc od oe of og bo oh ba bj"
+							tabindex="0"><div class="prism-titlename">pom.xml</div><code lang="xml" class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-cloud-starter-sleuth<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre>
+						<p>So far we have integrated Zipkin and Sleuth to microservices and ran the Zipkin server. Let’s
+							see how to utilize this setup.</p>
+						<h1>3. Zipkin and Sleuth Integration</h1>
+						<p>For this demo, let us create 4 spring boot based microservices. They all will have both
+							Zipkin and Sleuth starter dependencies.</p>
+
+						<p>In each microservice, we will expose one endpoint and from the first service we will call
+							the second service, and from the second service, we will invoke the third and so on using
+							the RestTemplate.</p>
+						<img fetchpriority="high" decoding="async" src="../springboot/images/sluth.jpg"
+							alt="Microservices Interactions" />
+						<p>And as we have already mentioned, Sleuth works automatically with resttemplate so it would
+							send this instrumented service call information to the attached Zipkin server. Zipkin will
+							then start the book keeping of latency calculation along with a few other statistics like
+							service call details.</p>
+						<h1>3.1. Creating Microservices</h1>
+						<p>All four services will have the same configuration, the only difference is the service
+							invocation details where the endpoint changes. Let’s <a
+								href="https://howtodoinjava.com/spring-boot/spring-boot-rest-api-example/">create Spring
+								boot applications</a> with <em>Web</em>, <em>Rest Repository</em>, <em>Zipkin</em> and
+							<em>Sleuth</em> dependencies.
+						</p>
+						<p>I have packaged those services inside a parent project so that those four services can be
+							built together to save time. You can proceed with individual setup if you wish to. Also, I
+							have added useful windows scripts to start/stop all the services with a single command.</p>
+						<p>This is <strong>one sample rest controller</strong> which exposes one endpoint and also
+							invokes one downstream service using the <em>RestTemplate</em>. Also, we are using <a
+								href="https://www.javadoc.io/doc/io.zipkin.brave/brave/5.0.0/brave/sampler/Sampler.html#ALWAYS_SAMPLE"
+								target="_blank" rel="noreferrer noopener">Sampler.ALWAYS_SAMPLE</a> that traces each
+							action.</p>
+						<pre title="Service 1" class="nz oa ob oc od oe of og bo oh ba bj"><div>Service 1</div><code lang="java" class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example<span class="token punctuation">.</span>zipkinservice1</span><span class="token punctuation">;</span>
+ 
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">brave<span class="token punctuation">.</span>sampler<span class="token punctuation">.</span></span><span class="token class-name">Sampler</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>log4j<span class="token punctuation">.</span></span><span class="token class-name">Logger</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span></span><span class="token class-name">SpringApplication</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure<span class="token punctuation">.</span></span><span class="token class-name">SpringBootApplication</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">ParameterizedTypeReference</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>http<span class="token punctuation">.</span></span><span class="token class-name">HttpMethod</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">GetMapping</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RestController</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>client<span class="token punctuation">.</span></span><span class="token class-name">RestTemplate</span></span><span class="token punctuation">;</span>
+ 
+<span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ZipkinService1Application</span> <span class="token punctuation">{</span>
+ 
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">ZipkinService1Application</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">class</span> <span class="token class-name">ZipkinController</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Logger</span> LOG <span class="token operator">=</span> <span class="token class-name">Logger</span><span class="token punctuation">.</span><span class="token function">getLogger</span><span class="token punctuation">(</span><span class="token class-name">ZipkinController</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token class-name">RestTemplate</span> restTemplate<span class="token punctuation">;</span>
+ 
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">RestTemplate</span> <span class="token function">getRestTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RestTemplate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ 
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">Sampler</span> <span class="token function">alwaysSampler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token class-name">Sampler</span><span class="token punctuation">.</span>ALWAYS_SAMPLE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+     
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/zipkin"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">zipkinService1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+        LOG<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"Inside zipkinService 1.."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         
+         <span class="token class-name">String</span> response <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span> restTemplate<span class="token punctuation">.</span><span class="token function">exchange</span><span class="token punctuation">(</span><span class="token string">"http://localhost:8082/zipkin2"</span><span class="token punctuation">,</span> 
+                                                            <span class="token class-name">HttpMethod</span><span class="token punctuation">.</span>GET<span class="token punctuation">,</span> 
+                                                            <span class="token keyword">null</span><span class="token punctuation">,</span> 
+                                                            <span class="token keyword">new</span> <span class="token class-name">ParameterizedTypeReference</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+                                                <span class="token punctuation">.</span><span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"Hi..."</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+						<h4>3.2. Appication Configuration</h4>
+						<p>As all services will run in a single machine, so we need to run them in different ports. Also
+							to identify in Zipkin, we need to give proper names. so configure THE application name and
+							port information in application.properties file under the resources folder.</p>
+						<pre title="application.properties" class="nz oa ob oc od oe of og bo oh ba bj">application.properties<code lang="properties" class="language-properties"><br><span>server.port</span> <span>=</span> <span>8081</span>
+<span>spring.application.name</span> <span>=</span> <span>zipkin-server1</span></code></pre>
+
+						<p>Similarly, for the other 3 services, we will use ports 8082, 8083, 8084 and their name will
+							also be <strong>zipkin-server2</strong>, <strong>zipkin-server3</strong> and
+							<strong>zipkin-server4</strong>.
+						</p>
+						<p>Also, we have intentionally introduced a delay in the last service so that we can view that
+							in Zipkin.</p>
 					</div>
 				</article>
 			</div>

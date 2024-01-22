@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="RaviKalyan">
-	<title>Annotations</title>
+	<title>JPA Annotations</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
 	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
 	<link rel="stylesheet" href="../scripts/css/site.css">
@@ -107,28 +107,31 @@
 							</li>
 							<h4>Spring Annotations</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-core.html">Spring Core
+									href="../spring/annotations-core.html">Core
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-mvc.html">Spring MVC
+									href="../spring/annotations-mvc.html">MVC
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-transactions.html">Spring Transactions & Error
+									href="../spring/annotations-transactions.html">Transactions & Error
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-configuration.html">Spring Configuration
-									Annotations</a></li> 
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-aop.html">Spring AOP
+									href="../spring/annotations-configuration.html">Configuration
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-jpa.html">Spring JPA
+									href="../spring/annotations-aop.html">AOP
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-cloud.html">Spring Cloud
+									href="../spring/annotations-jpa.html">JPA
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-scheduling.html">Spring Scheduling
+									href="../spring/annotations-cloud.html">Cloud
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-scheduling.html">Scheduling
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-scheduling.html">Caching
 									Annotations</a></li>
 							<h4>Spring AOP</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
@@ -178,7 +181,7 @@
 					<ul>
 						<li><a href="../home.html">Home</a></li>
 						<li><a href="../spring/introduction.html">Spring</a></li>
-						<li><a href="../spring/introduction.html">Annotations</a></li>
+						<li><a href="../spring/annotations-jpa.html">JPA Annotations</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -187,7 +190,7 @@
 					<ul>
 						<li><a href="../home.html">Home</a></li>
 						<li><a href="../spring/introduction.html">Spring</a></li>
-						<li><a href="../spring/introduction.html">Annotations</a></li>
+						<li><a href="../spring/annotations-jpa.html">JPA Annotations</a></li>
 					</ul>
 					<hr>
 				</nav>
@@ -197,6 +200,412 @@
 				<article>
 					<div class="entry-content" itemprop="text">
 						<h1>1. JPA Mapping Annotations</h1>
+						<ol>
+							<li>
+								<p><strong>@Column:</strong></p>
+								<ul>
+									<li>Used to specify the details of a column in the table.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Column(name = "user_name", nullable = false, length = 50)</span>
+<span class="hljs-keyword">private</span> String userName;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@Entity:</strong></p>
+								<ul>
+									<li>Marks a class as an entity, which will be mapped to a database table.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Table(name = "users")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> {
+    <span class="hljs-comment">// Entity class properties</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@ForeignKey:</strong></p>
+								<ul>
+									<li>Not a standard JPA annotation. It might be a custom annotation used for
+										specifying a foreign key relationship.</li>
+								</ul>
+							</li>
+							<li>
+								<p><strong>@GeneratedValue:</strong></p>
+								<ul>
+									<li>Used to specify the generation strategy for the primary key.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Id</span>
+<span class="hljs-meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span>
+<span class="hljs-keyword">private</span> Long id;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@Id:</strong></p>
+								<ul>
+									<li>Marks a field as the primary key of the entity.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Id</span>
+<span class="hljs-keyword">private</span> Long id;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@JoinColumn:</strong></p>
+								<ul>
+									<li>Used to specify a column for joining an entity association or element
+										collection.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToOne</span>
+<span class="hljs-meta">@JoinColumn(name = "department_id")</span>
+<span class="hljs-keyword">private</span> Department department;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@JoinColumns:</strong></p>
+								<ul>
+									<li>Used to specify multiple join columns in a mapping.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToOne</span>
+<span class="hljs-meta">@JoinColumns({
+    @JoinColumn(name = "department_id", referencedColumnName = "id"),
+    @JoinColumn(name = "location_id", referencedColumnName = "location_id")
+})</span>
+<span class="hljs-keyword">private</span> Department department;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@JoinTable:</strong></p>
+								<ul>
+									<li>Used to define a join table for a many-to-many or unidirectional one-to-many
+										relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToMany</span>
+<span class="hljs-meta">@JoinTable(
+    name = "user_role",
+    joinColumns = @JoinColumn(name = "user_id"),
+    inverseJoinColumns = @JoinColumn(name = "role_id")
+)</span>
+<span class="hljs-keyword">private</span> Set&lt;Role&gt; roles;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@Lob:</strong></p>
+								<ul>
+									<li>Marks a field as a Large Object, such as CLOB or BLOB.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Lob</span>
+<span class="hljs-keyword">private</span> <span class="hljs-type">byte</span>[] imageData;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@ManyToMany:</strong></p>
+								<ul>
+									<li>Marks a field as representing a many-to-many relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToMany(mappedBy = "users")</span>
+<span class="hljs-keyword">private</span> Set&lt;Role&gt; roles;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@ManyToOne:</strong></p>
+								<ul>
+									<li>Marks a field as representing a many-to-one relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToOne</span>
+<span class="hljs-meta">@JoinColumn(name = "department_id")</span>
+<span class="hljs-keyword">private</span> Department department;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@Table:</strong></p>
+								<ul>
+									<li>Used to specify the details of the table for the entity.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Table(name = "employees", indexes = {@Index(name = "idx_lastname", columnList = "last_name")})</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+    <span class="hljs-comment">// Entity class properties</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@TableGenerator:</strong></p>
+								<ul>
+									<li>Specifies the details of a table-based generator for the primary key.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@TableGenerator(name = "emp_gen", table = "id_gen", pkColumnName = "gen_name", valueColumnName = "gen_value")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+    <span class="hljs-comment">// Entity class properties</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@Temporal:</strong></p>
+								<ul>
+									<li>Specifies the temporal type of a date or timestamp field.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Temporal(TemporalType.DATE)</span>
+<span class="hljs-keyword">private</span> Date birthDate;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@Transient:</strong></p>
+								<ul>
+									<li>Marks a field as not being persistent, meaning it won't be stored in the
+										database.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Transient</span>
+<span class="hljs-keyword">private</span> transientField;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@UniqueConstraint:</strong></p>
+								<ul>
+									<li>Specifies a unique constraint on a column or a group of columns.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "username")})</span>
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@Version:</strong></p>
+								<ul>
+									<li>Used for optimistic locking, indicating the version property of an entity.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Version</span>
+<span class="hljs-keyword">private</span> <span class="hljs-type">int</span> version;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@SequenceGenerator:</strong></p>
+								<ul>
+									<li>Specifies the details of a sequence-based generator for the primary key.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@SequenceGenerator(name = "emp_seq", sequenceName = "employee_sequence")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+    <span class="hljs-comment">// Entity class properties</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@PrimaryKeyJoinColumn:</strong></p>
+								<ul>
+									<li>Used to specify a primary key column when a primary key is also a foreign key.
+									</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@PrimaryKeyJoinColumn(name = "employee_id")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EmployeeDetails</span> {
+    <span class="hljs-comment">// Entity class properties</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@PrimaryKeyJoinColumns:</strong></p>
+								<ul>
+									<li>Used to specify multiple primary key columns when a primary key is also a
+										foreign key.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@PrimaryKeyJoinColumns({
+    @PrimaryKeyJoinColumn(name = "employee_id"),
+    @PrimaryKeyJoinColumn(name = "company_id")
+})</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EmployeeDetails</span> {
+    <span class="hljs-comment">// Entity class properties</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@OneToMany:</strong></p>
+								<ul>
+									<li>Marks a field as representing a one-to-many relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@OneToOne:</strong></p>
+								<ul>
+									<li>Marks a field as representing a one-to-one relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToOne</span>
+<span class="hljs-meta">@JoinColumn(name = "address_id")</span>
+<span class="hljs-keyword">private</span> Address address;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@OrderBy:</strong></p>
+								<ul>
+									<li>Specifies the ordering of elements in a collection.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@OrderBy("lastName ASC, firstName DESC")</span>
+<span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@OrderColumn:</strong></p>
+								<ul>
+									<li>Specifies the name of the column that is used to maintain the order of the
+										elements in a list.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@OrderColumn(name = "employee_order")</span>
+<span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@MapKey:</strong></p>
+								<ul>
+									<li>Specifies a map key for a <code>Map</code>-valued relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@MapKey(name = "employeeId")</span>
+<span class="hljs-keyword">private</span> Map&lt;Long, Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@MapKeyClass:</strong></p>
+								<ul>
+									<li>Specifies the key type of a <code>Map</code>-valued relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@MapKeyClass(EmployeeId.class)</span>
+<span class="hljs-keyword">private</span> Map&lt;EmployeeId, Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@MapKeyColumn:</strong></p>
+								<ul>
+									<li>Specifies the name of the column that is used as the key for a
+										<code>Map</code>-valued relationship.
+									</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@MapKeyColumn(name = "employee_key")</span>
+<span class="hljs-keyword">private</span> Map&lt;String, Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@MapKeyEnumerated:</strong></p>
+								<ul>
+									<li>Specifies the enumeration type of the key of a <code>Map</code>-valued
+										relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@MapKeyEnumerated(EnumType.STRING)</span>
+<span class="hljs-keyword">private</span> Map&lt;EmployeeType, Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@MapKeyJoinColumn:</strong></p>
+								<ul>
+									<li>Specifies the column that is used as the key for a <code>Map</code>-valued
+										relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@MapKeyJoinColumn(name = "employee_key_id")</span>
+<span class="hljs-keyword">private</span> Map&lt;EmployeeKey, Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@MapKeyJoinColumns:</strong></p>
+								<ul>
+									<li>Specifies multiple columns that are used as the key for a
+										<code>Map</code>-valued relationship.
+									</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@MapKeyJoinColumns({
+    @MapKeyJoinColumn(name = "employee_key_id"),
+    @MapKeyJoinColumn(name = "employee_key_type")
+})</span>
+<span class="hljs-keyword">private</span> Map&lt;EmployeeKey, Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@MapKeyTemporal:</strong></p>
+								<ul>
+									<li>Specifies the temporal type of the key of a <code>Map</code>-valued
+										relationship.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@MapKeyTemporal(TemporalType.DATE)</span>
+<span class="hljs-keyword">private</span> Map&lt;Date, Employee&gt; employees;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@MappedSuperclass:</strong></p>
+								<ul>
+									<li>Specifies that a class is a mapped superclass, and its attributes should be
+										inherited by its subclasses.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@MappedSuperclass</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BaseEntity</span> {
+    <span class="hljs-comment">// Mapped superclass common attributes</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@MapsId:</strong></p>
+								<ul>
+									<li>Used to map the primary key of the owning entity to the primary key of the
+										associated entity.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EmployeeDetails</span> {
+
+    <span class="hljs-meta">@Id</span>
+    <span class="hljs-keyword">private</span> Long employeeId;
+
+    <span class="hljs-meta">@MapsId</span>
+    <span class="hljs-meta">@OneToOne</span>
+    <span class="hljs-meta">@JoinColumn(name = "employee_id")</span>
+    <span class="hljs-keyword">private</span> Employee employee;
+}
+</code></pre>
+							</li>
+							
+						</ol>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
 						<div class="font-family-page">
 							<h3 style="text-align: left;">
 								9.1 @Access</h3>
@@ -1157,9 +1566,9 @@
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
 					<li class="page-item"><a class="page-link btn-outline-primary"
-							href="../spring/actuators.html">&lArr;
+							href="../spring/annotations-aop.html">&lArr;
 							Previous</a></li>
-					<li class="page-item"><a class="page-link" href="../spring/aop.html">Next
+					<li class="page-item"><a class="page-link" href="../spring/annotations-cloud.html">Next
 							&rArr;</a></li>
 				</ul>
 			</div>

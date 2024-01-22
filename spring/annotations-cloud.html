@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="RaviKalyan">
+	<title>Annotations</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel="stylesheet" href="../scripts/css/site.css">
+	<script>
+		!function (theme, navWidth) {
+			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
+			localStorage && localStorage.getItem('nav-width'))
+	</script>
+	<style>
+		@media screen and (min-width: 1025px) {
+			.div-to-desk {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+
+		@media screen and (max-width: 1025px) {
+			.div-to-hide {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar-brand">
+			<a class="navbar-item doc1" href="../home.html">
+				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			</a>
+			<button class="navbar-burger" data-target="topbar-nav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<div id="topbar-nav" class="navbar-menu">
+			<div class="navbar-end">
+				<div class="navbar-item" style="text-align: center;">
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
+								width="25" src="../scripts/images/home.png"></i></a>
+					</li>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/introduction.html">Java</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../spring/introduction.html">Spring</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+					</div>
+					<label class="theme-toggler div-to-hide">
+						<input type="checkbox" id="switch-theme-checkbox" />
+						<span class="icon"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<label class="theme-toggler div-to-desk" style="top: 22px;">
+			<input type="checkbox" id="switch-theme-mobile" />
+			<span class="icon"></span>
+		</label>
+	</nav>
+
+	<div class="body">
+		<div class="nav-container">
+			<aside class="nav">
+				<div class="nav-panel-menu is-active" data-panel="menu">
+					<li class="nav-item" data-depth="0">
+						<ul class="nav-list">
+							<h4>Spring Basic</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/introduction.html">Spring
+									Introduction</a></li>
+							<h4>Spring MVC</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/mvc.html">Spring
+									MVC</a></li>
+							<h4>Spring Exceptions</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/exceptions.html">Spring
+									Exceptions</a></li>
+							<h4>Spring Actuators</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/actuators.html">Spring Actuators</a>
+							</li>
+							<h4>Spring Annotations</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-core.html">Spring Core
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-mvc.html">Spring MVC
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-transactions.html">Spring Transactions & Error
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-configuration.html">Spring Configuration
+									Annotations</a></li> 
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-aop.html">Spring AOP
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-jpa.html">Spring JPA
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-cloud.html">Spring Cloud
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-scheduling.html">Spring Scheduling
+									Annotations</a></li>
+							<h4>Spring AOP</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
+									AOP</a></li>
+							<h4>Spring JPA</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/jpa.html">Spring
+									JPA</a></li>
+							<h4>Spring Transactions</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/transactions.html">Spring
+									Transactions</a></li>
+							<h4>Spring Async</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/async.html">Spring
+									Async</a></li>
+							<h4>Spring Batch</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/batch.html">Spring
+									Batch</a></li>
+							<h4>Spring Aspect</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aspect.html">Spring
+									Aspect</a></li>
+							<h4>Spring Kafka</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/kafka.html">Spring
+									Kafka</a></li>
+							<h4>Spring Logging</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/logging.html">Spring
+									Logging</a></li>
+							<h4>Spring Security</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/security.html">Spring
+									Security</a></li>
+							<h4>Interview Questions</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/spring-interview-questions.html">Spring Interview Questions</a></li>
+						</ul>
+					</li>
+				</div>
+			</aside>
+		</div>
+		<main class="article">
+			<div class="toolbar">
+				<button class="navbar-burger" id="nav-toggle-1">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<nav class="breadcrumbs">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../spring/introduction.html">Spring</a></li>
+						<li><a href="../spring/introduction.html">Annotations</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="doc">
+				<nav class="breadcrumbs div-to-hide">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../spring/introduction.html">Spring</a></li>
+						<li><a href="../spring/introduction.html">Annotations</a></li>
+					</ul>
+					<hr>
+				</nav>
+				<a class="div-to-desk">
+					<br>
+				</a>
+				<article>
+					<div class="entry-content" itemprop="text">
+						<h1>1. Spring Cloud Annotations</h1>
+						<ol>
+							<li>
+								<p><strong>@EnableEurekaServer:</strong></p>
+								<ul>
+									<li><code>@EnableEurekaServer</code> is used to enable the Eureka server, which
+										provides service registration and discovery.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableEurekaServer</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EurekaServerApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(EurekaServerApplication.class, args);
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@EnableEurekaClient:</strong></p>
+								<ul>
+									<li><code>@EnableEurekaClient</code> is used to make a Spring Boot application a
+										Eureka client.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableEurekaClient</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyEurekaClientApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(MyEurekaClientApplication.class, args);
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@EnableDiscoveryClient:</strong></p>
+								<ul>
+									<li><code>@EnableDiscoveryClient</code> is a more general annotation that works
+										with multiple discovery services, not just Eureka.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableDiscoveryClient</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyDiscoveryClientApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(MyDiscoveryClientApplication.class, args);
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@EnableFeignClients:</strong></p>
+								<ul>
+									<li><code>@EnableFeignClients</code> is used to enable the Feign client for
+										making declarative web service clients.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableFeignClients</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyFeignClientApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(MyFeignClientApplication.class, args);
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@FeignClient(name="ApplicationName"):</strong></p>
+								<ul>
+									<li><code>@FeignClient</code> is used to declare a Feign client, and the
+										<code>name</code> attribute specifies the name of the target microservice.
+									</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@FeignClient(name = "my-service")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">MyFeignClient</span> {
+    <span class="hljs-comment">// Feign client methods</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@LoadBalanced:</strong></p>
+								<ul>
+									<li><code>@LoadBalanced</code> is used to enable client-side load balancing for
+										RestTemplate or WebClient.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyConfig</span> {
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-meta">@LoadBalanced</span>
+    <span class="hljs-keyword">public</span> RestTemplate <span class="hljs-title function_">restTemplate</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RestTemplate</span>();
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@EnableConfigServer:</strong></p>
+								<ul>
+									<li><code>@EnableConfigServer</code> is used to enable the Spring Cloud Config
+										Server.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-meta">@EnableConfigServer</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ConfigServerApplication</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        SpringApplication.run(ConfigServerApplication.class, args);
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@RefreshScope:</strong></p>
+								<ul>
+									<li><code>@RefreshScope</code> is used to enable dynamic refreshing of
+										configuration properties.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RefreshScope</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyController</span> {
+
+    <span class="hljs-meta">@Value("${config.property}")</span>
+    <span class="hljs-keyword">private</span> String configProperty;
+
+    <span class="hljs-meta">@GetMapping("/property")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getProperty</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> configProperty;
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@StreamListener:</strong></p>
+								<ul>
+									<li><code>@StreamListener</code> is used to consume messages from a message
+										broker in Spring Cloud Stream.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyMessageListener</span> {
+
+    <span class="hljs-meta">@StreamListener("myInputChannel")</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handleMessage</span><span class="hljs-params">(String message)</span> {
+        <span class="hljs-comment">// Handle incoming messages</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@RateLimiter:</strong></p>
+								<ul>
+									<li><code>@RateLimiter</code> is used to apply rate limiting to a method using
+										the Spring Cloud Gateway.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyController</span> {
+
+    <span class="hljs-meta">@GetMapping("/limited")</span>
+    <span class="hljs-meta">@RateLimiter(name = "myLimiter", fallbackMethod = "fallbackMethod")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">limitedEndpoint</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Endpoint logic</span>
+    }
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">fallbackMethod</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Fallback response"</span>;
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@Retry:</strong></p>
+								<ul>
+									<li><code>@Retry</code> is used to specify a method to be retried in case of
+										exceptions.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRetryService</span> {
+
+    <span class="hljs-meta">@Retryable(value = { CustomException.class }, maxAttempts = 3, backoff = @Backoff(delay = 1000))</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">retryableMethod</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Method logic</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@CircuitBreaker:</strong></p>
+								<ul>
+									<li><code>@CircuitBreaker</code> is used to annotate a method to be protected by
+										a circuit breaker.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyCircuitBreakerService</span> {
+
+    <span class="hljs-meta">@CircuitBreaker(name = "myCircuitBreaker", fallbackMethod = "fallbackMethod")</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">circuitBreakerProtectedMethod</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Method logic</span>
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fallbackMethod</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Fallback logic</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@Bulkhead:</strong></p>
+								<ul>
+									<li><code>@Bulkhead</code> is used to limit the number of concurrent calls that
+										can be made to a method.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyBulkheadService</span> {
+
+    <span class="hljs-meta">@Bulkhead(name = "myBulkhead")</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">bulkheadProtectedMethod</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Method logic</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@TimeLimiter:</strong></p>
+								<ul>
+									<li><code>@TimeLimiter</code> is used to limit the execution time of a method.
+									</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTimeLimiterService</span> {
+
+    <span class="hljs-meta">@TimeLimiter(name = "myTimeLimiter")</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">timeLimitedMethod</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Method logic</span>
+    }
+}
+</code></pre>
+							</li>
+						</ol>
+					</div>
+				</article>
+			</div>
+			<div class="card-footer">
+				<ul class="pagination justify-content-center mb-4">
+					<li class="page-item"><a class="page-link btn-outline-primary"
+							href="../spring/actuators.html">&lArr;
+							Previous</a></li>
+					<li class="page-item"><a class="page-link" href="../spring/aop.html">Next
+							&rArr;</a></li>
+				</ul>
+			</div>
+			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
+					src="../scripts/images/top.jpeg" /></button>
+		</main>
+	</div>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			window.scrollTo(0, 0);
+		})
+	</script>
+	<script>
+		// Get the button
+		let mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function () {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<script src="../scripts/js/site.js"></script>
+</body>
+<footer class="footer">
+	<p>©
+		<script>var d = new Date();
+			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
+		Kalyan Kolloju.
+	</p>
+</footer>
+
+</html>

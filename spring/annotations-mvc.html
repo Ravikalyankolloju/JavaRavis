@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="RaviKalyan">
+	<title>Annotations</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel="stylesheet" href="../scripts/css/site.css">
+	<script>
+		!function (theme, navWidth) {
+			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
+			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
+		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
+			localStorage && localStorage.getItem('nav-width'))
+	</script>
+	<style>
+		@media screen and (min-width: 1025px) {
+			.div-to-desk {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+
+		@media screen and (max-width: 1025px) {
+			.div-to-hide {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="navbar-brand">
+			<a class="navbar-item doc1" href="../home.html">
+				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			</a>
+			<button class="navbar-burger" data-target="topbar-nav">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<div id="topbar-nav" class="navbar-menu">
+			<div class="navbar-end">
+				<div class="navbar-item" style="text-align: center;">
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
+								width="25" src="../scripts/images/home.png"></i></a>
+					</li>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/introduction.html">Java</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../spring/introduction.html">Spring</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+					</div>
+					<div class="navbar-item is-hoverable">
+						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+					</div>
+					<label class="theme-toggler div-to-hide">
+						<input type="checkbox" id="switch-theme-checkbox" />
+						<span class="icon"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<label class="theme-toggler div-to-desk" style="top: 22px;">
+			<input type="checkbox" id="switch-theme-mobile" />
+			<span class="icon"></span>
+		</label>
+	</nav>
+
+	<div class="body">
+		<div class="nav-container">
+			<aside class="nav">
+				<div class="nav-panel-menu is-active" data-panel="menu">
+					<li class="nav-item" data-depth="0">
+						<ul class="nav-list">
+							<h4>Spring Basic</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/introduction.html">Spring
+									Introduction</a></li>
+							<h4>Spring MVC</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/mvc.html">Spring
+									MVC</a></li>
+							<h4>Spring Exceptions</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/exceptions.html">Spring
+									Exceptions</a></li>
+							<h4>Spring Actuators</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/actuators.html">Spring Actuators</a>
+							</li>
+							<h4>Spring Annotations</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-core.html">Spring Core
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-mvc.html">Spring MVC
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-transactions.html">Spring Transactions & Error
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-configuration.html">Spring Configuration
+									Annotations</a></li> 
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-aop.html">Spring AOP
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-jpa.html">Spring JPA
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-cloud.html">Spring Cloud
+									Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/annotations-scheduling.html">Spring Scheduling
+									Annotations</a></li>
+							<h4>Spring AOP</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
+									AOP</a></li>
+							<h4>Spring JPA</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/jpa.html">Spring
+									JPA</a></li>
+							<h4>Spring Transactions</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/transactions.html">Spring
+									Transactions</a></li>
+							<h4>Spring Async</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/async.html">Spring
+									Async</a></li>
+							<h4>Spring Batch</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/batch.html">Spring
+									Batch</a></li>
+							<h4>Spring Aspect</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aspect.html">Spring
+									Aspect</a></li>
+							<h4>Spring Kafka</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/kafka.html">Spring
+									Kafka</a></li>
+							<h4>Spring Logging</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/logging.html">Spring
+									Logging</a></li>
+							<h4>Spring Security</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/security.html">Spring
+									Security</a></li>
+							<h4>Interview Questions</h4>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+									href="../spring/spring-interview-questions.html">Spring Interview Questions</a></li>
+						</ul>
+					</li>
+				</div>
+			</aside>
+		</div>
+		<main class="article">
+			<div class="toolbar">
+				<button class="navbar-burger" id="nav-toggle-1">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<nav class="breadcrumbs">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../spring/introduction.html">Spring</a></li>
+						<li><a href="../spring/introduction.html">Annotations</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="doc">
+				<nav class="breadcrumbs div-to-hide">
+					<ul>
+						<li><a href="../home.html">Home</a></li>
+						<li><a href="../spring/introduction.html">Spring</a></li>
+						<li><a href="../spring/introduction.html">Annotations</a></li>
+					</ul>
+					<hr>
+				</nav>
+				<a class="div-to-desk">
+					<br>
+				</a>
+				<article>
+					<div class="entry-content" itemprop="text">
+						<h1>1. Spring MVC Annotations</h1>
+						<ol>
+							<li>
+								<p><strong>@Controller:</strong></p>
+								<ul>
+									<li><code>@Controller</code> is used to mark a class as a Spring MVC controller.
+									</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Controller</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyController</span> {
+    <span class="hljs-comment">// Controller methods and logic</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@RestController:</strong></p>
+								<ul>
+									<li><code>@RestController</code> is a specialized version of
+										<code>@Controller</code> that is used for RESTful web services. It combines
+										<code>@Controller</code> and <code>@ResponseBody</code>.
+									</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRestController</span> {
+    <span class="hljs-comment">// RESTful controller methods and logic</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@RequestMapping:</strong></p>
+								<ul>
+									<li><code>@RequestMapping</code> is used to map web requests to specific controller
+										methods.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Controller</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyController</span> {
+    <span class="hljs-meta">@RequestMapping("/hello")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">hello</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello, World!"</span>;
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@RequestBody:</strong></p>
+								<ul>
+									<li><code>@RequestBody</code> is used to bind the body of a web request to a method
+										parameter.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRestController</span> {
+    <span class="hljs-meta">@PostMapping("/create")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">create</span><span class="hljs-params">(<span class="hljs-meta">@RequestBody</span> MyObject myObject)</span> {
+        <span class="hljs-comment">// Logic to process the incoming JSON or XML data</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@GetMapping, @PostMapping, @PutMapping, @DeleteMapping,
+										@PatchMapping:</strong></p>
+								<ul>
+									<li>These annotations are specialized versions of <code>@RequestMapping</code> for
+										common HTTP methods.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRestController</span> {
+    <span class="hljs-meta">@GetMapping("/get")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">get</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic for handling GET requests</span>
+    }
+
+    <span class="hljs-meta">@PostMapping("/post")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">post</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic for handling POST requests</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@ControllerAdvice:</strong></p>
+								<ul>
+									<li><code>@ControllerAdvice</code> is used to define global settings and exception
+										handlers for all controllers.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ControllerAdvice</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GlobalControllerAdvice</span> {
+    <span class="hljs-comment">// Global exception handling and other advice</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@ExceptionHandler:</strong></p>
+								<ul>
+									<li><code>@ExceptionHandler</code> is used within <code>@ControllerAdvice</code> to
+										define methods that handle specific exceptions.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ControllerAdvice</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GlobalControllerAdvice</span> {
+    <span class="hljs-meta">@ExceptionHandler(Exception.class)</span>
+    <span class="hljs-keyword">public</span> ResponseEntity&lt;String&gt; <span class="hljs-title function_">handleException</span><span class="hljs-params">(Exception e)</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ResponseEntity</span>&lt;&gt;(<span class="hljs-string">"An error occurred: "</span> + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@ResponseBody:</strong></p>
+								<ul>
+									<li><code>@ResponseBody</code> is used to indicate that the return value of a method
+										should be serialized directly to the HTTP response body.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRestController</span> {
+    <span class="hljs-meta">@GetMapping("/data")</span>
+    <span class="hljs-meta">@ResponseBody</span>
+    <span class="hljs-keyword">public</span> MyData <span class="hljs-title function_">getData</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic to return data as JSON</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@ResponseStatus:</strong></p>
+								<ul>
+									<li><code>@ResponseStatus</code> is used to specify the HTTP status code for a
+										response.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRestController</span> {
+    <span class="hljs-meta">@GetMapping("/notfound")</span>
+    <span class="hljs-meta">@ResponseStatus(HttpStatus.NOT_FOUND)</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">notFound</span><span class="hljs-params">()</span> {
+        <span class="hljs-comment">// Logic for handling 404 responses</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@PathVariable:</strong></p>
+								<ul>
+									<li><code>@PathVariable</code> is used to extract values from URI templates in the
+										request URL.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRestController</span> {
+    <span class="hljs-meta">@GetMapping("/users/{userId}")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getUser</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long userId)</span> {
+        <span class="hljs-comment">// Logic to retrieve user by ID</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@RequestParam:</strong></p>
+								<ul>
+									<li><code>@RequestParam</code> is used to extract query parameters from the request
+										URL.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRestController</span> {
+    <span class="hljs-meta">@GetMapping("/search")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">search</span><span class="hljs-params">(<span class="hljs-meta">@RequestParam</span> String query)</span> {
+        <span class="hljs-comment">// Logic to perform a search based on the query parameter</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@ModelAttribute:</strong></p>
+								<ul>
+									<li><code>@ModelAttribute</code> is used to bind request parameters to model
+										attributes.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Controller</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyController</span> {
+    <span class="hljs-meta">@GetMapping("/edit")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">editForm</span><span class="hljs-params">(<span class="hljs-meta">@ModelAttribute("user")</span> User user)</span> {
+        <span class="hljs-comment">// Logic to display an edit form with user data</span>
+    }
+
+    <span class="hljs-meta">@PostMapping("/edit")</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">processEdit</span><span class="hljs-params">(<span class="hljs-meta">@ModelAttribute("user")</span> User user)</span> {
+        <span class="hljs-comment">// Logic to process the edited user data</span>
+    }
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@CrossOrigin:</strong></p>
+								<ul>
+									<li><code>@CrossOrigin</code> is used to enable cross-origin resource sharing (CORS)
+										for a specific controller or handler method.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@CrossOrigin(origins = "http://localhost:8081")</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyRestController</span> {
+    <span class="hljs-comment">// Controller methods with CORS enabled</span>
+}
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@InitBinder:</strong></p>
+								<ul>
+									<li><code>@InitBinder</code> is used to customize request data binding, often to
+										register custom property editors.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Controller</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyController</span> {
+    <span class="hljs-meta">@InitBinder</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">initBinder</span><span class="hljs-params">(WebDataBinder binder)</span> {
+        <span class="hljs-comment">// Custom initialization for data binding</span>
+    }
+
+    <span class="hljs-comment">// Controller methods</span>
+}
+</code></pre>
+							</li>
+						</ol>
+					</div>
+				</article>
+			</div>
+			<div class="card-footer">
+				<ul class="pagination justify-content-center mb-4">
+					<li class="page-item"><a class="page-link btn-outline-primary"
+							href="../spring/actuators.html">&lArr;
+							Previous</a></li>
+					<li class="page-item"><a class="page-link" href="../spring/aop.html">Next
+							&rArr;</a></li>
+				</ul>
+			</div>
+			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
+					src="../scripts/images/top.jpeg" /></button>
+		</main>
+	</div>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			window.scrollTo(0, 0);
+		})
+	</script>
+	<script>
+		// Get the button
+		let mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function () {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<script src="../scripts/js/site.js"></script>
+</body>
+<footer class="footer">
+	<p>©
+		<script>var d = new Date();
+			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
+		Kalyan Kolloju.
+	</p>
+</footer>
+
+</html>

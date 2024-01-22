@@ -202,13 +202,16 @@
 						<h1>1. JPA Mapping Annotations</h1>
 						<ol>
 							<li>
-								<p><strong>@Column:</strong></p>
+								<p><strong>@Table:</strong></p>
 								<ul>
-									<li>Used to specify the details of a column in the table.</li>
+									<li>Used to specify the details of the table for the entity.</li>
 								</ul>
 								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Column(name = "user_name", nullable = false, length = 50)</span>
-<span class="hljs-keyword">private</span> String userName;
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+<span class="hljs-meta">@Table(name = "employees", indexes = {@Index(name = "idx_lastname", columnList = "last_name")})</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+    <span class="hljs-comment">// Entity class properties</span>
+}
 </code></pre>
 							</li>
 							<li>
@@ -225,11 +228,14 @@
 </code></pre>
 							</li>
 							<li>
-								<p><strong>@ForeignKey:</strong></p>
+								<p><strong>@Column:</strong></p>
 								<ul>
-									<li>Not a standard JPA annotation. It might be a custom annotation used for
-										specifying a foreign key relationship.</li>
+									<li>Used to specify the details of a column in the table.</li>
 								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Column(name = "user_name", nullable = false, length = 50)</span>
+<span class="hljs-keyword">private</span> String userName;
+</code></pre>
 							</li>
 							<li>
 								<p><strong>@GeneratedValue:</strong></p>
@@ -250,6 +256,23 @@
 								<p><strong>Example:</strong></p>
 								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Id</span>
 <span class="hljs-keyword">private</span> Long id;
+</code></pre>
+							</li>
+							<li>
+								<p><strong>@ForeignKey:</strong></p>
+								<ul>
+									<li>Not a standard JPA annotation. It might be a custom annotation used for
+										specifying a foreign key relationship.</li>
+								</ul>
+							</li>
+							<li>
+								<p><strong>@Lob:</strong></p>
+								<ul>
+									<li>Marks a field as a Large Object, such as CLOB or BLOB.</li>
+								</ul>
+								<p><strong>Example:</strong></p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Lob</span>
+<span class="hljs-keyword">private</span> <span class="hljs-type">byte</span>[] imageData;
 </code></pre>
 							</li>
 							<li>
@@ -295,23 +318,24 @@
 </code></pre>
 							</li>
 							<li>
-								<p><strong>@Lob:</strong></p>
+								<p><strong>@OneToOne:</strong></p>
 								<ul>
-									<li>Marks a field as a Large Object, such as CLOB or BLOB.</li>
+									<li>Marks a field as representing a one-to-one relationship.</li>
 								</ul>
 								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Lob</span>
-<span class="hljs-keyword">private</span> <span class="hljs-type">byte</span>[] imageData;
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToOne</span>
+<span class="hljs-meta">@JoinColumn(name = "address_id")</span>
+<span class="hljs-keyword">private</span> Address address;
 </code></pre>
 							</li>
 							<li>
-								<p><strong>@ManyToMany:</strong></p>
+								<p><strong>@OneToMany:</strong></p>
 								<ul>
-									<li>Marks a field as representing a many-to-many relationship.</li>
+									<li>Marks a field as representing a one-to-many relationship.</li>
 								</ul>
 								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToMany(mappedBy = "users")</span>
-<span class="hljs-keyword">private</span> Set&lt;Role&gt; roles;
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
 </code></pre>
 							</li>
 							<li>
@@ -326,16 +350,13 @@
 </code></pre>
 							</li>
 							<li>
-								<p><strong>@Table:</strong></p>
+								<p><strong>@ManyToMany:</strong></p>
 								<ul>
-									<li>Used to specify the details of the table for the entity.</li>
+									<li>Marks a field as representing a many-to-many relationship.</li>
 								</ul>
 								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
-<span class="hljs-meta">@Table(name = "employees", indexes = {@Index(name = "idx_lastname", columnList = "last_name")})</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
-    <span class="hljs-comment">// Entity class properties</span>
-}
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToMany(mappedBy = "users")</span>
+<span class="hljs-keyword">private</span> Set&lt;Role&gt; roles;
 </code></pre>
 							</li>
 							<li>
@@ -433,27 +454,6 @@
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EmployeeDetails</span> {
     <span class="hljs-comment">// Entity class properties</span>
 }
-</code></pre>
-							</li>
-							<li>
-								<p><strong>@OneToMany:</strong></p>
-								<ul>
-									<li>Marks a field as representing a one-to-many relationship.</li>
-								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
-</code></pre>
-							</li>
-							<li>
-								<p><strong>@OneToOne:</strong></p>
-								<ul>
-									<li>Marks a field as representing a one-to-one relationship.</li>
-								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToOne</span>
-<span class="hljs-meta">@JoinColumn(name = "address_id")</span>
-<span class="hljs-keyword">private</span> Address address;
 </code></pre>
 							</li>
 							<li>
@@ -599,7 +599,7 @@
 }
 </code></pre>
 							</li>
-							
+
 						</ol>
 						<br>
 						<br>

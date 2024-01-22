@@ -104,15 +104,15 @@
 									href="../springboot/config-server.html">Config Server</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/api-gateway.html">API Gateway</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/zuul.html">Zuul Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/zuul.html">Zuul
+									Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/resilience4j.html">Resilience4j</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/web-client.html">WebClient</a></li>
-									<li class="nav-item" data-depth="1"><a class="nav-link"
+							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/resttemplate.html">RestTemplate</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/open-feign.html">Feign Client</a></li>
@@ -120,8 +120,8 @@
 									href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/security.html">Cloud Security</a></li>
-									<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/saga.html">Saga Pattern</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/saga.html">Saga
+									Pattern</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/springboot-interview-questions.html">Springboot Interview
@@ -165,10 +165,85 @@
 				<article>
 					<div class="entry-content" itemprop="text">
 						<div class="post-body entry-content float-container" id="post-body-6446787791282935987">
-							<h2 style="text-align: left;">Problem</h2>In the microservices project, there could be a
+							<h2 style="text-align: left;">1. Introduction</h2>
+							<p>The Spring Cloud Config Server acts as a central repository for managing configuration
+								properties for your Spring Boot applications, including:</p>
+							<ul data-sourcepos="5:1-10:0"><span>
+								</span>
+								<li data-sourcepos="5:1-5:29"><span>Database connection details</span></li><span>
+								</span>
+								<li data-sourcepos="6:1-6:10"><span>API URLs</span></li><span>
+								</span>
+								<li data-sourcepos="7:1-7:21"><span>Server port numbers</span></li><span>
+								</span>
+								<li data-sourcepos="8:1-8:23"><span>Environment variables</span></li><span>
+								</span>
+								<li data-sourcepos="9:1-10:0"><span>Any other application-specific settings</span></li>
+								<span>
+								</span>
+							</ul>
+							<p>Essentially, it decouples configuration from your code, promoting:</p>
+							<ul data-sourcepos="13:1-17:0"><span>
+								</span>
+								<li data-sourcepos="13:1-13:103"><strong>Centralized Management:</strong><span> Easily
+										modify configurations for all applications from a single location.</span></li>
+								<span>
+								</span>
+								<li data-sourcepos="14:1-14:129"><strong>Environment-Specific
+										Configurations:</strong><span> Define different configurations for
+										development,</span><span> staging,</span><span> and production
+										environments.</span></li><span>
+								</span>
+								<li data-sourcepos="15:1-15:88"><strong>Reduced Code Duplication:</strong><span>
+										Eliminate configuration repetition across microservices.</span></li><span>
+								</span>
+								<li data-sourcepos="16:1-17:0"><strong>Scalability:</strong><span> Easier to manage
+										configuration as your application grows.</span></li><span>
+								</span>
+							</ul>
+							<h1>2. Why Use Config Server?</h1>
+							<ul data-sourcepos="20:1-25:0"><span>
+								</span>
+								<li data-sourcepos="20:1-20:105"><strong>Simplify Configuration
+										Management:</strong><span> No need to update configuration within each
+										application anymore.</span></li><span>
+								</span>
+								<li data-sourcepos="21:1-21:88"><strong>Increased Agility:</strong><span> Quickly deploy
+										changes to multiple applications simultaneously.</span></li><span>
+								</span>
+								<li data-sourcepos="22:1-22:104"><strong>Reduce Risk of Errors:</strong><span>
+										Consistent configuration across environments minimizes error
+										possibilities.</span></li><span>
+								</span>
+								<li data-sourcepos="23:1-23:95"><strong>Improve Collaboration:</strong><span>
+										Configuration becomes a shared responsibility,</span><span> promoting
+										teamwork.</span></li><span>
+								</span>
+								<li data-sourcepos="24:1-25:0"><strong>Easier to Secure:</strong><span> Manage sensitive
+										information in a central location with advanced security controls.</span></li>
+								<span>
+								</span>
+							</ul>
+							In the microservices project, there could be a
 							large number of microservices and multiple instances of those microservices are running.
 							Updating configuration properties and restarting all those instances manually or even with
-							automated scripts may not be feasible.&nbsp;<h2 style="text-align: left;">Solution</h2>
+							automated scripts may not be feasible.&nbsp;
+							<h2 style="text-align: left;">3. When to Use Config Server?</h2>
+							<ul data-sourcepos="28:1-31:0"><span>
+								</span>
+								<li data-sourcepos="28:1-28:111"><strong>Microservice Architecture:</strong><span> Ideal
+										for managing configurations spread across multiple independent services.</span>
+								</li><span>
+								</span>
+								<li data-sourcepos="29:1-29:117"><strong>Multiple Environments:</strong><span> Different
+										configurations for development,</span><span> staging,</span><span> and
+										production are easily maintained.</span></li><span>
+								</span>
+								<li data-sourcepos="30:1-31:0"><strong>Dynamic Configurations:</strong><span> When
+										frequently updating configurations without redeploying applications.</span></li>
+								<span>
+								</span>
+							</ul>
 							<div>Spring Cloud Config addresses this problem.<br><br>We can create a Spring Cloud Config
 								Server which provides the configuration values for all of our microservices. We can use
 								git, svn, database, or Consul as a backend to store the configuration parameters.&nbsp;

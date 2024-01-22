@@ -104,15 +104,15 @@
 									href="../springboot/config-server.html">Config Server</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/api-gateway.html">API Gateway</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/zuul.html">Zuul Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/zuul.html">Zuul
+									Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/resilience4j.html">Resilience4j</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/web-client.html">WebClient</a></li>
-									<li class="nav-item" data-depth="1"><a class="nav-link"
+							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/resttemplate.html">RestTemplate</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/open-feign.html">Feign Client</a></li>
@@ -120,8 +120,8 @@
 									href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/security.html">Cloud Security</a></li>
-									<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/saga.html">Saga Pattern</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/saga.html">Saga
+									Pattern</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
 									href="../springboot/springboot-interview-questions.html">Springboot Interview
@@ -174,24 +174,93 @@
 									background-color: white !important;
 								}
 							</style>
-							<h1> Registry and Discovery
-								Overview</h1>In the microservices projects, Service Registry and Discovery play an
-							important role because we most likely run multiple instances of services and we need a
-							mechanism to call other services without hardcoding their hostnames or port numbers. In
-							addition to that, in Cloud environments service instances may come up and go down anytime.
-							So we need some automatic service registration and discovery mechanism.<div><br>
-								<div><b>Spring Cloud addresses this problem</b> by providing <b>Spring Cloud Netflix
-										Eureka</b> project to create Service Registry and Discovery.&nbsp;</div>
-								<div><br></div>
-								<div>In this tutorial, we will learn how to use <b>SpringCloud Netflix Eureka</b> for
-									Service Registry and Discovery.</div>
-								<h1 style="text-align: left;">What we will build?</h1>We can use Netflix Eureka Server
-								to create a Service Registry and make our microservices (<i>department-service</i> and
-								<i>user-service</i>) as Eureka Clients so that as soon as we start a microservice it
-								will get registered with Eureka Server automatically with a logical Service ID. Then,
-								the other microservices, which are also Eureka Clients, can use Service ID to invoke
-								REST endpoints.
-							</div><br>
+							<h1>1. Introduction</h1>
+							<p>In the microservices projects, Service Registry and Discovery play an
+								important role because we most likely run multiple instances of services and we need a
+								mechanism to call other services without hardcoding their hostnames or port numbers. In
+								addition to that, in Cloud environments service instances may come up and go down
+								anytime.
+								So we need some automatic service registration and discovery mechanism.</p>
+
+							<p><span>In a microservices architecture,</span><span>
+									services are independent and loosely coupled.</span><span> This autonomy brings
+									scalability and agility,</span><span> but presents a challenge:</span><span>
+								</span><strong>knowing where to find other services</strong><span>.</span><span>
+									Service registry and discovery client come to the rescue by providing a
+									distributed system for registering and locating services at runtime.</span></p>
+
+							<div><b>Spring Cloud addresses this problem</b> by providing <b>Spring Cloud Netflix
+									Eureka</b> project to create Service Registry and Discovery.&nbsp;</div>
+							<div>In this tutorial, we will learn how to use <b>SpringCloud Netflix Eureka</b> for
+								Service Registry and Discovery.</div>
+
+							<h4>1.1 Service Registry:</h4>
+							<ul data-sourcepos="9:1-12:0"><span>
+								</span>
+								<li data-sourcepos="9:1-9:84"><span>Acts as a central repository for storing information
+										about all available services.</span></li><span>
+								</span>
+								<li data-sourcepos="10:1-10:72"><span>Includes details like service name,</span><span>
+										hostname,</span><span> port,</span><span> and health status.</span></li><span>
+								</span>
+								<li data-sourcepos="11:1-12:0"><span>Accessible by all services to discover their
+										peers.</span></li><span>
+								</span>
+							</ul>
+							<h4>1.2 Discovery Client:</h4>
+							<ul data-sourcepos="15:1-18:0"><span>
+								</span>
+								<li data-sourcepos="15:1-15:27"><span>Embedded in each service.</span></li><span>
+								</span>
+								<li data-sourcepos="16:1-16:86"><span>Regularly contacts the service registry to acquire
+										information about other services.</span></li><span>
+								</span>
+								<li data-sourcepos="17:1-18:0"><span>Uses the retrieved information to dynamically
+										connect and interact with those services.</span></li><span>
+								</span>
+							</ul>
+							<h1>2. Why Use Service Registry and Discovery Client?</h1>
+							<ul data-sourcepos="21:1-22:90"><span>
+								</span>
+								<li data-sourcepos="21:1-21:132"><strong>Dynamic Service Discovery:</strong><span> No
+										need for hardcoded addresses,</span><span> enabling service updates and scaling
+										without changing client code.</span></li><span>
+								</span>
+								<li data-sourcepos="22:1-22:90"><strong>Load Balancing:</strong><span> Distribute
+										traffic across multiple instances of the same service for improved performance
+										and resilience.</span></li><span>
+								</span>
+								<li data-sourcepos="23:1-23:121"><strong>High Availability:</strong><span> Registry
+										redundancy ensures service discovery remains operational even if individual
+										nodes fail.</span></li><span>
+								</span>
+								<li data-sourcepos="24:1-25:0"><strong>Decoupling:</strong><span> Services only need to
+										know about the registry,</span><span> not the addresses of other
+										services,</span><span> increasing maintainability.</span></li><span>
+								</span>
+							</ul>
+							<h1>3. When to Use Service Registry and Discovery Client?</h1>
+							<ul data-sourcepos="28:1-31:0"><span>
+								</span>
+								<li data-sourcepos="28:1-28:127"><strong>Microservices architecture:</strong><span>
+										Essential for enabling communication and collaboration between multiple
+										independent services.</span></li><span>
+								</span>
+								<li data-sourcepos="29:1-29:103"><strong>Large deployments:</strong><span> With several
+										service instances,</span><span> manual address management becomes
+										impractical.</span></li><span>
+								</span>
+								<li data-sourcepos="30:1-31:0"><strong>Dynamically scaling services:</strong><span>
+										Service discovery facilitates seamless adaptation to changes in service
+										availability.</span></li><span>
+								</span>
+							</ul>
+							We can use Netflix Eureka Server
+							to create a Service Registry and make our microservices (<i>department-service</i> and
+							<i>user-service</i>) as Eureka Clients so that as soon as we start a microservice it
+							will get registered with Eureka Server automatically with a logical Service ID. Then,
+							the other microservices, which are also Eureka Clients, can use Service ID to invoke
+							REST endpoints.
 							<div class="separator" style="clear: both; text-align: center;"><a
 									href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcMZBv7AZQvpLEMR7kO9p7QAR6gN7EsYQnkDJz6rG0m2sgCnflPr4rZoXwW8HZv2Y7KU9mMa_JHVen62eYiG81hNZYm1saPpfuBJGjlD-XMS0sMkpn9nHQYbFSaBoXwnPzxA0ac8j-L0irv85FEuu7KG2jFzzWMtl6FRnY0bv1XTVYTugS_SK9lDGD/s1920/Spring%20Boot%20Microservices.012.jpeg"
 									style="margin-left: 1em; margin-right: 1em;"><img
@@ -203,14 +272,13 @@
 							<div><br>Spring Cloud makes it very easy to create a Service Registry and discover other
 								services using Load Balanced <i>RestTemplate:</i></div>
 							<div>
-								<pre
-									style="border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 0px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px; word-break: normal;">    <span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">@</span><span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">Bean</span>
-    <span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">@</span><span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">LoadBalanced</span>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj" <span class="pl-c1"
+									color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">@</span><span class="pl-c1" color="var(--color-prettylights-syntax-constant)" style="box-sizing: border-box;">LoadBalanced</span>
     <span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">public</span> <span class="pl-smi" color="var(--color-prettylights-syntax-storage-modifier-import)" style="box-sizing: border-box;">RestTemplate</span> <span class="pl-s1" style="box-sizing: border-box;">restTemplate</span>(){
         <span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">return</span> <span class="pl-k" color="var(--color-prettylights-syntax-keyword)" style="box-sizing: border-box;">new</span> <span class="pl-smi" color="var(--color-prettylights-syntax-storage-modifier-import)" style="box-sizing: border-box;">RestTemplate</span>();
     }</pre>
 							</div>
-							<h1 style="text-align: left;">1. Create and Setup Spring boot project in IntelliJ IDEA</h1>
+							<h1 style="text-align: left;">4. Eureka-server Implementation Example</h1>
 							<div><span
 									face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
 									style="background-color: white; color: #24292f; font-size: 16px;">Let us create a
@@ -320,7 +388,7 @@
 	<span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span>
 
 <span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span></code></pre>
-								<h1 style="text-align: left;">2. Add @EnableEurekaServer annotation</h1>
+								<h1 style="text-align: left;">4.1. Add @EnableEurekaServer annotation</h1>
 								<div>
 									<p dir="auto"
 										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
@@ -344,7 +412,7 @@
 }</code></pre>
 								</div>
 								<div>
-									<h1 style="text-align: left;">3. Disable Eureka Server as Eureka Client</h1>
+									<h1 style="text-align: left;">4.2. Disable Eureka Server as Eureka Client</h1>
 									<p dir="auto"
 										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
 										By default, each Eureka Server is also a Eureka client and needs at least one
@@ -359,7 +427,7 @@
 <span class="hljs-attr">eureka.client.fetch-registry</span>=<span class="hljs-literal">false</span></code></pre>
 								</div>
 								<div>
-									<h1 style="text-align: left;">4. Launch Eureka Server (Demo)</h1>
+									<h1 style="text-align: left;">4.3. Launch Eureka Server</h1>
 									<p dir="auto"
 										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
 										Netflix Eureka Service provides UI where we can see all the details about
@@ -377,19 +445,7 @@
 											data-original-height="1522" data-original-width="2560"
 											src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjywBofNaOkTGIWkeG-Ec7xaFW9mhGoaeFlk_Yx_iWLNzZm1iv_ohfDpcooZErA6ox-JxqrDRHCU89euHr3I7TjGr1dj7j1wdAyWb0SXbWcGgovtgr5GlFW2pG5BIfIZRe4ZriwQiI2a0fg4reaVnmypJGsZIiDbYUos9a2caeAUGfvODcxnBPV7FsM/s16000/Screenshot%202022-10-02%20at%204.04.34%20PM.png"></a>
 								</div>
-								<h1 style="text-align: left;">5. Registering Department-Service Microservice as Eureka
-									Client</h1>
-								<div>
-									<div
-										style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
-										Refer to this tutorial to create<span
-											style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">&nbsp;department-service</span>&nbsp;and&nbsp;<span
-											style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">user-service</span>&nbsp;microservices:&nbsp;<a
-											href="https://www.javaguides.net/2022/10/spring-boot-microservices-communication-using-resttemplate.html"
-											style="background: transparent; color: #3d85c6; font-weight: bold; text-decoration-line: none;">Spring
-											Boot Microservices Communication Example using RestTemplate</a>.</div>
-								</div>
-								<div><br></div>
+								<h1 style="text-align: left;">5. Registering Eureka Client Example</h1>
 								<div>
 									<p dir="auto"
 										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">

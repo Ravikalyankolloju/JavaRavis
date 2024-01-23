@@ -131,7 +131,7 @@
 									href="../spring/annotations-scheduling.html">Scheduling
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-scheduling.html">Caching
+									href="../spring/annotations-cache-error.html">Caching
 									Annotations</a></li>
 							<h4>Spring AOP</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
@@ -199,7 +199,7 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-						<h1>2. Spring Boot Caching </h3>
+						<h1>1. Spring Boot Caching </h3>
 							<ol>
 								<li>
 									<p><strong>@EnableCaching:</strong></p>
@@ -327,98 +327,6 @@
 </code></pre>
 								</li>
 							</ol>
-							<h1>2. Spring Boot Errors</h3>
-								<ol>
-									<li>
-										<p><strong>@ResponseStatus:</strong></p>
-										<ul>
-											<li><code>@ResponseStatus</code> is used to declare the HTTP response status
-												code that a method should produce.</li>
-										</ul>
-										<p><strong>Example:</strong></p>
-										<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Controller</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyController</span> {
-
-    <span class="hljs-meta">@GetMapping("/custom-error")</span>
-    <span class="hljs-meta">@ResponseStatus(HttpStatus.BAD_REQUEST)</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handleCustomError</span><span class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic that may throw an exception</span>
-    }
-}
-</code></pre>
-									</li>
-									<li>
-										<p><strong>@ExceptionHandler:</strong></p>
-										<ul>
-											<li><code>@ExceptionHandler</code> is used to define methods that handle
-												specific exceptions thrown by the controller.</li>
-										</ul>
-										<p><strong>Example:</strong></p>
-										<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Controller</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyController</span> {
-
-    <span class="hljs-meta">@GetMapping("/handle-error")</span>
-    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">handleError</span><span class="hljs-params">()</span> {
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomException</span>(<span class="hljs-string">"This is a custom exception."</span>);
-    }
-
-    <span class="hljs-meta">@ExceptionHandler(CustomException.class)</span>
-    <span class="hljs-meta">@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)</span>
-    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">handleCustomException</span><span class="hljs-params">(CustomException ex)</span> {
-        <span class="hljs-keyword">return</span> <span class="hljs-string">"custom-error-page"</span>;
-    }
-}
-</code></pre>
-									</li>
-									<li>
-										<p><strong>@ControllerAdvice:</strong></p>
-										<ul>
-											<li><code>@ControllerAdvice</code> is used to define global configurations
-												for
-												multiple controllers, including exception handling.</li>
-										</ul>
-										<p><strong>Example:</strong></p>
-										<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ControllerAdvice</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GlobalControllerAdvice</span> {
-
-    <span class="hljs-meta">@ExceptionHandler(Exception.class)</span>
-    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">handleGlobalException</span><span class="hljs-params">(Exception ex)</span> {
-        <span class="hljs-keyword">return</span> <span class="hljs-string">"global-error-page"</span>;
-    }
-}
-</code></pre>
-									</li>
-									<li>
-										<p><strong>@RestControllerAdvice:</strong></p>
-										<ul>
-											<li><code>@RestControllerAdvice</code> is similar to
-												<code>@ControllerAdvice</code> but is specifically designed for RESTful
-												services. It combines <code>@ControllerAdvice</code> and
-												<code>@ResponseBody</code>.
-											</li>
-										</ul>
-										<p><strong>Example:</strong></p>
-										<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@RestControllerAdvice</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GlobalRestControllerAdvice</span> {
-
-    <span class="hljs-meta">@ExceptionHandler(Exception.class)</span>
-    <span class="hljs-meta">@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)</span>
-    <span class="hljs-keyword">public</span> Map&lt;String, String&gt; <span class="hljs-title function_">handleGlobalException</span><span class="hljs-params">(Exception ex)</span> {
-        Map&lt;String, String&gt; errorResponse = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();
-        errorResponse.put(<span class="hljs-string">"error"</span>, <span class="hljs-string">"Internal Server Error"</span>);
-        errorResponse.put(<span class="hljs-string">"message"</span>, ex.getMessage());
-        <span class="hljs-keyword">return</span> errorResponse;
-    }
-}
-</code></pre>
-										<p>In the above example, when an exception occurs in any controller, the
-											<code>handleGlobalException</code> method in
-											<code>GlobalRestControllerAdvice</code> will be invoked, and it returns a
-											JSON
-											response with a custom error message.
-										</p>
-									</li>
-								</ol>
 					</div>
 				</article>
 			</div>

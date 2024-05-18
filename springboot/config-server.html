@@ -3,56 +3,55 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="author" content="RaviKalyan">
-	<title>Config Server</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
-	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-	<link rel="stylesheet" href="../scripts/css/site.css">
-	<script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="RaviKalyan">
+<title>Config Server</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="../scripts/images/tab_logo.png" />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel="stylesheet" href="../scripts/css/site.css">
+<script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
 			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
 		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
-	<style>
-		@media screen and (min-width: 1025px) {
-			.div-to-desk {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
+<style>
+@media screen and (min-width: 1025px) {
+	.div-to-desk {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
 
-		@media screen and (max-width: 1025px) {
-			.div-to-hide {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
-	</style>
+@media screen and (max-width: 1025px) {
+	.div-to-hide {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
+</style>
 </head>
 
 <body>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<a class="navbar-item doc1" href="../home.html">
-				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			<a class="navbar-item doc1" href="../home.html"> <img width="110"
+				height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
 			</a>
 			<button class="navbar-burger" data-target="topbar-nav">
-				<span></span>
-				<span></span>
-				<span></span>
+				<span></span> <span></span> <span></span>
 			</button>
 		</div>
 		<div id="topbar-nav" class="navbar-menu">
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
-					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
-								width="25" src="../scripts/images/home.png"></i></a>
-					</li>
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1"
+						href="../home.html"><img height="25" width="25"
+							src="../scripts/images/home.png"></i></a></li>
 					<div class="navbar-item is-hoverable">
 						<a class="navbar-link" href="../java/introduction.html">Java</a>
 					</div>
@@ -63,24 +62,26 @@
 						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+						<a class="navbar-link" href="../java/java8.html">Java 8
+							Features</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+						<a class="navbar-link" href="../DP/introduction.html">Design
+							Patterns</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+						<a class="navbar-link"
+							href="../interview/interview-questions.html">Interview
+							Questions</a>
 					</div>
-					<label class="theme-toggler div-to-hide">
-						<input type="checkbox" id="switch-theme-checkbox" />
-						<span class="icon"></span>
+					<label class="theme-toggler div-to-hide"> <input
+						type="checkbox" id="switch-theme-checkbox" /> <span class="icon"></span>
 					</label>
 				</div>
 			</div>
 		</div>
-		<label class="theme-toggler div-to-desk" style="top: 22px;">
-			<input type="checkbox" id="switch-theme-mobile" />
-			<span class="icon"></span>
+		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input
+			type="checkbox" id="switch-theme-mobile" /> <span class="icon"></span>
 		</label>
 	</nav>
 
@@ -92,44 +93,45 @@
 						<ul class="nav-list">
 							<h4>Springboot</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/introduction.html">Introduction</a></li>
+								href="../springboot/introduction.html">Introduction</a></li>
 							<h4>Microservice</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/ms-intro.html">Introduction</a></li>
+								href="../springboot/ms-intro.html">Introduction</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/ms-architecture.html">Microservices Architecture</a></li>
+								href="../springboot/ms-architecture.html">Microservices
+									Architecture</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/registry-discovery.html">Service Registry and Discovery</a></li>
+								href="../springboot/registry-discovery.html">Service
+									Registry and Discovery</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/config-server.html">Config Server</a></li>
+								href="../springboot/config-server.html">Config Server</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/api-gateway.html">API Gateway</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/zuul.html">Zuul
-									Gateway</a></li>
+								href="../springboot/api-gateway.html">API Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
+								href="../springboot/zuul.html">Zuul Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/resilience4j.html">Resilience4j</a></li>
+								href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/web-client.html">WebClient</a></li>
+								href="../springboot/resilience4j.html">Resilience4j</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/resttemplate.html">RestTemplate</a></li>
+								href="../springboot/web-client.html">WebClient</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/open-feign.html">Feign Client</a></li>
+								href="../springboot/resttemplate.html">RestTemplate</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
+								href="../springboot/open-feign.html">Feign Client</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/security.html">Cloud Security</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/saga.html">Saga
-									Pattern</a></li>
+								href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../springboot/security.html">Cloud Security</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../springboot/saga.html">Saga Pattern</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/springboot-interview-questions.html">Springboot Interview
-									Questions
-								</a></li>
+								href="../springboot/springboot-interview-questions.html">Springboot
+									Interview Questions </a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/microservices-interview.html">Microservices Interview
-									Questions</a></li>
+								href="../springboot/microservices-interview.html">Microservices
+									Interview Questions</a></li>
 						</ul>
 					</li>
 				</div>
@@ -138,15 +140,14 @@
 		<main class="article">
 			<div class="toolbar">
 				<button class="navbar-burger" id="nav-toggle-1">
-					<span></span>
-					<span></span>
-					<span></span>
+					<span></span> <span></span> <span></span>
 				</button>
 				<nav class="breadcrumbs">
 					<ul>
 						<li><a href="../home.html">Home</a></li>
 						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
-						<li><a href="../springboot/config-server.html">Config Server</a></li>
+						<li><a href="../springboot/config-server.html">Config
+								Server</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -155,198 +156,261 @@
 					<ul>
 						<li><a href="../home.html">Home</a></li>
 						<li><a href="../springboot/ms-intro.html">Microservices</a></li>
-						<li><a href="../springboot/config-server.html">Config Server</a></li>
+						<li><a href="../springboot/config-server.html">Config
+								Server</a></li>
 					</ul>
 					<hr>
 				</nav>
-				<a class="div-to-desk">
-					<br>
+				<a class="div-to-desk"> <br>
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-						<div class="post-body entry-content float-container" id="post-body-6446787791282935987">
+						<div class="post-body entry-content float-container"
+							id="post-body-6446787791282935987">
 							<h2 style="text-align: left;">1. Introduction</h2>
-							<p>The Spring Cloud Config Server acts as a central repository for managing configuration
-								properties for your Spring Boot applications, including:</p>
-							<ul data-sourcepos="5:1-10:0"><span>
-								</span>
-								<li data-sourcepos="5:1-5:29"><span>Database connection details</span></li><span>
-								</span>
-								<li data-sourcepos="6:1-6:10"><span>API URLs</span></li><span>
-								</span>
-								<li data-sourcepos="7:1-7:21"><span>Server port numbers</span></li><span>
-								</span>
-								<li data-sourcepos="8:1-8:23"><span>Environment variables</span></li><span>
-								</span>
-								<li data-sourcepos="9:1-10:0"><span>Any other application-specific settings</span></li>
-								<span>
-								</span>
+							<p>The Spring Cloud Config Server acts as a central
+								repository for managing configuration properties for your Spring
+								Boot applications, including:</p>
+							<ul data-sourcepos="5:1-10:0">
+								<span> </span>
+								<li data-sourcepos="5:1-5:29"><span>Database
+										connection details</span></li>
+								<span> </span>
+								<li data-sourcepos="6:1-6:10"><span>API URLs</span></li>
+								<span> </span>
+								<li data-sourcepos="7:1-7:21"><span>Server port
+										numbers</span></li>
+								<span> </span>
+								<li data-sourcepos="8:1-8:23"><span>Environment
+										variables</span></li>
+								<span> </span>
+								<li data-sourcepos="9:1-10:0"><span>Any other
+										application-specific settings</span></li>
+								<span> </span>
 							</ul>
-							<p>Essentially, it decouples configuration from your code, promoting:</p>
-							<ul data-sourcepos="13:1-17:0"><span>
-								</span>
-								<li data-sourcepos="13:1-13:103"><strong>Centralized Management:</strong><span> Easily
-										modify configurations for all applications from a single location.</span></li>
-								<span>
-								</span>
+							<p>Essentially, it decouples configuration from your code,
+								promoting:</p>
+							<ul data-sourcepos="13:1-17:0">
+								<span> </span>
+								<li data-sourcepos="13:1-13:103"><strong>Centralized
+										Management:</strong><span> Easily modify configurations for all
+										applications from a single location.</span></li>
+								<span> </span>
 								<li data-sourcepos="14:1-14:129"><strong>Environment-Specific
-										Configurations:</strong><span> Define different configurations for
-										development,</span><span> staging,</span><span> and production
-										environments.</span></li><span>
-								</span>
-								<li data-sourcepos="15:1-15:88"><strong>Reduced Code Duplication:</strong><span>
-										Eliminate configuration repetition across microservices.</span></li><span>
-								</span>
-								<li data-sourcepos="16:1-17:0"><strong>Scalability:</strong><span> Easier to manage
-										configuration as your application grows.</span></li><span>
-								</span>
+										Configurations:</strong><span> Define different configurations
+										for development,</span><span> staging,</span><span> and
+										production environments.</span></li>
+								<span> </span>
+								<li data-sourcepos="15:1-15:88"><strong>Reduced
+										Code Duplication:</strong><span> Eliminate configuration
+										repetition across microservices.</span></li>
+								<span> </span>
+								<li data-sourcepos="16:1-17:0"><strong>Scalability:</strong><span>
+										Easier to manage configuration as your application grows.</span></li>
+								<span> </span>
 							</ul>
 							<h1>2. Why Use Config Server?</h1>
-							<ul data-sourcepos="20:1-25:0"><span>
-								</span>
-								<li data-sourcepos="20:1-20:105"><strong>Simplify Configuration
-										Management:</strong><span> No need to update configuration within each
-										application anymore.</span></li><span>
-								</span>
-								<li data-sourcepos="21:1-21:88"><strong>Increased Agility:</strong><span> Quickly deploy
-										changes to multiple applications simultaneously.</span></li><span>
-								</span>
-								<li data-sourcepos="22:1-22:104"><strong>Reduce Risk of Errors:</strong><span>
-										Consistent configuration across environments minimizes error
-										possibilities.</span></li><span>
-								</span>
-								<li data-sourcepos="23:1-23:95"><strong>Improve Collaboration:</strong><span>
-										Configuration becomes a shared responsibility,</span><span> promoting
-										teamwork.</span></li><span>
-								</span>
-								<li data-sourcepos="24:1-25:0"><strong>Easier to Secure:</strong><span> Manage sensitive
-										information in a central location with advanced security controls.</span></li>
-								<span>
-								</span>
+							<ul data-sourcepos="20:1-25:0">
+								<span> </span>
+								<li data-sourcepos="20:1-20:105"><strong>Simplify
+										Configuration Management:</strong><span> No need to update
+										configuration within each application anymore.</span></li>
+								<span> </span>
+								<li data-sourcepos="21:1-21:88"><strong>Increased
+										Agility:</strong><span> Quickly deploy changes to multiple
+										applications simultaneously.</span></li>
+								<span> </span>
+								<li data-sourcepos="22:1-22:104"><strong>Reduce
+										Risk of Errors:</strong><span> Consistent configuration across
+										environments minimizes error possibilities.</span></li>
+								<span> </span>
+								<li data-sourcepos="23:1-23:95"><strong>Improve
+										Collaboration:</strong><span> Configuration becomes a shared
+										responsibility,</span><span> promoting teamwork.</span></li>
+								<span> </span>
+								<li data-sourcepos="24:1-25:0"><strong>Easier to
+										Secure:</strong><span> Manage sensitive information in a central
+										location with advanced security controls.</span></li>
+								<span> </span>
 							</ul>
-							In the microservices project, there could be a
-							large number of microservices and multiple instances of those microservices are running.
-							Updating configuration properties and restarting all those instances manually or even with
-							automated scripts may not be feasible.&nbsp;
+							In the microservices project, there could be a large number of
+							microservices and multiple instances of those microservices are
+							running. Updating configuration properties and restarting all
+							those instances manually or even with automated scripts may not
+							be feasible.&nbsp;
 							<h2 style="text-align: left;">3. When to Use Config Server?</h2>
-							<ul data-sourcepos="28:1-31:0"><span>
-								</span>
-								<li data-sourcepos="28:1-28:111"><strong>Microservice Architecture:</strong><span> Ideal
-										for managing configurations spread across multiple independent services.</span>
-								</li><span>
-								</span>
-								<li data-sourcepos="29:1-29:117"><strong>Multiple Environments:</strong><span> Different
-										configurations for development,</span><span> staging,</span><span> and
-										production are easily maintained.</span></li><span>
-								</span>
-								<li data-sourcepos="30:1-31:0"><strong>Dynamic Configurations:</strong><span> When
-										frequently updating configurations without redeploying applications.</span></li>
-								<span>
-								</span>
+							<ul data-sourcepos="28:1-31:0">
+								<span> </span>
+								<li data-sourcepos="28:1-28:111"><strong>Microservice
+										Architecture:</strong><span> Ideal for managing configurations
+										spread across multiple independent services.</span></li>
+								<span> </span>
+								<li data-sourcepos="29:1-29:117"><strong>Multiple
+										Environments:</strong><span> Different configurations for
+										development,</span><span> staging,</span><span> and production
+										are easily maintained.</span></li>
+								<span> </span>
+								<li data-sourcepos="30:1-31:0"><strong>Dynamic
+										Configurations:</strong><span> When frequently updating
+										configurations without redeploying applications.</span></li>
+								<span> </span>
 							</ul>
-							<div>Spring Cloud Config addresses this problem.<br><br>We can create a Spring Cloud Config
-								Server which provides the configuration values for all of our microservices. We can use
-								git, svn, database, or Consul as a backend to store the configuration parameters.&nbsp;
+							<div>
+								Spring Cloud Config addresses this problem.<br>
+								<br>We can create a Spring Cloud Config Server which
+								provides the configuration values for all of our microservices.
+								We can use git, svn, database, or Consul as a backend to store
+								the configuration parameters.&nbsp;
 							</div>
-							<div><br></div>
-							<div>Next, we can configure the location of the Spring Cloud Config server in our
-								microservice so that it will load all the properties when we start the application. In
-								addition to that, whenever we update the properties we can invoke
-								the&nbsp;<i>actuator/refresh</i> the REST endpoint in our microservice so that it will
-								reload the configuration changes without requiring us to restart the application.</div>
+							<div>
+								<br>
+							</div>
+							<div>
+								Next, we can configure the location of the Spring Cloud Config
+								server in our microservice so that it will load all the
+								properties when we start the application. In addition to that,
+								whenever we update the properties we can invoke the&nbsp;<i>actuator/refresh</i>
+								the REST endpoint in our microservice so that it will reload the
+								configuration changes without requiring us to restart the
+								application.
+							</div>
 							<div>
 								<h1
-									style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; margin: 0.67em 0px;">
+									style="background-color: white; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot; , &amp; quot; Segoe UI Symbol&amp;quot;; margin: 0.67em 0px;">
 									What we will build?</h1>
-							</div>Let's create Spring Cloud Config Server using Git as a backend to store the
-							configurations. Spring Cloud Config Server is nothing but a SpringBoot project.<div
-								class="separator" style="clear: both; text-align: center;"><a
-									href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjl7cBF8H9GpKgotQ_9ChhDS6nNRTz7O4RMWUZtdnKqZPD2l9s3laVrVDMSbqI2DVPoahX4eZS7jtiei4Jyd698JFizfmNhxc8XrEJcjNLHA1MnXvmbwCqLBL_4-8LQnswg3FC9M1XOgtJ_PGT4yKjtdBGzBs4GNHQ1gttbqBqpL6A5L4_giQ48QlO2/s1920/Spring%20Boot%20Microservices.010.jpeg"
-									style="margin-left: 1em; margin-right: 1em;"><img
-										alt="Spring Boot Microservices - Spring Cloud Config Server" border="0"
-										data-original-height="1080" data-original-width="1920"
-										src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjl7cBF8H9GpKgotQ_9ChhDS6nNRTz7O4RMWUZtdnKqZPD2l9s3laVrVDMSbqI2DVPoahX4eZS7jtiei4Jyd698JFizfmNhxc8XrEJcjNLHA1MnXvmbwCqLBL_4-8LQnswg3FC9M1XOgtJ_PGT4yKjtdBGzBs4GNHQ1gttbqBqpL6A5L4_giQ48QlO2/s16000/Spring%20Boot%20Microservices.010.jpeg"
-										title="Spring Boot Microservices - Spring Cloud Config Server"></a></div>
+							</div>
+							Let's create Spring Cloud Config Server using Git as a backend to
+							store the configurations. Spring Cloud Config Server is nothing
+							but a SpringBoot project.
+							<div class="separator" style="clear: both; text-align: center;">
+								<a
+									href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjl7cBF8H9GpKgotQ_9ChhDS6nNRTz7O4RMWUZtdnKqZPD2l9s3laVrVDMSbqI2DVPoahX4eZS7jtiei4Jyd698JFizfmNhxc8XrEJcjNLHA1MnXvmbwCqLBL_4-8LQnswg3FC9M1XOgtJ_PGT4yKjtdBGzBs4GNHQ1gttbqBqpL6A5L4_giQ48QlO2/s1920/Spring%20Boot%20Microservices.010.jpeg"><img
+									src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjl7cBF8H9GpKgotQ_9ChhDS6nNRTz7O4RMWUZtdnKqZPD2l9s3laVrVDMSbqI2DVPoahX4eZS7jtiei4Jyd698JFizfmNhxc8XrEJcjNLHA1MnXvmbwCqLBL_4-8LQnswg3FC9M1XOgtJ_PGT4yKjtdBGzBs4GNHQ1gttbqBqpL6A5L4_giQ48QlO2/s16000/Spring%20Boot%20Microservices.010.jpeg"
+									title="Spring Boot Microservices - Spring Cloud Config Server"></a>
+							</div>
 							<div>
-								<h1 style="text-align: left;">1. Create and Setup Spring Boot Project in IntelliJ IDEA
-								</h1>
+								<h1 style="text-align: left;">1. Create and Setup Spring
+									Boot Project in IntelliJ IDEA</h1>
 								<div>
 									<div
-										style="background-color: white; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 16px;">
-										<p><span face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
-												style="color: #24292f;">Let's create a Spring boot project using
-												the&nbsp;</span><a href="https://start.spring.io/" rel="nofollow"
-												style="background: transparent; box-sizing: border-box; color: #3d85c6; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-weight: bold; text-decoration-line: none; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s;">spring
-												initializr</a>.</p>
-										<p>Refer to the below screenshot to enter details while creating the spring boot
-											application&nbsp;<span
+										style="background-color: white; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot; , &amp; quot; Segoe UI Symbol&amp;quot;; font-size: 16px;">
+										<p>
+											<span
+												face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;"
+												style="color: #24292f;">Let's create a Spring boot
+												project using the&nbsp;</span><a href="https://start.spring.io/"
+												rel="nofollow"
+												style="background: transparent; box-sizing: border-box; color: #3d85c6; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-weight: bold; text-decoration-line: none; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s;">spring
+												initializr</a>.
+										</p>
+										<p>
+											Refer to the below screenshot to enter details while creating
+											the spring boot application&nbsp;<span
 												face="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;"
 												style="color: #24292f;">using the&nbsp;</span><a
 												href="https://start.spring.io/" rel="nofollow"
-												style="background: transparent; box-sizing: border-box; color: #3d85c6; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-weight: bold; text-decoration-line: none; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s;">spring
-												initializr</a>:</p>
-										<div class="separator" style="clear: both; text-align: center;"><a
-												href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEis95nts1pWDhb3HVYjKugCmf463eBihYaDh-XkazLyGLpzL6h6vlkGjWryN6vah4dblvwqVw_M8ViBxrDRrT6Gv5YGYnfO5inx20pl1AyD5mR6RdOEDSCdG2expAGMsQblJr-5mW6658igP0u_WMYwDSoVw1g56_9a7mu_al7ZV3vYPT7vEN7k60Zj/s2560/Screenshot%202022-10-02%20at%206.25.44%20PM.png"
-												style="margin-left: 1em; margin-right: 1em;"><img border="0"
-													data-original-height="1516" data-original-width="2560"
-													src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEis95nts1pWDhb3HVYjKugCmf463eBihYaDh-XkazLyGLpzL6h6vlkGjWryN6vah4dblvwqVw_M8ViBxrDRrT6Gv5YGYnfO5inx20pl1AyD5mR6RdOEDSCdG2expAGMsQblJr-5mW6658igP0u_WMYwDSoVw1g56_9a7mu_al7ZV3vYPT7vEN7k60Zj/s16000/Screenshot%202022-10-02%20at%206.25.44%20PM.png"></a>
+												style="background: transparent; box-sizing: border-box; color: #3d85c6; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-weight: bold; text-decoration-line: none; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s;">spring
+												initializr</a>:
+										</p>
+										<div class="separator"
+											style="clear: both; text-align: center;">
+											<a
+												href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEis95nts1pWDhb3HVYjKugCmf463eBihYaDh-XkazLyGLpzL6h6vlkGjWryN6vah4dblvwqVw_M8ViBxrDRrT6Gv5YGYnfO5inx20pl1AyD5mR6RdOEDSCdG2expAGMsQblJr-5mW6658igP0u_WMYwDSoVw1g56_9a7mu_al7ZV3vYPT7vEN7k60Zj/s2560/Screenshot%202022-10-02%20at%206.25.44%20PM.png"><img
+												src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEis95nts1pWDhb3HVYjKugCmf463eBihYaDh-XkazLyGLpzL6h6vlkGjWryN6vah4dblvwqVw_M8ViBxrDRrT6Gv5YGYnfO5inx20pl1AyD5mR6RdOEDSCdG2expAGMsQblJr-5mW6658igP0u_WMYwDSoVw1g56_9a7mu_al7ZV3vYPT7vEN7k60Zj/s16000/Screenshot%202022-10-02%20at%206.25.44%20PM.png"></a>
 										</div>
-										<div><span
+										<div>
+											<span
 												face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;">Click
-												on Generate button to download the Spring boot project as a zip file.
-												Unzip the zip file and import the Spring boot project in IntelliJ
-												IDEA.</span></div>
-										<div><br></div><span
+												on Generate button to download the Spring boot project as a
+												zip file. Unzip the zip file and import the Spring boot
+												project in IntelliJ IDEA.</span>
+										</div>
+										<div>
+											<br>
+										</div>
+										<span
 											face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;">Here
 											is the&nbsp;</span><span
-											style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas, &quot;liberation mono&quot;, Courier, monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">pom.xml</span><span
+											style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: Consolas,&amp; quot; liberation mono&amp;quot; , Courier , monospace; font-size: 14.4px; font-style: initial; padding: 0.2em 0.4em;">pom.xml</span><span
 											face="-apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;">&nbsp;file
 											for your reference:</span><br>
 										<div>
 											<pre class="nz oa ob oc od oe of og bo oh ba bj"
-												style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://maven.apache.org/POM/4.0.0"</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span>
-	<span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span>
+												style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+												<code
+													style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+													class="hljs xml">
+													<span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span
+														class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://maven.apache.org/POM/4.0.0"</span> <span
+														class="hljs-attr">xmlns:xsi</span>=<span
+														class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+	<span class="hljs-attr">xsi:schemaLocation</span>=<span
+														class="hljs-string">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span
+														class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">parent</span>&gt;</span>
-		<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-		<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-		<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.7.4<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
-		<span class="hljs-tag">&lt;<span class="hljs-name">relativePath</span>/&gt;</span> <span class="hljs-comment">&lt;!-- lookup parent from repository --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span
+														class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-parent<span
+														class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.7.4<span
+														class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">relativePath</span>/&gt;</span> <span
+														class="hljs-comment">&lt;!-- lookup parent from repository --&gt;</span>
 	<span class="hljs-tag">&lt;/<span class="hljs-name">parent</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>net.javaguides<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>config-server<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>config-server<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>Demo project for Spring Boot<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>net.javaguides<span
+														class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>config-server<span
+														class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.0.1-SNAPSHOT<span
+														class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>config-server<span
+														class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>Demo project for Spring Boot<span
+														class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span>
-		<span class="hljs-tag">&lt;<span class="hljs-name">java.version</span>&gt;</span>17<span class="hljs-tag">&lt;/<span class="hljs-name">java.version</span>&gt;</span>
-		<span class="hljs-tag">&lt;<span class="hljs-name">spring-cloud.version</span>&gt;</span>2021.0.4<span class="hljs-tag">&lt;/<span class="hljs-name">spring-cloud.version</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">java.version</span>&gt;</span>17<span
+														class="hljs-tag">&lt;/<span class="hljs-name">java.version</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">spring-cloud.version</span>&gt;</span>2021.0.4<span
+														class="hljs-tag">&lt;/<span class="hljs-name">spring-cloud.version</span>&gt;</span>
 	<span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
 		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span
+														class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span
+														class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
 		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-config-server<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span
+														class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-config-server<span
+														class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
 
 		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span
+														class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-test<span
+														class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span
+														class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
 	<span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">dependencyManagement</span>&gt;</span>
 		<span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
 			<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-				<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-				<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-				<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${spring-cloud.version}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
-				<span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>pom<span class="hljs-tag">&lt;/<span class="hljs-name">type</span>&gt;</span>
-				<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span
+														class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-dependencies<span
+														class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${spring-cloud.version}<span
+														class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>pom<span
+														class="hljs-tag">&lt;/<span class="hljs-name">type</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>import<span
+														class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
 			<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
 	<span class="hljs-tag">&lt;/<span class="hljs-name">dependencyManagement</span>&gt;</span>
@@ -354,28 +418,37 @@
 	<span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span>
 		<span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span>
 			<span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span>
-				<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-				<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span
+														class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span
+														class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
 			<span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span>
 	<span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span>
 
-<span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span></code></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span>
+												</code>
+											</pre>
 										</div>
 									</div>
 								</div>
-								<h1 style="text-align: left;">2. Enable Config Server using @EnableConfigServer
-									Annotation</h1>
+								<h1 style="text-align: left;">2. Enable Config Server using
+									@EnableConfigServer Annotation</h1>
 								<div>
 									<p data-sourcepos="39:1-39:149" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										To make our Spring Boot application as a Spring Cloud Config Server, we just
-										need to add the <i>@EnableConfigServer</i> annotation to the main entry point
-										class:</p>
-									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										To make our Spring Boot application as a Spring Cloud Config
+										Server, we just need to add the <i>@EnableConfigServer</i>
+										annotation to the main entry point class:
+									</p>
+									<div
+										class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; overflow: auto; position: relative;">
 										<pre class="nz oa ob oc od oe of og bo oh ba bj"
-											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs typescript">package net.javaguides.configserver;
+											style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+											<code
+												style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+												class="hljs typescript">package net.javaguides.configserver;
 
 <span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Value;
 <span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
@@ -385,135 +458,204 @@
 
 <span class="hljs-meta">@EnableConfigServer</span>
 <span class="hljs-meta">@SpringBootApplication</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfigServerApplication</span> </span>{
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span
+													class="hljs-keyword">class</span> <span class="hljs-title">ConfigServerApplication</span> </span>{
 
-	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-built_in">void</span> <span class="hljs-function"><span class="hljs-title">main</span>(<span class="hljs-params"><span class="hljs-built_in">String</span>[] args</span>)</span> {
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span
+													class="hljs-built_in">void</span> <span
+													class="hljs-function"><span class="hljs-title">main</span>(<span
+													class="hljs-params"><span class="hljs-built_in">String</span>[] args</span>)</span> {
 		SpringApplication.run(ConfigServerApplication.class, args);
 	}
 
-}</code></pre>
+}</code>
+										</pre>
 									</div>
 								</div>
 								<div>
-									<h1 style="text-align: left;">3. Configure the Location of the Git repository</h1>
+									<h1 style="text-align: left;">3. Configure the Location of
+										the Git repository</h1>
 									<p data-sourcepos="72:1-72:34" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										On Github, create a Git repository named "microservices-config-repo".</p>
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										On Github, create a Git repository named
+										"microservices-config-repo".</p>
 									<p data-sourcepos="74:1-74:132" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										Now, let's configure the location of the git repository where we are going to
-										store all our configuration files in the <i>application.properties</i> file.</p>
-									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Now, let's configure the location of the git repository where
+										we are going to store all our configuration files in the <i>application.properties</i>
+										file.
+									</p>
+									<div
+										class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; overflow: auto; position: relative;">
 										<pre class="nz oa ob oc od oe of og bo oh ba bj"
-											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs ini"><span class="hljs-attr">spring.application.name</span>=config-server
+											style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+											<code
+												style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+												class="hljs ini">
+												<span class="hljs-attr">spring.application.name</span>=config-server
 <span class="hljs-attr">server.port</span>=<span class="hljs-number">8888</span>
 
 <span class="hljs-attr">spring.cloud.config.server.git.uri</span>=https://github.com/RameshMF/microservices-config-repo.git
-<span class="hljs-attr">spring.cloud.config.server.git.skipSslValidation</span>=<span class="hljs-literal">true</span>
-<span class="hljs-attr">spring.cloud.config.server.git.clone-on-start</span>=<span class="hljs-literal">true</span>
+<span class="hljs-attr">spring.cloud.config.server.git.skipSslValidation</span>=<span
+													class="hljs-literal">true</span>
+<span class="hljs-attr">spring.cloud.config.server.git.clone-on-start</span>=<span
+													class="hljs-literal">true</span>
 <span class="hljs-attr">management.endpoints.web.exposure.include</span>=*
-</code></pre>
+</code>
+										</pre>
 									</div>
 									<p data-sourcepos="86:1-86:158" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										That’s it. This is all you need to do to create Spring Cloud Config Server and
-										you just need to add application-specific config files in the git repository.
-									</p>
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										That’s it. This is all you need to do to create Spring Cloud
+										Config Server and you just need to add application-specific
+										config files in the git repository.</p>
 								</div>
 								<div>
-									<h1 style="text-align: left;">4. Refactor department-service to use Config Server
-									</h1>
+									<h1 style="text-align: left;">4. Refactor
+										department-service to use Config Server</h1>
 									<p data-sourcepos="89:1-89:162" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										Our <i>department-service</i> will become a client for Config Server. So, let us
-										add Config Client starter dependency to the&nbsp;<i>department-service</i>:</p>
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Our <i>department-service</i> will become a client for Config
+										Server. So, let us add Config Client starter dependency to
+										the&nbsp;<i>department-service</i>:
+									</p>
 								</div>
 								<div>
 									<p data-sourcepos="91:1-91:56" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										In <i>department-service</i>, add the below dependencies to pom.xml:</p>
-									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										In <i>department-service</i>, add the below dependencies to
+										pom.xml:
+									</p>
+									<div
+										class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; overflow: auto; position: relative;">
 										<pre class="nz oa ob oc od oe of og bo oh ba bj"
-											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml">		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-config<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+											style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+											<code
+												style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+												class="hljs xml">		<span class="hljs-tag">&lt;<span
+													class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span
+													class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-config<span
+													class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
 
 		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span
+													class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span
+													class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+											</code>
+										</pre>
 									</div>
 								</div>
 								<div>
-									<h1 style="text-align: left;">5. Push department-service.properties File to the
-										GitHub</h1>
+									<h1 style="text-align: left;">5. Push
+										department-service.properties File to the GitHub</h1>
 									<p data-sourcepos="105:1-105:158" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										Now we need to add all the properties of our <i>department-service</i> in
-										<i>department-service.properties</i> and commit/push it to our git repo
-										<b>microservices-config-repo</b>.
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Now we need to add all the properties of our <i>department-service</i>
+										in <i>department-service.properties</i> and commit/push it to
+										our git repo <b>microservices-config-repo</b>.
 									</p>
 									<p data-sourcepos="107:1-107:72" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
 										Create a new file&nbsp;<i
 											style="background-color: transparent;">department-service.properties&nbsp;</i>on
-										the GitHub repository, add the below content and commit it:</p>
-									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										the GitHub repository, add the below content and commit it:
+									</p>
+									<div
+										class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; overflow: auto; position: relative;">
 										<pre class="nz oa ob oc od oe of og bo oh ba bj"
-											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs ini"><span class="hljs-attr">spring.datasource.url</span>=jdbc:mysql://localhost:<span class="hljs-number">3306</span>/department_db
+											style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+											<code
+												style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+												class="hljs ini">
+												<span class="hljs-attr">spring.datasource.url</span>=jdbc:mysql://localhost:<span
+													class="hljs-number">3306</span>/department_db
 <span class="hljs-attr">spring.datasource.username</span>=root
-<span class="hljs-attr">spring.datasource.password</span>=Mysql@<span class="hljs-number">123</span>
+<span class="hljs-attr">spring.datasource.password</span>=Mysql@<span
+													class="hljs-number">123</span>
 
 <span class="hljs-attr">spring.jpa.properties.hibernate.dialect</span>=org.hibernate.dialect.MySQLDialect
-<span class="hljs-attr">spring.jpa.hibernate.ddl-auto</span>=update<br></code></pre>
+<span class="hljs-attr">spring.jpa.hibernate.ddl-auto</span>=update<br>
+											</code>
+										</pre>
 									</div>
 								</div>
 								<div>
-									<h1 style="text-align: left;">6. Configure Config Server in department-service</h1>
+									<h1 style="text-align: left;">6. Configure Config Server
+										in department-service</h1>
 									<p data-sourcepos="119:1-119:64" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										Next, change <i>resources/application.properties</i> with the config server</p>
-									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Next, change <i>resources/application.properties</i> with the
+										config server
+									</p>
+									<div
+										class="snippet-clipboard-content notranslate position-relative overflow-auto"
 										style="box-sizing: border-box; overflow: auto; position: relative;">
 										<pre class="nz oa ob oc od oe of og bo oh ba bj"
-											style="border-radius: 6px; box-sizing: border-box; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; color: #24292f; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs ini"><span class="hljs-attr">spring.application.name</span>=department-service
-<span class="hljs-attr">spring.config.import</span>=optional:configserver:http://localhost:<span class="hljs-number">8888</span>
-<span class="hljs-attr">management.endpoints.web.exposure.include</span>=*</code><span style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-color: initial; border-image: initial; border-radius: 6px; border-style: initial; box-sizing: border-box; line-height: inherit;">
-</span></pre>
-									</div>Next, start the Config Server application and then the department-service
-									application. This should work fine. You can check the console logs that
-									department-service is fetching the properties from config server <a
-										href="http://localhost:8888/">http://localhost:8888/</a> at startup.<br><a
+											style="border-radius: 6px; box-sizing: border-box; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+											<code
+												style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; color: #24292f; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+												class="hljs ini">
+												<span class="hljs-attr">spring.application.name</span>=department-service
+<span class="hljs-attr">spring.config.import</span>=optional:configserver:http://localhost:<span
+													class="hljs-number">8888</span>
+<span class="hljs-attr">management.endpoints.web.exposure.include</span>=*</code>
+											<span
+												style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-color: initial; border-image: initial; border-radius: 6px; border-style: initial; box-sizing: border-box; line-height: inherit;">
+</span>
+										</pre>
+									</div>
+									Next, start the Config Server application and then the
+									department-service application. This should work fine. You can
+									check the console logs that department-service is fetching the
+									properties from config server <a href="http://localhost:8888/">http://localhost:8888/</a>
+									at startup.<br>
+									<a
 										href="https://github.com/RameshMF/microservices-learnings/edit/main/Spring%20Cloud%20Config%20Server.md#refactor-user-service-to-use-config-server"></a>
 									<h1 data-sourcepos="130:1-130:44" dir="auto"
-										style="background-color: white; border-bottom: 1px solid var(--color-border-muted); box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; line-height: 1.25; margin: 24px 0px 16px; padding-bottom: 0.3em;">
+										style="background-color: white; border-bottom: 1px solid var(- -color-border-muted); box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; line-height: 1.25; margin: 24px 0px 16px; padding-bottom: 0.3em;">
 										7. Refactor the user-service to use Config Server</h1>
 									<p data-sourcepos="131:1-131:150" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										Our <i>user-service</i> will become a client for Config Server. So, let us add
-										Config Client starter to <i>user-service</i> which will add the following
-										dependency.</p>
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Our <i>user-service</i> will become a client for Config
+										Server. So, let us add Config Client starter to <i>user-service</i>
+										which will add the following dependency.
+									</p>
 								</div>
 								<div>
 									<p data-sourcepos="133:1-133:56" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
 										In user-service, add below dependencies to pom.xml:</p>
-									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+									<div
+										class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; overflow: auto; position: relative;">
 										<pre class="nz oa ob oc od oe of og bo oh ba bj"
-											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs xml">		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-config<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+											style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+											<code
+												style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+												class="hljs xml">		<span class="hljs-tag">&lt;<span
+													class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span
+													class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-config<span
+													class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
 		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
 
 		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span
+													class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span
+													class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+											</code>
+										</pre>
 									</div>
 								</div>
 								<div>
@@ -521,27 +663,37 @@
 								</div>
 								<div>
 									<p data-sourcepos="147:1-147:152" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										Now we need to add all the properties of our <i>user-service</i> in
-										<i>user-service.properties</i> and commit/push it to our git repo
-										<b>microservices-config-repo</b>.
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Now we need to add all the properties of our <i>user-service</i>
+										in <i>user-service.properties</i> and commit/push it to our
+										git repo <b>microservices-config-repo</b>.
 									</p>
 									<p data-sourcepos="149:1-149:72" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
 										Create a new file&nbsp;<i
 											style="background-color: transparent;">user-service.properties&nbsp;</i>on
-										the GitHub repository, add the below content, and commit it:</p>
-									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										the GitHub repository, add the below content, and commit it:
+									</p>
+									<div
+										class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; overflow: auto; position: relative;">
 										<pre class="nz oa ob oc od oe of og bo oh ba bj"
-											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs ini"><span class="hljs-attr">spring.datasource.url</span>=jdbc:mysql://localhost:<span class="hljs-number">3306</span>/employee_db
+											style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+											<code
+												style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+												class="hljs ini">
+												<span class="hljs-attr">spring.datasource.url</span>=jdbc:mysql://localhost:<span
+													class="hljs-number">3306</span>/employee_db
 <span class="hljs-attr">spring.datasource.username</span>=root
-<span class="hljs-attr">spring.datasource.password</span>=Mysql@<span class="hljs-number">123</span>
+<span class="hljs-attr">spring.datasource.password</span>=Mysql@<span
+													class="hljs-number">123</span>
 
 <span class="hljs-attr">spring.jpa.properties.hibernate.dialect</span>=org.hibernate.dialect.MySQLDialect
 <span class="hljs-attr">spring.jpa.hibernate.ddl-auto</span>=update
 
-<span class="hljs-attr">server.port</span> = <span class="hljs-number">8081</span><br></code></pre>
+<span class="hljs-attr">server.port</span> = <span class="hljs-number">8081</span><br>
+											</code>
+										</pre>
 									</div>
 								</div>
 								<div>
@@ -549,22 +701,32 @@
 								</div>
 								<div>
 									<p data-sourcepos="163:1-163:64" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										Next, change <i>resources/application.properties</i> with the config server</p>
-									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Next, change <i>resources/application.properties</i> with the
+										config server
+									</p>
+									<div
+										class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; overflow: auto; position: relative;">
 										<pre class="nz oa ob oc od oe of og bo oh ba bj"
-											style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs ini"><span class="hljs-attr">spring.application.name</span>=USER-SERVICE
-<span class="hljs-attr">spring.config.import</span>=optional:configserver:http://localhost:<span class="hljs-number">8888</span>
+											style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+											<code
+												style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+												class="hljs ini">
+												<span class="hljs-attr">spring.application.name</span>=USER-SERVICE
+<span class="hljs-attr">spring.config.import</span>=optional:configserver:http://localhost:<span
+													class="hljs-number">8888</span>
 <span class="hljs-attr">management.endpoints.web.exposure.include</span>=*
-</code></pre>
+</code>
+										</pre>
 									</div>
 									<p data-sourcepos="171:1-172:129" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
 										Now first start the Config Server application and then the <i>user-service</i>
-										application. This should work fine. You can check the console logs that the
-										<i>user-service</i> is fetching the properties from config server&nbsp;<a
-											href="http://localhost:8888/" rel="nofollow"
+										application. This should work fine. You can check the console
+										logs that the <i>user-service</i> is fetching the properties
+										from config server&nbsp;<a href="http://localhost:8888/"
+											rel="nofollow"
 											style="background-color: transparent; box-sizing: border-box; text-decoration-line: none;">http://localhost:8888/</a>&nbsp;at
 										startup.
 									</p>
@@ -572,47 +734,94 @@
 								<div>
 									<h1 style="text-align: left;">10. Refresh Use case</h1>
 									<p data-sourcepos="175:1-175:91" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										We also want to enable the <i>/refresh</i> endpoint, to demonstrate dynamic
-										configuration changes.</p>
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										We also want to enable the <i>/refresh</i> endpoint, to
+										demonstrate dynamic configuration changes.
+									</p>
 									<p data-sourcepos="177:1-177:293" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										The client can access any value in the Config Server by using traditional
-										mechanisms (such as @ConfigurationProperties or @Value("${…&ZeroWidthSpace;}")
-										or through the Environment abstraction). Now you need to create a Spring MVC
-										REST controller that returns the resolved message property’s value.</p>
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										The client can access any value in the Config Server by using
+										traditional mechanisms (such as @ConfigurationProperties or
+										@Value("${…&ZeroWidthSpace;}") or through the Environment
+										abstraction). Now you need to create a Spring MVC REST
+										controller that returns the resolved message property’s value.</p>
 									<p data-sourcepos="179:1-179:45" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
 										In department-service, create below REST API:</p>
 									<pre class="nz oa ob oc od oe of og bo oh ba bj"
-										style="background-color: var(--color-canvas-subtle); border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;"><code style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;, monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;" class="hljs css"><span class="hljs-selector-tag">package</span> <span class="hljs-selector-tag">net</span><span class="hljs-selector-class">.javaguides</span><span class="hljs-selector-class">.departmentservice</span><span class="hljs-selector-class">.controller</span>;
+										style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; color: #24292f; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
+										<code
+											style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; quot; SF Mono&amp;quot; , Menlo , Consolas, &amp;quot; Liberation Mono&amp;quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;"
+											class="hljs css">
+											<span class="hljs-selector-tag">package</span> <span
+												class="hljs-selector-tag">net</span><span
+												class="hljs-selector-class">.javaguides</span><span
+												class="hljs-selector-class">.departmentservice</span><span
+												class="hljs-selector-class">.controller</span>;
 
-<span class="hljs-selector-tag">import</span> <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.springframework</span><span class="hljs-selector-class">.beans</span><span class="hljs-selector-class">.factory</span><span class="hljs-selector-class">.annotation</span><span class="hljs-selector-class">.Value</span>;
-<span class="hljs-selector-tag">import</span> <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.springframework</span><span class="hljs-selector-class">.cloud</span><span class="hljs-selector-class">.context</span><span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.annotation</span><span class="hljs-selector-class">.RefreshScope</span>;
-<span class="hljs-selector-tag">import</span> <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.springframework</span><span class="hljs-selector-class">.web</span><span class="hljs-selector-class">.bind</span><span class="hljs-selector-class">.annotation</span><span class="hljs-selector-class">.GetMapping</span>;
-<span class="hljs-selector-tag">import</span> <span class="hljs-selector-tag">org</span><span class="hljs-selector-class">.springframework</span><span class="hljs-selector-class">.web</span><span class="hljs-selector-class">.bind</span><span class="hljs-selector-class">.annotation</span><span class="hljs-selector-class">.RestController</span>;
+<span class="hljs-selector-tag">import</span> <span
+												class="hljs-selector-tag">org</span><span
+												class="hljs-selector-class">.springframework</span><span
+												class="hljs-selector-class">.beans</span><span
+												class="hljs-selector-class">.factory</span><span
+												class="hljs-selector-class">.annotation</span><span
+												class="hljs-selector-class">.Value</span>;
+<span class="hljs-selector-tag">import</span> <span
+												class="hljs-selector-tag">org</span><span
+												class="hljs-selector-class">.springframework</span><span
+												class="hljs-selector-class">.cloud</span><span
+												class="hljs-selector-class">.context</span><span
+												class="hljs-selector-class">.config</span><span
+												class="hljs-selector-class">.annotation</span><span
+												class="hljs-selector-class">.RefreshScope</span>;
+<span class="hljs-selector-tag">import</span> <span
+												class="hljs-selector-tag">org</span><span
+												class="hljs-selector-class">.springframework</span><span
+												class="hljs-selector-class">.web</span><span
+												class="hljs-selector-class">.bind</span><span
+												class="hljs-selector-class">.annotation</span><span
+												class="hljs-selector-class">.GetMapping</span>;
+<span class="hljs-selector-tag">import</span> <span
+												class="hljs-selector-tag">org</span><span
+												class="hljs-selector-class">.springframework</span><span
+												class="hljs-selector-class">.web</span><span
+												class="hljs-selector-class">.bind</span><span
+												class="hljs-selector-class">.annotation</span><span
+												class="hljs-selector-class">.RestController</span>;
 
 <span class="hljs-keyword">@RefreshScope</span>
 @RestController
 class MessageRestController {
 
-    <span class="hljs-keyword">@Value</span>("${<span class="hljs-selector-tag">message</span><span class="hljs-selector-pseudo">:Hello</span> <span class="hljs-selector-tag">default</span>}")
-    <span class="hljs-selector-tag">private</span> <span class="hljs-selector-tag">String</span> <span class="hljs-selector-tag">message</span>;
+    <span class="hljs-keyword">@Value</span>("${<span
+												class="hljs-selector-tag">message</span><span
+												class="hljs-selector-pseudo">:Hello</span> <span
+												class="hljs-selector-tag">default</span>}")
+    <span class="hljs-selector-tag">private</span> <span
+												class="hljs-selector-tag">String</span> <span
+												class="hljs-selector-tag">message</span>;
 
     <span class="hljs-keyword">@GetMapping</span>("/message")
     String getMessage() {
-        <span class="hljs-selector-tag">return</span> <span class="hljs-selector-tag">this</span><span class="hljs-selector-class">.message</span>;
+        <span class="hljs-selector-tag">return</span> <span
+												class="hljs-selector-tag">this</span><span
+												class="hljs-selector-class">.message</span>;
     }
-}</code></pre>
-									<div class="snippet-clipboard-content notranslate position-relative overflow-auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; overflow: auto; position: relative;">
-										<div class="zeroclipboard-container position-absolute right-0 top-0"
+}</code>
+									</pre>
+									<div
+										class="snippet-clipboard-content notranslate position-relative overflow-auto"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; overflow: auto; position: relative;">
+										<div
+											class="zeroclipboard-container position-absolute right-0 top-0"
 											style="animation: 200ms ease 0s 1 normal both running fade-in; box-sizing: border-box; position: absolute; right: 0px; top: 0px;">
 											<clipboard-copy aria-label="Copy"
 												class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
-												data-copy-feedback="Copied!" data-tooltip-direction="w" role="button"
+												data-copy-feedback="Copied!" data-tooltip-direction="w"
+												role="button"
 												style="appearance: none; background-color: var(--color-btn-bg); border-color: var(--color-btn-border); border-image: initial; border-radius: 6px; border-style: solid; border-width: 1px; box-shadow: var(--color-btn-shadow),var(--color-btn-inset-shadow); box-sizing: border-box; color: var(--color-btn-text); cursor: pointer; display: inline-block; font-size: 14px; line-height: 20px; margin: 8px; padding: 0px; position: relative; transition: color 80ms cubic-bezier(0.33, 1, 0.68, 1) 0s, background-color 0s ease 0s, box-shadow 0s ease 0s, border-color 0s ease 0s; user-select: none; vertical-align: middle; white-space: nowrap;"
-												tabindex="0" value="package net.javaguides.departmentservice.controller;
+												tabindex="0"
+												value="package net.javaguides.departmentservice.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -630,48 +839,59 @@ class MessageRestController {
     String getMessage() {
         return this.message;
     }
-}"><svg aria-hidden="true" class="octicon octicon-copy js-clipboard-copy-icon m-2" data-view-component="true"
-													height="16" version="1.1" viewBox="0 0 16 16" width="16">
+}">
+											<svg aria-hidden="true"
+												class="octicon octicon-copy js-clipboard-copy-icon m-2"
+												data-view-component="true" height="16" version="1.1"
+												viewBox="0 0 16 16" width="16">
 													<path
-														d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
-														fill-rule="evenodd"></path>
+													d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+													fill-rule="evenodd"></path>
 													<path
-														d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
-														fill-rule="evenodd"></path>
+													d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+													fill-rule="evenodd"></path>
 												</svg></clipboard-copy>
 										</div>
 									</div>
 									<p data-sourcepos="202:1-202:465" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										By default, the configuration values are read on the client’s startup and not
-										again. You can force a bean to refresh its configuration (that is, to pull
-										updated values from the Config Server) by annotating the MessageRestController
-										with the Spring Cloud Config <i>@RefreshScope</i> and then triggering a refresh
-										event.&nbsp;</p>
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										By default, the configuration values are read on the client’s
+										startup and not again. You can force a bean to refresh its
+										configuration (that is, to pull updated values from the Config
+										Server) by annotating the MessageRestController with the
+										Spring Cloud Config <i>@RefreshScope</i> and then triggering a
+										refresh event.&nbsp;
+									</p>
 								</div>
 								<div>
 									<h2 style="text-align: left;">Test Refresh Use Case</h2>
 									<p data-sourcepos="205:1-205:243" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										You can test the end-to-end result by starting the Config Service first and
-										then, once it is running, starting the client. Visit the client app in the
-										browser at&nbsp;<a href="http://localhost:8080/message" rel="nofollow"
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										You can test the end-to-end result by starting the Config
+										Service first and then, once it is running, starting the
+										client. Visit the client app in the browser at&nbsp;<a
+											href="http://localhost:8080/message" rel="nofollow"
 											style="background-color: transparent; box-sizing: border-box; text-decoration-line: none;">http://localhost:8080/message</a>.
-										There, you should see Hello world in the response.</p>
+										There, you should see Hello world in the response.
+									</p>
 									<p data-sourcepos="207:1-207:138" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										Change the message key in the <i>department-service.properties</i> file in the
-										Git repository to something different (Hello, Ramesh!).</p>
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										Change the message key in the <i>department-service.properties</i>
+										file in the Git repository to something different (Hello,
+										Ramesh!).
+									</p>
 									<p data-sourcepos="209:1-209:265" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
-										You need to invoke the <i>/refresh</i> Spring Boot Actuator endpoint in order to
-										force the client to refresh itself and draw in the new value. Spring Boot’s
-										Actuator exposes operational endpoints (such as health checks and environment
-										information) about an application.</p>
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 16px; margin-top: 0px;">
+										You need to invoke the <i>/refresh</i> Spring Boot Actuator
+										endpoint in order to force the client to refresh itself and
+										draw in the new value. Spring Boot’s Actuator exposes
+										operational endpoints (such as health checks and environment
+										information) about an application.
+									</p>
 									<p data-sourcepos="211:2-211:237" dir="auto"
-										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
-										You can invoke the refresh Actuator endpoint by sending an empty HTTP POST to
-										the client’s refresh endpoint:&nbsp;<a
+										style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; quot; system-ui &amp;quot; , &amp; quot; Segoe UI&amp;quot; , Helvetica , Arial, sans-serif, &amp;quot; Apple Color Emoji&amp;quot; , &amp; quot; Segoe UI Emoji&amp;quot;; font-size: 16px; margin-bottom: 0px; margin-top: 0px;">
+										You can invoke the refresh Actuator endpoint by sending an
+										empty HTTP POST to the client’s refresh endpoint:&nbsp;<a
 											href="http://localhost:8080/actuator/refresh" rel="nofollow"
 											style="background-color: transparent; box-sizing: border-box; text-decoration-line: none;">http://localhost:8080/actuator/refresh</a>.
 										Then you can confirm it worked by visiting the&nbsp;<a
@@ -679,25 +899,43 @@ class MessageRestController {
 											style="background-color: transparent; box-sizing: border-box; text-decoration-line: none;">http://localhost:8080/message</a>&nbsp;endpoint.
 									</p>
 								</div>
-								<h1 style="text-align: left;">11. Testing department-service and user-service</h1>
-								<div>First, start the config-server, and next, department-service, and user-service.
-								</div>
-								<div><br></div>
-								<div>If your <i>department-service</i> able to connect to the MySQL database then you
-									have successfully configured the Config server.</div>
-								<div><br></div>
+								<h1 style="text-align: left;">11. Testing
+									department-service and user-service</h1>
+								<div>First, start the config-server, and next,
+									department-service, and user-service.</div>
 								<div>
-									<div>If your <i>user-service</i> able to connect to the MySQL database then you have
-										successfully configured the Config server.</div>
-									<div><br></div>
-									<div>Next, you can test the REST endpoints of&nbsp;<i>department-service</i>
-										and&nbsp;<i>user-service</i> microservices.</div>
-									<div><br></div>
+									<br>
+								</div>
+								<div>
+									If your <i>department-service</i> able to connect to the MySQL
+									database then you have successfully configured the Config
+									server.
+								</div>
+								<div>
+									<br>
+								</div>
+								<div>
+									<div>
+										If your <i>user-service</i> able to connect to the MySQL
+										database then you have successfully configured the Config
+										server.
+									</div>
+									<div>
+										<br>
+									</div>
+									<div>
+										Next, you can test the REST endpoints of&nbsp;<i>department-service</i>
+										and&nbsp;<i>user-service</i> microservices.
+									</div>
+									<div>
+										<br>
+									</div>
 								</div>
 								<h1 style="text-align: left;">Conclusion</h1>
 								<div>
-									<p>In this tutorial, we learned how to create a Spring cloud config server with Git
-										as a backend to centralize configurations of the Spring boot microservices.</p>
+									<p>In this tutorial, we learned how to create a Spring
+										cloud config server with Git as a backend to centralize
+										configurations of the Spring boot microservices.</p>
 								</div>
 							</div>
 				</article>
@@ -705,13 +943,14 @@ class MessageRestController {
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
 					<li class="page-item"><a class="page-link btn-outline-primary"
-							href="../springboot/registry-discovery.html">&lArr; Previous</a></li>
-					<li class="page-item"><a class="page-link" href="../springboot/api-gateway.html">Next
-							&rArr;</a></li>
+						href="../springboot/registry-discovery.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link"
+						href="../springboot/api-gateway.html">Next &rArr;</a></li>
 				</ul>
 			</div>
-			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
-					src="../scripts/images/top.jpeg" /></button>
+			<button onclick="topFunction()" id="myBtn" title="Go to top">
+				<img height="30" width="30" src="../scripts/images/top.jpeg" />
+			</button>
 		</main>
 	</div>
 	<script>
@@ -742,10 +981,11 @@ class MessageRestController {
 	<script src="../scripts/js/site.js"></script>
 </body>
 <footer class="footer">
-	<p>©
+	<p>
+		©
 		<script>var d = new Date();
-			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
-		Kalyan Kolloju.
+			document.write(d.getFullYear());</script>
+		, The content is copyrighted to Ravi Kalyan Kolloju.
 	</p>
 </footer>
 

@@ -309,7 +309,7 @@ body ::-webkit-scrollbar-thumb {
 .nav-link:hover,
 .nav-text:hover {
 	background: #ebf2f2;
-	color: #06c;
+	color: rgb(0, 0, 0);
 	text-decoration: none;
 	padding: 0.3rem 1rem;
 	--transition: .3s ease;
@@ -323,7 +323,7 @@ body ::-webkit-scrollbar-thumb {
 .dark-theme .nav-link:hover,
 .dark-theme .nav-text:hover {
 	background: #262a2d;
-	color: #1f98ff
+	color: rgb(255, 255, 255)
 }
 
 .nav-collapse {
@@ -1373,4 +1373,7 @@ tr:nth-child(even) {
 
 .expand-maximum-on-hover:hover {
   max-width : initial; 
+}
+a {
+  color: #0d932b;
 }

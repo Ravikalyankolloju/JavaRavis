@@ -296,14 +296,14 @@ body ::-webkit-scrollbar-thumb {
 	border-radius: 3px;
 	display: block;
 	padding: .4rem 28px .4rem .5rem;
-	color: #0d932b
+	color: #6BC115
 }
 
 .nav-link1 {
 	border-radius: 3px;
 	display: block;
 	padding: .4rem 28px .4rem .5rem;
-	color: #0d932b
+	color: #6BC115
 }
 
 .nav-link:hover,
@@ -1225,7 +1225,7 @@ a:active {
 
 .page-link:hover {
 	z-index: 2;
-	color: #0d932b;
+	color: #6BC115;
 	text-decoration: none;
 	background-color: #e9ecef;
 	border-color: #dee2e6;
@@ -1375,5 +1375,16 @@ tr:nth-child(even) {
   max-width : initial; 
 }
 a {
-  color: #0d932b;
+  color: #6BC115;
+}
+.oleo-script-regular {
+  font-family: "Oleo Script", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oleo-script-bold {
+  font-family: "Oleo Script", system-ui;
+  font-weight: 700;
+  font-style: normal;
 }

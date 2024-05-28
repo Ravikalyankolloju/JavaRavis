@@ -3,56 +3,56 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="author" content="RaviKalyan">
-	<title>Zuul Gateway</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
-	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-	<link rel="stylesheet" href="../scripts/css/site.css">
-	<script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="RaviKalyan">
+<title>Zuul Gateway</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="../scripts/images/tab_logo.png" />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel="stylesheet" href="../scripts/css/site.css">
+<script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
 			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
 		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
-	<style>
-		@media screen and (min-width: 1025px) {
-			.div-to-desk {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
+<style>
+@media screen and (min-width: 1025px) {
+	.div-to-desk {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
 
-		@media screen and (max-width: 1025px) {
-			.div-to-hide {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
-	</style>
+@media screen and (max-width: 1025px) {
+	.div-to-hide {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
+</style>
 </head>
 
 <body>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<a class="navbar-item doc1" href="../home.html">
-				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			<a class="navbar-item" href="../home.html"> <img width="40"
+				height="25" src="../scripts/images/nani1.png" alt="Home" />
 			</a>
+			<h4 class="div-to-desk, berkshire-swash-regular">Ravish</h4>
 			<button class="navbar-burger" data-target="topbar-nav">
-				<span></span>
-				<span></span>
-				<span></span>
+				<span></span> <span></span> <span></span>
 			</button>
 		</div>
 		<div id="topbar-nav" class="navbar-menu">
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
-					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
-								width="25" src="../scripts/images/home.png"></i></a>
-					</li>
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1"
+						href="../home.html"><img height="25" width="25"
+							src="../scripts/images/home.png"></i></a></li>
 					<div class="navbar-item is-hoverable">
 						<a class="navbar-link" href="../java/introduction.html">Java</a>
 					</div>
@@ -63,24 +63,26 @@
 						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+						<a class="navbar-link" href="../java/java8.html">Java 8
+							Features</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+						<a class="navbar-link" href="../DP/introduction.html">Design
+							Patterns</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+						<a class="navbar-link"
+							href="../interview/interview-questions.html">Interview
+							Questions</a>
 					</div>
-					<label class="theme-toggler div-to-hide">
-						<input type="checkbox" id="switch-theme-checkbox" />
-						<span class="icon"></span>
+					<label class="theme-toggler div-to-hide"> <input
+						type="checkbox" id="switch-theme-checkbox" /> <span class="icon"></span>
 					</label>
 				</div>
 			</div>
 		</div>
-		<label class="theme-toggler div-to-desk" style="top: 22px;">
-			<input type="checkbox" id="switch-theme-mobile" />
-			<span class="icon"></span>
+		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input
+			type="checkbox" id="switch-theme-mobile" /> <span class="icon"></span>
 		</label>
 	</nav>
 
@@ -92,44 +94,45 @@
 						<ul class="nav-list">
 							<h4>Springboot</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/introduction.html">Introduction</a></li>
+								href="../springboot/introduction.html">Introduction</a></li>
 							<h4>Microservice</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/ms-intro.html">Introduction</a></li>
+								href="../springboot/ms-intro.html">Introduction</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/ms-architecture.html">Microservices Architecture</a></li>
+								href="../springboot/ms-architecture.html">Microservices
+									Architecture</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/registry-discovery.html">Service Registry and Discovery</a></li>
+								href="../springboot/registry-discovery.html">Service
+									Registry and Discovery</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/config-server.html">Config Server</a></li>
+								href="../springboot/config-server.html">Config Server</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/api-gateway.html">API Gateway</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/zuul.html">Zuul
-									Gateway</a></li>
+								href="../springboot/api-gateway.html">API Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
+								href="../springboot/zuul.html">Zuul Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/resilience4j.html">Resilience4j</a></li>
+								href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/web-client.html">WebClient</a></li>
+								href="../springboot/resilience4j.html">Resilience4j</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/resttemplate.html">RestTemplate</a></li>
+								href="../springboot/web-client.html">WebClient</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/open-feign.html">Feign Client</a></li>
+								href="../springboot/resttemplate.html">RestTemplate</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
+								href="../springboot/open-feign.html">Feign Client</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/security.html">Cloud Security</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/saga.html">Saga
-									Pattern</a></li>
+								href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../springboot/security.html">Cloud Security</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../springboot/saga.html">Saga Pattern</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/springboot-interview-questions.html">Springboot Interview
-									Questions
-								</a></li>
+								href="../springboot/springboot-interview-questions.html">Springboot
+									Interview Questions </a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../springboot/microservices-interview.html">Microservices Interview
-									Questions</a></li>
+								href="../springboot/microservices-interview.html">Microservices
+									Interview Questions</a></li>
 						</ul>
 					</li>
 				</div>
@@ -138,9 +141,7 @@
 		<main class="article">
 			<div class="toolbar">
 				<button class="navbar-burger" id="nav-toggle-1">
-					<span></span>
-					<span></span>
-					<span></span>
+					<span></span> <span></span> <span></span>
 				</button>
 				<nav class="breadcrumbs">
 					<ul>
@@ -159,189 +160,225 @@
 					</ul>
 					<hr>
 				</nav>
-				<a class="div-to-desk">
-					<br>
+				<a class="div-to-desk"> <br>
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
 						<h1>1. Introduction to Zuul Gateway</h1>
-						<p></strong>Zuul</strong> is a dynamic routing and filtering gateway built by Netflix, often
-							used as an API gateway in Spring Boot microservice architectures. It provides a single entry
-							point for all incoming requests, routing them to the appropriate backend services based on
-							configuration. It also offers various filtering capabilities for authentication,
-							authorization, rate limiting, and more.</p>
+						<p>
+							</strong>Zuul</strong> is a dynamic routing and filtering gateway built by Netflix,
+							often used as an API gateway in Spring Boot microservice
+							architectures. It provides a single entry point for all incoming
+							requests, routing them to the appropriate backend services based
+							on configuration. It also offers various filtering capabilities
+							for authentication, authorization, rate limiting, and more.
+						</p>
 						<h1>Why Use Zuul?</h1>
-						<ul data-sourcepos="9:1-9:156"><span>
-							</span>
-							<li data-sourcepos="9:1-9:156"><strong>Centralized Service Routing:</strong><span> Manages
-									request routing centrally,</span><span> simplifying client-side interaction and
-									reducing direct exposure of internal services.</span></li><span>
-							</span>
-							<li data-sourcepos="10:1-10:144"><strong>Security and Access Control:</strong><span>
-									Implements authentication,</span><span> authorization,</span><span> and other
-									security measures before requests reach backend services.</span></li><span>
-							</span>
-							<li data-sourcepos="11:1-11:149"><strong>Filtering and Transformation:</strong><span>
-									Filters requests and responses for tasks like logging,</span><span> load
-									balancing,</span><span> security checks,</span><span> and content
-									modification.</span></li><span>
-							</span>
-							<li data-sourcepos="12:1-12:103"><strong>Monitoring and Metrics:</strong><span> Provides
-									insights into traffic patterns,</span><span> service health,</span><span> and
-									performance.</span></li><span>
-							</span>
-							<li data-sourcepos="13:1-13:113"><strong>Dynamic Routing:</strong><span> Updates routes
-									without restarting services,</span><span> enabling flexible load balancing and
-									failover.</span></li><span>
-							</span>
-							<li data-sourcepos="14:1-15:0"><strong>API Versioning:</strong><span> Manages different API
-									versions through routing rules.</span></li><span>
-							</span>
+						<ul data-sourcepos="9:1-9:156">
+							<span> </span>
+							<li data-sourcepos="9:1-9:156"><strong>Centralized
+									Service Routing:</strong><span> Manages request routing
+									centrally,</span><span> simplifying client-side interaction and
+									reducing direct exposure of internal services.</span></li>
+							<span> </span>
+							<li data-sourcepos="10:1-10:144"><strong>Security
+									and Access Control:</strong><span> Implements authentication,</span><span>
+									authorization,</span><span> and other security measures before
+									requests reach backend services.</span></li>
+							<span> </span>
+							<li data-sourcepos="11:1-11:149"><strong>Filtering
+									and Transformation:</strong><span> Filters requests and responses
+									for tasks like logging,</span><span> load balancing,</span><span>
+									security checks,</span><span> and content modification.</span></li>
+							<span> </span>
+							<li data-sourcepos="12:1-12:103"><strong>Monitoring
+									and Metrics:</strong><span> Provides insights into traffic
+									patterns,</span><span> service health,</span><span> and
+									performance.</span></li>
+							<span> </span>
+							<li data-sourcepos="13:1-13:113"><strong>Dynamic
+									Routing:</strong><span> Updates routes without restarting
+									services,</span><span> enabling flexible load balancing and
+									failover.</span></li>
+							<span> </span>
+							<li data-sourcepos="14:1-15:0"><strong>API
+									Versioning:</strong><span> Manages different API versions through
+									routing rules.</span></li>
+							<span> </span>
 						</ul>
 						<h1>3. When to Use Zuul</h1>
-						<ul data-sourcepos="22:1-22:38"><span>
-							</span>
-							<li data-sourcepos="22:1-22:38"><strong>Managing multiple microservices:</strong><span>
-								</span>
-								<ul data-sourcepos="23:5-23:54"><span>
-									</span>
-									<li data-sourcepos="23:5-23:54"><span>Essential for managing communication and
-											routing in a distributed microservices system.
-											. Streamlines access and coordination for
-											clients.</span></li><span>
-									</span>
-								</ul><span>
-								</span>
-							</li><span>
-							</span>
-							<li data-sourcepos="24:1-25:81"><strong>Implementing cross-cutting concerns:</strong><span>
-								</span>
-								<ul data-sourcepos="25:5-25:81"><span>
-									</span>
-									<li data-sourcepos="25:5-25:81"><span>Centralizes authentication,</span><span>
-											authorization,</span><span> logging,</span><span> and other common
-											tasks.</span></li><span>
-									</span>
-								</ul><span>
-								</span>
-							</li><span>
-							</span>
-							<li data-sourcepos="24:1-25:81"><strong>Load Balancing and Fault Tolerance:</strong><span>
-								</span>
-								<ul data-sourcepos="25:5-25:81"><span>
-									</span>
-									<li data-sourcepos="25:5-25:81"><span>Distributes load across multiple instances and
-											handles failures gracefully.
-										</span></li><span>
-									</span>
-								</ul><span>
-								</span>
-							</li><span>
-							</span>
-							<li data-sourcepos="24:1-25:81"><strong>Dynamic Routing:</strong><span>
-								</span>
-								<ul data-sourcepos="25:5-25:81"><span>
-									</span>
-									<li data-sourcepos="25:5-25:81"><span>Enables routing based on request paths or
-											other criteria.</span></li><span>
-									</span>
-								</ul><span>
-								</span>
-							</li><span>
-							</span>
+						<ul data-sourcepos="22:1-22:38">
+							<span> </span>
+							<li data-sourcepos="22:1-22:38"><strong>Managing
+									multiple microservices:</strong><span> </span>
+								<ul data-sourcepos="23:5-23:54">
+									<span> </span>
+									<li data-sourcepos="23:5-23:54"><span>Essential for
+											managing communication and routing in a distributed
+											microservices system. . Streamlines access and coordination
+											for clients.</span></li>
+									<span> </span>
+								</ul>
+								<span> </span></li>
+							<span> </span>
+							<li data-sourcepos="24:1-25:81"><strong>Implementing
+									cross-cutting concerns:</strong><span> </span>
+								<ul data-sourcepos="25:5-25:81">
+									<span> </span>
+									<li data-sourcepos="25:5-25:81"><span>Centralizes
+											authentication,</span><span> authorization,</span><span>
+											logging,</span><span> and other common tasks.</span></li>
+									<span> </span>
+								</ul>
+								<span> </span></li>
+							<span> </span>
+							<li data-sourcepos="24:1-25:81"><strong>Load
+									Balancing and Fault Tolerance:</strong><span> </span>
+								<ul data-sourcepos="25:5-25:81">
+									<span> </span>
+									<li data-sourcepos="25:5-25:81"><span>Distributes
+											load across multiple instances and handles failures
+											gracefully. </span></li>
+									<span> </span>
+								</ul>
+								<span> </span></li>
+							<span> </span>
+							<li data-sourcepos="24:1-25:81"><strong>Dynamic
+									Routing:</strong><span> </span>
+								<ul data-sourcepos="25:5-25:81">
+									<span> </span>
+									<li data-sourcepos="25:5-25:81"><span>Enables
+											routing based on request paths or other criteria.</span></li>
+									<span> </span>
+								</ul>
+								<span> </span></li>
+							<span> </span>
 							<li data-sourcepos="24:1-25:81"><strong>Filtering:</strong><span>
-								</span>
-								<ul data-sourcepos="25:5-25:81"><span>
-									</span>
-									<li data-sourcepos="25:5-25:81"><span>Allows custom pre- and post-processing of
-											requests and responses for logging, security, caching,
-											or other purposes.</span></li><span>
-									</span>
-								</ul><span>
-								</span>
-							</li><span>
 							</span>
-							<li data-sourcepos="26:1-27:77"><strong>Enhancing security:</strong><span>
-								</span>
-								<ul data-sourcepos="27:5-27:77"><span>
-									</span>
-									<li data-sourcepos="27:5-27:77"><span>Acts as aCentralizes authentication,
-											authorization, and CORS configuration.
-											. firewall,</span><span> protecting
-											internal services from external threats.</span></li><span>
-									</span>
-								</ul><span>
-								</span>
-							</li><span>
-							</span>
-							<li data-sourcepos="28:1-29:77"><strong>Optimizing performance:</strong><span>
-								</span>
-								<ul data-sourcepos="29:5-29:77"><span>
-									</span>
-									<li data-sourcepos="29:5-29:77"><span>Can cache responses and streamline
-											communication for better efficiency.</span></li><span>
-									</span>
-								</ul><span>
-								</span>
-							</li><span>
-							</span>
-							<li data-sourcepos="30:1-32:0"><strong>Gaining visibility and control:</strong><span>
-								</span>
-								<ul data-sourcepos="31:5-32:0"><span>
-									</span>
-									<li data-sourcepos="31:5-32:0"><span>Monitors traffic and service health for better
-											insights and management.</span></li><span>
-									</span>
-								</ul><span>
-								</span>
-							</li><span>
-							</span>
+								<ul data-sourcepos="25:5-25:81">
+									<span> </span>
+									<li data-sourcepos="25:5-25:81"><span>Allows custom
+											pre- and post-processing of requests and responses for
+											logging, security, caching, or other purposes.</span></li>
+									<span> </span>
+								</ul>
+								<span> </span></li>
+							<span> </span>
+							<li data-sourcepos="26:1-27:77"><strong>Enhancing
+									security:</strong><span> </span>
+								<ul data-sourcepos="27:5-27:77">
+									<span> </span>
+									<li data-sourcepos="27:5-27:77"><span>Acts as
+											aCentralizes authentication, authorization, and CORS
+											configuration. . firewall,</span><span> protecting internal
+											services from external threats.</span></li>
+									<span> </span>
+								</ul>
+								<span> </span></li>
+							<span> </span>
+							<li data-sourcepos="28:1-29:77"><strong>Optimizing
+									performance:</strong><span> </span>
+								<ul data-sourcepos="29:5-29:77">
+									<span> </span>
+									<li data-sourcepos="29:5-29:77"><span>Can cache
+											responses and streamline communication for better efficiency.</span></li>
+									<span> </span>
+								</ul>
+								<span> </span></li>
+							<span> </span>
+							<li data-sourcepos="30:1-32:0"><strong>Gaining
+									visibility and control:</strong><span> </span>
+								<ul data-sourcepos="31:5-32:0">
+									<span> </span>
+									<li data-sourcepos="31:5-32:0"><span>Monitors
+											traffic and service health for better insights and
+											management.</span></li>
+									<span> </span>
+								</ul>
+								<span> </span></li>
+							<span> </span>
 						</ul>
 						<h1>Implementation of Zuul</h1>
 						<h4>Add Zuul dependency:</h4>
-						<pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text" class="code-container"><span class="hljs-tag">&lt;<span class="hljs-name"><span class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;</span><span class="hljs-name"><span class="citation-0">groupId</span></span><span class="citation-0">&gt;</span></span><span class="citation-0">org.springframework.cloud</span><span class="hljs-tag"><span class="citation-0">&lt;/</span><span class="hljs-name"><span class="citation-0">groupId</span></span><span class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;</span><span class="hljs-name"><span class="citation-0">artifactId</span></span><span class="citation-0">&gt;</span></span><span class="citation-0">spring-cloud-starter-netflix-zuul</span><span class="hljs-tag"><span class="citation-0">&lt;/</span><span class="hljs-name"><span class="citation-0">artifactId</span></span><span class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;/</span><span class="hljs-name"><span class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><span class="citation-0 citation-end-0"></span>
-</code></pre>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj">
+							<code _ngcontent-ng-c1279875957="" role="text"
+								class="code-container">
+								<span class="hljs-tag">&lt;<span class="hljs-name"><span
+										class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><br><span
+									class="hljs-tag"><span class="citation-0">&lt;</span><span
+									class="hljs-name"><span class="citation-0">groupId</span></span><span
+									class="citation-0">&gt;</span></span><span class="citation-0">org.springframework.cloud</span><span
+									class="hljs-tag"><span class="citation-0">&lt;/</span><span
+									class="hljs-name"><span class="citation-0">groupId</span></span><span
+									class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span
+									class="citation-0">&lt;</span><span class="hljs-name"><span
+										class="citation-0">artifactId</span></span><span class="citation-0">&gt;</span></span><span
+									class="citation-0">spring-cloud-starter-netflix-zuul</span><span
+									class="hljs-tag"><span class="citation-0">&lt;/</span><span
+									class="hljs-name"><span class="citation-0">artifactId</span></span><span
+									class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span
+									class="citation-0">&lt;/</span><span class="hljs-name"><span
+										class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><span
+									class="citation-0 citation-end-0"></span>
+</code>
+						</pre>
 						<h4>Enable Zuul:</h4>
-						<pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text" class="code-container"><span class="hljs-meta">@SpringBootApplication</span>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj">
+							<code _ngcontent-ng-c1279875957="" role="text"
+								class="code-container">
+								<span class="hljs-meta">@SpringBootApplication</span>
 <span class="hljs-meta">@EnableZuulProxy</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YourApplicationClass</span> </span>{
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span
+									class="hljs-keyword">class</span> <span class="hljs-title">YourApplicationClass</span> </span>{
     <span class="hljs-comment">// ...</span>
 }
-</code></pre>
+</code>
+						</pre>
 						<h4>Configure routes:</h4>
-						<pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text" class="code-container"><span class="hljs-attr">zuul:</span>
+						<pre class="nz oa ob oc od oe of og bo oh ba bj">
+							<code _ngcontent-ng-c1279875957="" role="text"
+								class="code-container">
+								<span class="hljs-attr">zuul:</span>
     <span class="hljs-attr">routes:</span>
         <span class="hljs-attr">product-service:</span>
-            <span class="hljs-attr">path:</span> <span class="hljs-string">/products/**</span>
-            <span class="hljs-attr">serviceId:</span> <span class="hljs-string">product-service</span>
+            <span class="hljs-attr">path:</span> <span
+									class="hljs-string">/products/**</span>
+            <span class="hljs-attr">serviceId:</span> <span
+									class="hljs-string">product-service</span>
         <span class="hljs-attr">order-service:</span>
-            <span class="hljs-attr">path:</span> <span class="hljs-string">/orders/**</span>
-            <span class="hljs-attr">serviceId:</span> <span class="hljs-string">order-service</span>
-</code></pre>
+            <span class="hljs-attr">path:</span> <span
+									class="hljs-string">/orders/**</span>
+            <span class="hljs-attr">serviceId:</span> <span
+									class="hljs-string">order-service</span>
+</code>
+						</pre>
 						<h4>Implement filters (optional):</h4>
-						<p>Create custom filters to handle authentication, logging, rate limiting, etc.</p>
+						<p>Create custom filters to handle authentication, logging,
+							rate limiting, etc.</p>
 						<h4>Key Points</h4>
-						<ul data-sourcepos="73:1-78:0"><span>
-							</span>
-							<li data-sourcepos="73:1-73:71"><span>Acts as a reverse proxy,</span><span> forwarding
-									requests to appropriate services.</span></li><span>
-							</span>
-							<li data-sourcepos="74:1-74:47"><span>Integrates with Eureka for service discovery.</span>
-							</li><span>
-							</span>
-							<li data-sourcepos="75:1-75:63"><span>Supports various filtering mechanisms for request
-									processing.</span></li><span>
-							</span>
-							<li data-sourcepos="76:1-76:57"><span>Offers load balancing and health checks for
-									resilience.</span></li><span>
-							</span>
-							<li data-sourcepos="77:1-78:0"><span>Provides metrics and monitoring for visibility.</span>
-							</li><span>
-							</span>
+						<ul data-sourcepos="73:1-78:0">
+							<span> </span>
+							<li data-sourcepos="73:1-73:71"><span>Acts as a
+									reverse proxy,</span><span> forwarding requests to appropriate
+									services.</span></li>
+							<span> </span>
+							<li data-sourcepos="74:1-74:47"><span>Integrates with
+									Eureka for service discovery.</span></li>
+							<span> </span>
+							<li data-sourcepos="75:1-75:63"><span>Supports
+									various filtering mechanisms for request processing.</span></li>
+							<span> </span>
+							<li data-sourcepos="76:1-76:57"><span>Offers load
+									balancing and health checks for resilience.</span></li>
+							<span> </span>
+							<li data-sourcepos="77:1-78:0"><span>Provides metrics
+									and monitoring for visibility.</span></li>
+							<span> </span>
 						</ul>
 						<h4>Important Note:</h4>
-						<p>End of Life for Zuul: Spring Cloud no longer supports Zuul as of Spring Cloud 2020.0.0. The
-							recommended replacement is Spring Cloud Gateway, a more modern and feature-rich gateway
+						<p>End of Life for Zuul: Spring Cloud no longer supports Zuul
+							as of Spring Cloud 2020.0.0. The recommended replacement is
+							Spring Cloud Gateway, a more modern and feature-rich gateway
 							built on Spring WebFlux.</p>
 					</div>
 				</article>
@@ -349,13 +386,14 @@
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
 					<li class="page-item"><a class="page-link btn-outline-primary"
-							href="../springboot/api-gateway.html">&lArr; Previous</a></li>
-					<li class="page-item"><a class="page-link" href="../springboot/circuit-breaker.html">Next
-							&rArr;</a></li>
+						href="../springboot/api-gateway.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link"
+						href="../springboot/circuit-breaker.html">Next &rArr;</a></li>
 				</ul>
 			</div>
-			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
-					src="../scripts/images/top.jpeg" /></button>
+			<button onclick="topFunction()" id="myBtn" title="Go to top">
+				<img height="30" width="30" src="../scripts/images/top.jpeg" />
+			</button>
 		</main>
 	</div>
 	<script>
@@ -386,10 +424,11 @@
 	<script src="../scripts/js/site.js"></script>
 </body>
 <footer class="footer">
-	<p>©
+	<p>
+		©
 		<script>var d = new Date();
-			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
-		Kalyan Kolloju.
+			document.write(d.getFullYear());</script>
+		, The content is copyrighted to Ravi Kalyan Kolloju.
 	</p>
 </footer>
 

@@ -15,8 +15,8 @@
 	--color-jet-70: #222;
 	--color-jet-80: #191919;
 	--color-black: #000;
-	--font-family: Lato,Helvetica,sans-serif;
-	--font-family-special: Lato,Helvetica,sans-serif;
+	--font-family: Lato,Helvetica,sans-serif, source-serif-pro, Georgia, Cambria, "sans-serif", serif;
+	--font-family-special: Lato,Helvetica,sans-serif, source-serif-pro, Georgia, Cambria, "sans-serif", serif;
 	--link_hover-font-color: #104d92;
 	--mark-background-color: #39ff14;
 	--rem-base: 18;

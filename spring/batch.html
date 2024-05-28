@@ -3,56 +3,58 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="author" content="RaviKalyan">
-	<title>Batch</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
-	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-	<link rel="stylesheet" href="../scripts/css/site.css">
-	<script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="RaviKalyan">
+<title>Batch</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="../scripts/images/tab_logo.png" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Elsie+Swash+Caps:wght@400;900&family=Kalam:wght@300;400;700&family=Pacifico&family=Satisfy&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet" href="../scripts/css/site.css">
+<script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
 			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
 		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
-	<style>
-		@media screen and (min-width: 1025px) {
-			.div-to-desk {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
+<style>
+@media screen and (min-width: 1025px) {
+	.div-to-desk {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
 
-		@media screen and (max-width: 1025px) {
-			.div-to-hide {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
-	</style>
+@media screen and (max-width: 1025px) {
+	.div-to-hide {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
+</style>
 </head>
 
 <body>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<a class="navbar-item doc1" href="../home.html">
-				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			<a class="navbar-item" href="./home.html"> <img width="40"
+				height="25" src="../scripts/images/nani1.png" alt="Home" />
 			</a>
+			<h4 class="div-to-desk, berkshire-swash-regular">Ravish</h4>
 			<button class="navbar-burger" data-target="topbar-nav">
-				<span></span>
-				<span></span>
-				<span></span>
+				<span></span> <span></span> <span></span>
 			</button>
 		</div>
 		<div id="topbar-nav" class="navbar-menu">
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
-					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
-								width="25" src="../scripts/images/home.png"></i></a>
-					</li>
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1"
+						href="../home.html"><img height="25" width="25"
+							src="../scripts/images/home.png"></i></a></li>
 					<div class="navbar-item is-hoverable">
 						<a class="navbar-link" href="../java/introduction.html">Java</a>
 					</div>
@@ -63,24 +65,26 @@
 						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+						<a class="navbar-link" href="../java/java8.html">Java 8
+							Features</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+						<a class="navbar-link" href="../DP/introduction.html">Design
+							Patterns</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+						<a class="navbar-link"
+							href="../interview/interview-questions.html">Interview
+							Questions</a>
 					</div>
-					<label class="theme-toggler div-to-hide">
-						<input type="checkbox" id="switch-theme-checkbox" />
-						<span class="icon"></span>
+					<label class="theme-toggler div-to-hide"> <input
+						type="checkbox" id="switch-theme-checkbox" /> <span class="icon"></span>
 					</label>
 				</div>
 			</div>
 		</div>
-		<label class="theme-toggler div-to-desk" style="top: 22px;">
-			<input type="checkbox" id="switch-theme-mobile" />
-			<span class="icon"></span>
+		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input
+			type="checkbox" id="switch-theme-mobile" /> <span class="icon"></span>
 		</label>
 	</nav>
 
@@ -92,79 +96,70 @@
 						<ul class="nav-list">
 							<h4>Spring Basic</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/introduction.html">Spring
-									Introduction</a></li>
+								href="../spring/introduction.html">Spring Introduction</a></li>
 							<h4>Spring MVC</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/mvc.html">Spring
-									MVC</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/mvc.html">Spring MVC</a></li>
 							<h4>Spring Exceptions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/exceptions.html">Spring
-									Exceptions</a></li>
+								href="../spring/exceptions.html">Spring Exceptions</a></li>
 							<h4>Spring Actuators</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/actuators.html">Spring Actuators</a>
-							</li>
+								href="../spring/actuators.html">Spring Actuators</a></li>
 							<h4>Spring Annotations</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-core.html">Core
+								href="../spring/annotations-core.html">Core Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-mvc.html">MVC Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-transactions.html">Transactions
+									& Error Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-configuration.html">Configuration
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-mvc.html">MVC
+								href="../spring/annotations-aop.html">AOP Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-jpa.html">JPA Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-cloud.html">Cloud Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-scheduling.html">Scheduling
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-transactions.html">Transactions & Error
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-configuration.html">Configuration
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-aop.html">AOP
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-jpa.html">JPA
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-cloud.html">Cloud
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-scheduling.html">Scheduling
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-cache-error.html">Caching
+								href="../spring/annotations-cache-error.html">Caching
 									Annotations</a></li>
 							<h4>Spring AOP</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
-									AOP</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/aop.html">Spring AOP</a></li>
 							<h4>Spring JPA</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/jpa.html">Spring
-									JPA</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/jpa.html">Spring JPA</a></li>
 							<h4>Spring Transactions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/transactions.html">Spring
-									Transactions</a></li>
+								href="../spring/transactions.html">Spring Transactions</a></li>
 							<h4>Spring Async</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/async.html">Spring
-									Async</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/async.html">Spring Async</a></li>
 							<h4>Spring Batch</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/batch.html">Spring
-									Batch</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/batch.html">Spring Batch</a></li>
 							<h4>Spring Aspect</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aspect.html">Spring
-									Aspect</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/aspect.html">Spring Aspect</a></li>
 							<h4>Spring Kafka</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/kafka.html">Spring
-									Kafka</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/kafka.html">Spring Kafka</a></li>
 							<h4>Spring Logging</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/logging.html">Spring
-									Logging</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/logging.html">Spring Logging</a></li>
 							<h4>Spring Security</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/security.html">Spring
-									Security</a></li>
+								href="../spring/security.html">Spring Security</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/spring-interview-questions.html">Spring Interview Questions</a></li>
+								href="../spring/spring-interview-questions.html">Spring
+									Interview Questions</a></li>
 						</ul>
 					</li>
 				</div>
@@ -173,9 +168,7 @@
 		<main class="article">
 			<div class="toolbar">
 				<button class="navbar-burger" id="nav-toggle-1">
-					<span></span>
-					<span></span>
-					<span></span>
+					<span></span> <span></span> <span></span>
 				</button>
 				<nav class="breadcrumbs">
 					<ul>
@@ -194,24 +187,23 @@
 					</ul>
 					<hr>
 				</nav>
-				<a class="div-to-desk">
-					<br>
+				<a class="div-to-desk"> <br>
 				</a>
 				<article>
-					<div class="entry-content" itemprop="text">
-
-					</div>
+					<div class="entry-content" itemprop="text"></div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link btn-outline-primary" href="../spring/async.html">&lArr; Previous</a></li>
-					<li class="page-item"><a class="page-link" href="../spring/aspect.html">Next
-							&rArr;</a></li>
+					<li class="page-item"><a class="page-link btn-outline-primary"
+						href="../spring/async.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link"
+						href="../spring/aspect.html">Next &rArr;</a></li>
 				</ul>
 			</div>
-			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
-					src="../scripts/images/top.jpeg" /></button>
+			<button onclick="topFunction()" id="myBtn" title="Go to top">
+				<img height="30" width="30" src="../scripts/images/top.jpeg" />
+			</button>
 		</main>
 	</div>
 	<script>
@@ -242,10 +234,11 @@
 	<script src="../scripts/js/site.js"></script>
 </body>
 <footer class="footer">
-	<p>©
+	<p>
+		©
 		<script>var d = new Date();
-			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
-		Kalyan Kolloju.
+			document.write(d.getFullYear());</script>
+		, The content is copyrighted to Ravi Kalyan Kolloju.
 	</p>
 </footer>
 

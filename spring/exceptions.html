@@ -3,55 +3,58 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="author" content="RaviKalyan">
-	<title>Exceptions</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
-	<link rel="stylesheet" href="../scripts/css/site.css">
-	<script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="RaviKalyan">
+<title>Exceptions</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="../scripts/images/tab_logo.png" />
+<link rel="stylesheet" href="../scripts/css/site.css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Elsie+Swash+Caps:wght@400;900&family=Kalam:wght@300;400;700&family=Pacifico&family=Satisfy&display=swap"
+	rel="stylesheet" />
+<script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
 			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
 		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
-	<style>
-		@media screen and (min-width: 1025px) {
-			.div-to-desk {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
+<style>
+@media screen and (min-width: 1025px) {
+	.div-to-desk {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
 
-		@media screen and (max-width: 1025px) {
-			.div-to-hide {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
-	</style>
+@media screen and (max-width: 1025px) {
+	.div-to-hide {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
+</style>
 </head>
 
 <body>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<a class="navbar-item doc1" href="../home.html">
-				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			<a class="navbar-item" href="./home.html"> <img width="40"
+				height="25" src="../scripts/images/nani1.png" alt="Home" />
 			</a>
+			<h4 class="div-to-desk, berkshire-swash-regular">Ravish</h4>
 			<button class="navbar-burger" data-target="topbar-nav">
-				<span></span>
-				<span></span>
-				<span></span>
+				<span></span> <span></span> <span></span>
 			</button>
 		</div>
 		<div id="topbar-nav" class="navbar-menu">
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
-					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
-								width="25" src="../scripts/images/home.png"></i></a>
-					</li>
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1"
+						href="../home.html"><img height="25" width="25"
+							src="../scripts/images/home.png"></i></a></li>
 					<div class="navbar-item is-hoverable">
 						<a class="navbar-link" href="../java/introduction.html">Java</a>
 					</div>
@@ -62,24 +65,26 @@
 						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+						<a class="navbar-link" href="../java/java8.html">Java 8
+							Features</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+						<a class="navbar-link" href="../DP/introduction.html">Design
+							Patterns</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+						<a class="navbar-link"
+							href="../interview/interview-questions.html">Interview
+							Questions</a>
 					</div>
-					<label class="theme-toggler div-to-hide">
-						<input type="checkbox" id="switch-theme-checkbox" />
-						<span class="icon"></span>
+					<label class="theme-toggler div-to-hide"> <input
+						type="checkbox" id="switch-theme-checkbox" /> <span class="icon"></span>
 					</label>
 				</div>
 			</div>
 		</div>
-		<label class="theme-toggler div-to-desk" style="top: 22px;">
-			<input type="checkbox" id="switch-theme-mobile" />
-			<span class="icon"></span>
+		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input
+			type="checkbox" id="switch-theme-mobile" /> <span class="icon"></span>
 		</label>
 	</nav>
 
@@ -91,79 +96,70 @@
 						<ul class="nav-list">
 							<h4>Spring Basic</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/introduction.html">Spring
-									Introduction</a></li>
+								href="../spring/introduction.html">Spring Introduction</a></li>
 							<h4>Spring MVC</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/mvc.html">Spring
-									MVC</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/mvc.html">Spring MVC</a></li>
 							<h4>Spring Exceptions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/exceptions.html">Spring
-									Exceptions</a></li>
+								href="../spring/exceptions.html">Spring Exceptions</a></li>
 							<h4>Spring Actuators</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/actuators.html">Spring Actuators</a>
-							</li>
+								href="../spring/actuators.html">Spring Actuators</a></li>
 							<h4>Spring Annotations</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-core.html">Core
+								href="../spring/annotations-core.html">Core Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-mvc.html">MVC Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-transactions.html">Transactions
+									& Error Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-configuration.html">Configuration
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-mvc.html">MVC
+								href="../spring/annotations-aop.html">AOP Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-jpa.html">JPA Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-cloud.html">Cloud Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-scheduling.html">Scheduling
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-transactions.html">Transactions & Error
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-configuration.html">Configuration
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-aop.html">AOP
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-jpa.html">JPA
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-cloud.html">Cloud
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-scheduling.html">Scheduling
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-cache-error.html">Caching
+								href="../spring/annotations-cache-error.html">Caching
 									Annotations</a></li>
 							<h4>Spring AOP</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
-									AOP</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/aop.html">Spring AOP</a></li>
 							<h4>Spring JPA</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/jpa.html">Spring
-									JPA</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/jpa.html">Spring JPA</a></li>
 							<h4>Spring Transactions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/transactions.html">Spring
-									Transactions</a></li>
+								href="../spring/transactions.html">Spring Transactions</a></li>
 							<h4>Spring Async</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/async.html">Spring
-									Async</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/async.html">Spring Async</a></li>
 							<h4>Spring Batch</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/batch.html">Spring
-									Batch</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/batch.html">Spring Batch</a></li>
 							<h4>Spring Aspect</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aspect.html">Spring
-									Aspect</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/aspect.html">Spring Aspect</a></li>
 							<h4>Spring Kafka</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/kafka.html">Spring
-									Kafka</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/kafka.html">Spring Kafka</a></li>
 							<h4>Spring Logging</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/logging.html">Spring
-									Logging</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/logging.html">Spring Logging</a></li>
 							<h4>Spring Security</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/security.html">Spring
-									Security</a></li>
+								href="../spring/security.html">Spring Security</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/spring-interview-questions.html">Spring Interview Questions</a></li>
+								href="../spring/spring-interview-questions.html">Spring
+									Interview Questions</a></li>
 						</ul>
 					</li>
 				</div>
@@ -172,9 +168,7 @@
 		<main class="article">
 			<div class="toolbar">
 				<button class="navbar-burger" id="nav-toggle-1">
-					<span></span>
-					<span></span>
-					<span></span>
+					<span></span> <span></span> <span></span>
 				</button>
 				<nav class="breadcrumbs">
 					<ul>
@@ -193,8 +187,7 @@
 					</ul>
 					<hr>
 				</nav>
-				<a class="div-to-desk">
-					<br>
+				<a class="div-to-desk"> <br>
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
@@ -203,73 +196,137 @@
 								<h1>Spring Boot: Exception Handling</h1>
 								<p id="41c1"
 									class="mx my mz na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph="">@ControllerAdvice is a global exception handling
-									mechanism in Spring. It allows you to define a central place for handling
-									exceptions that occur in your application.</p>
+									data-selectable-paragraph="">@ControllerAdvice is a global
+									exception handling mechanism in Spring. It allows you to define
+									a central place for handling exceptions that occur in your
+									application.</p>
 								<p id="914e"
 									class="mx my mz na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph="">When an exception is thrown from any controller
-									method (e.g., a REST endpoint), it is caught by the @ControllerAdvice annotated
-									class.</p>
+									data-selectable-paragraph="">When an exception is thrown
+									from any controller method (e.g., a REST endpoint), it is
+									caught by the @ControllerAdvice annotated class.</p>
 								<p id="224a"
 									class="mx my mz na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph="">The @ExceptionHandler methods within the
-									@ControllerAdvice class handle specific exception types and return appropriate
-									responses.</p>
-								<img src="https://miro.medium.com/v2/resize:fit:700/1*CzoJBW4aL6y6zIo9NQpL6A.png">
-								<p>There are several ways to handle exceptions in Spring Boot. One way is to use the
-									@ControllerAdvice annotation. This annotation allows you to create a global
-									exception handler that can catch and handle exceptions that occur in any controller
-									in your application. To use this annotation, you need to create a class that will
-									act as the exception handler, and annotate it with @ControllerAdvice. In this class,
-									you can define methods that will handle specific exceptions.</p>
-								<p><b>@ControllerAdvice</b> and <b>@RestControllerAdvice</b> are both annotations that
-									are used to
-									create a global exception handler in a Spring Boot application. The main difference
-									between the two is the response format that they return.</p>
-
-								<p><b>@ControllerAdvice</b> is used to create a global exception handler that returns a
-									view
-									(HTML) as the response. It is typically used in web applications where you want to
-									display a custom error page to the user when an exception occurs.</p>
-
-								<p><b>@RestControllerAdvice</b> is used to create a global exception handler that
-									returns a
-									JSON or XML response. It is typically used in RESTful web services where you want to
-									return a specific error response in case of an exception.</p>
-
-								<p>In short, <b>@ControllerAdvice</b> is used for handling exceptions in web
-									applications and
-									returns a view as a response, while @RestControllerAdvice is used for handling
-									exceptions in RESTful web services and returns a JSON or XML response.</p>
-								<p>Let’s provide a more detailed explanation for the
-									real-life example of throwing custom exceptions from a service layer and handling
-									them globally in a Spring Boot application for a product-related scenario.<br>Steps:
+									data-selectable-paragraph="">The @ExceptionHandler methods
+									within the @ControllerAdvice class handle specific exception
+									types and return appropriate responses.</p>
+								<img
+									src="https://miro.medium.com/v2/resize:fit:700/1*CzoJBW4aL6y6zIo9NQpL6A.png">
+								<p>There are several ways to handle exceptions in Spring
+									Boot. One way is to use the @ControllerAdvice annotation. This
+									annotation allows you to create a global exception handler that
+									can catch and handle exceptions that occur in any controller in
+									your application. To use this annotation, you need to create a
+									class that will act as the exception handler, and annotate it
+									with @ControllerAdvice. In this class, you can define methods
+									that will handle specific exceptions.</p>
+								<p>
+									<b>@ControllerAdvice</b> and <b>@RestControllerAdvice</b> are
+									both annotations that are used to create a global exception
+									handler in a Spring Boot application. The main difference
+									between the two is the response format that they return.
 								</p>
-								<p><strong>1. Create a Custom ProductNotFoundException:</strong></p>
-								<p>In this step, we create a custom exception class, <code
-										class="cw oi oj ok ol b">ProductNotFoundException</code>, which extends <code
-										class="cw oi oj ok ol b">RuntimeException</code>. This custom exception is used
-									to represent situations where a product is not found in the system. By creating a
-									custom exception, we can provide more specific information about the error.</p>
-								<pre
-									class="nz oa ob oc od oe of og bo oh ba bj"><span id="5c2d" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph=""><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title.class">ProductNotFoundException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title.class">RuntimeException</span> {<br> <span class="hljs-keyword">public</span> <span class="hljs-title.function">ProductNotFoundException</span><span class="hljs-params">(Long productId)</span> {<br> <span class="hljs-built_in">super</span>(<span class="hljs-string">“Product not found with ID: “</span> + productId);<br> }<br>}</span></pre>
+
+								<p>
+									<b>@ControllerAdvice</b> is used to create a global exception
+									handler that returns a view (HTML) as the response. It is
+									typically used in web applications where you want to display a
+									custom error page to the user when an exception occurs.
+								</p>
+
+								<p>
+									<b>@RestControllerAdvice</b> is used to create a global
+									exception handler that returns a JSON or XML response. It is
+									typically used in RESTful web services where you want to return
+									a specific error response in case of an exception.
+								</p>
+
+								<p>
+									In short, <b>@ControllerAdvice</b> is used for handling
+									exceptions in web applications and returns a view as a
+									response, while @RestControllerAdvice is used for handling
+									exceptions in RESTful web services and returns a JSON or XML
+									response.
+								</p>
+								<p>
+									Let’s provide a more detailed explanation for the real-life
+									example of throwing custom exceptions from a service layer and
+									handling them globally in a Spring Boot application for a
+									product-related scenario.<br>Steps:
+								</p>
+								<p>
+									<strong>1. Create a Custom ProductNotFoundException:</strong>
+								</p>
+								<p>
+									In this step, we create a custom exception class,
+									<code class="cw oi oj ok ol b">ProductNotFoundException</code>
+									, which extends
+									<code class="cw oi oj ok ol b">RuntimeException</code>
+									. This custom exception is used to represent situations where a
+									product is not found in the system. By creating a custom
+									exception, we can provide more specific information about the
+									error.
+								</p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<span id="5c2d" class="oi oj gr of b bf ok ol l om on"
+										data-selectable-paragraph=""><span class="hljs-keyword">public</span> <span
+										class="hljs-keyword">class</span> <span
+										class="hljs-title.class">ProductNotFoundException</span> <span
+										class="hljs-keyword">extends</span> <span
+										class="hljs-title.class">RuntimeException</span> {<br> <span
+										class="hljs-keyword">public</span> <span
+										class="hljs-title.function">ProductNotFoundException</span><span
+										class="hljs-params">(Long productId)</span> {<br> <span
+										class="hljs-built_in">super</span>(<span class="hljs-string">“Product not found with ID: “</span> + productId);<br> }<br>}</span>
+								</pre>
 								<p id="4e99"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
 									data-selectable-paragraph="">Explanation:</p>
-								<ul>Custom exceptions are used to capture
-									application-specific error scenarios.</li>
-									<li>In this case, we include the <code class="cw oi oj ok ol b">productId</code> in
-										the exception message to
-										provide detailed information about the missing product.</li>
+								<ul>
+									Custom exceptions are used to capture application-specific
+									error scenarios.
+									</li>
+									<li>In this case, we include the <code
+											class="cw oi oj ok ol b">productId</code> in the exception
+										message to provide detailed information about the missing
+										product.
+									</li>
 								</ul>
-								<p>2. Create a Product Service:</strong></p>
-								<p>Here, we create a <code class="cw oi oj ok ol b">ProductService</code> class
-									responsible for fetching
-									product information. If a product is not found, it throws a <code
-										class="cw oi oj ok ol b">ProductNotFoundException</code>.</p>
-								<pre
-									class="nz oa ob oc od oe of og bo oh ba bj"><span id="8e20" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph=""><span class="hljs-meta">@Service</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title.class">ProductService</span> {<br><br>    <span class="hljs-keyword">public</span> Product <span class="hljs-title.function">getProductById</span><span class="hljs-params">(Long productId)</span> {<br>        <span class="hljs-comment">// Simulate product retrieval logic</span><br>        <span class="hljs-type">Product</span> <span class="hljs-variable">product</span> <span class="hljs-operator">=</span> getProductFromDatabase(productId);<br>        <br>        <span class="hljs-keyword">if</span> (product == <span class="hljs-literal">null</span>) {<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title.class">ProductNotFoundException</span>(productId);<br>        }<br>        <br>        <span class="hljs-keyword">return</span> product;<br>    }<br><br>    <span class="hljs-comment">// Simulated method to fetch a product from a database</span><br>    <span class="hljs-keyword">private</span> Product <span class="hljs-title.function">getProductFromDatabase</span><span class="hljs-params">(Long productId)</span> {<br>        <span class="hljs-comment">// Implement your database logic here</span><br>        <span class="hljs-comment">// Return null if the product is not found</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    }<br>}</span></pre>
+								<p>
+									2. Create a Product Service:</strong>
+								</p>
+								<p>
+									Here, we create a
+									<code class="cw oi oj ok ol b">ProductService</code>
+									class responsible for fetching product information. If a
+									product is not found, it throws a
+									<code class="cw oi oj ok ol b">ProductNotFoundException</code>
+									.
+								</p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<span id="8e20" class="oi oj gr of b bf ok ol l om on"
+										data-selectable-paragraph=""><span class="hljs-meta">@Service</span><br><span
+										class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+										class="hljs-title.class">ProductService</span> {<br><br>    <span
+										class="hljs-keyword">public</span> Product <span
+										class="hljs-title.function">getProductById</span><span
+										class="hljs-params">(Long productId)</span> {<br>        <span
+										class="hljs-comment">// Simulate product retrieval logic</span><br>        <span
+										class="hljs-type">Product</span> <span class="hljs-variable">product</span> <span
+										class="hljs-operator">=</span> getProductFromDatabase(productId);<br>        <br>        <span
+										class="hljs-keyword">if</span> (product == <span
+										class="hljs-literal">null</span>) {<br>            <span
+										class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span
+										class="hljs-title.class">ProductNotFoundException</span>(productId);<br>        }<br>        <br>        <span
+										class="hljs-keyword">return</span> product;<br>    }<br><br>    <span
+										class="hljs-comment">// Simulated method to fetch a product from a database</span><br>    <span
+										class="hljs-keyword">private</span> Product <span
+										class="hljs-title.function">getProductFromDatabase</span><span
+										class="hljs-params">(Long productId)</span> {<br>        <span
+										class="hljs-comment">// Implement your database logic here</span><br>        <span
+										class="hljs-comment">// Return null if the product is not found</span><br>        <span
+										class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    }<br>}</span>
+								</pre>
 								<p id="17ee"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
 									data-selectable-paragraph="">Explanation:</p>
@@ -277,74 +334,119 @@
 									<li id="f502"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
 										data-selectable-paragraph="">The <code
-											class="cw oi oj ok ol b">ProductService</code> encapsulates the business
-										logic related to products.</li>
+											class="cw oi oj ok ol b">ProductService</code> encapsulates
+										the business logic related to products.
+									</li>
 									<li id="fec7"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
 										data-selectable-paragraph="">The <code
-											class="cw oi oj ok ol b">getProductById</code> method simulates fetching a
-										product from a database or another data source.</li>
+											class="cw oi oj ok ol b">getProductById</code> method
+										simulates fetching a product from a database or another data
+										source.
+									</li>
 									<li id="4bd0"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">If the product is not found (based on the
-										simulation), it throws a <code
-											class="cw oi oj ok ol b">ProductNotFoundException</code>.</li>
+										data-selectable-paragraph="">If the product is not found
+										(based on the simulation), it throws a <code
+											class="cw oi oj ok ol b">ProductNotFoundException</code>.
+									</li>
 								</ul>
 								<p id="b9ff"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">3. Create a Global Exception
-										Handler:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">3. Create a Global Exception
+										Handler:</strong>
+								</p>
 								<p id="d063"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph="">This step involves creating a global exception handler
-									using <code class="cw oi oj ok ol b">@ControllerAdvice</code>. The handler is
-									responsible for catching <code
-										class="cw oi oj ok ol b">ProductNotFoundException</code> globally and returning
-									a custom error response.</p>
-								<pre
-									class="nz oa ob oc od oe of og bo oh ba bj"><span id="16ee" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph=""><span class="hljs-meta">@ControllerAdvice</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title.class">GlobalExceptionHandler</span> {<br><br>    <span class="hljs-meta">@ExceptionHandler(ProductNotFoundException.class)</span><br>    <span class="hljs-keyword">public</span> ResponseEntity&lt;ErrorResponse&gt; <span class="hljs-title.function">handleProductNotFoundException</span><span class="hljs-params">(ProductNotFoundException ex)</span> {<br>        <span class="hljs-type">ErrorResponse</span> <span class="hljs-variable">errorResponse</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title.class">ErrorResponse</span>(HttpStatus.NOT_FOUND.value(), ex.getMessage());<br>        <span class="hljs-keyword">return</span> ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);<br>    }<br>}</span></pre>
+									data-selectable-paragraph="">
+									This step involves creating a global exception handler using
+									<code class="cw oi oj ok ol b">@ControllerAdvice</code>
+									. The handler is responsible for catching
+									<code class="cw oi oj ok ol b">ProductNotFoundException</code>
+									globally and returning a custom error response.
+								</p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<span id="16ee" class="oi oj gr of b bf ok ol l om on"
+										data-selectable-paragraph=""><span class="hljs-meta">@ControllerAdvice</span><br><span
+										class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+										class="hljs-title.class">GlobalExceptionHandler</span> {<br><br>    <span
+										class="hljs-meta">@ExceptionHandler(ProductNotFoundException.class)</span><br>    <span
+										class="hljs-keyword">public</span> ResponseEntity&lt;ErrorResponse&gt; <span
+										class="hljs-title.function">handleProductNotFoundException</span><span
+										class="hljs-params">(ProductNotFoundException ex)</span> {<br>        <span
+										class="hljs-type">ErrorResponse</span> <span
+										class="hljs-variable">errorResponse</span> <span
+										class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span
+										class="hljs-title.class">ErrorResponse</span>(HttpStatus.NOT_FOUND.value(), ex.getMessage());<br>        <span
+										class="hljs-keyword">return</span> ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);<br>    }<br>}</span>
+								</pre>
 								<p id="523c"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
 									data-selectable-paragraph="">Explanation:</p>
 								<ul class="">
 									<li id="e0eb"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph=""><mark class="xf xg ao"><code
-												class="cw oi oj ok ol b">@ControllerAdvice</code></mark><mark
-											class="xf xg ao"> marks the class as a global exception handler, allowing it
-											to handle exceptions from multiple controllers.</mark></li>
+										data-selectable-paragraph=""><mark class="xf xg ao">
+											<code class="cw oi oj ok ol b">@ControllerAdvice</code>
+										</mark>
+										<mark class="xf xg ao"> marks the class as a global
+											exception handler, allowing it to handle exceptions from
+											multiple controllers.</mark></li>
 									<li id="f6df"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
-										data-selectable-paragraph=""><mark class="xf xg ao">The </mark><mark
-											class="xf xg ao"><code
-												class="cw oi oj ok ol b">@ExceptionHandler</code></mark><mark
-											class="xf xg ao"> method within the handler catches </mark><mark
-											class="xf xg ao"><code
-												class="cw oi oj ok ol b">ProductNotFoundException</code></mark><mark
-											class="xf xg ao">.</mark></li>
+										data-selectable-paragraph=""><mark class="xf xg ao">The
+										</mark>
+										<mark class="xf xg ao">
+											<code class="cw oi oj ok ol b">@ExceptionHandler</code>
+										</mark>
+										<mark class="xf xg ao"> method within the handler
+											catches </mark>
+										<mark class="xf xg ao">
+											<code class="cw oi oj ok ol b">ProductNotFoundException</code>
+										</mark>
+										<mark class="xf xg ao">.</mark></li>
 									<li id="90b0"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
-										data-selectable-paragraph=""><mark class="xf xg ao">It constructs an
-										</mark><mark class="xf xg ao"><code
-												class="cw oi oj ok ol b">ErrorResponse</code></mark><mark
-											class="xf xg ao"> object with a 404 Not Found status code and the custom
-											error message from the exception.</mark></li>
+										data-selectable-paragraph=""><mark class="xf xg ao">It
+											constructs an </mark>
+										<mark class="xf xg ao">
+											<code class="cw oi oj ok ol b">ErrorResponse</code>
+										</mark>
+										<mark class="xf xg ao"> object with a 404 Not Found
+											status code and the custom error message from the exception.</mark></li>
 									<li id="a060"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">The handler returns a JSON response containing the
-										error details.</li>
+										data-selectable-paragraph="">The handler returns a JSON
+										response containing the error details.</li>
 								</ul>
 								<p id="5563"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">4. Create a Custom Error Response
-										Class:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">4. Create a Custom Error
+										Response Class:</strong>
+								</p>
 								<p id="c304"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph="">We define a custom error response class, <code
-										class="cw oi oj ok ol b">ErrorResponse</code>, to structure error messages
-									consistently in our application.</p>
-								<pre
-									class="nz oa ob oc od oe of og bo oh ba bj"><span id="fe41" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph=""><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title.class">ErrorResponse</span> {<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> statusCode;<br>    <span class="hljs-keyword">private</span> String message;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title.function">ErrorResponse</span><span class="hljs-params">(<span class="hljs-type">int</span> statusCode, String message)</span> {<br>        <span class="hljs-built_in">this</span>.statusCode = statusCode;<br>        <span class="hljs-built_in">this</span>.message = message;<br>    }<br>    <span class="hljs-comment">// Getter methods</span><br>}</span></pre>
+									data-selectable-paragraph="">
+									We define a custom error response class,
+									<code class="cw oi oj ok ol b">ErrorResponse</code>
+									, to structure error messages consistently in our application.
+								</p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<span id="fe41" class="oi oj gr of b bf ok ol l om on"
+										data-selectable-paragraph=""><span class="hljs-keyword">public</span> <span
+										class="hljs-keyword">class</span> <span
+										class="hljs-title.class">ErrorResponse</span> {<br>    <span
+										class="hljs-keyword">private</span> <span class="hljs-type">int</span> statusCode;<br>    <span
+										class="hljs-keyword">private</span> String message;<br><br>    <span
+										class="hljs-keyword">public</span> <span
+										class="hljs-title.function">ErrorResponse</span><span
+										class="hljs-params">(<span class="hljs-type">int</span> statusCode, String message)</span> {<br>        <span
+										class="hljs-built_in">this</span>.statusCode = statusCode;<br>        <span
+										class="hljs-built_in">this</span>.message = message;<br>    }<br>    <span
+										class="hljs-comment">// Getter methods</span><br>}</span>
+								</pre>
 								<p id="0bdd"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
 									data-selectable-paragraph="">Explanation:</p>
@@ -352,24 +454,43 @@
 									<li id="cfa9"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
 										data-selectable-paragraph="">The <code
-											class="cw oi oj ok ol b">ErrorResponse</code> class provides a standardized
-										format for error responses.</li>
+											class="cw oi oj ok ol b">ErrorResponse</code> class provides
+										a standardized format for error responses.
+									</li>
 									<li id="e517"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">It includes fields for the HTTP status code and a
-										message describing the error.</li>
+										data-selectable-paragraph="">It includes fields for the
+										HTTP status code and a message describing the error.</li>
 								</ul>
 								<p id="8471"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">5. Controller to Fetch
-										Product:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">5. Controller to Fetch Product:</strong>
+								</p>
 								<p id="d453"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph="">In this step, we create a controller, <code
-										class="cw oi oj ok ol b">ProductController</code>, responsible for handling
-									requests to fetch products by their IDs</p>
-								<pre
-									class="nz oa ob oc od oe of og bo oh ba bj"><span id="5979" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph=""><span class="hljs-meta">@RestController</span><br><span class="hljs-meta">@RequestMapping("/api/products")</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title.class">ProductController</span> {<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> ProductService productService;<br><br>    <span class="hljs-meta">@GetMapping("/{productId}")</span><br>    <span class="hljs-keyword">public</span> ResponseEntity&lt;Product&gt; <span class="hljs-title.function">getProduct</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long productId)</span> {<br>        <span class="hljs-type">Product</span> <span class="hljs-variable">product</span> <span class="hljs-operator">=</span> productService.getProductById(productId);<br>        <span class="hljs-keyword">return</span> ResponseEntity.ok(product);<br>    }<br>}</span></pre>
+									data-selectable-paragraph="">
+									In this step, we create a controller,
+									<code class="cw oi oj ok ol b">ProductController</code>
+									, responsible for handling requests to fetch products by their
+									IDs
+								</p>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<span id="5979" class="oi oj gr of b bf ok ol l om on"
+										data-selectable-paragraph=""><span class="hljs-meta">@RestController</span><br><span
+										class="hljs-meta">@RequestMapping("/api/products")</span><br><span
+										class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+										class="hljs-title.class">ProductController</span> {<br><br>    <span
+										class="hljs-meta">@Autowired</span><br>    <span
+										class="hljs-keyword">private</span> ProductService productService;<br><br>    <span
+										class="hljs-meta">@GetMapping("/{productId}")</span><br>    <span
+										class="hljs-keyword">public</span> ResponseEntity&lt;Product&gt; <span
+										class="hljs-title.function">getProduct</span><span
+										class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long productId)</span> {<br>        <span
+										class="hljs-type">Product</span> <span class="hljs-variable">product</span> <span
+										class="hljs-operator">=</span> productService.getProductById(productId);<br>        <span
+										class="hljs-keyword">return</span> ResponseEntity.ok(product);<br>    }<br>}</span>
+								</pre>
 								<p id="1c07"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
 									data-selectable-paragraph="">Explanation:</p>
@@ -377,203 +498,259 @@
 									<li id="a3eb"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
 										data-selectable-paragraph="">The <code
-											class="cw oi oj ok ol b">ProductController</code> defines an endpoint to
-										retrieve product details by the product's ID.</li>
+											class="cw oi oj ok ol b">ProductController</code> defines an
+										endpoint to retrieve product details by the product's ID.
+									</li>
 									<li id="0933"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
 										data-selectable-paragraph="">It uses the <code
-											class="cw oi oj ok ol b">ProductService</code> to fetch the product.</li>
+											class="cw oi oj ok ol b">ProductService</code> to fetch the
+										product.
+									</li>
 									<li id="f960"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">If the product is found, it returns a successful
-										response with the product data.</li>
+										data-selectable-paragraph="">If the product is found, it
+										returns a successful response with the product data.</li>
 								</ul>
 								<p id="4c79"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">6. Testing the Exception
-										Handling:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">6. Testing the Exception
+										Handling:</strong>
+								</p>
 								<p id="04ec"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph="">To test the exception handling, make a GET request to
-									fetch a product with an ID that doesn’t exist in the system. This will trigger the
-									<code class="cw oi oj ok ol b">ProductNotFoundException</code>, and the global
-									exception handler will respond with a JSON error message.
+									data-selectable-paragraph="">
+									To test the exception handling, make a GET request to fetch a
+									product with an ID that doesn’t exist in the system. This will
+									trigger the
+									<code class="cw oi oj ok ol b">ProductNotFoundException</code>
+									, and the global exception handler will respond with a JSON
+									error message.
 								</p>
-								<pre
-									class="nz oa ob oc od oe of og bo oh ba bj"><span id="5e10" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph="">curl -X GET http://localhost:8080/api/products/123</span></pre>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<span id="5e10" class="oi oj gr of b bf ok ol l om on"
+										data-selectable-paragraph="">curl -X GET http://localhost:8080/api/products/123</span>
+								</pre>
 								<p id="1621"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
 									data-selectable-paragraph="">Response</p>
-								<pre
-									class="nz oa ob oc od oe of og bo oh ba bj"><span id="3026" class="oi oj gr of b bf ok ol l om on" data-selectable-paragraph=""><span class="hljs-punctuation">{</span><br>    <span class="hljs-attr">"statusCode"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">404</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">"message"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"Product not found with ID: 123"</span><br><span class="hljs-punctuation">}</span></span></pre>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<span id="3026" class="oi oj gr of b bf ok ol l om on"
+										data-selectable-paragraph=""><span
+										class="hljs-punctuation">{</span><br>    <span
+										class="hljs-attr">"statusCode"</span><span
+										class="hljs-punctuation">:</span> <span class="hljs-number">404</span><span
+										class="hljs-punctuation">,</span><br>    <span
+										class="hljs-attr">"message"</span><span
+										class="hljs-punctuation">:</span> <span class="hljs-string">"Product not found with ID: 123"</span><br><span
+										class="hljs-punctuation">}</span></span>
+								</pre>
 								<p id="a8de"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
 									data-selectable-paragraph="">Explanation:</p>
 								<ul class="">
 									<li id="3ba4"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">The test request attempts to fetch a product with
-										an ID (e.g., 123) that doesn’t exist in the system.</li>
+										data-selectable-paragraph="">The test request attempts to
+										fetch a product with an ID (e.g., 123) that doesn’t exist in
+										the system.</li>
 									<li id="caa3"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
 										data-selectable-paragraph="">As a result, the <code
-											class="cw oi oj ok ol b">ProductNotFoundException</code> is thrown from the
-										service layer.</li>
+											class="cw oi oj ok ol b">ProductNotFoundException</code> is
+										thrown from the service layer.
+									</li>
 									<li id="af90"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">The global exception handler, defined with <code
-											class="cw oi oj ok ol b">@ControllerAdvice</code>, captures the exception
-										and constructs a JSON error response with a 404 status code and the custom error
-										message.</li>
+										data-selectable-paragraph="">The global exception
+										handler, defined with <code class="cw oi oj ok ol b">@ControllerAdvice</code>,
+										captures the exception and constructs a JSON error response
+										with a 404 status code and the custom error message.
+									</li>
 								</ul>
 								<p id="bd01"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph="">— — — — — — — — — — — — — — — — — — — — — — — — — — — —
-									— — — — — — — — — —</p>
+									data-selectable-paragraph="">— — — — — — — — — — — — — — —
+									— — — — — — — — — — — — — — — — — — — — — — —</p>
 								<h2 id="7d2b"
 									class="pd oq gr be pe pf pg dx ph pi pj dz pk nh pl pm pn nl po pp pq np pr ps pt pu bj"
-									data-selectable-paragraph=""><strong class="al">Sequence Flow Diagram</strong></h2>
+									data-selectable-paragraph="">
+									<strong class="al">Sequence Flow Diagram</strong>
+								</h2>
 								<p id="6dde"
 									class="pw-post-body-paragraph mx my gr na b hp pv nc nd hs pw nf ng nh px nj nk nl py nn no np pz nr ns nt gk bj"
-									data-selectable-paragraph="">the flow sequence diagram from the controller to error
-									handling using <code class="cw oi oj ok ol b">@ControllerAdvice</code> in a Spring
-									application:</p>
+									data-selectable-paragraph="">
+									the flow sequence diagram from the controller to error handling
+									using
+									<code class="cw oi oj ok ol b">@ControllerAdvice</code>
+									in a Spring application:
+								</p>
 								<ol class="">
 									<li id="048f"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt qa ow ox bj"
-										data-selectable-paragraph=""><strong class="na gs">Controller Layer:</strong>
-									</li>
+										data-selectable-paragraph=""><strong class="na gs">Controller
+											Layer:</strong></li>
 								</ol>
 								<ul class="">
 									<li id="b6ad"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">A client (e.g., a web browser or a REST client)
-										makes a request to a specific controller method, typically an HTTP endpoint
-										exposed by your Spring application.</li>
+										data-selectable-paragraph="">A client (e.g., a web
+										browser or a REST client) makes a request to a specific
+										controller method, typically an HTTP endpoint exposed by your
+										Spring application.</li>
 								</ul>
 								<p id="86c4"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">2. Controller Method
-										Execution:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">2. Controller Method Execution:</strong>
+								</p>
 								<ul class="">
 									<li id="1ac2"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">The Spring MVC framework routes the incoming
-										request to the appropriate controller method based on the request mapping
-										annotations, such as <code class="cw oi oj ok ol b">@GetMapping</code> or <code
-											class="cw oi oj ok ol b">@PostMapping</code>.</li>
+										data-selectable-paragraph="">The Spring MVC framework
+										routes the incoming request to the appropriate controller
+										method based on the request mapping annotations, such as <code
+											class="cw oi oj ok ol b">@GetMapping</code> or <code
+											class="cw oi oj ok ol b">@PostMapping</code>.
+									</li>
 									<li id="7ff2"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">The controller method executes and performs its
-										business logic.</li>
+										data-selectable-paragraph="">The controller method
+										executes and performs its business logic.</li>
 								</ul>
 								<p id="99e2"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">3. Exception Occurs:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">3. Exception Occurs:</strong>
+								</p>
 								<ul class="">
 									<li id="e7f1"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">During the execution of the controller method, an
-										exception can be thrown for various reasons. This could be due to business logic
-										errors, validation failures, or any other unexpected issues.</li>
+										data-selectable-paragraph="">During the execution of the
+										controller method, an exception can be thrown for various
+										reasons. This could be due to business logic errors,
+										validation failures, or any other unexpected issues.</li>
 								</ul>
 								<p id="c1a3"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">4. Exception
-										Propagation:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">4. Exception Propagation:</strong>
+								</p>
 								<ul class="">
 									<li id="f494"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">Once an exception is thrown within the controller
-										method, it starts propagating up the call stack.</li>
+										data-selectable-paragraph="">Once an exception is thrown
+										within the controller method, it starts propagating up the
+										call stack.</li>
 								</ul>
 								<p id="15f8"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">5. @ControllerAdvice
-										Class:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">5. @ControllerAdvice Class:</strong>
+								</p>
 								<ul class="">
 									<li id="01e1"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph=""><mark class="xf xg ao">The exception propagates up
-											until it reaches the global exception handler class annotated with
-										</mark><mark class="xf xg ao"><code
-												class="cw oi oj ok ol b">@ControllerAdvice</code></mark><mark
-											class="xf xg ao">.</mark></li>
+										data-selectable-paragraph=""><mark class="xf xg ao">The
+											exception propagates up until it reaches the global exception
+											handler class annotated with </mark>
+										<mark class="xf xg ao">
+											<code class="cw oi oj ok ol b">@ControllerAdvice</code>
+										</mark>
+										<mark class="xf xg ao">.</mark></li>
 								</ul>
 								<p id="9ff5"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">6. @ExceptionHandler
-										Methods:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">6. @ExceptionHandler Methods:</strong>
+								</p>
 								<ul class="">
 									<li id="bec2"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
 										data-selectable-paragraph="">Within the <code
 											class="cw oi oj ok ol b">@ControllerAdvice</code> class,<mark
-											class="xf xg ao"> there are one or more </mark><mark class="xf xg ao"><code
-												class="cw oi oj ok ol b">@ExceptionHandler</code></mark><mark
-											class="xf xg ao"> methods defined to handle specific types of
-											exceptions.</mark></li>
+											class="xf xg ao"> there are one or more </mark>
+										<mark class="xf xg ao">
+											<code class="cw oi oj ok ol b">@ExceptionHandler</code>
+										</mark>
+										<mark class="xf xg ao"> methods defined to handle
+											specific types of exceptions.</mark></li>
 								</ul>
 								<p id="863b"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">7. Matching Exception
-										Handler:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">7. Matching Exception Handler:</strong>
+								</p>
 								<ul class="">
 									<li id="eae9"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">The Spring framework identifies the appropriate
-										<code class="cw oi oj ok ol b">@ExceptionHandler</code> method to handle the
-										specific exception type based on the method's parameter type.
+										data-selectable-paragraph="">The Spring framework
+										identifies the appropriate <code class="cw oi oj ok ol b">@ExceptionHandler</code>
+										method to handle the specific exception type based on the
+										method's parameter type.
 									</li>
 								</ul>
 								<p id="9b6a"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">8. Exception Handling:</strong>
+									data-selectable-paragraph="">
+									<strong class="na gs">8. Exception Handling:</strong>
 								</p>
 								<ul class="">
 									<li id="a663"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
 										data-selectable-paragraph="">The matched <code
-											class="cw oi oj ok ol b">@ExceptionHandler</code> method executes to handle
-										the exception.</li>
+											class="cw oi oj ok ol b">@ExceptionHandler</code> method
+										executes to handle the exception.
+									</li>
 									<li id="e08d"
 										class="mx my gr na b hp oy nc nd hs oz nf ng nh pa nj nk nl pb nn no np pc nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">This method can perform tasks such as logging the
-										error, constructing an error response, or taking any other custom action.</li>
+										data-selectable-paragraph="">This method can perform
+										tasks such as logging the error, constructing an error
+										response, or taking any other custom action.</li>
 								</ul>
 								<p id="2337"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">9. Response Generation:</strong>
+									data-selectable-paragraph="">
+									<strong class="na gs">9. Response Generation:</strong>
 								</p>
 								<ul class="">
 									<li id="b8e4"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
 										data-selectable-paragraph="">The <code
-											class="cw oi oj ok ol b">@ExceptionHandler</code> method typically generates
-										an error response, which can be in the form of a JSON response, an HTML page, or
-										any other response format.</li>
+											class="cw oi oj ok ol b">@ExceptionHandler</code> method
+										typically generates an error response, which can be in the
+										form of a JSON response, an HTML page, or any other response
+										format.
+									</li>
 								</ul>
 								<p id="3c9d"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">10. Response Sent to
-										Client:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">10. Response Sent to Client:</strong>
+								</p>
 								<ul class="">
 									<li id="430b"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">The error response generated by the <code
-											class="cw oi oj ok ol b">@ExceptionHandler</code> method is sent back to the
-										client that made the original request.</li>
+										data-selectable-paragraph="">The error response generated
+										by the <code class="cw oi oj ok ol b">@ExceptionHandler</code>
+										method is sent back to the client that made the original
+										request.
+									</li>
 								</ul>
 								<p id="eae4"
 									class="pw-post-body-paragraph mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt gk bj"
-									data-selectable-paragraph=""><strong class="na gs">11. Client Receives Error
-										Response:</strong></p>
+									data-selectable-paragraph="">
+									<strong class="na gs">11. Client Receives Error
+										Response:</strong>
+								</p>
 								<ul class="">
 									<li id="27fd"
 										class="mx my gr na b hp nb nc nd hs ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt ov ow ox bj"
-										data-selectable-paragraph="">The client receives the error response and can
-										process the error information as needed. For example, it can display an error
-										message to the user or handle the error programmatically.</li>
+										data-selectable-paragraph="">The client receives the
+										error response and can process the error information as
+										needed. For example, it can display an error message to the
+										user or handle the error programmatically.</li>
 								</ul>
 							</div>
 						</div>
@@ -582,14 +759,15 @@
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link btn-outline-primary" href="../spring/mvc.html">&lArr;
-							Previous</a></li>
-					<li class="page-item"><a class="page-link" href="../spring/actuators.html">Next
-							&rArr;</a></li>
+					<li class="page-item"><a class="page-link btn-outline-primary"
+						href="../spring/mvc.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link"
+						href="../spring/actuators.html">Next &rArr;</a></li>
 				</ul>
 			</div>
-			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
-					src="../scripts/images/top.jpeg" /></button>
+			<button onclick="topFunction()" id="myBtn" title="Go to top">
+				<img height="30" width="30" src="../scripts/images/top.jpeg" />
+			</button>
 		</main>
 	</div>
 	<script>
@@ -620,10 +798,11 @@
 	<script src="../scripts/js/site.js"></script>
 </body>
 <footer class="footer">
-	<p>©
+	<p>
+		©
 		<script>var d = new Date();
-			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
-		Kalyan Kolloju.
+			document.write(d.getFullYear());</script>
+		, The content is copyrighted to Ravi Kalyan Kolloju.
 	</p>
 </footer>
 

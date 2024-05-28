@@ -3,56 +3,58 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="author" content="RaviKalyan">
-	<title>Introduction</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
-	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-	<link rel="stylesheet" href="../scripts/css/site.css">
-	<script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="RaviKalyan">
+<title>Introduction</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="../scripts/images/tab_logo.png" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Elsie+Swash+Caps:wght@400;900&family=Kalam:wght@300;400;700&family=Pacifico&family=Satisfy&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet" href="../scripts/css/site.css">
+<script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
 			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
 		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
-	<style>
-		@media screen and (min-width: 1025px) {
-			.div-to-desk {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
+<style>
+@media screen and (min-width: 1025px) {
+	.div-to-desk {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
 
-		@media screen and (max-width: 1025px) {
-			.div-to-hide {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
-	</style>
+@media screen and (max-width: 1025px) {
+	.div-to-hide {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
+</style>
 </head>
 
 <body>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<a class="navbar-item doc1" href="../home.html">
-				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			<a class="navbar-item" href="./home.html"> <img width="40"
+				height="25" src="../scripts/images/nani1.png" alt="Home" />
 			</a>
+			<h4 class="div-to-desk, berkshire-swash-regular">Ravish</h4>
 			<button class="navbar-burger" data-target="topbar-nav">
-				<span></span>
-				<span></span>
-				<span></span>
+				<span></span> <span></span> <span></span>
 			</button>
 		</div>
 		<div id="topbar-nav" class="navbar-menu">
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
-					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
-								width="25" src="../scripts/images/home.png"></i></a>
-					</li>
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1"
+						href="../home.html"><img height="25" width="25"
+							src="../scripts/images/home.png"></i></a></li>
 					<div class="navbar-item is-hoverable">
 						<a class="navbar-link" href="../java/introduction.html">Java</a>
 					</div>
@@ -63,24 +65,26 @@
 						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+						<a class="navbar-link" href="../java/java8.html">Java 8
+							Features</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+						<a class="navbar-link" href="../DP/introduction.html">Design
+							Patterns</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+						<a class="navbar-link"
+							href="../interview/interview-questions.html">Interview
+							Questions</a>
 					</div>
-					<label class="theme-toggler div-to-hide">
-						<input type="checkbox" id="switch-theme-checkbox" />
-						<span class="icon"></span>
+					<label class="theme-toggler div-to-hide"> <input
+						type="checkbox" id="switch-theme-checkbox" /> <span class="icon"></span>
 					</label>
 				</div>
 			</div>
 		</div>
-		<label class="theme-toggler div-to-desk" style="top: 22px;">
-			<input type="checkbox" id="switch-theme-mobile" />
-			<span class="icon"></span>
+		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input
+			type="checkbox" id="switch-theme-mobile" /> <span class="icon"></span>
 		</label>
 	</nav>
 
@@ -92,79 +96,70 @@
 						<ul class="nav-list">
 							<h4>Spring</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/introduction.html">Spring
-									Introduction</a></li>
+								href="../spring/introduction.html">Spring Introduction</a></li>
 							<h4>Spring MVC</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/mvc.html">Spring
-									MVC</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/mvc.html">Spring MVC</a></li>
 							<h4>Spring Exceptions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/exceptions.html">Spring
-									Exceptions</a></li>
+								href="../spring/exceptions.html">Spring Exceptions</a></li>
 							<h4>Spring Actuators</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/actuators.html">Spring Actuators</a>
-							</li>
+								href="../spring/actuators.html">Spring Actuators</a></li>
 							<h4>Spring Annotations</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-core.html">Core
+								href="../spring/annotations-core.html">Core Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-mvc.html">MVC Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-transactions.html">Transactions
+									& Error Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-configuration.html">Configuration
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-mvc.html">MVC
+								href="../spring/annotations-aop.html">AOP Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-jpa.html">JPA Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-cloud.html">Cloud Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-scheduling.html">Scheduling
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-transactions.html">Transactions & Error
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-configuration.html">Configuration
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-aop.html">AOP
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-jpa.html">JPA
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-cloud.html">Cloud
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-scheduling.html">Scheduling
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-cache-error.html">Caching
+								href="../spring/annotations-cache-error.html">Caching
 									Annotations</a></li>
 							<h4>Spring AOP</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
-									AOP</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/aop.html">Spring AOP</a></li>
 							<h4>Spring JPA</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/jpa.html">Spring
-									JPA</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/jpa.html">Spring JPA</a></li>
 							<h4>Spring Transactions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/transactions.html">Spring
-									Transactions</a></li>
+								href="../spring/transactions.html">Spring Transactions</a></li>
 							<h4>Spring Async</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/async.html">Spring
-									Async</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/async.html">Spring Async</a></li>
 							<h4>Spring Batch</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/batch.html">Spring
-									Batch</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/batch.html">Spring Batch</a></li>
 							<h4>Spring Aspect</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aspect.html">Spring
-									Aspect</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/aspect.html">Spring Aspect</a></li>
 							<h4>Spring Kafka</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/kafka.html">Spring
-									Kafka</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/kafka.html">Spring Kafka</a></li>
 							<h4>Spring Logging</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/logging.html">Spring
-									Logging</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/logging.html">Spring Logging</a></li>
 							<h4>Spring Security</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/security.html">Spring
-									Security</a></li>
+								href="../spring/security.html">Spring Security</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/spring-interview-questions.html">Spring Interview Questions</a></li>
+								href="../spring/spring-interview-questions.html">Spring
+									Interview Questions</a></li>
 						</ul>
 					</li>
 				</div>
@@ -173,9 +168,7 @@
 		<main class="article">
 			<div class="toolbar">
 				<button class="navbar-burger" id="nav-toggle-1">
-					<span></span>
-					<span></span>
-					<span></span>
+					<span></span> <span></span> <span></span>
 				</button>
 				<nav class="breadcrumbs">
 					<ul>
@@ -194,225 +187,265 @@
 					</ul>
 					<hr>
 				</nav>
-				<a class="div-to-desk">
-					<br>
+				<a class="div-to-desk"> <br>
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-						<p>In this article, we will take a look into the Spring
-							framework overview.</span>
+						<p>
+							In this article, we will take a look into the Spring framework
+							overview.</span>
 						</p>
 						<div>
 							<h1 style="margin: 0.67em 0px;">What is Spring Framework?</h1>
-							<div>Spring is a very popular JavaEE framework for building web and enterprise
-								applications.</div>
-							<div><br></div>
+							<div>Spring is a very popular JavaEE framework for building
+								web and enterprise applications.</div>
 							<div>
-								<div>If you are a Java developer then there is a high chance that you might have
-									heard about the Spring framework and probably have used it in your
-									projects.&nbsp;</div>
-								<div><br></div>
+								<br>
+							</div>
+							<div>
+								<div>If you are a Java developer then there is a high
+									chance that you might have heard about the Spring framework and
+									probably have used it in your projects.&nbsp;</div>
+								<div>
+									<br>
+								</div>
 								<div>Spring is very popular for several reasons:</div>
 								<div>
 									<ul>
-										<li>Spring’s dependency injection approach encourages writing testable
-											code</li>
-										<li>Easy to use but powerful database transaction management
-											capabilities</li>
-										<li>Spring simplifies integration with other Java frameworks like
-											JPA/Hibernate ORM, Struts/JSF/etc. web frameworks</li>
-										<li>State of the art Web MVC framework for building web applications
-										</li>
+										<li>Spring’s dependency injection approach encourages
+											writing testable code</li>
+										<li>Easy to use but powerful database transaction
+											management capabilities</li>
+										<li>Spring simplifies integration with other Java
+											frameworks like JPA/Hibernate ORM, Struts/JSF/etc. web
+											frameworks</li>
+										<li>State of the art Web MVC framework for building web
+											applications</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						<h1 style="text-align: left;">Benefits of Spring Framework</h1>
-						<div>Here are the advantages of Spring
-							Framework:&nbsp;</span>
+						<div>
+							Here are the advantages of Spring Framework:&nbsp;</span>
 						</div>
-						<div>1. Solving difficulties of
-							Enterprise application development</span>: Spring is solving the difficulties of
-							development of complex applications, it provides Spring Core, Spring IoC and Spring
-							AOP for integrating various components of business applications.</span>
+						<div>
+							1. Solving difficulties of Enterprise application development</span>:
+							Spring is solving the difficulties of development of complex
+							applications, it provides Spring Core, Spring IoC and Spring AOP
+							for integrating various components of business applications.</span>
 						</div>
-						<div>2. Support Enterprise
-							application development through POJOs:&nbsp;</span>&nbsp;Spring supports the
-							development of Enterprise application development using the POJO classes which
-							removes the need for importing heavy Enterprise container during development. This
-							makes application testing much easier.</span>
+						<div>
+							2. Support Enterprise application development through
+							POJOs:&nbsp;</span>&nbsp;Spring supports the development of Enterprise
+							application development using the POJO classes which removes the
+							need for importing heavy Enterprise container during development.
+							This makes application testing much easier.</span>
 						</div>
-						<div><span style="box-sizing: border-box; font-weight: 600;">3. Easy integration of other
-								frameworks:&nbsp;</span>&nbsp;Spring designed to be used with all other
-							frameworks of Java, you can use ORM, Struts, Hibernate and other frameworks of Java
-							together. Spring framework does not impose any restriction on the frameworks to be
+						<div>
+							<span style="box-sizing: border-box; font-weight: 600;">3.
+								Easy integration of other frameworks:&nbsp;</span>&nbsp;Spring designed
+							to be used with all other frameworks of Java, you can use ORM,
+							Struts, Hibernate and other frameworks of Java together. Spring
+							framework does not impose any restriction on the frameworks to be
 							used together.
 						</div>
-						<div>4. Application
-							Testing:&nbsp;&nbsp;Spring Container can be used to develop and run test
-							cases outside enterprise container which makes testing much easier.
-						</div>
-						<div>5.
-							Modularity:&nbsp;Spring framework is a modular framework and it comes
-							with many modules such as Spring MVC, Spring ORM, Spring JDBC, Spring Transactions
-							etc. which can use as per application requirement in a modular fashion.
-						</div>
-						<div>6. Spring Transaction
-							Management:&nbsp;Spring Transaction Management interface is very
-							flexible it can configure to use local transactions in the small application
-							which can be scaled to JTA for global transactions.
-						</div>
-						<h1 style="text-align: left;">Spring Framework Modules Overview</h1>
+						<div>4. Application Testing:&nbsp;&nbsp;Spring Container can
+							be used to develop and run test cases outside enterprise
+							container which makes testing much easier.</div>
+						<div>5. Modularity:&nbsp;Spring framework is a modular
+							framework and it comes with many modules such as Spring MVC,
+							Spring ORM, Spring JDBC, Spring Transactions etc. which can use
+							as per application requirement in a modular fashion.</div>
+						<div>6. Spring Transaction Management:&nbsp;Spring
+							Transaction Management interface is very flexible it can
+							configure to use local transactions in the small application
+							which can be scaled to JTA for global transactions.</div>
+						<h1 style="text-align: left;">Spring Framework Modules
+							Overview</h1>
 					</div>
-					<div>The Spring Framework consists of features organized
-						into about 20 modules. These modules are grouped into Core Container, Data
-						Access/Integration, Web, AOP (Aspect Oriented Programming), Instrumentation,
-						Messaging, and Test.
-					</div>
+					<div>The Spring Framework consists of features organized into
+						about 20 modules. These modules are grouped into Core Container,
+						Data Access/Integration, Web, AOP (Aspect Oriented Programming),
+						Instrumentation, Messaging, and Test.</div>
 					<div class="separator" style="clear: both; text-align: center;">
-						<span style="color: black; font-family: inherit; margin-left: 1em; margin-right: 1em;"><a
-								href="https://3.bp.blogspot.com/-Yub1oiWKwyU/Wxvja-vdelI/AAAAAAAACcI/tXIK3qKf700Xj4Jt5QijK-KqUvorvi5wgCLcBGAs/s1600/spring-framework-modules.png"
-								style="margin-left: 1em; margin-right: 1em;"><img src="https://3.bp.blogspot.com/-Yub1oiWKwyU/Wxvja-vdelI/AAAAAAAACcI/tXIK3qKf700Xj4Jt5QijK-KqUvorvi5wgCLcBGAs/s640/spring-framework-modules.png"></a></span>
+						<span
+							style="color: black; font-family: inherit; margin-left: 1em; margin-right: 1em;"><a
+							href="https://3.bp.blogspot.com/-Yub1oiWKwyU/Wxvja-vdelI/AAAAAAAACcI/tXIK3qKf700Xj4Jt5QijK-KqUvorvi5wgCLcBGAs/s1600/spring-framework-modules.png"
+							style="margin-left: 1em; margin-right: 1em;"><img
+								src="https://3.bp.blogspot.com/-Yub1oiWKwyU/Wxvja-vdelI/AAAAAAAACcI/tXIK3qKf700Xj4Jt5QijK-KqUvorvi5wgCLcBGAs/s640/spring-framework-modules.png"></a></span>
 					</div>
-					<h2 style="box-sizing: border-box; margin-bottom: 16px; text-align: left;">1. Core
-						Container&nbsp;</h2>
+					<h2
+						style="box-sizing: border-box; margin-bottom: 16px; text-align: left;">1.
+						Core Container&nbsp;</h2>
 					<div style="box-sizing: border-box; margin-bottom: 16px;">
-						<div style="background-color: white; text-align: left;">
-						</div>
+						<div style="background-color: white; text-align: left;"></div>
 					</div>
-					<div style="box-sizing: border-box; margin-bottom: 16px;"><span>The Core Container consists
-							below modules:</span></div>
+					<div style="box-sizing: border-box; margin-bottom: 16px;">
+						<span>The Core Container consists below modules:</span>
+					</div>
 					<ul>
-						<li style="box-sizing: border-box;"><span style="font-family: inherit;">spring-core</span>
-						</li>
+						<li style="box-sizing: border-box;"><span
+							style="font-family: inherit;">spring-core</span></li>
 						<li style="box-sizing: border-box; margin-top: 0.25em;"><span
-								style="font-family: inherit;">spring-beans</span></li>
+							style="font-family: inherit;">spring-beans</span></li>
 						<li style="box-sizing: border-box; margin-top: 0.25em;"><span
-								style="font-family: inherit;">spring-context, spring-context-support</span></li>
+							style="font-family: inherit;">spring-context,
+								spring-context-support</span></li>
 						<li style="box-sizing: border-box; margin-top: 0.25em;"><span
-								style="font-family: inherit;">spring-expression (Spring Expression
-								Language)</span></li>
+							style="font-family: inherit;">spring-expression (Spring
+								Expression Language)</span></li>
 					</ul>
 					<ol>
 						<li style="box-sizing: border-box;">
-							<div style="box-sizing: border-box; margin-bottom: 16px; margin-top: 16px;">
+							<div
+								style="box-sizing: border-box; margin-bottom: 16px; margin-top: 16px;">
 								<span style="font-family: inherit;">The&nbsp;<span
-										style="box-sizing: border-box;"><i>spring-core</i></span>&nbsp;and&nbsp;<span
-										style="box-sizing: border-box;"><i>spring-beans</i></span>&nbsp;modules
-									provide the fundamental parts of the framework, including the IoC and
-									Dependency Injection features.</span>
+									style="box-sizing: border-box;"><i>spring-core</i></span>&nbsp;and&nbsp;<span
+									style="box-sizing: border-box;"><i>spring-beans</i></span>&nbsp;modules
+									provide the fundamental parts of the framework, including the
+									IoC and Dependency Injection features.
+								</span>
 							</div>
 						</li>
 						<li style="box-sizing: border-box; margin-top: 0.25em;">
-							<div style="box-sizing: border-box; margin-bottom: 16px; margin-top: 16px;">
+							<div
+								style="box-sizing: border-box; margin-bottom: 16px; margin-top: 16px;">
 								<span style="font-family: inherit;">The Context (<span
-										style="box-sizing: border-box;"><i>spring-context</i></span>) module
-									builds on the solid base provided by the Core and Beans modules: it is a
-									means to access objects in a framework-style manner that is similar to a
-									JNDI registry.</span>
+									style="box-sizing: border-box;"><i>spring-context</i></span>)
+									module builds on the solid base provided by the Core and Beans
+									modules: it is a means to access objects in a framework-style
+									manner that is similar to a JNDI registry.
+								</span>
 							</div>
 						</li>
 						<li style="box-sizing: border-box; margin-top: 0.25em;">
-							<div style="box-sizing: border-box; margin-bottom: 16px; margin-top: 16px;">
+							<div
+								style="box-sizing: border-box; margin-bottom: 16px; margin-top: 16px;">
 								<span style="font-family: inherit;"><span
-										style="box-sizing: border-box;"><i>spring-context-support</i></span>&nbsp;provides
-									support for integrating common third-party libraries into a Spring
-									application context, in particular for caching (EhCache, JCache) and
-									scheduling (CommonJ, Quartz).</span>
+									style="box-sizing: border-box;"><i>spring-context-support</i></span>&nbsp;provides
+									support for integrating common third-party libraries into a
+									Spring application context, in particular for caching (EhCache,
+									JCache) and scheduling (CommonJ, Quartz).</span>
 							</div>
 						</li>
 						<li style="box-sizing: border-box; margin-top: 0.25em;">
-							<div style="box-sizing: border-box; margin-bottom: 16px; margin-top: 16px;">
+							<div
+								style="box-sizing: border-box; margin-bottom: 16px; margin-top: 16px;">
 								<span style="font-family: inherit;">The&nbsp;<span
-										style="box-sizing: border-box;"><i>spring-expression</i></span>&nbsp;module
-									provides a powerful Expression Language for querying and manipulating an
-									object graph at runtime. It is an extension of the unified expression
-									language (unified EL) as specified in the JSP 2.1 specification.</span>
+									style="box-sizing: border-box;"><i>spring-expression</i></span>&nbsp;module
+									provides a powerful Expression Language for querying and
+									manipulating an object graph at runtime. It is an extension of
+									the unified expression language (unified EL) as specified in
+									the JSP 2.1 specification.
+								</span>
 							</div>
 						</li>
 					</ol>
 					<h2 style="text-align: left;">
 						<span style="font-family: inherit;">2. Spring AOP Module</span>
 					</h2>
-					<div>Spring AOP separates business logic from system
-						services such as logging, Transaction management, Persistence, Application
+					<div>
+						Spring AOP separates business logic from system services such as
+						logging, Transaction management, Persistence, Application
 						resources(e.g: connection pooling).&nbsp;</span>
 					</div>
-					The <i>spring-aop</i> module provides an AOP Alliance-compliant aspect-oriented programming
-					implementation allowing you to define, for example, method-interceptors and pointcuts to
-					cleanly decouple code that implements functionality that should be separated.<div box-sizing: border-box; margin-bottom: 16px;">
+					The <i>spring-aop</i> module provides an AOP Alliance-compliant
+					aspect-oriented programming implementation allowing you to define,
+					for example, method-interceptors and pointcuts to cleanly decouple
+					code that implements functionality that should be separated.
+					<div box-sizing:border-box; margin-bottom: 16px;">
 						<h2 style="text-align: left;">
 							<span style="font-family: inherit;">3. Messaging</span>
 						</h2>
-						<span style="font-family: inherit;"><span style="font-size: 16px;">Spring Framework 4
-								includes a </span><span style="font-size: 16px;"><i>spring-messaging</i></span><span
-								style="font-size: 16px;"> module with key abstractions from the Spring
-								Integration project such as </span><b style="font-size: 16px;">Message,
-								MessageChannel, MessageHandle</b><span style="font-size: 16px;">r, and others to
-								serve as a foundation for messaging-based applications.&nbsp;</span></span>
+						<span style="font-family: inherit;"><span
+							style="font-size: 16px;">Spring Framework 4 includes a </span><span
+							style="font-size: 16px;"><i>spring-messaging</i></span><span
+							style="font-size: 16px;"> module with key abstractions
+								from the Spring Integration project such as </span><b
+							style="font-size: 16px;">Message, MessageChannel,
+								MessageHandle</b><span style="font-size: 16px;">r, and others
+								to serve as a foundation for messaging-based applications.&nbsp;</span></span>
 					</div>
-					<div style="box-sizing: border-box; margin-bottom: 16px;"><span
-							style="font-family: inherit;"><span style="font-size: 16px;">This module also
-								includes a set of annotations for mapping messages to methods, similar to the
+					<div style="box-sizing: border-box; margin-bottom: 16px;">
+						<span style="font-family: inherit;"><span
+							style="font-size: 16px;">This module also includes a set
+								of annotations for mapping messages to methods, similar to the
 								Spring MVC annotation-based programming model.</span></span><br>
 						<h2 style="text-align: left;">
-							<span style="font-family: inherit;">4. Data Access/Integration</span>
+							<span style="font-family: inherit;">4. Data
+								Access/Integration</span>
 						</h2>
-						<span style="font-family: inherit; font-size: 16px;">The Data Access/Integration layer
-							consists of the JDBC, ORM, OXM, JMS, and Transaction modules.</span>
+						<span style="font-family: inherit; font-size: 16px;">The
+							Data Access/Integration layer consists of the JDBC, ORM, OXM,
+							JMS, and Transaction modules.</span>
 					</div>
-					<div>The&nbsp;<span style="box-sizing: border-box;"><i>spring-jdbc</i></span>&nbsp;module provides a
-						JDBC-abstraction layer that removes the need to do tedious JDBC coding and parsing
-						of database-vendor specific error codes.</span>
+					<div>
+						The&nbsp;<span style="box-sizing: border-box;"><i>spring-jdbc</i></span>&nbsp;module
+						provides a JDBC-abstraction layer that removes the need to do
+						tedious JDBC coding and parsing of database-vendor specific error
+						codes.</span>
 					</div>
-					<div>The&nbsp;<span style="box-sizing: border-box;"><i>spring-tx</i></span>&nbsp;module supports
-						programmatic and declarative transaction management for classes that implement
-						special interfaces and for all your POJOs (Plain Old Java Objects).</span>
+					<div>
+						The&nbsp;<span style="box-sizing: border-box;"><i>spring-tx</i></span>&nbsp;module
+						supports programmatic and declarative transaction management for
+						classes that implement special interfaces and for all your POJOs
+						(Plain Old Java Objects).</span>
 					</div>
-					<div>The&nbsp;<span style="box-sizing: border-box;"><i>spring-orm</i></span>&nbsp;module provides
-						integration layers for popular object-relational mapping APIs, including JPA and
-						Hibernate. Using the <i>spring-orm</i> module you can use these O/R-mapping
-						frameworks in combination with all of the other features Spring offers, such as the
-						simple declarative transaction management feature mentioned previously.</span>
+					<div>
+						The&nbsp;<span style="box-sizing: border-box;"><i>spring-orm</i></span>&nbsp;module
+						provides integration layers for popular object-relational mapping
+						APIs, including JPA and Hibernate. Using the <i>spring-orm</i>
+						module you can use these O/R-mapping frameworks in combination
+						with all of the other features Spring offers, such as the simple
+						declarative transaction management feature mentioned previously.</span>
 					</div>
-					<div>The&nbsp;<span style="box-sizing: border-box;"><i>spring-oxm</i></span>&nbsp;module provides an
-						abstraction layer that supports Object/XML mapping implementations such as JAXB,
-						Castor, JiBX and XStream.</span>
+					<div>
+						The&nbsp;<span style="box-sizing: border-box;"><i>spring-oxm</i></span>&nbsp;module
+						provides an abstraction layer that supports Object/XML mapping
+						implementations such as JAXB, Castor, JiBX and XStream.</span>
 					</div>
-					<div>The&nbsp;<span style="box-sizing: border-box;"><i>spring-jms</i></span>&nbsp;module (Java
-						Messaging Service) contains features for producing and consuming messages. Since
-						Spring Framework 4.1, it provides integration with the <i>spring-messaging</i>
-						module.</span>
+					<div>
+						The&nbsp;<span style="box-sizing: border-box;"><i>spring-jms</i></span>&nbsp;module
+						(Java Messaging Service) contains features for producing and
+						consuming messages. Since Spring Framework 4.1, it provides
+						integration with the <i>spring-messaging</i> module.</span>
 					</div>
 					<h2 style="text-align: left;">
 						<span style="font-family: inherit;">5. Web</span>
 					</h2>
-					<span style="font-family: inherit;">The Web layer consists of the <i>spring-web</i>,
-						<i>spring-webmvc</i> and <i>spring-websocket</i> modules.</span><br>
-					<span style="font-family: inherit;"><span face="&quot;verdana&quot; , sans-serif"><br></span>
-						<span face="&quot;verdana&quot; , sans-serif">The <i>spring-web module</i> provides
-							basic web-oriented integration features such as multipart file upload
-							functionality and the initialization of the IoC container using Servlet
-							listeners and a web-oriented application context. It also contains an HTTP
-							client and the web-related parts of Spring’s remoting support.</span></span><br>
-					<span style="font-family: inherit;"><span face="&quot;verdana&quot; , sans-serif"><br></span>
-						<span face="&quot;verdana&quot; , sans-serif">The <i>spring-webmvc</i> module (also
-							known as the Web-Servlet module) contains Spring’s model-view-controller (MVC)
-							and REST Web Services implementation for web applications. Spring’s MVC
-							framework provides a clean separation between domain model code and web forms
-							and integrates with all of the other features of the Spring
-							Framework.</span></span>
+					<span style="font-family: inherit;">The Web layer consists
+						of the <i>spring-web</i>, <i>spring-webmvc</i> and <i>spring-websocket</i>
+						modules.
+					</span><br> <span style="font-family: inherit;"><span
+						face="&quot;verdana&quot; , sans-serif"><br></span> <span
+						face="&quot;verdana&quot; , sans-serif">The <i>spring-web
+								module</i> provides basic web-oriented integration features such as
+							multipart file upload functionality and the initialization of the
+							IoC container using Servlet listeners and a web-oriented
+							application context. It also contains an HTTP client and the
+							web-related parts of Spring’s remoting support.
+					</span></span><br> <span style="font-family: inherit;"><span
+						face="&quot;verdana&quot; , sans-serif"><br></span> <span
+						face="&quot;verdana&quot; , sans-serif">The <i>spring-webmvc</i>
+							module (also known as the Web-Servlet module) contains Spring’s
+							model-view-controller (MVC) and REST Web Services implementation
+							for web applications. Spring’s MVC framework provides a clean
+							separation between domain model code and web forms and integrates
+							with all of the other features of the Spring Framework.
+					</span></span>
 
 					<h2 style="text-align: left;">
 						<span style="font-family: inherit;">6. Test</span>
 					</h2>
-					<p>The <b>spring-test</b> module supports the unit
-						testing and integration testing of Spring components with JUnit or TestNG. It
-						provides consistent loading of Spring ApplicationContexts and caching of those
-						contexts. It also provides mock objects that you can use to test your code in
-						isolation.</span><br>
-						<ul style="font-family: Verdana, Geneva, sans-serif;">
-						</ul>
+					<p>
+						The <b>spring-test</b> module supports the unit testing and
+						integration testing of Spring components with JUnit or TestNG. It
+						provides consistent loading of Spring ApplicationContexts and
+						caching of those contexts. It also provides mock objects that you
+						can use to test your code in isolation.</span><br>
+					<ul style="font-family: Verdana, Geneva, sans-serif;">
+					</ul>
 					</p>
 			</div>
 	</div>
@@ -421,12 +454,13 @@
 	</div>
 	<div class="card-footer">
 		<ul class="pagination justify-content-center mb-4">
-			<li class="page-item"><a class="page-link" href="../spring/mvc.html">Next
-					&rArr;</a></li>
+			<li class="page-item"><a class="page-link"
+				href="../spring/mvc.html">Next &rArr;</a></li>
 		</ul>
 	</div>
-	<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
-			src="../scripts/images/top.jpeg" /></button>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">
+		<img height="30" width="30" src="../scripts/images/top.jpeg" />
+	</button>
 	</main>
 	</div>
 	<script>
@@ -457,10 +491,11 @@
 	<script src="../scripts/js/site.js"></script>
 </body>
 <footer class="footer">
-	<p>©
+	<p>
+		©
 		<script>var d = new Date();
-			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
-		Kalyan Kolloju.
+			document.write(d.getFullYear());</script>
+		, The content is copyrighted to Ravi Kalyan Kolloju.
 	</p>
 </footer>
 

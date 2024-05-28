@@ -3,56 +3,58 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="author" content="RaviKalyan">
-	<title>JPA Annotations</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
-	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-	<link rel="stylesheet" href="../scripts/css/site.css">
-	<script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="RaviKalyan">
+<title>JPA Annotations</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="../scripts/images/tab_logo.png" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Elsie+Swash+Caps:wght@400;900&family=Kalam:wght@300;400;700&family=Pacifico&family=Satisfy&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet" href="../scripts/css/site.css">
+<script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
 			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
 		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
-	<style>
-		@media screen and (min-width: 1025px) {
-			.div-to-desk {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
+<style>
+@media screen and (min-width: 1025px) {
+	.div-to-desk {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
 
-		@media screen and (max-width: 1025px) {
-			.div-to-hide {
-				display: none;
-				/* Hide the div on screens smaller than 1025px (mobile) */
-			}
-		}
-	</style>
+@media screen and (max-width: 1025px) {
+	.div-to-hide {
+		display: none;
+		/* Hide the div on screens smaller than 1025px (mobile) */
+	}
+}
+</style>
 </head>
 
 <body>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<a class="navbar-item doc1" href="../home.html">
-				<img width="110" height="50" src="../scripts/images/logo1002.jpg" alt="Home" />
+			<a class="navbar-item" href="./home.html"> <img width="40"
+				height="25" src="../scripts/images/nani1.png" alt="Home" />
 			</a>
+			<h4 class="div-to-desk, berkshire-swash-regular">Ravish</h4>
 			<button class="navbar-burger" data-target="topbar-nav">
-				<span></span>
-				<span></span>
-				<span></span>
+				<span></span> <span></span> <span></span>
 			</button>
 		</div>
 		<div id="topbar-nav" class="navbar-menu">
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
-					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
-								width="25" src="../scripts/images/home.png"></i></a>
-					</li>
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1"
+						href="../home.html"><img height="25" width="25"
+							src="../scripts/images/home.png"></i></a></li>
 					<div class="navbar-item is-hoverable">
 						<a class="navbar-link" href="../java/introduction.html">Java</a>
 					</div>
@@ -63,24 +65,26 @@
 						<a class="navbar-link" href="../springboot/introduction.html">SpringBoot</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../java/java8.html">Java 8 Features</a>
+						<a class="navbar-link" href="../java/java8.html">Java 8
+							Features</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../DP/introduction.html">Design Patterns</a>
+						<a class="navbar-link" href="../DP/introduction.html">Design
+							Patterns</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
+						<a class="navbar-link"
+							href="../interview/interview-questions.html">Interview
+							Questions</a>
 					</div>
-					<label class="theme-toggler div-to-hide">
-						<input type="checkbox" id="switch-theme-checkbox" />
-						<span class="icon"></span>
+					<label class="theme-toggler div-to-hide"> <input
+						type="checkbox" id="switch-theme-checkbox" /> <span class="icon"></span>
 					</label>
 				</div>
 			</div>
 		</div>
-		<label class="theme-toggler div-to-desk" style="top: 22px;">
-			<input type="checkbox" id="switch-theme-mobile" />
-			<span class="icon"></span>
+		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input
+			type="checkbox" id="switch-theme-mobile" /> <span class="icon"></span>
 		</label>
 	</nav>
 
@@ -92,79 +96,70 @@
 						<ul class="nav-list">
 							<h4>Spring Basic</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/introduction.html">Spring
-									Introduction</a></li>
+								href="../spring/introduction.html">Spring Introduction</a></li>
 							<h4>Spring MVC</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/mvc.html">Spring
-									MVC</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/mvc.html">Spring MVC</a></li>
 							<h4>Spring Exceptions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/exceptions.html">Spring
-									Exceptions</a></li>
+								href="../spring/exceptions.html">Spring Exceptions</a></li>
 							<h4>Spring Actuators</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/actuators.html">Spring Actuators</a>
-							</li>
+								href="../spring/actuators.html">Spring Actuators</a></li>
 							<h4>Spring Annotations</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-core.html">Core
+								href="../spring/annotations-core.html">Core Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-mvc.html">MVC Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-transactions.html">Transactions
+									& Error Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-configuration.html">Configuration
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-mvc.html">MVC
+								href="../spring/annotations-aop.html">AOP Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-jpa.html">JPA Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-cloud.html">Cloud Annotations</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/annotations-scheduling.html">Scheduling
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-transactions.html">Transactions & Error
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-configuration.html">Configuration
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-aop.html">AOP
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-jpa.html">JPA
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-cloud.html">Cloud
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-scheduling.html">Scheduling
-									Annotations</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/annotations-cache-error.html">Caching
+								href="../spring/annotations-cache-error.html">Caching
 									Annotations</a></li>
 							<h4>Spring AOP</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
-									AOP</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/aop.html">Spring AOP</a></li>
 							<h4>Spring JPA</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/jpa.html">Spring
-									JPA</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/jpa.html">Spring JPA</a></li>
 							<h4>Spring Transactions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/transactions.html">Spring
-									Transactions</a></li>
+								href="../spring/transactions.html">Spring Transactions</a></li>
 							<h4>Spring Async</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/async.html">Spring
-									Async</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/async.html">Spring Async</a></li>
 							<h4>Spring Batch</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/batch.html">Spring
-									Batch</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/batch.html">Spring Batch</a></li>
 							<h4>Spring Aspect</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aspect.html">Spring
-									Aspect</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/aspect.html">Spring Aspect</a></li>
 							<h4>Spring Kafka</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/kafka.html">Spring
-									Kafka</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/kafka.html">Spring Kafka</a></li>
 							<h4>Spring Logging</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/logging.html">Spring
-									Logging</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link"
+								href="../spring/logging.html">Spring Logging</a></li>
 							<h4>Spring Security</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/security.html">Spring
-									Security</a></li>
+								href="../spring/security.html">Spring Security</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-									href="../spring/spring-interview-questions.html">Spring Interview Questions</a></li>
+								href="../spring/spring-interview-questions.html">Spring
+									Interview Questions</a></li>
 						</ul>
 					</li>
 				</div>
@@ -173,15 +168,14 @@
 		<main class="article">
 			<div class="toolbar">
 				<button class="navbar-burger" id="nav-toggle-1">
-					<span></span>
-					<span></span>
-					<span></span>
+					<span></span> <span></span> <span></span>
 				</button>
 				<nav class="breadcrumbs">
 					<ul>
 						<li><a href="../home.html">Home</a></li>
 						<li><a href="../spring/introduction.html">Spring</a></li>
-						<li><a href="../spring/annotations-jpa.html">JPA Annotations</a></li>
+						<li><a href="../spring/annotations-jpa.html">JPA
+								Annotations</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -190,404 +184,625 @@
 					<ul>
 						<li><a href="../home.html">Home</a></li>
 						<li><a href="../spring/introduction.html">Spring</a></li>
-						<li><a href="../spring/annotations-jpa.html">JPA Annotations</a></li>
+						<li><a href="../spring/annotations-jpa.html">JPA
+								Annotations</a></li>
 					</ul>
 					<hr>
 				</nav>
-				<a class="div-to-desk">
-					<br>
+				<a class="div-to-desk"> <br>
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
 						<h1>1. JPA Mapping Annotations</h1>
 						<ol>
 							<li>
-								<p><strong>@Table:</strong></p>
+								<p>
+									<strong>@Table:</strong>
+								</p>
 								<ul>
-									<li>Used to specify the details of the table for the entity.</li>
+									<li>Used to specify the details of the table for the
+										entity.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Entity</span>
 <span class="hljs-meta">@Table(name = "employees", indexes = {@Index(name = "idx_lastname", columnList = "last_name")})</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+											class="hljs-title class_">Employee</span> {
     <span class="hljs-comment">// Entity class properties</span>
 }
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@Entity:</strong></p>
+								<p>
+									<strong>@Entity:</strong>
+								</p>
 								<ul>
-									<li>Marks a class as an entity, which will be mapped to a database table.</li>
+									<li>Marks a class as an entity, which will be mapped to a
+										database table.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Entity</span>
 <span class="hljs-meta">@Table(name = "users")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> {
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+											class="hljs-title class_">User</span> {
     <span class="hljs-comment">// Entity class properties</span>
 }
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@Column:</strong></p>
+								<p>
+									<strong>@Column:</strong>
+								</p>
 								<ul>
 									<li>Used to specify the details of a column in the table.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Column(name = "user_name", nullable = false, length = 50)</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Column(name = "user_name", nullable = false, length = 50)</span>
 <span class="hljs-keyword">private</span> String userName;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@GeneratedValue:</strong></p>
+								<p>
+									<strong>@GeneratedValue:</strong>
+								</p>
 								<ul>
-									<li>Used to specify the generation strategy for the primary key.</li>
+									<li>Used to specify the generation strategy for the
+										primary key.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Id</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Id</span>
 <span class="hljs-meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span>
 <span class="hljs-keyword">private</span> Long id;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@Id:</strong></p>
+								<p>
+									<strong>@Id:</strong>
+								</p>
 								<ul>
 									<li>Marks a field as the primary key of the entity.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Id</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Id</span>
 <span class="hljs-keyword">private</span> Long id;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@ForeignKey:</strong></p>
+								<p>
+									<strong>@ForeignKey:</strong>
+								</p>
 								<ul>
-									<li>Not a standard JPA annotation. It might be a custom annotation used for
-										specifying a foreign key relationship.</li>
+									<li>Not a standard JPA annotation. It might be a custom
+										annotation used for specifying a foreign key relationship.</li>
 								</ul>
 							</li>
 							<li>
-								<p><strong>@Lob:</strong></p>
+								<p>
+									<strong>@Lob:</strong>
+								</p>
 								<ul>
 									<li>Marks a field as a Large Object, such as CLOB or BLOB.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Lob</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Lob</span>
 <span class="hljs-keyword">private</span> <span class="hljs-type">byte</span>[] imageData;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@JoinColumn:</strong></p>
+								<p>
+									<strong>@JoinColumn:</strong>
+								</p>
 								<ul>
-									<li>Used to specify a column for joining an entity association or element
-										collection.</li>
+									<li>Used to specify a column for joining an entity
+										association or element collection.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToOne</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@ManyToOne</span>
 <span class="hljs-meta">@JoinColumn(name = "department_id")</span>
 <span class="hljs-keyword">private</span> Department department;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@JoinColumns:</strong></p>
+								<p>
+									<strong>@JoinColumns:</strong>
+								</p>
 								<ul>
 									<li>Used to specify multiple join columns in a mapping.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToOne</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@ManyToOne</span>
 <span class="hljs-meta">@JoinColumns({
     @JoinColumn(name = "department_id", referencedColumnName = "id"),
     @JoinColumn(name = "location_id", referencedColumnName = "location_id")
 })</span>
 <span class="hljs-keyword">private</span> Department department;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@JoinTable:</strong></p>
+								<p>
+									<strong>@JoinTable:</strong>
+								</p>
 								<ul>
-									<li>Used to define a join table for a many-to-many or unidirectional one-to-many
-										relationship.</li>
+									<li>Used to define a join table for a many-to-many or
+										unidirectional one-to-many relationship.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToMany</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@ManyToMany</span>
 <span class="hljs-meta">@JoinTable(
     name = "user_role",
     joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name = "role_id")
 )</span>
 <span class="hljs-keyword">private</span> Set&lt;Role&gt; roles;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@OneToOne:</strong></p>
+								<p>
+									<strong>@OneToOne:</strong>
+								</p>
 								<ul>
-									<li>Marks a field as representing a one-to-one relationship.</li>
+									<li>Marks a field as representing a one-to-one
+										relationship.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToOne</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToOne</span>
 <span class="hljs-meta">@JoinColumn(name = "address_id")</span>
 <span class="hljs-keyword">private</span> Address address;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@OneToMany:</strong></p>
+								<p>
+									<strong>@OneToMany:</strong>
+								</p>
 								<ul>
-									<li>Marks a field as representing a one-to-many relationship.</li>
+									<li>Marks a field as representing a one-to-many
+										relationship.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
 <span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@ManyToOne:</strong></p>
+								<p>
+									<strong>@ManyToOne:</strong>
+								</p>
 								<ul>
-									<li>Marks a field as representing a many-to-one relationship.</li>
+									<li>Marks a field as representing a many-to-one
+										relationship.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToOne</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@ManyToOne</span>
 <span class="hljs-meta">@JoinColumn(name = "department_id")</span>
 <span class="hljs-keyword">private</span> Department department;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@ManyToMany:</strong></p>
+								<p>
+									<strong>@ManyToMany:</strong>
+								</p>
 								<ul>
-									<li>Marks a field as representing a many-to-many relationship.</li>
+									<li>Marks a field as representing a many-to-many
+										relationship.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@ManyToMany(mappedBy = "users")</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@ManyToMany(mappedBy = "users")</span>
 <span class="hljs-keyword">private</span> Set&lt;Role&gt; roles;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@TableGenerator:</strong></p>
+								<p>
+									<strong>@TableGenerator:</strong>
+								</p>
 								<ul>
-									<li>Specifies the details of a table-based generator for the primary key.</li>
+									<li>Specifies the details of a table-based generator for
+										the primary key.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Entity</span>
 <span class="hljs-meta">@TableGenerator(name = "emp_gen", table = "id_gen", pkColumnName = "gen_name", valueColumnName = "gen_value")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+											class="hljs-title class_">Employee</span> {
     <span class="hljs-comment">// Entity class properties</span>
 }
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@Temporal:</strong></p>
+								<p>
+									<strong>@Temporal:</strong>
+								</p>
 								<ul>
-									<li>Specifies the temporal type of a date or timestamp field.</li>
+									<li>Specifies the temporal type of a date or timestamp
+										field.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Temporal(TemporalType.DATE)</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Temporal(TemporalType.DATE)</span>
 <span class="hljs-keyword">private</span> Date birthDate;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@Transient:</strong></p>
+								<p>
+									<strong>@Transient:</strong>
+								</p>
 								<ul>
-									<li>Marks a field as not being persistent, meaning it won't be stored in the
-										database.</li>
+									<li>Marks a field as not being persistent, meaning it
+										won't be stored in the database.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Transient</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Transient</span>
 <span class="hljs-keyword">private</span> transientField;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@UniqueConstraint:</strong></p>
+								<p>
+									<strong>@UniqueConstraint:</strong>
+								</p>
 								<ul>
-									<li>Specifies a unique constraint on a column or a group of columns.</li>
+									<li>Specifies a unique constraint on a column or a group
+										of columns.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "username")})</span>
-</code></pre>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "username")})</span>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@Version:</strong></p>
+								<p>
+									<strong>@Version:</strong>
+								</p>
 								<ul>
-									<li>Used for optimistic locking, indicating the version property of an entity.</li>
+									<li>Used for optimistic locking, indicating the version
+										property of an entity.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Version</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Version</span>
 <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> version;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@SequenceGenerator:</strong></p>
+								<p>
+									<strong>@SequenceGenerator:</strong>
+								</p>
 								<ul>
-									<li>Specifies the details of a sequence-based generator for the primary key.</li>
+									<li>Specifies the details of a sequence-based generator
+										for the primary key.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Entity</span>
 <span class="hljs-meta">@SequenceGenerator(name = "emp_seq", sequenceName = "employee_sequence")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> {
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+											class="hljs-title class_">Employee</span> {
     <span class="hljs-comment">// Entity class properties</span>
 }
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@PrimaryKeyJoinColumn:</strong></p>
+								<p>
+									<strong>@PrimaryKeyJoinColumn:</strong>
+								</p>
 								<ul>
-									<li>Used to specify a primary key column when a primary key is also a foreign key.
-									</li>
+									<li>Used to specify a primary key column when a primary
+										key is also a foreign key.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Entity</span>
 <span class="hljs-meta">@PrimaryKeyJoinColumn(name = "employee_id")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EmployeeDetails</span> {
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+											class="hljs-title class_">EmployeeDetails</span> {
     <span class="hljs-comment">// Entity class properties</span>
 }
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@PrimaryKeyJoinColumns:</strong></p>
+								<p>
+									<strong>@PrimaryKeyJoinColumns:</strong>
+								</p>
 								<ul>
-									<li>Used to specify multiple primary key columns when a primary key is also a
-										foreign key.</li>
+									<li>Used to specify multiple primary key columns when a
+										primary key is also a foreign key.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Entity</span>
 <span class="hljs-meta">@PrimaryKeyJoinColumns({
     @PrimaryKeyJoinColumn(name = "employee_id"),
     @PrimaryKeyJoinColumn(name = "company_id")
 })</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EmployeeDetails</span> {
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+											class="hljs-title class_">EmployeeDetails</span> {
     <span class="hljs-comment">// Entity class properties</span>
 }
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@OrderBy:</strong></p>
+								<p>
+									<strong>@OrderBy:</strong>
+								</p>
 								<ul>
 									<li>Specifies the ordering of elements in a collection.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
 <span class="hljs-meta">@OrderBy("lastName ASC, firstName DESC")</span>
 <span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@OrderColumn:</strong></p>
+								<p>
+									<strong>@OrderColumn:</strong>
+								</p>
 								<ul>
-									<li>Specifies the name of the column that is used to maintain the order of the
-										elements in a list.</li>
+									<li>Specifies the name of the column that is used to
+										maintain the order of the elements in a list.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
 <span class="hljs-meta">@OrderColumn(name = "employee_order")</span>
 <span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@MapKey:</strong></p>
+								<p>
+									<strong>@MapKey:</strong>
+								</p>
 								<ul>
-									<li>Specifies a map key for a <code>Map</code>-valued relationship.</li>
+									<li>Specifies a map key for a <code>Map</code>-valued
+										relationship.
+									</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
 <span class="hljs-meta">@MapKey(name = "employeeId")</span>
 <span class="hljs-keyword">private</span> Map&lt;Long, Employee&gt; employees;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@MapKeyClass:</strong></p>
+								<p>
+									<strong>@MapKeyClass:</strong>
+								</p>
 								<ul>
-									<li>Specifies the key type of a <code>Map</code>-valued relationship.</li>
+									<li>Specifies the key type of a <code>Map</code>-valued
+										relationship.
+									</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
 <span class="hljs-meta">@MapKeyClass(EmployeeId.class)</span>
 <span class="hljs-keyword">private</span> Map&lt;EmployeeId, Employee&gt; employees;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@MapKeyColumn:</strong></p>
+								<p>
+									<strong>@MapKeyColumn:</strong>
+								</p>
 								<ul>
-									<li>Specifies the name of the column that is used as the key for a
-										<code>Map</code>-valued relationship.
+									<li>Specifies the name of the column that is used as the
+										key for a <code>Map</code>-valued relationship.
 									</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
 <span class="hljs-meta">@MapKeyColumn(name = "employee_key")</span>
 <span class="hljs-keyword">private</span> Map&lt;String, Employee&gt; employees;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@MapKeyEnumerated:</strong></p>
+								<p>
+									<strong>@MapKeyEnumerated:</strong>
+								</p>
 								<ul>
 									<li>Specifies the enumeration type of the key of a <code>Map</code>-valued
-										relationship.</li>
-								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@MapKeyEnumerated(EnumType.STRING)</span>
-<span class="hljs-keyword">private</span> Map&lt;EmployeeType, Employee&gt; employees;
-</code></pre>
-							</li>
-							<li>
-								<p><strong>@MapKeyJoinColumn:</strong></p>
-								<ul>
-									<li>Specifies the column that is used as the key for a <code>Map</code>-valued
-										relationship.</li>
-								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@MapKeyJoinColumn(name = "employee_key_id")</span>
-<span class="hljs-keyword">private</span> Map&lt;EmployeeKey, Employee&gt; employees;
-</code></pre>
-							</li>
-							<li>
-								<p><strong>@MapKeyJoinColumns:</strong></p>
-								<ul>
-									<li>Specifies multiple columns that are used as the key for a
-										<code>Map</code>-valued relationship.
+										relationship.
 									</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@MapKeyEnumerated(EnumType.STRING)</span>
+<span class="hljs-keyword">private</span> Map&lt;EmployeeType, Employee&gt; employees;
+</code>
+								</pre>
+							</li>
+							<li>
+								<p>
+									<strong>@MapKeyJoinColumn:</strong>
+								</p>
+								<ul>
+									<li>Specifies the column that is used as the key for a <code>Map</code>-valued
+										relationship.
+									</li>
+								</ul>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+<span class="hljs-meta">@MapKeyJoinColumn(name = "employee_key_id")</span>
+<span class="hljs-keyword">private</span> Map&lt;EmployeeKey, Employee&gt; employees;
+</code>
+								</pre>
+							</li>
+							<li>
+								<p>
+									<strong>@MapKeyJoinColumns:</strong>
+								</p>
+								<ul>
+									<li>Specifies multiple columns that are used as the key
+										for a <code>Map</code>-valued relationship.
+									</li>
+								</ul>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
 <span class="hljs-meta">@MapKeyJoinColumns({
     @MapKeyJoinColumn(name = "employee_key_id"),
     @MapKeyJoinColumn(name = "employee_key_type")
 })</span>
 <span class="hljs-keyword">private</span> Map&lt;EmployeeKey, Employee&gt; employees;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@MapKeyTemporal:</strong></p>
+								<p>
+									<strong>@MapKeyTemporal:</strong>
+								</p>
 								<ul>
 									<li>Specifies the temporal type of the key of a <code>Map</code>-valued
-										relationship.</li>
+										relationship.
+									</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
 <span class="hljs-meta">@MapKeyTemporal(TemporalType.DATE)</span>
 <span class="hljs-keyword">private</span> Map&lt;Date, Employee&gt; employees;
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@MappedSuperclass:</strong></p>
+								<p>
+									<strong>@MappedSuperclass:</strong>
+								</p>
 								<ul>
-									<li>Specifies that a class is a mapped superclass, and its attributes should be
-										inherited by its subclasses.</li>
+									<li>Specifies that a class is a mapped superclass, and its
+										attributes should be inherited by its subclasses.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@MappedSuperclass</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BaseEntity</span> {
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@MappedSuperclass</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span
+											class="hljs-keyword">class</span> <span
+											class="hljs-title class_">BaseEntity</span> {
     <span class="hljs-comment">// Mapped superclass common attributes</span>
 }
-</code></pre>
+</code>
+								</pre>
 							</li>
 							<li>
-								<p><strong>@MapsId:</strong></p>
+								<p>
+									<strong>@MapsId:</strong>
+								</p>
 								<ul>
-									<li>Used to map the primary key of the owning entity to the primary key of the
-										associated entity.</li>
+									<li>Used to map the primary key of the owning entity to
+										the primary key of the associated entity.</li>
 								</ul>
-								<p><strong>Example:</strong></p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code class="!whitespace-pre hljs language-java"><span class="hljs-meta">@Entity</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">EmployeeDetails</span> {
+								<p>
+									<strong>Example:</strong>
+								</p> <pre class="nz oa ob oc od oe of og bo oh ba bj">
+									<code class="!whitespace-pre hljs language-java">
+										<span class="hljs-meta">@Entity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
+											class="hljs-title class_">EmployeeDetails</span> {
 
     <span class="hljs-meta">@Id</span>
     <span class="hljs-keyword">private</span> Long employeeId;
@@ -597,141 +812,114 @@
     <span class="hljs-meta">@JoinColumn(name = "employee_id")</span>
     <span class="hljs-keyword">private</span> Employee employee;
 }
-</code></pre>
+</code>
+								</pre>
 							</li>
 
 						</ol>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
+						<br> <br> <br> <br> <br>
 						<div class="font-family-page">
-							<h3 style="text-align: left;">
-								9.1 @Access</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/Access.html">@Access</a>
-							annotation is used to specify the access type of the associated entity class, mapped
-							superclass, or embeddable class, or entity attribute.
-							See the <a
+							<h3 style="text-align: left;">9.1 @Access</h3>
+							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Access.html">@Access</a>
+							annotation is used to specify the access type of the associated
+							entity class, mapped superclass, or embeddable class, or entity
+							attribute. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#access">Access
 								type</a> section for more info.
-							<h3 style="text-align: left;">
-								@AssociationOverride</h3>
+							<h3 style="text-align: left;">@AssociationOverride</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/AssociationOverride.html">@AssociationOverride</a>
-							annotation is used to override an association mapping (e.g. @ManyToOne, @OneToOne,
-							@OneToMany, @ManyToMany) inherited from a mapped superclass or an embeddable.
-							See the <a
+							annotation is used to override an association mapping (e.g.
+							@ManyToOne, @OneToOne, @OneToMany, @ManyToMany) inherited from a
+							mapped superclass or an embeddable. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#embeddable-override">Overriding
 								Embeddable types</a> section for more info.
-							<h3 style="text-align: left;">
-								@AssociationOverrides</h3>
+							<h3 style="text-align: left;">@AssociationOverrides</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/AssociationOverrides.html">@AssociationOverrides</a>
 							is used to group several <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-associationoverride">@AssociationOverride</a>
 							annotations.
-							<h3 style="text-align: left;">
-								@AttributeOverride</h3>
+							<h3 style="text-align: left;">@AttributeOverride</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/AttributeOverride.html">@AttributeOverride</a>
-							annotation is used to override an attribute mapping inherited from a mapped superclass
-							or an
-							embeddable.
-							See the <a
+							annotation is used to override an attribute mapping inherited
+							from a mapped superclass or an embeddable. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#embeddable-override">Overriding
-								Embeddable types</a> section for more info.
-							<a
+								Embeddable types</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-attributeoverrides"></a>
-							<h3 style="text-align: left;">
-								@AttributeOverrides</h3>
+							<h3 style="text-align: left;">@AttributeOverrides</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/AttributeOverrides.html">@AttributeOverrides</a>
 							is used to group several <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-attributeoverride">@AttributeOverride</a>
-							annotations.
-							<a
+							annotations. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-basic"></a>
-							<h3 style="text-align: left;">
-								@Basic</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/Basic.html">@Basic</a>
-							annotation is used to map a basic attribute type to a database column.
-							See the <a
+							<h3 style="text-align: left;">@Basic</h3>
+							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Basic.html">@Basic</a>
+							annotation is used to map a basic attribute type to a database
+							column. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#basic">Basic
 								types</a> chapter for more info.
-							<h3 style="text-align: left;">
-								@Cacheable</h3>
+							<h3 style="text-align: left;">@Cacheable</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Cacheable.html">@Cacheable</a>
-							annotation is used to specify whether an entity should be stored in the second-level
-							cache.
-							See the <a
+							annotation is used to specify whether an entity should be stored
+							in the second-level cache. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#caching">Caching</a>
-							chapter for more info.
-							<a
+							chapter for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-collectiontable"></a>
-							<h3 style="text-align: left;">
-								@CollectionTable</h3>
+							<h3 style="text-align: left;">@CollectionTable</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/CollectionTable.html">@CollectionTable</a>
-							annotation is used to specify the database table that stores the values of a basic or an
-							embeddable type collection.
-							See the <a
+							annotation is used to specify the database table that stores the
+							values of a basic or an embeddable type collection. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#embeddable-collections">Collections
-								of embeddable types</a> section for more info.
-							<a
+								of embeddable types</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-column"></a>
-							<h3 style="text-align: left;">
-								@Column</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/Column.html">@Column</a>
-							annotation is used to specify the mapping between a basic entity attribute and the
-							database
-							table column.
-							See the <a
+							<h3 style="text-align: left;">@Column</h3>
+							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Column.html">@Column</a>
+							annotation is used to specify the mapping between a basic entity
+							attribute and the database table column. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#basic-column-annotation">@Column
-								annotation</a> section for more info.
-							<a
+								annotation</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-columnresult"></a>
-							<h3 style="text-align: left;">
-								@ColumnResult</h3>
+							<h3 style="text-align: left;">@ColumnResult</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/ColumnResult.html">@ColumnResult</a>
 							annotation is used in conjunction with the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-sqlresultsetmapping">@SqlResultSetMapping</a>
 							or <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-constructorresult">@ConstructorResult</a>annotations
-							to map a SQL column for a given SELECT query.
-							See the <a
+							to map a SQL column for a given SELECT query. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-composite-key-entity-associations_named-query-example">Entity
-								associations with named native queries</a> section for more info.
-							<a
+								associations with named native queries</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-constructorresult"></a>
-							<h3 style="text-align: left;">
-								@ConstructorResult</h3>
+							<h3 style="text-align: left;">@ConstructorResult</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/ConstructorResult.html">@ConstructorResult</a>
 							annotation is used in conjunction with the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-sqlresultsetmapping">@SqlResultSetMapping</a>
-							annotations to map columns of a given SELECT query to a certain object constructor.
-							See the <a
+							annotations to map columns of a given SELECT query to a certain
+							object constructor. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-multiple-scalar-values-dto-NamedNativeQuery-example">Multiple
-								scalar values NamedNativeQuery with ConstructorResult</a> section for more info.
-							<a
+								scalar values NamedNativeQuery with ConstructorResult</a> section
+							for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-convert"></a>
-							<h3 style="text-align: left;">
-								@Convert</h3>
+							<h3 style="text-align: left;">@Convert</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Convert.html">@Convert</a>
 							annotation is used to specify the <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/AttributeConverter.html">AttributeConverter</a>
-							implementation used to convert the currently annotated basic attribute.
-							See the <a
+							implementation used to convert the currently annotated basic
+							attribute. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#basic-enums-attribute-converter">AttributeConverter</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-converter"></a>
-							<h3 style="text-align: left;">
-								24.1.13. @Converter</h3>
+							<h3 style="text-align: left;">24.1.13. @Converter</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Converter.html">@Converter</a>
 							annotation is used to specify that the current annotate <a
@@ -739,841 +927,659 @@
 							implementation can be used as a JPA basic attribute converter.
 							See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#basic-enums-attribute-converter">AttributeConverter</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-converts"></a>
-							<h3 style="text-align: left;">
-								@Converts</h3>
+							<h3 style="text-align: left;">@Converts</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Converts.html">@Converts</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-convert">@Convert</a>
-							annotations.
-							See the <a
+							annotations. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#basic-enums-attribute-converter">AttributeConverter</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-discriminatorcolumn"></a>
-							<h3 style="text-align: left;">
-								@DiscriminatorColumn</h3>
+							<h3 style="text-align: left;">@DiscriminatorColumn</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/DiscriminatorColumn.html">@DiscriminatorColumn</a>
-							annotation is used to specify the discriminator column name and the <a
+							annotation is used to specify the discriminator column name and
+							the <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/DiscriminatorColumn.html#discriminatorType--">discriminator
-								type</a> for the SINGLE_TABLE and JOINED Inheritance strategies.
-							See the <a
+								type</a> for the SINGLE_TABLE and JOINED Inheritance strategies. See
+							the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-discriminator">Discriminator</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-discriminatorvalue"></a>
-							<h3 style="text-align: left;">
-								@DiscriminatorValue</h3>
+							<h3 style="text-align: left;">@DiscriminatorValue</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/DiscriminatorValue.html">@DiscriminatorValue</a>
-							annotation is used to specify what value of the discriminator column is used for mapping
-							the
-							currently annotated entity.
-							See the <a
+							annotation is used to specify what value of the discriminator
+							column is used for mapping the currently annotated entity. See
+							the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-discriminator">Discriminator</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-elementcollection"></a>
-							<h3 style="text-align: left;">
-								@ElementCollection</h3>
+							<h3 style="text-align: left;">@ElementCollection</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/ElementCollection.html">@ElementCollection</a>
-							annotation is used to specify a collection of a basic or embeddable types.
-							See the <a
+							annotation is used to specify a collection of a basic or
+							embeddable types. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections">Collections</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-embeddable"></a>
-							<h3 style="text-align: left;">
-								@Embeddable</h3>
+							<h3 style="text-align: left;">@Embeddable</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Embeddable.html">@Embeddable</a>
-							annotation is used to specify embeddable types. Like basic types, embeddable types do
-							not
-							have any identity, being managed by their owning entity.
-							See the <a
+							annotation is used to specify embeddable types. Like basic types,
+							embeddable types do not have any identity, being managed by their
+							owning entity. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#embeddables">Embeddables</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-embedded"></a>
-							<h3 style="text-align: left;">
-								@Embedded</h3>
+							<h3 style="text-align: left;">@Embedded</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Embedded.html">@Embedded</a>
-							annotation is used to specify that a given entity attribute represents an embeddable
-							type.
-							See the <a
+							annotation is used to specify that a given entity attribute
+							represents an embeddable type. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#embeddables">Embeddables</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-embeddedid"></a>
-							<h3 style="text-align: left;">
-								@EmbeddedId</h3>
+							<h3 style="text-align: left;">@EmbeddedId</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/EmbeddedId.html">@EmbeddedId</a>
-							annotation is used to specify the entity identifier is an embeddable type.
-							See the <a
+							annotation is used to specify the entity identifier is an
+							embeddable type. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#identifiers-composite-aggregated">Composite
-								identifiers with @EmbeddedId</a> section for more info.
-							<a
+								identifiers with @EmbeddedId</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-entity"></a>
-							<h3 style="text-align: left;">
-								@Entity</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/Entity.html">@Entity</a>
-							annotation is used to specify that the currently annotate class represents an entity
-							type.
-							Unlike basic and embeddable types, entity types have an identity and their state is
-							managed
-							by the underlying Persistence Context.
-							See the <a
+							<h3 style="text-align: left;">@Entity</h3>
+							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Entity.html">@Entity</a>
+							annotation is used to specify that the currently annotate class
+							represents an entity type. Unlike basic and embeddable types,
+							entity types have an identity and their state is managed by the
+							underlying Persistence Context. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#entity">Entity</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-entitylisteners"></a>
-							<h3 style="text-align: left;">
-								@EntityListeners</h3>
+							<h3 style="text-align: left;">@EntityListeners</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/EntityListeners.html">@EntityListeners</a>
-							annotation is used to specify an array of callback listener classes that are used by the
-							currently annotated entity.
-							See the <a
-								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">JPA
-								callbacks</a> section for more info.
+							annotation is used to specify an array of callback listener
+							classes that are used by the currently annotated entity. See the
 							<a
+								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">JPA
+								callbacks</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-entityresult"></a>
-							<h3 style="text-align: left;">
-								@EntityResult</h3>
+							<h3 style="text-align: left;">@EntityResult</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/EntityResult.html">@EntityResult</a>
 							annotation is used with the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-sqlresultsetmapping">@SqlResultSetMapping</a>
-							annotation to map the selected columns to an entity.
-							See the <a
+							annotation to map the selected columns to an entity. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-composite-key-entity-associations_named-query-example">Entity
-								associations with named native queries</a> section for more info.
-							<a
+								associations with named native queries</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-enumerated"></a>
-							<h3 style="text-align: left;">
-								@Enumerated</h3>
+							<h3 style="text-align: left;">@Enumerated</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Enumerated.html">@Enumerated</a>
-							annotation is used to specify that an entity attribute represents an enumerated type.
-							See the <a
+							annotation is used to specify that an entity attribute represents
+							an enumerated type. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#basic-enums-Enumerated">@Enumerated
-								basic type</a> section for more info.
-							<a
+								basic type</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-excludedefaultlisteners"></a>
-							<h3 style="text-align: left;">
-								@ExcludeDefaultListeners</h3>
+							<h3 style="text-align: left;">@ExcludeDefaultListeners</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/ExcludeDefaultListeners.html">@ExcludeDefaultListeners</a>
-							annotation is used to specify that the currently annotated entity skips the invocation
-							of
-							any default listener.
-							See the <a
+							annotation is used to specify that the currently annotated entity
+							skips the invocation of any default listener. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-exclude-default-listener">Exclude
-								default entity listeners</a> section for more info.
-							<a
+								default entity listeners</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-excludesuperclasslisteners"></a>
-							<h3 style="text-align: left;">
-								@ExcludeSuperclassListeners</h3>
+							<h3 style="text-align: left;">@ExcludeSuperclassListeners</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/ExcludeSuperclassListeners.html">@ExcludeSuperclassListeners</a>
-							annotation is used to specify that the currently annotated entity skips the invocation
-							of
-							listeners declared by its superclass.
-							See the <a
+							annotation is used to specify that the currently annotated entity
+							skips the invocation of listeners declared by its superclass. See
+							the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-exclude-default-listener">Exclude
-								default entity listeners</a> section for more info.
-							<a
+								default entity listeners</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-fieldresult"></a>
-							<h3 style="text-align: left;">
-								@FieldResult</h3>
+							<h3 style="text-align: left;">@FieldResult</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/FieldResult.html">@FieldResult</a>
 							annotation is used with the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-entityresult">@EntityResult</a>
-							annotation to map the selected columns to the fields of some specific entity.
-							See the <a
+							annotation to map the selected columns to the fields of some
+							specific entity. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-composite-key-entity-associations_named-query-example">Entity
-								associations with named native queries</a> section for more info.
-							<a
+								associations with named native queries</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-foreignkey"></a>
-							<h3 style="text-align: left;">
-								@ForeignKey</h3>
+							<h3 style="text-align: left;">@ForeignKey</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/ForeignKey.html">@ForeignKey</a>
 							annotation is used to specify the associated foreign key of a <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-joincolumn">@JoinColumn</a>
-							mapping. The @ForeignKeyannotation is only used if the automated schema generation tool
-							is
-							enabled, in which case, it allows you to customize the underlying foreign key
-							definition.
-							See the <a
+							mapping. The @ForeignKeyannotation is only used if the automated
+							schema generation tool is enabled, in which case, it allows you
+							to customize the underlying foreign key definition. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#associations-many-to-one-example">@ManyToOne
-								with @ForeignKey</a> section for more info.
-							<a
+								with @ForeignKey</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-generatedvalue"></a>
-							<h3 style="text-align: left;">
-								@GeneratedValue</h3>
+							<h3 style="text-align: left;">@GeneratedValue</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/GeneratedValue.html">@GeneratedValue</a>
-							annotation specifies that the entity identifier value is automatically generated using
-							an
-							identity column, a database sequence, or a table generator. Hibernate supports the
-							@GeneratedValue mapping even for UUIDidentifiers.
-							See the <a
+							annotation specifies that the entity identifier value is
+							automatically generated using an identity column, a database
+							sequence, or a table generator. Hibernate supports the
+							@GeneratedValue mapping even for UUIDidentifiers. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#identifiers-simple-generated">Automatically-generated
-								identifiers</a> section for more info.
-							<a
+								identifiers</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-id"></a>
-							<h3 style="text-align: left;">
-								@Id</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/Id.html">@Id</a>
-							annotation specifies the entity identifier. An entity must always have an identifier
-							attribute which is used when loading the entity in a given Persistence Context.
-							See the <a
+							<h3 style="text-align: left;">@Id</h3>
+							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Id.html">@Id</a>
+							annotation specifies the entity identifier. An entity must always
+							have an identifier attribute which is used when loading the
+							entity in a given Persistence Context. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#identifiers">Identifiers</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-idclass"></a>
-							<h3 style="text-align: left;">
-								@IdClass</h3>
+							<h3 style="text-align: left;">@IdClass</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/IdClass.html">@IdClass</a>
-							annotation is used if the current entity defined a composite identifier. A separate
-							class
-							encapsulates all the identifier attributes, which are mirrored by the current entity
-							mapping.
-							See the <a
+							annotation is used if the current entity defined a composite
+							identifier. A separate class encapsulates all the identifier
+							attributes, which are mirrored by the current entity mapping. See
+							the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#identifiers-composite-nonaggregated">Composite
-								identifiers with @IdClass</a> section for more info.
-							<a
+								identifiers with @IdClass</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-index"></a>
-							<h3 style="text-align: left;">
-								@Index</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/Index.html">@Index</a>
-							annotation is used by the automated schema generation tool to create a database index.
-							See the <a
-								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#schema-generation-columns-index">Columns
-								index</a> chapter for more info.
-							<a
-								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-inheritance"></a>24.1.33.
-							@Inheritance
+							<h3 style="text-align: left;">@Index</h3>
 							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Index.html">@Index</a>
+							annotation is used by the automated schema generation tool to
+							create a database index. See the <a
+								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#schema-generation-columns-index">Columns
+								index</a> chapter for more info. <a
+								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-inheritance"></a>24.1.33.
+							@Inheritance The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Inheritance.html">@Inheritance</a>
-							annotation is used to specify the inheritance strategy of a given entity class
-							hierarchy.
-							See the <a
+							annotation is used to specify the inheritance strategy of a given
+							entity class hierarchy. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance">Inheritance</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-joincolumn"></a>
-							<h3 style="text-align: left;">
-								@JoinColumn</h3>
+							<h3 style="text-align: left;">@JoinColumn</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/JoinColumn.html">@JoinColumn</a>
-							annotation is used to specify the FOREIGN KEY column used when joining an entity
-							association
-							or an embeddable collection.
-							See the <a
+							annotation is used to specify the FOREIGN KEY column used when
+							joining an entity association or an embeddable collection. See
+							the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#associations-many-to-one-example">@ManyToOne
-								with @JoinColumn</a> section for more info.
-							<a
+								with @JoinColumn</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-joincolumns"></a>
-							<h3 style="text-align: left;">
-								@JoinColumns</h3>
+							<h3 style="text-align: left;">@JoinColumns</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/JoinColumns.html">@JoinColumns</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-joincolumn">@JoinColumn</a>
-							annotations, which are used when mapping entity association or an embeddable collection
-							using a composite identifier
-							<a
+							annotations, which are used when mapping entity association or an
+							embeddable collection using a composite identifier <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-jointable"></a>
-							<h3 style="text-align: left;">
-								@JoinTable</h3>
+							<h3 style="text-align: left;">@JoinTable</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/JoinTable.html">@JoinTable</a>
-							annotation is used to specify the link table between two other database tables.
-							See the <a
+							annotation is used to specify the link table between two other
+							database tables. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-map-unidirectional-example">@JoinTable
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-lob"></a>
-							<h3 style="text-align: left;">
-								@Lob</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/Lob.html">@Lob</a>
-							annotation is used to specify that the currently annotated entity attribute represents a
-							large object type.
-							See the <a
+							<h3 style="text-align: left;">@Lob</h3>
+							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Lob.html">@Lob</a>
+							annotation is used to specify that the currently annotated entity
+							attribute represents a large object type. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#basic-blob-example">BLOB
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-manytomany"></a>
-							<h3 style="text-align: left;">
-								@ManyToMany</h3>
+							<h3 style="text-align: left;">@ManyToMany</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/ManyToMany.html">@ManyToMany</a>
-							annotation is used to specify a many-to-many database relationship.
-							See the <a
+							annotation is used to specify a many-to-many database
+							relationship. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#associations-many-to-many">@ManyToMany
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-manytoone"></a>
-							<h3 style="text-align: left;">
-								@ManyToOne</h3>
+							<h3 style="text-align: left;">@ManyToOne</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/ManyToOne.html">@ManyToOne</a>
-							annotation is used to specify a many-to-one database relationship.
-							See the <a
+							annotation is used to specify a many-to-one database
+							relationship. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#associations-many-to-one">@ManyToOne
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mapkey"></a>
-							<h3 style="text-align: left;">
-								@MapKey</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapKey.html">@MapKey</a>
-							annotation is used to specify the key of a java.util.Map association for which the key
-							type
-							is either the primary key or an attribute of the entity which represents the value of
-							the
-							map.
+							<h3 style="text-align: left;">@MapKey</h3>
+							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapKey.html">@MapKey</a>
+							annotation is used to specify the key of a java.util.Map
+							association for which the key type is either the primary key or
+							an attribute of the entity which represents the value of the map.
 							See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-map-unidirectional-example">@MapKey
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mapkeyclass"></a>
-							<h3 style="text-align: left;">
-								@MapKeyClass</h3>
+							<h3 style="text-align: left;">@MapKeyClass</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapKeyClass.html">@MapKeyClass</a>
-							annotation is used to specify the type of the map key of a java.util.Map associations.
-							See the <a
+							annotation is used to specify the type of the map key of a
+							java.util.Map associations. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-map-key-class">@MapKeyClass
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mapkeycolumn"></a>
-							<h3 style="text-align: left;">
-								@MapKeyColumn</h3>
+							<h3 style="text-align: left;">@MapKeyColumn</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapKeyColumn.html">@MapKeyColumn</a>
-							annotation is used to specify the database column which stores the key of a
-							java.util.Mapassociation for which the map key is a basic type.
-							See the <a
+							annotation is used to specify the database column which stores
+							the key of a java.util.Mapassociation for which the map key is a
+							basic type. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-map-custom-key-type-mapping-example">@MapKeyType
-								mapping section</a> for an example of @MapKeyColumn annotation usage.
-							<a
+								mapping section</a> for an example of @MapKeyColumn annotation
+							usage. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mapkeyenumerated"></a>
-							<h3 style="text-align: left;">
-								@MapKeyEnumerated</h3>
+							<h3 style="text-align: left;">@MapKeyEnumerated</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapKeyEnumerated.html">@MapKeyEnumerated</a>
-							annotation is used to specify that the key of java.util.Map association is a Java Enum.
-							See the <a
+							annotation is used to specify that the key of java.util.Map
+							association is a Java Enum. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-map-bidirectional-example">@MapKeyEnumerated
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mapkeyjoincolumn"></a>
-							<h3 style="text-align: left;">
-								@MapKeyJoinColumn</h3>
+							<h3 style="text-align: left;">@MapKeyJoinColumn</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapKeyJoinColumn.html">@MapKeyJoinColumn</a>
-							annotation is used to specify that the key of java.util.Map association is an entity
-							association. The map key column is a FOREIGN KEY in a link table that also joins the Map
-							owner’s table with the table where the Map value resides.
-							See the <a
+							annotation is used to specify that the key of java.util.Map
+							association is an entity association. The map key column is a
+							FOREIGN KEY in a link table that also joins the Map owner’s table
+							with the table where the Map value resides. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-map-value-type-entity-key-example">@MapKeyJoinColumn
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mapkeyjoincolumns"></a>
-							<h3 style="text-align: left;">
-								@MapKeyJoinColumns</h3>
+							<h3 style="text-align: left;">@MapKeyJoinColumns</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapKeyJoinColumns.html">@MapKeyJoinColumns</a>
 							annotation is used to group several <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mapkeyjoincolumn">@MapKeyJoinColumn</a>
-							mappings when the java.util.Map association key uses a composite identifier.
-							<a
+							mappings when the java.util.Map association key uses a composite
+							identifier. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mapkeytemporal"></a>
-							<h3 style="text-align: left;">
-								@MapKeyTemporal</h3>
+							<h3 style="text-align: left;">@MapKeyTemporal</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapKeyTemporal.html">@MapKeyTemporal</a>
-							annotation is used to specify that the key of java.util.Map association is a <a
+							annotation is used to specify that the key of java.util.Map
+							association is a <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/TemporalType.html">@TemporalType</a>
-							(e.g. DATE, TIME, TIMESTAMP).
-							See the <a
+							(e.g. DATE, TIME, TIMESTAMP). See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-map-unidirectional-example">@MapKeyTemporal
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mappedsuperclass"></a>
-							<h3 style="text-align: left;">
-								@MappedSuperclass</h3>
+							<h3 style="text-align: left;">@MappedSuperclass</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/MappedSuperclass.html">@MappedSuperclass</a>
-							annotation is used to specify that the currently annotated type attributes are inherited
-							by
-							any subclass entity.
-							See the <a
+							annotation is used to specify that the currently annotated type
+							attributes are inherited by any subclass entity. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-mapped-superclass">@MappedSuperclass</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-mapsid"></a>
-							<h3 style="text-align: left;">
-								@MapsId</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapsId.html">@MapsId</a>
-							annotation is used to specify that the entity identifier is mapped by the currently
-							annotated @ManyToOne or @OneToOne association.
-							See the <a
+							<h3 style="text-align: left;">@MapsId</h3>
+							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/MapsId.html">@MapsId</a>
+							annotation is used to specify that the entity identifier is
+							mapped by the currently annotated @ManyToOne or @OneToOne
+							association. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#identifiers-derived-mapsid">@MapsId
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedattributenode"></a>
-							<h3 style="text-align: left;">
-								@NamedAttributeNode</h3>
+							<h3 style="text-align: left;">@NamedAttributeNode</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedAttributeNode.html">@NamedAttributeNode</a>
-							annotation is used to specify each individual attribute node that needs to be fetched by
-							an
-							Entity Graph.
-							See the <a
+							annotation is used to specify each individual attribute node that
+							needs to be fetched by an Entity Graph. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#fetching-strategies-dynamic-fetching-entity-graph-example">Fetch
-								graph</a> section for more info.
-							<a
+								graph</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedentitygraph"></a>
-							<h3 style="text-align: left;">
-								@NamedEntityGraph</h3>
+							<h3 style="text-align: left;">@NamedEntityGraph</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedEntityGraph.html">@NamedEntityGraph</a>
-							annotation is used to specify an Entity Graph that can be used by an entity query to
-							override the default fetch plan.
-							See the <a
+							annotation is used to specify an Entity Graph that can be used by
+							an entity query to override the default fetch plan. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#fetching-strategies-dynamic-fetching-entity-graph-example">Fetch
-								graph</a> section for more info.
-							<a
+								graph</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedentitygraphs"></a>
-							<h3 style="text-align: left;">
-								@NamedEntityGraphs</h3>
+							<h3 style="text-align: left;">@NamedEntityGraphs</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedEntityGraphs.html">@NamedEntityGraphs</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedentitygraph">@NamedEntityGraph</a>
-							annotations.
-							<a
+							annotations. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namednativequeries"></a>24.1.52.
-							@NamedNativeQueries
-							The <a
+							@NamedNativeQueries The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedNativeQueries.html">@NamedNativeQueries</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namednativequery">@NamedNativeQuery</a>
-							annotations.
-							See the <a
+							annotations. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-custom-crud-example">Custom
-								CRUD mapping</a> section for more info.
-							<a
+								CRUD mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namednativequery"></a>
-							<h3 style="text-align: left;">
-								@NamedNativeQuery</h3>
+							<h3 style="text-align: left;">@NamedNativeQuery</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedNativeQuery.html">@NamedNativeQuery</a>
-							annotation is used to specify a native SQL query that can be retrieved later by its
-							name.
-							See the <a
+							annotation is used to specify a native SQL query that can be
+							retrieved later by its name. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-custom-crud-example">Custom
-								CRUD mapping</a> section for more info.
-							<a
+								CRUD mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedqueries"></a>
-							<h3 style="text-align: left;">
-								@NamedQueries</h3>
+							<h3 style="text-align: left;">@NamedQueries</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedQueries.html">@NamedQueries</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedquery">@NamedQuery</a>
-							annotations.
-							<a
+							annotations. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedquery"></a>
-							<h3 style="text-align: left;">
-								@NamedQuery</h3>
+							<h3 style="text-align: left;">@NamedQuery</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedQuery.html">@NamedQuery</a>
-							annotation is used to specify a JPQL query that can be retrieved later by its name.
-							See the <a
+							annotation is used to specify a JPQL query that can be retrieved
+							later by its name. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#jpql-api-named-query-example">@NamedQuery</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedstoredprocedurequeries"></a>
-							<h3 style="text-align: left;">
-								@NamedStoredProcedureQueries</h3>
+							<h3 style="text-align: left;">@NamedStoredProcedureQueries</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedStoredProcedureQueries.html">@NamedStoredProcedureQueries</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedstoredprocedurequery">@NamedStoredProcedureQuery</a>
-							annotations.
-							<a
+							annotations. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedstoredprocedurequery"></a>
-							<h3 style="text-align: left;">
-								@NamedStoredProcedureQuery</h3>
+							<h3 style="text-align: left;">@NamedStoredProcedureQuery</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedStoredProcedureQuery.html">@NamedStoredProcedureQuery</a>
-							annotation is used to specify a stored procedure query that can be retrieved later by
-							its
-							name.
-							See the <a
+							annotation is used to specify a stored procedure query that can
+							be retrieved later by its name. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-sp-named-query">Using
-								named queries to call stored procedures</a> section for more info.
-							<a
+								named queries to call stored procedures</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedsubgraph"></a>
-							<h3 style="text-align: left;">
-								@NamedSubgraph</h3>
+							<h3 style="text-align: left;">@NamedSubgraph</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/NamedSubgraph.html">@NamedSubgraph</a>
-							annotation used to specify a subgraph in an Entity Graph.
-							See the <a
-								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#fetching-strategies-dynamic-fetching-entity-subgraph">Fetch
-								subgraph</a> section for more info.
+							annotation used to specify a subgraph in an Entity Graph. See the
 							<a
+								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#fetching-strategies-dynamic-fetching-entity-subgraph">Fetch
+								subgraph</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-onetomany"></a>
-							<h3 style="text-align: left;">
-								@OneToMany</h3>
+							<h3 style="text-align: left;">@OneToMany</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/OneToMany.html">@OneToMany</a>
-							annotation is used to specify a one-to-many database relationship.
-							See the <a
+							annotation is used to specify a one-to-many database
+							relationship. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#associations-one-to-many">@OneToMany
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-onetoone"></a>
-							<h3 style="text-align: left;">
-								@OneToOne</h3>
+							<h3 style="text-align: left;">@OneToOne</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/OneToOne.html">@OneToOne</a>
 							annotation is used to specify a one-to-one database relationship.
 							See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#associations-one-to-one">@OneToOne
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-orderby"></a>
-							<h3 style="text-align: left;">
-								@OrderBy</h3>
+							<h3 style="text-align: left;">@OrderBy</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/OrderBy.html">@OrderBy</a>
-							annotation is used to specify the entity attributes used for sorting when fetching the
-							currently annotated collection.
-							See the <a
-								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-unidirectional-ordered-list">@OrderBy
-								mapping</a> section for more info.
+							annotation is used to specify the entity attributes used for
+							sorting when fetching the currently annotated collection. See the
 							<a
+								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-unidirectional-ordered-list">@OrderBy
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-ordercolumn"></a>
-							<h3 style="text-align: left;">
-								@OrderColumn</h3>
+							<h3 style="text-align: left;">@OrderColumn</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/OrderColumn.html">@OrderColumn</a>
-							annotation is used to specify that the current annotation collection order should be
-							materialized in the database.
-							See the <a
-								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-unidirectional-ordered-list-order-column-example">@OrderColumn
-								mapping</a> section for more info.
+							annotation is used to specify that the current annotation
+							collection order should be materialized in the database. See the
 							<a
+								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#collections-unidirectional-ordered-list-order-column-example">@OrderColumn
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-persistencecontext"></a>
-							<h3 style="text-align: left;">
-								@PersistenceContext</h3>
+							<h3 style="text-align: left;">@PersistenceContext</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PersistenceContext.html">@PersistenceContext</a>
-							annotation is used to specify the EntityManager that needs to be injected as a
-							dependency.
-							See the <a
+							annotation is used to specify the EntityManager that needs to be
+							injected as a dependency. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#bootstrap-jpa-compliant-PersistenceContext-example">@PersistenceContext
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-persistencecontexts"></a>
-							<h3 style="text-align: left;">
-								@PersistenceContexts</h3>
+							<h3 style="text-align: left;">@PersistenceContexts</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PersistenceContexts.html">@PersistenceContexts</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-persistencecontext">@PersistenceContext</a>
-							annotations.
-							<a
+							annotations. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-persistenceproperty"></a>
-							<h3 style="text-align: left;">
-								@PersistenceProperty</h3>
+							<h3 style="text-align: left;">@PersistenceProperty</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PersistenceProperty.html">@PersistenceProperty</a>
 							annotation is used by the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-persistencecontext">@PersistenceContext</a>
-							annotation to declare JPA provider properties that are passed to the underlying
-							container
-							when the EntityManager instance is created.
-							See the <a
+							annotation to declare JPA provider properties that are passed to
+							the underlying container when the EntityManager instance is
+							created. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#bootstrap-jpa-compliant-PersistenceContext-configurable-example">@PersistenceProperty
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-persistenceunit"></a>
-							<h3 style="text-align: left;">
-								@PersistenceUnit</h3>
+							<h3 style="text-align: left;">@PersistenceUnit</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PersistenceUnit.html">@PersistenceUnit</a>
-							annotation is used to specify the EntityManagerFactory that needs to be injected as a
-							dependency.
-							See the <a
+							annotation is used to specify the EntityManagerFactory that needs
+							to be injected as a dependency. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#bootstrap-jpa-compliant-PersistenceUnit-example">@PersistenceUnit
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-persistenceunits"></a>
-							<h3 style="text-align: left;">
-								@PersistenceUnits</h3>
+							<h3 style="text-align: left;">@PersistenceUnits</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PersistenceUnits.html">@PersistenceUnits</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-persistenceunit">@PersistenceUnit</a>
-							annotations.
-							<a
+							annotations. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-postload"></a>
-							<h3 style="text-align: left;">
-								@PostLoad</h3>
+							<h3 style="text-align: left;">@PostLoad</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PostLoad.html">@PostLoad</a>
-							annotation is used to specify a callback method that fires after an entity is loaded.
-							See the <a
+							annotation is used to specify a callback method that fires after
+							an entity is loaded. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">JPA
-								callbacks</a> section for more info.
-							<a
+								callbacks</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-postpersist"></a>
-							<h3 style="text-align: left;">
-								@PostPersist</h3>
+							<h3 style="text-align: left;">@PostPersist</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PostPersist.html">@PostPersist</a>
-							annotation is used to specify a callback method that fires after an entity is persisted.
-							See the <a
+							annotation is used to specify a callback method that fires after
+							an entity is persisted. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">JPA
-								callbacks</a> section for more info.
-							<a
+								callbacks</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-postremove"></a>
-							<h3 style="text-align: left;">
-								@PostRemove</h3>
+							<h3 style="text-align: left;">@PostRemove</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PostRemove.html">@PostRemove</a>
-							annotation is used to specify a callback method that fires after an entity is removed.
-							See the <a
+							annotation is used to specify a callback method that fires after
+							an entity is removed. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">JPA
-								callbacks</a> section for more info.
-							<a
+								callbacks</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-postupdate"></a>
-							<h3 style="text-align: left;">
-								@PostUpdate</h3>
+							<h3 style="text-align: left;">@PostUpdate</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PostUpdate.html">@PostUpdate</a>
-							annotation is used to specify a callback method that fires after an entity is updated.
-							See the <a
+							annotation is used to specify a callback method that fires after
+							an entity is updated. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">JPA
-								callbacks</a> section for more info.
-							<a
+								callbacks</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-prepersist"></a>
-							<h3 style="text-align: left;">
-								@PrePersist</h3>
+							<h3 style="text-align: left;">@PrePersist</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PrePersist.html">@PrePersist</a>
-							annotation is used to specify a callback method that fires before an entity is
-							persisted.
-							See the <a
+							annotation is used to specify a callback method that fires before
+							an entity is persisted. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">JPA
-								callbacks</a> section for more info.
-							<a
+								callbacks</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-preremove"></a>
-							<h3 style="text-align: left;">
-								@PreRemove</h3>
+							<h3 style="text-align: left;">@PreRemove</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PreRemove.html">@PreRemove</a>
-							annotation is used to specify a callback method that fires before an entity is removed.
-							See the <a
+							annotation is used to specify a callback method that fires before
+							an entity is removed. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">JPA
-								callbacks</a> section for more info.
-							<a
+								callbacks</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-preupdate"></a>
-							<h3 style="text-align: left;">
-								@PreUpdate</h3>
+							<h3 style="text-align: left;">@PreUpdate</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PreUpdate.html">@PreUpdate</a>
-							annotation is used to specify a callback method that fires before an entity is updated.
-							See the <a
+							annotation is used to specify a callback method that fires before
+							an entity is updated. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">JPA
-								callbacks</a> section for more info.
-							<a
+								callbacks</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-primarykeyjoincolumn"></a>
-							<h3 style="text-align: left;">
-								@PrimaryKeyJoinColumn</h3>
+							<h3 style="text-align: left;">@PrimaryKeyJoinColumn</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PrimaryKeyJoinColumn.html">@PrimaryKeyJoinColumn</a>
-							annotation is used to specify that the primary key column of the currently annotated
-							entity
-							is also a foreign key to some other entity (e.g. a base class table in a JOINED
-							inheritance
-							strategy, the primary table in a secondary table mapping, or the parent table in a
-							@OneToOne
-							relationship).
-							See the <a
+							annotation is used to specify that the primary key column of the
+							currently annotated entity is also a foreign key to some other
+							entity (e.g. a base class table in a JOINED inheritance strategy,
+							the primary table in a secondary table mapping, or the parent
+							table in a @OneToOne relationship). See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#identifiers-derived-primarykeyjoincolumn">@PrimaryKeyJoinColumn
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-primarykeyjoincolumns"></a>
-							<h3 style="text-align: left;">
-								@PrimaryKeyJoinColumns</h3>
+							<h3 style="text-align: left;">@PrimaryKeyJoinColumns</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/PrimaryKeyJoinColumns.html">@PrimaryKeyJoinColumns</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-primarykeyjoincolumn">@PrimaryKeyJoinColumn</a>
-							annotations.
-							<a
+							annotations. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-queryhint"></a>
-							<h3 style="text-align: left;">
-								@QueryHint</h3>
+							<h3 style="text-align: left;">@QueryHint</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/QueryHint.html">@QueryHint</a>
-							annotation is used to specify a JPA provider hint used by a @NamedQuery or a
-							@NamedNativeQueryannotation.
-							See the <a
+							annotation is used to specify a JPA provider hint used by a
+							@NamedQuery or a @NamedNativeQueryannotation. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#jpa-read-only-entities-native-example">@QueryHint</a>
-							section for more info.
-							<a
+							section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-secondarytable"></a>
-							<h3 style="text-align: left;">
-								@SecondaryTable</h3>
+							<h3 style="text-align: left;">@SecondaryTable</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/SecondaryTable.html">@SecondaryTable</a>
-							annotation is used to specify a secondary table for the currently annotated entity.
-							See the <a
+							annotation is used to specify a secondary table for the currently
+							annotated entity. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-custom-crud-secondary-table-example">@SecondaryTable
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-secondarytables"></a>
-							<h3 style="text-align: left;">
-								@SecondaryTables</h3>
+							<h3 style="text-align: left;">@SecondaryTables</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/SecondaryTables.html">@SecondaryTables</a>
 							annotation is used to group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-secondarytable">@SecondaryTable</a>
-							annotations.
-							<a
+							annotations. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-sequencegenerator"></a>
-							<h3 style="text-align: left;">
-								@SequenceGenerator</h3>
+							<h3 style="text-align: left;">@SequenceGenerator</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/SequenceGenerator.html">@SequenceGenerator</a>
-							annotation is used to specify the database sequence used by the identifier generator of
-							the
-							currently annotated entity.
-							See the <a
+							annotation is used to specify the database sequence used by the
+							identifier generator of the currently annotated entity. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#identifiers-generators-sequence-configured">@SequenceGenerator
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-sqlresultsetmapping"></a>
-							<h3 style="text-align: left;">
-								@SqlResultSetMapping</h3>
+							<h3 style="text-align: left;">@SqlResultSetMapping</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/SqlResultSetMapping.html">@SqlResultSetMapping</a>
-							annotation is used to specify the ResultSet mapping of a native SQL query or stored
-							procedure.
-							See the <a
+							annotation is used to specify the ResultSet mapping of a native
+							SQL query or stored procedure. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-composite-key-entity-associations_named-query-example">SqlResultSetMapping
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-sqlresultsetmappings"></a>
-							<h3 style="text-align: left;">
-								@SqlResultSetMappings</h3>
+							<h3 style="text-align: left;">@SqlResultSetMappings</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/SqlResultSetMappings.html">@SqlResultSetMappings</a>
 							annotation is group multiple <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-sqlresultsetmapping">@SqlResultSetMapping</a>
-							annotations.
-							<a
+							annotations. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-storedprocedureparameter"></a>
-							<h3 style="text-align: left;">
-								@StoredProcedureParameter</h3>
+							<h3 style="text-align: left;">@StoredProcedureParameter</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/StoredProcedureParameter.html">@StoredProcedureParameter</a>
 							annotation is used to specify a parameter of a <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-namedstoredprocedurequery">@NamedStoredProcedureQuery</a>.
 							See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-sp-named-query">Using
-								named queries to call stored procedures</a> section for more info.
-							<a
+								named queries to call stored procedures</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-table"></a>
-							<h3 style="text-align: left;">
-								@Table</h3>
-							The <a href="http://docs.oracle.com/javaee/7/api/javax/persistence/Table.html">@Table</a>
-							annotation is used to specify the primary table of the currently annotated entity.
-							See the <a
+							<h3 style="text-align: left;">@Table</h3>
+							The <a
+								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Table.html">@Table</a>
+							annotation is used to specify the primary table of the currently
+							annotated entity. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#sql-custom-crud-secondary-table-example">@Table
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-tablegenerator"></a>
-							<h3 style="text-align: left;">
-								@TableGenerator</h3>
+							<h3 style="text-align: left;">@TableGenerator</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/TableGenerator.html">@TableGenerator</a>
-							annotation is used to specify the database table used by the identity generator of the
-							currently annotated entity.
-							See the <a
+							annotation is used to specify the database table used by the
+							identity generator of the currently annotated entity. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#identifiers-generators-table-configured-mapping-example">@TableGenerator
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-temporal"></a>
-							<h3 style="text-align: left;">
-								@Temporal</h3>
+							<h3 style="text-align: left;">@Temporal</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Temporal.html">@Temporal</a>
-							annotation is used to specify the TemporalType of the currently annotated java.util.Date
-							or
-							java.util.Calendar entity attribute.
+							annotation is used to specify the TemporalType of the currently
+							annotated java.util.Date or java.util.Calendar entity attribute.
 							See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#basic-datetime">Basic
-								temporal types</a> chapter for more info.
-							<a
+								temporal types</a> chapter for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-transient"></a>
-							<h3 style="text-align: left;">
-								@Transient</h3>
+							<h3 style="text-align: left;">@Transient</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Transient.html">@Transient</a>
-							annotation is used to specify that a given entity attribute should not be persisted.
-							See the <a
+							annotation is used to specify that a given entity attribute
+							should not be persisted. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#events-jpa-callbacks-example">@Transient
-								mapping</a> section for more info.
-							<a
+								mapping</a> section for more info. <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#annotations-jpa-uniqueconstraint"></a>
-							<h3 style="text-align: left;">
-								@UniqueConstraint</h3>
+							<h3 style="text-align: left;">@UniqueConstraint</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/UniqueConstraint.html">@UniqueConstraint</a>
-							annotation is used to specify a unique constraint to be included by the automated schema
-							generator for the primary or secondary table associated with the currently annotated
-							entity.
-							See the <a
+							annotation is used to specify a unique constraint to be included
+							by the automated schema generator for the primary or secondary
+							table associated with the currently annotated entity. See the <a
 								href="http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#schema-generation-columns-unique-constraint">Columns
 								unique constraint</a> chapter for more info.
-							<h3 style="text-align: left;">
-								@Version</h3>
+							<h3 style="text-align: left;">@Version</h3>
 							The <a
 								href="http://docs.oracle.com/javaee/7/api/javax/persistence/Version.html">@Version</a>
-							annotation is used to specify the version attribute used for optimistic locking.
+							annotation is used to specify the version attribute used for
+							optimistic locking.
 						</div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
 					<li class="page-item"><a class="page-link btn-outline-primary"
-							href="../spring/annotations-aop.html">&lArr;
-							Previous</a></li>
-					<li class="page-item"><a class="page-link" href="../spring/annotations-cloud.html">Next
-							&rArr;</a></li>
+						href="../spring/annotations-aop.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link"
+						href="../spring/annotations-cloud.html">Next &rArr;</a></li>
 				</ul>
 			</div>
-			<button onclick="topFunction()" id="myBtn" title="Go to top"><img height="30" width="30"
-					src="../scripts/images/top.jpeg" /></button>
+			<button onclick="topFunction()" id="myBtn" title="Go to top">
+				<img height="30" width="30" src="../scripts/images/top.jpeg" />
+			</button>
 		</main>
 	</div>
 	<script>
@@ -1604,10 +1610,11 @@
 	<script src="../scripts/js/site.js"></script>
 </body>
 <footer class="footer">
-	<p>©
+	<p>
+		©
 		<script>var d = new Date();
-			document.write(d.getFullYear());</script>, The content is copyrighted to Ravi
-		Kalyan Kolloju.
+			document.write(d.getFullYear());</script>
+		, The content is copyrighted to Ravi Kalyan Kolloju.
 	</p>
 </footer>
 

@@ -11,9 +11,9 @@
 <link rel="shortcut icon" type="image/x-icon"
 	href="./scripts/images/tab_logo.png" />
 <link rel="stylesheet" href="./scripts/css/site.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Elsie+Swash+Caps:wght@400;900&family=Kalam:wght@300;400;700&family=Pacifico&family=Satisfy&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Elsie+Swash+Caps:wght@400;900&family=Kalam:wght@300;400;700&family=Pacifico&family=Satisfy&display=swap"
+	rel="stylesheet"/>
 <script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
@@ -34,6 +34,21 @@
 		display: none;
 		/* Hide the div on screens smaller than 1025px (mobile) */
 	}
+}
+</style>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+.row {
+	display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+	flex: 33.33%;
+	padding: 5px;
 }
 </style>
 </head>
@@ -124,32 +139,38 @@
 					<h4>Home Page</h4>
 					<br>
 					<div class="card-body">
-						<ul>
-							<li class="nav-item"><a class="nav-link1"
-								href="./java/introduction.html"><img
+						<div class="row">
+							<div class="column">
+								<a class="nav-link1" href="./java/introduction.html"><img
 									src="./scripts/images/java-round.png"
 									style="height: 105px; max-width: 100%; margin: 10px;"
 									alt="java Tutorials" title="Java Tutorials">
-									<figcaption>Java</figcaption> </a></li>
-							<li class="nav-item"><a class="nav-link1"
-								href="./spring/introduction.html"><img
+									<figcaption>Java</figcaption> </a>
+							</div>
+							<div class="column">
+								<a class="nav-link1" href="./spring/introduction.html"><img
 									src="./scripts/images/spring-round.png"
 									style="height: 110px; max-width: 100%; margin: 10px;"
 									alt="spring Tutorials" title="Spring Tutorials">
-									<figcaption>Spring</figcaption> </a></li>
-							<li class="nav-item"><a class="nav-link1"
-								href="./springboot/introduction.html"><img
+									<figcaption>Spring</figcaption> </a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column">
+								<a class="nav-link1" href="./springboot/introduction.html"><img
 									src="./scripts/images/spring-boot-round.png"
 									style="height: 100px; max-width: 100%; margin: 10px;"
 									alt="spring Tutorials" title="SpringBoot Tutorials">
-									<figcaption>Springboot</figcaption> </a></li>
-							<li class="nav-item"><a class="nav-link1"
-								href="./java/cheatsheets.html"><img
+									<figcaption>Springboot</figcaption> </a>
+							</div>
+							<div class="column">
+								<a class="nav-link1" href="./java/cheatsheets.html"><img
 									src="./scripts/images/java-round.png"
 									style="height: 105px; max-width: 100%; margin: 10px;"
 									alt="spring Tutorials" title="SpringBoot Tutorials">
-									<figcaption>Java Cheat Sheets</figcaption> </a></li>
-						</ul>
+									<figcaption>Java Cheat Sheets</figcaption> </a>
+							</div>
+						</div>
 					</div>
 				</article>
 			</div>

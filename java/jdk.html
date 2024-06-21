@@ -10,6 +10,9 @@
 	<title>JDK</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
 	<link rel="stylesheet" href="../scripts/css/site.css">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Elsie+Swash+Caps:wght@400;900&family=Kalam:wght@300;400;700&family=Pacifico&family=Satisfy&display=swap"
+		rel="stylesheet" />
 	<script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
@@ -341,13 +344,13 @@
 										<p><strong>Feature</strong></p>
 									</td>
 									<td>
-										<p><strong>1. JVM (Java Virtual Machine)</strong></p>
+										<p><strong>JVM (Java Virtual Machine)</strong></p>
 									</td>
 									<td>
-										<p><strong>2. JRE (Java Runtime Environment)</strong></p>
+										<p><strong>JRE (Java Runtime Environment)</strong></p>
 									</td>
 									<td>
-										<p><strong>3. JDK (Java Development Kit)</strong></p>
+										<p><strong>JDK (Java Development Kit)</strong></p>
 									</td>
 								</tr>
 								<tr>
@@ -431,13 +434,26 @@
 						</table>
 						<p class="has-text-align-center"><strong><img
 									style="width: 876px; display: block; margin-left: auto; margin-right: auto;"
-									height="440" class="lazy" src="../scripts/images/jdk.jpg"></strong>
+									class="lazy" src="../scripts/images/jdk.jpg"></strong>
 						</p>
 						<h2>1. What is JVM?</h2>
 						<p>Java Virtual Machine (JVM) is
 							an abstract machine responsible for compiling and executing Java code. It is a
 							part of the Java Runtime Environment (JRE), which calls the main function of a
 							program.</p>
+						<p> JVM is like a virtual computer that executes compiled Java bytecode. It translates bytecode
+							(instructions) into machine-specific instructions and manages the program’s execution.</p>
+						<p>
+							There is a JVM implementation specific to each platform (Windows, Mac, Linux…) </p>
+						<p>
+							The JVM knows nothing about the Java programming language, but only of a particular binary
+							format, the class file format. </p>
+						<p>
+							The JVM loads classes from the bytecode as needed. </p>
+						<p>
+							Then the Execution engine of JVM converts the bytecode to native machine instructions and
+							executes the program.
+						</p>
 						<ul>
 							<li>JVM facilitates a <strong>platform-independent</strong> way of executing
 								Java source code. Its basis on WORA (Write Once Run Anywhere).</li>
@@ -448,14 +464,14 @@
 						</ul>
 						<p class="has-text-align-center"><strong><img
 									style="width: 876px; display: block; margin-left: auto; margin-right: auto;"
-									height="440" class="lazy" src="../scripts/images/excution.png"></strong>
+									class="lazy" src="../scripts/images/excution.png"></strong>
 						</p>
 						<p>First, the <strong>Java</strong> compiler compiles a Java file into a Java .class
 							file. Then, the .class file works as an input into the <strong>JVM</strong>,
 							which loads and executes the class file.</p>
 						<p class="has-text-align-center"><strong><img
 									style="width: 876px; display: block; margin-left: auto; margin-right: auto;"
-									height="440" class="lazy" src="../scripts/images/jvm.png"></strong>
+									class="lazy" src="../scripts/images/jvm.png"></strong>
 						</p>
 						<h3>Features of JVM</h3>
 						<ul>
@@ -471,6 +487,12 @@
 						</ul>
 						<p><strong>Note:</strong> JVM can’t be installed alone. As JVM is a part of JRE, you
 							need to install JRE. JVM comes within it.</p>
+						<h3>What does JVM include?</h3>
+						<ol>
+							<li> Class Loader Subsystem</li>
+							<li> Runtime Data Areas</li>
+							<li> Execution Engine</li>
+						</ol>
 						<h2>2. What is JRE?</h2>
 						<p>JRE software includes JVM and class libraries to run Java programs independently.
 							Although it can execute the code. Yet, JRE comes bundled with Java Development
@@ -485,9 +507,8 @@
 								various runtime libraries.</li>
 						</ul>
 						<h3>JRE = JVM + Class Libraries (For Running the Java Applications).</h3>
-						<p class="has-text-align-center"><strong><img
-									style="width: 876px; display: block; margin-left: auto; margin-right: auto;"
-									height="440" class="lazy" src="../scripts/images/jre.png"></strong></p>
+						<p><strong><img style="width: 876px; display: block; margin-left: auto; margin-right: auto;"
+									class="lazy" src="../scripts/images/jre.png"></strong></p>
 						<h3>Features of JRE</h3>
 						<ul>
 							<li>JRE consists of a set of tools to help the JVM run. In addition, it includes
@@ -500,6 +521,41 @@
 							<li>Along with JVM, it consists of a virtual machine client for Java HotSpot.
 							</li>
 						</ul>
+						<h3>What does JRE include?</h3>
+						<p>JRE includes the JVM (Java Virtual Machine), core libraries, and other supporting files. </p>
+
+						<h3>Core Libraries (Java API) </h3>
+						<p>The JRE includes the core Java libraries, which provide the fundamental building blocks for
+							Java applications. </p>
+
+						<p>These libraries encompass a wide range of classes and APIs for data structures, I/O
+							operations, networking, GUI components, concurrency, and more. </p>
+
+						<h3>Java Native Interface (JNI) </h3>
+						<p>JNI is a programming framework that allows Java code to call and be called by native
+							applications or libraries written in other programming languages like C or C++. </p>
+
+						<p>The JRE includes support for JNI, enabling interaction between Java and native code. </p>
+
+						<h3>Java Accessibility API </h3>
+						<p>This API provides accessibility support, making it possible for Java applications to be used
+							by individuals with disabilities. </p>
+
+						<p>It includes features like screen readers and keyboard navigation. </p>
+
+						<h3>Security Components </h3>
+						<p>The JRE includes security components to ensure a secure execution environment for Java
+							applications. </p>
+
+						<p>This includes security providers, cryptographic algorithms, and mechanisms to handle digital
+							certificates and permissions. </p>
+
+						<h3>Internationalization and Localization Support </h3>
+						<p>The JRE includes features and tools to support internationalization and localization,
+							allowing Java applications to be adapted for different languages and regions. </p>
+
+						<h3>What is the use of JRE? </h3>
+						<p>End-users use JRE to run Java applications on their machines. </p>
 						<h2>3. What is JDK?</h2>
 						<p>Java Development Kit (JDK) is a complete software environment for building
 							applications and applets using the Java programming language. It is
@@ -517,7 +573,7 @@
 						<h3>JDK = Development Tools + JRE (Java Runtime Environment)</h3>
 						<p class="has-text-align-center"><strong><img
 									style="width: 876px; display: block; margin-left: auto; margin-right: auto;"
-									height="440" class="lazy" src="../scripts/images/jdk1.png"></strong>
+									class="lazy" src="../scripts/images/jdk1.png"></strong>
 						</p>
 						<h3>Features of JDK</h3>
 						<ul>
@@ -531,43 +587,80 @@
 							<li>It is platform-dependent. Moreover, users can easily install JDK on
 								Operating systems like Unix, Mac, Windows, etc.</li>
 						</ul>
+
+						<h3>What does JDK include? </h3>
+						<p>JDK includes the JRE (Java Runtime Environment), development tools, libraries, header files,
+							and documentation. </p>
+
+						<p>Here’s a comprehensive list of what’s included in the JDK. </p>
+
+						<h3>Development Tools </h3>
+						<p>javac: Reads class and interface definations and compiles them into class files. </p>
+						<p>javap: The Java Class File Disassembler used to disassemble compiled class files. </p>
+						<p>javadoc: The Java documentation generator used to create API documentation from source code
+							comments. </p>
+						<h3>Execution Tools </h3>
+						<p>java: Launcher that executes compiled Java applications. </p>
+						<p>jjs (JShell): The interactive command-line tool for evaluating Java expressions and
+							statements. (deprecated in JDK 11) </p>
+						<h3>Packaging Tools </h3>
+						<p>jar: The Java Archive tool used to package files into a Java Archive (JAR) file. </p>
+						<p>javapackager: The tool for packaging and deploying Java applications, including
+							self-contained applications. </p>
+						<h3>Debugging Tools </h3>
+						<p>jdb: The Java Debugger used for debugging Java applications.
+						<p>jstack: The utility to print Java thread stack traces for a given Java process. </p>
+						<h3>Monitoring and Management Tools </h3>
+						<p>jconsole: The Java Monitoring and Management Console used to monitor and manage Java
+							applications. </p>
+						<p>jstat: The Java Virtual Machine statistics monitoring tool. </p>
+						<h3>Security Tools </h3>
+						<p>keytool: The tool for managing keystores and certificates for secure communication. </p>
+						<p>jarsigner: A tool to sign and verify Java Archive (JAR) files. </p>
+						<h3>Miscellaneous Tools </h3>
+						<p>extcheck: A utility to detect version conflicts between a Java application and installed
+							extensions. </p>
+
+						<h3>What is the use of JDK? </h3>
+						<p>Developers use JDK to write, compile, and debug Java applications. </p>
+
 						<h2 id="">FAQs</h2>
-						<p><strong>What is JDK?</strong></p>
+						<p><strong>1. What is JDK?</strong></p>
 						<p>JDK stands for Java Development Kit. It is a software development kit
 							that includes all the tools necessary to develop and compile Java
 							applications, including the Java compiler, debugger, and other
 							development tools.</p>
-						<p><strong id="faq_q2">What is JRE?</strong></p>
+						<p><strong id="faq_q2">2. What is JRE?</strong></p>
 						<p>JRE stands for Java Runtime Environment. It is a software package that is
 							required to run Java applications. It includes the Java Virtual Machine
 							(JVM), class libraries, and other runtime components.</p>
-						<p><strong id="faq_q3">What is JVM?</strong></p>
+						<p><strong id="faq_q3">3. What is JVM?</strong></p>
 						<p>JVM stands for Java Virtual Machine. The software component executes Java
 							bytecode, the compiled form of Java source code. The JVM provides a
 							platform-independent runtime environment for Java applications, allowing
 							them to run on any platform that supports the JVM.</p>
-						<p><strong id="faq_q4">From where can I download the latest
+						<p><strong id="faq_q4">4. From where can I download the latest
 								JDK?</strong></p>
 						<p>You can go to the Oracle website to download the latest free version of
 							JDK safely.</p>
-						<p><strong id="faq_q5">What is the relationship between JVM,
+						<p><strong id="faq_q5">5. What is the relationship between JVM,
 								JRE, and JDK?</strong></p>
 						<p>JVM is a component of both JRE and JDK. JRE includes the JVM and other
 							runtime components, while JDK includes both the JVM and development
 							tools for Java application development.</p>
-						<p><strong id="faq_q6">What is the difference between JDK
+						<p><strong id="faq_q6">6. What is the difference between JDK
 								and JRE?</strong></p>
 						<p>The main difference between JDK and JRE is that JDK is used for Java
 							application development, while JRE is used for running Java
 							applications. JDK includes tools for developing and compiling Java code,
 							while JRE only includes the components necessary for running Java
 							applications.</p>
-						<p><strong id="faq_q7">Do I need all three components (JDK,
+						<p><strong id="faq_q7">7. Do I need all three components (JDK,
 								JRE, and JVM) to run Java applications?</strong></p>
 						<p>No, you only need JRE to run Java applications. However, if you want to
 							develop Java applications, you will need JDK, which includes both the
 							JVM and development tools.</p>
-						<p><strong id="faq_q8">Can I use a different JVM than the
+						<p><strong id="faq_q8">8. Can I use a different JVM than the
 								one included in JRE or JDK?</strong></p>
 						<p>Yes, it is possible to use a different JVM than the one included in JRE
 							or JDK, but it may require additional configuration and setup.</p>

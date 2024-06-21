@@ -1297,7 +1297,7 @@ pre code {
 }
 code {
     font-size: 87.5%;
-    color: rgba(0,0,0,.72);
+    color: rgb(255, 0, 0);
     word-break: break-word
 }
 

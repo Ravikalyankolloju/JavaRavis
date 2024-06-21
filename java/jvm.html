@@ -435,7 +435,7 @@
 							<p><strong>Preparation:</strong> In this phase, the JVM allocates memory for the static
 								fields of a class or interface, and initializes them with default values. </p>
 							<p>For example, assume that you have declared the following variable in your class:</p>
-							<pre class="language-java"
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"
 								tabindex="0"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">boolean</span> enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></code></pre>
 							<p>During the preparation phase, JVM allocates memory for the variable <code>enabled</code>
 								and sets its value to the default value for a boolean, which is <code>false</code>.</p>
@@ -450,7 +450,7 @@
 								constructor, executing the static block, and assigning values to all the static
 								variables. This is the final stage of class loading.</p>
 							<p>For example, when we declared the following code earlier:</p>
-							<pre class="language-java"
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"
 								tabindex="0"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">boolean</span> enabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></code></pre>
 							<p>The variable <code>enabled</code> was set to its default value of <code>false</code>
 								during the preparation phase. In the initialization phase, this variable is assigned its
@@ -475,7 +475,7 @@
 							<p>If the memory available in the method area is not sufficient for the program startup, the
 								JVM throws an <code>OutOfMemoryError</code>.</p>
 							<p>For example, assume that you have the following class definition:</p>
-							<pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj" tabindex="0"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
 						  
 						  <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
 						  <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
@@ -495,7 +495,7 @@
 								run-time data area from which memory for all class instances and arrays is allocated.
 							</p>
 							<p>For example assume that you are declaring the following instance:</p>
-							<pre class="language-java"
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"
 								tabindex="0"><code class="language-java"><span class="token class-name">Employee</span> employee <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 							<p>In this code example, an instance of <code>Employee</code> is created and loaded into the
 								heap area.</p>
@@ -524,7 +524,7 @@
 									here. This also stores the catch block information in case of exceptions.</li>
 							</ul>
 							<p>For example assume that you have the following code:</p>
-							<pre class="language-java" tabindex="0"><code class="language-java"><span class="token keyword">double</span> <span class="token function">calculateNormalisedScore</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Answer</span><span class="token punctuation">&gt;</span></span> answers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj" tabindex="0"><code class="language-java"><span class="token keyword">double</span> <span class="token function">calculateNormalisedScore</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Answer</span><span class="token punctuation">&gt;</span></span> answers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 						  
 						  <span class="token keyword">double</span> score <span class="token operator">=</span> <span class="token function">getScore</span><span class="token punctuation">(</span>answers<span class="token punctuation">)</span><span class="token punctuation">;</span>
 						  <span class="token keyword">return</span> <span class="token function">normalizeScore</span><span class="token punctuation">(</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -584,7 +584,7 @@
 							</ol>
 							<p>To better understand the difference between interpreter and JIT compiler, assume that you
 								have the following code:</p>
-							<pre class="language-java"
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"
 								tabindex="0"><code class="language-java"><span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 						<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 						   sum <span class="token operator">+=</span> i<span class="token punctuation">;</span>

@@ -678,7 +678,8 @@ body {
 }
 
 .navbar-link {
-	padding-right: 1.95em
+	padding-right: 1em;
+	padding-left: 1em
 }
 
 .navbar-dropdown .navbar-item {
@@ -1264,7 +1265,7 @@ summary {
     font-weight: bold;
     margin: -0.5em -0.5em 0;
     padding: 0.5em;
-    color: #006d00;
+    color: #6BC115;
 }
 summary {
     display: list-item;

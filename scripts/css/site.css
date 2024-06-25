@@ -303,7 +303,9 @@ body ::-webkit-scrollbar-thumb {
 	border-radius: 3px;
 	display: block;
 	padding: .4rem 28px .4rem .5rem;
-	color: #6BC115
+	color: #6BC115;
+	width: 40%;
+	box-shadow: 2px 2px 3px 2px rgba(36,38,47,.1),0px 4px 6px 0px rgba(0,0,0,.06);
 }
 
 .nav-link:hover,
@@ -550,7 +552,8 @@ body {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: var(--z-index-navbar)
+	z-index: var(--z-index-navbar);
+	box-shadow: 1px 1px 2px 1px rgba(36,38,47,.1),0px 4px 6px 0px rgba(0,0,0,.06);
 }
 
 .navbar a {
@@ -851,8 +854,12 @@ body {
 
 .navbar-menu .navbar-link:hover,
 .navbar-menu a.navbar-item:hover {
-	color: #6db33f;
+	 /* color: #6db33f; */
 	font-weight: bold;
+	text-decoration-color: red;
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
 }
 
 .navbar-dropdown a.navbar-item {
@@ -1270,12 +1277,14 @@ summary {
 summary {
     display: list-item;
     cursor: pointer;
+    box-shadow: 5px 5px 5px 5px rgba(36,38,47,.1),0px 4px 6px 0px rgba(0,0,0,.06);
 }
 
 details {
     border: 1px solid #aaa;
     border-radius: 4px;
     padding: 0.5em 0.5em 0;
+    box-shadow: 5px 5px 5px 5px rgba(36,38,47,.1),0px 4px 6px 0px rgba(0,0,0,.06);
 }
 
 

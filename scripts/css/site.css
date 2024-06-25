@@ -304,7 +304,6 @@ body ::-webkit-scrollbar-thumb {
 	display: block;
 	padding: .4rem 28px .4rem .5rem;
 	color: #6BC115;
-	width: 40%;
 	box-shadow: 2px 2px 3px 2px rgba(36,38,47,.1),0px 4px 6px 0px rgba(0,0,0,.06);
 }
 
@@ -1417,3 +1416,21 @@ a {
   font-style: normal;
 }
 
+.column {
+  float: left;
+  width: 40%;
+  padding: 10px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

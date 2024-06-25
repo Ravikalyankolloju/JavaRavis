@@ -305,7 +305,7 @@ body ::-webkit-scrollbar-thumb {
 	padding: .1rem 15px .1rem 1.1rem;
 	color: #6BC115;
 	box-shadow: 2px 2px 3px 2px rgba(36,38,47,.1),0px 4px 6px 0px rgba(0,0,0,.06);
-	width: 165px;
+	width: 170px;
 	height: 165px;
 }
 
@@ -1437,5 +1437,4 @@ a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
 }

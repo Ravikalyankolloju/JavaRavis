@@ -23,6 +23,21 @@
 		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
+	<script>
+		function closeOtherDetails(currentId) {
+			// Get all details elements on the page
+			var detailsElements = document.querySelectorAll('details');
+
+			// Iterate through each details element
+			detailsElements.forEach(function (details) {
+				// Check if the current details element is not the one being clicked
+				if (details.id !== currentId) {
+					// Close the details element
+					details.removeAttribute('open');
+				}
+			});
+		}
+	</script>
 	<style>
 		@media screen and (min-width: 1025px) {
 			.div-to-desk {
@@ -138,7 +153,7 @@
 						<h4>Java Interview Questions</h4>
 						<div class="card-body">
 							<h4><b>1. Java Basic Interview Questions</b></h4>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>1. What do you know about Java?</summary>
 								<div class="toggle-content">
 									<p>Java is a high-level programming language originally developed by Sun
@@ -147,8 +162,7 @@
 										Windows, Mac OS, and the various versions of UNIX.</p>
 								</div>
 							</details></br>
-
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>2. What are the supported platforms by Java Programming Language?</summary>
 								<div class="toggle-content">
 									<p>Java runs on a variety of platforms, such as Windows, Mac OS, and the various
@@ -157,7 +171,7 @@
 										etc.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>3. List any five features of Java?</summary>
 								<div class="toggle-content">
 									<p>Some features include Object Oriented, Platform Independent, Robust,
@@ -165,7 +179,7 @@
 										Multi-threaded</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>4. Why is Java Architectural Neutral?</summary>
 								<div class="toggle-content">
 									<p>It’s compiler generates an architecture-neutral object file format, which
@@ -175,7 +189,7 @@
 										runtime system.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>5. How Java enabled High Performance?</summary>
 								<div class="toggle-content">
 									<p>Java uses Just-In-Time compiler to enable high performance. Just-In-Time
@@ -185,7 +199,7 @@
 										directly to the processor.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>6. Why Java is considered dynamic?</summary>
 								<div class="toggle-content">
 									<p>It is designed to adapt to an evolving environment. Java programs can carry
@@ -194,7 +208,7 @@
 										accesses to objects on run-time.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>7. What is Java Virtual Machine and how it is considered in context of
 									Java’s
 									platform independent feature?</summary>
@@ -208,7 +222,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>8. What is a Class Variable?</summary>
 								<div class="toggle-content">
 									<p>These are variables declared with in a class, outside any method, with the
@@ -216,7 +230,7 @@
 										keyword.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>9. What do you mean by Object?</summary>
 								<div class="toggle-content">
 									<p>Object is a runtime entity and it’s state is stored in fields and behavior is
@@ -225,7 +239,7 @@
 										the primary mechanism for object-to-object communication.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>1. Define class?</summary>
 								<div class="toggle-content">
 									<p>A class is a blue print from which individual objects are created. A class
@@ -233,14 +247,14 @@
 										contain fields and methods to describe the behavior of an object.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>11. What kind of variables a class can consist of?</summary>
 								<div class="toggle-content">
 									<p>A class consist of Local variable, instance variables and class variables.
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>12. What is a Local Variable?</summary>
 								<div class="toggle-content">
 									<p>Variables defined inside methods, constructors or blocks are called local
@@ -249,14 +263,14 @@
 										it will be destroyed when the method has completed.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>13. What is a Instance Variable?</summary>
 								<div class="toggle-content">
 									<p>Instance variables are variables within a class but outside any method. These
 										variables are instantiated when the class is loaded.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>14. What is Singleton class?</summary>
 								<div class="toggle-content">
 									<p>Singleton class control object creation, limiting the number to one but
@@ -264,7 +278,7 @@
 										the flexibility to create more objects if the situation changes.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>15. What do you mean by Constructor?</summary>
 								<div class="toggle-content">
 									<p>Constructor gets invoked when a new object is created. Every class has a
@@ -273,14 +287,14 @@
 										compiler builds a default constructor for that class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>16. What is a static variable?</summary>
 								<div class="toggle-content">
 									<p>Class variables also known as static variables are declared with the static
 										keyword in a class, but outside a method, constructor or a block.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>17. What do you mean by Access Modifier?</summary>
 								<div class="toggle-content">
 									<p>Java provides access modifiers to set access levels for classes, variables,
@@ -289,7 +303,7 @@
 										accessibility modifier is specified.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>18. What is protected access modifier?</summary>
 								<div class="toggle-content">
 									<p>Variables, methods and constructors which are declared protected in a
@@ -299,7 +313,7 @@
 										package of the protected members' class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>19. Why is String class considered immutable?</summary>
 								<div class="toggle-content">
 									<p>The String class is immutable, so that once it is created a String object
@@ -309,7 +323,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>20. Why is StringBuffer called mutable?</summary>
 								<div class="toggle-content">
 									<p>The String class is considered as immutable, so that once it is created a
@@ -319,7 +333,7 @@
 										to Strings of characters then StringBuffer should be used.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>21. What is the difference between StringBuffer and StringBuilder class?
 								</summary>
 								<div class="toggle-content">
@@ -328,7 +342,7 @@
 										if thread safety is necessary then use StringBuffer objects.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>22. Explain garbage collection in Java?</summary>
 								<div class="toggle-content">
 									<p>It uses garbage collection to free the memory. By cleaning those objects that
@@ -336,13 +350,13 @@
 										no longer reference by any of the program.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>23. Define immutable object?</summary>
 								<div class="toggle-content">
 									<p>An immutable object can’t be changed once it is created.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>24. Explain the usage of this() with constructors?</summary>
 								<div class="toggle-content">
 									<p>It is used with variables or methods and used to call constructer of same
@@ -350,7 +364,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>25. Explain the following line used under Java Program −
 									public static void main (String args[ ])
 								</summary>
@@ -380,7 +394,7 @@
 									</ul>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>26. Define JRE i.e. Java Runtime Environment?</summary>
 								<div class="toggle-content">
 									<p>Java Runtime Environment is an implementation of the Java Virtual Machine
@@ -389,7 +403,7 @@
 										Java application;</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>27. What is JAR file?</summary>
 								<div class="toggle-content">
 									<p>JAR files is Java Archive fles and it aggregates many files into one. It
@@ -399,7 +413,7 @@
 										file extension.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>28. What is a WAR file?</summary>
 								<div class="toggle-content">
 									<p>This is Web Archive File and used to store XML, java classes, and JavaServer
@@ -407,14 +421,14 @@
 										Servlets, Java classes, XML files, static Web pages etc.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>29. Define JIT compiler?</summary>
 								<div class="toggle-content">
 									<p>It improves the runtime performance of computer programs based on bytecode.
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>30. What is the difference between object oriented programming language and
 									object
 									based programming language?</summary>
@@ -424,7 +438,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>31. What is the purpose of default constructor?</summary>
 								<div class="toggle-content">
 									<p>The java compiler creates a default constructor only if there is no
@@ -432,13 +446,13 @@
 										in the class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>32. Can a constructor be made final?</summary>
 								<div class="toggle-content">
 									<p>No, this is not possible.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary> What 33.is static block?</summary>
 								<div class="toggle-content">
 									<p>It is used to initialize the static data member, It is excuted before main
@@ -446,21 +460,21 @@
 										at the time of classloading.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>34. What is final class?</summary>
 								<div class="toggle-content">
 									<p>Final classes are created so the methods implemented by that class cannot be
 										overridden. It can’t be inherited.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>35. What is NullPointerException?</summary>
 								<div class="toggle-content">
 									<p>A NullPointerException is thrown when calling the instance method of a null
 										object, accessing or modifying the field of a null object etc.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>36. How many bits are used to represent Unicode, ASCII, UTF-16, and UTF-8
 									characters?</summary>
 								<div class="toggle-content">
@@ -472,7 +486,7 @@
 										patterns.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>37. What are Wrapper classes?</summary>
 								<div class="toggle-content">
 									<p>These are classes that allow primitive types to be accessed as objects.
@@ -480,7 +494,7 @@
 										Integer, Character, Double, Boolean etc.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>38. What is the difference between static and non-static variables?
 								</summary>
 								<div class="toggle-content">
@@ -490,7 +504,7 @@
 										each object instance.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>39. What is Serialization and deserialization?</summary>
 								<div class="toggle-content">
 									<p>Serialization is the process of writing the state of an object to a byte
@@ -498,7 +512,7 @@
 										Deserialization is the process of restoring these objects.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>40. What's the difference between constructors and other methods?</summary>
 								<div class="toggle-content">
 									<p>Constructors must have the same name as the class and can not return a value.
@@ -506,7 +520,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>41. What is a transient variable?</summary>
 								<div class="toggle-content">
 									<p>A transient variable is a variable that may not be serialized during
@@ -514,7 +528,7 @@
 										de-serialization,</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>42. What is synchronization?</summary>
 								<div class="toggle-content">
 									<p>Synchronization is the capability to control the access of multiple threads
@@ -525,7 +539,7 @@
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>43. Does garbage collection guarantee that a program will not run out of
 									memory?</summary>
 								<div class="toggle-content">
@@ -537,7 +551,7 @@
 										not subject to garbage collection.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>44. What is the difference between a break statement and a continue
 									statement?</summary>
 								<div class="toggle-content">
@@ -547,7 +561,7 @@
 										loop iteration and return control to the loop statement.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>45. If a variable is declared as private, where may the variable be
 									accessed?</summary>
 								<div class="toggle-content">
@@ -556,13 +570,13 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>46. What is the purpose of the System class?</summary>
 								<div class="toggle-content">
 									<p>The purpose of the System class is to provide access to system resources.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>47. List primitive Java types?</summary>
 								<div class="toggle-content">
 									<p>The eight primitive types are byte, char, short, int, long, float, double,
@@ -570,7 +584,7 @@
 										boolean.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>48. Under what conditions is an object's finalize() method invoked by the
 									garbage
 									collector?</summary>
@@ -580,7 +594,7 @@
 										the object has become unreachable.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>49. What are ClassLoaders?</summary>
 								<div class="toggle-content">
 									<p>A class loader is an object that is responsible for loading classes. The
@@ -589,7 +603,7 @@
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>50. Why do we need wrapper classes?</summary>
 								<div class="toggle-content">
 									<p>We can pass them around as method parameters where a method expects an
@@ -597,14 +611,14 @@
 										also provides utility methods.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>51. What is the Locale class?</summary>
 								<div class="toggle-content">
 									<p>The Locale class is used to tailor program output to the conventions of a
 										particular geographic, political, or cultural region.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>52. What are synchronized methods and synchronized statements?</summary>
 								<div class="toggle-content">
 									<p>Synchronized methods are methods that are used to control access to an
@@ -614,7 +628,7 @@
 										for the object or class referenced in the synchronized statement.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>53. Describe life cycle of thread?</summary>
 								<div class="toggle-content">
 									<p>A thread is a execution in a program. The life cycle of a thread include −
@@ -629,7 +643,7 @@
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>54. Why Generics are used in Java?</summary>
 								<div class="toggle-content">
 									<p>Generics provide compile-time type safety that allows programmers to catch
@@ -639,7 +653,7 @@
 										methods or, with a single class declaration, a set of related types.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>55. What environment variables do I need to set on my machine in order to
 									be able
 									to
@@ -648,7 +662,7 @@
 									<p>CLASSPATH and PATH are the two variables.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>56. Is there any need to import java.lang package?</summary>
 								<div class="toggle-content">
 									<p>No, there is no need to import this package. It is by default loaded
@@ -656,7 +670,7 @@
 										by the JVM.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>57. What is Externalizable interface?</summary>
 								<div class="toggle-content">
 									<p>Externalizable is an interface which contains two methods readExternal and
@@ -664,7 +678,7 @@
 										mechanism.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>58. If System.exit (0); is written at the end of the try block, will the
 									finally
 									block still execute?</summary>
@@ -675,20 +689,20 @@
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>59. What is the GregorianCalendar class?</summary>
 								<div class="toggle-content">
 									<p>The GregorianCalendar provides support for traditional Western calendars</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>60. What is the SimpleTimeZone class?</summary>
 								<div class="toggle-content">
 									<p>The SimpleTimeZone class provides support for a Gregorian calendar .</p>
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>61. What is difference between Path and Classpath?</summary>
 								<div class="toggle-content">
 									<p>Path and Classpath are operating system level environment variales. Path is
@@ -698,7 +712,7 @@
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>62. What is an object's lock and which object's have locks?</summary>
 								<div class="toggle-content">
 									<p>An object's lock is a mechanism that is used by multiple threads to obtain
@@ -707,7 +721,7 @@
 										an object only after it has acquired the object's lock.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>63. What is Downcasting?</summary>
 								<div class="toggle-content">
 									<p>It is the casting from a general to a more specific type, i.e. casting down
@@ -716,7 +730,7 @@
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>64. What is the difference between inner class and nested class?</summary>
 								<div class="toggle-content">
 									<p>When a class is defined within a scope of another class, then it becomes
@@ -725,7 +739,7 @@
 										nested class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>65. What is constructor chaining and how is it achieved in Java?</summary>
 								<div class="toggle-content">
 									<p>A child object constructor always first needs to construct its parent. In
@@ -738,7 +752,7 @@
 							<br>
 							<h4><b>2. Java Encapsulation Interview Questions</b></h4>
 							<br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>1. What is Encapsulation in Java?</summary>
 								<div class="toggle-content">
 									<p>Encapsulation is the main concept of OOPs (Object-Oriented programming).
@@ -763,7 +777,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>2. How Encapsulation is helpful in Java?</summary>
 								<div class="toggle-content">
 									<p>
@@ -783,7 +797,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>3. What are the advantages of Encapsulation?</summary>
 								<div class="toggle-content">
 									<p>
@@ -817,7 +831,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>4. What are the difference between data hiding and Encapsulation?</summary>
 								<div class="toggle-content">
 									<p>Data hiding and encapsulation both are important concepts of object-oriented
@@ -872,7 +886,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>5. Where Encapsulation is used?</summary>
 								<div class="toggle-content">
 									<p>Encapsulation is used in various design patterns and real-life problems that
@@ -884,7 +898,7 @@
 										access to them.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>6. What are the difference between Encapsulation and Inheritance?</summary>
 								<div class="toggle-content">
 									<p>
@@ -991,7 +1005,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>7. What is the difference between Encapsulation and Abstraction?</summary>
 								<div class="toggle-content">
 									<p>
@@ -1037,7 +1051,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>8. Why Encapsulation is called Data hiding in Java?</summary>
 								<div class="toggle-content">
 									<p>Encapsulation is a technique whereby the implementation details of a class
@@ -1049,7 +1063,7 @@
 										using methods. Therefore, it is also known as data hiding.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>9. What are the advantages of using Encapsulation?</summary>
 								<div class="toggle-content">
 									<p>Encapsulation can be achieved by declaring all the variables in the class as
@@ -1059,7 +1073,7 @@
 										variables.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>10. How does getter and setter functions help in encapsulation?</summary>
 								<div class="toggle-content">
 									<p>In encapsulation, the getters and setters method is because to hide the
@@ -1077,7 +1091,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>11.What is the difference between Encapsulation and Polymorphism?</summary>
 								<div class="toggle-content">
 									<p>Packaging data and methods in a single unit are Encapsulation. Their own
@@ -1095,7 +1109,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>12. What do you understand by interfaces and abstract classes? How do they
 									help
 									with encapsulation?</summary>
@@ -1113,7 +1127,7 @@
 										it.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>13. Why should we use private constructors?</summary>
 								<div class="toggle-content">
 									<p>Private constructors are used in order to prevent a class from being
@@ -1122,7 +1136,7 @@
 										instance of a class is allowed to exist.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>14. What are some ways to achieve encapsulation in Java?</summary>
 								<div class="toggle-content">
 									<p>There are a few ways to achieve encapsulation in Java. One way is to make all
@@ -1134,7 +1148,7 @@
 										setters, and keeping all fields private.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>15. How to achieve Data hiding programmatically?</summary>
 								<div class="toggle-content">
 									<p>By declaring data members (variables) as private, we can achieve or implement
@@ -1148,7 +1162,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>16. Does reflection violates encapsulation in Java?</summary>
 								<div class="toggle-content">
 									<p>Reflection violates encapsulation because it reveals the internal data
@@ -1156,7 +1170,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>17. Explain design pattern based on encapsulation in java?</summary>
 								<div class="toggle-content">
 									<p>In many design patterns, Java uses the encapsulation technique and one of
@@ -1178,7 +1192,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>18. What is a Tightly encapsulated class in Java?</summary>
 								<div class="toggle-content">
 									<p>If each variable is declared as private in the class, it is called tightly
@@ -1193,7 +1207,7 @@
 							<br>
 							<h4><b>3. Java Abstraction Interview Questions</b></h4>
 							<br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>1. What is Abstraction in Java?</summary>
 								<div class="toggle-content">
 									<p>In computer science terms, abstraction means separating ideas from their
@@ -1212,7 +1226,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>2. How to achieve or implement Abstraction in Java?</summary>
 								<div class="toggle-content">
 									<p>There are two ways to implement abstraction in java. They are as follows:
@@ -1222,7 +1236,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>3. What is the difference between abstract class and concrete class?
 								</summary>
 								<div class="toggle-content">
@@ -1240,7 +1254,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>4. When to use Abstract method in Java?</summary>
 								<div class="toggle-content">
 									<p>An abstract method can be used
@@ -1252,19 +1266,19 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>5. Is abstract class a pure abstraction in Java?</summary>
 								<div class="toggle-content">
 									<p>No, It provides 0 to 100% abstraction.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>6. Is it possible to create an object of abstract class in Java?</summary>
 								<div class="toggle-content">
 									<p>No. It is not possible but we can create an object of its subclass.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>7. Is it possible that an abstract class can have without any abstract
 									method?
 								</summary>
@@ -1272,13 +1286,13 @@
 									<p>Yes.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>8. Can an abstract class have constructor?</summary>
 								<div class="toggle-content">
 									<p>Yes.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>9. Is abstract class allow to define private, final, static, and concrete
 									methods?
 								</summary>
@@ -1286,14 +1300,14 @@
 									<p>Yes.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>10. Is it possible to achieve multiple inheritance through abstract class?
 								</summary>
 								<div class="toggle-content">
 									<p>No.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>11. Why abstract class has constructor even though you cannot create
 									object?
 								</summary>
@@ -1315,7 +1329,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>12. What is the advantage of Abstract class in Java?</summary>
 								<div class="toggle-content">
 									<p>The main advantages of using abstract class are as follows:
@@ -1330,7 +1344,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>13. What are the differences between Abstraction and Encapsulation?
 								</summary>
 								<div class="toggle-content">
@@ -1403,7 +1417,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>14. What are the difference between Abstraction and Polymorphism?</summary>
 								<div class="toggle-content">
 									<p>
@@ -1491,7 +1505,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>15. Difference between Abstract class and Interface in java?</summary>
 								<div class="toggle-content">
 									<p>
@@ -1550,7 +1564,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>16. Should abstract methods be overridden?</summary>
 								<div class="toggle-content">
 									<p>Yes, all the abstract methods in the subclass should be overridden because
@@ -1558,7 +1572,7 @@
 										compiler will not accept and give the compile-time error.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>17. Why should we create reference to superclass (abstract class
 									reference)?
 								</summary>
@@ -1580,7 +1594,7 @@
 							<br>
 							<h4><b>4. Java Polymorphism Interview Questions</b></h4>
 							<br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>1. What is Polymorphism in Java OOPs?</summary>
 								<div class="toggle-content">
 									<p>Polymorphism in java is one of the core concepts of object-oriented
@@ -1601,7 +1615,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>2. What are the types of Polymorphism in Java?</summary>
 								<div class="toggle-content">
 									<p>There are two types of polymorphism in java. They are:<br>
@@ -1612,7 +1626,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>3. What are different ways to achieve or implement polymorphism in Java?
 								</summary>
 								<div class="toggle-content">
@@ -1624,7 +1638,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>4. How is Inheritance useful to achieve Polymorphism in Java?</summary>
 								<div class="toggle-content">
 									<p>Inheritance represents the parent-child relationship between two classes and
@@ -1633,7 +1647,7 @@
 										code (or to make the program more dynamic).</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>5. What are the differences between Polymorphism and Inheritance in Java?
 								</summary>
 								<div class="toggle-content">
@@ -1657,7 +1671,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>6. What is Compile time polymorphism (Static polymorphism)?</summary>
 								<div class="toggle-content">
 									<p>A polymorphism where object binding with methods happens at compile time is
@@ -1670,7 +1684,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>7. How to achieve or implement static polymorphism in Java?</summary>
 								<div class="toggle-content">
 									<p>Static polymorphism can be achieved by method overloading. Other examples of
@@ -1678,7 +1692,7 @@
 										time polymorphism are constructor overloading and method hiding.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>8. What is Runtime Polymorphism (Dynamic Polymorphism)?</summary>
 								<div class="toggle-content">
 									<p>A polymorphism where object binding with methods happens at runtime is called
@@ -1697,7 +1711,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>9. How to achieve/implement dynamic polymorphism in Java?</summary>
 								<div class="toggle-content">
 									<p>Dynamic or runtime polymorphism can be achieved or implemented via method
@@ -1707,7 +1721,7 @@
 										have an IS-A relationship.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>10. What are the differences between compile-time polymorphism and runtime
 									polymorphism in java?</summary>
 								<div class="toggle-content">
@@ -1739,7 +1753,7 @@
 										Runtime polymorphism can be achieved via method overriding.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>11. How is an abstract class related to polymorphism in Java?</summary>
 								<div class="toggle-content">
 									<p>Polymorphism in Java allows objects of different classes to be treated as if
@@ -1754,7 +1768,7 @@
 										abstract class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>12. Understand the benefits and drawbacks:</summary>
 								<div class="toggle-content">
 									<p>Polymorphism has several benefits, including code reuse and flexibility.
@@ -1764,7 +1778,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>13. What are the differences between method overloading and method
 									overriding?
 								</summary>
@@ -1815,7 +1829,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>14. What is the difference between compile-time polymorphism and runtime
 									polymorphism?</summary>
 								<div class="toggle-content">
@@ -1896,7 +1910,7 @@
 							<br>
 							<h4><b>5. Java Inheritance Interview Questions</b></h4>
 							<br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>1. What is inheritance in Java?</summary>
 								<div class="toggle-content">
 									<p>Acquiring the features from existing entities is known as “inheritance”.<br>
@@ -1914,7 +1928,7 @@
 										known as “inheritance”.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>2. What is the purpose of inheritance?</summary>
 								<div class="toggle-content">
 									<p>Inheritance offers code reusability and thereby Rapid Application Development
@@ -1922,7 +1936,7 @@
 										is possible.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>3. What are the types of inheritance?</summary>
 								<div class="toggle-content">
 									<p>The following are the types of inheritances:<br>
@@ -1949,7 +1963,7 @@
 									multiple inheritance. It can be achieved through interfaces.<br></p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>4. What is the purpose of the ‘super’ keyword in Java?</summary>
 								<div class="toggle-content">
 									<p> The following are the major uses of super keyword they are:
@@ -1970,7 +1984,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>5. What are the differences between ‘this’ and ‘super’ keyword?</summary>
 								<div class="toggle-content">
 									<p>Using ‘this’ from within one class constructor, a call can be made to another
@@ -1979,7 +1993,7 @@
 										is called from sub-class constructor.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>6. I don’t want my class to be inherited by any other class. What should I
 									do?
 								</summary>
@@ -1991,7 +2005,7 @@
 										class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>7. What is Is-A relationship in Java?</summary>
 								<div class="toggle-content">
 									<p>Is-A relationship represents Inheritance. It is implemented using the
@@ -1999,19 +2013,19 @@
 										keyword. It is used for code reusability.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>8. Can we assign superclass to subclass?</summary>
 								<div class="toggle-content">
 									<p>No</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>9. Can a class extend more than one class?</summary>
 								<div class="toggle-content">
 									<p>No, one class can extend only a single class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>10. Are constructor and instance initialization block inherited to
 									subclass?
 								</summary>
@@ -2022,7 +2036,7 @@
 										subclass.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>11. Are static members inherited to subclass in Java?</summary>
 								<div class="toggle-content">
 									<p>Static block cannot be inherited to its subclass.
@@ -2032,27 +2046,27 @@
 										non-static method is inherited as a non-static member only.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>12. Can we extend (inherit) final class?</summary>
 								<div class="toggle-content">
 									<p>No, a class declared with final keyword cannot be inherited.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>13. Can a final method and private members overridden?</summary>
 								<div class="toggle-content">
 									<p>No</p>
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>14. What is order of calling constructors in case of inheritance?</summary>
 								<div class="toggle-content">
 									<p>In case of inheritance, constructors are called from the top to down
 										hierarchy.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>15. What are the advantages of inheritance in Java?</summary>
 								<div class="toggle-content">
 									<p>The advantages of inheritance in java are as follows:
@@ -2070,7 +2084,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>16. Why multiple inheritance is not supported in java through class?
 								</summary>
 								<div class="toggle-content">
@@ -2086,7 +2100,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>17. How will you restrict a member of a class from inheriting its subclass?
 								</summary>
 								<div class="toggle-content">
@@ -2097,14 +2111,14 @@
 										available in their own class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>18. Can we access subclass members if we create an object of superclass?
 								</summary>
 								<div class="toggle-content">
 									<p>No, we can access only superclass members but not the subclass members.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>19. Can we access both superclass and subclass members if we create an
 									object of
 									subclass?</summary>
@@ -2112,7 +2126,7 @@
 									<p>Yes, we can access both superclass and subclass members.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>20. What happens if both superclass and subclass have a field with the same
 									name?
 								</summary>
@@ -2121,7 +2135,7 @@
 										instantiated.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>21. What is the diamond problem in inheritance? How can it be resolved in
 									Java?
 								</summary>
@@ -2141,7 +2155,7 @@
 										class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>23. What is the difference between composition and inheritance?</summary>
 								<div class="toggle-content">
 									<p> Java supports both composition and inheritance, but both are different in
@@ -2166,7 +2180,7 @@
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>24. What is the difference between "is-a" and "has-a" relationship?
 								</summary>
 								<div class="toggle-content">
@@ -2187,7 +2201,7 @@
 							<h4><b>6. Method Overloading and Overriding Interview Questions</b></h4>
 							<br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>1. What is method overloading in Java?</summary>
 								<div class="toggle-content">
 									<p>If two or more methods have same name, but different argument then it is
@@ -2202,7 +2216,7 @@
 										the context in which it is called.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>2. What are rules of method overloading?</summary>
 								<div class="toggle-content">
 									<p>
@@ -2253,7 +2267,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>3. Can we change only return type while method overloading?</summary>
 								<div class="toggle-content">
 									<p>You can not.If we change only return type, it will become ambiguous for
@@ -2262,7 +2276,7 @@
 										type.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>4. Can we overload static and main method in java?</summary>
 								<div class="toggle-content">
 									<p>Yes, we can overload static methods in java but we can not override them.<br>
@@ -2271,13 +2285,13 @@
 										void main(String[] args) will be used when your class is invoked by JVM.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>5. Can overloaded method be overrided?</summary>
 								<div class="toggle-content">
 									<p>Yes, we can override a method which is overloaded in super class.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>6. Can we declare one overloaded method as static and another one as
 									non-static?
 								</summary>
@@ -2285,7 +2299,7 @@
 									<p>Yes. Overloaded methods can be either static or non static.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>7. How do compiler differentiate overloaded methods from duplicate methods?
 								</summary>
 								<div class="toggle-content">
@@ -2297,7 +2311,7 @@
 										same name but differ in number of arguments or else types of arguments.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>8. What is method overriding in Java?</summary>
 								<div class="toggle-content">
 									<p>Method overriding is another way to define a method with same name but
@@ -2319,7 +2333,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>9. Can we override static method in Java?</summary>
 								<div class="toggle-content">
 									<p>No, you cannot override static method in Java because they are resolved and
@@ -2340,7 +2354,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>10. Can we override a private method in Java?</summary>
 								<div class="toggle-content">
 									<p>No, you cannot override private method in Java. Since private methods are not
@@ -2350,7 +2364,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>11. What is covariant method overriding?</summary>
 								<div class="toggle-content">
 									<p>One of the rule of method overriding is that return type of overriding method
@@ -2366,7 +2380,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>12. What are rules of method overriding?</summary>
 								<div class="toggle-content">
 									<p>
@@ -2423,7 +2437,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>13. Can we change argument list of overridden method?</summary>
 								<div class="toggle-content">
 									<p>No, you cannot change the argument list of overridden method in Java. An
@@ -2433,7 +2447,7 @@
 										that to only to sub type of return type of original method.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>14. Can we change return type of method in subclass while overriding?
 								</summary>
 								<div class="toggle-content">
@@ -2447,7 +2461,7 @@
 										e.g. clone() method.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>15. Can we override a method which throws run-time exception without throws
 									clause?
 								</summary>
@@ -2458,7 +2472,7 @@
 										necessary to throw NPE from overriding method as well.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>16. How do you call super class version of an overriding method in sub
 									class?
 								</summary>
@@ -2470,7 +2484,7 @@
 										calculate() as super.calculate().</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>17. Can we override a non-static method as static in Java?</summary>
 								<div class="toggle-content">
 									<p>No, its not possible to define a non-static method of same name as static
@@ -2480,7 +2494,7 @@
 										overriding static method in Java.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>18. Can we override the constructor in Java?</summary>
 								<div class="toggle-content">
 									<p>No, you cannot override constructors in Java because they are not inherited.
@@ -2494,7 +2508,7 @@
 										them in Java.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>19. Can we override a final method in Java?</summary>
 								<div class="toggle-content">
 									<p>No, you cannot override a final method in Java. Trying to override a final
@@ -2508,7 +2522,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>20. Difference Between Method Overloading and Method Overriding in Java
 								</summary>
 								<div class="toggle-content">
@@ -2646,7 +2660,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>21. Advantages of Covariant Return Type?</summary>
 								<div class="toggle-content">
 									<p>Before Java5, it was not possible to override any method by changing the
@@ -2672,7 +2686,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>22. Java Access Modifiers with Method Overriding?</summary>
 								<div class="toggle-content">
 									<p>If you are overriding any method, overridden method (i.e. declared in
@@ -2680,7 +2694,7 @@
 										not be more restrictive.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>23. Exception Handling with Method Overriding in Java</summary>
 								<div class="toggle-content">
 									<p>
@@ -2709,7 +2723,7 @@
 							<br>
 							<h4><b>7. Java Exception Handling Interview Questions</b></h4>
 							<br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>1. What is an exception in Java, and why is it essential for error
 									handling?
 								</summary>
@@ -2721,7 +2735,7 @@
 										gracefully.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>2. How many types of exception can occur in a Java program?</summary>
 								<div class="toggle-content">
 									<p>There are mainly two types of exceptions: checked and unchecked. Here, an
@@ -2749,7 +2763,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>3. What is Exception Handling?</summary>
 								<div class="toggle-content">
 									<p>Exception Handling is a mechanism that is used to handle runtime errors. It
@@ -2761,7 +2775,7 @@
 										Here, the error is considered as the unchecked exception.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>4. What is the difference between Checked Exception and Unchecked
 									Exception?
 								</summary>
@@ -2782,13 +2796,13 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>5. What is the base class for Error and Exception</summary>
 								<div class="toggle-content">
 									<p>The Throwable class is the base class for Error and Exception.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>6. Is it necessary that each try block must be followed by a catch block?
 								</summary>
 								<div class="toggle-content">
@@ -2800,7 +2814,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>7. What is finally block?</summary>
 								<div class="toggle-content">
 									<p>The "finally" block is used to execute the important code of the program. It
@@ -2822,7 +2836,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>8. Can finally block be used without a catch?</summary>
 								<div class="toggle-content">
 									<p>Yes, According to the definition of finally block, it must be followed by a
@@ -2830,7 +2844,7 @@
 										catch block, therefore, we can use try block instead of catch.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>9. Is there any case when finally will not be executed?</summary>
 								<div class="toggle-content">
 									<p>Finally block will not be executed if program exits(either by calling
@@ -2838,7 +2852,7 @@
 										or by causing a fatal error that causes the process to abort).</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>10. What is the difference between throw and throws?</summary>
 								<div class="toggle-content">
 									<p>
@@ -2884,13 +2898,13 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>11. Can an exception be rethrown?</summary>
 								<div class="toggle-content">
 									<p>Yes.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>12. Can subclass overriding method declare an exception if parent class
 									method
 									doesn't throw an exception?</summary>
@@ -2898,7 +2912,7 @@
 									<p>Yes but only unchecked exception not checked.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>13. What is exception propagation?</summary>
 								<div class="toggle-content">
 									<p>An exception is first thrown from the top of the stack and if it is not
@@ -2912,7 +2926,7 @@
 										propagation. By default, checked exceptions are not propagated.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>14. What are the Exception Handling Keywords in Java?</summary>
 								<div class="toggle-content">
 									<p>There are four keywords used in java exception handling.<br>
@@ -2959,7 +2973,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>15. What is the difference between Checked and Unchecked Exceptions in
 									Java?
 								</summary>
@@ -3002,7 +3016,7 @@
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>16. What is the difference between the throw and throws keyword in Java?
 								</summary>
 								<div class="toggle-content">
@@ -3013,7 +3027,7 @@
 										and handing over the exception object to runtime to handle it.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>17. How to write custom exceptions in Java?</summary>
 								<div class="toggle-content">
 									<p>We can extend Exception class or any of its subclasses to create our custom
@@ -3046,7 +3060,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>18. What is the difference between final, finally, and finalize in Java?
 								</summary>
 								<div class="toggle-content">
@@ -3066,7 +3080,7 @@ public class MyException extends IOException {
 										the three, only finally is related to java exception handling.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>19. Can we have an empty catch block?</summary>
 								<div class="toggle-content">
 									<p>We can have an empty catch block but it’s an example of bad programming. We
@@ -3080,7 +3094,7 @@ public class MyException extends IOException {
 										or log files.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>20. What is the ‘try-with-resources’ statement in Java, and how does it
 									simplify
 									resource management and exception handling?</summary>
@@ -3091,7 +3105,7 @@ public class MyException extends IOException {
 										handling.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>21. What is the ‘throws’ clause in method declarations, and how does it
 									indicate
 									that a method may throw exceptions?</summary>
@@ -3102,7 +3116,7 @@ public class MyException extends IOException {
 										exceptions.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>22. What is the ‘try-with-resources’ statement, and how does it handle
 									exceptions
 									that occur during resource closure?</summary>
@@ -3114,7 +3128,7 @@ public class MyException extends IOException {
 										of suppressed exceptions.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>23. Explain the ‘finally’ block’s behavior when an exception is thrown in
 									the
 									‘catch’ block.</summary>
@@ -3125,7 +3139,7 @@ public class MyException extends IOException {
 										outcome.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>24. Explain the hierarchy of exceptions in Java?</summary>
 								<div class="toggle-content">
 									<p>
@@ -3135,7 +3149,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>25. Can we keep the statements after finally block If the finally block is
 									returning the control?</summary>
 								<div class="toggle-content">
@@ -3146,7 +3160,7 @@ public class MyException extends IOException {
 										unreachable code error.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>26. Does finally block get executed If either try or catch blocks are
 									returning the
 									control?</summary>
@@ -3158,7 +3172,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>27. What is the difference between final, finally and finalize in Java?
 								</summary>
 								<div class="toggle-content">
@@ -3214,7 +3228,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>28. What is the difference between throw, throws and throwable in Java?
 								</summary>
 								<div class="toggle-content">
@@ -3259,7 +3273,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>29. Can we override a super class method which is throwing an unchecked
 									exception
 									with checked exception in the sub class?</summary>
@@ -3271,7 +3285,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>30. What are the differences between StackOverflowError and
 									OutOfMemoryError In
 									Java?</summary>
@@ -3321,7 +3335,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>31. What are the changes made to exception handling from Java 7?</summary>
 								<div class="toggle-content">
 									<p>Multi-catch exceptions and try-with-resources are two major changes made to
@@ -3332,7 +3346,7 @@ public class MyException extends IOException {
 							<br>
 							<h4><b>8. Java Multithreading Interview Questions</b></h4>
 							<br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>1) What is multitasking?</summary>
 								<div class="toggle-content">
 									<p style="text-align:justify;">A multitasking operating system is an operating
@@ -3366,7 +3380,7 @@ public class MyException extends IOException {
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>2. What is the difference between a thread and a process?
 								</summary>
 								<div class="toggle-content">
@@ -3384,7 +3398,7 @@ public class MyException extends IOException {
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>3. What are some fundamental advantages of multithreading in Java?
 								</summary>
 								<div class="toggle-content">
@@ -3401,7 +3415,7 @@ public class MyException extends IOException {
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>4. What is inter-thread communication?</summary>
 								<div class="toggle-content">
 									<p>Communication between synchronized threads is referred to as inter-thread
@@ -3414,7 +3428,7 @@ public class MyException extends IOException {
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>5. What are some functions used to perform inter-thread communication in
 									Java?
 								</summary>
@@ -3427,7 +3441,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>6. What do you understand about the wait() function in Java?</summary>
 								<div class="toggle-content">
 									<p>The wait() function, specified by the object class, is used to pause the
@@ -3440,7 +3454,7 @@ public class MyException extends IOException {
 								</div>
 							</details></br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>7. What are the different states in a thread lifecycle?</summary>
 								<div class="toggle-content">
 									<p>
@@ -3470,7 +3484,7 @@ public class MyException extends IOException {
 									</ol>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>8. What do you understand by context switching?</summary>
 								<div class="toggle-content">
 									<p>Context switching is a feature through which the current state of a thread is
@@ -3480,7 +3494,7 @@ public class MyException extends IOException {
 										processes can share the same CPU.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>9. What is the function of the join() method?</summary>
 								<div class="toggle-content">
 									<p>The join() method causes the current thread to stop running until the thread
@@ -3490,7 +3504,7 @@ public class MyException extends IOException {
 										the execution of multiple threads in an organized manner.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>10. What is the function of the sleep() method?
 								</summary>
 								<div class="toggle-content">
@@ -3501,7 +3515,7 @@ public class MyException extends IOException {
 										thread that needs to be executed before the current thread executes. </p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>11. What do you understand about Deadlock situations in Java
 									Multithreading?
 								</summary>
@@ -3513,7 +3527,7 @@ public class MyException extends IOException {
 										program execution and breaking the code at runtime.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>12. How do you detect deadlock situations in Java?</summary>
 								<div class="toggle-content">
 									<p>Deadlock situations can be detected by running the executable code on cmd and
@@ -3522,7 +3536,7 @@ public class MyException extends IOException {
 										will throw up a message.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>13. How can deadlock situations be avoided in Java?</summary>
 								<div class="toggle-content">
 									<p>This is one of the most common Java Multithreading interview questions asked
@@ -3540,7 +3554,7 @@ public class MyException extends IOException {
 										resources used by other threads.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>14. Do individual threads have their respective stacks in Multithreaded
 									programming?</summary>
 								<div class="toggle-content">
@@ -3549,7 +3563,7 @@ public class MyException extends IOException {
 										is independent of the other and maintains its own stack in the memory.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>15. How is thread-safety achieved in multithreaded programming?</summary>
 								<div class="toggle-content">
 									<p>Thready safety can be achieved if multiple threads can use a particular class
@@ -3564,7 +3578,7 @@ public class MyException extends IOException {
 									</ul>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>16. In how many ways, you can create threads in Java? What are those?
 									Explain with
 									examples?</summary>
@@ -3576,7 +3590,7 @@ public class MyException extends IOException {
 									</ol>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>17. How many types of threads are there in Java? Explain?</summary>
 								<div class="toggle-content">
 									<p>There are two types of threads in Java. They are,</p>
@@ -3601,7 +3615,7 @@ public class MyException extends IOException {
 										threads finish their execution.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>18. Do two threads can have same name? If yes then how do you identify the
 									threads
 									having the same name?</summary>
@@ -3615,7 +3629,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>19. What are MIN_PRIORITY, NORM_PRIORITY and MAX_PRIORITY?</summary>
 								<div class="toggle-content">
 									<p>MIN_PRIORITY, NORM_PRIORITY and MAX_PRIORITY are three constant fields in
@@ -3634,7 +3648,7 @@ public class MyException extends IOException {
 										can have and it’s value is 10.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>20. What do you mean by synchronization? Explain with an example?</summary>
 								<div class="toggle-content">
 									<p>Through synchronization, we can make the threads to execute particular method
@@ -3649,7 +3663,7 @@ public class MyException extends IOException {
 										Thus avoiding the thread interference and achieving the thread safeness.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>21. What is object lock or monitor?</summary>
 								<div class="toggle-content">
 									<p>The synchronization in Java is built around an entity called object lock or
@@ -3677,7 +3691,7 @@ public class MyException extends IOException {
 									</ul>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>22. I want only some part of the method to be synchronized, not the whole
 									method?
 									How do you achieve that?</summary>
@@ -3685,7 +3699,7 @@ public class MyException extends IOException {
 									<p>This can be done using synchronized blocks.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>23. What is the use of synchronized blocks?</summary>
 								<div class="toggle-content">
 									<p>Synchronization slows down the application. Because, at any given time, only
@@ -3704,7 +3718,7 @@ public class MyException extends IOException {
 										blocks.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>24. How threads communicate with each other in Java?</summary>
 								<div class="toggle-content">
 									<p>Threads in Java communicate with each other using wait(), notify() and
@@ -3731,7 +3745,7 @@ public class MyException extends IOException {
 										priority.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>25. What is the difference between wait() and sleep() methods in Java?
 								</summary>
 								<div class="toggle-content">
@@ -3799,7 +3813,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>26. What is the difference between notify() and notifyAll() in Java?
 								</summary>
 								<div class="toggle-content">
@@ -3829,7 +3843,7 @@ public class MyException extends IOException {
 										until they get the object lock.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>27. What do you know about interrupt() method? Why it is used?</summary>
 								<div class="toggle-content">
 									<p>interrupt() method is used to interrupt sleeping or waiting thread. The whole
@@ -3845,7 +3859,7 @@ public class MyException extends IOException {
 										be set to false again.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>28. What is the difference between calling start() method and calling run()
 									method
 									directly as anyhow start() method internally calls run() method?</summary>
@@ -3868,7 +3882,7 @@ public class MyException extends IOException {
 										multi-threading.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>29. What is executor framework?</summary>
 								<div class="toggle-content">
 									<p>Java 5 has introduced new framework named executor framework for managing
@@ -3884,7 +3898,7 @@ public class MyException extends IOException {
 										threads had completed its current task.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>30. What is Thread pool?</summary>
 								<div class="toggle-content">
 									<p>Thread pool represents set of worker threads that are waiting for the jobs
@@ -3904,7 +3918,7 @@ public class MyException extends IOException {
 										pools.</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>31. Can you list down important factory methods of Executors class?
 								</summary>
 								<div class="toggle-content">
@@ -3935,7 +3949,7 @@ public class MyException extends IOException {
 									</p>
 								</div>
 							</details></br>
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>32. What is BlockingQueue</summary>
 								<div class="toggle-content">
 									<p>BlockingQueue is special type of queue which is used when producer threads
@@ -3971,7 +3985,7 @@ public class MyException extends IOException {
 							<h4><b>9. Java Collection Framework Interview Questions</b></h4>
 							<br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>Test</summary>
 								<div class="toggle-content">
 									<p>Some</p>
@@ -3982,7 +3996,7 @@ public class MyException extends IOException {
 							<h4><b>10. Java Important Interview Questions</b></h4>
 							<br>
 
-							<details>
+							<details onclick="closeOtherDetails('details1')">
 								<summary>Test</summary>
 								<div class="toggle-content">
 									<p>Some</p>

@@ -860,7 +860,7 @@ body {
 	text-decoration-color: red;
     text-decoration-line: underline;
     text-decoration-thickness: 3px;
-    text-underline-offset: 10px;
+    text-underline-offset: 8px;
 }
 
 .navbar-dropdown a.navbar-item {

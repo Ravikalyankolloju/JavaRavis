@@ -3,44 +3,43 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="author" content="RaviKalyan">
-<title>SpringBoot Introduction</title>
-<link rel="shortcut icon" type="image/x-icon"
-	href="../scripts/images/tab_logo.png" />
-<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-<link rel="stylesheet" href="../scripts/css/site.css">
-<script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="RaviKalyan">
+	<title>SpringBoot Introduction</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
+	<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+	<link rel="stylesheet" href="../scripts/css/site.css">
+	<script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
 			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
 		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
-<style>
-@media screen and (min-width: 1025px) {
-	.div-to-desk {
-		display: none;
-		/* Hide the div on screens smaller than 1025px (mobile) */
-	}
-}
+	<style>
+		@media screen and (min-width: 1025px) {
+			.div-to-desk {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
 
-@media screen and (max-width: 1025px) {
-	.div-to-hide {
-		display: none;
-		/* Hide the div on screens smaller than 1025px (mobile) */
-	}
-}
-</style>
+		@media screen and (max-width: 1025px) {
+			.div-to-hide {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+	</style>
 </head>
 
 <body>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<a class="navbar-item" href="../home.html"> <img width="40"
-				height="25" src="../scripts/images/nani1.png" alt="Home" />
+			<a class="navbar-item" href="../home.html"> <img width="40" height="25" src="../scripts/images/nani1.png"
+					alt="Home" />
 			</a>
 			<h4 class="div-to-desk, berkshire-swash-regular">Ravish</h4>
 			<button class="navbar-burger" data-target="topbar-nav">
@@ -50,9 +49,8 @@
 		<div id="topbar-nav" class="navbar-menu">
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
-					<li class="nav-item" style="top: .2rem;"><a class="nav-link1"
-						href="../home.html"><img height="25" width="25"
-							src="../scripts/images/home.png"></i></a></li>
+					<div class="nav-item is-hoverable" style="top: .2rem;"><a class="nav-link" href="./home.html"><img
+								height="25" width="25" src="../scripts/images/home.png"></i></a></div>
 					<div class="navbar-item is-hoverable">
 						<a class="navbar-link" href="../java/introduction.html">Java</a>
 					</div>
@@ -71,18 +69,17 @@
 							Patterns</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link"
-							href="../interview/interview-questions.html">Interview
+						<a class="navbar-link" href="../interview/interview-questions.html">Interview
 							Questions</a>
 					</div>
-					<label class="theme-toggler div-to-hide"> <input
-						type="checkbox" id="switch-theme-checkbox" /> <span class="icon"></span>
+					<label class="theme-toggler div-to-hide"> <input type="checkbox" id="switch-theme-checkbox" /> <span
+							class="icon"></span>
 					</label>
 				</div>
 			</div>
 		</div>
-		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input
-			type="checkbox" id="switch-theme-mobile" /> <span class="icon"></span>
+		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input type="checkbox" id="switch-theme-mobile" />
+			<span class="icon"></span>
 		</label>
 	</nav>
 
@@ -94,44 +91,44 @@
 						<ul class="nav-list">
 							<h4>Springboot</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/introduction.html">Introduction</a></li>
+									href="../springboot/introduction.html">Introduction</a></li>
 							<h4>Microservice</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/ms-intro.html">Introduction</a></li>
+									href="../springboot/ms-intro.html">Introduction</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/ms-architecture.html">Microservices
+									href="../springboot/ms-architecture.html">Microservices
 									Architecture</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/registry-discovery.html">Service
+									href="../springboot/registry-discovery.html">Service
 									Registry and Discovery</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/config-server.html">Config Server</a></li>
+									href="../springboot/config-server.html">Config Server</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/api-gateway.html">API Gateway</a></li>
+									href="../springboot/api-gateway.html">API Gateway</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/zuul.html">Zuul
+									Gateway</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/zuul.html">Zuul Gateway</a></li>
+									href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/circuit-breaker.html">Circuit Breaker</a></li>
+									href="../springboot/resilience4j.html">Resilience4j</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/resilience4j.html">Resilience4j</a></li>
+									href="../springboot/web-client.html">WebClient</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/web-client.html">WebClient</a></li>
+									href="../springboot/resttemplate.html">RestTemplate</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/resttemplate.html">RestTemplate</a></li>
+									href="../springboot/open-feign.html">Feign Client</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/open-feign.html">Feign Client</a></li>
+									href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/sleuth.html">Zipkin and Sleuth</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/security.html">Cloud Security</a></li>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/saga.html">Saga Pattern</a></li>
+									href="../springboot/security.html">Cloud Security</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../springboot/saga.html">Saga
+									Pattern</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/springboot-interview-questions.html">Springboot
+									href="../springboot/springboot-interview-questions.html">Springboot
 									Interview Questions </a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../springboot/microservices-interview.html">Microservices
+									href="../springboot/microservices-interview.html">Microservices
 									Interview Questions</a></li>
 						</ul>
 					</li>
@@ -165,26 +162,22 @@
 					<div class="entry-content" itemprop="text">
 						<span>In
 							this&nbsp;introductory
-								article, we will discuss:
+							article, we will discuss:
 						</span><br>
 						<ul style="text-align: left;">
-							<li><span face=""
-								 color: #24292e; font-size: 16px;">What
+							<li><span face="" color: #24292e; font-size: 16px;">What
 									is Spring Boot?</span></li>
-							<li><span face=""
-								  color: #24292e; font-size: 16px;">What
+							<li><span face="" color: #24292e; font-size: 16px;">What
 									are its goals?</span></li>
-							<li><span face=""
-								  color: #24292e; font-size: 16px;">We
+							<li><span face="" color: #24292e; font-size: 16px;">We
 									will discuss Spring boot key features</span></li>
 						</ul>
-						<h2
-							  border-bottom: 1px solid rgb(234, 236, 239); box-sizing: border-box; color: #24292e; line-height: 1.25; margin-bottom: 16px; margin-top: 0px; padding-bottom: 0.3em;">
+						<h2 border-bottom: 1px solid rgb(234, 236, 239); box-sizing: border-box; color: #24292e;
+							line-height: 1.25; margin-bottom: 16px; margin-top: 0px; padding-bottom: 0.3em;">
 							<a name="more"></a>
 						</h2>
 						<h1 style="text-align: left;">What is the Spring Boot?</h1>
-						<div
-							  box-sizing: border-box; margin-bottom: 16px;">
+						<div box-sizing: border-box; margin-bottom: 16px;">
 							Spring Boot is basically an extension of the Spring framework
 							which eliminated the boilerplate configurations required for
 							setting up a Spring application.<br> <br> Spring Boot
@@ -195,8 +188,8 @@
 								boilerplate configuration again and again.</b>
 						</div>
 						<h1 style="text-align: left;">Spring Boot Primary Goals</h1>
-						<ul
-							  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px; margin-top: 0px; padding-left: 2em;">
+						<ul box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px; margin-top:
+							0px; padding-left: 2em;">
 							<li style="box-sizing: border-box;">Provide a radically
 								faster and widely accessible getting-started experience for all
 								Spring development.</li>
@@ -228,8 +221,7 @@
 						</div>
 						<div>
 							<h2 style="text-align: left;">1. Spring Boot Starters</h2>
-							<div
-								  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+							<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 								Spring Boot offers many starter modules to get started quickly
 								with many of the commonly used technologies, like SpringMVC,
 								JPA, MongoDB, Spring Batch, SpringSecurity, Solr, ElasticSearch,
@@ -237,19 +229,16 @@
 								used library dependencies so you don’t have to search for
 								compatible library versions and configure them manually.</div>
 							<div style="box-sizing: border-box; margin-bottom: 16px;">
-								<div
-									  color: #24292e; font-size: 16px;">
+								<div color: #24292e; font-size: 16px;">
 									For example, the <i>spring-boot-starter-data-jpa</i> starter
 									module includes all the dependencies required to use Spring
 									Data JPA, along with Hibernate library dependencies, as
 									Hibernate is the most commonly used JPA implementation.
 								</div>
-								<div
-									  color: #24292e; font-size: 16px;">
+								<div color: #24292e; font-size: 16px;">
 									<br>
 								</div>
-								<div
-									  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+								<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 									One more example, when we add the&nbsp;<span
 										style="background-color: rgba(27, 31, 35, 0.05); color: #d73a49; font-family: &amp; amp; quot; consolas &amp;amp; quot; , &amp; amp; quot; liberation mono&amp;amp; quot; , &amp; amp; quot; courier &amp;amp; quot; , monospace; font-size: 14.4px; padding: 0.2em 0.4em;">spring-boot-starter-web</span>&nbsp;dependency,
 									it will by default pull all the commonly used libraries while
@@ -268,18 +257,16 @@
 							<div>
 								<h2 style="text-align: left;">2. Spring Boot
 									Autoconfiguration</h2>
-								<div
-									  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+								<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 									Spring Boot addresses the problem that Spring applications need
 									complex configuration by eliminating the need to manually set
 									up the boilerplate configuration.</div>
-								<div
-									  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+								<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 									Spring Boot takes an opinionated view of the application and
 									configures various components automatically, by registering
 									beans based on various criteria. The criteria can be:</div>
-								<ul
-									  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px; margin-top: 0px; padding-left: 2em;">
+								<ul box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;
+									margin-top: 0px; padding-left: 2em;">
 									<li style="box-sizing: border-box;">Availability of a
 										particular class in a classpath</li>
 									<li style="box-sizing: border-box; margin-top: 0.25em;">Presence
@@ -289,8 +276,7 @@
 									<li style="box-sizing: border-box; margin-top: 0.25em;">An
 										absence of a configuration file</li>
 								</ul>
-								<div
-									  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+								<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 									For example, if you have the <i>spring-webmvc</i> dependency in
 									your classpath, Spring Boot assumes you are trying to build a
 									SpringMVC-based web application and automatically tries to
@@ -303,8 +289,7 @@
 								</div>
 								<h2 style="text-align: left;">3. Elegant Configuration
 									Management</h2>
-								<div
-									  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+								<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 									Spring supports externalizing configurable properties using the
 									<a>@PropertySource</a> configuration. Spring Boot takes it even
 									further by using sensible defaults and powerful type-safe
@@ -315,15 +300,14 @@
 							</div>
 							<div>
 								<h2 style="text-align: left;">4. Spring Boot Actuator</h2>
-								<div
-									  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+								<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 									Being able to get the various details of an application running
 									in production is crucial to many applications. The Spring Boot
 									actuator provides a wide variety of such production-ready
 									features without requiring developers to write much code. Some
 									of the Spring actuator features are:</div>
-								<ul
-									  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px; margin-top: 0px; padding-left: 2em;">
+								<ul box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;
+									margin-top: 0px; padding-left: 2em;">
 									<li style="box-sizing: border-box;">Can view the
 										application bean configuration details</li>
 									<li style="box-sizing: border-box; margin-top: 0.25em;">Can
@@ -335,8 +319,7 @@
 								<div>
 									<h2 style="text-align: left;">5. Easy-to-Use Embedded
 										Servlet Container Support</h2>
-									<div
-										  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+									<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 										Traditionally, while building web applications, you need to
 										create <i>WAR-type</i>&nbsp;modules and then deploy them on
 										external servers like <i>Tomcat</i>, <i>WildFly</i>, etc. But
@@ -345,8 +328,7 @@
 										so that the application will be a self-contained deployment
 										unit.&nbsp;
 									</div>
-									<div
-										  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+									<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 										Also, during development, you can easily run the Spring Boot
 										JAR type module as a Java application from the IDE or from the
 										command line using a build tool like <a>Maven</a> or Gradle.
@@ -354,42 +336,36 @@
 								</div>
 								<div>
 									<h1 style="text-align: left;">System Requirements</h1>
-									<div
-										  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+									<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 										Spring Boot 2+ requires Java 8 or 9 and Spring Framework
 										5.1.0.RELEASE or above.</div>
-									<div
-										  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+									<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 										Explicit build support is provided for the following build
 										tools:</div>
 									<div class="separator" style="clear: both; text-align: center;">
 										<a
 											href="https://2.bp.blogspot.com/-kW0hSn1inuI/W7B8qDvCBxI/AAAAAAAAEA8/pp7Bm3gWNlgGxD3EL61LS3BkVsd8noR5ACLcBGAs/s1600/build-tool-support.PNG"><img
-											src="https://2.bp.blogspot.com/-kW0hSn1inuI/W7B8qDvCBxI/AAAAAAAAEA8/pp7Bm3gWNlgGxD3EL61LS3BkVsd8noR5ACLcBGAs/s1600/build-tool-support.PNG"></a>
+												src="https://2.bp.blogspot.com/-kW0hSn1inuI/W7B8qDvCBxI/AAAAAAAAEA8/pp7Bm3gWNlgGxD3EL61LS3BkVsd8noR5ACLcBGAs/s1600/build-tool-support.PNG"></a>
 									</div>
 									<h1 style="text-align: left;">Servlet Containers</h1>
-									<div
-										  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+									<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 										Spring Boot supports the following embedded servlet
 										containers:</div>
 									<div class="separator" style="clear: both; text-align: center;">
 										<a
 											href="https://3.bp.blogspot.com/-kArn3r6WYlU/W7B8vX76_TI/AAAAAAAAEBA/BNh_hsHaJB8QnerlJD9erkkDMOXmdGl8wCLcBGAs/s1600/servlet-containers.PNG"><img
-											src="https://3.bp.blogspot.com/-kArn3r6WYlU/W7B8vX76_TI/AAAAAAAAEBA/BNh_hsHaJB8QnerlJD9erkkDMOXmdGl8wCLcBGAs/s1600/servlet-containers.PNG"></a>
+												src="https://3.bp.blogspot.com/-kArn3r6WYlU/W7B8vX76_TI/AAAAAAAAEBA/BNh_hsHaJB8QnerlJD9erkkDMOXmdGl8wCLcBGAs/s1600/servlet-containers.PNG"></a>
 									</div>
-									<div
-										  box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
+									<div box-sizing: border-box; color: #24292e; font-size: 16px; margin-bottom: 16px;">
 										You can also deploy Spring Boot applications to any Servlet
 										3.1+ compatible container.</div>
 									<h1 style="text-align: left;">What's Next?</h1>
 								</div>
 								<div>
-									In this article, we had a quick overview of Spring boot, w<span
-										  color: #24292e; font-size: 16px;">hat
-										is Spring Boot, w</span><span
-										  color: #24292e; font-size: 16px;">hat
-										are its goals, and&nbsp;</span><span
-										  color: #24292e; font-size: 16px;">Spring
+									In this article, we had a quick overview of Spring boot, w<span color: #24292e;
+										font-size: 16px;">hat
+										is Spring Boot, w</span><span color: #24292e; font-size: 16px;">hat
+										are its goals, and&nbsp;</span><span color: #24292e; font-size: 16px;">Spring
 										Boot's key features.</span>
 								</div>
 							</div>
@@ -398,8 +374,7 @@
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link"
-						href="../springboot/ms-intro.html">Next &rArr;</a></li>
+					<li class="page-item"><a class="page-link" href="../springboot/ms-intro.html">Next &rArr;</a></li>
 				</ul>
 			</div>
 			<button onclick="topFunction()" id="myBtn" title="Go to top">

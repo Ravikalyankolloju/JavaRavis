@@ -94,23 +94,67 @@
 		<div class="nav-container">
 			<aside class="nav">
 				<div class="nav-panel-menu is-active" data-panel="menu">
-					<li class="nav-item" data-depth="0">
-						<ul class="nav-list">
-							<h4>Design Patterns</h4>
-							<li class="nav-item"><a class="nav-link" href="../DP/introduction.html">Design
-									Patterns</a>
-							<li class="nav-item"><a class="nav-link" href="../DP/creational.html">Creational Design
-									Patterns</a>
-							<li class="nav-item"><a class="nav-link" href="../DP/behavioral.html">Behavioral Design
-									Patterns</a>
-							<li class="nav-item"><a class="nav-link" href="../DP/structural.html">Structural Design
-									Patterns</a>
-							<li class="nav-item"><a class="nav-link" href="../DP/miscellaneous.html">Miscellaneous
-									Design
-									Patterns</a>
-							</li>
-						</ul>
-					</li>
+					<ul class="nav-list">
+						<h4>Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/introduction.html">Introduction</a> </li>
+						<h4>Creational Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/singleton.html">Singleton Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/factory.html">Factory Design Patterns</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/abstract.html">Abstrct Factory Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/builder.html">Builder Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/prototype.html">Prototype Design
+								Patterns</a> </li>
+
+						<h4>Structural Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/adapter.html">Adapter Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/composite.html">Composite Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/proxy.html">Proxy Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/flyweight.html">Flyweight Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/facade.html">Facade Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/bridge.html">Bridge Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/decorator.html">Decorator Design
+								Patterns</a> </li>
+
+						<h4>Behavioral Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/template.html">Template Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/mediator.html">Mediator Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/chain.html">Chain of Responsibility</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/observer.html">Observer Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/Strategy.html">Strategy Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/command.html">Command Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/state.html">State Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/visitor.html">Visitor Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/interpreter.html">Interpreter Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/iterator.html">Iterator Design
+								Patterns</a> </li>
+
+						<h4>Miscellaneous Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/DAO.html">DAO
+								Design Patterns</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/dependency.html">Dependency Injection
+								Patterns</a>
+						</li>
+					</ul>
 				</div>
 			</aside>
 		</div>
@@ -131,7 +175,332 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<h3>Introduction</h3>
+						<p><em>Design patterns</em> are very popular among software developers. A design pattern is
+							a well-described solution to a common software problem.</p>
+						<p>Some of the benefits of using design patterns are:</p>
+						<ol>
+							<li>Design patterns are already defined and provide an <em>industry-standard
+									approach</em> to solving a recurring problem, so it saves time if we sensibly
+								use the design pattern. There are many Java design patterns that we can use in our
+								Java-based projects.</li>
+							<li>Using design patterns promotes <em>reusability</em> that leads to more
+								<em>robust</em> and highly maintainable code. It helps in reducing the total cost of
+								ownership (TCO) of the software product.
+							</li>
+							<li>Since design patterns are already defined, it makes our code easy to understand and
+								debug. It leads to faster development and new members of the team understand it
+								easily.</li>
+						</ol>
+						<p>Java design patterns are divided into three categories - <em>creational</em>,
+							<em>structural</em>, and <em>behavioral</em> design patterns.
+						</p>
+						<p>This article serves as an index for all the Java design pattern articles.</p>
+						<h2>Creational Design Patterns</h2>
+						<p>Creational design patterns provide solutions to instantiate an <code>Object</code> in the
+							best possible way for specific situations.</p>
+						<h3>1. Singleton Pattern</h3>
+						<p>The singleton pattern restricts the instantiation of a <code>Class</code> and ensures
+							that only one instance of the class exists in the Java Virtual Machine. The
+							implementation of the singleton pattern has always been a controversial topic among
+							developers.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/java-singleton-design-pattern-best-practices-examples">Singleton
+									Design Pattern</a>.</p>
+						</div>
+						<h3>2. Factory Pattern</h3>
+						<p>The factory design pattern is used when we have a superclass with multiple subclasses and
+							based on input, we need to return one of the subclasses. This pattern takes out the
+							responsibility of the instantiation of a <code>Class</code> from the client program to
+							the factory class. We can apply a singleton pattern on the factory class or make the
+							factory method <code>static</code>.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/factory-design-pattern-in-java">Factory Design
+									Pattern</a>.</p>
+						</div>
+						<h3>3. Abstract Factory
+							Pattern</h3>
+						<p>The abstract factory pattern is similar to the factory pattern and is a factory of
+							factories. If you are familiar with the factory design pattern in Java, you will notice
+							that we have a single factory class that returns the different subclasses based on the
+							input provided and the factory class uses <code>if-else</code> or <code>switch</code>
+							statements to achieve this. In the abstract factory pattern, we get rid of
+							<code>if-else</code> block and have a factory class for each subclass and then an
+							abstract factory class that will return the subclass based on the input factory class.
+						</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/abstract-factory-design-pattern-in-java">Abstract
+									Factory Pattern</a>.</p>
+						</div>
+						<h3>4. Builder Pattern</h3>
+						<p>The builder pattern was introduced to solve some of the problems with factory and
+							abstract Factory design patterns when the object contains a lot of attributes. This
+							pattern solves the issue with a large number of optional parameters and inconsistent
+							state by providing a way to build the object step-by-step and provide a method that will
+							actually return the final <code>Object</code>.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/builder-design-pattern-in-java">Builder Pattern</a>.
+							</p>
+						</div>
+						<h3>5. Prototype Pattern</h3>
+						<p>The prototype pattern is used when the <code>Object</code> creation is costly and
+							requires a lot of time and resources, and you have a similar <code>Object</code> already
+							existing. So this pattern provides a mechanism to copy the original <code>Object</code>
+							to a new <code>Object</code> and then modify it according to our needs. This pattern
+							uses Java cloning to copy the <code>Object</code>. The prototype design pattern mandates
+							that the <code>Object</code> which you are copying should provide the copying feature.
+							It should not be done by any other class. However, whether to use the shallow or deep
+							copy of the object properties depends on the requirements and is a design decision.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/prototype-design-pattern-in-java">Prototype
+									Pattern</a>.</p>
+						</div>
+						<h2>Structural Design Patterns</h2>
+						<p>Structural design patterns provide different ways to create a <code>Class</code>
+							structure (for example, using inheritance and composition to create a large
+							<code>Object</code> from small <code>Object</code>s).
+						</p>
+						<h3>1. Adapter Pattern</h3>
+						<p>The adapter design pattern is one of the structural design patterns and is used so that
+							two unrelated interfaces can work together. The object that joins these unrelated
+							interfaces is called an adapter.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/adapter-design-pattern-java">Adapter Pattern</a>.</p>
+						</div>
+						<h3>2. Composite Pattern</h3>
+						<p>The composite pattern is used when we have to represent a part-whole hierarchy. When we
+							need to create a structure in a way that the objects in the structure have to be treated
+							the same way, we can apply the composite design pattern.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/composite-design-pattern-in-java">Composite
+									Pattern</a>.</p>
+						</div>
+						<h3>3. Proxy Pattern</h3>
+						<p>The proxy pattern provides a placeholder for another <code>Object</code> to control
+							access to it. This pattern is used when we want to provide controlled access to
+							functionality.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/proxy-design-pattern">Proxy Pattern</a>.</p>
+						</div>
+						<h3>4. Flyweight Pattern</h3>
+						<p>The flyweight design pattern is used when we need to create a lot of <code>Object</code>s
+							of a <code>Class</code>. Since every <code>Object</code> consumes memory space that can
+							be crucial for low-memory devices (such as mobile devices or embedded systems), the
+							flyweight design pattern can be applied to reduce the load on memory by sharing
+							<code>Object</code>s.
+						</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/flyweight-design-pattern-java">Flyweight Pattern</a>.
+							</p>
+						</div>
+						<h3>5. Facade Pattern</h3>
+						<p>The facade pattern is used to help client applications easily interact with the system.
+						</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/facade-design-pattern-in-java">Facade Pattern</a>.
+							</p>
+						</div>
+						<h3>6. Bridge Pattern</h3>
+						<p>When we have interface hierarchies in both interfaces as well as implementations, then
+							the bridge design pattern is used to decouple the interfaces from the implementation and
+							to hide the implementation details from the client programs. The implementation of the
+							bridge design pattern follows the notion of preferring composition over inheritance.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/bridge-design-pattern-java">Bridge Pattern</a>.</p>
+						</div>
+						<h3>7. Decorator Pattern</h3>
+						<p>The decorator design pattern is used to modify the functionality of an object at runtime.
+							At the same time, other instances of the same class will not be affected by this, so the
+							individual object gets the modified behavior. The decorator design pattern is one of the
+							structural design patterns (such as adapter pattern, bridge pattern, or composite
+							pattern) and uses abstract classes or interface with the composition to implement. We
+							use inheritance or composition to extend the behavior of an object, but this is done at
+							compile-time, and it’s applicable to all the instances of the class. We can’t add any
+							new functionality to remove any existing behavior at runtime – this is when the
+							decorator pattern is useful.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/decorator-design-pattern-in-java-example">Decorator
+									Pattern</a>.</p>
+						</div>
+						<h2>Behavioral Design Patterns</h2>
+						<p>Behavioral patterns provide a solution for better interaction between objects and how to
+							provide loose-coupling and flexibility to extend easily.</p>
+						<h3>1. Template Method Pattern</h3>
+						<p>The template method pattern is a behavioral design pattern and is used to create a method
+							stub and to defer some of the steps of implementation to the subclasses. The template
+							method defines the steps to execute an algorithm, and it can provide a default
+							implementation that might be common for all or some of the subclasses.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/template-method-design-pattern-in-java">Template
+									Method Pattern</a>.</p>
+						</div>
+						<h3>2. Mediator Pattern</h3>
+						<p>The mediator design pattern is used to provide a centralized communication medium between
+							different objects in a system. If the objects interact with each other directly, the
+							system components are tightly-coupled with each other which makes maintainability cost
+							higher and not flexible to extend easily. The mediator pattern focuses on providing a
+							mediator between objects for communication and implementing loose-coupling between
+							objects. The mediator works as a router between objects, and it can have its own logic
+							to provide a way of communication.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/mediator-design-pattern-java">Mediator Pattern</a>
+							</p>
+						</div>
+						<h3>3. Chain of Responsibility
+							Pattern</h3>
+						<p>The chain of responsibility pattern is used to achieve loose-coupling in software design
+							where a request from the client is passed to a chain of objects to process them. Then
+							the object in the chain will decide who will be processing the request and whether the
+							request is required to be sent to the next object in the chain or not.</p>
+						<p>We know that we can have multiple <code>catch</code> blocks in a <code>try-catch</code>
+							block code. Here every <code>catch</code> block is kind of a processor to process that
+							particular exception. So when an exception occurs in the <code>try</code> block, it’s
+							sent to the first <code>catch</code> block to process. If the <code>catch</code> block
+							is not able to process it, it forwards the request to the next <code>Object</code> in
+							the chain (i.e., the next <code>catch</code> block). If even the last <code>catch</code>
+							block is not able to process it, the exception is thrown outside of the chain to the
+							calling program.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/chain-of-responsibility-design-pattern-in-java">Chain
+									of Responsibility Pattern</a>.</p>
+						</div>
+						<h3>4. Observer Pattern</h3>
+						<p>An observer design pattern is useful when you are interested in the state of an
+							<code>Object</code> and want to get notified whenever there is any change. In the
+							observer pattern, the <code>Object</code> that watches the state of another
+							<code>Object</code> is called <em>observer</em>, and the <code>Object</code> that is
+							being watched is called <em>subject</em>.
+						</p>
+						<p>Java provides an built-in platform for implementing the observer pattern through the
+							<code>java.util.Observable</code> class and <code>java.util.Observer</code> interface.
+							However, it’s not widely used because the implementation is limited and most of the time
+							we don’t want to end up extending a class solely for implementing the observer pattern
+							as Java doesn’t provide multiple inheritances in classes. Java Message Service (JMS)
+							uses the observer pattern along with the mediator pattern to allow applications to
+							subscribe and publish data to other applications.
+						</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/observer-design-pattern-in-java">Observer
+									Pattern</a>.</p>
+						</div>
+						<h3>5. Strategy Pattern</h3>
+						<p>Strategy pattern is used when we have multiple algorithms for a specific task, and the
+							client decides the actual implementation be used at runtime. A strategy pattern is also
+							known as a policy pattern. We define multiple algorithms and let client applications
+							pass the algorithm to be used as a parameter.</p>
+						<p>One of the best examples of this pattern is the <code>Collections.sort()</code> method
+							that takes the <a
+								href="/community/tutorials/comparable-and-comparator-in-java-example">Comparator</a>
+							parameter. Based on the different implementations of comparator interfaces, the objects
+							are getting sorted in different ways.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/strategy-design-pattern-in-java-example-tutorial">Strategy
+									Pattern</a>.</p>
+						</div>
+						<h3>6. Command Pattern</h3>
+						<p>The command pattern is used to implement loose-coupling in a request-response model. In
+							this pattern, the request is sent to the <em>invoker</em> and the invoker passes it to
+							the encapsulated <em>command</em> object. The command object passes the request to the
+							appropriate method of <em>receiver</em> to perform the specific action.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/command-design-pattern">Command Pattern</a>.</p>
+						</div>
+						<h3>7. State Pattern</h3>
+						<p>The state design pattern is used when an <code>Object</code> changes its behavior based
+							on its internal state. If we have to change the behavior of an <code>Object</code> based
+							on its state, we can have a state variable in the <code>Object</code> and use
+							<code>if-else</code> condition block to perform different actions based on the state.
+							The state pattern is used to provide a systematic and loosely-coupled way to achieve
+							this through context and state implementations.
+						</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/state-design-pattern-java">State Pattern</a>.</p>
+						</div>
+						<h3>8. Visitor Pattern</h3>
+						<p>The visitor pattern is used when we have to perform an operation on a group of similar
+							kinds of objects. With the help of a visitor pattern, we can move the operational logic
+							from the objects to another class.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/visitor-design-pattern-java">Visitor Pattern</a>.</p>
+						</div>
+						<h3>9. Interpreter Pattern</h3>
+						<p>The interpreter pattern is used to define a grammatical representation of a language and
+							provides an interpreter to deal with this grammar.</p>
+						<h3>10. Iterator Pattern</h3>
+						<p>The iterator pattern is one of the behavioral patterns and is used to provide a standard
+							way to traverse through a group of objects. The iterator pattern is widely used in <a
+								href="../java/collections.html">Java Collection
+								Framework</a> where the iterator interface provides methods for traversing through a
+							<code>Collection</code>. This pattern is also used to provide different kinds of
+							iterators based on our requirements. The iterator pattern hides the actual
+							implementation of traversal through the <code>Collection</code> and client programs use
+							iterator methods.
+						</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/iterator-design-pattern-java">Iterator Pattern</a>.
+							</p>
+						</div>
+						<h3>11. Memento Pattern</h3>
+						<p>The memento design pattern is used when we want to save the state of an object so that we
+							can restore it later on. This pattern is used to implement this in such a way that the
+							saved state data of the object is not accessible outside of the <code>Object</code>,
+							this protects the integrity of saved state data.</p>
+						<p>Memento pattern is implemented with two <code>Object</code>s – <em>originator</em> and
+							<em>caretaker</em>. The originator is the <code>Object</code> whose state needs to be
+							saved and restored, and it uses an inner class to save the state of <code>Object</code>.
+							The inner class is called “Memento”, and it’s <code>private</code> so that it can’t be
+							accessed from other objects.
+						</p>
+						<h2>Miscellaneous Design
+							Patterns</h2>
+						<p>There are a lot of design patterns that don’t come under Gang of Four design patterns.
+							Let’s look at some of these popular design patterns.</p>
+						<h3>1. DAO Design Pattern</h3>
+						<p>The Data Access Object (DAO) design pattern is used to decouple the data persistence
+							logic to a separate layer. DAO is a very popular pattern when we design systems to work
+							with databases. The idea is to keep the service layer separate from the data access
+							layer. This way we implement the separation of logic in our application.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/dao-design-pattern">DAO Pattern</a>.</p>
+						</div>
+						<h3>2. Dependency Injection
+							Pattern</h3>
+						<p>The dependency injection pattern allows us to remove the hard-coded dependencies and make
+							our application loosely-coupled, extendable, and maintainable. We can implement
+							dependency injection in Java to move the dependency resolution from compile-time to
+							runtime. Spring framework is built on the principle of dependency injection.</p>
+						<div class="callout note">
+							<p><strong>Note:</strong> Learn more about the <a
+									href="/community/tutorials/java-dependency-injection-design-pattern-example-tutorial">Dependency
+									Injection Pattern</a>.</p>
+						</div>
+						<h3>3. MVC Pattern</h3>
+						<p>Model-View-Controller (MVC) Pattern is one of the oldest architectural patterns for
+							creating web applications.</p>
+						<h2>Conclusion</h2>
+						<p>This article summarized Java design patterns.</p>
 					</div>
 				</article>
 			</div>

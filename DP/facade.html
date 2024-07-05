@@ -184,7 +184,203 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p><strong>Facade Design Pattern</strong> is one of the <strong>Structural design
+									patterns</strong> (such as <a
+									href="/community/tutorials/adapter-design-pattern-java"
+									title="Adapter Design Pattern in Java – Example Tutorial">Adapter pattern</a> and <a
+									href="/community/tutorials/decorator-design-pattern-in-java-example"
+									title="Decorator Pattern in Java – Example Tutorial">Decorator pattern</a>). Facade
+								design pattern is used to help client applications to easily interact with the system.
+							</p>
+							<h2 id="facade-design-pattern"><a href="#facade-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Facade Design Pattern</a><a
+									class="hash-anchor" href="#facade-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/facade-design-pattern.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/facade-design-pattern.jpg"
+										alt="facade design pattern, facade pattern, facade design pattern in java"></a>
+								According to GoF Facade design pattern is:</p>
+							<blockquote>
+								<p>Provide a unified interface to a set of interfaces in a subsystem. Facade Pattern
+									defines a higher-level interface that makes the subsystem easier to use.</p>
+							</blockquote>
+							<p>Suppose we have an application with set of interfaces to use MySql/Oracle database and to
+								generate different types of reports, such as HTML report, PDF report etc. So we will
+								have different set of interfaces to work with different types of database. Now a client
+								application can use these interfaces to get the required database connection and
+								generate reports. But when the complexity increases or the interface behavior names are
+								confusing, client application will find it difficult to manage it. So we can apply
+								Facade design pattern here and provide a <a
+									href="/community/tutorials/wrapper-class-in-java">wrapper</a> interface on top of
+								the existing interface to help client application.</p>
+							<h3 id="facade-design-pattern-set-of-interfaces"><a
+									href="#facade-design-pattern-set-of-interfaces"
+									onclick="navigator.clipboard.writeText(this.href);">Facade Design Pattern - Set of
+									Interfaces</a><a class="hash-anchor" href="#facade-design-pattern-set-of-interfaces"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>We can have two helper interfaces, namely <code>MySqlHelper</code> and
+								<code>OracleHelper</code>.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.facade;
+						
+						import java.sql.Connection;
+						
+						public class MySqlHelper {
+							
+							public static Connection getMySqlDBConnection(){
+								//get MySql DB connection using connection parameters
+								return null;
+							}
+							
+							public void generateMySqlPDFReport(String tableName, Connection con){
+								//get data from table and generate pdf report
+							}
+							
+							public void generateMySqlHTMLReport(String tableName, Connection con){
+								//get data from table and generate pdf report
+							}
+						}
+						</code></pre>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.facade;
+						
+						import java.sql.Connection;
+						
+						public class OracleHelper {
+						
+							public static Connection getOracleDBConnection(){
+								//get Oracle DB connection using connection parameters
+								return null;
+							}
+							
+							public void generateOraclePDFReport(String tableName, Connection con){
+								//get data from table and generate pdf report
+							}
+							
+							public void generateOracleHTMLReport(String tableName, Connection con){
+								//get data from table and generate pdf report
+							}
+							
+						}
+						</code></pre>
+							<h3 id="facade-design-pattern-interface"><a href="#facade-design-pattern-interface"
+									onclick="navigator.clipboard.writeText(this.href);">Facade Design Pattern
+									Interface</a><a class="hash-anchor" href="#facade-design-pattern-interface"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>We can create a Facade pattern interface like below. Notice the use of <a
+									href="/community/tutorials/java-enum">Java Enum</a> for type safety.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.facade;
+						
+						import java.sql.Connection;
+						
+						public class HelperFacade {
+						
+							public static void generateReport(DBTypes dbType, ReportTypes reportType, String tableName){
+								Connection con = null;
+								switch (dbType){
+								case MYSQL: 
+									con = MySqlHelper.getMySqlDBConnection();
+									MySqlHelper mySqlHelper = new MySqlHelper();
+									switch(reportType){
+									case HTML:
+										mySqlHelper.generateMySqlHTMLReport(tableName, con);
+										break;
+									case PDF:
+										mySqlHelper.generateMySqlPDFReport(tableName, con);
+										break;
+									}
+									break;
+								case ORACLE: 
+									con = OracleHelper.getOracleDBConnection();
+									OracleHelper oracleHelper = new OracleHelper();
+									switch(reportType){
+									case HTML:
+										oracleHelper.generateOracleHTMLReport(tableName, con);
+										break;
+									case PDF:
+										oracleHelper.generateOraclePDFReport(tableName, con);
+										break;
+									}
+									break;
+								}
+								
+							}
+							
+							public static enum DBTypes{
+								MYSQL,ORACLE;
+							}
+							
+							public static enum ReportTypes{
+								HTML,PDF;
+							}
+						}
+						</code></pre>
+							<h3 id="facade-design-pattern-client-program"><a
+									href="#facade-design-pattern-client-program"
+									onclick="navigator.clipboard.writeText(this.href);">Facade Design Pattern Client
+									Program</a><a class="hash-anchor" href="#facade-design-pattern-client-program"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Now lets see client code without using Facade pattern and using Facade pattern interface.
+							</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+						
+						import java.sql.Connection;
+						
+						import com.journaldev.design.facade.HelperFacade;
+						import com.journaldev.design.facade.MySqlHelper;
+						import com.journaldev.design.facade.OracleHelper;
+						
+						public class FacadePatternTest {
+						
+							public static void main(String[] args) {
+								String tableName="Employee";
+								
+								//generating MySql HTML report and Oracle PDF report without using Facade
+								Connection con = MySqlHelper.getMySqlDBConnection();
+								MySqlHelper mySqlHelper = new MySqlHelper();
+								mySqlHelper.generateMySqlHTMLReport(tableName, con);
+								
+								Connection con1 = OracleHelper.getOracleDBConnection();
+								OracleHelper oracleHelper = new OracleHelper();
+								oracleHelper.generateOraclePDFReport(tableName, con1);
+								
+								//generating MySql HTML report and Oracle PDF report using Facade
+								HelperFacade.generateReport(HelperFacade.DBTypes.MYSQL, HelperFacade.ReportTypes.HTML, tableName);
+								HelperFacade.generateReport(HelperFacade.DBTypes.ORACLE, HelperFacade.ReportTypes.PDF, tableName);
+							}
+						
+						}
+						</code></pre>
+							<p>As you can see that using Facade pattern interface is a lot easier and cleaner way to
+								avoid having a lot of logic at client side. JDBC Driver Manager class to get the
+								database connection is a wonderful example of facade design pattern.</p>
+							<h3 id="facade-design-pattern-important-points"><a
+									href="#facade-design-pattern-important-points"
+									onclick="navigator.clipboard.writeText(this.href);">Facade Design Pattern Important
+									Points</a><a class="hash-anchor" href="#facade-design-pattern-important-points"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<ul>
+								<li>Facade design pattern is more like a helper for client applications, it doesn’t hide
+									subsystem interfaces from the client. Whether to use Facade or not is completely
+									dependent on client code.</li>
+								<li>Facade design pattern can be applied at any point of development, usually when the
+									number of interfaces grow and system gets complex.</li>
+								<li>Subsystem interfaces are not aware of Facade and they shouldn’t have any reference
+									of the Facade interface.</li>
+								<li>Facade design pattern should be applied for similar kind of interfaces, its purpose
+									is to provide a single interface rather than multiple interfaces that does the
+									similar kind of jobs.</li>
+								<li>We can use <a href="/community/tutorials/factory-design-pattern-in-java"
+										title="Factory Design Pattern in Java">Factory pattern</a> with Facade to
+									provide better interface to client systems.</li>
+							</ul>
+							<p>Thats all for Facade design pattern, stay tuned for more design pattern articles. :)</p>
+						</div>
 					</div>
 				</article>
 			</div>

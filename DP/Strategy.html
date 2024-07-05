@@ -175,7 +175,209 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>Strategy design pattern is one of the <strong>behavioral design pattern</strong>.
+								Strategy pattern is used when we have multiple algorithm for a specific task and client
+								decides the actual implementation to be used at runtime.</p>
+							<h2 id="strategy-pattern"><a href="#strategy-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Strategy Pattern</a><a
+									class="hash-anchor" href="#strategy-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/strategy-design-pattern.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/strategy-design-pattern.jpg"
+										alt="strategy pattern, strategy design pattern"></a> Strategy pattern is also
+								known as <strong>Policy Pattern</strong>. We define multiple algorithms and let client
+								application pass the algorithm to be used as a parameter. One of the best example of
+								strategy pattern is <code>Collections.sort()</code> method that takes Comparator
+								parameter. Based on the different implementations of Comparator interfaces, the Objects
+								are getting sorted in different ways. For our example, we will try to implement a simple
+								Shopping Cart where we have two payment strategies - using Credit Card or using PayPal.
+								First of all we will create the interface for our strategy pattern example, in our case
+								to pay the amount passed as argument. <code>PaymentStrategy.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+						
+						public interface PaymentStrategy {
+						
+							public void pay(int amount);
+						}
+						</code></pre>
+							<p>Now we will have to create concrete implementation of algorithms for payment using
+								credit/debit card or through paypal. <code>CreditCardStrategy.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+						
+						public class CreditCardStrategy implements PaymentStrategy {
+						
+							private String name;
+							private String cardNumber;
+							private String cvv;
+							private String dateOfExpiry;
+							
+							public CreditCardStrategy(String nm, String ccNum, String cvv, String expiryDate){
+								this.name=nm;
+								this.cardNumber=ccNum;
+								this.cvv=cvv;
+								this.dateOfExpiry=expiryDate;
+							}
+							@Override
+							public void pay(int amount) {
+								System.out.println(amount +" paid with credit/debit card");
+							}
+						
+						}
+						</code></pre>
+							<p><code>PaypalStrategy.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+						
+						public class PaypalStrategy implements PaymentStrategy {
+						
+							private String emailId;
+							private String password;
+							
+							public PaypalStrategy(String email, String pwd){
+								this.emailId=email;
+								this.password=pwd;
+							}
+							
+							@Override
+							public void pay(int amount) {
+								System.out.println(amount + " paid using Paypal.");
+							}
+						
+						}
+						</code></pre>
+							<p>Now our strategy pattern example algorithms are ready. We can implement Shopping Cart and
+								payment method will require input as Payment strategy. <code>Item.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+						
+						public class Item {
+						
+							private String upcCode;
+							private int price;
+							
+							public Item(String upc, int cost){
+								this.upcCode=upc;
+								this.price=cost;
+							}
+						
+							public String getUpcCode() {
+								return upcCode;
+							}
+						
+							public int getPrice() {
+								return price;
+							}
+							
+						}
+						</code></pre>
+							<p><code>ShoppingCart.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+						
+						import java.text.DecimalFormat;
+						import java.util.ArrayList;
+						import java.util.List;
+						
+						public class ShoppingCart {
+						
+							//List of items
+							List&lt;Item&gt; items;
+							
+							public ShoppingCart(){
+								this.items=new ArrayList&lt;Item&gt;();
+							}
+							
+							public void addItem(Item item){
+								this.items.add(item);
+							}
+							
+							public void removeItem(Item item){
+								this.items.remove(item);
+							}
+							
+							public int calculateTotal(){
+								int sum = 0;
+								for(Item item : items){
+									sum += item.getPrice();
+								}
+								return sum;
+							}
+							
+							public void pay(PaymentStrategy paymentMethod){
+								int amount = calculateTotal();
+								paymentMethod.pay(amount);
+							}
+						}
+						</code></pre>
+							<p>Notice that payment method of shopping cart requires payment algorithm as argument and
+								doesn’t store it anywhere as instance variable. Let’s test our strategy pattern example
+								setup with a simple program. <code>ShoppingCartTest.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+						
+						public class ShoppingCartTest {
+						
+							public static void main(String[] args) {
+								ShoppingCart cart = new ShoppingCart();
+								
+								Item item1 = new Item("1234",10);
+								Item item2 = new Item("5678",40);
+								
+								cart.addItem(item1);
+								cart.addItem(item2);
+								
+								//pay by paypal
+								cart.pay(new PaypalStrategy("myemail@example.com", "mypwd"));
+								
+								//pay by credit card
+								cart.pay(new CreditCardStrategy("Pankaj Kumar", "1234567890123456", "786", "12/15"));
+							}
+						
+						}
+						</code></pre>
+							<p>Output of above program is:</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>50 paid using Paypal.
+						50 paid with credit/debit card
+						</code></pre>
+							<h3 id="strategy-design-pattern-class-diagram"><a
+									href="#strategy-design-pattern-class-diagram"
+									onclick="navigator.clipboard.writeText(this.href);">Strategy Design Pattern Class
+									Diagram</a><a class="hash-anchor" href="#strategy-design-pattern-class-diagram"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/Strategy-Pattern.png"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/Strategy-Pattern-450x261.png"
+										alt="Strategy Pattern, Strategy Design pattern in java"></a></p>
+							<h3 id="strategy-design-pattern-important-points"><a
+									href="#strategy-design-pattern-important-points"
+									onclick="navigator.clipboard.writeText(this.href);">Strategy Design Pattern
+									Important Points</a><a class="hash-anchor"
+									href="#strategy-design-pattern-important-points" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<ul>
+								<li>We could have used composition to create instance variable for strategies but we
+									should avoid that as we want the specific strategy to be applied for a particular
+									task. Same is followed in Collections.sort() and Arrays.sort() method that take
+									comparator as argument.</li>
+								<li>Strategy Pattern is very similar to <strong><a
+											href="/community/tutorials/state-design-pattern-java"
+											title="State Design Pattern in Java – Example Tutorial">State
+											Pattern</a></strong>. One of the difference is that Context contains state
+									as instance variable and there can be multiple tasks whose implementation can be
+									dependent on the state whereas in strategy pattern strategy is passed as argument to
+									the method and context object doesn’t have any variable to store it.</li>
+								<li>Strategy pattern is useful when we have multiple algorithms for specific task and we
+									want our application to be flexible to chose any of the algorithm at runtime for
+									specific task.</li>
+							</ul>
+							<p>That’s all for Strategy Pattern in java, I hope you liked it.</p>
+						</div>
 					</div>
 				</article>
 			</div>

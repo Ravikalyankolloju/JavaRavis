@@ -184,7 +184,312 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>Command Pattern is one of the Behavioral Design Pattern. Command design pattern is used
+								to implement <strong>loose coupling</strong> in a request-response model.</p>
+							<h2 id="command-pattern"><a href="#command-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Command Pattern</a><a
+									class="hash-anchor" href="#command-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/command-design-pattern.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/command-design-pattern.jpg"
+										alt="command design pattern, command pattern"></a> In command pattern, the
+								request is send to the <code>invoker</code> and invoker pass it to the encapsulated
+								<code>command</code> object. Command object passes the request to the appropriate method
+								of <code>Receiver</code> to perform the specific action. The client program create the
+								receiver object and then attach it to the Command. Then it creates the invoker object
+								and attach the command object to perform an action. Now when client program executes the
+								action, it’s processed based on the command and receiver object.</p>
+							<h3 id="command-design-pattern-example"><a href="#command-design-pattern-example"
+									onclick="navigator.clipboard.writeText(this.href);">Command Design Pattern
+									Example</a><a class="hash-anchor" href="#command-design-pattern-example"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>We will look at a real life scenario where we can implement Command pattern. Let’s say we
+								want to provide a File System utility with methods to open, write and close file. This
+								file system utility should support multiple operating systems such as Windows and Unix.
+								To implement our File System utility, first of all we need to create the receiver
+								classes that will actually do all the work. Since we code in terms of <a
+									href="/community/tutorials/interface-in-java" title="Interface in Java">interface in
+									java</a>, we can have <code>FileSystemReceiver</code> interface and it’s
+								implementation classes for different operating system flavors such as Windows, Unix,
+								Solaris etc.</p>
+							<h3 id="command-pattern-receiver-classes"><a href="#command-pattern-receiver-classes"
+									onclick="navigator.clipboard.writeText(this.href);">Command Pattern Receiver
+									Classes</a><a class="hash-anchor" href="#command-pattern-receiver-classes"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public interface FileSystemReceiver {
+						
+							void openFile();
+							void writeFile();
+							void closeFile();
+						}
+						</code></pre>
+							<p>FileSystemReceiver interface defines the contract for the implementation classes. For
+								simplicity, I am creating two flavors of receiver classes to work with Unix and Windows
+								systems.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public class UnixFileSystemReceiver implements FileSystemReceiver {
+						
+							@Override
+							public void openFile() {
+								System.out.println("Opening file in unix OS");
+							}
+						
+							@Override
+							public void writeFile() {
+								System.out.println("Writing file in unix OS");
+							}
+						
+							@Override
+							public void closeFile() {
+								System.out.println("Closing file in unix OS");
+							}
+						
+						}
+						</code></pre>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public class WindowsFileSystemReceiver implements FileSystemReceiver {
+						
+							@Override
+							public void openFile() {
+								System.out.println("Opening file in Windows OS");
+								
+							}
+						
+							@Override
+							public void writeFile() {
+								System.out.println("Writing file in Windows OS");
+							}
+						
+							@Override
+							public void closeFile() {
+								System.out.println("Closing file in Windows OS");
+							}
+						
+						}
+						</code></pre>
+							<p>Did you noticed the Override annotation and if you wonder why it’s used, please read <a
+									href="/community/tutorials/java-annotations"
+									title="Java Annotations Example Tutorial">java annotations</a> and <a
+									href="/community/tutorials/java-override-method-overriding"
+									title="Overriding Methods in Java? – Always use @Override annotation">override
+									annotation benefits</a>. Now that our receiver classes are ready, we can move to
+								implement our Command classes.</p>
+							<h3 id="command-pattern-interface-and-implementations"><a
+									href="#command-pattern-interface-and-implementations"
+									onclick="navigator.clipboard.writeText(this.href);">Command Pattern Interface and
+									Implementations</a><a class="hash-anchor"
+									href="#command-pattern-interface-and-implementations" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>We can use <a
+									href="/community/tutorials/difference-between-abstract-class-and-interface-in-java"
+									title="Difference between Abstract Class and Interface in Java">interface or
+									abstract class</a> to create our base Command, it’s a design decision and depends on
+								your requirement. We are going with interface because we don’t have any default
+								implementations.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public interface Command {
+						
+							void execute();
+						}
+						</code></pre>
+							<p>Now we need to create implementations for all the different types of action performed by
+								the receiver. Since we have three actions we will create three Command implementations.
+								Each Command implementation will forward the request to the appropriate method of
+								receiver.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public class OpenFileCommand implements Command {
+						
+							private FileSystemReceiver fileSystem;
+							
+							public OpenFileCommand(FileSystemReceiver fs){
+								this.fileSystem=fs;
+							}
+							@Override
+							public void execute() {
+								//open command is forwarding request to openFile method
+								this.fileSystem.openFile();
+							}
+						
+						}
+						</code></pre>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public class CloseFileCommand implements Command {
+						
+							private FileSystemReceiver fileSystem;
+							
+							public CloseFileCommand(FileSystemReceiver fs){
+								this.fileSystem=fs;
+							}
+							@Override
+							public void execute() {
+								this.fileSystem.closeFile();
+							}
+						
+						}
+						</code></pre>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public class WriteFileCommand implements Command {
+						
+							private FileSystemReceiver fileSystem;
+							
+							public WriteFileCommand(FileSystemReceiver fs){
+								this.fileSystem=fs;
+							}
+							@Override
+							public void execute() {
+								this.fileSystem.writeFile();
+							}
+						
+						}
+						</code></pre>
+							<p>Now we have receiver and command implementations ready, so we can move to implement the
+								invoker class.</p>
+							<h3 id="command-pattern-invoker-class"><a href="#command-pattern-invoker-class"
+									onclick="navigator.clipboard.writeText(this.href);">Command Pattern Invoker
+									Class</a><a class="hash-anchor" href="#command-pattern-invoker-class"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Invoker is a simple class that encapsulates the Command and passes the request to the
+								command object to process it.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public class FileInvoker {
+						
+							public Command command;
+							
+							public FileInvoker(Command c){
+								this.command=c;
+							}
+							
+							public void execute(){
+								this.command.execute();
+							}
+						}
+						</code></pre>
+							<p>Our file system utility implementation is ready and we can move to write a simple command
+								pattern client program. But before that I will provide a utility method to create the
+								appropriate <code>FileSystemReceiver</code> object. Since we can use <a
+									href="/community/tutorials/java-system-getproperty">System class to get the
+									operating system information</a>, we will use this or else we can use <a
+									href="/community/tutorials/factory-design-pattern-in-java"
+									title="Factory Design Pattern in Java">Factory pattern</a> to return appropriate
+								type based on the input.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public class FileSystemReceiverUtil {
+							
+							public static FileSystemReceiver getUnderlyingFileSystem(){
+								 String osName = System.getProperty("os.name");
+								 System.out.println("Underlying OS is:"+osName);
+								 if(osName.contains("Windows")){
+									 return new WindowsFileSystemReceiver();
+								 }else{
+									 return new UnixFileSystemReceiver();
+								 }
+							}
+							
+						}
+						</code></pre>
+							<p>Let’s move now to create our command pattern example client program that will consume our
+								file system utility.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+						
+						public class FileSystemClient {
+						
+							public static void main(String[] args) {
+								//Creating the receiver object
+								FileSystemReceiver fs = FileSystemReceiverUtil.getUnderlyingFileSystem();
+								
+								//creating command and associating with receiver
+								OpenFileCommand openFileCommand = new OpenFileCommand(fs);
+								
+								//Creating invoker and associating with Command
+								FileInvoker file = new FileInvoker(openFileCommand);
+								
+								//perform action on invoker object
+								file.execute();
+								
+								WriteFileCommand writeFileCommand = new WriteFileCommand(fs);
+								file = new FileInvoker(writeFileCommand);
+								file.execute();
+								
+								CloseFileCommand closeFileCommand = new CloseFileCommand(fs);
+								file = new FileInvoker(closeFileCommand);
+								file.execute();
+							}
+						
+						}
+						</code></pre>
+							<p>Notice that client is responsible to create the appropriate type of command object. For
+								example if you want to write a file you are not supposed to create
+								<code>CloseFileCommand</code> object. Client program is also responsible to attach
+								receiver to the command and then command to the invoker class. Output of the above
+								command pattern example program is:</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>Underlying OS is:Mac OS X
+						Opening file in unix OS
+						Writing file in unix OS
+						Closing file in unix OS
+						</code></pre>
+							<h3 id="command-pattern-class-diagram"><a href="#command-pattern-class-diagram"
+									onclick="navigator.clipboard.writeText(this.href);">Command Pattern Class
+									Diagram</a><a class="hash-anchor" href="#command-pattern-class-diagram"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Here is the class diagram for our file system utility implementation. <a
+									href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/Command-Pattern-Java-Class-Diagram.png"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/Command-Pattern-Java-Class-Diagram-450x348.png"
+										alt="Command Design Pattern, Command Pattern in java, command pattern Class Diagram, Command Pattern"></a>
+							</p>
+							<h3 id="command-pattern-important-points"><a href="#command-pattern-important-points"
+									onclick="navigator.clipboard.writeText(this.href);">Command Pattern Important
+									Points</a><a class="hash-anchor" href="#command-pattern-important-points"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<ul>
+								<li>Command is the core of command design pattern that defines the contract for
+									implementation.</li>
+								<li>Receiver implementation is separate from command implementation.</li>
+								<li>Command implementation classes chose the method to invoke on receiver object, for
+									every method in receiver there will be a command implementation. It works as a
+									bridge between receiver and action methods.</li>
+								<li>Invoker class just forward the request from client to the command object.</li>
+								<li>Client is responsible to instantiate appropriate command and receiver implementation
+									and then associate them together.</li>
+								<li>Client is also responsible for instantiating invoker object and associating command
+									object with it and execute the action method.</li>
+								<li>Command design pattern is easily extendible, we can add new action methods in
+									receivers and create new Command implementations without changing the client code.
+								</li>
+								<li>The drawback with Command design pattern is that the code gets huge and confusing
+									with high number of action methods and because of so many associations.</li>
+							</ul>
+							<h3 id="command-design-pattern-jdk-example"><a href="#command-design-pattern-jdk-example"
+									onclick="navigator.clipboard.writeText(this.href);">Command Design Pattern JDK
+									Example</a><a class="hash-anchor" href="#command-design-pattern-jdk-example"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p><a href="/community/tutorials/java-thread-example">Runnable interface</a>
+								(java.lang.Runnable) and Swing Action (javax.swing.Action) uses command pattern.</p>
+						</div>
 					</div>
 				</article>
 			</div>

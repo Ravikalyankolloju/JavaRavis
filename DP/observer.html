@@ -175,7 +175,250 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p><strong>Observer Pattern</strong> is one of the <strong>behavioral design
+									pattern</strong>. Observer design pattern is useful when you are interested in the
+								state of an object and want to get notified whenever there is any change. In observer
+								pattern, the object that watch on the state of another object are called
+								<strong>Observer</strong> and the object that is being watched is called
+								<strong>Subject</strong>.</p>
+							<h2 id="observer-design-pattern"><a href="#observer-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Observer Design Pattern</a><a
+									class="hash-anchor" href="#observer-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/observer-design-pattern-java.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/observer-design-pattern-java.jpg"
+										alt="observer pattern, observer design pattern, observer design pattern in java, observer pattern java"></a>
+								According to GoF, observer design pattern intent is;</p>
+							<blockquote>
+								<p>Define a one-to-many dependency between objects so that when one object changes
+									state, all its dependents are notified and updated automatically.</p>
+							</blockquote>
+							<p><strong>Subject</strong> contains a list of observers to notify of any change in it’s
+								state, so it should provide methods using which observers can register and unregister
+								themselves. Subject also contain a method to notify all the observers of any change and
+								either it can send the update while notifying the observer or it can provide another
+								method to get the update. Observer should have a method to set the object to watch and
+								another method that will be used by Subject to notify them of any updates. Java provides
+								inbuilt platform for implementing Observer pattern through <em>java.util.Observable</em>
+								class and <em>java.util.Observer</em> interface. However it’s not widely used because
+								the implementation is really simple and most of the times we don’t want to end up
+								extending a class just for implementing Observer pattern as java doesn’t provide
+								multiple inheritance in classes. Java Message Service (JMS) uses <strong>Observer design
+									pattern</strong> along with <a
+									href="/community/tutorials/mediator-design-pattern-java"
+									title="Mediator Design Pattern in Java – Example Tutorial"><strong>Mediator
+										pattern</strong></a> to allow applications to subscribe and publish data to
+								other applications. Model-View-Controller (MVC) frameworks also use Observer pattern
+								where Model is the Subject and Views are observers that can register to get notified of
+								any change to the model.</p>
+							<h3 id="observer-pattern-java-example"><a href="#observer-pattern-java-example"
+									onclick="navigator.clipboard.writeText(this.href);">Observer Pattern Java
+									Example</a><a class="hash-anchor" href="#observer-pattern-java-example"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>For our observer pattern java program example, we would implement a simple topic and
+								observers can register to this topic. Whenever any new message will be posted to the
+								topic, all the registers observers will be notified and they can consume the message.
+								Based on the requirements of Subject, here is the base Subject interface that defines
+								the contract methods to be implemented by any concrete subject.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+						
+						public interface Subject {
+						
+							//methods to register and unregister observers
+							public void register(Observer obj);
+							public void unregister(Observer obj);
+							
+							//method to notify observers of change
+							public void notifyObservers();
+							
+							//method to get updates from subject
+							public Object getUpdate(Observer obj);
+							
+						}
+						</code></pre>
+							<p>Next we will create contract for Observer, there will be a method to attach the Subject
+								to the observer and another method to be used by Subject to notify of any change.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+						
+						public interface Observer {
+							
+							//method to update the observer, used by subject
+							public void update();
+							
+							//attach with subject to observe
+							public void setSubject(Subject sub);
+						}
+						</code></pre>
+							<p>Now our contract is ready, let’s proceed with the concrete implementation of our topic.
+							</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+						
+						import java.util.ArrayList;
+						import java.util.List;
+						
+						public class MyTopic implements Subject {
+						
+							private List&lt;Observer&gt; observers;
+							private String message;
+							private boolean changed;
+							private final Object MUTEX= new Object();
+							
+							public MyTopic(){
+								this.observers=new ArrayList&lt;&gt;();
+							}
+							@Override
+							public void register(Observer obj) {
+								if(obj == null) throw new NullPointerException("Null Observer");
+								synchronized (MUTEX) {
+								if(!observers.contains(obj)) observers.add(obj);
+								}
+							}
+						
+							@Override
+							public void unregister(Observer obj) {
+								synchronized (MUTEX) {
+								observers.remove(obj);
+								}
+							}
+						
+							@Override
+							public void notifyObservers() {
+								List&lt;Observer&gt; observersLocal = null;
+								//synchronization is used to make sure any observer registered after message is received is not notified
+								synchronized (MUTEX) {
+									if (!changed)
+										return;
+									observersLocal = new ArrayList&lt;&gt;(this.observers);
+									this.changed=false;
+								}
+								for (Observer obj : observersLocal) {
+									obj.update();
+								}
+						
+							}
+						
+							@Override
+							public Object getUpdate(Observer obj) {
+								return this.message;
+							}
+							
+							//method to post message to the topic
+							public void postMessage(String msg){
+								System.out.println("Message Posted to Topic:"+msg);
+								this.message=msg;
+								this.changed=true;
+								notifyObservers();
+							}
+						
+						}
+						</code></pre>
+							<p>The method implementation to register and unregister an observer is very simple, the
+								extra method is <em>postMessage()</em> that will be used by client application to post
+								String message to the topic. Notice the boolean variable to keep track of the change in
+								the state of topic and used in notifying observers. This variable is required so that if
+								there is no update and somebody calls <em>notifyObservers()</em> method, it doesn’t send
+								false notifications to the observers. Also notice the use of <a
+									href="/community/tutorials/thread-safety-in-java"
+									title="Java Synchronization and Thread Safety Tutorial with Examples">synchronization</a>
+								in <em>notifyObservers()</em> method to make sure the notification is sent only to the
+								observers registered before the message is published to the topic. Here is the
+								implementation of Observers that will watch over the subject.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+						
+						public class MyTopicSubscriber implements Observer {
+							
+							private String name;
+							private Subject topic;
+							
+							public MyTopicSubscriber(String nm){
+								this.name=nm;
+							}
+							@Override
+							public void update() {
+								String msg = (String) topic.getUpdate(this);
+								if(msg == null){
+									System.out.println(name+":: No new message");
+								}else
+								System.out.println(name+":: Consuming message::"+msg);
+							}
+						
+							@Override
+							public void setSubject(Subject sub) {
+								this.topic=sub;
+							}
+						
+						}
+						</code></pre>
+							<p>Notice the implementation of <em>update()</em> method where it’s calling Subject
+								<em>getUpdate()</em> method to get the message to consume. We could have avoided this
+								call by passing message as argument to <em>update()</em> method. Here is a simple test
+								program to consume our topic implementation.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+						
+						public class ObserverPatternTest {
+						
+							public static void main(String[] args) {
+								//create subject
+								MyTopic topic = new MyTopic();
+								
+								//create observers
+								Observer obj1 = new MyTopicSubscriber("Obj1");
+								Observer obj2 = new MyTopicSubscriber("Obj2");
+								Observer obj3 = new MyTopicSubscriber("Obj3");
+								
+								//register observers to the subject
+								topic.register(obj1);
+								topic.register(obj2);
+								topic.register(obj3);
+								
+								//attach observer to subject
+								obj1.setSubject(topic);
+								obj2.setSubject(topic);
+								obj3.setSubject(topic);
+								
+								//check if any update is available
+								obj1.update();
+								
+								//now send message to subject
+								topic.postMessage("New Message");
+							}
+						
+						}
+						</code></pre>
+							<p>When we run above program, we get following output.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>Obj1:: No new message
+						Message Posted to Topic:New Message
+						Obj1:: Consuming message::New Message
+						Obj2:: Consuming message::New Message
+						Obj3:: Consuming message::New Message
+						</code></pre>
+							<h3 id="java-observer-pattern-class-diagram"><a href="#java-observer-pattern-class-diagram"
+									onclick="navigator.clipboard.writeText(this.href);">Java Observer Pattern Class
+									Diagram</a><a class="hash-anchor" href="#java-observer-pattern-class-diagram"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/observer-pattern.png"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/observer-pattern-450x364.png"
+										alt="observer pattern, observer pattern java, observer design pattern"></a>
+								Observer design pattern is also called as publish-subscribe pattern. Some of it’s
+								implementations are;</p>
+							<ul>
+								<li>java.util.EventListener in Swing</li>
+								<li>javax.servlet.http.HttpSessionBindingListener</li>
+								<li>javax.servlet.http.HttpSessionAttributeListener</li>
+							</ul>
+							<p>That’s all for Observer design pattern in java, I hope you liked it. Share your love with
+								comments and by sharing it with others.</p>
+						</div>
 					</div>
 				</article>
 			</div>

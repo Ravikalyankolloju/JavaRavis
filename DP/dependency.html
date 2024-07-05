@@ -184,7 +184,446 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p><strong>Java Dependency Injection</strong> design pattern allows us to remove the
+								hard-coded dependencies and make our application loosely coupled, extendable and
+								maintainable. We can implement <strong>dependency injection in java</strong> to move the
+								dependency resolution from compile-time to runtime.</p>
+							<h2 id="java-dependency-injection"><a href="#java-dependency-injection"
+									onclick="navigator.clipboard.writeText(this.href);">Java Dependency Injection</a><a
+									class="hash-anchor" href="#java-dependency-injection" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p>Java Dependency injection seems hard to grasp with theory, so I would take a simple
+								example and then we will see how to use dependency injection pattern to achieve loose
+								coupling and extendability in the application. Let’s say we have an application where we
+								consume <code>EmailService</code> to send emails. Normally we would implement this like
+								below.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.legacy;
+						
+						public class EmailService {
+						
+							public void sendEmail(String message, String receiver){
+								//logic to send email
+								System.out.println("Email sent to "+receiver+ " with Message="+message);
+							}
+						}
+						</code></pre>
+							<p><code>EmailService</code> class holds the logic to send an email message to the recipient
+								email address. Our application code will be like below.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.legacy;
+						
+						public class MyApplication {
+						
+							private EmailService email = new EmailService();
+							
+							public void processMessages(String msg, String rec){
+								//do some msg validation, manipulation logic etc
+								this.email.sendEmail(msg, rec);
+							}
+						}
+						</code></pre>
+							<p>Our client code that will use <code>MyApplication</code> class to send email messages
+								will be like below.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.legacy;
+						
+						public class MyLegacyTest {
+						
+							public static void main(String[] args) {
+								MyApplication app = new MyApplication();
+								app.processMessages("Hi Pankaj", "pankaj@abc.com");
+							}
+						
+						}
+						</code></pre>
+							<p>At first look, there seems nothing wrong with the above implementation. But above code
+								logic has certain limitations.</p>
+							<ul>
+								<li><code>MyApplication</code> class is responsible to initialize the email service and
+									then use it. This leads to hard-coded dependency. If we want to switch to some other
+									advanced email service in the future, it will require code changes in MyApplication
+									class. This makes our application hard to extend and if email service is used in
+									multiple classes then that would be even harder.</li>
+								<li>If we want to extend our application to provide an additional messaging feature,
+									such as SMS or Facebook message then we would need to write another application for
+									that. This will involve code changes in application classes and in client classes
+									too.</li>
+								<li>Testing the application will be very difficult since our application is directly
+									creating the email service instance. There is no way we can mock these objects in
+									our test classes.</li>
+							</ul>
+							<p>One can argue that we can remove the email service instance creation from
+								<code>MyApplication</code> class by having a constructor that requires email service as
+								an argument.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.legacy;
+						
+						public class MyApplication {
+						
+							private EmailService email = null;
+							
+							public MyApplication(EmailService svc){
+								this.email=svc;
+							}
+							
+							public void processMessages(String msg, String rec){
+								//do some msg validation, manipulation logic etc
+								this.email.sendEmail(msg, rec);
+							}
+						}
+						</code></pre>
+							<p>But in this case, we are asking client applications or test classes to initializing the
+								email service that is not a good design decision. Now let’s see how we can apply java
+								dependency injection pattern to solve all the problems with the above implementation.
+								Dependency Injection in java requires at least the following:</p>
+							<ol>
+								<li>Service components should be designed with base class or interface. It’s better to
+									prefer interfaces or abstract classes that would define contract for the services.
+								</li>
+								<li>Consumer classes should be written in terms of service interface.</li>
+								<li>Injector classes that will initialize the services and then the consumer classes.
+								</li>
+							</ol>
+							<h3 id="java-dependency-injection-service-components"><a
+									href="#java-dependency-injection-service-components"
+									onclick="navigator.clipboard.writeText(this.href);">Java Dependency Injection -
+									Service Components</a><a class="hash-anchor"
+									href="#java-dependency-injection-service-components" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>For our case, we can have <code>MessageService</code> that will declare the contract for
+								service implementations.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.service;
+						
+						public interface MessageService {
+						
+							void sendMessage(String msg, String rec);
+						}
+						</code></pre>
+							<p>Now let’s say we have Email and SMS services that implement the above interfaces.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.service;
+						
+						public class EmailServiceImpl implements MessageService {
+						
+							@Override
+							public void sendMessage(String msg, String rec) {
+								//logic to send email
+								System.out.println("Email sent to "+rec+ " with Message="+msg);
+							}
+						
+						}
+						</code></pre>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.service;
+						
+						public class SMSServiceImpl implements MessageService {
+						
+							@Override
+							public void sendMessage(String msg, String rec) {
+								//logic to send SMS
+								System.out.println("SMS sent to "+rec+ " with Message="+msg);
+							}
+						
+						}
+						</code></pre>
+							<p>Our dependency injection java services are ready and now we can write our consumer class.
+							</p>
+							<h3 id="java-dependency-injection-service-consumer"><a
+									href="#java-dependency-injection-service-consumer"
+									onclick="navigator.clipboard.writeText(this.href);">Java Dependency Injection -
+									Service Consumer</a><a class="hash-anchor"
+									href="#java-dependency-injection-service-consumer" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>We are not required to have base interfaces for consumer classes but I will have a
+								<code>Consumer</code> interface declaring contract for consumer classes.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.consumer;
+						
+						public interface Consumer {
+						
+							void processMessages(String msg, String rec);
+						}
+						</code></pre>
+							<p>My consumer class implementation is like below.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.consumer;
+						
+						import com.journaldev.java.dependencyinjection.service.MessageService;
+						
+						public class MyDIApplication implements Consumer{
+						
+							private MessageService service;
+							
+							public MyDIApplication(MessageService svc){
+								this.service=svc;
+							}
+							
+							@Override
+							public void processMessages(String msg, String rec){
+								//do some msg validation, manipulation logic etc
+								this.service.sendMessage(msg, rec);
+							}
+						
+						}
+						</code></pre>
+							<p>Notice that our application class is just using the service. It does not initialize the
+								service that leads to better “<em>separation of concerns</em>”. Also use of service
+								interface allows us to easily test the application by mocking the MessageService and
+								bind the services at runtime rather than compile time. Now we are ready to write
+								<strong>java dependency injector classes</strong> that will initialize the service and
+								also consumer classes.</p>
+							<h3 id="java-dependency-injection-injectors-classes"><a
+									href="#java-dependency-injection-injectors-classes"
+									onclick="navigator.clipboard.writeText(this.href);">Java Dependency Injection -
+									Injectors Classes</a><a class="hash-anchor"
+									href="#java-dependency-injection-injectors-classes" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Let’s have an interface <code>MessageServiceInjector</code> with method declaration that
+								returns the <code>Consumer</code> class.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.injector;
+						
+						import com.journaldev.java.dependencyinjection.consumer.Consumer;
+						
+						public interface MessageServiceInjector {
+						
+							public Consumer getConsumer();
+						}
+						</code></pre>
+							<p>Now for every service, we will have to create injector classes like below.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.injector;
+						
+						import com.journaldev.java.dependencyinjection.consumer.Consumer;
+						import com.journaldev.java.dependencyinjection.consumer.MyDIApplication;
+						import com.journaldev.java.dependencyinjection.service.EmailServiceImpl;
+						
+						public class EmailServiceInjector implements MessageServiceInjector {
+						
+							@Override
+							public Consumer getConsumer() {
+								return new MyDIApplication(new EmailServiceImpl());
+							}
+						
+						}
+						</code></pre>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.injector;
+						
+						import com.journaldev.java.dependencyinjection.consumer.Consumer;
+						import com.journaldev.java.dependencyinjection.consumer.MyDIApplication;
+						import com.journaldev.java.dependencyinjection.service.SMSServiceImpl;
+						
+						public class SMSServiceInjector implements MessageServiceInjector {
+						
+							@Override
+							public Consumer getConsumer() {
+								return new MyDIApplication(new SMSServiceImpl());
+							}
+						
+						}
+						</code></pre>
+							<p>Now let’s see how our client applications will use the application with a simple program.
+							</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.test;
+						
+						import com.journaldev.java.dependencyinjection.consumer.Consumer;
+						import com.journaldev.java.dependencyinjection.injector.EmailServiceInjector;
+						import com.journaldev.java.dependencyinjection.injector.MessageServiceInjector;
+						import com.journaldev.java.dependencyinjection.injector.SMSServiceInjector;
+						
+						public class MyMessageDITest {
+						
+							public static void main(String[] args) {
+								String msg = "Hi Pankaj";
+								String email = "pankaj@abc.com";
+								String phone = "4088888888";
+								MessageServiceInjector injector = null;
+								Consumer app = null;
+								
+								//Send email
+								injector = new EmailServiceInjector();
+								app = injector.getConsumer();
+								app.processMessages(msg, email);
+								
+								//Send SMS
+								injector = new SMSServiceInjector();
+								app = injector.getConsumer();
+								app.processMessages(msg, phone);
+							}
+						
+						}
+						</code></pre>
+							<p>As you can see that our application classes are responsible only for using the service.
+								Service classes are created in injectors. Also if we have to further extend our
+								application to allow facebook messaging, we will have to write Service classes and
+								injector classes only. So dependency injection implementation solved the problem with
+								hard-coded dependency and helped us in making our application flexible and easy to
+								extend. Now let’s see how easily we can test our application class by mocking the
+								injector and service classes.</p>
+							<h3 id="java-dependency-injection-junit-test-case-with-mock-injector-and-service"><a
+									href="#java-dependency-injection-junit-test-case-with-mock-injector-and-service"
+									onclick="navigator.clipboard.writeText(this.href);">Java Dependency Injection -
+									JUnit Test Case with Mock Injector and Service</a><a class="hash-anchor"
+									href="#java-dependency-injection-junit-test-case-with-mock-injector-and-service"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.test;
+						
+						import org.junit.After;
+						import org.junit.Before;
+						import org.junit.Test;
+						
+						import com.journaldev.java.dependencyinjection.consumer.Consumer;
+						import com.journaldev.java.dependencyinjection.consumer.MyDIApplication;
+						import com.journaldev.java.dependencyinjection.injector.MessageServiceInjector;
+						import com.journaldev.java.dependencyinjection.service.MessageService;
+						
+						public class MyDIApplicationJUnitTest {
+						
+							private MessageServiceInjector injector;
+							@Before
+							public void setUp(){
+								//mock the injector with anonymous class
+								injector = new MessageServiceInjector() {
+									
+									@Override
+									public Consumer getConsumer() {
+										//mock the message service
+										return new MyDIApplication(new MessageService() {
+											
+											@Override
+											public void sendMessage(String msg, String rec) {
+												System.out.println("Mock Message Service implementation");
+												
+											}
+										});
+									}
+								};
+							}
+							
+							@Test
+							public void test() {
+								Consumer consumer = injector.getConsumer();
+								consumer.processMessages("Hi Pankaj", "pankaj@abc.com");
+							}
+							
+							@After
+							public void tear(){
+								injector = null;
+							}
+						
+						}
+						</code></pre>
+							<p>As you can see that I am using <a href="/community/tutorials/java-inner-class">anonymous
+									classes</a> to <em>mock the injector and service classes</em> and I can easily test
+								my application methods. I am using JUnit 4 for the above test class, so make sure it’s
+								in your project build path if you are running above test class. We have used
+								constructors to inject the dependencies in the application classes, another way is to
+								use a setter method to <strong>inject dependencies</strong> in application classes. For
+								setter method dependency injection, our application class will be implemented like
+								below.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.consumer;
+						
+						import com.journaldev.java.dependencyinjection.service.MessageService;
+						
+						public class MyDIApplication implements Consumer{
+						
+							private MessageService service;
+							
+							public MyDIApplication(){}
+						
+							//setter dependency injection	
+							public void setService(MessageService service) {
+								this.service = service;
+							}
+						
+							@Override
+							public void processMessages(String msg, String rec){
+								//do some msg validation, manipulation logic etc
+								this.service.sendMessage(msg, rec);
+							}
+						
+						}
+						</code></pre>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.injector;
+						
+						import com.journaldev.java.dependencyinjection.consumer.Consumer;
+						import com.journaldev.java.dependencyinjection.consumer.MyDIApplication;
+						import com.journaldev.java.dependencyinjection.service.EmailServiceImpl;
+						
+						public class EmailServiceInjector implements MessageServiceInjector {
+						
+							@Override
+							public Consumer getConsumer() {
+								MyDIApplication app = new MyDIApplication();
+								app.setService(new EmailServiceImpl());
+								return app;
+							}
+						
+						}
+						</code></pre>
+							<p>One of the best example of setter dependency injection is <a
+									href="/community/tutorials/get-servlet-session-request-response-context-attributes-struts-2-action">Struts2
+									Servlet API Aware interfaces</a>. Whether to use Constructor based dependency
+								injection or setter based is a design decision and depends on your requirements. For
+								example, if my application can’t work at all without the service class then I would
+								prefer constructor based DI or else I would go for setter method based DI to use it only
+								when it’s really needed. <strong>Dependency Injection in Java</strong> is a way to
+								achieve <strong>Inversion of control</strong> (<strong>IoC</strong>) in our application
+								by moving objects binding from compile time to runtime. We can achieve IoC through <a
+									href="/community/tutorials/factory-design-pattern-in-java">Factory Pattern</a>, <a
+									href="/community/tutorials/template-method-design-pattern-in-java">Template Method
+									Design Pattern</a>, <a
+									href="/community/tutorials/strategy-design-pattern-in-java-example-tutorial">Strategy
+									Pattern</a> and Service Locator pattern too. <strong><a
+										href="/community/tutorials/spring-dependency-injection">Spring Dependency
+										Injection</a></strong>, <strong><a
+										href="/community/tutorials/google-guice-dependency-injection-example-tutorial">Google
+										Guice</a></strong> and <strong>Java EE CDI</strong> frameworks facilitate the
+								process of dependency injection through use of <a
+									href="/community/tutorials/java-reflection-example-tutorial">Java Reflection API</a>
+								and <a href="/community/tutorials/java-annotations">java annotations</a>. All we need is
+								to annotate the field, constructor or setter method and configure them in configuration
+								xml files or classes.</p>
+							<h3 id="benefits-of-java-dependency-injection"><a
+									href="#benefits-of-java-dependency-injection"
+									onclick="navigator.clipboard.writeText(this.href);">Benefits of Java Dependency
+									Injection</a><a class="hash-anchor" href="#benefits-of-java-dependency-injection"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Some of the benefits of using Dependency Injection in Java are:</p>
+							<ul>
+								<li>Separation of Concerns</li>
+								<li>Boilerplate Code reduction in application classes because all work to initialize
+									dependencies is handled by the injector component</li>
+								<li>Configurable components makes application easily extendable</li>
+								<li>Unit testing is easy with mock objects</li>
+							</ul>
+							<h3 id="disadvantages-of-java-dependency-injection"><a
+									href="#disadvantages-of-java-dependency-injection"
+									onclick="navigator.clipboard.writeText(this.href);">Disadvantages of Java Dependency
+									Injection</a><a class="hash-anchor"
+									href="#disadvantages-of-java-dependency-injection" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Java Dependency injection has some disadvantages too:</p>
+							<ul>
+								<li>If overused, it can lead to maintenance issues because the effect of changes are
+									known at runtime.</li>
+								<li>Dependency injection in java hides the service class dependencies that can lead to
+									runtime errors that would have been caught at compile time.</li>
+							</ul>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/projects/DependencyInjectionExample.zip"
+									rel="ugc nofollow">Download Dependency Injection Project</a></p>
+							<p>That’s all for <strong>dependency injection pattern in java</strong>. It’s good to know
+								and use it when we are in control of the services.</p>
+						</div>
 					</div>
 				</article>
 			</div>

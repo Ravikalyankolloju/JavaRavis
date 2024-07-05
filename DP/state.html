@@ -175,7 +175,188 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>State design pattern is one of the behavioral design pattern. State design pattern is
+								used when an Object change its behavior based on its internal state.</p>
+							<h2 id="state-design-pattern"><a href="#state-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">State Design Pattern</a><a
+									class="hash-anchor" href="#state-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/state-design-pattern.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/state-design-pattern.jpg"
+										alt="state design pattern, state design pattern in java, state pattern"></a> If
+								we have to change the behavior of an object based on its state, we can have a state
+								variable in the Object. Then use <strong>if-else</strong> condition block to perform
+								different actions based on the state. State design pattern is used to provide a
+								systematic and loosely coupled way to achieve this through <code>Context</code> and
+								<code>State</code> implementations. State Pattern <strong>Context</strong> is the class
+								that has a State reference to one of the concrete implementations of the State. Context
+								forwards the request to the state object for processing. Let’s understand this with a
+								simple example. Suppose we want to implement a TV Remote with a simple button to perform
+								action. If the State is ON, it will turn on the TV and if state is OFF, it will turn off
+								the TV. We can implement it using if-else condition like below;
+								<code>TVRemoteBasic.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+						
+						public class TVRemoteBasic {
+						
+							private String state="";
+							
+							public void setState(String state){
+								this.state=state;
+							}
+							
+							public void doAction(){
+								if(state.equalsIgnoreCase("ON")){
+									System.out.println("TV is turned ON");
+								}else if(state.equalsIgnoreCase("OFF")){
+									System.out.println("TV is turned OFF");
+								}
+							}
+						
+							public static void main(String args[]){
+								TVRemoteBasic remote = new TVRemoteBasic();
+								
+								remote.setState("ON");
+								remote.doAction();
+								
+								remote.setState("OFF");
+								remote.doAction();
+							}
+						
+						}
+						</code></pre>
+							<p>Notice that client code should know the specific values to use for setting the state of
+								remote. Further more if number of states increase then the tight coupling between
+								implementation and the client code will be very hard to maintain and extend. Now we will
+								use State pattern to implement above TV Remote example.</p>
+							<h3 id="state-design-pattern-interface"><a href="#state-design-pattern-interface"
+									onclick="navigator.clipboard.writeText(this.href);">State Design Pattern
+									Interface</a><a class="hash-anchor" href="#state-design-pattern-interface"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>First of all we will create State interface that will define the method that should be
+								implemented by different concrete states and context class. <code>State.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+						
+						public interface State {
+						
+							public void doAction();
+						}
+						</code></pre>
+							<h3 id="state-design-pattern-concrete-state-implementations"><a
+									href="#state-design-pattern-concrete-state-implementations"
+									onclick="navigator.clipboard.writeText(this.href);">State Design Pattern Concrete
+									State Implementations</a><a class="hash-anchor"
+									href="#state-design-pattern-concrete-state-implementations" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>In our example, we can have two states - one for turning TV on and another to turn it
+								off. So we will create two concrete state implementations for these behaviors.
+								<code>TVStartState.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+						
+						public class TVStartState implements State {
+						
+							@Override
+							public void doAction() {
+								System.out.println("TV is turned ON");
+							}
+						
+						}
+						</code></pre>
+							<p><code>TVStopState.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+						
+						public class TVStopState implements State {
+						
+							@Override
+							public void doAction() {
+								System.out.println("TV is turned OFF");
+							}
+						
+						}
+						</code></pre>
+							<p>Now we are ready to implement our Context object that will change its behavior based on
+								its internal state.</p>
+							<h3 id="state-design-pattern-context-implementation"><a
+									href="#state-design-pattern-context-implementation"
+									onclick="navigator.clipboard.writeText(this.href);">State Design Pattern Context
+									Implementation</a><a class="hash-anchor"
+									href="#state-design-pattern-context-implementation" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p><code>TVContext.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+						
+						public class TVContext implements State {
+						
+							private State tvState;
+						
+							public void setState(State state) {
+								this.tvState=state;
+							}
+						
+							public State getState() {
+								return this.tvState;
+							}
+						
+							@Override
+							public void doAction() {
+								this.tvState.doAction();
+							}
+						
+						}
+						</code></pre>
+							<p>Notice that Context also implements State and keep a reference of its current state and
+								forwards the request to the state implementation.</p>
+							<h3 id="state-design-pattern-test-program"><a href="#state-design-pattern-test-program"
+									onclick="navigator.clipboard.writeText(this.href);">State Design Pattern Test
+									Program</a><a class="hash-anchor" href="#state-design-pattern-test-program"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Now let’s write a simple program to test our state pattern implementation of TV Remote.
+								<code>TVRemote.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+						
+						public class TVRemote {
+						
+							public static void main(String[] args) {
+								TVContext context = new TVContext();
+								State tvStartState = new TVStartState();
+								State tvStopState = new TVStopState();
+								
+								context.setState(tvStartState);
+								context.doAction();
+								
+								
+								context.setState(tvStopState);
+								context.doAction();
+								
+							}
+						
+						}
+						</code></pre>
+							<p>Output of above program is same as the basic implementation of TV Remote without using
+								state pattern.</p>
+							<h3 id="state-design-pattern-benefits"><a href="#state-design-pattern-benefits"
+									onclick="navigator.clipboard.writeText(this.href);">State Design Pattern
+									Benefits</a><a class="hash-anchor" href="#state-design-pattern-benefits"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>The benefits of using State pattern to implement polymorphic behavior is clearly visible.
+								The chances of error are less and it’s very easy to add more states for additional
+								behavior. Thus making our code more robust, easily maintainable and flexible. Also State
+								pattern helped in avoiding if-else or switch-case conditional logic in this scenario.
+								State Pattern is very similar to Strategy Pattern, check out <strong><a
+										href="/community/tutorials/strategy-design-pattern-in-java-example-tutorial"
+										title="Strategy Design Pattern in Java – Example Tutorial">Strategy Pattern in
+										Java</a></strong>. Thats all for State design pattern in java, I hope you liked
+								it.</p>
+						</div>
 					</div>
 				</article>
 			</div>

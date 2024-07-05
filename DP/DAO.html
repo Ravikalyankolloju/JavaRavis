@@ -184,7 +184,203 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>DAO stands for Data Access Object. DAO <a
+									href="/community/tutorials/java-design-patterns-example-tutorial">Design Pattern</a>
+								is used to separate the data persistence logic in a separate layer. This way, the
+								service remains completely in dark about how the low-level operations to access the
+								database is done. This is known as the principle of <strong>Separation of
+									Logic</strong>.</p>
+							<h2 id="dao-design-pattern"><a href="#dao-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">DAO Design Pattern</a><a
+									class="hash-anchor" href="#dao-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p>With DAO design pattern, we have following components on which our design depends:</p>
+							<ul>
+								<li>The model which is transferred from one layer to the other.</li>
+								<li>The <a href="/community/tutorials/interface-in-java">interfaces</a> which provides a
+									flexible design.</li>
+								<li>The interface implementation which is a concrete implementation of the persistence
+									logic.</li>
+							</ul>
+							<h3 id="implementing-dao-pattern"><a href="#implementing-dao-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Implementing DAO pattern</a><a
+									class="hash-anchor" href="#implementing-dao-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>With above mentioned components, let’s try to implement the DAO pattern. We will use 3
+								components here:</p>
+							<ol>
+								<li>The <code>Book</code> model which is transferred from one layer to the other.</li>
+								<li>The <code>BookDao</code> interface that provides a flexible design and API to
+									implement.</li>
+								<li><code>BookDaoImpl</code> concrete class that is an implementation of the
+									<code>BookDao</code> interface.</li>
+							</ol>
+							<p>Let us put this logic into a diagram: <img
+									src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2017/11/DAO-Pattern.png"
+									alt="DAO Pattern"></p>
+							<h3 id="dao-pattern-model-class"><a href="#dao-pattern-model-class"
+									onclick="navigator.clipboard.writeText(this.href);">DAO Pattern model Class</a><a
+									class="hash-anchor" href="#dao-pattern-model-class" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Now, let’s put up our model object.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.model;
+						
+						public class Books {
+						
+						    private int isbn;
+						    private String bookName;
+						
+						    public Books() {
+						    }
+						
+						    public Books(int isbn, String bookName) {
+						        this.isbn = isbn;
+						        this.bookName = bookName;
+						    }
+						
+						    // getter setter methods
+						}
+						</code></pre>
+							<p>It is a simple object with just 2 properties to keep things simple.</p>
+							<h3 id="dao-pattern-interface"><a href="#dao-pattern-interface"
+									onclick="navigator.clipboard.writeText(this.href);">DAO Pattern Interface</a><a
+									class="hash-anchor" href="#dao-pattern-interface" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Let’s define the interface to access the data associated with it at persistence level.
+							</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.dao;
+						
+						import com.journaldev.model.Books;
+						
+						import java.util.List;
+						
+						public interface BookDao {
+						
+						    List&lt;Books&gt; getAllBooks();
+						    Books getBookByIsbn(int isbn);
+						    void saveBook(Books book);
+						    void deleteBook(Books book);
+						}
+						</code></pre>
+							<h3 id="dao-pattern-implementation"><a href="#dao-pattern-implementation"
+									onclick="navigator.clipboard.writeText(this.href);">DAO Pattern Implementation</a><a
+									class="hash-anchor" href="#dao-pattern-implementation" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Next, we create a concrete class implementing the above interface.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.daoimpl;
+						
+						import com.journaldev.dao.BookDao;
+						import com.journaldev.model.Books;
+						
+						import java.util.ArrayList;
+						import java.util.List;
+						
+						public class BookDaoImpl implements BookDao {
+						
+						    //list is working as a database
+						    private List&lt;Books&gt; books;
+						
+						    public BookDaoImpl() {
+						        books = new ArrayList&lt;&gt;();
+						        books.add(new Books(1, "Java"));
+						        books.add(new Books(2, "Python"));
+						        books.add(new Books(3, "Android"));
+						    }
+						
+						    @Override
+						    public List&lt;Books&gt; getAllBooks() {
+						        return books;
+						    }
+						
+						    @Override
+						    public Books getBookByIsbn(int isbn) {
+						        return books.get(isbn);
+						    }
+						
+						    @Override
+						    public void saveBook(Books book) {
+						        books.add(book);
+						    }
+						
+						    @Override
+						    public void deleteBook(Books book) {
+						        books.remove(book);
+						    }
+						}
+						</code></pre>
+							<h3 id="using-dao-pattern"><a href="#using-dao-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Using DAO Pattern</a><a
+									class="hash-anchor" href="#using-dao-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Finally, we put this implementation to use in our main() method:</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev;
+						
+						import com.journaldev.dao.BookDao;
+						import com.journaldev.daoimpl.BookDaoImpl;
+						import com.journaldev.model.Books;
+						
+						public class AccessBook {
+						
+						    public static void main(String[] args) {
+						
+						        BookDao bookDao = new BookDaoImpl();
+						
+						        for (Books book : bookDao.getAllBooks()) {
+						            System.out.println("Book ISBN : " + book.getIsbn());
+						        }
+						
+						        //update student
+						        Books book = bookDao.getAllBooks().get(1);
+						        book.setBookName("Algorithms");
+						        bookDao.saveBook(book);
+						    }
+						}
+						
+						</code></pre>
+							<h3 id="advantages-of-dao-pattern"><a href="#advantages-of-dao-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Advantages of DAO pattern</a><a
+									class="hash-anchor" href="#advantages-of-dao-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>There are many advantages for using DAO pattern. Let’s state some of them here:</p>
+							<ol>
+								<li>While changing a persistence mechanism, service layer doesn’t even have to know
+									where the data comes from. For example, if you’re thinking of shifting from using
+									MySQL to MongoDB, all changes are needed to be done in the DAO layer only.</li>
+								<li>DAO pattern emphasis on the low coupling between different components of an
+									application. So, the View layer have no dependency on DAO layer and only Service
+									layer depends on it, even that with the interfaces and not from concrete
+									implementation.</li>
+								<li>As the persistence logic is completely separate, it is much easier to write Unit
+									tests for individual components. For example, if you’re using JUnit and Mockito for
+									testing frameworks, it will be easy to mock the individual components of your
+									application.</li>
+								<li>As we work with interfaces in DAO pattern, it also emphasizes the style of “work
+									with interfaces instead of implementation” which is an excellent OOPs style of
+									programming.</li>
+							</ol>
+							<h3 id="dao-pattern-conclusion"><a href="#dao-pattern-conclusion"
+									onclick="navigator.clipboard.writeText(this.href);">DAO Pattern Conclusion</a><a
+									class="hash-anchor" href="#dao-pattern-conclusion" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>In this article, we learned how we can put DAO design pattern to use to emphasize on
+								keeping persistence logic separate and so, our components loosely coupled. Design
+								patterns are just based on a way of programming and so, is language and framework
+								independent. Feel free to leave your views in comments below. Download the DAO example
+								project from below link.</p>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/projects/DaoPattern.zip"
+									rel="ugc nofollow">Download DAO Pattern Example Project</a></p>
+							<p>References: <a
+									href="https://www.oracle.com/technetwork/java/dataaccessobject-138824.html"
+									rel="ugc nofollow">Oracle Documentation</a>, <a
+									href="https://en.wikipedia.org/wiki/Data_access_object"
+									rel="ugc nofollow">Wikipedia</a>.</p>
+						</div>
 					</div>
 				</article>
 			</div>

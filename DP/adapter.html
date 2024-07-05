@@ -184,7 +184,240 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>Adapter design pattern is one of the <strong>structural design pattern</strong> and its
+								used so that two unrelated interfaces can work together. The object that joins these
+								unrelated interface is called an <strong>Adapter</strong>.</p>
+							<h2 id="adapter-design-pattern"><a href="#adapter-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Adapter Design Pattern</a><a
+									class="hash-anchor" href="#adapter-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/adapter-design-pattern.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/adapter-design-pattern.jpg"
+										alt="adapter design pattern, adapter design pattern in java, adapter pattern, adapter pattern java example"></a>
+								One of the great real life example of Adapter design pattern is mobile charger. Mobile
+								battery needs 3 volts to charge but the normal socket produces either 120V (US) or 240V
+								(India). So the mobile charger works as an adapter between mobile charging socket and
+								the wall socket. We will try to implement multi-adapter using adapter design pattern in
+								this tutorial. So first of all we will have two classes - <code>Volt</code> (to measure
+								volts) and <code>Socket</code> (producing constant volts of 120V).</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+						
+						public class Volt {
+						
+							private int volts;
+							
+							public Volt(int v){
+								this.volts=v;
+							}
+						
+							public int getVolts() {
+								return volts;
+							}
+						
+							public void setVolts(int volts) {
+								this.volts = volts;
+							}
+							
+						}
+						</code></pre>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+						
+						public class Socket {
+						
+							public Volt getVolt(){
+								return new Volt(120);
+							}
+						}
+						</code></pre>
+							<p>Now we want to build an adapter that can produce 3 volts, 12 volts and default 120 volts.
+								So first of all we will create an adapter interface with these methods.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+						
+						public interface SocketAdapter {
+						
+							public Volt get120Volt();
+								
+							public Volt get12Volt();
+							
+							public Volt get3Volt();
+						}
+						</code></pre>
+							<h3 id="two-way-adapter-pattern"><a href="#two-way-adapter-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Two Way Adapter Pattern</a><a
+									class="hash-anchor" href="#two-way-adapter-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>While implementing Adapter pattern, there are two approaches - class adapter and object
+								adapter - however both these approaches produce same result.</p>
+							<ol>
+								<li><strong>Class Adapter</strong> - This form uses <a
+										href="/community/tutorials/inheritance-java-example"><strong>java
+											inheritance</strong></a> and extends the source interface, in our case
+									Socket class.</li>
+								<li><strong>Object Adapter</strong> - This form uses <a
+										href="/community/tutorials/composition-in-java-example"><strong>Java
+											Composition</strong></a> and adapter contains the source object.</li>
+							</ol>
+							<h3 id="adapter-design-pattern-class-adapter"><a
+									href="#adapter-design-pattern-class-adapter"
+									onclick="navigator.clipboard.writeText(this.href);">Adapter Design Pattern - Class
+									Adapter</a><a class="hash-anchor" href="#adapter-design-pattern-class-adapter"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Here is the <strong>class adapter</strong> approach implementation of our adapter.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+						
+						//Using inheritance for adapter pattern
+						public class SocketClassAdapterImpl extends Socket implements SocketAdapter{
+						
+							@Override
+							public Volt get120Volt() {
+								return getVolt();
+							}
+						
+							@Override
+							public Volt get12Volt() {
+								Volt v= getVolt();
+								return convertVolt(v,10);
+							}
+						
+							@Override
+							public Volt get3Volt() {
+								Volt v= getVolt();
+								return convertVolt(v,40);
+							}
+							
+							private Volt convertVolt(Volt v, int i) {
+								return new Volt(v.getVolts()/i);
+							}
+						
+						}
+						</code></pre>
+							<h3 id="adapter-design-pattern-object-adapter-implementation"><a
+									href="#adapter-design-pattern-object-adapter-implementation"
+									onclick="navigator.clipboard.writeText(this.href);">Adapter Design Pattern - Object
+									Adapter Implementation</a><a class="hash-anchor"
+									href="#adapter-design-pattern-object-adapter-implementation" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Here is the <strong>Object adapter</strong> implementation of our adapter.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+						
+						public class SocketObjectAdapterImpl implements SocketAdapter{
+						
+							//Using Composition for adapter pattern
+							private Socket sock = new Socket();
+							
+							@Override
+							public Volt get120Volt() {
+								return sock.getVolt();
+							}
+						
+							@Override
+							public Volt get12Volt() {
+								Volt v= sock.getVolt();
+								return convertVolt(v,10);
+							}
+						
+							@Override
+							public Volt get3Volt() {
+								Volt v= sock.getVolt();
+								return convertVolt(v,40);
+							}
+							
+							private Volt convertVolt(Volt v, int i) {
+								return new Volt(v.getVolts()/i);
+							}
+						}
+						</code></pre>
+							<p>Notice that both the adapter implementations are almost same and they implement the
+								<code>SocketAdapter</code> interface. The adapter interface can also be an <a
+									href="/community/tutorials/abstract-class-in-java"><strong>abstract
+										class</strong></a>. Here is a test program to consume our adapter design pattern
+								implementation.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+						
+						import com.journaldev.design.adapter.SocketAdapter;
+						import com.journaldev.design.adapter.SocketClassAdapterImpl;
+						import com.journaldev.design.adapter.SocketObjectAdapterImpl;
+						import com.journaldev.design.adapter.Volt;
+						
+						public class AdapterPatternTest {
+						
+							public static void main(String[] args) {
+								
+								testClassAdapter();
+								testObjectAdapter();
+							}
+						
+							private static void testObjectAdapter() {
+								SocketAdapter sockAdapter = new SocketObjectAdapterImpl();
+								Volt v3 = getVolt(sockAdapter,3);
+								Volt v12 = getVolt(sockAdapter,12);
+								Volt v120 = getVolt(sockAdapter,120);
+								System.out.println("v3 volts using Object Adapter="+v3.getVolts());
+								System.out.println("v12 volts using Object Adapter="+v12.getVolts());
+								System.out.println("v120 volts using Object Adapter="+v120.getVolts());
+							}
+						
+							private static void testClassAdapter() {
+								SocketAdapter sockAdapter = new SocketClassAdapterImpl();
+								Volt v3 = getVolt(sockAdapter,3);
+								Volt v12 = getVolt(sockAdapter,12);
+								Volt v120 = getVolt(sockAdapter,120);
+								System.out.println("v3 volts using Class Adapter="+v3.getVolts());
+								System.out.println("v12 volts using Class Adapter="+v12.getVolts());
+								System.out.println("v120 volts using Class Adapter="+v120.getVolts());
+							}
+							
+							private static Volt getVolt(SocketAdapter sockAdapter, int i) {
+								switch (i){
+								case 3: return sockAdapter.get3Volt();
+								case 12: return sockAdapter.get12Volt();
+								case 120: return sockAdapter.get120Volt();
+								default: return sockAdapter.get120Volt();
+								}
+							}
+						}
+						</code></pre>
+							<p>When we run above test program, we get following output.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>v3 volts using Class Adapter=3
+						v12 volts using Class Adapter=12
+						v120 volts using Class Adapter=120
+						v3 volts using Object Adapter=3
+						v12 volts using Object Adapter=12
+						v120 volts using Object Adapter=120
+						</code></pre>
+							<h3 id="adapter-design-pattern-class-diagram"><a
+									href="#adapter-design-pattern-class-diagram"
+									onclick="navigator.clipboard.writeText(this.href);">Adapter Design Pattern Class
+									Diagram</a><a class="hash-anchor" href="#adapter-design-pattern-class-diagram"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/adapter-pattern-java-class-diagram.png"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/adapter-pattern-java-class-diagram-450x291.png"
+										alt="adapter pattern class diagram, adapter design pattern, adapter pattern, adapter design pattern in java"></a>
+							</p>
+							<h3 id="adapter-design-pattern-example-in-jdk"><a
+									href="#adapter-design-pattern-example-in-jdk"
+									onclick="navigator.clipboard.writeText(this.href);">Adapter Design Pattern Example
+									in JDK</a><a class="hash-anchor" href="#adapter-design-pattern-example-in-jdk"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Some of the adapter design pattern example I could easily find in JDK classes are;</p>
+							<ul>
+								<li>java.util.Arrays#asList()</li>
+								<li>java.io.InputStreamReader(InputStream) (returns a Reader)</li>
+								<li>java.io.OutputStreamWriter(OutputStream) (returns a Writer)</li>
+							</ul>
+							<p>That’s all for adapter design pattern in java.</p>
+						</div>
 					</div>
 				</article>
 			</div>

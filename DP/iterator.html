@@ -175,7 +175,261 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>Iterator design pattern in one of the behavioral pattern. Iterator pattern is used to
+								provide a standard way to traverse through a group of Objects. Iterator pattern is
+								widely used in <a href="/community/tutorials/collections-in-java-tutorial"
+									title="Java Collections Framework Tutorial">Java Collection Framework</a>. Iterator
+								interface provides methods for traversing through a collection.</p>
+							<h2 id="iterator-design-pattern"><a href="#iterator-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Iterator Design Pattern</a><a
+									class="hash-anchor" href="#iterator-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/iterator-design-pattern.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/iterator-design-pattern.jpg"
+										alt="iterator design pattern"></a> According to GoF, iterator design pattern
+								intent is:</p>
+							<blockquote>
+								<p>Provides a way to access the elements of an aggregate object without exposing its
+									underlying represenation.</p>
+							</blockquote>
+							<p>Iterator pattern is not only about traversing through a collection, we can provide
+								different kind of iterators based on our requirements. Iterator design pattern hides the
+								actual implementation of traversal through the collection and client programs just use
+								iterator methods.</p>
+							<h3 id="iterator-pattern-example"><a href="#iterator-pattern-example"
+									onclick="navigator.clipboard.writeText(this.href);">Iterator Pattern Example</a><a
+									class="hash-anchor" href="#iterator-pattern-example" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Let’s understand iterator pattern with a simple example. Suppose we have a list of Radio
+								channels and the client program want to traverse through them one by one or based on the
+								type of channel. For example some client programs are only interested in English
+								channels and want to process only them, they don’t want to process other types of
+								channels. So we can provide a collection of channels to the client and let them write
+								the logic to traverse through the channels and decide whether to process them. But this
+								solution has lots of issues such as client has to come up with the logic for traversal.
+								We can’t make sure that client logic is correct. Furthermore if the number of client
+								grows then it will become very hard to maintain. Here we can use Iterator pattern and
+								provide iteration based on type of channel. We should make sure that client program can
+								access the list of channels only through the iterator. The first part of implementation
+								is to define the contract for our collection and iterator interfaces.
+								<code>ChannelTypeEnum.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.iterator;
+						
+						public enum ChannelTypeEnum {
+						
+							ENGLISH, HINDI, FRENCH, ALL;
+						}
+						</code></pre>
+							<p>ChannelTypeEnum is <strong><a href="/community/tutorials/java-enum"
+										title="Java Enum">java enum</a></strong> that defines all the different types of
+								channels. <code>Channel.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.iterator;
+						
+						public class Channel {
+						
+							private double frequency;
+							private ChannelTypeEnum TYPE;
+							
+							public Channel(double freq, ChannelTypeEnum type){
+								this.frequency=freq;
+								this.TYPE=type;
+							}
+						
+							public double getFrequency() {
+								return frequency;
+							}
+						
+							public ChannelTypeEnum getTYPE() {
+								return TYPE;
+							}
+							
+							@Override
+							public String toString(){
+								return "Frequency="+this.frequency+", Type="+this.TYPE;
+							}
+							
+						}
+						</code></pre>
+							<p>Channel is a simple POJO class that has attributes frequency and channel type.
+								<code>ChannelCollection.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.iterator;
+						
+						public interface ChannelCollection {
+						
+							public void addChannel(Channel c);
+							
+							public void removeChannel(Channel c);
+							
+							public ChannelIterator iterator(ChannelTypeEnum type);
+							
+						}
+						</code></pre>
+							<p>ChannelCollection interface defines the contract for our collection class implementation.
+								Notice that there are methods to add and remove a channel but there is no method that
+								returns the list of channels. ChannelCollection has a method that returns the iterator
+								for traversal. ChannelIterator interface defines following methods;
+								<code>ChannelIterator.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.iterator;
+						
+						public interface ChannelIterator {
+						
+							public boolean hasNext();
+							
+							public Channel next();
+						}
+						</code></pre>
+							<p>Now our base interface and core classes are ready, let’s proceed with the implementation
+								of collection class and iterator. <code>ChannelCollectionImpl.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.iterator;
+						
+						import java.util.ArrayList;
+						import java.util.List;
+						
+						public class ChannelCollectionImpl implements ChannelCollection {
+						
+							private List&lt;Channel&gt; channelsList;
+						
+							public ChannelCollectionImpl() {
+								channelsList = new ArrayList&lt;&gt;();
+							}
+						
+							public void addChannel(Channel c) {
+								this.channelsList.add(c);
+							}
+						
+							public void removeChannel(Channel c) {
+								this.channelsList.remove(c);
+							}
+						
+							@Override
+							public ChannelIterator iterator(ChannelTypeEnum type) {
+								return new ChannelIteratorImpl(type, this.channelsList);
+							}
+						
+							private class ChannelIteratorImpl implements ChannelIterator {
+						
+								private ChannelTypeEnum type;
+								private List&lt;Channel&gt; channels;
+								private int position;
+						
+								public ChannelIteratorImpl(ChannelTypeEnum ty,
+										List&lt;Channel&gt; channelsList) {
+									this.type = ty;
+									this.channels = channelsList;
+								}
+						
+								@Override
+								public boolean hasNext() {
+									while (position &lt; channels.size()) {
+										Channel c = channels.get(position);
+										if (c.getTYPE().equals(type) || type.equals(ChannelTypeEnum.ALL)) {
+											return true;
+										} else
+											position++;
+									}
+									return false;
+								}
+						
+								@Override
+								public Channel next() {
+									Channel c = channels.get(position);
+									position++;
+									return c;
+								}
+						
+							}
+						}
+						</code></pre>
+							<p>Notice the <strong><a href="/community/tutorials/java-inner-class"
+										title="java inner class">inner class</a></strong> implementation of iterator
+								interface so that the implementation can’t be used by any other collection. Same
+								approach is followed by collection classes also and all of them have inner class
+								implementation of Iterator interface. Let’s write a simple iterator pattern test program
+								to use our collection and iterator to traverse through the collection of channels.
+								<code>IteratorPatternTest.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.iterator;
+						
+						public class IteratorPatternTest {
+						
+							public static void main(String[] args) {
+								ChannelCollection channels = populateChannels();
+								ChannelIterator baseIterator = channels.iterator(ChannelTypeEnum.ALL);
+								while (baseIterator.hasNext()) {
+									Channel c = baseIterator.next();
+									System.out.println(c.toString());
+								}
+								System.out.println("******");
+								// Channel Type Iterator
+								ChannelIterator englishIterator = channels.iterator(ChannelTypeEnum.ENGLISH);
+								while (englishIterator.hasNext()) {
+									Channel c = englishIterator.next();
+									System.out.println(c.toString());
+								}
+							}
+						
+							private static ChannelCollection populateChannels() {
+								ChannelCollection channels = new ChannelCollectionImpl();
+								channels.addChannel(new Channel(98.5, ChannelTypeEnum.ENGLISH));
+								channels.addChannel(new Channel(99.5, ChannelTypeEnum.HINDI));
+								channels.addChannel(new Channel(100.5, ChannelTypeEnum.FRENCH));
+								channels.addChannel(new Channel(101.5, ChannelTypeEnum.ENGLISH));
+								channels.addChannel(new Channel(102.5, ChannelTypeEnum.HINDI));
+								channels.addChannel(new Channel(103.5, ChannelTypeEnum.FRENCH));
+								channels.addChannel(new Channel(104.5, ChannelTypeEnum.ENGLISH));
+								channels.addChannel(new Channel(105.5, ChannelTypeEnum.HINDI));
+								channels.addChannel(new Channel(106.5, ChannelTypeEnum.FRENCH));
+								return channels;
+							}
+						
+						}
+						</code></pre>
+							<p>When I run above program, it produces following output;</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>Frequency=98.5, Type=ENGLISH
+						Frequency=99.5, Type=HINDI
+						Frequency=100.5, Type=FRENCH
+						Frequency=101.5, Type=ENGLISH
+						Frequency=102.5, Type=HINDI
+						Frequency=103.5, Type=FRENCH
+						Frequency=104.5, Type=ENGLISH
+						Frequency=105.5, Type=HINDI
+						Frequency=106.5, Type=FRENCH
+						******
+						Frequency=98.5, Type=ENGLISH
+						Frequency=101.5, Type=ENGLISH
+						Frequency=104.5, Type=ENGLISH
+						</code></pre>
+							<h3 id="iterator-design-pattern-important-points"><a
+									href="#iterator-design-pattern-important-points"
+									onclick="navigator.clipboard.writeText(this.href);">Iterator Design Pattern
+									Important Points</a><a class="hash-anchor"
+									href="#iterator-design-pattern-important-points" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<ul>
+								<li>Iterator pattern is useful when you want to provide a standard way to iterate over a
+									collection and hide the implementation logic from client program.</li>
+								<li>The logic for iteration is embedded in the collection itself and it helps client
+									program to iterate over them easily.</li>
+							</ul>
+							<h3 id="iterator-design-pattern-in-jdk"><a href="#iterator-design-pattern-in-jdk"
+									onclick="navigator.clipboard.writeText(this.href);">Iterator Design Pattern in
+									JDK</a><a class="hash-anchor" href="#iterator-design-pattern-in-jdk"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>We all know that Collection framework Iterator is the best example of iterator pattern
+								implementation but do you know that <code>java.util.Scanner</code> class also Implements
+								Iterator interface. Read this post to learn about <a
+									href="/community/tutorials/scanner-class-in-java">Java Scanner Class</a>. That’s all
+								for iterator design pattern, I hope it’s helpful and easy to understand.</p>
+						</div>
 					</div>
 				</article>
 			</div>

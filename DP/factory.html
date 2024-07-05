@@ -183,7 +183,206 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>Welcome to the Factory Design Pattern in Java tutorial. <strong>Factory Pattern</strong>
+								is one of the <strong>Creational Design pattern</strong> and it’s widely used in JDK as
+								well as frameworks like Spring and Struts.</p>
+							<h2 id="factory-design-pattern"><a href="#factory-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern</a><a
+									class="hash-anchor" href="#factory-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-design-pattern.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-design-pattern.jpg"
+										alt="factory design pattern, factory design pattern in java, factory pattern, factory method pattern, factory pattern example"></a>
+								The factory design pattern is used when we have a superclass with multiple sub-classes
+								and based on input, we need to return one of the sub-class. This pattern takes out the
+								responsibility of the instantiation of a class from the client program to the factory
+								class. Let’s first learn how to implement a factory design pattern in java and then we
+								will look into factory pattern advantages. We will see some of the factory design
+								pattern usage in JDK. Note that this pattern is also known as <strong>Factory Method
+									Design Pattern</strong>.</p>
+							<h3 id="factory-design-pattern-super-class"><a href="#factory-design-pattern-super-class"
+									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern Super
+									Class</a><a class="hash-anchor" href="#factory-design-pattern-super-class"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Super class in factory design pattern can be an interface, <strong><a
+										href="/community/tutorials/abstract-class-in-java"
+										title="Abstract Class in Java with Example">abstract class</a></strong> or a
+								normal java class. For our factory design pattern example, we have abstract super class
+								with <a href="/community/tutorials/java-override-method-overriding"
+									title="Overriding Methods in Java? – Always use @Override annotation">overridden</a>
+								<code>toString()</code> method for testing purpose.
+							</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.model;
+						
+						public abstract class Computer {
+							
+							public abstract String getRAM();
+							public abstract String getHDD();
+							public abstract String getCPU();
+							
+							@Override
+							public String toString(){
+								return "RAM= "+this.getRAM()+", HDD="+this.getHDD()+", CPU="+this.getCPU();
+							}
+						}
+						</code></pre>
+							<h3 id="factory-design-pattern-sub-classes"><a href="#factory-design-pattern-sub-classes"
+									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern Sub
+									Classes</a><a class="hash-anchor" href="#factory-design-pattern-sub-classes"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Let’s say we have two sub-classes PC and Server with below implementation.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.model;
+						
+						public class PC extends Computer {
+						
+							private String ram;
+							private String hdd;
+							private String cpu;
+							
+							public PC(String ram, String hdd, String cpu){
+								this.ram=ram;
+								this.hdd=hdd;
+								this.cpu=cpu;
+							}
+							@Override
+							public String getRAM() {
+								return this.ram;
+							}
+						
+							@Override
+							public String getHDD() {
+								return this.hdd;
+							}
+						
+							@Override
+							public String getCPU() {
+								return this.cpu;
+							}
+						
+						}
+						</code></pre>
+							<p>Notice that both the classes are extending <code>Computer</code> super class.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.model;
+						
+						public class Server extends Computer {
+						
+							private String ram;
+							private String hdd;
+							private String cpu;
+							
+							public Server(String ram, String hdd, String cpu){
+								this.ram=ram;
+								this.hdd=hdd;
+								this.cpu=cpu;
+							}
+							@Override
+							public String getRAM() {
+								return this.ram;
+							}
+						
+							@Override
+							public String getHDD() {
+								return this.hdd;
+							}
+						
+							@Override
+							public String getCPU() {
+								return this.cpu;
+							}
+						
+						}
+						</code></pre>
+							<h3 id="factory-class"><a href="#factory-class"
+									onclick="navigator.clipboard.writeText(this.href);">Factory Class</a><a
+									class="hash-anchor" href="#factory-class" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Now that we have super classes and sub-classes ready, we can write our factory class.
+								Here is the basic implementation.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.factory;
+						
+						import com.journaldev.design.model.Computer;
+						import com.journaldev.design.model.PC;
+						import com.journaldev.design.model.Server;
+						
+						public class ComputerFactory {
+						
+							public static Computer getComputer(String type, String ram, String hdd, String cpu){
+								if("PC".equalsIgnoreCase(type)) return new PC(ram, hdd, cpu);
+								else if("Server".equalsIgnoreCase(type)) return new Server(ram, hdd, cpu);
+								
+								return null;
+							}
+						}
+						</code></pre>
+							<p>Some important points about Factory Design Pattern method are;</p>
+							<ol>
+								<li>We can keep Factory class Singleton or we can keep the method that returns the
+									subclass as <a href="/community/tutorials/static-keyword-in-java"
+										title="What is static in Java? Java Static methods, variables, static block and class">static</a>.
+								</li>
+								<li>Notice that based on the input parameter, different subclass is created and
+									returned. <code>getComputer</code> is the factory method.</li>
+							</ol>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-pattern-java.png"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-pattern-java-450x327.png"
+										alt="factory pattern java, factory pattern, factory design pattern, factory pattern class diagram"></a>
+								Here is a simple test client program that uses above factory design pattern
+								implementation.</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+						
+						import com.journaldev.design.factory.ComputerFactory;
+						import com.journaldev.design.model.Computer;
+						
+						public class TestFactory {
+						
+							public static void main(String[] args) {
+								Computer pc = ComputerFactory.getComputer("pc","2 GB","500 GB","2.4 GHz");
+								Computer server = ComputerFactory.getComputer("server","16 GB","1 TB","2.9 GHz");
+								System.out.println("Factory PC Config::"+pc);
+								System.out.println("Factory Server Config::"+server);
+							}
+						
+						}
+						</code></pre>
+							<p>Output of above program is:</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>Factory PC Config::RAM= 2 GB, HDD=500 GB, CPU=2.4 GHz
+						Factory Server Config::RAM= 16 GB, HDD=1 TB, CPU=2.9 GHz
+						</code></pre>
+							<h3 id="factory-design-pattern-advantages"><a href="#factory-design-pattern-advantages"
+									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern
+									Advantages</a><a class="hash-anchor" href="#factory-design-pattern-advantages"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<ol>
+								<li>Factory design pattern provides approach to code for interface rather than
+									implementation.</li>
+								<li>Factory pattern removes the instantiation of actual implementation classes from
+									client code. Factory pattern makes our code more robust, less coupled and easy to
+									extend. For example, we can easily change PC class implementation because client
+									program is unaware of this.</li>
+								<li>Factory pattern provides abstraction between implementation and client classes
+									through inheritance.</li>
+							</ol>
+							<h3 id="factory-design-pattern-examples-in-jdk"><a
+									href="#factory-design-pattern-examples-in-jdk"
+									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern Examples
+									in JDK</a><a class="hash-anchor" href="#factory-design-pattern-examples-in-jdk"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<ol>
+								<li>java.util.Calendar, ResourceBundle and NumberFormat <code>getInstance()</code>
+									methods uses Factory pattern.</li>
+								<li><code>valueOf()</code> method in wrapper classes like Boolean, Integer etc.</li>
+							</ol>
+						</div>
 					</div>
 				</article>
 			</div>

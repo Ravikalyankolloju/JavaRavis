@@ -184,7 +184,200 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>Composite pattern is one of the Structural design pattern. Composite design pattern is
+								used when we have to represent a part-whole hierarchy.</p>
+							<h2 id="composite-design-pattern"><a href="#composite-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Composite Design Pattern</a><a
+									class="hash-anchor" href="#composite-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/composite-design-pattern.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/composite-design-pattern.jpg"
+										alt="composite pattern, composite design pattern"></a> When we need to create a
+								structure in a way that the objects in the structure has to be treated the same way, we
+								can apply composite design pattern. Lets understand it with a real life example - A
+								diagram is a structure that consists of Objects such as Circle, Lines, Triangle etc.
+								When we fill the drawing with color (say Red), the same color also gets applied to the
+								Objects in the drawing. Here drawing is made up of different parts and they all have
+								same operations. Composite Pattern consists of following objects.</p>
+							<ol>
+								<li><strong>Base Component</strong> - Base component is the interface for all objects in
+									the composition, client program uses base component to work with the objects in the
+									composition. It can be an interface or an <strong><a
+											href="/community/tutorials/abstract-class-in-java"
+											title="Abstract Class in Java with Example">abstract class</a></strong> with
+									some methods common to all the objects.</li>
+								<li><strong>Leaf</strong> - Defines the behaviour for the elements in the composition.
+									It is the building block for the composition and implements base component. It
+									doesn’t have references to other Components.</li>
+								<li><strong>Composite</strong> - It consists of leaf elements and implements the
+									operations in base component.</li>
+							</ol>
+							<p>Here I am applying composite design pattern for the drawing scenario.</p>
+							<h3 id="composite-pattern-base-component"><a href="#composite-pattern-base-component"
+									onclick="navigator.clipboard.writeText(this.href);">Composite Pattern Base
+									Component</a><a class="hash-anchor" href="#composite-pattern-base-component"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Composite pattern base component defines the common methods for leaf and composites. We
+								can create a class <code>Shape</code> with a method <code>draw(String fillColor)</code>
+								to draw the shape with given color. <code>Shape.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.composite;
+						
+						public interface Shape {
+							
+							public void draw(String fillColor);
+						}
+						</code></pre>
+							<h3 id="composite-design-pattern-leaf-objects"><a
+									href="#composite-design-pattern-leaf-objects"
+									onclick="navigator.clipboard.writeText(this.href);">Composite Design Pattern Leaf
+									Objects</a><a class="hash-anchor" href="#composite-design-pattern-leaf-objects"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>Composite design pattern leaf implements base component and these are the building block
+								for the composite. We can create multiple leaf objects such as Triangle, Circle etc.
+								<code>Triangle.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.composite;
+						
+						public class Triangle implements Shape {
+						
+							@Override
+							public void draw(String fillColor) {
+								System.out.println("Drawing Triangle with color "+fillColor);
+							}
+						
+						}
+						</code></pre>
+							<p><code>Circle.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.composite;
+						
+						public class Circle implements Shape {
+						
+							@Override
+							public void draw(String fillColor) {
+								System.out.println("Drawing Circle with color "+fillColor);
+							}
+						
+						}
+						</code></pre>
+							<h3 id="composite-object"><a href="#composite-object"
+									onclick="navigator.clipboard.writeText(this.href);">Composite object</a><a
+									class="hash-anchor" href="#composite-object" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>A composite object contains group of leaf objects and we should provide some helper
+								methods to add or delete leafs from the group. We can also provide a method to remove
+								all the elements from the group. <code>Drawing.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.composite;
+						
+						import java.util.ArrayList;
+						import java.util.List;
+						
+						public class Drawing implements Shape{
+						
+							//collection of Shapes
+							private List&lt;Shape&gt; shapes = new ArrayList&lt;Shape&gt;();
+							
+							@Override
+							public void draw(String fillColor) {
+								for(Shape sh : shapes)
+								{
+									sh.draw(fillColor);
+								}
+							}
+							
+							//adding shape to drawing
+							public void add(Shape s){
+								this.shapes.add(s);
+							}
+							
+							//removing shape from drawing
+							public void remove(Shape s){
+								shapes.remove(s);
+							}
+							
+							//removing all the shapes
+							public void clear(){
+								System.out.println("Clearing all the shapes from drawing");
+								this.shapes.clear();
+							}
+						}
+						</code></pre>
+							<p>Notice that composite also implements component and behaves similar to leaf except that
+								it can contain group of leaf elements. <a
+									href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/Composite-Pattern-java.png"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/Composite-Pattern-java-450x354.png"
+										alt="Composite Pattern, Composite Design Pattern Java"></a> Our composite
+								pattern implementation is ready and we can test it with a client program.</p>
+							<h3 id="composite-design-pattern-client-program"><a
+									href="#composite-design-pattern-client-program"
+									onclick="navigator.clipboard.writeText(this.href);">Composite Design Pattern Client
+									Program</a><a class="hash-anchor" href="#composite-design-pattern-client-program"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p><code>TestCompositePattern.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+						
+						import com.journaldev.design.composite.Circle;
+						import com.journaldev.design.composite.Drawing;
+						import com.journaldev.design.composite.Shape;
+						import com.journaldev.design.composite.Triangle;
+						
+						public class TestCompositePattern {
+						
+							public static void main(String[] args) {
+								Shape tri = new Triangle();
+								Shape tri1 = new Triangle();
+								Shape cir = new Circle();
+								
+								Drawing drawing = new Drawing();
+								drawing.add(tri1);
+								drawing.add(tri1);
+								drawing.add(cir);
+								
+								drawing.draw("Red");
+								
+								drawing.clear();
+								
+								drawing.add(tri);
+								drawing.add(cir);
+								drawing.draw("Green");
+							}
+						
+						}
+						</code></pre>
+							<p>Output of the above composite pattern client program is:</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>Drawing Triangle with color Red
+						Drawing Triangle with color Red
+						Drawing Circle with color Red
+						Clearing all the shapes from drawing
+						Drawing Triangle with color Green
+						Drawing Circle with color Green
+						</code></pre>
+							<h3 id="composite-pattern-important-points"><a href="#composite-pattern-important-points"
+									onclick="navigator.clipboard.writeText(this.href);">Composite Pattern Important
+									Points</a><a class="hash-anchor" href="#composite-pattern-important-points"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<ul>
+								<li>Composite pattern should be applied only when the group of objects should behave as
+									the single object.</li>
+								<li>Composite design pattern can be used to create a tree like structure.</li>
+							</ul>
+							<p><code>java.awt.Container#add(Component)</code> is a great example of Composite pattern in
+								java and used a lot in Swing. Earlier structural design pattern articles:</p>
+							<ul>
+								<li><a href="/community/tutorials/bridge-design-pattern-java">Bridge Pattern in Java</a>
+								</li>
+								<li><a href="/community/tutorials/adapter-design-pattern-java">Adapter Design Pattern in
+										Java</a></li>
+							</ul>
+						</div>
 					</div>
 				</article>
 			</div>

@@ -184,7 +184,166 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>Today we will look into Bridge Design Pattern in java. When we have interface hierarchies
+								in both interfaces as well as implementations, then <strong>bridge design
+									pattern</strong> is used to decouple the interfaces from implementation and hiding
+								the implementation details from the client programs.</p>
+							<h2 id="bridge-design-pattern"><a href="#bridge-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Bridge Design Pattern</a><a
+									class="hash-anchor" href="#bridge-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p>Just like <a href="/community/tutorials/adapter-design-pattern-java"
+									title="Adapter Design Pattern in Java – Example Tutorial">Adapter pattern</a>,
+								bridge design pattern is one of the <strong>Structural design pattern</strong>.
+								According to GoF bridge design pattern is:</p>
+							<blockquote>
+								<p>Decouple an abstraction from its implementation so that the two can vary
+									independently</p>
+							</blockquote>
+							<p>The implementation of bridge design pattern follows the notion to prefer <a
+									href="/community/tutorials/composition-in-java-example"
+									title="What is Composition in Java? Java Composition Example">Composition</a> over
+								<a href="/community/tutorials/inheritance-java-example"
+									title="Inheritance in Java Example">inheritance</a>.</p>
+							<h3 id="bridge-design-pattern-in-java-example"><a
+									href="#bridge-design-pattern-in-java-example"
+									onclick="navigator.clipboard.writeText(this.href);">Bridge Design Pattern in Java
+									Example</a><a class="hash-anchor" href="#bridge-design-pattern-in-java-example"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>If we look into bridge design pattern with example, it will be easy to understand. Lets
+								say we have an interface hierarchy in both interfaces and implementations like below
+								image. <a
+									href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/Bridge-Interface-Hierarchy.png"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/Bridge-Interface-Hierarchy-450x248.png"
+										alt="Bridge Design Pattern Interface Hierarchy"></a> Now we will use bridge
+								design pattern to decouple the interfaces from implementation. UML diagram for the
+								classes and interfaces after applying bridge pattern will look like below image. <a
+									href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/bridge-design-pattern.png"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/bridge-design-pattern-450x196.png"
+										alt="bridge design pattern, bridge pattern uml, bridge pattern example"></a>
+								Notice the bridge between <code>Shape</code> and <code>Color</code> interfaces and use
+								of composition in implementing the bridge pattern. Here is the java code for Shape and
+								Color interfaces. <code>Color.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+						
+						public interface Color {
+						
+							public void applyColor();
+						}
+						</code></pre>
+							<p><code>Shape.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+						
+						public abstract class Shape {
+							//Composition - implementor
+							protected Color color;
+							
+							//constructor with implementor as input argument
+							public Shape(Color c){
+								this.color=c;
+							}
+							
+							abstract public void applyColor();
+						}
+						</code></pre>
+							<p>We have Triangle and Pentagon implementation classes as below. <code>Triangle.java</code>
+							</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+						
+						public class Triangle extends Shape{
+						
+							public Triangle(Color c) {
+								super(c);
+							}
+						
+							@Override
+							public void applyColor() {
+								System.out.print("Triangle filled with color ");
+								color.applyColor();
+							} 
+						
+						}
+						</code></pre>
+							<p><code>Pentagon.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+						
+						public class Pentagon extends Shape{
+						
+							public Pentagon(Color c) {
+								super(c);
+							}
+						
+							@Override
+							public void applyColor() {
+								System.out.print("Pentagon filled with color ");
+								color.applyColor();
+							} 
+						
+						}
+						</code></pre>
+							<p>Here are the implementation classes for RedColor and GreenColor.
+								<code>RedColor.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+						
+						public class RedColor implements Color{
+						
+							public void applyColor(){
+								System.out.println("red.");
+							}
+						}
+						</code></pre>
+							<p><code>GreenColor.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+						
+						public class GreenColor implements Color{
+						
+							public void applyColor(){
+								System.out.println("green.");
+							}
+						}
+						</code></pre>
+							<p>Lets test our bridge pattern implementation with a test program.
+								<code>BridgePatternTest.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+						
+						import com.journaldev.design.bridge.GreenColor;
+						import com.journaldev.design.bridge.Pentagon;
+						import com.journaldev.design.bridge.RedColor;
+						import com.journaldev.design.bridge.Shape;
+						import com.journaldev.design.bridge.Triangle;
+						
+						public class BridgePatternTest {
+						
+							public static void main(String[] args) {
+								Shape tri = new Triangle(new RedColor());
+								tri.applyColor();
+								
+								Shape pent = new Pentagon(new GreenColor());
+								pent.applyColor();
+							}
+						
+						}
+						</code></pre>
+							<p>Output of above bridge pattern example program is:</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>Triangle filled with color red.
+						Pentagon filled with color green.
+						</code></pre>
+							<p>Bridge design pattern can be used when both abstraction and implementation can have
+								different hierarchies independently and we want to hide the implementation from the
+								client application.</p>
+						</div>
 					</div>
 				</article>
 			</div>

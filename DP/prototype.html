@@ -175,7 +175,117 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-
+						<div
+							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
+							<p>Prototype design pattern is one of the Creational Design pattern, so it provides a
+								mechanism of object creation.</p>
+							<h2 id="prototype-design-pattern"><a href="#prototype-design-pattern"
+									onclick="navigator.clipboard.writeText(this.href);">Prototype Design Pattern</a><a
+									class="hash-anchor" href="#prototype-design-pattern" aria-hidden="true"
+									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
+							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/06/prototype-design-pattern.jpg"
+									rel="ugc nofollow"><img
+										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/06/prototype-design-pattern.jpg"
+										alt="prototype design pattern"></a> Prototype design pattern is used when the
+								Object creation is a costly affair and requires a lot of time and resources and you have
+								a similar object already existing. Prototype pattern provides a mechanism to copy the
+								original object to a new object and then modify it according to our needs. Prototype
+								design pattern uses java cloning to copy the object.</p>
+							<h3 id="prototype-design-pattern-example"><a href="#prototype-design-pattern-example"
+									onclick="navigator.clipboard.writeText(this.href);">Prototype Design Pattern
+									Example</a><a class="hash-anchor" href="#prototype-design-pattern-example"
+									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
+							<p>It would be easy to understand prototype design pattern with an example. Suppose we have
+								an Object that loads data from database. Now we need to modify this data in our program
+								multiple times, so it’s not a good idea to create the Object using <code>new</code>
+								keyword and load all the data again from database. The better approach would be to clone
+								the existing object into a new object and then do the data manipulation. Prototype
+								design pattern mandates that the Object which you are copying should provide the copying
+								feature. It should not be done by any other class. However whether to use shallow or
+								deep copy of the Object properties depends on the requirements and its a design
+								decision. Here is a sample program showing Prototype design pattern example in java.
+								<code>Employees.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.prototype;
+						
+						import java.util.ArrayList;
+						import java.util.List;
+						
+						public class Employees implements Cloneable{
+						
+							private List&lt;String&gt; empList;
+							
+							public Employees(){
+								empList = new ArrayList&lt;String&gt;();
+							}
+							
+							public Employees(List&lt;String&gt; list){
+								this.empList=list;
+							}
+							public void loadData(){
+								//read all employees from database and put into the list
+								empList.add("Pankaj");
+								empList.add("Raj");
+								empList.add("David");
+								empList.add("Lisa");
+							}
+							
+							public List&lt;String&gt; getEmpList() {
+								return empList;
+							}
+						
+							@Override
+							public Object clone() throws CloneNotSupportedException{
+									List&lt;String&gt; temp = new ArrayList&lt;String&gt;();
+									for(String s : this.getEmpList()){
+										temp.add(s);
+									}
+									return new Employees(temp);
+							}
+							
+						}
+						</code></pre>
+							<p>Notice that the <code>clone</code> method is overridden to provide a deep copy of the
+								employees list. Here is the prototype design pattern example test program that will show
+								the benefit of prototype pattern. <code>PrototypePatternTest.java</code></p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+						
+						import java.util.List;
+						
+						import com.journaldev.design.prototype.Employees;
+						
+						public class PrototypePatternTest {
+						
+							public static void main(String[] args) throws CloneNotSupportedException {
+								Employees emps = new Employees();
+								emps.loadData();
+								
+								//Use the clone method to get the Employee object
+								Employees empsNew = (Employees) emps.clone();
+								Employees empsNew1 = (Employees) emps.clone();
+								List&lt;String&gt; list = empsNew.getEmpList();
+								list.add("John");
+								List&lt;String&gt; list1 = empsNew1.getEmpList();
+								list1.remove("Pankaj");
+								
+								System.out.println("emps List: "+emps.getEmpList());
+								System.out.println("empsNew List: "+list);
+								System.out.println("empsNew1 List: "+list1);
+							}
+						
+						}
+						</code></pre>
+							<p>Output of the above prototype design pattern example program is:</p>
+							<div class="code-label" title=""></div>
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>emps List: [Pankaj, Raj, David, Lisa]
+						empsNew List: [Pankaj, Raj, David, Lisa, John]
+						empsNew1 List: [Raj, David, Lisa]
+						</code></pre>
+							<p>If the object cloning was not provided, we will have to make database call to fetch the
+								employee list every time. Then do the manipulations that would have been resource and
+								time consuming. That’s all for prototype design pattern in java.</p>
+						</div>
 					</div>
 				</article>
 			</div>

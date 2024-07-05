@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="RaviKalyan">
-	<title>Creational Design Patterns</title>
+	<title> Iterator Pattern</title>
 	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
 	<link rel="stylesheet" href="../scripts/css/site.css">
 	<link rel='stylesheet' id='blogus-google-fonts-css'
@@ -95,66 +95,66 @@
 			<aside class="nav">
 				<div class="nav-panel-menu is-active" data-panel="menu">
 					<ul class="nav-list">
-											<h4>Design Patterns</h4>
-											<li class="nav-item"><a class="nav-link" href="../DP/introduction.html">Introduction</a> </li>
-											<h4>Creational Design Patterns</h4>
-											<li class="nav-item"><a class="nav-link" href="../DP/singleton.html">Singleton Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/factory.html">Factory Design Patterns</a>
-											</li>
-											<li class="nav-item"><a class="nav-link" href="../DP/abstract.html">Abstrct Factory Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/builder.html">Builder Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/prototype.html">Prototype Design
-													Patterns</a> </li>
-					
-											<h4>Structural Design Patterns</h4>
-											<li class="nav-item"><a class="nav-link" href="../DP/adapter.html">Adapter Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/composite.html">Composite Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/proxy.html">Proxy Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/flyweight.html">Flyweight Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/facade.html">Facade Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/bridge.html">Bridge Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/decorator.html">Decorator Design
-													Patterns</a> </li>
-					
-											<h4>Behavioral Design Patterns</h4>
-											<li class="nav-item"><a class="nav-link" href="../DP/template.html">Template Design Pattern</a>
-											</li>
-											<li class="nav-item"><a class="nav-link" href="../DP/mediator.html">Mediator Design Pattern</a>
-											</li>
-											<li class="nav-item"><a class="nav-link" href="../DP/chain.html">Chain of Responsibility</a>
-											</li>
-											<li class="nav-item"><a class="nav-link" href="../DP/observer.html">Observer Design Pattern</a>
-											</li>
-											<li class="nav-item"><a class="nav-link" href="../DP/Strategy.html">Strategy Design Pattern</a>
-											</li>
-											<li class="nav-item"><a class="nav-link" href="../DP/command.html">Command Design Pattern</a>
-											</li>
-											<li class="nav-item"><a class="nav-link" href="../DP/state.html">State Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/visitor.html">Visitor Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/interpreter.html">Interpreter Design
-													Patterns</a> </li>
-											<li class="nav-item"><a class="nav-link" href="../DP/iterator.html">Iterator Design
-													Patterns</a> </li>
-					
-											<h4>Miscellaneous Design Patterns</h4>
-											<li class="nav-item"><a class="nav-link" href="../DP/DAO.html">DAO
-													Design Patterns</a>
-											</li>
-											<li class="nav-item"><a class="nav-link" href="../DP/dependency.html">Dependency Injection
-													Patterns</a>
-											</li>
-										</ul>
+						<h4>Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/introduction.html">Introduction</a> </li>
+						<h4>Creational Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/singleton.html">Singleton Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/factory.html">Factory Design Patterns</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/abstract.html">Abstrct Factory Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/builder.html">Builder Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/prototype.html">Prototype Design
+								Patterns</a> </li>
+
+						<h4>Structural Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/adapter.html">Adapter Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/composite.html">Composite Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/proxy.html">Proxy Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/flyweight.html">Flyweight Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/facade.html">Facade Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/bridge.html">Bridge Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/decorator.html">Decorator Design
+								Patterns</a> </li>
+
+						<h4>Behavioral Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/template.html">Template Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/mediator.html">Mediator Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/chain.html">Chain of Responsibility</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/observer.html">Observer Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/Strategy.html">Strategy Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/command.html">Command Design Pattern</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/state.html">State Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/visitor.html">Visitor Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/interpreter.html">Interpreter Design
+								Patterns</a> </li>
+						<li class="nav-item"><a class="nav-link" href="../DP/iterator.html">Iterator Design
+								Patterns</a> </li>
+
+						<h4>Miscellaneous Design Patterns</h4>
+						<li class="nav-item"><a class="nav-link" href="../DP/DAO.html">DAO
+								Design Patterns</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="../DP/dependency.html">Dependency Injection
+								Patterns</a>
+						</li>
+					</ul>
 				</div>
 			</aside>
 		</div>
@@ -164,681 +164,26 @@
 					<span></span> <span></span> <span></span>
 				</button>
 				<nav class="breadcrumbs">
-					<h4>Creational Design Patterns</h4>
+					<h4> Iterator Pattern</h4>
 				</nav>
 			</div>
 			<div class="doc">
 				<nav class="breadcrumbs div-to-hide">
-					<h4>Creational Design Patterns</h4>
+					<h4> Iterator Pattern</h4>
 				</nav>
 				<a class="div-to-desk"> <br>
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
-						<div
-							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
-							<h3 id="introduction"><a href="#introduction"
-									onclick="navigator.clipboard.writeText(this.href);">Introduction</a><a
-									class="hash-anchor" href="#introduction" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
-							<p><em>Java Singleton Pattern</em> is one of the <a
-									href="/community/tutorials/gangs-of-four-gof-design-patterns"><em>Gangs of Four
-										Design patterns</em></a> and comes in the <em>Creational Design Pattern</em>
-								category. From the definition, it seems to be a straightforward design pattern, but when
-								it comes to implementation, it comes with a lot of concerns.</p>
-							<p>In this article, we will learn about singleton design pattern principles, explore
-								different ways to implement the singleton design pattern, and some of the best practices
-								for its usage.</p>
-							<h2 id="singleton-pattern-principles"><a href="#singleton-pattern-principles"
-									onclick="navigator.clipboard.writeText(this.href);">Singleton Pattern
-									Principles</a><a class="hash-anchor" href="#singleton-pattern-principles"
-									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<ul>
-								<li>Singleton pattern restricts the instantiation of a class and ensures that only one
-									instance of the class exists in the Java Virtual Machine.</li>
-								<li>The singleton class must provide a global access point to get the instance of the
-									class.</li>
-								<li>Singleton pattern is used for <a
-										href="/community/tutorials/logger-in-java-logging-example">logging</a>, drivers
-									objects, caching, and <a
-										href="/community/tutorials/threadpoolexecutor-java-thread-pool-example-executorservice">thread
-										pool</a>.</li>
-								<li>Singleton design pattern is also used in other design patterns like <a
-										href="/community/tutorials/abstract-factory-design-pattern-in-java">Abstract
-										Factory</a>, <a
-										href="/community/tutorials/builder-design-pattern-in-java">Builder</a>, <a
-										href="/community/tutorials/prototype-design-pattern-in-java">Prototype</a>, <a
-										href="/community/tutorials/facade-design-pattern-in-java">Facade</a>, etc.</li>
-								<li>Singleton design pattern is used in core Java classes also (for example,
-									<code>java.lang.Runtime</code>, <code>java.awt.Desktop</code>).
-								</li>
-							</ul>
-							<h2 id="java-singleton-pattern-implementation"><a
-									href="#java-singleton-pattern-implementation"
-									onclick="navigator.clipboard.writeText(this.href);">Java Singleton Pattern
-									Implementation</a><a class="hash-anchor"
-									href="#java-singleton-pattern-implementation" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p>To implement a singleton pattern, we have different approaches, but all of them have the
-								following common concepts.</p>
-							<ul>
-								<li>Private constructor to restrict instantiation of the class from other classes.</li>
-								<li>Private static variable of the same class that is the only instance of the class.
-								</li>
-								<li>Public static method that returns the instance of the class, this is the global
-									access point for the outer world to get the instance of the singleton class.</li>
-							</ul>
-							<p>In further sections, we will learn different approaches to singleton pattern
-								implementation and design concerns with the implementation.</p>
-							<h2 id="1-eager-initialization"><a href="#1-eager-initialization"
-									onclick="navigator.clipboard.writeText(this.href);">1. Eager initialization</a><a
-									class="hash-anchor" href="#1-eager-initialization" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p>In eager initialization, the instance of the singleton class is created at the time of
-								class loading. The drawback to eager initialization is that the method is created even
-								though the client application might not be using it. Here is the implementation of the
-								static initialization singleton class:</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>journaldev<span class="token punctuation">.</span>singleton</span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EagerInitializedSingleton</span> <span class="token punctuation">{</span>
-						
-						    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">EagerInitializedSingleton</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EagerInitializedSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						
-						    <span class="token comment">// private constructor to avoid client applications using the constructor</span>
-						    <span class="token keyword">private</span> <span class="token class-name">EagerInitializedSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-						
-						    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">EagerInitializedSingleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
-						    <span class="token punctuation">}</span>
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>If your singleton class is not using a lot of resources, this is the approach to use. But
-								in most of the scenarios, singleton classes are created for resources such as File
-								System, Database connections, etc. We should avoid the instantiation unless the client
-								calls the <code>getInstance</code> method. Also, this method doesn’t provide any options
-								for exception handling.</p>
-							<h2 id="2-static-block-initialization"><a href="#2-static-block-initialization"
-									onclick="navigator.clipboard.writeText(this.href);">2. Static block
-									initialization</a><a class="hash-anchor" href="#2-static-block-initialization"
-									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p><a href="/community/tutorials/static-keyword-in-java">Static block</a> initialization
-								implementation is similar to eager initialization, except that instance of the class is
-								created in the static block that provides the option for <a
-									href="/community/tutorials/exception-handling-in-java"
-									title="Java Exception Handling Tutorial with Examples and Best Practices">exception
-									handling</a>.</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>journaldev<span class="token punctuation">.</span>singleton</span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StaticBlockSingleton</span> <span class="token punctuation">{</span>
-						
-						    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">StaticBlockSingleton</span> instance<span class="token punctuation">;</span>
-						
-						    <span class="token keyword">private</span> <span class="token class-name">StaticBlockSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-						
-						    <span class="token comment">// static block initialization for exception handling</span>
-						    <span class="token keyword">static</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-						            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StaticBlockSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">"Exception occurred in creating singleton instance"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token punctuation">}</span>
-						    <span class="token punctuation">}</span>
-						
-						    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">StaticBlockSingleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
-						    <span class="token punctuation">}</span>
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>Both eager initialization and static block initialization create the instance even before
-								it’s being used and that is not the best practice to use.</p>
-							<h2 id="3-lazy-initialization"><a href="#3-lazy-initialization"
-									onclick="navigator.clipboard.writeText(this.href);">3. Lazy Initialization</a><a
-									class="hash-anchor" href="#3-lazy-initialization" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p>Lazy initialization method to implement the singleton pattern creates the instance in the
-								global access method. Here is the sample code for creating the singleton class with this
-								approach:</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>journaldev<span class="token punctuation">.</span>singleton</span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LazyInitializedSingleton</span> <span class="token punctuation">{</span>
-						
-						    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">LazyInitializedSingleton</span> instance<span class="token punctuation">;</span>
-						
-						    <span class="token keyword">private</span> <span class="token class-name">LazyInitializedSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-						
-						    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">LazyInitializedSingleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LazyInitializedSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token punctuation">}</span>
-						        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
-						    <span class="token punctuation">}</span>
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>The preceding implementation works fine in the case of the single-threaded environment,
-								but when it comes to multi-threaded systems, it can cause issues if multiple threads are
-								inside the <code>if</code> condition at the same time. It will destroy the singleton
-								pattern and both threads will get different instances of the singleton class. In the
-								next section, we will see different ways to create a <a
-									href="/community/tutorials/thread-safety-in-java">thread-safe</a> singleton class.
-							</p>
-							<h2 id="4-thread-safe-singleton"><a href="#4-thread-safe-singleton"
-									onclick="navigator.clipboard.writeText(this.href);">4. Thread Safe Singleton</a><a
-									class="hash-anchor" href="#4-thread-safe-singleton" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p>A simple way to create a thread-safe singleton class is to make the global access method
-								<a href="/community/tutorials/thread-safety-in-java"
-									title="Java Synchronization and Thread Safety Tutorial with Examples">synchronized</a>
-								so that only one thread can execute this method at a time. Here is a general
-								implementation of this approach:
-							</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>journaldev<span class="token punctuation">.</span>singleton</span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadSafeSingleton</span> <span class="token punctuation">{</span>
-						
-						    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">ThreadSafeSingleton</span> instance<span class="token punctuation">;</span>
-						
-						    <span class="token keyword">private</span> <span class="token class-name">ThreadSafeSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-						
-						    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> <span class="token class-name">ThreadSafeSingleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadSafeSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token punctuation">}</span>
-						        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
-						    <span class="token punctuation">}</span>
-						
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>The preceding implementation works fine and provides thread-safety, but it reduces the
-								performance because of the cost associated with the synchronized method, although we
-								need it only for the first few threads that might create separate instances. To avoid
-								this extra overhead every time, <em>double-checked locking</em> principle is used. In
-								this approach, the synchronized block is used inside the <code>if</code> condition with
-								an additional check to ensure that only one instance of a singleton class is created.
-								The following code snippet provides the double-checked locking implementation:</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ThreadSafeSingleton</span> <span class="token function">getInstanceUsingDoubleLocking</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						    <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token class-name">ThreadSafeSingleton</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						            <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						                instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadSafeSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						            <span class="token punctuation">}</span>
-						        <span class="token punctuation">}</span>
-						    <span class="token punctuation">}</span>
-						    <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>Continue your learning with <a
-									href="/community/tutorials/thread-safety-in-java-singleton-classes">Thread Safe
-									Singleton Class</a>.</p>
-							<h2 id="5-bill-pugh-singleton-implementation"><a
-									href="#5-bill-pugh-singleton-implementation"
-									onclick="navigator.clipboard.writeText(this.href);">5. Bill Pugh Singleton
-									Implementation</a><a class="hash-anchor"
-									href="#5-bill-pugh-singleton-implementation" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p>Prior to Java 5, the Java memory model had a lot of issues, and the previous approaches
-								used to fail in certain scenarios where too many threads tried to get the instance of
-								the singleton class simultaneously. So <a
-									href="https://en.wikipedia.org/wiki/William_Pugh_(computer_scientist)"
-									rel="ugc nofollow">Bill Pugh</a> came up with a different approach to create the
-								singleton class using an <a href="/community/tutorials/java-inner-class">inner static
-									helper class</a>. Here is an example of the Bill Pugh Singleton implementation:</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>journaldev<span class="token punctuation">.</span>singleton</span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BillPughSingleton</span> <span class="token punctuation">{</span>
-						
-						    <span class="token keyword">private</span> <span class="token class-name">BillPughSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-						
-						    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">SingletonHelper</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">BillPughSingleton</span> <span class="token constant">INSTANCE</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BillPughSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						    <span class="token punctuation">}</span>
-						
-						    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">BillPughSingleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">return</span> <span class="token class-name">SingletonHelper</span><span class="token punctuation">.</span><span class="token constant">INSTANCE</span><span class="token punctuation">;</span>
-						    <span class="token punctuation">}</span>
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>Notice the <em>private inner static class</em> that contains the instance of the
-								singleton class. When the singleton class is loaded, <code>SingletonHelper</code> class
-								is not loaded into memory and only when someone calls the <code>getInstance()</code>
-								method, this class gets loaded and creates the singleton class instance. This is the
-								most widely used approach for the singleton class as it doesn’t require synchronization.
-							</p>
-							<h2 id="6-using-reflection-to-destroy-singleton-pattern"><a
-									href="#6-using-reflection-to-destroy-singleton-pattern"
-									onclick="navigator.clipboard.writeText(this.href);">6. Using Reflection to destroy
-									Singleton Pattern</a><a class="hash-anchor"
-									href="#6-using-reflection-to-destroy-singleton-pattern" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p>Reflection can be used to destroy all the previous singleton implementation approaches.
-								Here is an example class:</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>journaldev<span class="token punctuation">.</span>singleton</span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span></span><span class="token class-name">Constructor</span></span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ReflectionSingletonTest</span> <span class="token punctuation">{</span>
-						
-						    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						        <span class="token class-name">EagerInitializedSingleton</span> instanceOne <span class="token operator">=</span> <span class="token class-name">EagerInitializedSingleton</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token class-name">EagerInitializedSingleton</span> instanceTwo <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-						        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-						            <span class="token class-name">Constructor</span><span class="token punctuation">[</span><span class="token punctuation">]</span> constructors <span class="token operator">=</span> <span class="token class-name">EagerInitializedSingleton</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getDeclaredConstructors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Constructor</span> constructor <span class="token operator">:</span> constructors<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						                <span class="token comment">// This code will destroy the singleton pattern</span>
-						                constructor<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						                instanceTwo <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">EagerInitializedSingleton</span><span class="token punctuation">)</span> constructor<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						                <span class="token keyword">break</span><span class="token punctuation">;</span>
-						            <span class="token punctuation">}</span>
-						        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token punctuation">}</span>
-						        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>instanceOne<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>instanceTwo<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						    <span class="token punctuation">}</span>
-						
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>When you run the preceding test class, you will notice that <code>hashCode</code> of both
-								instances is not the same which destroys the singleton pattern. Reflection is very
-								powerful and used in a lot of frameworks like Spring and Hibernate. Continue your
-								learning with <a href="/community/tutorials/java-reflection-example-tutorial"
-									title="Java Reflection Tutorial for Classes, Methods, Fields, Constructors, Annotations and much more">Java
-									Reflection Tutorial</a>.</p>
-							<h2 id="7-enum-singleton"><a href="#7-enum-singleton"
-									onclick="navigator.clipboard.writeText(this.href);">7. Enum Singleton</a><a
-									class="hash-anchor" href="#7-enum-singleton" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p>To overcome this situation with Reflection, <a
-									href="https://en.wikipedia.org/wiki/Joshua_Bloch" rel="ugc nofollow">Joshua
-									Bloch</a> suggests the use of <code>enum</code> to implement the singleton design
-								pattern as Java ensures that any <code>enum</code> value is instantiated only once in a
-								Java program. Since <a href="/community/tutorials/java-enum"
-									title="Java Enum Examples with Benefits and Class usage">Java Enum</a> values are
-								globally accessible, so is the singleton. The drawback is that the <code>enum</code>
-								type is somewhat inflexible (for example, it does not allow lazy initialization).</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>journaldev<span class="token punctuation">.</span>singleton</span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">EnumSingleton</span> <span class="token punctuation">{</span>
-						
-						    <span class="token constant">INSTANCE</span><span class="token punctuation">;</span>
-						
-						    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						        <span class="token comment">// do something</span>
-						    <span class="token punctuation">}</span>
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<h2 id="8-serialization-and-singleton"><a href="#8-serialization-and-singleton"
-									onclick="navigator.clipboard.writeText(this.href);">8. Serialization and
-									Singleton</a><a class="hash-anchor" href="#8-serialization-and-singleton"
-									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p>Sometimes in distributed systems, we need to implement <code>Serializable</code>
-								interface in the singleton class so that we can store its state in the file system and
-								retrieve it at a later point in time. Here is a small singleton class that implements
-								<code>Serializable</code> interface also:
-							</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>journaldev<span class="token punctuation">.</span>singleton</span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">Serializable</span></span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SerializedSingleton</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
-						
-						    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">7604766932017737115L</span><span class="token punctuation">;</span>
-						
-						    <span class="token keyword">private</span> <span class="token class-name">SerializedSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-						
-						    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">SingletonHelper</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">SerializedSingleton</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SerializedSingleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						    <span class="token punctuation">}</span>
-						
-						    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SerializedSingleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						        <span class="token keyword">return</span> <span class="token class-name">SingletonHelper</span><span class="token punctuation">.</span>instance<span class="token punctuation">;</span>
-						    <span class="token punctuation">}</span>
-						
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>The problem with serialized singleton class is that whenever we deserialize it, it will
-								create a new instance of the class. Here is an example:</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>journaldev<span class="token punctuation">.</span>singleton</span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileInputStream</span></span><span class="token punctuation">;</span>
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileNotFoundException</span></span><span class="token punctuation">;</span>
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">FileOutputStream</span></span><span class="token punctuation">;</span>
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span></span><span class="token punctuation">;</span>
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">ObjectInput</span></span><span class="token punctuation">;</span>
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">ObjectInputStream</span></span><span class="token punctuation">;</span>
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">ObjectOutput</span></span><span class="token punctuation">;</span>
-						<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">ObjectOutputStream</span></span><span class="token punctuation">;</span>
-						
-						<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SingletonSerializedTest</span> <span class="token punctuation">{</span>
-						
-						    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">FileNotFoundException</span><span class="token punctuation">,</span> <span class="token class-name">IOException</span><span class="token punctuation">,</span> <span class="token class-name">ClassNotFoundException</span> <span class="token punctuation">{</span>
-						        <span class="token class-name">SerializedSingleton</span> instanceOne <span class="token operator">=</span> <span class="token class-name">SerializedSingleton</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token class-name">ObjectOutput</span> out <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>
-						                <span class="token string">"filename.ser"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        out<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>instanceOne<span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        out<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						
-						        <span class="token comment">// deserialize from file to object</span>
-						        <span class="token class-name">ObjectInput</span> in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>
-						                <span class="token string">"filename.ser"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token class-name">SerializedSingleton</span> instanceTwo <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">SerializedSingleton</span><span class="token punctuation">)</span> in<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        in<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						
-						        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"instanceOne hashCode="</span><span class="token operator">+</span>instanceOne<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"instanceTwo hashCode="</span><span class="token operator">+</span>instanceTwo<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						
-						    <span class="token punctuation">}</span>
-						
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>That code produces this output:</p>
-							<div class="code-label" title=""></div>
-							<pre><code><div class="secondary-code-label" title="Output">Output</div>instanceOne hashCode=2011117821
-						instanceTwo hashCode=109647522
-						</code></pre>
-							<p>So it destroys the singleton pattern. To overcome this scenario, all we need to do is
-								provide the implementation of <code>readResolve()</code> method.</p>
-							<div class="code-label" title=""></div>
-							<div class="code-toolbar">
-								<pre class="language-java"><code><span class="token keyword">protected</span> <span class="token class-name">Object</span> <span class="token function">readResolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-						    <span class="token keyword">return</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-						<span class="token punctuation">}</span>
-						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
-							</div>
-							<p>After this, you will notice that <code>hashCode</code> of both instances is the same in
-								the test program.</p>
-							<p>Read about <a href="/community/tutorials/objectoutputstream-java-write-object-file">Java
-									Serialization</a> and <a href="/community/tutorials/serialization-in-java">Java
-									Deserialization</a>.</p>
-							<h2 id="conclusion"><a href="#conclusion"
-									onclick="navigator.clipboard.writeText(this.href);">Conclusion</a><a
-									class="hash-anchor" href="#conclusion" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p>This article covered the singleton design pattern.</p>
-							<p>Continue your learning with more <a href="/community/tags/java">Java tutorials</a>.</p>
-						</div>
-						<div
-							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
-							<p>Welcome to the Factory Design Pattern in Java tutorial. <strong>Factory Pattern</strong>
-								is one of the <strong>Creational Design pattern</strong> and it’s widely used in JDK as
-								well as frameworks like Spring and Struts.</p>
-							<h2 id="factory-design-pattern"><a href="#factory-design-pattern"
-									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern</a><a
-									class="hash-anchor" href="#factory-design-pattern" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-design-pattern.jpg"
-									rel="ugc nofollow"><img
-										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-design-pattern.jpg"
-										alt="factory design pattern, factory design pattern in java, factory pattern, factory method pattern, factory pattern example"></a>
-								The factory design pattern is used when we have a superclass with multiple sub-classes
-								and based on input, we need to return one of the sub-class. This pattern takes out the
-								responsibility of the instantiation of a class from the client program to the factory
-								class. Let’s first learn how to implement a factory design pattern in java and then we
-								will look into factory pattern advantages. We will see some of the factory design
-								pattern usage in JDK. Note that this pattern is also known as <strong>Factory Method
-									Design Pattern</strong>.</p>
-							<h3 id="factory-design-pattern-super-class"><a href="#factory-design-pattern-super-class"
-									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern Super
-									Class</a><a class="hash-anchor" href="#factory-design-pattern-super-class"
-									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
-							<p>Super class in factory design pattern can be an interface, <strong><a
-										href="/community/tutorials/abstract-class-in-java"
-										title="Abstract Class in Java with Example">abstract class</a></strong> or a
-								normal java class. For our factory design pattern example, we have abstract super class
-								with <a href="/community/tutorials/java-override-method-overriding"
-									title="Overriding Methods in Java? – Always use @Override annotation">overridden</a>
-								<code>toString()</code> method for testing purpose.</p>
-							<div class="code-label" title=""></div>
-							<pre><code>package com.journaldev.design.model;
-						
-						public abstract class Computer {
-							
-							public abstract String getRAM();
-							public abstract String getHDD();
-							public abstract String getCPU();
-							
-							@Override
-							public String toString(){
-								return "RAM= "+this.getRAM()+", HDD="+this.getHDD()+", CPU="+this.getCPU();
-							}
-						}
-						</code></pre>
-							<h3 id="factory-design-pattern-sub-classes"><a href="#factory-design-pattern-sub-classes"
-									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern Sub
-									Classes</a><a class="hash-anchor" href="#factory-design-pattern-sub-classes"
-									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
-							<p>Let’s say we have two sub-classes PC and Server with below implementation.</p>
-							<div class="code-label" title=""></div>
-							<pre><code>package com.journaldev.design.model;
-						
-						public class PC extends Computer {
-						
-							private String ram;
-							private String hdd;
-							private String cpu;
-							
-							public PC(String ram, String hdd, String cpu){
-								this.ram=ram;
-								this.hdd=hdd;
-								this.cpu=cpu;
-							}
-							@Override
-							public String getRAM() {
-								return this.ram;
-							}
-						
-							@Override
-							public String getHDD() {
-								return this.hdd;
-							}
-						
-							@Override
-							public String getCPU() {
-								return this.cpu;
-							}
-						
-						}
-						</code></pre>
-							<p>Notice that both the classes are extending <code>Computer</code> super class.</p>
-							<div class="code-label" title=""></div>
-							<pre><code>package com.journaldev.design.model;
-						
-						public class Server extends Computer {
-						
-							private String ram;
-							private String hdd;
-							private String cpu;
-							
-							public Server(String ram, String hdd, String cpu){
-								this.ram=ram;
-								this.hdd=hdd;
-								this.cpu=cpu;
-							}
-							@Override
-							public String getRAM() {
-								return this.ram;
-							}
-						
-							@Override
-							public String getHDD() {
-								return this.hdd;
-							}
-						
-							@Override
-							public String getCPU() {
-								return this.cpu;
-							}
-						
-						}
-						</code></pre>
-							<h3 id="factory-class"><a href="#factory-class"
-									onclick="navigator.clipboard.writeText(this.href);">Factory Class</a><a
-									class="hash-anchor" href="#factory-class" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
-							<p>Now that we have super classes and sub-classes ready, we can write our factory class.
-								Here is the basic implementation.</p>
-							<div class="code-label" title=""></div>
-							<pre><code>package com.journaldev.design.factory;
-						
-						import com.journaldev.design.model.Computer;
-						import com.journaldev.design.model.PC;
-						import com.journaldev.design.model.Server;
-						
-						public class ComputerFactory {
-						
-							public static Computer getComputer(String type, String ram, String hdd, String cpu){
-								if("PC".equalsIgnoreCase(type)) return new PC(ram, hdd, cpu);
-								else if("Server".equalsIgnoreCase(type)) return new Server(ram, hdd, cpu);
-								
-								return null;
-							}
-						}
-						</code></pre>
-							<p>Some important points about Factory Design Pattern method are;</p>
-							<ol>
-								<li>We can keep Factory class Singleton or we can keep the method that returns the
-									subclass as <a href="/community/tutorials/static-keyword-in-java"
-										title="What is static in Java? Java Static methods, variables, static block and class">static</a>.
-								</li>
-								<li>Notice that based on the input parameter, different subclass is created and
-									returned. <code>getComputer</code> is the factory method.</li>
-							</ol>
-							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-pattern-java.png"
-									rel="ugc nofollow"><img
-										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-pattern-java-450x327.png"
-										alt="factory pattern java, factory pattern, factory design pattern, factory pattern class diagram"></a>
-								Here is a simple test client program that uses above factory design pattern
-								implementation.</p>
-							<div class="code-label" title=""></div>
-							<pre><code>package com.journaldev.design.test;
-						
-						import com.journaldev.design.factory.ComputerFactory;
-						import com.journaldev.design.model.Computer;
-						
-						public class TestFactory {
-						
-							public static void main(String[] args) {
-								Computer pc = ComputerFactory.getComputer("pc","2 GB","500 GB","2.4 GHz");
-								Computer server = ComputerFactory.getComputer("server","16 GB","1 TB","2.9 GHz");
-								System.out.println("Factory PC Config::"+pc);
-								System.out.println("Factory Server Config::"+server);
-							}
-						
-						}
-						</code></pre>
-							<p>Output of above program is:</p>
-							<div class="code-label" title=""></div>
-							<pre><code>Factory PC Config::RAM= 2 GB, HDD=500 GB, CPU=2.4 GHz
-						Factory Server Config::RAM= 16 GB, HDD=1 TB, CPU=2.9 GHz
-						</code></pre>
-							<h3 id="factory-design-pattern-advantages"><a href="#factory-design-pattern-advantages"
-									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern
-									Advantages</a><a class="hash-anchor" href="#factory-design-pattern-advantages"
-									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
-							<ol>
-								<li>Factory design pattern provides approach to code for interface rather than
-									implementation.</li>
-								<li>Factory pattern removes the instantiation of actual implementation classes from
-									client code. Factory pattern makes our code more robust, less coupled and easy to
-									extend. For example, we can easily change PC class implementation because client
-									program is unaware of this.</li>
-								<li>Factory pattern provides abstraction between implementation and client classes
-									through inheritance.</li>
-							</ol>
-							<h3 id="factory-design-pattern-examples-in-jdk"><a
-									href="#factory-design-pattern-examples-in-jdk"
-									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern Examples
-									in JDK</a><a class="hash-anchor" href="#factory-design-pattern-examples-in-jdk"
-									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
-							<ol>
-								<li>java.util.Calendar, ResourceBundle and NumberFormat <code>getInstance()</code>
-									methods uses Factory pattern.</li>
-								<li><code>valueOf()</code> method in wrapper classes like Boolean, Integer etc.</li>
-							</ol>
-							<h3 id="factory-design-pattern-youtube-video-tutorial"><a
-									href="#factory-design-pattern-youtube-video-tutorial"
-									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern YouTube
-									Video Tutorial</a><a class="hash-anchor"
-									href="#factory-design-pattern-youtube-video-tutorial" aria-hidden="true"
-									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
-							<p>I recently uploaded a video on YouTube for Factory Design pattern, please check it out.
-								Please like and share the video and subscribe to my YouTube channel. <a
-									href="https://www.youtube.com/watch?v=J1QU%5C_R4MQQc"
-									rel="ugc nofollow">https://www.youtube.com/watch?v=J1QU\_R4MQQc</a></p>
-							<p>You can download the example code from my <a
-									href="https://github.com/journaldev/journaldev/tree/master/java-design-patterns/Factory-Design-Pattern"
-									rel="ugc nofollow">GitHub Project</a>.</p>
-						</div>
+
 					</div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link btn-outline-primary" href="../DP/introduction.html">&lArr;
+					<li class="page-item"><a class="page-link btn-outline-primary" href="../DP/interpreter.html">&lArr;
 							Previous</a></li>
-					<li class="page-item"><a class="page-link" href="../DP/behavioral.html">Next
+					<li class="page-item"><a class="page-link" href="../DP/DAO.html">Next
 							&rArr;</a></li>
 				</ul>
 			</div>

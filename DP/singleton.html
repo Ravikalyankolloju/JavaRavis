@@ -234,9 +234,6 @@
 						    <span class="token punctuation">}</span>
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>If your singleton class is not using a lot of resources, this is the approach to use. But
 								in most of the scenarios, singleton classes are created for resources such as File
@@ -277,9 +274,6 @@
 						    <span class="token punctuation">}</span>
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>Both eager initialization and static block initialization create the instance even before
 								it’s being used and that is not the best practice to use.</p>
@@ -308,9 +302,6 @@
 						    <span class="token punctuation">}</span>
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>The preceding implementation works fine in the case of the single-threaded environment,
 								but when it comes to multi-threaded systems, it can cause issues if multiple threads are
@@ -348,9 +339,6 @@
 						
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>The preceding implementation works fine and provides thread-safety, but it reduces the
 								performance because of the cost associated with the synchronized method, although we
@@ -372,9 +360,6 @@
 						    <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>Continue your learning with <a
 									href="/community/tutorials/thread-safety-in-java-singleton-classes">Thread Safe
@@ -409,9 +394,6 @@
 						    <span class="token punctuation">}</span>
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>Notice the <em>private inner static class</em> that contains the instance of the
 								singleton class. When the singleton class is loaded, <code>SingletonHelper</code> class
@@ -455,9 +437,6 @@
 						
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>When you run the preceding test class, you will notice that <code>hashCode</code> of both
 								instances is not the same which destroys the singleton pattern. Reflection is very
@@ -490,9 +469,6 @@
 						    <span class="token punctuation">}</span>
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<h2 id="8-serialization-and-singleton"><a href="#8-serialization-and-singleton"
 									onclick="navigator.clipboard.writeText(this.href);">8. Serialization and
@@ -525,9 +501,6 @@
 						
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>The problem with serialized singleton class is that whenever we deserialize it, it will
 								create a new instance of the class. Here is an example:</p>
@@ -566,9 +539,6 @@
 						
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>That code produces this output:</p>
 							<div class="code-label" title=""></div>
@@ -583,9 +553,6 @@
 						    <span class="token keyword">return</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 						<span class="token punctuation">}</span>
 						</code></pre>
-								<div class="toolbar">
-									<div class="toolbar-item"><button>Copy</button></div>
-								</div>
 							</div>
 							<p>After this, you will notice that <code>hashCode</code> of both instances is the same in
 								the test program.</p>

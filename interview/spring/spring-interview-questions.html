@@ -150,19 +150,347 @@
 							<h4>
 								<b>1. Spring Basic Interview Questions</b>
 							</h4>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>1. What do you know about Spring?</summary>
+							<details id="details1" onclick="closeOtherDetails('details1')">
+								<summary>1. What is IOC (Inversion of Control)?</summary>
 								<div class="toggle-content">
-									<p>Spring</p>
+									<p>Answer: Inversion of Control (IoC) is a design principle where the flow of
+										control of a system is inverted compared to traditional programming. In
+										traditional programming, the application controls the flow of control by
+										creating objects and calling their methods. In IoC, the container manages the
+										creation and lifecycle of objects, and injects dependencies into objects. Spring
+										IoC container is responsible for instantiating, configuring, and assembling
+										objects (beans).</p>
 								</div>
-							</details>
-							</br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>2. What do you know about Spring?</summary>
+							</details></br>
+
+							<details id="details2" onclick="closeOtherDetails('details2')">
+								<summary>2. What is a Component Scan?</summary>
 								<div class="toggle-content">
-									<p>Spring</p>
+									<p>Answer: Component scanning is a feature of Spring Framework that automatically
+										detects and registers Spring beans (components) during application startup.
+										Spring scans packages defined in its configuration and identifies beans
+										annotated with stereotype annotations like `@Component`, `@Service`,
+										`@Repository`, and `@Controller`. It eliminates the need for explicit bean
+										definitions in XML or Java configuration classes.</p>
 								</div>
-							</details>
+							</details></br>
+
+							<details id="details3" onclick="closeOtherDetails('details3')">
+								<summary>3. What is @Primary?</summary>
+								<div class="toggle-content">
+									<p>Answer: `@Primary` is a Spring annotation used to give higher preference to a
+										bean when multiple beans of the same type are candidates to be autowired. If
+										multiple beans of the same type are found, the bean annotated with `@Primary`
+										will be injected by default unless overridden by using `@Qualifier` or other
+										means.</p>
+								</div>
+							</details></br>
+
+							<details id="details4" onclick="closeOtherDetails('details4')">
+								<summary>4. What is @Qualifier and why would you use it?</summary>
+								<div class="toggle-content">
+									<p>Answer: `@Qualifier` is a Spring annotation used along with `@Autowired` to
+										specify which bean to inject when multiple beans of the same type are present in
+										the Spring context. It helps resolve ambiguity in autowiring scenarios where
+										more than one bean of a type exists. You use `@Qualifier` to explicitly specify
+										the bean name or qualifier value to be injected.</p>
+								</div>
+							</details></br>
+
+							<details id="details5" onclick="closeOtherDetails('details5')">
+								<summary>5. What is a ViewResolver?</summary>
+								<div class="toggle-content">
+									<p>Answer: A ViewResolver in Spring MVC is responsible for mapping view names to
+										actual views (templates or pages) that should be rendered to the client. It
+										resolves the logical view names returned by controllers to the actual view
+										implementation. Spring provides various ViewResolver implementations like
+										`InternalResourceViewResolver` for JSP views, `FreeMarkerViewResolver` for
+										FreeMarker templates, etc.</p>
+								</div>
+							</details></br>
+
+							<details id="details6" onclick="closeOtherDetails('details6')">
+								<summary>6. What is a Model Attribute?</summary>
+								<div class="toggle-content">
+									<p>Answer: A Model Attribute in Spring MVC is an object added to the model (via
+										`Model` or `ModelMap` in controller methods) that is exposed to the view for
+										rendering. It represents data or state that needs to be displayed or manipulated
+										in the view. Model attributes are typically objects or collections that contain
+										data to be rendered in HTML forms or other UI components.</p>
+								</div>
+							</details></br>
+
+							<details id="details7" onclick="closeOtherDetails('details7')">
+								<summary>7. What is the importance of @SpringBootApplication?</summary>
+								<div class="toggle-content">
+									<p>Answer: `@SpringBootApplication` is a convenience annotation introduced in Spring
+										Boot that combines `@Configuration`, `@EnableAutoConfiguration`, and
+										`@ComponentScan` annotations. It marks a class as a Spring Boot application with
+										auto-configuration and component scanning features enabled. It simplifies the
+										configuration and bootstrapping of Spring Boot applications, reducing the
+										boilerplate code required in traditional Spring applications.</p>
+								</div>
+							</details></br>
+							<h4>
+								<b>1. Spring Advanced Interview Questions</b>
+							</h4>
+							<details id="details1" onclick="closeOtherDetails('details1')">
+								<summary>1. What do you understand by Dependency Injection?</summary>
+								<div class="toggle-content">
+									<p>Answer: Dependency Injection (DI) is a design pattern in which an object receives
+										its dependencies from an external source rather than creating them itself. It
+										helps achieve Inversion of Control (IoC) by allowing the Spring IoC container to
+										manage dependencies between objects. In Spring, dependencies are injected into a
+										class's constructor, methods, or fields using annotations like `@Autowired`.</p>
+								</div>
+							</details></br>
+
+							<details id="details2" onclick="closeOtherDetails('details2')">
+								<summary>2. Difference between dependency injection and Inversion of control?</summary>
+								<div class="toggle-content">
+									<p>Answer: Dependency Injection (DI) is a specific implementation of Inversion of
+										Control (IoC). IoC is a broader design principle where control of object
+										creation and lifecycle is inverted from the application to a container or
+										framework. DI focuses on how dependencies are provided to a class, allowing
+										components to be loosely coupled and promoting easier testing and maintenance.
+									</p>
+								</div>
+							</details></br>
+
+							<details id="details3" onclick="closeOtherDetails('details3')">
+								<summary>3. Explain different dependency injection patterns.</summary>
+								<div class="toggle-content">
+									<p>Answer: Different dependency injection patterns include Constructor Injection,
+										Setter Injection, and Field Injection.
+									<ul>
+										<li><b>Constructor Injection:</b> Dependencies are provided through a class
+											constructor.</li>
+										<li><b>Setter Injection:</b> Dependencies are injected via setters or mutator
+											methods.</li>
+										<li><b>Field Injection:</b> Dependencies are injected directly into class
+											fields.</li>
+									</ul>
+									Each pattern has its advantages and trade-offs, with Constructor Injection often
+									considered best practice due to better readability, immutability, and easier
+									testing.</p>
+								</div>
+							</details></br>
+
+							<details id="details4" onclick="closeOtherDetails('details4')">
+								<summary>4. Which dependency injection pattern is best and why?</summary>
+								<div class="toggle-content">
+									<p>Answer: Constructor Injection is generally considered the best dependency
+										injection pattern due to several reasons:
+									<ul>
+										<li>It ensures that all dependencies required by a class are provided at the
+											time of its instantiation, promoting immutability and reducing null
+											references.</li>
+										<li>It makes dependencies explicit, improving readability and understanding of a
+											class's requirements.</li>
+										<li>It facilitates easier testing by allowing dependencies to be easily mocked
+											or stubbed.</li>
+									</ul>
+									However, the choice of pattern may depend on specific use cases and design
+									considerations.</p>
+								</div>
+							</details></br>
+
+							<details id="details5" onclick="closeOtherDetails('details5')">
+								<summary>5. Different scopes of the bean.</summary>
+								<div class="toggle-content">
+									<p>Answer: In Spring Framework, beans can have different scopes, specifying how and
+										when Spring should create and return instances of a bean:
+									<ul>
+										<li><b>Singleton:</b> Default scope, where Spring creates and manages a single
+											instance per Spring IoC container.</li>
+										<li><b>Prototype:</b> A new instance is created each time the bean is requested.
+										</li>
+										<li><b>Request:</b> A new instance is created for each HTTP request.</li>
+										<li><b>Session:</b> A new instance is created for each HTTP session.</li>
+										<li><b>Global Session:</b> Similar to session scope, but scoped to a global HTTP
+											session in a portlet context.</li>
+										<li><b>Custom:</b> Custom scopes can be defined for specific requirements.</li>
+									</ul>
+									</p>
+								</div>
+							</details></br>
+
+							<details id="details6" onclick="closeOtherDetails('details6')">
+								<summary>6. What are the ways to create Spring bean thread-safe?</summary>
+								<div class="toggle-content">
+									<p>Answer: Spring beans can be made thread-safe in several ways:
+									<ul>
+										<li>Use of singleton or request scope (where appropriate) to control concurrent
+											access.</li>
+										<li>Use synchronized methods or blocks to serialize access to shared resources
+											within the bean.</li>
+										<li>Design beans to be stateless, reducing the need for synchronization.</li>
+										<li>Use thread-safe collections or immutable objects for shared state.</li>
+									</ul>
+									</p>
+								</div>
+							</details></br>
+
+							<details id="details7" onclick="closeOtherDetails('details7')">
+								<summary>7. Which design patterns are used in the Spring framework?</summary>
+								<div class="toggle-content">
+									<p>Answer: The Spring framework uses several design patterns, including:
+									<ul>
+										<li>Dependency Injection (IoC)</li>
+										<li>Factory Method</li>
+										<li>Template Method</li>
+										<li>Proxy</li>
+										<li>Observer</li>
+										<li>Singleton</li>
+										<li>Decorator</li>
+									</ul>
+									These patterns help promote flexibility, modularity, and testability in Spring
+									applications.</p>
+								</div>
+							</details></br>
+
+							<details id="details8" onclick="closeOtherDetails('details8')">
+								<summary>8. What is HATEOAS and why do you need it? Can you give an example response for
+									this?</summary>
+								<div class="toggle-content">
+									<p>Answer: HATEOAS (Hypermedia as the Engine of Application State) is a constraint
+										of the REST architecture that allows clients to navigate a web application
+										through hypermedia links returned in the responses. It provides a way to
+										discover and interact with resources dynamically without relying on out-of-band
+										information.
+										<br>Example response in JSON format:
+									<pre>
+							{
+							    "id": 1,
+							    "name": "John Doe",
+							    "links": [
+							        {
+							            "rel": "self",
+							            "href": "http://example.com/users/1"
+							        },
+							        {
+							            "rel": "orders",
+							            "href": "http://example.com/users/1/orders"
+							        }
+							    ]
+							}
+							                </pre>
+									In this example, the response includes hypermedia links (`links` array) that allow
+									the client to navigate to related resources such as the user's orders.</p>
+								</div>
+							</details></br>
+
+							<details id="details9" onclick="closeOtherDetails('details9')">
+								<summary>9. What are the ways to use dot (.) in @PathVariable in Spring MVC?</summary>
+								<div class="toggle-content">
+									<p>Answer: In Spring MVC, you can use dot (.) in `@PathVariable` by configuring the
+										servlet mapping to allow encoded slashes in the URL. This can be achieved by
+										setting `useEncodedSlash` to `true` in the `<servlet-mapping>` section of
+											`web.xml`, or by configuring `PathMatchConfigurer` in Java config with
+											`setUseRegisteredSuffixPatternMatch(true)`.</p>
+								</div>
+							</details></br>
+
+							<details id="details10" onclick="closeOtherDetails('details10')">
+								<summary>10. What is dependency management in Spring Boot and what are the advantages of
+									it?</summary>
+								<div class="toggle-content">
+									<p>Answer: Dependency management in Spring Boot refers to managing dependencies
+										(libraries and frameworks) required by the application through Maven or Gradle
+										build tools. Spring Boot provides a set of starter dependencies that include
+										pre-configured libraries for common functionalities like web applications, data
+										access, security, etc.
+										<br>Advantages:
+									<ul>
+										<li>Simplified dependency declaration and management.</li>
+										<li>Ensures compatible versions of dependencies.</li>
+										<li>Reduces configuration effort.</li>
+										<li>Facilitates rapid application development and deployment.</li>
+									</ul>
+									</p>
+								</div>
+							</details></br>
+
+							<details id="details11" onclick="closeOtherDetails('details11')">
+								<summary>11. Which repository helps to fetch data for pagination and sorting from the
+									database?</summary>
+								<div class="toggle-content">
+									<p>Answer: In Spring Data, the `PagingAndSortingRepository` interface provides
+										methods to fetch data from the database with pagination and sorting
+										capabilities. It extends `CrudRepository` and adds methods for paging and
+										sorting like `findAll(Pageable pageable)` and `findAll(Sort sort)`.</p>
+								</div>
+							</details></br>
+
+							<details id="details12" onclick="closeOtherDetails('details12')">
+								<summary>12. How do you implement cross-cutting concerns in a web application?</summary>
+								<div class="toggle-content">
+									<p>Answer: Cross-cutting concerns such as logging, security, transaction management,
+										etc., are implemented using aspects in Spring AOP (Aspect-Oriented Programming).
+										Aspects encapsulate common behaviors that cut across multiple classes, allowing
+										them to be applied declaratively using annotations or XML configuration.
+										Annotations like `@Aspect`, `@Before`, `@After`, `@Around`, etc., define aspects
+										and pointcuts to intercept method invocations.</p>
+								</div>
+							</details></br>
+
+							<details id="details13" onclick="closeOtherDetails('details13')">
+								<summary>13. Purpose of creating multiple properties file in an application. OR what is
+									spring profile?</summary>
+								<div class="toggle-content">
+									<p>Answer: Spring profiles allow you to define multiple configurations for an
+										application and activate one or more profiles during application startup. This
+										is useful for managing different environments (e.g., development, testing,
+										production) or configurations (e.g., database settings, logging levels) without
+										modifying the application code. Multiple properties files in Spring can be used
+										to segregate configuration settings based on profiles or logical groupings.</p>
+								</div>
+							</details></br>
+
+							<details id="details14" onclick="closeOtherDetails('details14')">
+								<summary>14. Compare Spring AOP vs AspectJ?</summary>
+								<div class="toggle-content">
+									<p>Answer:
+									<ul>
+										<li><b>Spring AOP:</b> Spring AOP (Aspect-Oriented Programming) is a part of the
+											Spring Framework that provides a way to modularize cross-cutting concerns
+											(logging, security, etc.) using aspect-oriented programming techniques. It
+											uses runtime proxies (dynamic proxies) to weave aspects into Spring-managed
+											beans.</li>
+										<li><b>AspectJ:</b> AspectJ is a full-fledged aspect-oriented programming
+											language and framework that can be used independently of Spring. It provides
+											more powerful and fine-grained AOP capabilities with compile-time weaving
+											(static weaving) and load-time weaving, which can intercept method calls at
+											a lower level than Spring AOP.</li>
+									</ul>
+									<p>Key differences:
+									<ul>
+										<li>Spring AOP is simpler to use and integrates seamlessly with Spring
+											Framework, whereas AspectJ requires additional setup and configuration.</li>
+										<li>AspectJ offers more advanced features and performance optimizations compared
+											to Spring AOP.</li>
+										<li>Spring AOP is suitable for most enterprise applications that require
+											declarative transaction management, logging, etc., while AspectJ is
+											preferred for complex cross-cutting concerns or performance-critical
+											applications.</li>
+									</ul>
+									</p>
+								</div>
+							</details></br>
+
+							<details id="details15" onclick="closeOtherDetails('details15')">
+								<summary>15. What is Swagger? Have you implemented it using Spring Boot?</summary>
+								<div class="toggle-content">
+									<p>Answer: Swagger is an open-source framework for designing, building, documenting,
+										and consuming RESTful APIs. It provides tools to generate interactive API
+										documentation, client SDKs, and server stubs from OpenAPI specifications.
+										<br>Yes, Swagger can be easily integrated with Spring Boot applications using
+										libraries like `springfox-swagger2` and `springfox-swagger-ui`. Annotations like
+										`@Api`, `@ApiOperation`, `@ApiParam`, etc., are used to annotate controller
+										methods and models to generate API documentation automatically.
+									</p>
+								</div>
+							</details></br>
 						</div>
 					</div>
 				</article>

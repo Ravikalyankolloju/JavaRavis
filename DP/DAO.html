@@ -226,7 +226,7 @@
 									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Now, let’s put up our model object.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.model;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.model;
 						
 						public class Books {
 						
@@ -252,9 +252,9 @@
 							<p>Let’s define the interface to access the data associated with it at persistence level.
 							</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.dao;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.dao;
 						
-						import com.journaldev.model.Books;
+						import com.javaravish.model.Books;
 						
 						import java.util.List;
 						
@@ -272,10 +272,10 @@
 									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Next, we create a concrete class implementing the above interface.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.daoimpl;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.daoimpl;
 						
-						import com.journaldev.dao.BookDao;
-						import com.journaldev.model.Books;
+						import com.javaravish.dao.BookDao;
+						import com.javaravish.model.Books;
 						
 						import java.util.ArrayList;
 						import java.util.List;
@@ -321,9 +321,9 @@
 							<div class="code-label" title=""></div>
 							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev;
 						
-						import com.journaldev.dao.BookDao;
-						import com.journaldev.daoimpl.BookDaoImpl;
-						import com.journaldev.model.Books;
+						import com.javaravish.dao.BookDao;
+						import com.javaravish.daoimpl.BookDaoImpl;
+						import com.javaravish.model.Books;
 						
 						public class AccessBook {
 						

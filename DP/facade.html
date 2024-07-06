@@ -224,7 +224,7 @@
 							<p>We can have two helper interfaces, namely <code>MySqlHelper</code> and
 								<code>OracleHelper</code>.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.facade;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.facade;
 						
 						import java.sql.Connection;
 						
@@ -245,7 +245,7 @@
 						}
 						</code></pre>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.facade;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.facade;
 						
 						import java.sql.Connection;
 						
@@ -273,7 +273,7 @@
 							<p>We can create a Facade pattern interface like below. Notice the use of <a
 									href="/community/tutorials/java-enum">Java Enum</a> for type safety.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.facade;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.facade;
 						
 						import java.sql.Connection;
 						
@@ -327,13 +327,13 @@
 							<p>Now lets see client code without using Facade pattern and using Facade pattern interface.
 							</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.test;
 						
 						import java.sql.Connection;
 						
-						import com.journaldev.design.facade.HelperFacade;
-						import com.journaldev.design.facade.MySqlHelper;
-						import com.journaldev.design.facade.OracleHelper;
+						import com.javaravish.design.facade.HelperFacade;
+						import com.javaravish.design.facade.MySqlHelper;
+						import com.javaravish.design.facade.OracleHelper;
 						
 						public class FacadePatternTest {
 						

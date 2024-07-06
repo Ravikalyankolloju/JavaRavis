@@ -218,7 +218,7 @@
 									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p><code>Computer.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.model;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.model;
 						 
 						public abstract class Computer {
 						     
@@ -234,7 +234,7 @@
 						</code></pre>
 							<p><code>PC.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.model;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.model;
 						 
 						public class PC extends Computer {
 						 
@@ -266,7 +266,7 @@
 						</code></pre>
 							<p><code>Server.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.model;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.model;
 						 
 						 
 						public class Server extends Computer {
@@ -305,9 +305,9 @@
 									href="/community/tutorials/abstract-class-in-java"><strong>abstract
 										class</strong></a>. <code>ComputerAbstractFactory.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.abstractfactory;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.abstractfactory;
 						
-						import com.journaldev.design.model.Computer;
+						import com.javaravish.design.model.Computer;
 						
 						public interface ComputerAbstractFactory {
 						
@@ -319,10 +319,10 @@
 								<code>Computer</code>. Now our factory classes will implement this interface and return
 								their respective sub-class. <code>PCFactory.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.abstractfactory;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.abstractfactory;
 						
-						import com.journaldev.design.model.Computer;
-						import com.journaldev.design.model.PC;
+						import com.javaravish.design.model.Computer;
+						import com.javaravish.design.model.PC;
 						
 						public class PCFactory implements ComputerAbstractFactory {
 						
@@ -345,10 +345,10 @@
 							<p>Similarly we will have a factory class for <code>Server</code> subclass.
 								<code>ServerFactory.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.abstractfactory;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.abstractfactory;
 						
-						import com.journaldev.design.model.Computer;
-						import com.journaldev.design.model.Server;
+						import com.javaravish.design.model.Computer;
+						import com.javaravish.design.model.Server;
 						
 						public class ServerFactory implements ComputerAbstractFactory {
 						
@@ -372,9 +372,9 @@
 							<p>Now we will create a consumer class that will provide the entry point for the client
 								classes to create sub-classes. <code>ComputerFactory.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.abstractfactory;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.abstractfactory;
 						
-						import com.journaldev.design.model.Computer;
+						import com.javaravish.design.model.Computer;
 						
 						public class ComputerFactory {
 						
@@ -389,12 +389,12 @@
 								test method and see how to use the abstract factory to get the instance of sub-classes.
 								<code>TestDesignPatterns.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.test;
 						
-						import com.journaldev.design.abstractfactory.PCFactory;
-						import com.journaldev.design.abstractfactory.ServerFactory;
-						import com.journaldev.design.factory.ComputerFactory;
-						import com.journaldev.design.model.Computer;
+						import com.javaravish.design.abstractfactory.PCFactory;
+						import com.javaravish.design.abstractfactory.ServerFactory;
+						import com.javaravish.design.factory.ComputerFactory;
+						import com.javaravish.design.model.Computer;
 						
 						public class TestDesignPatterns {
 						
@@ -403,8 +403,8 @@
 							}
 						
 							private static void testAbstractFactory() {
-								Computer pc = com.journaldev.design.abstractfactory.ComputerFactory.getComputer(new PCFactory("2 GB","500 GB","2.4 GHz"));
-								Computer server = com.journaldev.design.abstractfactory.ComputerFactory.getComputer(new ServerFactory("16 GB","1 TB","2.9 GHz"));
+								Computer pc = com.javaravish.design.abstractfactory.ComputerFactory.getComputer(new PCFactory("2 GB","500 GB","2.4 GHz"));
+								Computer server = com.javaravish.design.abstractfactory.ComputerFactory.getComputer(new ServerFactory("16 GB","1 TB","2.9 GHz"));
 								System.out.println("AbstractFactory PC Config::"+pc);
 								System.out.println("AbstractFactory Server Config::"+server);
 							}

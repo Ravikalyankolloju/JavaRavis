@@ -220,7 +220,7 @@
 									Classes</a><a class="hash-anchor" href="#command-pattern-receiver-classes"
 									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public interface FileSystemReceiver {
 						
@@ -233,7 +233,7 @@
 								simplicity, I am creating two flavors of receiver classes to work with Unix and Windows
 								systems.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public class UnixFileSystemReceiver implements FileSystemReceiver {
 						
@@ -255,7 +255,7 @@
 						}
 						</code></pre>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public class WindowsFileSystemReceiver implements FileSystemReceiver {
 						
@@ -297,7 +297,7 @@
 								your requirement. We are going with interface because we don’t have any default
 								implementations.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public interface Command {
 						
@@ -309,7 +309,7 @@
 								Each Command implementation will forward the request to the appropriate method of
 								receiver.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public class OpenFileCommand implements Command {
 						
@@ -327,7 +327,7 @@
 						}
 						</code></pre>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public class CloseFileCommand implements Command {
 						
@@ -344,7 +344,7 @@
 						}
 						</code></pre>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public class WriteFileCommand implements Command {
 						
@@ -369,7 +369,7 @@
 							<p>Invoker is a simple class that encapsulates the Command and passes the request to the
 								command object to process it.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public class FileInvoker {
 						
@@ -393,7 +393,7 @@
 									title="Factory Design Pattern in Java">Factory pattern</a> to return appropriate
 								type based on the input.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public class FileSystemReceiverUtil {
 							
@@ -412,7 +412,7 @@
 							<p>Let’s move now to create our command pattern example client program that will consume our
 								file system utility.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.command;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.command;
 						
 						public class FileSystemClient {
 						

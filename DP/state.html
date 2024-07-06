@@ -199,7 +199,7 @@
 								the TV. We can implement it using if-else condition like below;
 								<code>TVRemoteBasic.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.state;
 						
 						public class TVRemoteBasic {
 						
@@ -240,7 +240,7 @@
 							<p>First of all we will create State interface that will define the method that should be
 								implemented by different concrete states and context class. <code>State.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.state;
 						
 						public interface State {
 						
@@ -257,7 +257,7 @@
 								off. So we will create two concrete state implementations for these behaviors.
 								<code>TVStartState.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.state;
 						
 						public class TVStartState implements State {
 						
@@ -270,7 +270,7 @@
 						</code></pre>
 							<p><code>TVStopState.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.state;
 						
 						public class TVStopState implements State {
 						
@@ -291,7 +291,7 @@
 									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p><code>TVContext.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.state;
 						
 						public class TVContext implements State {
 						
@@ -321,7 +321,7 @@
 							<p>Now let’s write a simple program to test our state pattern implementation of TV Remote.
 								<code>TVRemote.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.state;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.state;
 						
 						public class TVRemote {
 						

@@ -229,7 +229,7 @@
 								of composition in implementing the bridge pattern. Here is the java code for Shape and
 								Color interfaces. <code>Color.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.bridge;
 						
 						public interface Color {
 						
@@ -238,7 +238,7 @@
 						</code></pre>
 							<p><code>Shape.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.bridge;
 						
 						public abstract class Shape {
 							//Composition - implementor
@@ -255,7 +255,7 @@
 							<p>We have Triangle and Pentagon implementation classes as below. <code>Triangle.java</code>
 							</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.bridge;
 						
 						public class Triangle extends Shape{
 						
@@ -273,7 +273,7 @@
 						</code></pre>
 							<p><code>Pentagon.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.bridge;
 						
 						public class Pentagon extends Shape{
 						
@@ -292,7 +292,7 @@
 							<p>Here are the implementation classes for RedColor and GreenColor.
 								<code>RedColor.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.bridge;
 						
 						public class RedColor implements Color{
 						
@@ -303,7 +303,7 @@
 						</code></pre>
 							<p><code>GreenColor.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.bridge;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.bridge;
 						
 						public class GreenColor implements Color{
 						
@@ -315,13 +315,13 @@
 							<p>Lets test our bridge pattern implementation with a test program.
 								<code>BridgePatternTest.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.test;
 						
-						import com.journaldev.design.bridge.GreenColor;
-						import com.journaldev.design.bridge.Pentagon;
-						import com.journaldev.design.bridge.RedColor;
-						import com.journaldev.design.bridge.Shape;
-						import com.journaldev.design.bridge.Triangle;
+						import com.javaravish.design.bridge.GreenColor;
+						import com.javaravish.design.bridge.Pentagon;
+						import com.javaravish.design.bridge.RedColor;
+						import com.javaravish.design.bridge.Shape;
+						import com.javaravish.design.bridge.Triangle;
 						
 						public class BridgePatternTest {
 						

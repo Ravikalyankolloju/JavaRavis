@@ -224,7 +224,7 @@
 								Based on the requirements of Subject, here is the base Subject interface that defines
 								the contract methods to be implemented by any concrete subject.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.observer;
 						
 						public interface Subject {
 						
@@ -243,7 +243,7 @@
 							<p>Next we will create contract for Observer, there will be a method to attach the Subject
 								to the observer and another method to be used by Subject to notify of any change.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.observer;
 						
 						public interface Observer {
 							
@@ -257,7 +257,7 @@
 							<p>Now our contract is ready, let’s proceed with the concrete implementation of our topic.
 							</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.observer;
 						
 						import java.util.ArrayList;
 						import java.util.List;
@@ -330,7 +330,7 @@
 								observers registered before the message is published to the topic. Here is the
 								implementation of Observers that will watch over the subject.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.observer;
 						
 						public class MyTopicSubscriber implements Observer {
 							
@@ -361,7 +361,7 @@
 								call by passing message as argument to <em>update()</em> method. Here is a simple test
 								program to consume our topic implementation.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.observer;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.observer;
 						
 						public class ObserverPatternTest {
 						

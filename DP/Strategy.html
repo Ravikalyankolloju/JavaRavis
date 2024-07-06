@@ -197,7 +197,7 @@
 								First of all we will create the interface for our strategy pattern example, in our case
 								to pay the amount passed as argument. <code>PaymentStrategy.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.strategy;
 						
 						public interface PaymentStrategy {
 						
@@ -207,7 +207,7 @@
 							<p>Now we will have to create concrete implementation of algorithms for payment using
 								credit/debit card or through paypal. <code>CreditCardStrategy.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.strategy;
 						
 						public class CreditCardStrategy implements PaymentStrategy {
 						
@@ -231,7 +231,7 @@
 						</code></pre>
 							<p><code>PaypalStrategy.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.strategy;
 						
 						public class PaypalStrategy implements PaymentStrategy {
 						
@@ -253,7 +253,7 @@
 							<p>Now our strategy pattern example algorithms are ready. We can implement Shopping Cart and
 								payment method will require input as Payment strategy. <code>Item.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.strategy;
 						
 						public class Item {
 						
@@ -277,7 +277,7 @@
 						</code></pre>
 							<p><code>ShoppingCart.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.strategy;
 						
 						import java.text.DecimalFormat;
 						import java.util.ArrayList;
@@ -318,7 +318,7 @@
 								doesn’t store it anywhere as instance variable. Let’s test our strategy pattern example
 								setup with a simple program. <code>ShoppingCartTest.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.strategy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.strategy;
 						
 						public class ShoppingCartTest {
 						

@@ -244,7 +244,7 @@
 							<p>We can create a class <code>Currency</code> that will store the amount to dispense and
 								used by the chain implementations. <code>Currency.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.chainofresponsibility;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.chainofresponsibility;
 						
 						public class Currency {
 						
@@ -263,7 +263,7 @@
 								method that will process the request. Our ATM Dispense interface will look like below.
 								<code>DispenseChain.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.chainofresponsibility;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.chainofresponsibility;
 						
 						public interface DispenseChain {
 						
@@ -284,7 +284,7 @@
 								and 10$, we will create three concrete implementations.
 								<code>Dollar50Dispenser.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.chainofresponsibility;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.chainofresponsibility;
 						
 						public class Dollar50Dispenser implements DispenseChain {
 						
@@ -311,7 +311,7 @@
 						</code></pre>
 							<p><code>Dollar20Dispenser.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.chainofresponsibility;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.chainofresponsibility;
 						
 						public class Dollar20Dispenser implements DispenseChain{
 						
@@ -338,7 +338,7 @@
 						</code></pre>
 							<p><code>Dollar10Dispenser.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.chainofresponsibility;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.chainofresponsibility;
 						
 						public class Dollar10Dispenser implements DispenseChain {
 						
@@ -382,7 +382,7 @@
 								processor and the chain will become useless. Here is our ATM Dispenser implementation to
 								process the user requested amount. <code>ATMDispenseChain.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.chainofresponsibility;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.chainofresponsibility;
 						
 						import java.util.Scanner;
 						

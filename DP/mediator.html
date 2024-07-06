@@ -215,7 +215,7 @@
 							<p>First of all we will create Mediator interface that will define the contract for concrete
 								mediators. <code>ChatMediator.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.mediator;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.mediator;
 						
 						public interface ChatMediator {
 						
@@ -232,7 +232,7 @@
 							<p>Users can send and receive messages, so we can have User interface or abstract class. I
 								am creating User as abstract class like below. <code>User.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.mediator;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.mediator;
 						
 						public abstract class User {
 							protected ChatMediator mediator;
@@ -258,7 +258,7 @@
 								provide logic for the communication between the users.
 								<code>ChatMediatorImpl.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.mediator;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.mediator;
 						
 						import java.util.ArrayList;
 						import java.util.List;
@@ -297,7 +297,7 @@
 							<p>Now we can create concrete User classes to be used by client system.
 								<code>UserImpl.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.mediator;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.mediator;
 						
 						public class UserImpl extends User {
 						
@@ -329,7 +329,7 @@
 								and add users to the group and one of the user will send a message.
 								<code>ChatClient.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.mediator;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.mediator;
 						
 						public class ChatClient {
 						

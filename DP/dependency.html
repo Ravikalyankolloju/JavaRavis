@@ -200,7 +200,7 @@
 								consume <code>EmailService</code> to send emails. Normally we would implement this like
 								below.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.legacy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.legacy;
 						
 						public class EmailService {
 						
@@ -213,7 +213,7 @@
 							<p><code>EmailService</code> class holds the logic to send an email message to the recipient
 								email address. Our application code will be like below.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.legacy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.legacy;
 						
 						public class MyApplication {
 						
@@ -228,7 +228,7 @@
 							<p>Our client code that will use <code>MyApplication</code> class to send email messages
 								will be like below.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.legacy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.legacy;
 						
 						public class MyLegacyTest {
 						
@@ -259,7 +259,7 @@
 								<code>MyApplication</code> class by having a constructor that requires email service as
 								an argument.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.legacy;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.legacy;
 						
 						public class MyApplication {
 						
@@ -296,7 +296,7 @@
 							<p>For our case, we can have <code>MessageService</code> that will declare the contract for
 								service implementations.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.service;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.service;
 						
 						public interface MessageService {
 						
@@ -305,7 +305,7 @@
 						</code></pre>
 							<p>Now let’s say we have Email and SMS services that implement the above interfaces.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.service;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.service;
 						
 						public class EmailServiceImpl implements MessageService {
 						
@@ -318,7 +318,7 @@
 						}
 						</code></pre>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.service;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.service;
 						
 						public class SMSServiceImpl implements MessageService {
 						
@@ -341,7 +341,7 @@
 							<p>We are not required to have base interfaces for consumer classes but I will have a
 								<code>Consumer</code> interface declaring contract for consumer classes.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.consumer;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.consumer;
 						
 						public interface Consumer {
 						
@@ -350,9 +350,9 @@
 						</code></pre>
 							<p>My consumer class implementation is like below.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.consumer;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.consumer;
 						
-						import com.journaldev.java.dependencyinjection.service.MessageService;
+						import com.javaravish.java.dependencyinjection.service.MessageService;
 						
 						public class MyDIApplication implements Consumer{
 						
@@ -385,9 +385,9 @@
 							<p>Let’s have an interface <code>MessageServiceInjector</code> with method declaration that
 								returns the <code>Consumer</code> class.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.injector;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.injector;
 						
-						import com.journaldev.java.dependencyinjection.consumer.Consumer;
+						import com.javaravish.java.dependencyinjection.consumer.Consumer;
 						
 						public interface MessageServiceInjector {
 						
@@ -396,11 +396,11 @@
 						</code></pre>
 							<p>Now for every service, we will have to create injector classes like below.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.injector;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.injector;
 						
-						import com.journaldev.java.dependencyinjection.consumer.Consumer;
-						import com.journaldev.java.dependencyinjection.consumer.MyDIApplication;
-						import com.journaldev.java.dependencyinjection.service.EmailServiceImpl;
+						import com.javaravish.java.dependencyinjection.consumer.Consumer;
+						import com.javaravish.java.dependencyinjection.consumer.MyDIApplication;
+						import com.javaravish.java.dependencyinjection.service.EmailServiceImpl;
 						
 						public class EmailServiceInjector implements MessageServiceInjector {
 						
@@ -412,11 +412,11 @@
 						}
 						</code></pre>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.injector;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.injector;
 						
-						import com.journaldev.java.dependencyinjection.consumer.Consumer;
-						import com.journaldev.java.dependencyinjection.consumer.MyDIApplication;
-						import com.journaldev.java.dependencyinjection.service.SMSServiceImpl;
+						import com.javaravish.java.dependencyinjection.consumer.Consumer;
+						import com.javaravish.java.dependencyinjection.consumer.MyDIApplication;
+						import com.javaravish.java.dependencyinjection.service.SMSServiceImpl;
 						
 						public class SMSServiceInjector implements MessageServiceInjector {
 						
@@ -430,12 +430,12 @@
 							<p>Now let’s see how our client applications will use the application with a simple program.
 							</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.test;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.test;
 						
-						import com.journaldev.java.dependencyinjection.consumer.Consumer;
-						import com.journaldev.java.dependencyinjection.injector.EmailServiceInjector;
-						import com.journaldev.java.dependencyinjection.injector.MessageServiceInjector;
-						import com.journaldev.java.dependencyinjection.injector.SMSServiceInjector;
+						import com.javaravish.java.dependencyinjection.consumer.Consumer;
+						import com.javaravish.java.dependencyinjection.injector.EmailServiceInjector;
+						import com.javaravish.java.dependencyinjection.injector.MessageServiceInjector;
+						import com.javaravish.java.dependencyinjection.injector.SMSServiceInjector;
 						
 						public class MyMessageDITest {
 						
@@ -473,16 +473,16 @@
 									href="#java-dependency-injection-junit-test-case-with-mock-injector-and-service"
 									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.test;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.test;
 						
 						import org.junit.After;
 						import org.junit.Before;
 						import org.junit.Test;
 						
-						import com.journaldev.java.dependencyinjection.consumer.Consumer;
-						import com.journaldev.java.dependencyinjection.consumer.MyDIApplication;
-						import com.journaldev.java.dependencyinjection.injector.MessageServiceInjector;
-						import com.journaldev.java.dependencyinjection.service.MessageService;
+						import com.javaravish.java.dependencyinjection.consumer.Consumer;
+						import com.javaravish.java.dependencyinjection.consumer.MyDIApplication;
+						import com.javaravish.java.dependencyinjection.injector.MessageServiceInjector;
+						import com.javaravish.java.dependencyinjection.service.MessageService;
 						
 						public class MyDIApplicationJUnitTest {
 						
@@ -529,9 +529,9 @@
 								setter method dependency injection, our application class will be implemented like
 								below.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.consumer;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.consumer;
 						
-						import com.journaldev.java.dependencyinjection.service.MessageService;
+						import com.javaravish.java.dependencyinjection.service.MessageService;
 						
 						public class MyDIApplication implements Consumer{
 						
@@ -553,11 +553,11 @@
 						}
 						</code></pre>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.java.dependencyinjection.injector;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.java.dependencyinjection.injector;
 						
-						import com.journaldev.java.dependencyinjection.consumer.Consumer;
-						import com.journaldev.java.dependencyinjection.consumer.MyDIApplication;
-						import com.journaldev.java.dependencyinjection.service.EmailServiceImpl;
+						import com.javaravish.java.dependencyinjection.consumer.Consumer;
+						import com.javaravish.java.dependencyinjection.consumer.MyDIApplication;
+						import com.javaravish.java.dependencyinjection.service.EmailServiceImpl;
 						
 						public class EmailServiceInjector implements MessageServiceInjector {
 						

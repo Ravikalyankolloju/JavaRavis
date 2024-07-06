@@ -216,7 +216,7 @@
 								<code>toString()</code> method for testing purpose.
 							</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.model;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.model;
 						
 						public abstract class Computer {
 							
@@ -236,7 +236,7 @@
 									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Let’s say we have two sub-classes PC and Server with below implementation.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.model;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.model;
 						
 						public class PC extends Computer {
 						
@@ -268,7 +268,7 @@
 						</code></pre>
 							<p>Notice that both the classes are extending <code>Computer</code> super class.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.model;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.model;
 						
 						public class Server extends Computer {
 						
@@ -305,11 +305,11 @@
 							<p>Now that we have super classes and sub-classes ready, we can write our factory class.
 								Here is the basic implementation.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.factory;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.factory;
 						
-						import com.journaldev.design.model.Computer;
-						import com.journaldev.design.model.PC;
-						import com.journaldev.design.model.Server;
+						import com.javaravish.design.model.Computer;
+						import com.javaravish.design.model.PC;
+						import com.javaravish.design.model.Server;
 						
 						public class ComputerFactory {
 						
@@ -337,10 +337,10 @@
 								Here is a simple test client program that uses above factory design pattern
 								implementation.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.test;
 						
-						import com.journaldev.design.factory.ComputerFactory;
-						import com.journaldev.design.model.Computer;
+						import com.javaravish.design.factory.ComputerFactory;
+						import com.javaravish.design.model.Computer;
 						
 						public class TestFactory {
 						

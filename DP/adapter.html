@@ -204,7 +204,7 @@
 								this tutorial. So first of all we will have two classes - <code>Volt</code> (to measure
 								volts) and <code>Socket</code> (producing constant volts of 120V).</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
 						
 						public class Volt {
 						
@@ -225,7 +225,7 @@
 						}
 						</code></pre>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
 						
 						public class Socket {
 						
@@ -237,7 +237,7 @@
 							<p>Now we want to build an adapter that can produce 3 volts, 12 volts and default 120 volts.
 								So first of all we will create an adapter interface with these methods.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
 						
 						public interface SocketAdapter {
 						
@@ -270,7 +270,7 @@
 									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Here is the <strong>class adapter</strong> approach implementation of our adapter.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
 						
 						//Using inheritance for adapter pattern
 						public class SocketClassAdapterImpl extends Socket implements SocketAdapter{
@@ -306,7 +306,7 @@
 									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Here is the <strong>Object adapter</strong> implementation of our adapter.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.adapter;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
 						
 						public class SocketObjectAdapterImpl implements SocketAdapter{
 						
@@ -341,12 +341,12 @@
 										class</strong></a>. Here is a test program to consume our adapter design pattern
 								implementation.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.test;
 						
-						import com.journaldev.design.adapter.SocketAdapter;
-						import com.journaldev.design.adapter.SocketClassAdapterImpl;
-						import com.journaldev.design.adapter.SocketObjectAdapterImpl;
-						import com.journaldev.design.adapter.Volt;
+						import com.javaravish.design.adapter.SocketAdapter;
+						import com.javaravish.design.adapter.SocketClassAdapterImpl;
+						import com.javaravish.design.adapter.SocketObjectAdapterImpl;
+						import com.javaravish.design.adapter.Volt;
 						
 						public class AdapterPatternTest {
 						

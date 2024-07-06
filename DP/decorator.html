@@ -231,7 +231,7 @@
 										defining the methods that will be implemented. In our case <code>Car</code> will
 										be the component interface.</p>
 									<div class="code-label" title=""></div>
-									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.decorator;
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.decorator;
 						
 						public interface Car {
 						
@@ -244,7 +244,7 @@
 										component interface. We can have <code>BasicCar</code> class as our component
 										implementation.</p>
 									<div class="code-label" title=""></div>
-									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.decorator;
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.decorator;
 						
 						public class BasicCar implements Car {
 						
@@ -262,7 +262,7 @@
 										variable should be accessible to the child decorator classes, so we will make
 										this variable protected.</p>
 									<div class="code-label" title=""></div>
-									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.decorator;
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.decorator;
 						
 						public class CarDecorator implements Car {
 						
@@ -285,7 +285,7 @@
 										and modifying the component behavior accordingly. We can have concrete decorator
 										classes as <code>LuxuryCar</code> and <code>SportsCar</code>.</p>
 									<div class="code-label" title=""></div>
-									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.decorator;
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.decorator;
 						
 						public class SportsCar extends CarDecorator {
 						
@@ -301,7 +301,7 @@
 						}
 						</code></pre>
 									<div class="code-label" title=""></div>
-									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.decorator;
+									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.decorator;
 						
 						public class LuxuryCar extends CarDecorator {
 						
@@ -333,12 +333,12 @@
 									Program</a><a class="hash-anchor" href="#decorator-design-pattern-test-program"
 									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.test;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.test;
 						
-						import com.journaldev.design.decorator.BasicCar;
-						import com.journaldev.design.decorator.Car;
-						import com.journaldev.design.decorator.LuxuryCar;
-						import com.journaldev.design.decorator.SportsCar;
+						import com.javaravish.design.decorator.BasicCar;
+						import com.javaravish.design.decorator.Car;
+						import com.javaravish.design.decorator.LuxuryCar;
+						import com.javaravish.design.decorator.SportsCar;
 						
 						public class DecoratorPatternTest {
 						

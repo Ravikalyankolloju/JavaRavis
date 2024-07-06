@@ -196,7 +196,7 @@
 							<p>To implement visitor pattern, first of all we will create different type of items
 								(Elements) to be used in shopping cart. <code>ItemElement.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.visitor;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.visitor;
 						
 						public interface ItemElement {
 						
@@ -208,7 +208,7 @@
 								on visitor pattern only. Let’s create some concrete classes for different types of
 								items. <code>Book.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.visitor;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.visitor;
 						
 						public class Book implements ItemElement {
 						
@@ -237,7 +237,7 @@
 						</code></pre>
 							<p><code>Fruit.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.visitor;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.visitor;
 						
 						public class Fruit implements ItemElement {
 							
@@ -276,7 +276,7 @@
 								type of items in Visitor interface that will be implemented by concrete visitor class.
 								<code>ShoppingCartVisitor.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.visitor;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.visitor;
 						
 						public interface ShoppingCartVisitor {
 						
@@ -287,7 +287,7 @@
 							<p>Now we will implement visitor interface and every item will have it’s own logic to
 								calculate the cost. <code>ShoppingCartVisitorImpl.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.visitor;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.visitor;
 						
 						public class ShoppingCartVisitorImpl implements ShoppingCartVisitor {
 						
@@ -314,7 +314,7 @@
 							<p>Lets see how we can use visitor pattern example in client applications.
 								<code>ShoppingCartClient.java</code></p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev.design.visitor;
+							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.visitor;
 						
 						public class ShoppingCartClient {
 						

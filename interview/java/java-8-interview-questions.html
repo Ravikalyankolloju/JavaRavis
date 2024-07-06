@@ -24,18 +24,13 @@
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
 	<script>
-		function closeOtherDetails(currentId) {
-			// Get all details elements on the page
-			var detailsElements = document.querySelectorAll('details');
-
-			// Iterate through each details element
-			detailsElements.forEach(function (details) {
-				// Check if the current details element is not the one being clicked
-				if (details.id !== currentId) {
-					// Close the details element
-					details.removeAttribute('open');
+		function closeOtherDetails(id) {
+			const details = document.getElementsByTagName('details');
+			for (let i = 0; i < details.length; i++) {
+				if (details[i].id !== id) {
+					details[i].removeAttribute('open');
 				}
-			});
+			}
 		}
 	</script>
 	<style>
@@ -111,7 +106,8 @@
 					<li class="nav-item" data-depth="0">
 						<ul class="nav-list">
 							<h4>Interview Questions</h4>
-							<li class="nav-item"><a class="nav-link" href="../java/java-8-interview-questions.html">Java 8 Interview</a></li>
+							<li class="nav-item"><a class="nav-link" href="../java/java-8-interview-questions.html">Java
+									8 Interview</a></li>
 						</ul>
 					</li>
 				</div>

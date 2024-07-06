@@ -24,18 +24,13 @@
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
 	<script>
-		function closeOtherDetails(currentId) {
-			// Get all details elements on the page
-			var detailsElements = document.querySelectorAll('details');
-
-			// Iterate through each details element
-			detailsElements.forEach(function (details) {
-				// Check if the current details element is not the one being clicked
-				if (details.id !== currentId) {
-					// Close the details element
-					details.removeAttribute('open');
+		function closeOtherDetails(id) {
+			const details = document.getElementsByTagName('details');
+			for (let i = 0; i < details.length; i++) {
+				if (details[i].id !== id) {
+					details[i].removeAttribute('open');
 				}
-			});
+			}
 		}
 	</script>
 	<style>
@@ -113,6 +108,10 @@
 							<h4>Interview Questions</h4>
 							<li class="nav-item"><a class="nav-link"
 									href="../spring/spring-interview-questions.html">Spring Interview</a>
+							</li>
+							<li class="nav-item"><a class="nav-link"
+									href="../spring/spring-security-interview-questions.html">Spring Security
+									Interview</a>
 							</li>
 						</ul>
 					</li>
@@ -232,7 +231,7 @@
 								</div>
 							</details></br>
 							<h4>
-								<b>1. Spring Advanced Interview Questions</b>
+								<b>2. Spring Advanced Interview Questions</b>
 							</h4>
 							<details id="details1" onclick="closeOtherDetails('details1')">
 								<summary>1. What do you understand by Dependency Injection?</summary>

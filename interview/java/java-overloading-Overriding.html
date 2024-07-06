@@ -131,11 +131,11 @@
 							<li class="nav-item"><a class="nav-link" href="../java/java-collections.html">Java
 									Collections </a></li>
 							<li class="nav-item"><a class="nav-link" href="../java/java-list.html">Java
-									LinkedList </a></li>
+									List </a></li>
 							<li class="nav-item"><a class="nav-link" href="../java/java-set.html">Java
-									LinkedList </a></li>
+									Set </a></li>
 							<li class="nav-item"><a class="nav-link" href="../java/java-map.html">Java
-									HashMap</a></li>
+									Map</a></li>
 						</ul>
 					</li>
 				</div>
@@ -167,9 +167,529 @@
 				</nav>
 				<article>
 					<div>
-						<h4> Overloading and Overriding Interview Questions</h4>
 						<div class="card-body">
+							<h4><b>Method Overloading and Overriding Interview Questions</b></h4>
+							<br>
 
+							<details onclick="closeOtherDetails('details1')">
+								<summary>1. What is method overloading in Java?</summary>
+								<div class="toggle-content">
+									<p>If two or more methods have same name, but different argument then it is
+										called
+										method overloading.<br>
+										Method overloading is a feature in Java that allows a class to have more
+										than one
+										method with the same name, as long as the methods have different parameter
+										lists.
+										This can be a useful way of providing different behavior for a method
+										depending on
+										the context in which it is called.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>2. What are rules of method overloading?</summary>
+								<div class="toggle-content">
+									<p>
+									<table>
+										<tbody>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Number of
+														Arguments</b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Overloaded method
+													can have
+													different number of arguments</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Date type</b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Overload method
+													can have
+													different data type for argument</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Return type</b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Return type can be
+													changed
+													but either number of argument or data type of argument should
+													also be
+													changed.</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Order of
+														arguments</b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">If you change
+													sequence of
+													arguments then it is also valid method overloading provided you
+													have
+													different data types arguments.</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Constructor</b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Can be overloaded
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>3. Can we change only return type while method overloading?</summary>
+								<div class="toggle-content">
+									<p>You can not.If we change only return type, it will become ambiguous for
+										compiler to
+										figure out which method to call.That is why you can not change only return
+										type.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>4. Can we overload static and main method in java?</summary>
+								<div class="toggle-content">
+									<p>Yes, we can overload static methods in java but we can not override them.<br>
+										you can overload main method in java but only method with signature public
+										static
+										void main(String[] args) will be used when your class is invoked by JVM.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>5. Can overloaded method be overrided?</summary>
+								<div class="toggle-content">
+									<p>Yes, we can override a method which is overloaded in super class.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>6. Can we declare one overloaded method as static and another one as
+									non-static?
+								</summary>
+								<div class="toggle-content">
+									<p>Yes. Overloaded methods can be either static or non static.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>7. How do compiler differentiate overloaded methods from duplicate methods?
+								</summary>
+								<div class="toggle-content">
+									<p>Compiler uses method signature to check whether the method is overloaded or
+										duplicated. Duplicate methods will have same method signatures i.e same
+										name, same
+										number of arguments and same types of arguments. Overloaded methods will
+										also have
+										same name but differ in number of arguments or else types of arguments.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>8. What is method overriding in Java?</summary>
+								<div class="toggle-content">
+									<p>Method overriding is another way to define a method with same name but
+										different code
+										but it must be in subclass. Overriding is based upon run-time Polymorphism
+										as method
+										calls are resolved at run-time depending upon actual object.
+										<br>
+										For example if a variable of type Parent holds an object of Child class then
+										method
+										invoked will be from child class and not parent class, provides its
+										overridden.
+										<br>
+										In order to override a method, you must follow rules of method overriding
+										which
+										means declaring method with same signature in sub class. See here to learn
+										more
+										about method overriding in Java.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>9. Can we override static method in Java?</summary>
+								<div class="toggle-content">
+									<p>No, you cannot override static method in Java because they are resolved and
+										bonded
+										during compile time. Since overriding is a run-time activity and if a method
+										call is
+										already resolved at compile time then it will not take place and that's why
+										it's not
+										possible to override static method in Java.
+										<br>
+										But, you can define another static method of same signature in sub class,
+										this is
+										known as method hiding. Actual method called will depends upon the type of
+										class and
+										not on type of object as its the case with overriding. See here to learn
+										more about
+										why you cannot override static method in Java.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>10. Can we override a private method in Java?</summary>
+								<div class="toggle-content">
+									<p>No, you cannot override private method in Java. Since private methods are not
+										visible
+										outside the class, they are not available in sub-class hence they cannot be
+										overridden.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>11. What is covariant method overriding?</summary>
+								<div class="toggle-content">
+									<p>One of the rule of method overriding is that return type of overriding method
+										must be
+										same as overridden method but this restriction is relaxed little bit from
+										Java 1.5
+										and now overridden method can return sub class of return type of original
+										method.
+										<br>
+										This relaxation is known as co-variant method overriding and it allows you
+										to remove
+										casting at client end.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>12. What are rules of method overriding?</summary>
+								<div class="toggle-content">
+									<p>
+									<table style="margin-left: 0px; margin-right: 0px; text-align: left;">
+										<tbody>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Arguments</b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Must not change
+												</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Return type</b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Can’t change
+													except for
+													covariant (subtype) returns</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Access
+														Modifier</b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Must not be more
+													restrictive. Can be less restrictive.</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Exceptions </b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Can reduce or
+													eliminate
+													but must not throw new/broader checked exceptions</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Contructor</b>
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Can not be
+													overridden</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>Static
+														method</b></td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Can not be
+													overridden</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;"><b>final
+														method</b></td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Can not
+													be&nbsp;overridden
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>13. Can we change argument list of overridden method?</summary>
+								<div class="toggle-content">
+									<p>No, you cannot change the argument list of overridden method in Java. An
+										overriding
+										method must have same signature as original method. Only return type can be
+										changed
+										that to only to sub type of return type of original method.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>14. Can we change return type of method in subclass while overriding?
+								</summary>
+								<div class="toggle-content">
+									<p>No, you cannot change the return type of method during overriding. It would
+										be
+										violation of rules of overriding. Though from Java 5 onward you can replace
+										the
+										return type with sub type e.g. if original method has return type as
+										java.lang.Object then you can change return type of overridden method as any
+										type
+										e.g. clone() method.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>15. Can we override a method which throws run-time exception without throws
+									clause?
+								</summary>
+								<div class="toggle-content">
+									<p>Yes, you can. There is no restriction on throwing RuntimeException from
+										overriding
+										method. So if your original method throws NullPointerException than its not
+										necessary to throw NPE from overriding method as well.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>16. How do you call super class version of an overriding method in sub
+									class?
+								</summary>
+								<div class="toggle-content">
+									<p>You can call it using super keyword. For example if you have a method
+										calculate() in
+										both parent and child class then from child class you can invoke parent
+										class method
+										calculate() as super.calculate().</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>17. Can we override a non-static method as static in Java?</summary>
+								<div class="toggle-content">
+									<p>No, its not possible to define a non-static method of same name as static
+										method in
+										parent class, its compile time error in Java. See here to learn more about
+										the
+										overriding static method in Java.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>18. Can we override the constructor in Java?</summary>
+								<div class="toggle-content">
+									<p>No, you cannot override constructors in Java because they are not inherited.
+										Remember, we are talking about overriding here not overloading, you can
+										overload
+										construct but you cannot override them.<br>
+										Overriding always happens in child class and since constructors are not
+										inherited
+										and their name is always the same as the class name it's not possible to
+										override
+										them in Java.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>19. Can we override a final method in Java?</summary>
+								<div class="toggle-content">
+									<p>No, you cannot override a final method in Java. Trying to override a final
+										method in
+										a subclass will result in a compile-time error. Actually making a method
+										final is
+										signal to all developer that this method is not for inheritance and it
+										should be
+										used in its present form. You generally make a method final due to security
+										reasons.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>20. Difference Between Method Overloading and Method Overriding in Java
+								</summary>
+								<div class="toggle-content">
+									<p>
+									<table border="1">
+										<tbody>
+											<tr>
+												<td style="width: 50%;"><strong>Method Overloading</strong></td>
+												<td style="width: 50%;"><strong>Method Overriding</strong></td>
+											</tr>
+											<tr>
+												<td style="width: 50%;">
+													<ul>
+														<li>It is used to increase the readability of the program
+														</li>
+													</ul>
+												</td>
+												<td style="width: 50%;">
+													<ul>
+														<li>Provides a specific implementation of the method already
+															in the
+															parent class</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 50%;">
+													<ul>
+														<li>It is performed within the same class</li>
+													</ul>
+												</td>
+												<td style="width: 50%;">
+													<ul>
+														<li>It involves multiple classes</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 50%;">
+													<ul>
+														<li>Parameters must be different in case of overloading</li>
+													</ul>
+												</td>
+												<td style="width: 50%;">
+													<ul>
+														<li>Parameters must be same in case of overriding</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 50%;">
+													<ul>
+														<li>Is an example of compile-time polymorphism</li>
+													</ul>
+												</td>
+												<td style="width: 50%;">
+													<ul>
+														<li>It is an example of runtime polymorphism</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 50%;">
+													<ul>
+														<li>In java, method overloading can't be performed by
+															changing
+															return type of the method only. Return type can be same
+															or
+															different in method overloading. But you must have to
+															change the
+															parameter.</li>
+													</ul>
+												</td>
+												<td style="width: 50%;">
+													<ul>
+														<li>Return type must be same or covariant in method
+															overriding.</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 50%;">
+													<ul>
+														<li>Static methods can be overloaded</li>
+													</ul>
+												</td>
+												<td style="width: 50%;">
+													<ul>
+														<li>Overriding does not involve static methods.</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 50%;">
+													<ul>
+														<li>Method overloading is performed within class.</li>
+													</ul>
+												</td>
+												<td style="width: 50%;">
+													<ul>
+														<li>Method overriding occurs in two classes that have IS-A
+															(inheritance) relationship.</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 50%;">
+													<ul>
+														<li>Poor Performance due to compile time polymorphism.</li>
+													</ul>
+												</td>
+												<td style="width: 50%;">
+													<ul>
+														<li>It gives better performance. The reason behind this is
+															that the
+															binding of overridden methods is being done at runtime.
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td style="width: 50%;">
+													<ul>
+														<li>Private and final methods can be overloaded.</li>
+													</ul>
+												</td>
+												<td style="width: 50%;">
+													<ul>
+														<li>Private and final methods can’t be overridden.</li>
+													</ul>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>21. Advantages of Covariant Return Type?</summary>
+								<div class="toggle-content">
+									<p>Before Java5, it was not possible to override any method by changing the
+										return type.
+										But now, since Java5, it is possible to override method by changing the
+										return type
+										if subclass overrides any method whose return type is Non-Primitive but it
+										changes
+										its return type to subclass type<br>
+										Following are the advantages of the covariant return type.
+										<br>
+										1) Covariant return type assists to stay away from the confusing type casts
+										in the
+										class hierarchy and makes the code more usable, readable, and maintainable.
+										<br>
+										2) In the method overriding, the covariant return type provides the liberty
+										to have
+										more to the point return types.
+										<br>
+										3) Covariant return type helps in preventing the run-time
+										ClassCastExceptions on
+										returns.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>22. Java Access Modifiers with Method Overriding?</summary>
+								<div class="toggle-content">
+									<p>If you are overriding any method, overridden method (i.e. declared in
+										subclass) must
+										not be more restrictive.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>23. Exception Handling with Method Overriding in Java</summary>
+								<div class="toggle-content">
+									<p>
+									<ul class="points">
+										<li><strong>If the superclass method does not declare an exception</strong>
+											<ul class="points">
+												<li>If the superclass method does not declare an exception, subclass
+													overridden method cannot declare the checked exception but it
+													can
+													declare unchecked exception.</li>
+											</ul>
+										</li>
+										<li><strong>If the superclass method declares an exception</strong>
+											<ul class="points">
+												<li>If the superclass method declares an exception, subclass
+													overridden
+													method can declare same, subclass exception or no exception but
+													cannot
+													declare parent exception.</li>
+											</ul>
+										</li>
+									</ul>
+									</p>
+								</div>
+							</details></br>
 						</div>
 				</article>
 			</div>

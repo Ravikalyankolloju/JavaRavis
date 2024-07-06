@@ -131,11 +131,11 @@
 							<li class="nav-item"><a class="nav-link" href="../java/java-collections.html">Java
 									Collections </a></li>
 							<li class="nav-item"><a class="nav-link" href="../java/java-list.html">Java
-									LinkedList </a></li>
+									List </a></li>
 							<li class="nav-item"><a class="nav-link" href="../java/java-set.html">Java
-									LinkedList </a></li>
+									Set </a></li>
 							<li class="nav-item"><a class="nav-link" href="../java/java-map.html">Java
-									HashMap</a></li>
+									Map</a></li>
 						</ul>
 					</li>
 				</div>
@@ -165,9 +165,322 @@
 				</nav>
 				<article>
 					<div>
-						<h4>Java Polymorphism Interview Questions</h4>
 						<div class="card-body">
-
+							<h4><b>Java Polymorphism Interview Questions</b></h4>
+							<br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>1. What is Polymorphism in Java OOPs?</summary>
+								<div class="toggle-content">
+									<p>Polymorphism in java is one of the core concepts of object-oriented
+										programming
+										system. Polymorphism means “many forms” in Greek. That is one thing that can
+										take
+										many forms.
+										<br>
+										Polymorphism is a concept by which we can perform a single task in different
+										ways.
+										That is, when a single entity (object) behaves differently in different
+										cases, it is
+										called polymorphism.
+										<br>
+										In other words, if a single object shows multiple forms or multiple
+										behaviors, it is
+										called polymorphism.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>2. What are the types of Polymorphism in Java?</summary>
+								<div class="toggle-content">
+									<p>There are two types of polymorphism in java. They are:<br>
+									<ul style="list-style-type: square;">
+										<li>Static polymorphism (Compile time Polymorphism)</li>
+										<li>Dynamic polymorphism (Runtime Polymorphism)</li>
+									</ul>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>3. What are different ways to achieve or implement polymorphism in Java?
+								</summary>
+								<div class="toggle-content">
+									<p>Polymorphism in Java can be primarily achieved by subclassing or by
+										implementing an
+										interface. The subclasses can have their own unique implementation for
+										certain
+										features and can also share some of the functionality through inheritance.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>4. How is Inheritance useful to achieve Polymorphism in Java?</summary>
+								<div class="toggle-content">
+									<p>Inheritance represents the parent-child relationship between two classes and
+										polymorphism take the advantage of that relationship to add dynamic behavior
+										in the
+										code (or to make the program more dynamic).</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>5. What are the differences between Polymorphism and Inheritance in Java?
+								</summary>
+								<div class="toggle-content">
+									<p>The differences between polymorphism and inheritance in java are as follows:
+										<br>
+										a. Inheritance represents the parent-child relationship between two classes.
+										On the
+										other hand, polymorphism takes the advantage of that relationship to make
+										the
+										program more dynamic.
+										<br>
+										b. Inheritance helps in code reusability in child class by inheriting
+										behavior from
+										parent class. On the other hand, polymorphism enables child class to
+										redefine
+										already defined behavior inside parent class.
+										<br>
+										Without polymorphism, it is not possible for a child class to execute its
+										own
+										behavior.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>6. What is Compile time polymorphism (Static polymorphism)?</summary>
+								<div class="toggle-content">
+									<p>A polymorphism where object binding with methods happens at compile time is
+										called
+										static polymorphism or compile-time polymorphism.
+										<br>
+										In static polymorphism, the behavior of method is decided at compile-time
+										based on
+										the parameters or arguments of method.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>7. How to achieve or implement static polymorphism in Java?</summary>
+								<div class="toggle-content">
+									<p>Static polymorphism can be achieved by method overloading. Other examples of
+										compile
+										time polymorphism are constructor overloading and method hiding.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>8. What is Runtime Polymorphism (Dynamic Polymorphism)?</summary>
+								<div class="toggle-content">
+									<p>A polymorphism where object binding with methods happens at runtime is called
+										runtime
+										polymorphism. In runtime polymorphism, the behavior of a method is decided
+										at
+										runtime.
+										<br>
+										JVM (Java Virtual Machine) binds the method call with method definition/body
+										at
+										runtime and invokes the relevant method during runtime when the method is
+										called.
+										This happens because objects are created at runtime and the method is called
+										using
+										an object of the class.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>9. How to achieve/implement dynamic polymorphism in Java?</summary>
+								<div class="toggle-content">
+									<p>Dynamic or runtime polymorphism can be achieved or implemented via method
+										overriding
+										in java. It is another way to implement polymorphism and a common approach
+										when we
+										have an IS-A relationship.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>10. What are the differences between compile-time polymorphism and runtime
+									polymorphism in java?</summary>
+								<div class="toggle-content">
+									<p>There are three main differences between compile-time polymorphism and
+										runtime
+										polymorphism that are as follows:</p>
+									<p>
+										a) In the compile-time polymorphism, the behavior of a method is decided at
+										compile-time. Hence, Java compiler binds method calls with method
+										definition/body
+										during compilation.</p>
+									<p>
+										In runtime polymorphism, the behavior of a method is decided at runtime, JVM
+										binds
+										the method call with method definition at runtime and invokes the relevant
+										method
+										during runtime when the method is called.</p>
+									<p>
+										b) Compile time polymorphism is also known as early binding because the
+										binding is
+										performed at compile time.</p>
+									<p>
+										Runtime polymorphism is also known as late binding because the binding is
+										performed
+										at runtime.</p>
+									<p>
+										c) Compile time polymorphism can be achieved via method overloading.</p>
+									<p>
+										Runtime polymorphism can be achieved via method overriding.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>11. How is an abstract class related to polymorphism in Java?</summary>
+								<div class="toggle-content">
+									<p>Polymorphism in Java allows objects of different classes to be treated as if
+										they
+										were of the same type. An abstract class can be used as a base class for
+										creating
+										objects of its subclasses, and these objects can be treated as if they were
+										of the
+										abstract class type. This allows for polymorphic behavior, where different
+										subclasses can have their own implementation of the abstract methods defined
+										in the
+										abstract class.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>12. Understand the benefits and drawbacks:</summary>
+								<div class="toggle-content">
+									<p>Polymorphism has several benefits, including code reuse and flexibility.
+										However, it
+										can also lead to performance issues and increased complexity. Make sure you
+										understand the advantages and disadvantages of using polymorphism in Java.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>13. What are the differences between method overloading and method
+									overriding?
+								</summary>
+								<div class="toggle-content">
+									<p>
+									<table border="1" cellpadding="1" cellspacing="1"
+										style="width:95%;font-size: 0.999rem;" class="table">
+										<thead>
+											<tr>
+												<th>Type</th>
+												<th>Overloaded Method</th>
+												<th>Overloaded Method</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Arguments</td>
+												<td>Must change</td>
+												<td>Must not change</td>
+											</tr>
+											<tr>
+												<td>Return type</td>
+												<td>Can change</td>
+												<td>Can‟t change except for covariant returns</td>
+											</tr>
+											<tr>
+												<td>Exceptions</td>
+												<td>Can change</td>
+												<td>Can reduce or eliminate. Must not throw new or broader checked
+													exceptions.</td>
+											</tr>
+											<tr>
+												<td>Access</td>
+												<td>Can change</td>
+												<td>Must not make more restrictive (can be less restrictive)</td>
+											</tr>
+											<tr>
+												<td>Invocation</td>
+												<td>Reference type determines which overloaded version is selected.
+													Happens
+													at compile time.</td>
+												<td>Object type determines which method is selected. Happens at
+													runtime.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>14. What is the difference between compile-time polymorphism and runtime
+									polymorphism?</summary>
+								<div class="toggle-content">
+									<p>
+									<table style="margin-left: 0px; margin-right: 0px; text-align: left;">
+										<tbody>
+											<tr>
+												<th style="border: 1px solid #ccc; padding: 5px;">SN</th>
+												<th style="border: 1px solid #ccc; padding: 5px;">compile-time
+													polymorphism
+												</th>
+												<th style="border: 1px solid #ccc; padding: 5px;">Runtime
+													polymorphism</th>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;">1</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">In compile-time
+													polymorphism, call to a method is resolved at
+													compile-time.</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">In runtime
+													polymorphism,
+													call to an overridden method is resolved at
+													runtime.</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;">2</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">It is also known
+													as static
+													binding, early binding, or overloading.</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">It is also known
+													as
+													dynamic binding, late binding, overriding, or
+													dynamic method dispatch.</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;">3</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Overloading is a
+													way to
+													achieve compile-time polymorphism in which, we
+													can define multiple methods or constructors with different
+													signatures.
+												</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Overriding is a
+													way to
+													achieve runtime polymorphism in which, we can
+													redefine some particular method or variable in the derived
+													class. By
+													using overriding, we can give some specific implementation to
+													the base
+													class properties in the derived class.</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;">4</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">It provides fast
+													execution
+													because the type of an object is determined
+													at compile-time.</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">It provides slower
+													execution as compare to compile-time because the type
+													of an object is determined at run-time.</td>
+											</tr>
+											<tr>
+												<td style="border: 1px solid #ccc; padding: 5px;">5</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Compile-time
+													polymorphism
+													provides less flexibility because all the
+													things are resolved at compile-time.</td>
+												<td style="border: 1px solid #ccc; padding: 5px;">Run-time
+													polymorphism
+													provides more flexibility because all the things
+													are resolved at runtime.</td>
+											</tr>
+										</tbody>
+									</table>
+									</p>
+								</div>
+							</details></br>
 						</div>
 				</article>
 			</div>

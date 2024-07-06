@@ -131,11 +131,11 @@
 							<li class="nav-item"><a class="nav-link" href="../java/java-collections.html">Java
 									Collections </a></li>
 							<li class="nav-item"><a class="nav-link" href="../java/java-list.html">Java
-									LinkedList </a></li>
+									List </a></li>
 							<li class="nav-item"><a class="nav-link" href="../java/java-set.html">Java
-									LinkedList </a></li>
+									Set </a></li>
 							<li class="nav-item"><a class="nav-link" href="../java/java-map.html">Java
-									HashMap</a></li>
+									Map</a></li>
 						</ul>
 					</li>
 				</div>
@@ -165,9 +165,461 @@
 				</nav>
 				<article>
 					<div>
-						<h4>Java Encapsulation Interview Questions</h4>
 						<div class="card-body">
+							<h4><b>Java Encapsulation Interview Questions</b></h4>
+							<br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>1. What is Encapsulation in Java?</summary>
+								<div class="toggle-content">
+									<p>Encapsulation is the main concept of OOPs (Object-Oriented programming).
+										Encapsulation means wrapping or binding data and methods in a single unit.
+										It is
+										also known as data hiding. Data hiding means it derived the result of a
+										specific
+										class. This also means that is not directly accessible. Data in
+										Encapsulation is
+										private, the results of the data are called by using different methods. The
+										code is
+										wrapped in such a way that it cannot be randomly accessed by other codes
+										outside the
+										class.<br>
+										Encapsulation Rules:
+										<br>
+										Always make-instance variable private.<br>
+										Always make public accessor methods and force calling code to these methods
+										instead
+										of directly calling the instance variable.<br>
+										Use naming convention set() and get for these methods.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>2. How Encapsulation is helpful in Java?</summary>
+								<div class="toggle-content">
+									<p>
+									<ol>
+										<li>Encapsulated codes can be tested easily. Encapsulation helps in securing
+											the
+											code.</li>
 
+										<li>To do changes in the Encapsulated code is easy as we can change in a
+											code or
+											class without
+											affecting other code or classes.
+										</li>
+
+										<li>Encapsulated code can be reused and maintained for data hiding.</li>
+									</ol>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>3. What are the advantages of Encapsulation?</summary>
+								<div class="toggle-content">
+									<p>
+									<ol>
+										<li><b>Security: </b>It keeps the codes and data safe from external
+											inheritance.
+										</li>
+										<li><b>Flexibility: </b> It keeps the codes and data safe from external
+											inheritance.
+										</li>
+										<li><b>Easy unit testing: </b>As all data is encapsulated or wrapped in a
+											single
+											unit the code
+											testing becomes easier.
+										</li>
+										<li><b>Reuse of code: </b>It allows modifying implemented code without
+											breaking
+											other code that
+											has implemented the code.
+										</li>
+
+										<li>Encapsulation in Java is used for data hiding.</li>
+										<li>It is helpful to reuse the code.</li>
+										<li>Unit testing is very easy for an encapsulated code.</li>
+										<li>Encapsulated code is easy to maintain like we can change in a code or
+											class
+											without
+											affecting other code or classes.</li>
+										<li>Encapsulation helps to make our code secure.</li>
+									</ol>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>4. What are the difference between data hiding and Encapsulation?</summary>
+								<div class="toggle-content">
+									<p>Data hiding and encapsulation both are important concepts of object-oriented
+										programming.
+										<br>
+										Data hiding means protecting the variable of a class from outside world
+										access.
+										Encapsulation means wrapping or binding data in a single unit.
+										<br>
+										The core differences between data hiding and encapsulation are :<br>
+									<table border="1" cellpadding="1" cellspacing="1"
+										style="width:95%;font-size: 0.999rem;" class="table">
+										<tbody>
+											<tr style="background-color: #f8fcff;">
+												<td style="text-align: center;width: 40vw;">
+													<h5>Data hiding</h5>
+												</td>
+												<td style="text-align: center;width: 40vw;">
+													<h5>Encapsulation</h5>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p>Data hiding more focuses on securing the data along with
+														hiding.</p>
+												</td>
+												<td>
+													<p>Encapsulation focuses more on wrapping data to make classes
+														and the
+														methods in the
+														simplest form for the system.</p>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p>It is a technique and process both.</p>
+												</td>
+												<td>
+													<p>It is a sub-process in data hiding.</p>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p>The data is always private and inaccessible.</p>
+												</td>
+												<td>
+													<p>The data may be private or public.</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>5. Where Encapsulation is used?</summary>
+								<div class="toggle-content">
+									<p>Encapsulation is used in various design patterns and real-life problems that
+										make use
+										of the Encapsulation object-oriented concept. It is used to hide the values
+										or state
+										of a structured data object inside a class, preventing unauthorized parties
+										direct
+										access to them.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>6. What are the difference between Encapsulation and Inheritance?</summary>
+								<div class="toggle-content">
+									<p>
+									<table border="1" cellpadding="1" cellspacing="1"
+										style="width:95%;border: 1px solid #000;font-size: 0.999rem;" class="table">
+										<tbody>
+											<tr mode="sticky" style="background-color: #f8fcff;">
+												<td style="text-align: center;width: 5vw;">
+													<h5>Difference</h5>
+												</td>
+												<td style="text-align: center;width: 45vw;">
+													<h5>Encapsulation</h5>
+												</td>
+												<td style="text-align: center;width: 45vw;">
+													<h5>Inheritance</h5>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p>Basic</p>
+												</td>
+												<td>
+													<p>Encapsulation in Java is the process of enclosing variables
+														and
+														methods code that
+														perform on data as a single unit. It hides a class's
+														variables,
+														helping to make them
+														unreachable from outside the class.</p>
+												</td>
+												<td>
+													<p>Inheritance is the process of creating a new class by using
+														an
+														existing class in a
+														function. In other words, inheritance is a process where a
+														child
+														class /subclass
+														inherits all the properties and behaviors of the parent
+														class/superclass.</p>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p>Focus</p>
+												</td>
+												<td>
+													<p>It focuses on minimizing the complex system. It mainly works
+														in
+														Design patterns.</p>
+												</td>
+												<td>
+													<p>It focuses on behavior and attributes of a parent class is
+														inherited
+														by the child
+														class.</p>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<p>Conclusion</p>
+												</td>
+												<td>
+													<p>The result is derived by calling a particular class without
+														affecting
+														other
+														classes.</p>
+												</td>
+												<td>
+													<p>The result is derived by calling each class that is
+														inherited.</p>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<p>Process</p>
+												</td>
+												<td>
+													<p>Encapsulation has methods in which there is one main class
+														and other
+														sub-classes
+														(private, protected, public).</p>
+												</td>
+												<td>
+													<p>Types of inheritance are FIVE :
+													</p>
+													<ol>
+														<li>Single Inheritance</li>
+
+														<li>Multilevel Inheritance</li>
+
+														<li>Hierarchical Inheritance</li>
+
+														<li>Multiple Inheritance (Through Interface)</li>
+
+														<li>Hybrid Inheritance (Through Interface)</li>
+													</ol>
+													<p></p>
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>7. What is the difference between Encapsulation and Abstraction?</summary>
+								<div class="toggle-content">
+									<p>
+									<ol>
+										<li>Definition: Encapsulation is wrapping or binding data in a single unit.
+										</li>
+
+										<li>Abstraction is hiding the implementation details from the user.</li>
+
+										<li>Encapsulation solves the problem at an implementation level. Abstraction
+											solves
+											the problem
+											at a design level.
+										</li>
+
+										<li>Encapsulation is used for code binding in single-unit to protect from
+											the
+											outside world.
+										</li>
+
+										<li>Abstraction is used for hiding unwanted data and giving results for
+											relevant
+											data.</li>
+
+										<li>Encapsulation focus on an object, its behavior and properties, and what
+											it does.
+										</li>
+
+										<li>Abstraction only focuses on the object and not how it works.</li>
+
+										<li>Example of Encapsulation: Laptop: Inner implementation of the laptop,
+											display
+											screen, and
+											buttons are connected using different circuits. (sample code is to be
+											given).
+										</li>
+
+										<li>Example of Abstraction: Laptop: Outer look of laptop, screen size,
+											keyboard.
+										</li>
+
+									</ol>
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>8. Why Encapsulation is called Data hiding in Java?</summary>
+								<div class="toggle-content">
+									<p>Encapsulation is a technique whereby the implementation details of a class
+										are kept
+										hidden
+										from the user. In other words, the variable of the class is hidden and is
+										accessed
+										only by
+										using methods. Therefore, it is also known as data hiding.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>9. What are the advantages of using Encapsulation?</summary>
+								<div class="toggle-content">
+									<p>Encapsulation can be achieved by declaring all the variables in the class as
+										private
+										and
+										writing public methods in the class to set and get the values of the
+										variables.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>10. How does getter and setter functions help in encapsulation?</summary>
+								<div class="toggle-content">
+									<p>In encapsulation, the getters and setters method is because to hide the
+										attributes of
+										an
+										object class from other classes so that no accidental modification of the
+										data
+										happens by
+										methods in other classes.<br> Example:
+										<br>
+										Declare class variables/attributes as private.<br>
+										Provide public get and set methods to access and update the value of a
+										private
+										variable.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>11.What is the difference between Encapsulation and Polymorphism?</summary>
+								<div class="toggle-content">
+									<p>Packaging data and methods in a single unit are Encapsulation. Their own
+										methods are
+										used for
+										accessing the data which are hidden in the objects.
+										<br>
+										The word polymorphism means Poly means many and morph means form.
+										<br>
+										Polymorphism means the ability to take more than one form by using a single
+										interface. when
+										single or many types are not defined by name it represents any type by using
+										abstract
+										symbols. Polymorphism is a process used for implementing inherited data.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>12. What do you understand by interfaces and abstract classes? How do they
+									help
+									with encapsulation?</summary>
+								<div class="toggle-content">
+									<p>Interfaces and abstract classes help with encapsulation by allowing you to
+										specify
+										the behavior of a class without having to provide a concrete implementation.
+										This
+										means that you can hide the details of how a class works from the outside
+										world, and
+										only expose the interface that you want other classes to use. This makes it
+										much
+										easier to change the internals of a class without breaking any code that
+										depends on
+										it.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>13. Why should we use private constructors?</summary>
+								<div class="toggle-content">
+									<p>Private constructors are used in order to prevent a class from being
+										instantiated.
+										This is often done in order to enforce the Singleton pattern, where only one
+										instance of a class is allowed to exist.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>14. What are some ways to achieve encapsulation in Java?</summary>
+								<div class="toggle-content">
+									<p>There are a few ways to achieve encapsulation in Java. One way is to make all
+										fields
+										in a class private, and then provide getter and setter methods for accessing
+										those
+										fields. Another way is to use the JavaBeans convention of using only getters
+										and
+										setters, and keeping all fields private.</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>15. How to achieve Data hiding programmatically?</summary>
+								<div class="toggle-content">
+									<p>By declaring data members (variables) as private, we can achieve or implement
+										data
+										hiding. If the variables are declared as private in the class, nobody can
+										access
+										them
+										from outside the class.
+										<br>
+										The biggest advantage of data hiding is we can achieve security.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>16. Does reflection violates encapsulation in Java?</summary>
+								<div class="toggle-content">
+									<p>Reflection violates encapsulation because it reveals the internal data
+										structures.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>17. Explain design pattern based on encapsulation in java?</summary>
+								<div class="toggle-content">
+									<p>In many design patterns, Java uses the encapsulation technique and one of
+										them is
+										Factory
+										pattern which is used to create the objects.
+										<br>
+										Factory pattern is a better choice in creating the object of those classes
+										whose
+										creation logic can vary. It is also used for creating different
+										implementations of
+										the
+										same interface.
+										<br>
+										‘BorderFactory class’ of JDK is a good example of encapsulation in Java
+										which
+										creates
+										different types of ‘border’ and encapsulates creation logic of border.
+									</p>
+								</div>
+							</details></br>
+							<details onclick="closeOtherDetails('details1')">
+								<summary>18. What is a Tightly encapsulated class in Java?</summary>
+								<div class="toggle-content">
+									<p>If each variable is declared as private in the class, it is called tightly
+										encapsulated
+										class in Java. For tightly encapsulated class, we are not required to check
+										whether
+										class contains getter and setter method or not and whether these methods are
+										declared as
+										public or not.</p>
+								</div>
+							</details></br>
 						</div>
 				</article>
 			</div>

@@ -164,395 +164,393 @@
 
 				</nav>
 				<article>
-					<div>
-						<div class="card-body">
-							<h4><b>Java Abstraction Interview Questions</b></h4>
-							<br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>1. What is Abstraction in Java?</summary>
-								<div class="toggle-content">
-									<p>In computer science terms, abstraction means separating ideas from their
-										actual
-										implementations.<br>
-										Abstraction in Java is a technique by which we can hide the data that is not
-										required
-										to users. It hides all unwanted data so that users can work only with the
-										required
-										data<br>Using abstraction, you define only ideas in one class so that those
-										ideas
-										can be implemented by its sub classes according to their requirments.<br>
-										In Java, abstraction is implemented by abstrat classes and interfaces.<br>
-										Abstract is a non-access modifier in java that is applicable for classes,
-										interfaces, methods, and inner classes.
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>2. How to achieve or implement Abstraction in Java?</summary>
-								<div class="toggle-content">
-									<p>There are two ways to implement abstraction in java. They are as follows:
-										<br>
-										a) Abstract class (0 to 100%)<br>
-										b) Interface (100%)
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>3. What is the difference between abstract class and concrete class?
-								</summary>
-								<div class="toggle-content">
-									<p>There are mainly two differences between an abstract class and concrete
-										class. They
-										are:<br>
+					<div class="card-body">
+						<h4><b>Java Abstraction Interview Questions</b></h4>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>1. What is Abstraction in Java?</summary>
+							<div class="toggle-content">
+								<p>In computer science terms, abstraction means separating ideas from their
+									actual
+									implementations.<br>
+									Abstraction in Java is a technique by which we can hide the data that is not
+									required
+									to users. It hides all unwanted data so that users can work only with the
+									required
+									data<br>Using abstraction, you define only ideas in one class so that those
+									ideas
+									can be implemented by its sub classes according to their requirments.<br>
+									In Java, abstraction is implemented by abstrat classes and interfaces.<br>
+									Abstract is a non-access modifier in java that is applicable for classes,
+									interfaces, methods, and inner classes.
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>2. How to achieve or implement Abstraction in Java?</summary>
+							<div class="toggle-content">
+								<p>There are two ways to implement abstraction in java. They are as follows:
+									<br>
+									a) Abstract class (0 to 100%)<br>
+									b) Interface (100%)
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>3. What is the difference between abstract class and concrete class?
+							</summary>
+							<div class="toggle-content">
+								<p>There are mainly two differences between an abstract class and concrete
+									class. They
+									are:<br>
 
-										a) We cannot create an object of abstract class. Only objects of its
-										non-abstract
-										(or concrete) sub classes can be created.
-										<br>
-										b) It can have zero or more abstract methods that are not allowed in a
-										non-abstract
-										class (concrete class).
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>4. When to use Abstract method in Java?</summary>
-								<div class="toggle-content">
-									<p>An abstract method can be used
-										<br>
-										a) When the same method has to perform different tasks depending on the
-										object
-										calling it.<br>
-										b) When you need to be overridden in its non-abstract subclasses.
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>5. Is abstract class a pure abstraction in Java?</summary>
-								<div class="toggle-content">
-									<p>No, It provides 0 to 100% abstraction.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>6. Is it possible to create an object of abstract class in Java?</summary>
-								<div class="toggle-content">
-									<p>No. It is not possible but we can create an object of its subclass.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>7. Is it possible that an abstract class can have without any abstract
-									method?
-								</summary>
-								<div class="toggle-content">
-									<p>Yes.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>8. Can an abstract class have constructor?</summary>
-								<div class="toggle-content">
-									<p>Yes.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>9. Is abstract class allow to define private, final, static, and concrete
-									methods?
-								</summary>
-								<div class="toggle-content">
-									<p>Yes.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>10. Is it possible to achieve multiple inheritance through abstract class?
-								</summary>
-								<div class="toggle-content">
-									<p>No.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>11. Why abstract class has constructor even though you cannot create
-									object?
-								</summary>
-								<div class="toggle-content">
-									<p>We cannot create an object of abstract class but we can create an object of
-										subclass
-										of abstract class. When we create an object of subclass of an abstract
-										class, it
-										calls the constructor of subclass.
-										<br>
-										This subclass constructor has a super keyword in the first line that calls
-										constructor of an abstract class. Thus, the constructors of an abstract
-										class are
-										used from constructor of its subclass.
-										<br>
-										If the abstract class doesn’t have constructor, a class that extends that
-										abstract
-										class will not get compiled.
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>12. What is the advantage of Abstract class in Java?</summary>
-								<div class="toggle-content">
-									<p>The main advantages of using abstract class are as follows:
-										<br>
-										Abstract class makes programming better and more flexible by giving the
-										scope of
-										implementing abstract methods.<br>
-										Programmer can implement abstract method to perform different tasks
-										depending on the
-										need.<br>It is helpful in hiding unwanted details from users.<br>
-										We can easily manage code.
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>13. What are the differences between Abstraction and Encapsulation?
-								</summary>
-								<div class="toggle-content">
-									<p>
-									<table border="1" cellpadding="1" cellspacing="1"
-										style="width:95%;border: 1px solid #000;font-size: 0.999rem;" class="table">
-										<tbody>
-											<tr mode="sticky" style="background-color: #f8fcff;">
-												<td style="text-align: center;width: 5vw;">
-													<h5>Difference</h5>
-												</td>
-												<td style="text-align: center;width: 45vw;">
-													<h5>Abstraction</h5>
-												</td>
-												<td style="text-align: center;width: 45vw;">
-													<h5>Encapsulation</h5>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>Basic</p>
-												</td>
-												<td>
-													<p>Abstraction means hiding details from the users and showing
-														only
-														necessary details to
-														the users.</p>
-												</td>
-												<td>
-													<p>Encapsulation means binding data in a single unit.</p>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>Focus</p>
-												</td>
-												<td>
-													<p>
-														Abstraction solves the problem at the <b>design
-															level</b>.<br>
-														Abstraction only focuses on the object and not how it works.
-													</p>
-												</td>
-												<td>
-													<p>Encapsulation solves the problem at the <b>implementation
-															level</b>.
-													</p>
-													<p>Encapsulation focus on an binding data in one unit and
-														implementing
-														its object, its
-														behavior and properties, and what it does.
-													</p>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>Conclusion</p>
-												</td>
-												<td>
-													<p>Abstraction breaks the <b>complexity</b> of the data.</p>
-												</td>
-												<td>
-													<p>Encapsulation maintains the <b>flexibility</b> of the data.
-													</p>
-												</td>
-											</tr>
+									a) We cannot create an object of abstract class. Only objects of its
+									non-abstract
+									(or concrete) sub classes can be created.
+									<br>
+									b) It can have zero or more abstract methods that are not allowed in a
+									non-abstract
+									class (concrete class).
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>4. When to use Abstract method in Java?</summary>
+							<div class="toggle-content">
+								<p>An abstract method can be used
+									<br>
+									a) When the same method has to perform different tasks depending on the
+									object
+									calling it.<br>
+									b) When you need to be overridden in its non-abstract subclasses.
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>5. Is abstract class a pure abstraction in Java?</summary>
+							<div class="toggle-content">
+								<p>No, It provides 0 to 100% abstraction.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>6. Is it possible to create an object of abstract class in Java?</summary>
+							<div class="toggle-content">
+								<p>No. It is not possible but we can create an object of its subclass.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>7. Is it possible that an abstract class can have without any abstract
+								method?
+							</summary>
+							<div class="toggle-content">
+								<p>Yes.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>8. Can an abstract class have constructor?</summary>
+							<div class="toggle-content">
+								<p>Yes.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>9. Is abstract class allow to define private, final, static, and concrete
+								methods?
+							</summary>
+							<div class="toggle-content">
+								<p>Yes.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>10. Is it possible to achieve multiple inheritance through abstract class?
+							</summary>
+							<div class="toggle-content">
+								<p>No.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>11. Why abstract class has constructor even though you cannot create
+								object?
+							</summary>
+							<div class="toggle-content">
+								<p>We cannot create an object of abstract class but we can create an object of
+									subclass
+									of abstract class. When we create an object of subclass of an abstract
+									class, it
+									calls the constructor of subclass.
+									<br>
+									This subclass constructor has a super keyword in the first line that calls
+									constructor of an abstract class. Thus, the constructors of an abstract
+									class are
+									used from constructor of its subclass.
+									<br>
+									If the abstract class doesn’t have constructor, a class that extends that
+									abstract
+									class will not get compiled.
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>12. What is the advantage of Abstract class in Java?</summary>
+							<div class="toggle-content">
+								<p>The main advantages of using abstract class are as follows:
+									<br>
+									Abstract class makes programming better and more flexible by giving the
+									scope of
+									implementing abstract methods.<br>
+									Programmer can implement abstract method to perform different tasks
+									depending on the
+									need.<br>It is helpful in hiding unwanted details from users.<br>
+									We can easily manage code.
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>13. What are the differences between Abstraction and Encapsulation?
+							</summary>
+							<div class="toggle-content">
+								<p>
+								<table border="1" cellpadding="1" cellspacing="1"
+									style="width:95%;border: 1px solid #000;font-size: 0.999rem;" class="table">
+									<tbody>
+										<tr mode="sticky" style="background-color: #f8fcff;">
+											<td style="text-align: center;width: 5vw;">
+												<h5>Difference</h5>
+											</td>
+											<td style="text-align: center;width: 45vw;">
+												<h5>Abstraction</h5>
+											</td>
+											<td style="text-align: center;width: 45vw;">
+												<h5>Encapsulation</h5>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>Basic</p>
+											</td>
+											<td>
+												<p>Abstraction means hiding details from the users and showing
+													only
+													necessary details to
+													the users.</p>
+											</td>
+											<td>
+												<p>Encapsulation means binding data in a single unit.</p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>Focus</p>
+											</td>
+											<td>
+												<p>
+													Abstraction solves the problem at the <b>design
+														level</b>.<br>
+													Abstraction only focuses on the object and not how it works.
+												</p>
+											</td>
+											<td>
+												<p>Encapsulation solves the problem at the <b>implementation
+														level</b>.
+												</p>
+												<p>Encapsulation focus on an binding data in one unit and
+													implementing
+													its object, its
+													behavior and properties, and what it does.
+												</p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>Conclusion</p>
+											</td>
+											<td>
+												<p>Abstraction breaks the <b>complexity</b> of the data.</p>
+											</td>
+											<td>
+												<p>Encapsulation maintains the <b>flexibility</b> of the data.
+												</p>
+											</td>
+										</tr>
 
-										</tbody>
-									</table>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>14. What are the difference between Abstraction and Polymorphism?</summary>
-								<div class="toggle-content">
-									<p>
-									<table border="1" cellpadding="1" cellspacing="1"
-										style="width:95%;border: 1px solid #000;font-size: 0.999rem;" class="table">
-										<tbody>
-											<tr mode="sticky" style="background-color: #f8fcff;">
-												<td style="text-align: center;width: 5vw;">
-													<h5>Difference</h5>
-												</td>
-												<td style="text-align: center;width: 45vw;">
-													<h5>Abstraction</h5>
-												</td>
-												<td style="text-align: center;width: 45vw;">
-													<h5>Polymorphism</h5>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>Basic</p>
-												</td>
-												<td>
-													<p>Abstraction is a technique of showing necessary details.</p>
-												</td>
-												<td>
-													<p>Polymorphism is a process for implementing inherited data.
-													</p>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>Focus</p>
-												</td>
-												<td>
-													<p>Abstraction is based on design level pattern. There are two
-														types of
-														abstraction:
-													</p>
-													<ul>
-														<li>Data Abstraction</li>
-														<li>Process Abstraction</li>
-													</ul>
-													<p></p>
-												</td>
-												<td>
-													<p>Polymorphism is used when single or many types are not
-														defined by
-														name it represents
-														any type by using abstract symbols.</p>
-													<p>There are two types of Polymorphism:
-													</p>
-													<ul>
-														<li>Compile-time Polymorphism (or Static polymorphism) -
-															Example
-															Method
-															Overloading
-														</li>
-														<li>Runtime Polymorphism (or Dynamic polymorphism) - Example
-															Method
-															Overriding</li>
-													</ul>
-													<p></p>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>Conclusion</p>
-												</td>
-												<td>
-													<p>Abstraction can be implemented , when the main class is
-														<b>static</b>
-														or
-														<b>concrete</b>. Overridden is must.
-													</p>
-												</td>
-												<td>
-													<p>Polymorphism can be implemented when data is <b>static</b> or
-														<b>dynamic</b>.
-													</p>
-												</td>
-											</tr>
+									</tbody>
+								</table>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>14. What are the difference between Abstraction and Polymorphism?</summary>
+							<div class="toggle-content">
+								<p>
+								<table border="1" cellpadding="1" cellspacing="1"
+									style="width:95%;border: 1px solid #000;font-size: 0.999rem;" class="table">
+									<tbody>
+										<tr mode="sticky" style="background-color: #f8fcff;">
+											<td style="text-align: center;width: 5vw;">
+												<h5>Difference</h5>
+											</td>
+											<td style="text-align: center;width: 45vw;">
+												<h5>Abstraction</h5>
+											</td>
+											<td style="text-align: center;width: 45vw;">
+												<h5>Polymorphism</h5>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>Basic</p>
+											</td>
+											<td>
+												<p>Abstraction is a technique of showing necessary details.</p>
+											</td>
+											<td>
+												<p>Polymorphism is a process for implementing inherited data.
+												</p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>Focus</p>
+											</td>
+											<td>
+												<p>Abstraction is based on design level pattern. There are two
+													types of
+													abstraction:
+												</p>
+												<ul>
+													<li>Data Abstraction</li>
+													<li>Process Abstraction</li>
+												</ul>
+												<p></p>
+											</td>
+											<td>
+												<p>Polymorphism is used when single or many types are not
+													defined by
+													name it represents
+													any type by using abstract symbols.</p>
+												<p>There are two types of Polymorphism:
+												</p>
+												<ul>
+													<li>Compile-time Polymorphism (or Static polymorphism) -
+														Example
+														Method
+														Overloading
+													</li>
+													<li>Runtime Polymorphism (or Dynamic polymorphism) - Example
+														Method
+														Overriding</li>
+												</ul>
+												<p></p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>Conclusion</p>
+											</td>
+											<td>
+												<p>Abstraction can be implemented , when the main class is
+													<b>static</b>
+													or
+													<b>concrete</b>. Overridden is must.
+												</p>
+											</td>
+											<td>
+												<p>Polymorphism can be implemented when data is <b>static</b> or
+													<b>dynamic</b>.
+												</p>
+											</td>
+										</tr>
 
-										</tbody>
-									</table>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>15. Difference between Abstract class and Interface in java?</summary>
-								<div class="toggle-content">
-									<p>
-									<table border="1" cellpadding="1" cellspacing="1"
-										style="width:95%;border: 1px solid #000;font-size: 0.999rem;" class="table">
-										<tbody>
-											<tr mode="sticky" style="background-color: #f8fcff;">
-												<td style="text-align: center;width: 45vw;">
-													<h5>Abstract class</h5>
-												</td>
-												<td style="text-align: center;width: 45vw;">
-													<h5>Interface</h5>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>In abstract class both the methods are used abstract and
-														non-abstract.</p>
-												</td>
-												<td>
-													<p>In interface, only an abstract method is used.</p>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>Multiple inheritances are not supported in abstract classes.
-													</p>
-												</td>
-												<td>
-													<p>The interface supports multiple inheritances.
-													</p>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>The implementation of an interface is provided by the
-														abstract class.
-													</p>
-												</td>
-												<td>
-													<p>The interface cannot provide implementation to an abstract
-														class.</p>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<p>The abstract is protected and private.</p>
-												</td>
-												<td>
-													<p>An interface is only public.</p>
-												</td>
-											</tr>
+									</tbody>
+								</table>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>15. Difference between Abstract class and Interface in java?</summary>
+							<div class="toggle-content">
+								<p>
+								<table border="1" cellpadding="1" cellspacing="1"
+									style="width:95%;border: 1px solid #000;font-size: 0.999rem;" class="table">
+									<tbody>
+										<tr mode="sticky" style="background-color: #f8fcff;">
+											<td style="text-align: center;width: 45vw;">
+												<h5>Abstract class</h5>
+											</td>
+											<td style="text-align: center;width: 45vw;">
+												<h5>Interface</h5>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>In abstract class both the methods are used abstract and
+													non-abstract.</p>
+											</td>
+											<td>
+												<p>In interface, only an abstract method is used.</p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>Multiple inheritances are not supported in abstract classes.
+												</p>
+											</td>
+											<td>
+												<p>The interface supports multiple inheritances.
+												</p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>The implementation of an interface is provided by the
+													abstract class.
+												</p>
+											</td>
+											<td>
+												<p>The interface cannot provide implementation to an abstract
+													class.</p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p>The abstract is protected and private.</p>
+											</td>
+											<td>
+												<p>An interface is only public.</p>
+											</td>
+										</tr>
 
-										</tbody>
-									</table>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>16. Should abstract methods be overridden?</summary>
-								<div class="toggle-content">
-									<p>Yes, all the abstract methods in the subclass should be overridden because
-										the java
-										compiler will not accept and give the compile-time error.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>17. Why should we create reference to superclass (abstract class
-									reference)?
-								</summary>
-								<div class="toggle-content">
-									<p>We should create a reference of the superclass to access subclass features
-										because
-										superclass reference allows only to access those features of subclass which
-										have
-										already declared in superclass.
-										<br>
-										If you create an individual method in subclass, the superclass reference
-										cannot
-										access that method. Thus, any programmer cannot add their own additional
-										features in
-										subclasses other than whatever is given in superclass.
-									</p>
-								</div>
-							</details></br>
-						</div>
+									</tbody>
+								</table>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>16. Should abstract methods be overridden?</summary>
+							<div class="toggle-content">
+								<p>Yes, all the abstract methods in the subclass should be overridden because
+									the java
+									compiler will not accept and give the compile-time error.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>17. Why should we create reference to superclass (abstract class
+								reference)?
+							</summary>
+							<div class="toggle-content">
+								<p>We should create a reference of the superclass to access subclass features
+									because
+									superclass reference allows only to access those features of subclass which
+									have
+									already declared in superclass.
+									<br>
+									If you create an individual method in subclass, the superclass reference
+									cannot
+									access that method. Thus, any programmer cannot add their own additional
+									features in
+									subclasses other than whatever is given in superclass.
+								</p>
+							</div>
+						</details></br>
+					</div>
 				</article>
 			</div>
 			<div class="card-footer">

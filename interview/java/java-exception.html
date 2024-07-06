@@ -164,325 +164,324 @@
 
 				</nav>
 				<article>
-					<div>
-						<div class="card-body">
-							<h4><b>Java Exception Handling Interview Questions</b></h4>
-							<br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>1. What is an exception in Java, and why is it essential for error
-									handling?
-								</summary>
-								<div class="toggle-content">
-									<p>An exception is an event that occurs during the execution of a program,
-										disrupting
-										the normal flow. It is essential for handling errors and exceptional
-										conditions
-										gracefully.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>2. How many types of exception can occur in a Java program?</summary>
-								<div class="toggle-content">
-									<p>There are mainly two types of exceptions: checked and unchecked. Here, an
-										error is
-										considered as the unchecked exception. According to Oracle, there are three
-										types of
-										exceptions:<br>
-									<ul class="points">
-										<li><strong>Checked Exception:</strong> Checked exceptions are the one which
-											are
-											checked at compile-time. For example, SQLException,
-											ClassNotFoundException, etc.
-										</li><br>
-										<li><strong>Unchecked Exception:</strong> Unchecked exceptions are the one
-											which are
-											handled at runtime because they can not be checked at compile-time. For
-											example,
-											ArithmaticException, NullPointerException,
-											ArrayIndexOutOfBoundsException, etc.
-										</li><br>
-										<li><strong>Error:</strong> Error cause the program to exit since they are
-											not
-											recoverable. For Example, OutOfMemoryError, AssertionError, etc.</li>
-									</ul>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>3. What is Exception Handling?</summary>
-								<div class="toggle-content">
-									<p>Exception Handling is a mechanism that is used to handle runtime errors. It
-										is used
-										primarily to handle checked exceptions. Exception handling maintains the
-										normal flow
-										of the program. There are mainly two types of exceptions: checked and
-										unchecked.
-										Here, the error is considered as the unchecked exception.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>4. What is the difference between Checked Exception and Unchecked
-									Exception?
-								</summary>
-								<div class="toggle-content">
-									<p>1) Checked Exception<br>
-										The classes that extend Throwable class except RuntimeException and Error
-										are known
-										as checked exceptions, e.g., IOException, SQLException, etc. Checked
-										exceptions are
-										checked at compile-time.
-										<br>
-										2) Unchecked Exception<br>
-										The classes that extend RuntimeException are known as unchecked exceptions,
-										e.g.,
-										ArithmeticException, NullPointerException, etc. Unchecked exceptions are not
-										checked
-										at compile-time.
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>5. What is the base class for Error and Exception</summary>
-								<div class="toggle-content">
-									<p>The Throwable class is the base class for Error and Exception.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>6. Is it necessary that each try block must be followed by a catch block?
-								</summary>
-								<div class="toggle-content">
-									<p>It is not necessary that each try block must be followed by a catch block. It
-										should
-										be followed by either a catch block OR a finally block. So whatever
-										exceptions are
-										likely to be thrown should be declared in the throws clause of the method.
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>7. What is finally block?</summary>
-								<div class="toggle-content">
-									<p>The "finally" block is used to execute the important code of the program. It
-										is
-										executed whether an exception is handled or not. In other words, we can say
+					<div class="card-body">
+						<h4><b>Java Exception Handling Interview Questions</b></h4>
+						<br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>1. What is an exception in Java, and why is it essential for error
+								handling?
+							</summary>
+							<div class="toggle-content">
+								<p>An exception is an event that occurs during the execution of a program,
+									disrupting
+									the normal flow. It is essential for handling errors and exceptional
+									conditions
+									gracefully.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>2. How many types of exception can occur in a Java program?</summary>
+							<div class="toggle-content">
+								<p>There are mainly two types of exceptions: checked and unchecked. Here, an
+									error is
+									considered as the unchecked exception. According to Oracle, there are three
+									types of
+									exceptions:<br>
+								<ul class="points">
+									<li><strong>Checked Exception:</strong> Checked exceptions are the one which
+										are
+										checked at compile-time. For example, SQLException,
+										ClassNotFoundException, etc.
+									</li><br>
+									<li><strong>Unchecked Exception:</strong> Unchecked exceptions are the one
+										which are
+										handled at runtime because they can not be checked at compile-time. For
+										example,
+										ArithmaticException, NullPointerException,
+										ArrayIndexOutOfBoundsException, etc.
+									</li><br>
+									<li><strong>Error:</strong> Error cause the program to exit since they are
+										not
+										recoverable. For Example, OutOfMemoryError, AssertionError, etc.</li>
+								</ul>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>3. What is Exception Handling?</summary>
+							<div class="toggle-content">
+								<p>Exception Handling is a mechanism that is used to handle runtime errors. It
+									is used
+									primarily to handle checked exceptions. Exception handling maintains the
+									normal flow
+									of the program. There are mainly two types of exceptions: checked and
+									unchecked.
+									Here, the error is considered as the unchecked exception.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>4. What is the difference between Checked Exception and Unchecked
+								Exception?
+							</summary>
+							<div class="toggle-content">
+								<p>1) Checked Exception<br>
+									The classes that extend Throwable class except RuntimeException and Error
+									are known
+									as checked exceptions, e.g., IOException, SQLException, etc. Checked
+									exceptions are
+									checked at compile-time.
+									<br>
+									2) Unchecked Exception<br>
+									The classes that extend RuntimeException are known as unchecked exceptions,
+									e.g.,
+									ArithmeticException, NullPointerException, etc. Unchecked exceptions are not
+									checked
+									at compile-time.
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>5. What is the base class for Error and Exception</summary>
+							<div class="toggle-content">
+								<p>The Throwable class is the base class for Error and Exception.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>6. Is it necessary that each try block must be followed by a catch block?
+							</summary>
+							<div class="toggle-content">
+								<p>It is not necessary that each try block must be followed by a catch block. It
+									should
+									be followed by either a catch block OR a finally block. So whatever
+									exceptions are
+									likely to be thrown should be declared in the throws clause of the method.
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>7. What is finally block?</summary>
+							<div class="toggle-content">
+								<p>The "finally" block is used to execute the important code of the program. It
+									is
+									executed whether an exception is handled or not. In other words, we can say
+									that
+									finally block is the block which is always executed. Finally block follows
+									try or
+									catch block. If you don't handle the exception, before terminating the
+									program, JVM
+									runs finally block, (if any). The finally block is mainly used to place the
+									cleanup
+									code such as closing a file or closing a connection. Here, we must know that
+									for
+									each try block there can be zero or more catch blocks, but only one finally
+									block.
+									The finally block will not be executed if program exits(either by calling
+									System.exit() or by causing a fatal error that causes the process to abort).
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>8. Can finally block be used without a catch?</summary>
+							<div class="toggle-content">
+								<p>Yes, According to the definition of finally block, it must be followed by a
+									try or
+									catch block, therefore, we can use try block instead of catch.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>9. Is there any case when finally will not be executed?</summary>
+							<div class="toggle-content">
+								<p>Finally block will not be executed if program exits(either by calling
+									System.exit()
+									or by causing a fatal error that causes the process to abort).</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>10. What is the difference between throw and throws?</summary>
+							<div class="toggle-content">
+								<p>
+								<table class="alt">
+									<tbody>
+										<tr>
+											<th>throw keyword</th>
+											<th>throws keyword</th>
+										</tr>
+										<tr>
+											<td>1) The <strong>throw</strong> keyword is used to throw an
+												exception
+												explicitly.</td>
+											<td>The <strong>throws</strong> keyword is used to declare an
+												exception.
+											</td>
+										</tr>
+										<tr>
+											<td>2) The checked exceptions cannot be propagated with throw only.
+											</td>
+											<td>The checked exception can be propagated with throws</td>
+										</tr>
+										<tr>
+											<td>3) The <strong>throw</strong> keyword is followed by an
+												instance.</td>
+											<td>The <strong>throws</strong> keyword is followed by class.</td>
+										</tr>
+										<tr>
+											<td>4) The <strong>throw</strong> keyword is used within the method.
+											</td>
+											<td>The <strong>throws</strong> keyword is used with the method
+												signature.
+											</td>
+										</tr>
+										<tr>
+											<td>5) You cannot throw multiple exceptions.</td>
+											<td>You can declare multiple exceptions, e.g., public void
+												method()throws
+												IOException, SQLException.</td>
+										</tr>
+									</tbody>
+								</table>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>11. Can an exception be rethrown?</summary>
+							<div class="toggle-content">
+								<p>Yes.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>12. Can subclass overriding method declare an exception if parent class
+								method
+								doesn't throw an exception?</summary>
+							<div class="toggle-content">
+								<p>Yes but only unchecked exception not checked.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>13. What is exception propagation?</summary>
+							<div class="toggle-content">
+								<p>An exception is first thrown from the top of the stack and if it is not
+									caught, it
+									drops down the call stack to the previous method, If not caught there, the
+									exception
+									again drops down to the previous method, and so on until they are caught or
+									until
+									they reach the very bottom of the call stack. This procedure is called
+									exception
+									propagation. By default, checked exceptions are not propagated.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>14. What are the Exception Handling Keywords in Java?</summary>
+							<div class="toggle-content">
+								<p>There are four keywords used in java exception handling.<br>
+								<ol>
+									<li><strong>throw</strong>: Sometimes we explicitly want to create an
+										exception
+										object and then throw it to halt the normal processing of the program.
+										The
+										<strong>throw</strong> keyword is used to throw exceptions to the
+										runtime to
+										handle it.
+									</li>
+									<li><strong>throws</strong>: When we are throwing any checked exception in a
+										method
+										and not handling it, then we need to use the throws keyword in the
+										method
+										signature to let the caller program know the exceptions that might be
+										thrown by
+										the method. The caller method might handle these exceptions or propagate
+										them to
+										its caller method using the <code>throws</code> keyword. We can provide
+										multiple
+										exceptions in the throws clause and it can be used with the
+										<strong>main()</strong> method also.
+									</li>
+									<li><strong>try-catch</strong>: We use try-catch block for exception
+										handling in our
+										code. try is the start of the block and catch is at the end of the try
+										block to
+										handle the exceptions. We can have multiple catch blocks with a try and
+										try-catch blocks can be nested also. catch block requires a parameter
 										that
-										finally block is the block which is always executed. Finally block follows
-										try or
-										catch block. If you don't handle the exception, before terminating the
-										program, JVM
-										runs finally block, (if any). The finally block is mainly used to place the
-										cleanup
-										code such as closing a file or closing a connection. Here, we must know that
-										for
-										each try block there can be zero or more catch blocks, but only one finally
-										block.
-										The finally block will not be executed if program exits(either by calling
-										System.exit() or by causing a fatal error that causes the process to abort).
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>8. Can finally block be used without a catch?</summary>
-								<div class="toggle-content">
-									<p>Yes, According to the definition of finally block, it must be followed by a
-										try or
-										catch block, therefore, we can use try block instead of catch.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>9. Is there any case when finally will not be executed?</summary>
-								<div class="toggle-content">
-									<p>Finally block will not be executed if program exits(either by calling
-										System.exit()
-										or by causing a fatal error that causes the process to abort).</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>10. What is the difference between throw and throws?</summary>
-								<div class="toggle-content">
-									<p>
-									<table class="alt">
-										<tbody>
-											<tr>
-												<th>throw keyword</th>
-												<th>throws keyword</th>
-											</tr>
-											<tr>
-												<td>1) The <strong>throw</strong> keyword is used to throw an
-													exception
-													explicitly.</td>
-												<td>The <strong>throws</strong> keyword is used to declare an
-													exception.
-												</td>
-											</tr>
-											<tr>
-												<td>2) The checked exceptions cannot be propagated with throw only.
-												</td>
-												<td>The checked exception can be propagated with throws</td>
-											</tr>
-											<tr>
-												<td>3) The <strong>throw</strong> keyword is followed by an
-													instance.</td>
-												<td>The <strong>throws</strong> keyword is followed by class.</td>
-											</tr>
-											<tr>
-												<td>4) The <strong>throw</strong> keyword is used within the method.
-												</td>
-												<td>The <strong>throws</strong> keyword is used with the method
-													signature.
-												</td>
-											</tr>
-											<tr>
-												<td>5) You cannot throw multiple exceptions.</td>
-												<td>You can declare multiple exceptions, e.g., public void
-													method()throws
-													IOException, SQLException.</td>
-											</tr>
-										</tbody>
-									</table>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>11. Can an exception be rethrown?</summary>
-								<div class="toggle-content">
-									<p>Yes.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>12. Can subclass overriding method declare an exception if parent class
-									method
-									doesn't throw an exception?</summary>
-								<div class="toggle-content">
-									<p>Yes but only unchecked exception not checked.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>13. What is exception propagation?</summary>
-								<div class="toggle-content">
-									<p>An exception is first thrown from the top of the stack and if it is not
-										caught, it
-										drops down the call stack to the previous method, If not caught there, the
-										exception
-										again drops down to the previous method, and so on until they are caught or
-										until
-										they reach the very bottom of the call stack. This procedure is called
-										exception
-										propagation. By default, checked exceptions are not propagated.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>14. What are the Exception Handling Keywords in Java?</summary>
-								<div class="toggle-content">
-									<p>There are four keywords used in java exception handling.<br>
-									<ol>
-										<li><strong>throw</strong>: Sometimes we explicitly want to create an
-											exception
-											object and then throw it to halt the normal processing of the program.
-											The
-											<strong>throw</strong> keyword is used to throw exceptions to the
-											runtime to
-											handle it.
-										</li>
-										<li><strong>throws</strong>: When we are throwing any checked exception in a
-											method
-											and not handling it, then we need to use the throws keyword in the
-											method
-											signature to let the caller program know the exceptions that might be
-											thrown by
-											the method. The caller method might handle these exceptions or propagate
-											them to
-											its caller method using the <code>throws</code> keyword. We can provide
-											multiple
-											exceptions in the throws clause and it can be used with the
-											<strong>main()</strong> method also.
-										</li>
-										<li><strong>try-catch</strong>: We use try-catch block for exception
-											handling in our
-											code. try is the start of the block and catch is at the end of the try
-											block to
-											handle the exceptions. We can have multiple catch blocks with a try and
-											try-catch blocks can be nested also. catch block requires a parameter
-											that
-											should be of type Exception.</li>
-										<li><strong>finally</strong>: The finally block is optional and can be used
-											only
-											with a try-catch block. Since exception halts the process of execution,
-											we might
-											have some resources open that will not get closed, so we can use the
-											finally
-											block. The finally block gets executed always, whether an exception
-											occurs or
-											not.</li>
-									</ol>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>15. What is the difference between Checked and Unchecked Exceptions in
-									Java?
-								</summary>
-								<div class="toggle-content">
-									<p>
-									<ol>
-										<li>Checked Exceptions should be handled in the code using try-catch block
-											or else
-											the method should use the throws keyword to let the caller know about
-											the
-											checked exceptions that might be thrown from the method. Unchecked
-											Exceptions
-											are not required to be handled in the program or to mention them in the
-											throws
-											clause of the method.</li>
-										<li><code>Exception</code> is the superclass of all checked exceptions
-											whereas
-											<code>RuntimeException</code> is the superclass of all unchecked
-											exceptions.
-											Note that RuntimeException is the child class of Exception.
-										</li>
-										<li>Checked exceptions are error scenarios that require to be handled in the
-											code,
-											or else you will get compile time error. For example, if you use
-											FileReader to
-											read a file, it throws <code>FileNotFoundException</code> and we must
-											catch it
-											in the try-catch block or throw it again to the caller method. Unchecked
-											exceptions are mostly caused by poor programming, for example,
-											NullPointerException when invoking a method on an object reference
-											without
-											making sure that it’s not null. For example, I can write a method to
-											remove all
-											the vowels from the string. It’s the caller’s responsibility to make
-											sure not to
-											pass a null string. I might change the method to handle these scenarios
-											but
-											ideally, the caller should take care of this.</li>
-									</ol>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>16. What is the difference between the throw and throws keyword in Java?
-								</summary>
-								<div class="toggle-content">
-									<p>throws keyword is used with method signature to declare the exceptions that
+										should be of type Exception.</li>
+									<li><strong>finally</strong>: The finally block is optional and can be used
+										only
+										with a try-catch block. Since exception halts the process of execution,
+										we might
+										have some resources open that will not get closed, so we can use the
+										finally
+										block. The finally block gets executed always, whether an exception
+										occurs or
+										not.</li>
+								</ol>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>15. What is the difference between Checked and Unchecked Exceptions in
+								Java?
+							</summary>
+							<div class="toggle-content">
+								<p>
+								<ol>
+									<li>Checked Exceptions should be handled in the code using try-catch block
+										or else
+										the method should use the throws keyword to let the caller know about
 										the
-										method might throw whereas throw keyword is used to disrupt the flow of the
-										program
-										and handing over the exception object to runtime to handle it.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>17. How to write custom exceptions in Java?</summary>
-								<div class="toggle-content">
-									<p>We can extend Exception class or any of its subclasses to create our custom
-										exception
-										class. The custom exception class can have its own variables and methods
-										that we can
-										use to pass error codes or other exception-related information to the
-										exception
-										handler. A simple example of a custom exception is shown below.
-									<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.exceptions;
+										checked exceptions that might be thrown from the method. Unchecked
+										Exceptions
+										are not required to be handled in the program or to mention them in the
+										throws
+										clause of the method.</li>
+									<li><code>Exception</code> is the superclass of all checked exceptions
+										whereas
+										<code>RuntimeException</code> is the superclass of all unchecked
+										exceptions.
+										Note that RuntimeException is the child class of Exception.
+									</li>
+									<li>Checked exceptions are error scenarios that require to be handled in the
+										code,
+										or else you will get compile time error. For example, if you use
+										FileReader to
+										read a file, it throws <code>FileNotFoundException</code> and we must
+										catch it
+										in the try-catch block or throw it again to the caller method. Unchecked
+										exceptions are mostly caused by poor programming, for example,
+										NullPointerException when invoking a method on an object reference
+										without
+										making sure that it’s not null. For example, I can write a method to
+										remove all
+										the vowels from the string. It’s the caller’s responsibility to make
+										sure not to
+										pass a null string. I might change the method to handle these scenarios
+										but
+										ideally, the caller should take care of this.</li>
+								</ol>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>16. What is the difference between the throw and throws keyword in Java?
+							</summary>
+							<div class="toggle-content">
+								<p>throws keyword is used with method signature to declare the exceptions that
+									the
+									method might throw whereas throw keyword is used to disrupt the flow of the
+									program
+									and handing over the exception object to runtime to handle it.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>17. How to write custom exceptions in Java?</summary>
+							<div class="toggle-content">
+								<p>We can extend Exception class or any of its subclasses to create our custom
+									exception
+									class. The custom exception class can have its own variables and methods
+									that we can
+									use to pass error codes or other exception-related information to the
+									exception
+									handler. A simple example of a custom exception is shown below.
+								<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.exceptions;
 							
 							import java.io.IOException;
 							
@@ -502,298 +501,299 @@
 								}
 							}
 							</code></pre>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>18. What is the difference between final, finally, and finalize in Java?
-								</summary>
-								<div class="toggle-content">
-									<p>final and finally are keywords in java whereas finalize is a method. final
-										keyword
-										can be used with class variables so that they can’t be reassigned, with the
-										class to
-										avoid extending by classes and with methods to avoid overriding by
-										subclasses,
-										finally keyword is used with try-catch block to provide statements that will
-										always
-										get executed even if some exception arises, usually finally is used to close
-										resources. finalize() method is executed by Garbage Collector before the
-										object is
-										destroyed, it’s a great way to make sure all the global resources are
-										closed. Out of
-										the three, only finally is related to java exception handling.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>19. Can we have an empty catch block?</summary>
-								<div class="toggle-content">
-									<p>We can have an empty catch block but it’s an example of bad programming. We
-										should
-										never have an empty catch block because if the exception is caught by that
-										block, we
-										will have no information about the exception and it wil be a nightmare to
-										debug it.
-										There should be at least a logging statement to log the exception details in
-										console
-										or log files.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>20. What is the ‘try-with-resources’ statement in Java, and how does it
-									simplify
-									resource management and exception handling?</summary>
-								<div class="toggle-content">
-									<p>The ‘try-with-resources’ statement simplifies resource management by
-										automatically
-										closing resources like streams, ensuring proper cleanup and exception
-										handling.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>21. What is the ‘throws’ clause in method declarations, and how does it
-									indicate
-									that a method may throw exceptions?</summary>
-								<div class="toggle-content">
-									<p>The ‘throws’ clause in method declarations specifies the exceptions that a
-										method may
-										throw. It provides information to the calling code about potential
-										exceptions.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>22. What is the ‘try-with-resources’ statement, and how does it handle
-									exceptions
-									that occur during resource closure?</summary>
-								<div class="toggle-content">
-									<p> The ‘try-with-resources’ statement automatically closes resources and
-										handles
-										exceptions that occur during closure by suppressing them or adding them to
-										the list
-										of suppressed exceptions.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>23. Explain the ‘finally’ block’s behavior when an exception is thrown in
-									the
-									‘catch’ block.</summary>
-								<div class="toggle-content">
-									<p>The ‘finally’ block is executed even if an exception is thrown in the ‘catch’
-										block.
-										It ensures that cleanup code is executed regardless of the exception
-										outcome.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>24. Explain the hierarchy of exceptions in Java?</summary>
-								<div class="toggle-content">
-									<p>
-									<figure class="aligncenter size-full"><a><img width="808" height="420"
-												src="../../scripts/images/HierarchyOfExceptions.webp"
-												alt="Java Exception Handling" </img></a></figure>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>25. Can we keep the statements after finally block If the finally block is
-									returning the control?</summary>
-								<div class="toggle-content">
-									<p>No, it gives unreachable code error. Because, control is returning from the
-										finally
-										block itself. Compiler will not see the statements after it. That’s why it
-										shows
-										unreachable code error.</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>26. Does finally block get executed If either try or catch blocks are
-									returning the
-									control?</summary>
-								<div class="toggle-content">
-									<p>Yes, finally block will be always executed no matter whether try or catch
-										blocks are
-										returning the control or not.
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>18. What is the difference between final, finally, and finalize in Java?
+							</summary>
+							<div class="toggle-content">
+								<p>final and finally are keywords in java whereas finalize is a method. final
+									keyword
+									can be used with class variables so that they can’t be reassigned, with the
+									class to
+									avoid extending by classes and with methods to avoid overriding by
+									subclasses,
+									finally keyword is used with try-catch block to provide statements that will
+									always
+									get executed even if some exception arises, usually finally is used to close
+									resources. finalize() method is executed by Garbage Collector before the
+									object is
+									destroyed, it’s a great way to make sure all the global resources are
+									closed. Out of
+									the three, only finally is related to java exception handling.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>19. Can we have an empty catch block?</summary>
+							<div class="toggle-content">
+								<p>We can have an empty catch block but it’s an example of bad programming. We
+									should
+									never have an empty catch block because if the exception is caught by that
+									block, we
+									will have no information about the exception and it wil be a nightmare to
+									debug it.
+									There should be at least a logging statement to log the exception details in
+									console
+									or log files.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>20. What is the ‘try-with-resources’ statement in Java, and how does it
+								simplify
+								resource management and exception handling?</summary>
+							<div class="toggle-content">
+								<p>The ‘try-with-resources’ statement simplifies resource management by
+									automatically
+									closing resources like streams, ensuring proper cleanup and exception
+									handling.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>21. What is the ‘throws’ clause in method declarations, and how does it
+								indicate
+								that a method may throw exceptions?</summary>
+							<div class="toggle-content">
+								<p>The ‘throws’ clause in method declarations specifies the exceptions that a
+									method may
+									throw. It provides information to the calling code about potential
+									exceptions.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>22. What is the ‘try-with-resources’ statement, and how does it handle
+								exceptions
+								that occur during resource closure?</summary>
+							<div class="toggle-content">
+								<p> The ‘try-with-resources’ statement automatically closes resources and
+									handles
+									exceptions that occur during closure by suppressing them or adding them to
+									the list
+									of suppressed exceptions.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>23. Explain the ‘finally’ block’s behavior when an exception is thrown in
+								the
+								‘catch’ block.</summary>
+							<div class="toggle-content">
+								<p>The ‘finally’ block is executed even if an exception is thrown in the ‘catch’
+									block.
+									It ensures that cleanup code is executed regardless of the exception
+									outcome.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>24. Explain the hierarchy of exceptions in Java?</summary>
+							<div class="toggle-content">
+								<p>
+								<figure class="aligncenter size-full"><a><img width="808" height="420"
+											src="../../scripts/images/HierarchyOfExceptions.webp"
+											alt="Java Exception Handling" </img></a></figure>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>25. Can we keep the statements after finally block If the finally block is
+								returning the control?</summary>
+							<div class="toggle-content">
+								<p>No, it gives unreachable code error. Because, control is returning from the
+									finally
+									block itself. Compiler will not see the statements after it. That’s why it
+									shows
+									unreachable code error.</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>26. Does finally block get executed If either try or catch blocks are
+								returning the
+								control?</summary>
+							<div class="toggle-content">
+								<p>Yes, finally block will be always executed no matter whether try or catch
+									blocks are
+									returning the control or not.
 
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>27. What is the difference between final, finally and finalize in Java?
-								</summary>
-								<div class="toggle-content">
-									<p>
-									<figure class="wp-block-table is-style-regular">
-										<table class="has-fixed-layout">
-											<tbody>
-												<tr>
-													<td>final</td>
-													<td>finally</td>
-													<td>finalize()</td>
-												</tr>
-												<tr>
-													<td>final is a keyword in Java which is used to make a variable
-														or a
-														method or a class as unchangeable.</td>
-													<td>finally&nbsp;is a block in Java which is used for exception
-														handling
-														along with try and catch blocks.</td>
-													<td>finalize() method&nbsp;is a protected method
-														of&nbsp;<code>java.lang.Object</code>&nbsp;class which is
-														used to
-														perform some clean up operations on an object before it is
-														removed
-														from the memory.</td>
-												</tr>
-												<tr>
-													<td>The value of a variable which is declared as final can’t be
-														changed
-														once it is initialized.</td>
-													<td>finally block is always executed whether an exception is
-														occurred or
-														not and occurred exception is handled or not.</td>
-													<td>This method is called by garbage collector thread before an
-														object
-														is removed from the memory.</td>
-												</tr>
-												<tr>
-													<td>A method declared as final can’t be overridden or modified
-														in the
-														sub class and a class declared as final can’t be extended.
-													</td>
-													<td>Most of&nbsp;time, this block is used to close the resources
-														like
-														database connection, I/O resources etc soon after their use.
-													</td>
-													<td>This method is inherited to every class you create in Java.
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</figure>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>28. What is the difference between throw, throws and throwable in Java?
-								</summary>
-								<div class="toggle-content">
-									<p>
-									<figure class="wp-block-table is-style-regular">
-										<table class="has-fixed-layout">
-											<tbody>
-												<tr>
-													<td><strong>throw</strong></td>
-													<td><strong>throws</strong></td>
-													<td><strong>Throwable</strong></td>
-												</tr>
-												<tr>
-													<td>throw&nbsp;is a keyword&nbsp;in Java which is used to throw
-														an
-														exception manually.</td>
-													<td>throws&nbsp;is also a keyword in java which is used in the
-														method
-														signature to indicate that this method may throw mentioned
-														exceptions.</td>
-													<td>Throwable&nbsp;is a super class for all types of errors and
-														exceptions in Java. This class is a member
-														of&nbsp;java.lang&nbsp;package.</td>
-												</tr>
-												<tr>
-													<td>Using throw keyword, you can throw an exception from any
-														method or
-														block. But, that exception must&nbsp;be of
-														type&nbsp;<strong>java.lang.Throwable</strong>&nbsp;class or
-														it’s
-														sub classes.</td>
-													<td>The caller to such methods must handle the mentioned
-														exceptions
-														either using try-catch blocks or using throws keyword.</td>
-													<td>Only instances of this class or it’s sub classes are thrown
-														by the
-														java virtual machine or by the throw statement.</td>
-												</tr>
-											</tbody>
-										</table>
-									</figure>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>29. Can we override a super class method which is throwing an unchecked
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>27. What is the difference between final, finally and finalize in Java?
+							</summary>
+							<div class="toggle-content">
+								<p>
+								<figure class="wp-block-table is-style-regular">
+									<table class="has-fixed-layout">
+										<tbody>
+											<tr>
+												<td>final</td>
+												<td>finally</td>
+												<td>finalize()</td>
+											</tr>
+											<tr>
+												<td>final is a keyword in Java which is used to make a variable
+													or a
+													method or a class as unchangeable.</td>
+												<td>finally&nbsp;is a block in Java which is used for exception
+													handling
+													along with try and catch blocks.</td>
+												<td>finalize() method&nbsp;is a protected method
+													of&nbsp;<code>java.lang.Object</code>&nbsp;class which is
+													used to
+													perform some clean up operations on an object before it is
+													removed
+													from the memory.</td>
+											</tr>
+											<tr>
+												<td>The value of a variable which is declared as final can’t be
+													changed
+													once it is initialized.</td>
+												<td>finally block is always executed whether an exception is
+													occurred or
+													not and occurred exception is handled or not.</td>
+												<td>This method is called by garbage collector thread before an
+													object
+													is removed from the memory.</td>
+											</tr>
+											<tr>
+												<td>A method declared as final can’t be overridden or modified
+													in the
+													sub class and a class declared as final can’t be extended.
+												</td>
+												<td>Most of&nbsp;time, this block is used to close the resources
+													like
+													database connection, I/O resources etc soon after their use.
+												</td>
+												<td>This method is inherited to every class you create in Java.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</figure>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>28. What is the difference between throw, throws and throwable in Java?
+							</summary>
+							<div class="toggle-content">
+								<p>
+								<figure class="wp-block-table is-style-regular">
+									<table class="has-fixed-layout">
+										<tbody>
+											<tr>
+												<td><strong>throw</strong></td>
+												<td><strong>throws</strong></td>
+												<td><strong>Throwable</strong></td>
+											</tr>
+											<tr>
+												<td>throw&nbsp;is a keyword&nbsp;in Java which is used to throw
+													an
+													exception manually.</td>
+												<td>throws&nbsp;is also a keyword in java which is used in the
+													method
+													signature to indicate that this method may throw mentioned
+													exceptions.</td>
+												<td>Throwable&nbsp;is a super class for all types of errors and
+													exceptions in Java. This class is a member
+													of&nbsp;java.lang&nbsp;package.</td>
+											</tr>
+											<tr>
+												<td>Using throw keyword, you can throw an exception from any
+													method or
+													block. But, that exception must&nbsp;be of
+													type&nbsp;<strong>java.lang.Throwable</strong>&nbsp;class or
+													it’s
+													sub classes.</td>
+												<td>The caller to such methods must handle the mentioned
+													exceptions
+													either using try-catch blocks or using throws keyword.</td>
+												<td>Only instances of this class or it’s sub classes are thrown
+													by the
+													java virtual machine or by the throw statement.</td>
+											</tr>
+										</tbody>
+									</table>
+								</figure>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>29. Can we override a super class method which is throwing an unchecked
+								exception
+								with checked exception in the sub class?</summary>
+							<div class="toggle-content">
+								<p>No. If a super class method is throwing an unchecked exception, then it can
+									be
+									overridden in the sub class with same exception or with any other unchecked
+									exceptions but can not be overridden with checked exceptions.
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>30. What are the differences between StackOverflowError and
+								OutOfMemoryError In
+								Java?</summary>
+							<div class="toggle-content">
+								<p>
+								<figure class="wp-block-table is-style-regular">
+									<table class="has-fixed-layout">
+										<tbody>
+											<tr>
+												<td><strong>StackOverflowError</strong></td>
+												<td><strong>OutOfMemoryError</strong></td>
+											</tr>
+											<tr>
+												<td>It is related to Stack memory.</td>
+												<td>It is related to heap memory.</td>
+											</tr>
+											<tr>
+												<td>It occurs when Stack is full.</td>
+												<td>It occurs when heap is full.</td>
+											</tr>
+											<tr>
+												<td>It is thrown when you call a method and there is no space
+													left in
+													the stack.</td>
+												<td>It is thrown when you create a new object and there is no
+													space left
+													in the heap.</td>
+											</tr>
+											<tr>
+												<td>It occurs when you are calling a method recursively without
+													proper
+													terminating condition.</td>
+												<td>It occurs when you are creating lots of objects in the heap
+													memory.
+												</td>
+											</tr>
+											<tr>
+												<td>How to avoid?<br>Make sure that methods are finishing their
+													execution and leaving the stack memory.</td>
+												<td>How to avoid?<br>Try to remove references to objects which
+													you don’t
+													need anymore.</td>
+											</tr>
+										</tbody>
+									</table>
+								</figure>
+								</p>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>31. What are the changes made to exception handling from Java 7?</summary>
+							<div class="toggle-content">
+								<p>Multi-catch exceptions and try-with-resources are two major changes made to
 									exception
-									with checked exception in the sub class?</summary>
-								<div class="toggle-content">
-									<p>No. If a super class method is throwing an unchecked exception, then it can
-										be
-										overridden in the sub class with same exception or with any other unchecked
-										exceptions but can not be overridden with checked exceptions.
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>30. What are the differences between StackOverflowError and
-									OutOfMemoryError In
-									Java?</summary>
-								<div class="toggle-content">
-									<p>
-									<figure class="wp-block-table is-style-regular">
-										<table class="has-fixed-layout">
-											<tbody>
-												<tr>
-													<td><strong>StackOverflowError</strong></td>
-													<td><strong>OutOfMemoryError</strong></td>
-												</tr>
-												<tr>
-													<td>It is related to Stack memory.</td>
-													<td>It is related to heap memory.</td>
-												</tr>
-												<tr>
-													<td>It occurs when Stack is full.</td>
-													<td>It occurs when heap is full.</td>
-												</tr>
-												<tr>
-													<td>It is thrown when you call a method and there is no space
-														left in
-														the stack.</td>
-													<td>It is thrown when you create a new object and there is no
-														space left
-														in the heap.</td>
-												</tr>
-												<tr>
-													<td>It occurs when you are calling a method recursively without
-														proper
-														terminating condition.</td>
-													<td>It occurs when you are creating lots of objects in the heap
-														memory.
-													</td>
-												</tr>
-												<tr>
-													<td>How to avoid?<br>Make sure that methods are finishing their
-														execution and leaving the stack memory.</td>
-													<td>How to avoid?<br>Try to remove references to objects which
-														you don’t
-														need anymore.</td>
-												</tr>
-											</tbody>
-										</table>
-									</figure>
-									</p>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details1')">
-								<summary>31. What are the changes made to exception handling from Java 7?</summary>
-								<div class="toggle-content">
-									<p>Multi-catch exceptions and try-with-resources are two major changes made to
-										exception
-										handling from Java 7</p>
-								</div>
-							</details></br>
-						</div>
+									handling from Java 7</p>
+							</div>
+						</details></br>
+					</div>
 				</article>
 			</div>
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
-					<li class="page-item"><a class="page-link btn-outline-primary" href="../java/java-string.html">&lArr;
+					<li class="page-item"><a class="page-link btn-outline-primary"
+							href="../java/java-string.html">&lArr;
 							Previous</a></li>
 					<li class="page-item"><a class="page-link" href="../java/java-multithreading.html">Next
 							&rArr;</a></li>

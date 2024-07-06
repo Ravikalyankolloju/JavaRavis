@@ -164,54 +164,53 @@
 
 				</nav>
 				<article>
-					<div>
-						<h4>Java Collections Interview Questions</h4>
-						<div class="card-body">
-							<details onclick="closeOtherDetails('details1')">
-								<summary>1. What is Collection? What is a Collection Framework?</summary>
-								<div class="toggle-content">
-									<p>In Java, a <strong>Collection</strong> is an object that groups multiple elements
-										into a single unit. The <strong>Java Collections Framework</strong> (JCF) is a
-										set of classes and interfaces that provides a standardized architecture for
-										representing and manipulating collections.</p>
-								</div>
-							</details></br>
+					<h4>Java Collections Interview Questions</h4>
+					<div class="card-body">
+						<details onclick="closeOtherDetails('details1')">
+							<summary>1. What is Collection? What is a Collection Framework?</summary>
+							<div class="toggle-content">
+								<p>In Java, a <strong>Collection</strong> is an object that groups multiple elements
+									into a single unit. The <strong>Java Collections Framework</strong> (JCF) is a
+									set of classes and interfaces that provides a standardized architecture for
+									representing and manipulating collections.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>2. What are the key benefits of using the Java Collections Framework?</summary>
-								<div class="toggle-content">
-									<p>The Java Collections Framework offers several advantages:</p>
-									<ul>
-										<li><strong>Reusable data structures:</strong> Standard implementations of
-											common data structures like lists, sets, maps, etc.</li>
-										<li><strong>Efficiency:</strong> Optimized algorithms for operations such as
-											searching, sorting, and insertion/deletion.</li>
-										<li><strong>Type-safety:</strong> Generics ensure type-safety, preventing
-											runtime errors.</li>
-										<li><strong>Interoperability:</strong> Uniform interfaces allow collections to
-											work seamlessly with each other.</li>
-										<li><strong>Scalability:</strong> Supports scalable solutions for handling large
-											amounts of data.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>2. What are the key benefits of using the Java Collections Framework?</summary>
+							<div class="toggle-content">
+								<p>The Java Collections Framework offers several advantages:</p>
+								<ul>
+									<li><strong>Reusable data structures:</strong> Standard implementations of
+										common data structures like lists, sets, maps, etc.</li>
+									<li><strong>Efficiency:</strong> Optimized algorithms for operations such as
+										searching, sorting, and insertion/deletion.</li>
+									<li><strong>Type-safety:</strong> Generics ensure type-safety, preventing
+										runtime errors.</li>
+									<li><strong>Interoperability:</strong> Uniform interfaces allow collections to
+										work seamlessly with each other.</li>
+									<li><strong>Scalability:</strong> Supports scalable solutions for handling large
+										amounts of data.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>3. What are the basic interfaces of Java Collections Framework and how to
-									instantiate this interface?</summary>
-								<div class="toggle-content">
-									<p>The basic interfaces of the Java Collections Framework include:</p>
-									<ul>
-										<li><strong>List:</strong> Ordered collection (e.g., ArrayList, LinkedList)</li>
-										<li><strong>Set:</strong> Collection without duplicate elements (e.g., HashSet,
-											TreeSet)</li>
-										<li><strong>Queue:</strong> Collection designed for holding elements prior to
-											processing (e.g., PriorityQueue)</li>
-										<li><strong>Map:</strong> Key-value pair mapping (e.g., HashMap, TreeMap)</li>
-									</ul>
-									<p>To instantiate an interface in the Java Collections Framework, you typically use
-										a specific implementation class. For example:</p>
-									<pre><code>// Instantiate a List
+						<details onclick="closeOtherDetails('details1')">
+							<summary>3. What are the basic interfaces of Java Collections Framework and how to
+								instantiate this interface?</summary>
+							<div class="toggle-content">
+								<p>The basic interfaces of the Java Collections Framework include:</p>
+								<ul>
+									<li><strong>List:</strong> Ordered collection (e.g., ArrayList, LinkedList)</li>
+									<li><strong>Set:</strong> Collection without duplicate elements (e.g., HashSet,
+										TreeSet)</li>
+									<li><strong>Queue:</strong> Collection designed for holding elements prior to
+										processing (e.g., PriorityQueue)</li>
+									<li><strong>Map:</strong> Key-value pair mapping (e.g., HashMap, TreeMap)</li>
+								</ul>
+								<p>To instantiate an interface in the Java Collections Framework, you typically use
+									a specific implementation class. For example:</p>
+								<pre><code>// Instantiate a List
 							List&lt;String&gt; list = new ArrayList&lt;&gt;();
 							
 							// Instantiate a Set
@@ -220,171 +219,171 @@
 							// Instantiate a Map
 							Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
 							</code></pre>
-								</div>
-							</details></br>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>4. Is there any other interface, which has some specific use case?</summary>
-								<div class="toggle-content">
-									<p>Yes, there are other interfaces in the Java Collections Framework that serve
-										specific purposes:</p>
-									<ul>
-										<li><strong>Deque:</strong> Double-ended queue supporting element insertion and
-											removal from both ends.</li>
-										<li><strong>SortedSet:</strong> A set that maintains elements in ascending
-											order.</li>
-										<li><strong>SortedMap:</strong> A map that maintains key-value pairs in
-											ascending order of keys.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>4. Is there any other interface, which has some specific use case?</summary>
+							<div class="toggle-content">
+								<p>Yes, there are other interfaces in the Java Collections Framework that serve
+									specific purposes:</p>
+								<ul>
+									<li><strong>Deque:</strong> Double-ended queue supporting element insertion and
+										removal from both ends.</li>
+									<li><strong>SortedSet:</strong> A set that maintains elements in ascending
+										order.</li>
+									<li><strong>SortedMap:</strong> A map that maintains key-value pairs in
+										ascending order of keys.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>5. What is a Map interface, why it’s not a part of collection framework and
-									when to use?</summary>
-								<div class="toggle-content">
-									<p>The <strong>Map</strong> interface in Java represents a mapping between keys and
-										values. It is not strictly a part of the Collection Framework because it doesn't
-										inherit from the Collection interface. It is used when you need to store data as
-										key-value pairs and retrieve values based on keys.</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>5. What is a Map interface, why it’s not a part of collection framework and
+								when to use?</summary>
+							<div class="toggle-content">
+								<p>The <strong>Map</strong> interface in Java represents a mapping between keys and
+									values. It is not strictly a part of the Collection Framework because it doesn't
+									inherit from the Collection interface. It is used when you need to store data as
+									key-value pairs and retrieve values based on keys.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>6. Describe various implementations of the Map interface and their use case
-									differences and map hierarchy diagram?</summary>
-								<div class="toggle-content">
-									<p>The Java <strong>Map</strong> interface has several implementations:</p>
-									<ul>
-										<li><strong>HashMap:</strong> Stores key-value pairs in a hash table, offering
-											average O(1) time complexity for put and get operations. Use when order is
-											not important and fast access is required.</li>
-										<li><strong>TreeMap:</strong> Stores key-value pairs in a sorted tree structure
-											based on the natural ordering of keys or a custom comparator. Use when
-											elements need to be stored in a sorted order.</li>
-										<li><strong>LinkedHashMap:</strong> Inherits from HashMap and maintains
-											insertion order of elements. Use when you need predictable iteration order.
-										</li>
-										<li><strong>ConcurrentHashMap:</strong> A thread-safe implementation of HashMap,
-											optimized for concurrent access. Use when you need thread safety without
-											locking the entire map.</li>
-									</ul>
-									<p><strong>Map Hierarchy Diagram:</strong></p>
-									<pre>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>6. Describe various implementations of the Map interface and their use case
+								differences and map hierarchy diagram?</summary>
+							<div class="toggle-content">
+								<p>The Java <strong>Map</strong> interface has several implementations:</p>
+								<ul>
+									<li><strong>HashMap:</strong> Stores key-value pairs in a hash table, offering
+										average O(1) time complexity for put and get operations. Use when order is
+										not important and fast access is required.</li>
+									<li><strong>TreeMap:</strong> Stores key-value pairs in a sorted tree structure
+										based on the natural ordering of keys or a custom comparator. Use when
+										elements need to be stored in a sorted order.</li>
+									<li><strong>LinkedHashMap:</strong> Inherits from HashMap and maintains
+										insertion order of elements. Use when you need predictable iteration order.
+									</li>
+									<li><strong>ConcurrentHashMap:</strong> A thread-safe implementation of HashMap,
+										optimized for concurrent access. Use when you need thread safety without
+										locking the entire map.</li>
+								</ul>
+								<p><strong>Map Hierarchy Diagram:</strong></p>
+								<pre>
 							           Map
 							           / | \
 							     HashMap TreeMap LinkedHashMap
 							              |
 							       ConcurrentHashMap
 							        </pre>
-								</div>
-							</details></br>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>7. What is the difference between the HashMap, TreeMap and LinkedHashMap?
-								</summary>
-								<div class="toggle-content">
-									<p><strong>HashMap:</strong> Stores key-value pairs in a hash table. Offers average
-										O(1) time complexity for put and get operations. Does not maintain any order.
-									</p>
-									<p><strong>TreeMap:</strong> Stores key-value pairs in a sorted tree structure.
-										Maintains elements in sorted order defined by natural ordering or a comparator.
-									</p>
-									<p><strong>LinkedHashMap:</strong> Inherits from HashMap and maintains the insertion
-										order of elements. Iteration order is predictable.</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>7. What is the difference between the HashMap, TreeMap and LinkedHashMap?
+							</summary>
+							<div class="toggle-content">
+								<p><strong>HashMap:</strong> Stores key-value pairs in a hash table. Offers average
+									O(1) time complexity for put and get operations. Does not maintain any order.
+								</p>
+								<p><strong>TreeMap:</strong> Stores key-value pairs in a sorted tree structure.
+									Maintains elements in sorted order defined by natural ordering or a comparator.
+								</p>
+								<p><strong>LinkedHashMap:</strong> Inherits from HashMap and maintains the insertion
+									order of elements. Iteration order is predictable.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>8. How ArrayList and LinkedList differ from each other? What is the possible
-									use case where ArrayList and LinkedList fits?</summary>
-								<div class="toggle-content">
-									<p><strong>ArrayList:</strong></p>
-									<ul>
-										<li>Backed by a dynamic array, allowing fast random access and traversal.</li>
-										<li>Insertion/deletion operations can be slower due to array resizing.</li>
-										<li>Use when frequent access and iteration are required, and the list will not
-											undergo frequent insertions/deletions.</li>
-									</ul>
-									<p><strong>LinkedList:</strong></p>
-									<ul>
-										<li>Backed by a doubly linked list, allowing fast insertion/deletion operations.
-										</li>
-										<li>Traversal can be slower compared to ArrayList due to lack of random access.
-										</li>
-										<li>Use when frequent insertions/deletions are required, or when elements need
-											to be dynamically added or removed.</li>
-									</ul>
-									<p><strong>Use cases:</strong> ArrayList is suitable for scenarios where you need
-										fast access and iteration, while LinkedList is better for scenarios where you
-										need frequent insertions and deletions.</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>8. How ArrayList and LinkedList differ from each other? What is the possible
+								use case where ArrayList and LinkedList fits?</summary>
+							<div class="toggle-content">
+								<p><strong>ArrayList:</strong></p>
+								<ul>
+									<li>Backed by a dynamic array, allowing fast random access and traversal.</li>
+									<li>Insertion/deletion operations can be slower due to array resizing.</li>
+									<li>Use when frequent access and iteration are required, and the list will not
+										undergo frequent insertions/deletions.</li>
+								</ul>
+								<p><strong>LinkedList:</strong></p>
+								<ul>
+									<li>Backed by a doubly linked list, allowing fast insertion/deletion operations.
+									</li>
+									<li>Traversal can be slower compared to ArrayList due to lack of random access.
+									</li>
+									<li>Use when frequent insertions/deletions are required, or when elements need
+										to be dynamically added or removed.</li>
+								</ul>
+								<p><strong>Use cases:</strong> ArrayList is suitable for scenarios where you need
+									fast access and iteration, while LinkedList is better for scenarios where you
+									need frequent insertions and deletions.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>9. How is HashSet differ from TreeSet? What is the use case, where HashSet and
-									TreeSet fits?</summary>
-								<div class="toggle-content">
-									<p><strong>HashSet:</strong></p>
-									<ul>
-										<li>Stores elements using a hash table mechanism.</li>
-										<li>Does not maintain any order of elements.</li>
-										<li>Provides average O(1) time complexity for add, remove, and contains
-											operations.</li>
-										<li>Use when order is not important and you need fast access.</li>
-									</ul>
-									<p><strong>TreeSet:</strong></p>
-									<ul>
-										<li>Stores elements in a sorted tree structure (Red-Black tree).</li>
-										<li>Maintains elements in sorted order defined by natural ordering or a
-											comparator.</li>
-										<li>Provides O(log n) time complexity for add, remove, and contains operations.
-										</li>
-										<li>Use when elements need to be stored in sorted order.</li>
-									</ul>
-									<p><strong>Use case:</strong> HashSet is suitable for scenarios where you need fast
-										access and uniqueness of elements. TreeSet is suitable when you need elements to
-										be stored and accessed in sorted order.</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>9. How is HashSet differ from TreeSet? What is the use case, where HashSet and
+								TreeSet fits?</summary>
+							<div class="toggle-content">
+								<p><strong>HashSet:</strong></p>
+								<ul>
+									<li>Stores elements using a hash table mechanism.</li>
+									<li>Does not maintain any order of elements.</li>
+									<li>Provides average O(1) time complexity for add, remove, and contains
+										operations.</li>
+									<li>Use when order is not important and you need fast access.</li>
+								</ul>
+								<p><strong>TreeSet:</strong></p>
+								<ul>
+									<li>Stores elements in a sorted tree structure (Red-Black tree).</li>
+									<li>Maintains elements in sorted order defined by natural ordering or a
+										comparator.</li>
+									<li>Provides O(log n) time complexity for add, remove, and contains operations.
+									</li>
+									<li>Use when elements need to be stored in sorted order.</li>
+								</ul>
+								<p><strong>Use case:</strong> HashSet is suitable for scenarios where you need fast
+									access and uniqueness of elements. TreeSet is suitable when you need elements to
+									be stored and accessed in sorted order.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>10. What is the difference between SET and LIST Interface?</summary>
-								<div class="toggle-content">
-									<p>The main differences between the <strong>Set</strong> and <strong>List</strong>
-										interfaces in Java Collections Framework are:</p>
-									<ul>
-										<li><strong>Set:</strong> Does not allow duplicate elements. Does not maintain
-											insertion order (unless it's a SortedSet).</li>
-										<li><strong>List:</strong> Allows duplicate elements. Maintains elements in
-											insertion order.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>10. What is the difference between SET and LIST Interface?</summary>
+							<div class="toggle-content">
+								<p>The main differences between the <strong>Set</strong> and <strong>List</strong>
+									interfaces in Java Collections Framework are:</p>
+								<ul>
+									<li><strong>Set:</strong> Does not allow duplicate elements. Does not maintain
+										insertion order (unless it's a SortedSet).</li>
+									<li><strong>List:</strong> Allows duplicate elements. Maintains elements in
+										insertion order.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>11. Where to use ArrayList and where to use LinkedList?</summary>
-								<div class="toggle-content">
-									<p>Use <strong>ArrayList</strong> when:</p>
-									<ul>
-										<li>You need fast iteration and random access.</li>
-										<li>The list will not undergo frequent insertions and deletions.</li>
-									</ul>
-									<p>Use <strong>LinkedList</strong> when:</p>
-									<ul>
-										<li>You need fast insertions and deletions.</li>
-										<li>The list will undergo frequent insertions and deletions.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>11. Where to use ArrayList and where to use LinkedList?</summary>
+							<div class="toggle-content">
+								<p>Use <strong>ArrayList</strong> when:</p>
+								<ul>
+									<li>You need fast iteration and random access.</li>
+									<li>The list will not undergo frequent insertions and deletions.</li>
+								</ul>
+								<p>Use <strong>LinkedList</strong> when:</p>
+								<ul>
+									<li>You need fast insertions and deletions.</li>
+									<li>The list will undergo frequent insertions and deletions.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>12. What is an Iterator? Explain with an Example.</summary>
-								<div class="toggle-content">
-									<p>An <strong>Iterator</strong> in Java is an object that enables you to traverse
-										through a collection and access its elements sequentially.</p>
-									<p>Example:</p>
-									<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
+						<details onclick="closeOtherDetails('details1')">
+							<summary>12. What is an Iterator? Explain with an Example.</summary>
+							<div class="toggle-content">
+								<p>An <strong>Iterator</strong> in Java is an object that enables you to traverse
+									through a collection and access its elements sequentially.</p>
+								<p>Example:</p>
+								<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
 							list.add("Java");
 							list.add("Python");
 							list.add("C++");
@@ -395,43 +394,43 @@
 							    System.out.println(element);
 							}
 							</code></pre>
-								</div>
-							</details></br>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>13. What is the difference between Stack and Queue?</summary>
-								<div class="toggle-content">
-									<p><strong>Stack:</strong> LIFO (Last In First Out) data structure where elements
-										are added and removed from the top.</p>
-									<p><strong>Queue:</strong> FIFO (First In First Out) data structure where elements
-										are added at the end and removed from the beginning.</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>13. What is the difference between Stack and Queue?</summary>
+							<div class="toggle-content">
+								<p><strong>Stack:</strong> LIFO (Last In First Out) data structure where elements
+									are added and removed from the top.</p>
+								<p><strong>Queue:</strong> FIFO (First In First Out) data structure where elements
+									are added at the end and removed from the beginning.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>14. What are the ways to convert an array of strings to list and list of
-									strings to array of strings?</summary>
-								<div class="toggle-content">
-									<p>To convert an array of strings to a list:</p>
-									<pre><code>String[] array = {"Java", "Python", "C++"};
+						<details onclick="closeOtherDetails('details1')">
+							<summary>14. What are the ways to convert an array of strings to list and list of
+								strings to array of strings?</summary>
+							<div class="toggle-content">
+								<p>To convert an array of strings to a list:</p>
+								<pre><code>String[] array = {"Java", "Python", "C++"};
 							List&lt;String&gt; list = Arrays.asList(array);
 							</code></pre>
-									<p>To convert a list of strings to an array:</p>
-									<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
+								<p>To convert a list of strings to an array:</p>
+								<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
 							list.add("Java");
 							list.add("Python");
 							list.add("C++");
 							
 							String[] array = list.toArray(new String[0]);
 							</code></pre>
-								</div>
-							</details></br>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>15. Write a program to sort a map based on value?</summary>
-								<div class="toggle-content">
-									<p>Here's a Java program to sort a Map based on its values:</p>
-									<pre><code>import java.util.*;
+						<details onclick="closeOtherDetails('details1')">
+							<summary>15. Write a program to sort a map based on value?</summary>
+							<div class="toggle-content">
+								<p>Here's a Java program to sort a Map based on its values:</p>
+								<pre><code>import java.util.*;
 							
 							public class SortMapByValue {
 							    public static void main(String[] args) {
@@ -458,67 +457,67 @@
 							    }
 							}
 							</code></pre>
-								</div>
-							</details></br>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>16. How to convert a HashMap to an ArrayList?</summary>
-								<div class="toggle-content">
-									<p>To convert a <code>HashMap</code> to an <code>ArrayList</code> in Java:</p>
-									<pre><code>Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+						<details onclick="closeOtherDetails('details1')">
+							<summary>16. How to convert a HashMap to an ArrayList?</summary>
+							<div class="toggle-content">
+								<p>To convert a <code>HashMap</code> to an <code>ArrayList</code> in Java:</p>
+								<pre><code>Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
 							map.put("Java", 20);
 							map.put("Python", 10);
 							map.put("C++", 30);
 							
 							List&lt;Map.Entry&lt;String, Integer&gt;&gt; list = new ArrayList&lt;&gt;(map.entrySet());
 							</code></pre>
-								</div>
-							</details></br>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>17. What are the different interfaces are there in Collection framework?
-								</summary>
-								<div class="toggle-content">
-									<p>The different interfaces in the Java Collections Framework include:</p>
-									<ul>
-										<li><strong>Collection:</strong> Root interface for all collection types.</li>
-										<li><strong>List:</strong> Ordered collection allowing duplicate elements.</li>
-										<li><strong>Set:</strong> Collection without duplicate elements.</li>
-										<li><strong>Queue:</strong> Collection designed for holding elements prior to
-											processing.</li>
-										<li><strong>Map:</strong> Key-value pair mapping.</li>
-										<li><strong>SortedSet:</strong> Set that maintains elements in sorted order.
-										</li>
-										<li><strong>SortedMap:</strong> Map that maintains key-value pairs in sorted
-											order of keys.</li>
-										<li><strong>Deque:</strong> Double-ended queue supporting element insertion and
-											removal from both ends.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>17. What are the different interfaces are there in Collection framework?
+							</summary>
+							<div class="toggle-content">
+								<p>The different interfaces in the Java Collections Framework include:</p>
+								<ul>
+									<li><strong>Collection:</strong> Root interface for all collection types.</li>
+									<li><strong>List:</strong> Ordered collection allowing duplicate elements.</li>
+									<li><strong>Set:</strong> Collection without duplicate elements.</li>
+									<li><strong>Queue:</strong> Collection designed for holding elements prior to
+										processing.</li>
+									<li><strong>Map:</strong> Key-value pair mapping.</li>
+									<li><strong>SortedSet:</strong> Set that maintains elements in sorted order.
+									</li>
+									<li><strong>SortedMap:</strong> Map that maintains key-value pairs in sorted
+										order of keys.</li>
+									<li><strong>Deque:</strong> Double-ended queue supporting element insertion and
+										removal from both ends.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>18. What is the difference between Iterator and ListIterator?</summary>
-								<div class="toggle-content">
-									<p>The main differences between <strong>Iterator</strong> and
-										<strong>ListIterator</strong> in Java are:
-									</p>
-									<ul>
-										<li><strong>Iterator:</strong> Supports forward traversal only. Can be used with
-											any collection.</li>
-										<li><strong>ListIterator:</strong> Extends Iterator to support bidirectional
-											traversal and allows modifications to the list during traversal.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>18. What is the difference between Iterator and ListIterator?</summary>
+							<div class="toggle-content">
+								<p>The main differences between <strong>Iterator</strong> and
+									<strong>ListIterator</strong> in Java are:
+								</p>
+								<ul>
+									<li><strong>Iterator:</strong> Supports forward traversal only. Can be used with
+										any collection.</li>
+									<li><strong>ListIterator:</strong> Extends Iterator to support bidirectional
+										traversal and allows modifications to the list during traversal.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>19. What are the different ways to iterate a List?</summary>
-								<div class="toggle-content">
-									<p>There are several ways to iterate through a List in Java:</p>
-									<ul>
-										<li><strong>Using for-each loop:</strong></li>
-										<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
+						<details onclick="closeOtherDetails('details1')">
+							<summary>19. What are the different ways to iterate a List?</summary>
+							<div class="toggle-content">
+								<p>There are several ways to iterate through a List in Java:</p>
+								<ul>
+									<li><strong>Using for-each loop:</strong></li>
+									<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
 							list.add("Java");
 							list.add("Python");
 							list.add("C++");
@@ -527,8 +526,8 @@
 							    System.out.println(element);
 							}
 							</code></pre>
-										<li><strong>Using Iterator:</strong></li>
-										<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
+									<li><strong>Using Iterator:</strong></li>
+									<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
 							list.add("Java");
 							list.add("Python");
 							list.add("C++");
@@ -539,8 +538,8 @@
 							    System.out.println(element);
 							}
 							</code></pre>
-										<li><strong>Using ListIterator (for Lists only):</strong></li>
-										<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
+									<li><strong>Using ListIterator (for Lists only):</strong></li>
+									<pre><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();
 							list.add("Java");
 							list.add("Python");
 							list.add("C++");
@@ -551,268 +550,268 @@
 							    System.out.println(element);
 							}
 							</code></pre>
-									</ul>
-								</div>
-							</details></br>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details1')">
-								<summary>20. What is the difference between Comparable and Comparator interface? How Are
-									They Used?</summary>
-								<div class="toggle-content">
-									<p>The main differences between <strong>Comparable</strong> and
-										<strong>Comparator</strong> interfaces in Java are:
-									</p>
-									<ul>
-										<li><strong>Comparable:</strong> Allows a class to be compared with itself. It
-											provides a single sorting sequence.</li>
-										<li><strong>Comparator:</strong> Allows the definition of multiple sorting
-											sequences. It is used to compare two different classes or objects.</li>
-									</ul>
-									<p><strong>Usage:</strong></p>
-									<ul>
-										<li><strong>Comparable:</strong> Implement this interface in a class whose
-											objects you want to compare. Override the <code>compareTo()</code> method to
-											define the default sorting behavior.</li>
-										<li><strong>Comparator:</strong> Implement this interface to define custom
-											sorting orders for classes that do not implement Comparable or for defining
-											multiple sorting orders.</li>
-									</ul>
-								</div>
-							</details></br>
-							<details onclick="closeOtherDetails('details2')">
-								<summary>1. How does HashMap work and how is it implemented in Java?</summary>
-								<div class="toggle-content">
-									<p><strong>HashMap</strong> in Java works based on hashing principles. It stores
-										key-value pairs using a hash table. Here’s how it works:</p>
-									<ul>
-										<li>When you put a key-value pair into a HashMap, the key's
-											<code>hashCode()</code> method is called to calculate a hash value.
-										</li>
-										<li>This hash value is then used to determine the index where the key-value pair
-											will be stored in an array called the bucket.</li>
-										<li>If multiple keys hash to the same index (collision), HashMap uses linked
-											lists (or in Java 8+, tree structures for large linked lists) to store these
-											key-value pairs in the same bucket.</li>
-										<li>To retrieve a value based on a key, HashMap calculates the hash value of the
-											key again, finds the appropriate bucket, and then uses the equals method to
-											find the exact key-value pair.</li>
-									</ul>
-									<p>Implementation: HashMap in Java is implemented using an array of nodes (buckets)
-										and employs techniques like linked lists (before Java 8) or balanced trees (Java
-										8+) to handle collisions efficiently.</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details1')">
+							<summary>20. What is the difference between Comparable and Comparator interface? How Are
+								They Used?</summary>
+							<div class="toggle-content">
+								<p>The main differences between <strong>Comparable</strong> and
+									<strong>Comparator</strong> interfaces in Java are:
+								</p>
+								<ul>
+									<li><strong>Comparable:</strong> Allows a class to be compared with itself. It
+										provides a single sorting sequence.</li>
+									<li><strong>Comparator:</strong> Allows the definition of multiple sorting
+										sequences. It is used to compare two different classes or objects.</li>
+								</ul>
+								<p><strong>Usage:</strong></p>
+								<ul>
+									<li><strong>Comparable:</strong> Implement this interface in a class whose
+										objects you want to compare. Override the <code>compareTo()</code> method to
+										define the default sorting behavior.</li>
+									<li><strong>Comparator:</strong> Implement this interface to define custom
+										sorting orders for classes that do not implement Comparable or for defining
+										multiple sorting orders.</li>
+								</ul>
+							</div>
+						</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>1. How does HashMap work and how is it implemented in Java?</summary>
+							<div class="toggle-content">
+								<p><strong>HashMap</strong> in Java works based on hashing principles. It stores
+									key-value pairs using a hash table. Here’s how it works:</p>
+								<ul>
+									<li>When you put a key-value pair into a HashMap, the key's
+										<code>hashCode()</code> method is called to calculate a hash value.
+									</li>
+									<li>This hash value is then used to determine the index where the key-value pair
+										will be stored in an array called the bucket.</li>
+									<li>If multiple keys hash to the same index (collision), HashMap uses linked
+										lists (or in Java 8+, tree structures for large linked lists) to store these
+										key-value pairs in the same bucket.</li>
+									<li>To retrieve a value based on a key, HashMap calculates the hash value of the
+										key again, finds the appropriate bucket, and then uses the equals method to
+										find the exact key-value pair.</li>
+								</ul>
+								<p>Implementation: HashMap in Java is implemented using an array of nodes (buckets)
+									and employs techniques like linked lists (before Java 8) or balanced trees (Java
+									8+) to handle collisions efficiently.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>2. What is the collision problem? How does HashMap perform collision detection
-									and collision prevention?</summary>
-								<div class="toggle-content">
-									<p><strong>Collision problem:</strong> Occurs when two different keys hash to the
-										same index in the HashMap array.</p>
-									<p><strong>Collision detection and prevention:</strong></p>
-									<ul>
-										<li><strong>Detection:</strong> HashMap detects collisions by comparing hash
-											codes and using the <code>equals()</code> method to ensure keys are unique
-											within a bucket.</li>
-										<li><strong>Prevention:</strong> It uses chaining (linked list in older
-											versions, tree in newer versions) to store multiple key-value pairs in the
-											same bucket. This allows HashMap to handle collisions gracefully without
-											losing data.</li>
-									</ul>
-									<p>Algorithms like tree structures (red-black trees) introduced in Java 8 help
-										maintain O(log n) performance for operations even when the number of collisions
-										increases.</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>2. What is the collision problem? How does HashMap perform collision detection
+								and collision prevention?</summary>
+							<div class="toggle-content">
+								<p><strong>Collision problem:</strong> Occurs when two different keys hash to the
+									same index in the HashMap array.</p>
+								<p><strong>Collision detection and prevention:</strong></p>
+								<ul>
+									<li><strong>Detection:</strong> HashMap detects collisions by comparing hash
+										codes and using the <code>equals()</code> method to ensure keys are unique
+										within a bucket.</li>
+									<li><strong>Prevention:</strong> It uses chaining (linked list in older
+										versions, tree in newer versions) to store multiple key-value pairs in the
+										same bucket. This allows HashMap to handle collisions gracefully without
+										losing data.</li>
+								</ul>
+								<p>Algorithms like tree structures (red-black trees) introduced in Java 8 help
+									maintain O(log n) performance for operations even when the number of collisions
+									increases.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>3. What is the time complexity of putting and getting an element from a
-									HashMap? Which Map implementation provides better performance?</summary>
-								<div class="toggle-content">
-									<p><strong>Time complexity:</strong></p>
-									<ul>
-										<li><strong>Putting (insertion):</strong> O(1) on average. In the worst case
-											(when all keys hash to the same bucket), it can degrade to O(n).</li>
-										<li><strong>Getting (retrieval):</strong> O(1) on average, assuming a good hash
-											function and a uniform distribution of keys.</li>
-									</ul>
-									<p><strong>Performance:</strong> HashMap generally provides better performance for
-										most use cases due to its average constant-time complexity for put and get
-										operations.</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>3. What is the time complexity of putting and getting an element from a
+								HashMap? Which Map implementation provides better performance?</summary>
+							<div class="toggle-content">
+								<p><strong>Time complexity:</strong></p>
+								<ul>
+									<li><strong>Putting (insertion):</strong> O(1) on average. In the worst case
+										(when all keys hash to the same bucket), it can degrade to O(n).</li>
+									<li><strong>Getting (retrieval):</strong> O(1) on average, assuming a good hash
+										function and a uniform distribution of keys.</li>
+								</ul>
+								<p><strong>Performance:</strong> HashMap generally provides better performance for
+									most use cases due to its average constant-time complexity for put and get
+									operations.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>4. What is the purpose of the initial capacity and load factor parameters of a
-									HashMap? What are their default values? How does the threshold decide the size?
-								</summary>
-								<div class="toggle-content">
-									<p><strong>Initial capacity:</strong> Specifies the initial size of the HashMap. It
-										determines the number of buckets in the hash table when it is created.</p>
-									<p><strong>Load factor:</strong> Specifies when the HashMap should resize itself. It
-										is a measure of how full the HashMap can get before it needs to increase its
-										capacity.</p>
-									<p><strong>Default values:</strong></p>
-									<ul>
-										<li><strong>Initial capacity:</strong> 16 (meaning the hash table will have 16
-											buckets initially).</li>
-										<li><strong>Load factor:</strong> 0.75 (meaning the HashMap will resize when it
-											reaches 75% of its capacity).</li>
-									</ul>
-									<p><strong>Threshold:</strong> The threshold is calculated as the product of the
-										load factor and the current capacity. When the number of entries exceeds this
-										threshold, the HashMap is resized (rehashed).</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>4. What is the purpose of the initial capacity and load factor parameters of a
+								HashMap? What are their default values? How does the threshold decide the size?
+							</summary>
+							<div class="toggle-content">
+								<p><strong>Initial capacity:</strong> Specifies the initial size of the HashMap. It
+									determines the number of buckets in the hash table when it is created.</p>
+								<p><strong>Load factor:</strong> Specifies when the HashMap should resize itself. It
+									is a measure of how full the HashMap can get before it needs to increase its
+									capacity.</p>
+								<p><strong>Default values:</strong></p>
+								<ul>
+									<li><strong>Initial capacity:</strong> 16 (meaning the hash table will have 16
+										buckets initially).</li>
+									<li><strong>Load factor:</strong> 0.75 (meaning the HashMap will resize when it
+										reaches 75% of its capacity).</li>
+								</ul>
+								<p><strong>Threshold:</strong> The threshold is calculated as the product of the
+									load factor and the current capacity. When the number of entries exceeds this
+									threshold, the HashMap is resized (rehashed).</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>5. What is the situation in which fail-fast and fail-safe iterators work? What
-									are the issues with using fail-safe iterators?</summary>
-								<div class="toggle-content">
-									<p><strong>Fail-fast iterators:</strong> Fail-fast iterators throw
-										<code>ConcurrentModificationException</code> if the collection is modified
-										structurally while iterating over it.
-									</p>
-									<p><strong>Fail-safe iterators:</strong> Do not throw
-										<code>ConcurrentModificationException</code>. They operate on a cloned copy of
-										the collection or use other mechanisms to ensure that modifications do not
-										affect ongoing iterations.
-									</p>
-									<p><strong>Situations:</strong></p>
-									<ul>
-										<li><strong>Fail-fast:</strong> Used in collections like ArrayList, HashMap,
-											etc., where concurrent modification during iteration is not supported.</li>
-										<li><strong>Fail-safe:</strong> Used in concurrent collections like
-											ConcurrentHashMap, CopyOnWriteArrayList, etc., where simultaneous
-											modifications are allowed.</li>
-									</ul>
-									<p><strong>Issues:</strong> Fail-safe iterators may not reflect the latest changes
-										in the collection and may lead to inconsistencies if modifications are expected
-										during iteration.</p>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>5. What is the situation in which fail-fast and fail-safe iterators work? What
+								are the issues with using fail-safe iterators?</summary>
+							<div class="toggle-content">
+								<p><strong>Fail-fast iterators:</strong> Fail-fast iterators throw
+									<code>ConcurrentModificationException</code> if the collection is modified
+									structurally while iterating over it.
+								</p>
+								<p><strong>Fail-safe iterators:</strong> Do not throw
+									<code>ConcurrentModificationException</code>. They operate on a cloned copy of
+									the collection or use other mechanisms to ensure that modifications do not
+									affect ongoing iterations.
+								</p>
+								<p><strong>Situations:</strong></p>
+								<ul>
+									<li><strong>Fail-fast:</strong> Used in collections like ArrayList, HashMap,
+										etc., where concurrent modification during iteration is not supported.</li>
+									<li><strong>Fail-safe:</strong> Used in concurrent collections like
+										ConcurrentHashMap, CopyOnWriteArrayList, etc., where simultaneous
+										modifications are allowed.</li>
+								</ul>
+								<p><strong>Issues:</strong> Fail-safe iterators may not reflect the latest changes
+									in the collection and may lead to inconsistencies if modifications are expected
+									during iteration.</p>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>6. How can you use Comparable and Comparator interfaces to sort collections?
-								</summary>
-								<div class="toggle-content">
-									<p><strong>Comparable interface:</strong> Allows a class to implement its own
-										natural ordering. Objects implementing Comparable can be sorted using
-										<code>Arrays.sort()</code> or <code>Collections.sort()</code>.
-									</p>
-									<p><strong>Comparator interface:</strong> Provides a way to define multiple sorting
-										sequences. It can be used to sort objects of classes that do not implement
-										Comparable or to override the natural ordering defined by Comparable.</p>
-									<p><strong>Usage:</strong></p>
-									<ul>
-										<li><strong>Comparable:</strong> Implement <code>Comparable&lt;T&gt;</code>
-											interface and override <code>compareTo()</code> method.</li>
-										<li><strong>Comparator:</strong> Implement <code>Comparator&lt;T&gt;</code>
-											interface and override <code>compare()</code> method, then pass it to
-											<code>sort()</code> method.
-										</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>6. How can you use Comparable and Comparator interfaces to sort collections?
+							</summary>
+							<div class="toggle-content">
+								<p><strong>Comparable interface:</strong> Allows a class to implement its own
+									natural ordering. Objects implementing Comparable can be sorted using
+									<code>Arrays.sort()</code> or <code>Collections.sort()</code>.
+								</p>
+								<p><strong>Comparator interface:</strong> Provides a way to define multiple sorting
+									sequences. It can be used to sort objects of classes that do not implement
+									Comparable or to override the natural ordering defined by Comparable.</p>
+								<p><strong>Usage:</strong></p>
+								<ul>
+									<li><strong>Comparable:</strong> Implement <code>Comparable&lt;T&gt;</code>
+										interface and override <code>compareTo()</code> method.</li>
+									<li><strong>Comparator:</strong> Implement <code>Comparator&lt;T&gt;</code>
+										interface and override <code>compare()</code> method, then pass it to
+										<code>sort()</code> method.
+									</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>7. When to use Iterator and Enumeration? What are the possible use cases?
-								</summary>
-								<div class="toggle-content">
-									<p><strong>Iterator:</strong> Preferred choice for iterating through collections in
-										Java. It allows both read and remove operations.</p>
-									<p><strong>Enumeration:</strong> Legacy interface mainly used for iterating legacy
-										collections like <code>Vector</code> and <code>Hashtable</code>. It only
-										supports read operations.</p>
-									<p><strong>Use cases:</strong></p>
-									<ul>
-										<li><strong>Iterator:</strong> Used for iterating through modern collections
-											like ArrayList, HashMap, etc., where both read and remove operations are
-											required.</li>
-										<li><strong>Enumeration:</strong> Used for legacy collections like Vector and
-											Hashtable, where only read operations are needed.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>7. When to use Iterator and Enumeration? What are the possible use cases?
+							</summary>
+							<div class="toggle-content">
+								<p><strong>Iterator:</strong> Preferred choice for iterating through collections in
+									Java. It allows both read and remove operations.</p>
+								<p><strong>Enumeration:</strong> Legacy interface mainly used for iterating legacy
+									collections like <code>Vector</code> and <code>Hashtable</code>. It only
+									supports read operations.</p>
+								<p><strong>Use cases:</strong></p>
+								<ul>
+									<li><strong>Iterator:</strong> Used for iterating through modern collections
+										like ArrayList, HashMap, etc., where both read and remove operations are
+										required.</li>
+									<li><strong>Enumeration:</strong> Used for legacy collections like Vector and
+										Hashtable, where only read operations are needed.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>8. When to use Queue and Stack? What are the possible use cases?</summary>
-								<div class="toggle-content">
-									<p><strong>Queue:</strong> Used when elements are stored and accessed in a FIFO
-										(First In First Out) manner. Useful for implementing algorithms like
-										breadth-first search (BFS) and job scheduling.</p>
-									<p><strong>Stack:</strong> Used when elements are stored and accessed in a LIFO
-										(Last In First Out) manner. Useful for implementing algorithms like depth-first
-										search (DFS) and expression evaluation.</p>
-									<p><strong>Use cases:</strong></p>
-									<ul>
-										<li><strong>Queue:</strong> Used in scenarios like task scheduling, message
-											passing, and implementing buffer in producer-consumer problems.</li>
-										<li><strong>Stack:</strong> Used in scenarios like expression evaluation,
-											backtracking algorithms, and maintaining state in recursive algorithms.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>8. When to use Queue and Stack? What are the possible use cases?</summary>
+							<div class="toggle-content">
+								<p><strong>Queue:</strong> Used when elements are stored and accessed in a FIFO
+									(First In First Out) manner. Useful for implementing algorithms like
+									breadth-first search (BFS) and job scheduling.</p>
+								<p><strong>Stack:</strong> Used when elements are stored and accessed in a LIFO
+									(Last In First Out) manner. Useful for implementing algorithms like depth-first
+									search (DFS) and expression evaluation.</p>
+								<p><strong>Use cases:</strong></p>
+								<ul>
+									<li><strong>Queue:</strong> Used in scenarios like task scheduling, message
+										passing, and implementing buffer in producer-consumer problems.</li>
+									<li><strong>Stack:</strong> Used in scenarios like expression evaluation,
+										backtracking algorithms, and maintaining state in recursive algorithms.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>9. What is CopyOnWriteArrayList? How is it different from ArrayList in Java?
-								</summary>
-								<div class="toggle-content">
-									<p><strong>CopyOnWriteArrayList:</strong> A thread-safe variant of ArrayList in
-										Java. It creates a new copy of the underlying array whenever an element is
-										added, modified, or removed, ensuring thread safety without synchronization.</p>
-									<p><strong>Differences from ArrayList:</strong></p>
-									<ul>
-										<li><strong>Thread safety:</strong> CopyOnWriteArrayList is thread-safe and does
-											not throw ConcurrentModificationException during iteration.</li>
-										<li><strong>Modification:</strong> Regular ArrayList allows concurrent
-											modification, which can lead to <code>ConcurrentModificationException</code>
-											if not synchronized.</li>
-										<li><strong>Performance:</strong> CopyOnWriteArrayList is suitable for
-											read-heavy and low-contention scenarios but can be inefficient for
-											write-heavy operations due to copying overhead.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>9. What is CopyOnWriteArrayList? How is it different from ArrayList in Java?
+							</summary>
+							<div class="toggle-content">
+								<p><strong>CopyOnWriteArrayList:</strong> A thread-safe variant of ArrayList in
+									Java. It creates a new copy of the underlying array whenever an element is
+									added, modified, or removed, ensuring thread safety without synchronization.</p>
+								<p><strong>Differences from ArrayList:</strong></p>
+								<ul>
+									<li><strong>Thread safety:</strong> CopyOnWriteArrayList is thread-safe and does
+										not throw ConcurrentModificationException during iteration.</li>
+									<li><strong>Modification:</strong> Regular ArrayList allows concurrent
+										modification, which can lead to <code>ConcurrentModificationException</code>
+										if not synchronized.</li>
+									<li><strong>Performance:</strong> CopyOnWriteArrayList is suitable for
+										read-heavy and low-contention scenarios but can be inefficient for
+										write-heavy operations due to copying overhead.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>10. How does ConcurrentHashMap work? How does it provide thread safety?
-								</summary>
-								<div class="toggle-content">
-									<p><strong>ConcurrentHashMap:</strong> A thread-safe variant of HashMap in Java
-										introduced in Java 5. It allows concurrent read and write operations without
-										blocking the entire map.</p>
-									<p><strong>Thread safety:</strong></p>
-									<ul>
-										<li><strong>Segmentation:</strong> ConcurrentHashMap divides the map into
-											segments (buckets), and each segment can be locked independently during
-											updates, allowing concurrent read operations.</li>
-										<li><strong>Read operations:</strong> Multiple threads can read from
-											ConcurrentHashMap concurrently without blocking.</li>
-										<li><strong>Write operations:</strong> Updates are synchronized at segment
-											level, reducing contention compared to synchronized HashMap.</li>
-									</ul>
-								</div>
-							</details></br>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>10. How does ConcurrentHashMap work? How does it provide thread safety?
+							</summary>
+							<div class="toggle-content">
+								<p><strong>ConcurrentHashMap:</strong> A thread-safe variant of HashMap in Java
+									introduced in Java 5. It allows concurrent read and write operations without
+									blocking the entire map.</p>
+								<p><strong>Thread safety:</strong></p>
+								<ul>
+									<li><strong>Segmentation:</strong> ConcurrentHashMap divides the map into
+										segments (buckets), and each segment can be locked independently during
+										updates, allowing concurrent read operations.</li>
+									<li><strong>Read operations:</strong> Multiple threads can read from
+										ConcurrentHashMap concurrently without blocking.</li>
+									<li><strong>Write operations:</strong> Updates are synchronized at segment
+										level, reducing contention compared to synchronized HashMap.</li>
+								</ul>
+							</div>
+						</details></br>
 
-							<details onclick="closeOtherDetails('details2')">
-								<summary>11. How does WeakHashMap differ from other HashMap implementations?</summary>
-								<div class="toggle-content">
-									<p><strong>WeakHashMap:</strong> A special implementation of Map where keys are
-										weakly referenced. It allows keys to be garbage collected when no longer in use,
-										making it useful for caching and memoization.</p>
-									<p><strong>Differences:</strong></p>
-									<ul>
-										<li><strong>Garbage collection:</strong> Keys in WeakHashMap are weakly
-											referenced, so they can be garbage collected if there are no strong
-											references to them outside the map.</li>
-										<li><strong>Usage:</strong> WeakHashMap is suitable for scenarios where
-											automatic cleanup of unused entries (keys) is desired, such as caching
-											temporary data or caching objects in memory-limited environments.</li>
-									</ul>
-								</div>
-							</details></br>
-						</div>
+						<details onclick="closeOtherDetails('details2')">
+							<summary>11. How does WeakHashMap differ from other HashMap implementations?</summary>
+							<div class="toggle-content">
+								<p><strong>WeakHashMap:</strong> A special implementation of Map where keys are
+									weakly referenced. It allows keys to be garbage collected when no longer in use,
+									making it useful for caching and memoization.</p>
+								<p><strong>Differences:</strong></p>
+								<ul>
+									<li><strong>Garbage collection:</strong> Keys in WeakHashMap are weakly
+										referenced, so they can be garbage collected if there are no strong
+										references to them outside the map.</li>
+									<li><strong>Usage:</strong> WeakHashMap is suitable for scenarios where
+										automatic cleanup of unused entries (keys) is desired, such as caching
+										temporary data or caching objects in memory-limited environments.</li>
+								</ul>
+							</div>
+						</details></br>
+					</div>
 				</article>
 			</div>
 			<div class="card-footer">

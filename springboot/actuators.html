@@ -24,6 +24,15 @@
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
 	<style>
+		.tag {
+			color: red;
+		}
+
+		.value {
+			color: blue;
+		}
+	</style>
+	<style>
 		@media screen and (min-width: 1025px) {
 			.div-to-desk {
 				display: none;
@@ -45,8 +54,9 @@
 		<div class="navbar-brand">
 			<a class="navbar-item" href="../home.html"> <img width="40" height="25" src="../scripts/images/nani1.png"
 					alt="Home" />
+				<h5 href="../home.html" class="div-to-hide berkshire-swash-regular">Ravish</h5>
 			</a>
-			<h4 class="div-to-desk, berkshire-swash-regular">Ravish</h4>
+			<h4 class="div-to-desk berkshire-swash-regular" href="../home.html">Ravish</h4>
 			<button class="navbar-burger" data-target="topbar-nav">
 				<span></span> <span></span> <span></span>
 			</button>
@@ -163,16 +173,12 @@
 							<p>The spring-boot-starter-actuator is a starter module for
 								the actuator. It automatically configures various Actuator
 								endpoints and features, making them available out-of-the-box.</p>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj">
-								<span id="fbc9" class="aez aef xi aew b bf afa afb l afc afd"
-									data-selectable-paragraph=""><span class="hljs-tag">&lt;<span
-										class="hljs-name">dependency</span>&gt;</span><br>    <span
-									class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span
-									class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span
-									class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span
-									class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span
-									class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span>
-							</pre>
+								<pre class="nz oa ob oc od oe of og bo oh ba bj">
+									        <span class="tag">&lt;dependency&gt;</span>
+									        <br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;groupId&gt;</span><span class="value">org.springframework.boot</span><span class="tag">&lt;/groupId&gt;</span>
+									        <br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;artifactId&gt;</span><span class="value">spring-boot-starter-actuator</span><span class="tag">&lt;/artifactId&gt;</span>
+									        <br><span class="tag">&lt;/dependency&gt;</span>
+									    </pre>
 							<h3>2.2. Default Configuration</h3>
 							<p>By default, all endpoints (except /shutdown) are enabled.
 								Only the /health and /info are exposed via Web APIs. Rest are

@@ -3,46 +3,45 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="author" content="RaviKalyan">
-<title>MVC</title>
-<link rel="shortcut icon" type="image/x-icon"
-	href="../scripts/images/tab_logo.png" />
-<link
-	href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Elsie+Swash+Caps:wght@400;900&family=Kalam:wght@300;400;700&family=Pacifico&family=Satisfy&display=swap"
-	rel="stylesheet" />
-<link rel="stylesheet" href="../scripts/css/site.css">
-<script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="RaviKalyan">
+	<title>MVC</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Elsie+Swash+Caps:wght@400;900&family=Kalam:wght@300;400;700&family=Pacifico&family=Satisfy&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="../scripts/css/site.css">
+	<script>
 		!function (theme, navWidth) {
 			if (theme === 'dark') document.documentElement.classList.add('dark-theme')
 			if (navWidth) document.documentElement.style.setProperty('--nav-width', `${navWidth}px`)
 		}(localStorage && localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)') && 'dark'),
 			localStorage && localStorage.getItem('nav-width'))
 	</script>
-<style>
-@media screen and (min-width: 1025px) {
-	.div-to-desk {
-		display: none;
-		/* Hide the div on screens smaller than 1025px (mobile) */
-	}
-}
+	<style>
+		@media screen and (min-width: 1025px) {
+			.div-to-desk {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
 
-@media screen and (max-width: 1025px) {
-	.div-to-hide {
-		display: none;
-		/* Hide the div on screens smaller than 1025px (mobile) */
-	}
-}
-</style>
+		@media screen and (max-width: 1025px) {
+			.div-to-hide {
+				display: none;
+				/* Hide the div on screens smaller than 1025px (mobile) */
+			}
+		}
+	</style>
 </head>
 
 <body>
 	<nav class="navbar">
 		<div class="navbar-brand">
-			<a class="navbar-item" href="../home.html"> <img width="40"
-				height="25" src="../scripts/images/nani1.png" alt="Home" />
+			<a class="navbar-item" href="../home.html"> <img width="40" height="25" src="../scripts/images/nani1.png"
+					alt="Home" />
 			</a>
 			<h4 class="div-to-desk, berkshire-swash-regular">Ravish</h4>
 			<button class="navbar-burger" data-target="topbar-nav">
@@ -52,9 +51,8 @@
 		<div id="topbar-nav" class="navbar-menu">
 			<div class="navbar-end">
 				<div class="navbar-item" style="text-align: center;">
-					<li class="nav-item" style="top: .2rem;"><a class="nav-link1"
-						href="../home.html"><img height="25" width="25"
-							src="../scripts/images/home.png"></i></a></li>
+					<li class="nav-item" style="top: .2rem;"><a class="nav-link1" href="../home.html"><img height="25"
+								width="25" src="../scripts/images/home.png"></i></a></li>
 					<div class="navbar-item is-hoverable">
 						<a class="navbar-link" href="../java/introduction.html">Java</a>
 					</div>
@@ -73,18 +71,17 @@
 							Patterns</a>
 					</div>
 					<div class="navbar-item is-hoverable">
-						<a class="navbar-link"
-							href="../interview/interview-questions.html">Interview
+						<a class="navbar-link" href="../interview/interview-questions.html">Interview
 							Questions</a>
 					</div>
-					<label class="theme-toggler div-to-hide"> <input
-						type="checkbox" id="switch-theme-checkbox" /> <span class="icon"></span>
+					<label class="theme-toggler div-to-hide"> <input type="checkbox" id="switch-theme-checkbox" /> <span
+							class="icon"></span>
 					</label>
 				</div>
 			</div>
 		</div>
-		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input
-			type="checkbox" id="switch-theme-mobile" /> <span class="icon"></span>
+		<label class="theme-toggler div-to-desk" style="top: 22px;"> <input type="checkbox" id="switch-theme-mobile" />
+			<span class="icon"></span>
 		</label>
 	</nav>
 
@@ -94,71 +91,56 @@
 				<div class="nav-panel-menu is-active" data-panel="menu">
 					<li class="nav-item" data-depth="0">
 						<ul class="nav-list">
-							<h4>Spring Basic</h4>
+							<h4>Spring</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/introduction.html">Spring Introduction</a></li>
+									href="../spring/introduction.html">Spring Introduction</a></li>
 							<h4>Spring MVC</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/mvc.html">Spring MVC</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/mvc.html">Spring
+									MVC</a></li>
 							<h4>Spring Exceptions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/exceptions.html">Spring Exceptions</a></li>
-							<h4>Spring Actuators</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/actuators.html">Spring Actuators</a></li>
+									href="../spring/exceptions.html">Spring Exceptions</a></li>
 							<h4>Spring Annotations</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/annotations-core.html">Core Annotations</a></li>
+									href="../spring/annotations-core.html">Core Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/annotations-mvc.html">MVC Annotations</a></li>
+									href="../spring/annotations-mvc.html">MVC Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/annotations-transactions.html">Transactions
+									href="../spring/annotations-transactions.html">Transactions
 									& Error Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/annotations-configuration.html">Configuration
+									href="../spring/annotations-configuration.html">Configuration
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/annotations-aop.html">AOP Annotations</a></li>
+									href="../spring/annotations-aop.html">AOP Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/annotations-jpa.html">JPA Annotations</a></li>
+									href="../spring/annotations-jpa.html">JPA Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/annotations-cloud.html">Cloud Annotations</a></li>
+									href="../spring/annotations-cloud.html">Cloud Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/annotations-scheduling.html">Scheduling
+									href="../spring/annotations-scheduling.html">Scheduling
 									Annotations</a></li>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/annotations-cache-error.html">Caching
+									href="../spring/annotations-cache-error.html">Caching
 									Annotations</a></li>
 							<h4>Spring AOP</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/aop.html">Spring AOP</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
+									AOP</a></li>
 							<h4>Spring JPA</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/jpa.html">Spring JPA</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/jpa.html">Spring
+									JPA</a></li>
 							<h4>Spring Transactions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/transactions.html">Spring Transactions</a></li>
-							<h4>Spring Async</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/async.html">Spring Async</a></li>
+									href="../spring/transactions.html">Spring Transactions</a></li>
 							<h4>Spring Batch</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/batch.html">Spring Batch</a></li>
-							<h4>Spring Aspect</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/aspect.html">Spring Aspect</a></li>
-							<h4>Spring Kafka</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/kafka.html">Spring Kafka</a></li>
-							<h4>Spring Logging</h4>
-							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/logging.html">Spring Logging</a></li>
+							<li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/batch.html">Spring
+									Batch</a></li>
 							<h4>Spring Security</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/security.html">Spring Security</a></li>
+									href="../spring/security.html">Spring Security</a></li>
 							<h4>Interview Questions</h4>
 							<li class="nav-item" data-depth="1"><a class="nav-link"
-								href="../spring/spring-interview-questions.html">Spring
+									href="../interview/spring/spring-interview-questions.html">Spring
 									Interview Questions</a></li>
 						</ul>
 					</li>
@@ -185,7 +167,7 @@
 						<li><a href="../spring/introduction.html">Spring</a></li>
 						<li><a href="../spring/actuators.html">MVC</a></li>
 					</ul>
-					
+
 				</nav>
 				<a class="div-to-desk"> <br>
 				</a>
@@ -208,10 +190,9 @@
 							<figure class="np nq nr ns nt nu nm nn paragraph-image">
 								<div role="button" tabindex="0" class="nv nw fg nx bg ny">
 									<div class="nm nn no">
-										<picture> <img
-											alt="How does Spring MVC Web Framework work Internally?"
-											class="bg mu nz c" width="700" height="449" loading="eager"
-											src="https://miro.medium.com/v2/resize:fit:700/1*Po1j6eDF5YFr4dp8bLLtzw.png" />
+										<picture> <img alt="How does Spring MVC Web Framework work Internally?"
+												class="bg mu nz c" width="700" height="449" loading="eager"
+												src="https://miro.medium.com/v2/resize:fit:700/1*Po1j6eDF5YFr4dp8bLLtzw.png" />
 										</picture>
 									</div>
 								</div>
@@ -316,16 +297,16 @@
 								<div role="button" tabindex="0" class="nv nw fg nx bg ny">
 									<div class="nm nn rf">
 										<picture>
-										<source
-											srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 1400w"
-											sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px"
-											type="image/webp">
-										<source data-testid="og"
-											srcset="https://miro.medium.com/v2/resize:fit:640/1*ryU-g7oR7YNomJzLnRSFhA.png 640w, https://miro.medium.com/v2/resize:fit:720/1*ryU-g7oR7YNomJzLnRSFhA.png 720w, https://miro.medium.com/v2/resize:fit:750/1*ryU-g7oR7YNomJzLnRSFhA.png 750w, https://miro.medium.com/v2/resize:fit:786/1*ryU-g7oR7YNomJzLnRSFhA.png 786w, https://miro.medium.com/v2/resize:fit:828/1*ryU-g7oR7YNomJzLnRSFhA.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*ryU-g7oR7YNomJzLnRSFhA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/1*ryU-g7oR7YNomJzLnRSFhA.png 1400w"
-											sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px">
-										<img alt="REST With Spring course" class="bg mu nz c"
-											width="700" height="421" loading="lazy"
-											src="https://miro.medium.com/v2/resize:fit:700/1*ryU-g7oR7YNomJzLnRSFhA.png">
+											<source
+												srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ryU-g7oR7YNomJzLnRSFhA.png 1400w"
+												sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px"
+												type="image/webp">
+											<source data-testid="og"
+												srcset="https://miro.medium.com/v2/resize:fit:640/1*ryU-g7oR7YNomJzLnRSFhA.png 640w, https://miro.medium.com/v2/resize:fit:720/1*ryU-g7oR7YNomJzLnRSFhA.png 720w, https://miro.medium.com/v2/resize:fit:750/1*ryU-g7oR7YNomJzLnRSFhA.png 750w, https://miro.medium.com/v2/resize:fit:786/1*ryU-g7oR7YNomJzLnRSFhA.png 786w, https://miro.medium.com/v2/resize:fit:828/1*ryU-g7oR7YNomJzLnRSFhA.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*ryU-g7oR7YNomJzLnRSFhA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/1*ryU-g7oR7YNomJzLnRSFhA.png 1400w"
+												sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px">
+											<img alt="REST With Spring course" class="bg mu nz c" width="700"
+												height="421" loading="lazy"
+												src="https://miro.medium.com/v2/resize:fit:700/1*ryU-g7oR7YNomJzLnRSFhA.png">
 										</picture>
 									</div>
 								</div>
@@ -358,8 +339,8 @@
 									class="hljs-keyword">return</span> <span class="hljs-string">"redirect:/appointments"</span>;<br>}<br>}</span>
 							</pre>
 							<p>
-								After processing the request, the Controller returns a <strong
-									class="oc gs">logical view name</strong> and model to <a>DispatcherServlet
+								After processing the request, the Controller returns a <strong class="oc gs">logical
+									view name</strong> and model to <a>DispatcherServlet
 								</a>and it consults view resolvers until an actual View is
 								determined to render the output.
 							</p>
@@ -368,8 +349,8 @@
 								</a>or JSP with model data and it renders the output depending on
 								the model data.<br> <br> This Rendered output is
 								returned to the client as an HTTP response. On its way back it
-								can pass to any configured Filter as well like<strong
-									class="oc gs"> </strong><a>Spring Security filter chain</a> or
+								can pass to any configured Filter as well like<strong class="oc gs"> </strong><a>Spring
+									Security filter chain</a> or
 								Filters configured to convert the response to JSON or XML.
 							</p>
 							<p>
@@ -415,9 +396,8 @@
 			<div class="card-footer">
 				<ul class="pagination justify-content-center mb-4">
 					<li class="page-item"><a class="page-link btn-outline-primary"
-						href="../spring/introduction.html">&lArr; Previous</a></li>
-					<li class="page-item"><a class="page-link"
-						href="../spring/exceptions.html">Next &rArr;</a></li>
+							href="../spring/introduction.html">&lArr; Previous</a></li>
+					<li class="page-item"><a class="page-link" href="../spring/exceptions.html">Next &rArr;</a></li>
 				</ul>
 			</div>
 			<button onclick="topFunction()" id="myBtn" title="Go to top">

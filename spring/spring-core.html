@@ -291,20 +291,26 @@
                     </li>
                     <li><strong>Example:</strong></li>
                 </ul>
-                <pre class="code">
-@Component
-public class MyService {
-    private final DependencyA dependencyA;
-    private final DependencyB dependencyB;
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">MyService</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private final</span> <span class="classname">DependencyA</span>
+                    <span class="variable">dependencyA</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private final</span> <span class="classname">DependencyB</span>
+                    <span class="variable">dependencyB</span>;<br><br>
 
-    @Autowired
-    public MyService(DependencyA dependencyA, DependencyB dependencyB) {
-        this.dependencyA = dependencyA;
-        this.dependencyB = dependencyB;
-    }
-}
-    </pre>
-
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                        class="method">MyService</span>(<span class="classname">DependencyA</span> <span
+                        class="variable">dependencyA</span>, <span class="classname">DependencyB</span> <span
+                        class="variable">dependencyB</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span
+                        class="variable">dependencyA</span> = <span class="variable">dependencyA</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span
+                        class="variable">dependencyB</span> = <span class="variable">dependencyB</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
                 <h3>2. Setter Injection</h3>
                 <ul>
                     <li><strong>Definition:</strong> Dependencies are provided through setter methods after the object
@@ -353,16 +359,16 @@ public class MyService {
                     </li>
                 </ul>
                 <p><strong>Example:</strong></p>
-                <pre class="code">
-@Component
-public class MyService {
-    @Autowired
-    private DependencyA dependencyA;
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">MyService</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">DependencyA</span> <span class="variable">dependencyA</span>;<br><br>
 
-    @Autowired
-    private DependencyB dependencyB;
-}
-    </pre>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">DependencyB</span> <span class="variable">dependencyB</span>;<br>
+                    }
+                </div>
 
                 <h3>Practical Considerations</h3>
                 <ul>
@@ -400,22 +406,22 @@ public class MyService {
                 <p><strong>Usage:</strong> When the @Autowired annotation is used, and if multiple beans of the same
                     type exist, Spring tries to match the property name with a bean name.</p>
                 <p><strong>Example:</strong></p>
-                <pre class="code">
-@Component
-public class ServiceA {
-    private ServiceB serviceB;
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceA</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">ServiceB</span> <span class="variable">serviceB</span>;<br><br>
 
-    @Autowired
-    public void setServiceB(ServiceB serviceB) {
-        this.serviceB = serviceB;
-    }
-}
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setServiceB</span>(<span class="classname">ServiceB</span> <span class="variable">serviceB</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">serviceB</span> = <span class="variable">serviceB</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br><br>
 
-@Component("serviceB")
-public class ServiceB {
-    // ServiceB implementation
-}
-    </pre>
+                    <span class="annotation">@Component("serviceB")</span><br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceB</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ServiceB implementation</span><br>
+                    }
+                </div>
                 <p>In this example, Spring will inject the ServiceB bean into ServiceA because the property name <code>serviceB</code>
                     matches the bean name <code>serviceB</code>.</p>
 
@@ -426,22 +432,22 @@ public class ServiceB {
                 <p><strong>Usage:</strong> The @Autowired annotation injects dependencies by type. If there is more than
                     one bean of the same type, additional qualifiers may be needed to avoid ambiguity.</p>
                 <p><strong>Example:</strong></p>
-                <pre class="code">
-@Component
-public class ServiceA {
-    private ServiceB serviceB;
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceA</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">ServiceB</span> <span class="variable">serviceB</span>;<br><br>
 
-    @Autowired
-    public void setServiceB(ServiceB serviceB) {
-        this.serviceB = serviceB;
-    }
-}
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setServiceB</span>(<span class="classname">ServiceB</span> <span class="variable">serviceB</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">serviceB</span> = <span class="variable">serviceB</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br><br>
 
-@Component
-public class ServiceB {
-    // ServiceB implementation
-}
-    </pre>
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceB</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ServiceB implementation</span><br>
+                    }
+                </div>
                 <p>In this case, Spring will inject the ServiceB bean into ServiceA based on the type.</p>
 
                 <h3>By Qualifier</h3>
@@ -452,28 +458,28 @@ public class ServiceB {
                 <p><strong>Usage:</strong> The @Qualifier annotation is used alongside @Autowired to disambiguate which
                     bean to inject when multiple beans of the same type are available.</p>
                 <p><strong>Example:</strong></p>
-                <pre class="code">
-@Component
-public class ServiceA {
-    private ServiceB serviceB;
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceA</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">ServiceB</span> <span class="variable">serviceB</span>;<br><br>
 
-    @Autowired
-    @Qualifier("serviceB1")
-    public void setServiceB(ServiceB serviceB) {
-        this.serviceB = serviceB;
-    }
-}
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Qualifier</span>(<span class="keyword">"serviceB1"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setServiceB</span>(<span class="classname">ServiceB</span> <span class="variable">serviceB</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">serviceB</span> = <span class="variable">serviceB</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br><br>
 
-@Component("serviceB1")
-public class ServiceB1 implements ServiceB {
-    // ServiceB1 implementation
-}
+                    <span class="annotation">@Component</span>(<span class="keyword">"serviceB1"</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceB1</span> <span class="keyword">implements</span> <span class="classname">ServiceB</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ServiceB1 implementation</span><br>
+                    }<br><br>
 
-@Component("serviceB2")
-public class ServiceB2 implements ServiceB {
-    // ServiceB2 implementation
-}
-    </pre>
+                    <span class="annotation">@Component</span>(<span class="keyword">"serviceB2"</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceB2</span> <span class="keyword">implements</span> <span class="classname">ServiceB</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ServiceB2 implementation</span><br>
+                    }
+                </div>
                 <p>Here, ServiceA will be injected with the <code>serviceB1</code> bean due to the <code>@Qualifier("serviceB1")</code>
                     annotation.</p>
                 <h2>5. Dependency Injection Methods</h2>
@@ -486,28 +492,28 @@ public class ServiceB2 implements ServiceB {
                 <p><strong>Usage:</strong> The <code>@Primary</code> annotation is used on a bean definition to indicate
                     that it should be preferred over others of the same type.</p>
                 <p><strong>Example:</strong></p>
-                <pre class="code">
-@Component
-public class ServiceA {
-    private ServiceB serviceB;
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceA</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">ServiceB</span> <span class="variable">serviceB</span>;<br><br>
 
-    @Autowired
-    public void setServiceB(ServiceB serviceB) {
-        this.serviceB = serviceB;
-    }
-}
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setServiceB</span>(<span class="classname">ServiceB</span> <span class="variable">serviceB</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">serviceB</span> = <span class="variable">serviceB</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br><br>
 
-@Component
-@Primary
-public class ServiceB1 implements ServiceB {
-    // ServiceB1 implementation
-}
+                    <span class="annotation">@Component</span><br>
+                    <span class="annotation">@Primary</span><br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceB1</span> <span class="keyword">implements</span> <span class="classname">ServiceB</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ServiceB1 implementation</span><br>
+                    }<br><br>
 
-@Component
-public class ServiceB2 implements ServiceB {
-    // ServiceB2 implementation
-}
-    </pre>
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceB2</span> <span class="keyword">implements</span> <span class="classname">ServiceB</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ServiceB2 implementation</span><br>
+                    }
+                </div>
                 <p>In this example, ServiceA will be injected with <code>ServiceB1</code> because it is marked as <code>@Primary</code>.
                 </p>
 
@@ -519,37 +525,37 @@ public class ServiceB2 implements ServiceB {
                 <p><strong>Usage:</strong> Custom qualifiers are defined on beans and used alongside
                     <code>@Autowired</code> to inject specific beans based on the custom criteria.</p>
                 <p><strong>Example:</strong></p>
-                <pre class="code">
-@Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
-@Retention(RetentionPolicy.RUNTIME)
-@Qualifier
-public @interface CustomQualifier {
-    String value();
-}
+                <div class="code">
+                    <span class="keyword">@Target</span>({<span class="classname">ElementType.FIELD</span>, <span class="classname">ElementType.PARAMETER</span>, <span class="classname">ElementType.METHOD</span>})<br>
+                    <span class="keyword">@Retention</span>(<span class="classname">RetentionPolicy.RUNTIME</span>)<br>
+                    <span class="keyword">@Qualifier</span><br>
+                    <span class="keyword">public @interface</span> <span class="classname">CustomQualifier</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">String</span> <span class="method">value</span>();<br>
+                    }<br><br>
 
-@Component
-public class ServiceA {
-    private ServiceB serviceB;
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceA</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">ServiceB</span> <span class="variable">serviceB</span>;<br><br>
 
-    @Autowired
-    @CustomQualifier("specialServiceB")
-    public void setServiceB(ServiceB serviceB) {
-        this.serviceB = serviceB;
-    }
-}
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@CustomQualifier</span>(<span class="string">"specialServiceB"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setServiceB</span>(<span class="classname">ServiceB</span> <span class="variable">serviceB</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">serviceB</span> = <span class="variable">serviceB</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br><br>
 
-@Component
-@CustomQualifier("specialServiceB")
-public class ServiceB1 implements ServiceB {
-    // ServiceB1 implementation
-}
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">@CustomQualifier</span>(<span class="string">"specialServiceB"</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceB1</span> <span class="keyword">implements</span> <span class="classname">ServiceB</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ServiceB1 implementation</span><br>
+                    }<br><br>
 
-@Component
-@CustomQualifier("regularServiceB")
-public class ServiceB2 implements ServiceB {
-    // ServiceB2 implementation
-}
-    </pre>
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">@CustomQualifier</span>(<span class="string">"regularServiceB"</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">ServiceB2</span> <span class="keyword">implements</span> <span class="classname">ServiceB</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ServiceB2 implementation</span><br>
+                    }
+                </div>
                 <p>Here, ServiceA will be injected with <code>ServiceB1</code> because of the custom qualifier <code>@CustomQualifier("specialServiceB")</code>.
                 </p>
 
@@ -569,10 +575,10 @@ public class ServiceB2 implements ServiceB {
                 <p><strong>Usage:</strong> Mainly used in scenarios where a simple DI container is sufficient and where
                     there is a need to conserve resources.</p>
                 <p><strong>Example:</strong></p>
-                <pre class="code">
-BeanFactory factory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
-MyBean myBean = (MyBean) factory.getBean("myBean");
-    </pre>
+                <div class="code">
+                    <span class="classname">BeanFactory</span> <span class="variable">factory</span> = <span class="keyword">new</span> <span class="classname">XmlBeanFactory</span>(<span class="keyword">new</span> <span class="classname">ClassPathResource</span>(<span class="string">"beans.xml"</span>));<br>
+                    <span class="classname">MyBean</span> <span class="variable">myBean</span> = (<span class="classname">MyBean</span>) <span class="variable">factory</span>.<span class="method">getBean</span>(<span class="string">"myBean"</span>);
+                </div>
 
                 <h3>ApplicationContext</h3>
                 <p><strong>Definition:</strong> ApplicationContext is a more advanced container in Spring, built on top
@@ -596,10 +602,10 @@ MyBean myBean = (MyBean) factory.getBean("myBean");
                 <p><strong>Usage:</strong> Used in larger, more complex applications that require the full range of
                     Spring’s features.</p>
                 <p><strong>Example:</strong></p>
-                <pre class="code">
-ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-MyBean myBean = context.getBean("myBean", MyBean.class);
-    </pre>
+                <div class="code">
+                    <span class="classname">ApplicationContext</span> <span class="variable">context</span> = <span class="keyword">new</span> <span class="classname">ClassPathXmlApplicationContext</span>(<span class="string">"beans.xml"</span>);<br>
+                    <span class="classname">MyBean</span> <span class="variable">myBean</span> = <span class="variable">context</span>.<span class="method">getBean</span>(<span class="string">"myBean"</span>, <span class="classname">MyBean</span>.<span class="keyword">class</span>);
+                </div>
 
                 <h3>Feature Comparison</h3>
                 <table border="1" cellpadding="5" cellspacing="0">
@@ -669,13 +675,14 @@ MyBean myBean = context.getBean("myBean", MyBean.class);
                 <p><strong>Lifecycle:</strong> The bean is instantiated when the container is created and lives until
                     the container is destroyed.</p>
                 <p><strong>Usage:</strong> Ideal for stateless, reusable, and thread-safe beans.</p>
-                <pre class="code">
-@Component
-@Scope("singleton")
-public class MyBean {
-    // Bean definition
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="annotation">@Scope</span>(<span class="string">"singleton"</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Bean definition</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"></span><br>
+                    }
+                </div>
 
                 <h3>2. Prototype Scope</h3>
                 <p><strong>Definition:</strong> A new instance of the bean is created every time it is requested from
@@ -683,63 +690,68 @@ public class MyBean {
                 <p><strong>Lifecycle:</strong> The bean is created and configured each time it is requested. It is not
                     managed after it is handed over to the requester.</p>
                 <p><strong>Usage:</strong> Suitable for stateful beans or beans that hold temporary state.</p>
-                <pre class="code">
-@Component
-@Scope("prototype")
-public class MyBean {
-    // Bean definition
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="annotation">@Scope</span>(<span class="string">"prototype"</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Bean definition</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"></span><br>
+                    }
+                </div>
 
                 <h3>3. Request Scope</h3>
                 <p><strong>Definition:</strong> A new instance of the bean is created for each HTTP request.</p>
                 <p><strong>Lifecycle:</strong> The bean lives only for the duration of a single HTTP request.</p>
                 <p><strong>Usage:</strong> Used in web applications for request-specific data.</p>
-                <pre class="code">
-@Component
-@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class MyBean {
-    // Bean definition
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="annotation">@Scope</span>(<span class="string">value = WebApplicationContext.SCOPE_REQUEST</span>, <span class="string">proxyMode = ScopedProxyMode.TARGET_CLASS</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Bean definition</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"></span><br>
+                    }
+                </div>
 
                 <h3>4. Session Scope</h3>
                 <p><strong>Definition:</strong> A new instance of the bean is created for each HTTP session.</p>
                 <p><strong>Lifecycle:</strong> The bean lives for the duration of the HTTP session.</p>
                 <p><strong>Usage:</strong> Used in web applications for session-specific data.</p>
-                <pre class="code">
-@Component
-@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class MyBean {
-    // Bean definition
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="annotation">@Scope</span>(<span class="string">value = WebApplicationContext.SCOPE_SESSION</span>, <span class="string">proxyMode = ScopedProxyMode.TARGET_CLASS</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Bean definition</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"></span><br>
+                    }
+                </div>
 
                 <h3>5. Global Session Scope</h3>
                 <p><strong>Definition:</strong> A new instance of the bean is created for each global HTTP session.</p>
                 <p><strong>Lifecycle:</strong> The bean lives for the duration of a global HTTP session. This is
                     typically used in Portlet applications.</p>
                 <p><strong>Usage:</strong> Used in Portlet-based web applications.</p>
-                <pre class="code">
-@Component
-@Scope(value = WebApplicationContext.SCOPE_GLOBAL_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class MyBean {
-    // Bean definition
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="annotation">@Scope</span>(<span class="string">value = WebApplicationContext.SCOPE_GLOBAL_SESSION</span>, <span class="string">proxyMode = ScopedProxyMode.TARGET_CLASS</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Bean definition</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"></span><br>
+                    }
+                </div>
 
                 <h3>6. Application Scope</h3>
                 <p><strong>Definition:</strong> A single instance of the bean is created for the lifecycle of a
                     ServletContext.</p>
                 <p><strong>Lifecycle:</strong> The bean lives for the duration of the ServletContext.</p>
                 <p><strong>Usage:</strong> Used in web applications for global application data.</p>
-                <pre class="code">
-@Component
-@Scope(value = WebApplicationContext.SCOPE_APPLICATION, proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class MyBean {
-    // Bean definition
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="annotation">@Scope</span>(<span class="string">value = WebApplicationContext.SCOPE_APPLICATION</span>, <span class="string">proxyMode = ScopedProxyMode.TARGET_CLASS</span>)<br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Bean definition</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"></span><br>
+                    }
+                </div>
 
                 <h3>7. Custom Scope</h3>
                 <p><strong>Definition:</strong> Custom scopes can be created for specific needs that are not covered by
@@ -817,16 +829,15 @@ public class MyBean {
                     dependency injection. This can be done through constructor arguments or setter methods.</p>
                 <p><strong>Annotation:</strong> Use <code>@Autowired</code>, <code>@Value</code>, or other DI
                     annotations.</p>
-                <pre class="code">
-@Component
-public class MyBean {
-    @Autowired
-    private DependencyBean dependency;
-
-    @Value("${some.property}")
-    private String someProperty;
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">DependencyBean</span> <span class="variable">dependency</span>;<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Value</span>(<span class="string">"${some.property}"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="keyword">String</span> <span class="variable">someProperty</span>;<br>
+                    }
+                </div>
 
                 <h3>3. Aware Interfaces (Optional)</h3>
                 <p><strong>Description:</strong> If the bean implements any of the Aware interfaces, Spring will call
@@ -839,25 +850,23 @@ public class MyBean {
                         ApplicationContext.
                     </li>
                 </ul>
-                <pre class="code">
-@Component
-public class MyBean implements BeanNameAware, BeanFactoryAware, ApplicationContextAware {
-    @Override
-    public void setBeanName(String name) {
-        System.out.println("Bean name is: " + name);
-    }
-
-    @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("Bean factory is: " + beanFactory);
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        System.out.println("Application context is: " + applicationContext);
-    }
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> <span class="keyword">implements</span> <span class="interface">BeanNameAware</span>, <span class="interface">BeanFactoryAware</span>, <span class="interface">ApplicationContextAware</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setBeanName</span>(<span class="keyword">String</span> <span class="variable">name</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Bean name is: "</span> + <span class="variable">name</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setBeanFactory</span>(<span class="interface">BeanFactory</span> <span class="variable">beanFactory</span>) <span class="keyword">throws</span> <span class="interface">BeansException</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Bean factory is: "</span> + <span class="variable">beanFactory</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setApplicationContext</span>(<span class="interface">ApplicationContext</span> <span class="variable">applicationContext</span>) <span class="keyword">throws</span> <span class="interface">BeansException</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Application context is: "</span> + <span class="variable">applicationContext</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
 
                 <h3>4. Bean Post Processors (Pre-Initialization)</h3>
                 <p><strong>Description:</strong> Spring allows for custom modification of new bean instances through
@@ -865,22 +874,21 @@ public class MyBean implements BeanNameAware, BeanFactoryAware, ApplicationConte
                     or custom init method.</p>
                 <p><strong>BeanPostProcessor:</strong> Provides a way to perform some custom logic before and after the
                     bean initialization callbacks.</p>
-                <pre class="code">
-@Component
-public class CustomBeanPostProcessor implements BeanPostProcessor {
-    @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("Before Initialization : " + beanName);
-        return bean; // you can return any other object as well
-    }
-
-    @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("After Initialization : " + beanName);
-        return bean; // you can return any other object as well
-    }
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">CustomBeanPostProcessor</span> <span class="keyword">implements</span> <span class="interface">BeanPostProcessor</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">Object</span> <span class="method">postProcessBeforeInitialization</span>(<span class="keyword">Object</span> <span class="variable">bean</span>, <span class="keyword">String</span> <span class="variable">beanName</span>) <span class="keyword">throws</span> <span class="interface">BeansException</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before Initialization : "</span> + <span class="variable">beanName</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">bean</span>; <span class="comment">// you can return any other object as well</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">Object</span> <span class="method">postProcessAfterInitialization</span>(<span class="keyword">Object</span> <span class="variable">bean</span>, <span class="keyword">String</span> <span class="variable">beanName</span>) <span class="keyword">throws</span> <span class="interface">BeansException</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"After Initialization : "</span> + <span class="variable">beanName</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">bean</span>; <span class="comment">// you can return any other object as well</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
 
                 <h3>5. @PostConstruct and Custom Init Methods</h3>
                 <p><strong>Description:</strong> After the BeanPostProcessors have been executed, the bean
@@ -893,27 +901,25 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
                         <code>@Bean</code> annotation's <code>initMethod</code> attribute.
                     </li>
                 </ul>
-                <pre class="code">
-@Component
-public class MyBean {
-    @PostConstruct
-    public void init() {
-        System.out.println("Bean is going through PostConstruct init method.");
-    }
-
-    public void customInit() {
-        System.out.println("Bean is going through custom init method.");
-    }
-}
-
-@Configuration
-public class AppConfig {
-    @Bean(initMethod = "customInit")
-    public MyBean myBean() {
-        return new MyBean();
-    }
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PostConstruct</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">init</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Bean is going through PostConstruct init method."</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">customInit</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Bean is going through custom init method."</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                    <span class="annotation">@Configuration</span><br>
+                    <span class="keyword">public class</span> <span class="classname">AppConfig</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Bean(initMethod = "customInit")</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">MyBean</span> <span class="method">myBean</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">new</span> <span class="classname">MyBean</span>();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
 
                 <h3>6. Bean Post Processors (Post-Initialization)</h3>
                 <p><strong>Description:</strong> The second phase of the BeanPostProcessor callbacks is executed after
@@ -934,27 +940,25 @@ public class AppConfig {
                         annotation's <code>destroyMethod</code> attribute.
                     </li>
                 </ul>
-                <pre class="code">
-@Component
-public class MyBean {
-    @PreDestroy
-    public void preDestroy() {
-        System.out.println("Bean is going through PreDestroy destroy method.");
-    }
-
-    public void customDestroy() {
-        System.out.println("Bean is going through custom destroy method.");
-    }
-}
-
-@Configuration
-public class AppConfig {
-    @Bean(destroyMethod = "customDestroy")
-    public MyBean myBean() {
-        return new MyBean();
-    }
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">MyBean</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PreDestroy</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">preDestroy</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Bean is going through PreDestroy destroy method."</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">customDestroy</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Bean is going through custom destroy method."</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                    <span class="annotation">@Configuration</span><br>
+                    <span class="keyword">public class</span> <span class="classname">AppConfig</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Bean(destroyMethod = "customDestroy")</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">MyBean</span> <span class="method">myBean</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">new</span> <span class="classname">MyBean</span>();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
 
                 <h3>Complete Lifecycle Flow</h3>
                 <ol>
@@ -993,71 +997,61 @@ public class AppConfig {
                 <h4>1. Using @Lazy Annotation</h4>
                 <p>The <code>@Lazy</code> annotation can be used to break the cycle by delaying the initialization of
                     one of the beans.</p>
-                <pre class="code">
-@Component
-public class BeanA {
-    private final BeanB beanB;
-
-    @Autowired
-    public BeanA(@Lazy BeanB beanB) {
-        this.beanB = beanB;
-    }
-
-    // Other methods
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">BeanA</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private final</span> <span class="classname">BeanB</span> <span class="variable">beanB</span>;<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="classname">BeanA</span>(<span class="annotation">@Lazy</span> <span class="classname">BeanB</span> <span class="variable">beanB</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">beanB</span> = <span class="variable">beanB</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Other methods<br>
+                    }
+                </div>
                 <p>By marking BeanB with <code>@Lazy</code>, Spring will not initialize BeanB until it is first
                     accessed, thus breaking the circular dependency.</p>
 
                 <h4>2. Setter Injection</h4>
                 <p>Using setter injection can resolve circular dependencies because Spring can partially initialize the
                     beans and then inject the dependencies.</p>
-                <pre class="code">
-@Component
-public class BeanA {
-    private BeanB beanB;
-
-    @Autowired
-    public void setBeanB(BeanB beanB) {
-        this.beanB = beanB;
-    }
-
-    // Other methods
-}
-
-@Component
-public class BeanB {
-    private BeanA beanA;
-
-    @Autowired
-    public void setBeanA(BeanA beanA) {
-        this.beanA = beanA;
-    }
-
-    // Other methods
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">BeanA</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">BeanB</span> <span class="variable">beanB</span>;<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setBeanB</span>(<span class="classname">BeanB</span> <span class="variable">beanB</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">beanB</span> = <span class="variable">beanB</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Other methods<br>
+                    }
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">BeanB</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">BeanA</span> <span class="variable">beanA</span>;<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">setBeanA</span>(<span class="classname">BeanA</span> <span class="variable">beanA</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">beanA</span> = <span class="variable">beanA</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Other methods<br>
+                    }
+                </div>
                 <p>Spring can now create BeanA and BeanB without running into a circular dependency issue.</p>
 
                 <h4>3. Field Injection</h4>
                 <p>Similar to setter injection, field injection can also be used to resolve circular dependencies.</p>
-                <pre class="code">
-@Component
-public class BeanA {
-    @Autowired
-    private BeanB beanB;
-
-    // Other methods
-}
-
-@Component
-public class BeanB {
-    @Autowired
-    private BeanA beanA;
-
-    // Other methods
-}
-    </pre>
+                <div class="code">
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">BeanA</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">BeanB</span> <span class="variable">beanB</span>;<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Other methods<br>
+                    }
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">BeanB</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="classname">BeanA</span> <span class="variable">beanA</span>;<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Other methods<br>
+                    }
+                </div>
 
             </article>
         </div>

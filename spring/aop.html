@@ -201,17 +201,18 @@
                     <li><strong>Encapsulation:</strong> Aspects encapsulate cross-cutting concerns.</li>
                     <li><strong>Modularity:</strong> Improved modularity by separating cross-cutting concerns.</li>
                 </ul>
-                <pre><code>import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+                <div class="code">
+                    <span class="keyword">import</span> <span class="package">org.aspectj.lang.annotation.Aspect</span>;<br>
+                    <span class="keyword">import</span> <span class="package">org.aspectj.lang.annotation.Before</span>;<br><br>
 
-@Aspect
-public class LoggingAspect {
-    @Before("execution(* com.example.service.*.*(..))")
-    public void logBefore() {
-        System.out.println("Logging before method execution");
-    }
-}
-</code></pre>
+                    <span class="annotation">@Aspect</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging before method execution"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
 
                 <h3>1.2 Advice</h3>
                 <p>Advice is the action taken by an aspect at a particular join point. Spring AOP supports different
@@ -235,11 +236,12 @@ public class LoggingAspect {
                         execution of the method.
                     </li>
                 </ul>
-                <pre><code>@Before("execution(* com.example.service.*.*(..))")
-public void logBefore(JoinPoint joinPoint) {
-    System.out.println("Before method: " + joinPoint.getSignature());
-}
-</code></pre>
+                <div class="code">
+                    <span class="annotation">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    <span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="parameter">JoinPoint joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="parameter">joinPoint.getSignature()</span>);<br>
+                    }
+                </div>
 
                 <h3>1.3 Pointcut</h3>
                 <p>A pointcut is an expression that matches join points. It defines where the advice should be applied.
@@ -259,23 +261,19 @@ public void logBefore(JoinPoint joinPoint) {
                         <li><strong>Annotation Pointcut:</strong> Matches methods with specific annotations.</li>
                     </ul>
                 </ul>
-                <pre><code>import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
-
-@Aspect
-public class LoggingAspect {
-
-    @Pointcut("execution(* com.example.service.*.*(..))")
-    public void serviceLayer() {
-        // Pointcut expression
-    }
-
-    @Before("serviceLayer()")
-    public void logBefore() {
-        System.out.println("Logging before method execution");
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="annotation">@Aspect</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Pointcut</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">serviceLayer</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Pointcut expression</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Before</span>(<span class="parameter">"serviceLayer()"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging before method execution"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
 
                 <h3>1.4 Join Point</h3>
                 <p>A join point is a point in the execution of the program, such as a method call or an exception
@@ -314,21 +312,16 @@ public class LoggingAspect {
                 <h2>2. Advice</h2>
                 <h3>2.1 @Before</h3>
                 <p>The <code>@Before</code> advice runs before the method execution.</p>
-                <pre><code>import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.springframework.stereotype.Component;
-
-@Aspect
-@Component
-public class LoggingAspect {
-
-    @Before("execution(* com.example.service.*.*(..))")
-    public void logBefore(JoinPoint joinPoint) {
-        System.out.println("Before method: " + joinPoint.getSignature().getName());
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="annotation">@Aspect</span><br>
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="parameter">JoinPoint joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
                 <p><strong>Key Points:</strong></p>
                 <ul>
                     <li>Executes before the target method starts.</li>
@@ -339,20 +332,16 @@ public class LoggingAspect {
                 <h3>2.2 @After</h3>
                 <p>The <code>@After</code> advice runs after the method execution, regardless of its outcome (success or
                     exception).</p>
-                <pre><code>import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
-
-@Aspect
-@Component
-public class LoggingAspect {
-
-    @After("execution(* com.example.service.*.*(..))")
-    public void logAfter(JoinPoint joinPoint) {
-        System.out.println("After method: " + joinPoint.getSignature().getName());
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="annotation">@Aspect</span><br>
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@After</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfter</span>(<span class="parameter">JoinPoint joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"After method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
                 <p><strong>Key Points:</strong></p>
                 <ul>
                     <li>Executes after the target method completes.</li>
@@ -363,21 +352,21 @@ public class LoggingAspect {
                 <h3>2.3 @AfterReturning</h3>
                 <p>The <code>@AfterReturning</code> advice runs after the method execution only if the method completes
                     successfully (i.e., does not throw an exception).</p>
-                <pre><code>import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
-
-@Aspect
-@Component
-public class LoggingAspect {
-
-    @AfterReturning(pointcut = "execution(* com.example.service.*.*(..))", returning = "result")
-    public void logAfterReturning(JoinPoint joinPoint, Object result) {
-        System.out.println("After returning from method: " + joinPoint.getSignature().getName());
-        System.out.println("Method returned value is : " + result);
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="annotation">@Aspect</span><br>
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@AfterReturning</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">pointcut</span> = <span class="string">"execution(* com.example.service.*.*(..))"</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">returning</span> = <span class="string">"result"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterReturning</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">JoinPoint joinPoint</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span class="parameter">result</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"After returning from method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Method returned value is : "</span> + <span class="parameter">result</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
                 <p><strong>Key Points:</strong></p>
                 <ul>
                     <li>Executes only if the target method returns normally.</li>
@@ -387,21 +376,21 @@ public class LoggingAspect {
 
                 <h3>2.4 @AfterThrowing</h3>
                 <p>The <code>@AfterThrowing</code> advice runs if the target method throws an exception.</p>
-                <pre><code>import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
-
-@Aspect
-@Component
-public class LoggingAspect {
-
-    @AfterThrowing(pointcut = "execution(* com.example.service.*.*(..))", throwing = "error")
-    public void logAfterThrowing(JoinPoint joinPoint, Throwable error) {
-        System.out.println("An exception has been thrown in " + joinPoint.getSignature().getName() + "()");
-        System.out.println("Cause: " + error.getMessage());
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="annotation">@Aspect</span><br>
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@AfterThrowing</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">pointcut</span> = <span class="string">"execution(* com.example.service.*.*(..))"</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throwing</span> = <span class="string">"error"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterThrowing</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">JoinPoint joinPoint</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Throwable</span> <span class="parameter">error</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"An exception has been thrown in "</span> + <span class="parameter">joinPoint.getSignature().getName()</span> + <span class="string">"()"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Cause: "</span> + <span class="parameter">error.getMessage()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
                 <p><strong>Key Points:</strong></p>
                 <ul>
                     <li>Executes only if the target method throws an exception.</li>
@@ -412,32 +401,26 @@ public class LoggingAspect {
                 <h3>2.5 @Around</h3>
                 <p>The <code>@Around</code> advice surrounds a join point, allowing you to perform custom behavior
                     before and after the method invocation. It is the most powerful advice type.</p>
-                <pre><code>import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
-
-@Aspect
-@Component
-public class LoggingAspect {
-
-    @Around("execution(* com.example.service.*.*(..))")
-    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("Before method: " + joinPoint.getSignature().getName());
-
-        Object result;
-        try {
-            result = joinPoint.proceed(); // Proceed with the method call
-        } catch (Throwable e) {
-            System.out.println("Exception in method: " + joinPoint.getSignature().getName());
-            throw e; // Rethrow the exception
-        }
-
-        System.out.println("After method: " + joinPoint.getSignature().getName());
-        return result;
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="annotation">@Aspect</span><br>
+                    <span class="annotation">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Around</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method">logAround</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">ProceedingJoinPoint joinPoint</span>) <span class="keyword">throws</span> <span class="keyword">Throwable</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span class="variable">result</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">result</span> = <span class="parameter">joinPoint.proceed()</span>; <span class="comment">// Proceed with the method call</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">catch</span> (<span class="keyword">Throwable</span> <span class="parameter">e</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Exception in method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throw</span> <span class="parameter">e</span>; <span class="comment">// Rethrow the exception</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"After method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">result</span>;<br>
+                    }
+                </div>
                 <p><strong>Key Points:</strong></p>
                 <ul>
                     <li>Can control when (or if) the target method gets executed.</li>
@@ -494,175 +477,192 @@ public class LoggingAspect {
                 </table>
 
                 <h2>Example of Multiple Advice Types</h2>
-                <pre><code>import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.ProceedingJoinPoint;
+                <div class="code">
+                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.After</span>;<br>
+                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.AfterReturning</span>;<br>
+                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.AfterThrowing</span>;<br>
+                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.Around</span>;<br>
+                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.Aspect</span>;<br>
+                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.Before</span>;<br>
+                    <span class="import">import</span> <span class="package">org.aspectj.lang.ProceedingJoinPoint</span>;<br><br>
 
-@Aspect
-public class LoggingAspect {
+                    <span class="annotation">@Aspect</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
 
-    @Before("execution(* com.example.service.*.*(..))")
-    public void logBefore() {
-        System.out.println("Logging before method execution");
-    }
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Before</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging before method execution"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
 
-    @After("execution(* com.example.service.*.*(..))")
-    public void logAfter() {
-        System.out.println("Logging after method execution");
-    }
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@After</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfter</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging after method execution"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
 
-    @AfterReturning("execution(* com.example.service.*.*(..))")
-    public void logAfterReturning() {
-        System.out.println("Logging after method returns");
-    }
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@AfterReturning</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterReturning</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging after method returns"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
 
-    @AfterThrowing("execution(* com.example.service.*.*(..))")
-    public void logAfterThrowing() {
-        System.out.println("Logging after method throws an exception");
-    }
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@AfterThrowing</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterThrowing</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging after method throws an exception"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
 
-    @Around("execution(* com.example.service.*.*(..))")
-    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("Logging around method execution");
-        Object result = joinPoint.proceed();
-        System.out.println("Logging around method execution complete");
-        return result;
-    }
-}
-</code></pre>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Around</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method">logAround</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">ProceedingJoinPoint joinPoint</span>) <span class="keyword">throws</span> <span class="keyword">Throwable</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging around method execution"</span>);<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span class="variable">result</span> = <span class="parameter">joinPoint.proceed()</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging around method execution complete"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">result</span>;<br>
+                    }
+                </div>
                 <h2>3. AOP Expressions</h2>
 
                 <h3>3.1 Execution Expression</h3>
                 <p><strong>Definition:</strong> Specifies the join points for method executions.</p>
-                <pre><code>@Pointcut("execution(* com.example.service.*.*(..))")
-public void allMethods() {}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Pointcut</span>(<span class="value">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    <span class="keyword">public void</span> <span class="method">allMethods</span>() {}<br>
+                </div>
 
                 <h3>3.2 Within Expression</h3>
                 <p><strong>Definition:</strong> Matches all methods within a particular type.</p>
-                <pre><code>@Pointcut("within(com.example.service.MyService)")
-public void serviceLayer() {}
-</code></pre>
-
+                <div class="code">
+                    <span class="keyword">@Pointcut</span>(<span class="value">"within(com.example.service.MyService)"</span>)<br>
+                    <span class="keyword">public void</span> <span class="method">serviceLayer</span>() {}<br>
+                </div>
                 <h3>3.3 Args Expression</h3>
                 <p><strong>Definition:</strong> Matches join points with specific arguments.</p>
-                <pre><code>@Pointcut("args(String)")
-public void stringArguments() {}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Pointcut</span>(<span class="value">"args(String)"</span>)<br>
+                    <span class="keyword">public void</span> <span class="method">stringArguments</span>() {}<br>
+                </div>
 
                 <h3>3.4 Annotation Expression</h3>
                 <p><strong>Definition:</strong> Matches methods annotated with a specific annotation.</p>
-                <pre><code>@Pointcut("@annotation(com.example.annotation.Loggable)")
-public void annotatedWithLoggable() {}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Pointcut</span>(<span class="value">"@annotation(com.example.annotation.Loggable)"</span>)<br>
+                    <span class="keyword">public void</span> <span class="method">annotatedWithLoggable</span>() {}<br>
+                </div>
 
                 <h3>3.5 Bean Name Expression</h3>
                 <p><strong>Definition:</strong> Matches beans by their name.</p>
-                <pre><code>@Pointcut("bean(myBean)")
-public void myBean() {}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Pointcut</span>(<span class="value">"bean(myBean)"</span>)<br>
+                    <span class="keyword">public void</span> <span class="method">myBean</span>() {}<br>
+                </div>
 
                 <h3>3.6 Combining Pointcuts</h3>
                 <p><strong>Definition:</strong> Combining multiple pointcuts using logical operators.</p>
-                <pre><code>@Pointcut("execution(* com.example.service.*.*(..)) && @annotation(com.example.annotation.Loggable)")
-public void loggableMethods() {}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Pointcut</span>(<span class="value">"execution(* com.example.service.*.*(..)) && @annotation(com.example.annotation.Loggable)"</span>)<br>
+                    <span class="keyword">public void</span> <span class="method">loggableMethods</span>() {}<br>
+                </div>
 
                 <h2>4. Configuration of AOP</h2>
 
                 <h3>4.1 Java Configuration</h3>
                 <p><strong>Example:</strong></p>
-                <pre><code>@Configuration
-@EnableAspectJAutoProxy
-public class AppConfig {
-    @Bean
-    public LoggingAspect loggingAspect() {
-        return new LoggingAspect();
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Configuration</span><br>
+                    <span class="keyword">@EnableAspectJAutoProxy</span><br>
+                    <span class="keyword">public class</span> <span class="classname">AppConfig</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Bean</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="classname">LoggingAspect</span> <span class="method">loggingAspect</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="new">new</span> <span class="classname">LoggingAspect</span>();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
 
                 <h3>4.2 Aspect Class</h3>
                 <p><strong>Example:</strong></p>
-                <pre><code>@Aspect
-@Component
-public class LoggingAspect {
-    @Before("execution(* com.example.service.*.*(..))")
-    public void logBefore(JoinPoint joinPoint) {
-        System.out.println("Before method: " + joinPoint.getSignature());
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Aspect</span><br>
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Before</span>(<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="classname">JoinPoint</span> <span class="variable">joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="variable">joinPoint.getSignature()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
 
                 <h2>5. Practical Use Cases</h2>
 
                 <h3>5.1 Logging</h3>
                 <p><strong>Purpose:</strong> To automatically log method calls and results.</p>
-                <pre><code>@Aspect
-@Component
-public class LoggingAspect {
-    @Before("execution(* com.example.service.*.*(..))")
-    public void logBefore(JoinPoint joinPoint) {
-        System.out.println("Before method: " + joinPoint.getSignature());
-    }
-}
-</code></pre>
-
+                <div class="code">
+                    <span class="keyword">@Aspect</span><br>
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="classname">JoinPoint</span> <span class="variable">joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="variable">joinPoint.getSignature()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
                 <h3>5.2 Transaction Management</h3>
                 <p><strong>Purpose:</strong> To manage transactions around method calls.</p>
-                <pre><code>@Aspect
-@Component
-public class TransactionAspect {
-    @Around("execution(* com.example.service.*.*(..))")
-    public Object manageTransaction(ProceedingJoinPoint joinPoint) throws Throwable {
-        // Begin transaction
-        Object result = joinPoint.proceed();
-        // Commit transaction
-        return result;
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Aspect</span><br>
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">TransactionAspect</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Around</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method">manageTransaction</span>(<span class="classname">ProceedingJoinPoint</span> <span class="variable">joinPoint</span>) <span class="keyword">throws</span> <span class="classname">Throwable</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Begin transaction<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span class="variable">result</span> = <span class="variable">joinPoint.proceed()</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Commit transaction<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">result</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
 
                 <h3>5.3 Security</h3>
                 <p><strong>Purpose:</strong> To enforce security checks before method execution.</p>
-                <pre><code>@Aspect
-@Component
-public class SecurityAspect {
-    @Before("execution(* com.example.service.*.*(..))")
-    public void checkSecurity(JoinPoint joinPoint) {
-        // Security checks
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Aspect</span><br>
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">SecurityAspect</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">checkSecurity</span>(<span class="classname">JoinPoint</span> <span class="variable">joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Security checks<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
 
                 <h3>5.4 Caching</h3>
                 <p><strong>Purpose:</strong> To cache method results for performance improvement.</p>
-                <pre><code>@Aspect
-@Component
-public class CachingAspect {
-    @Around("execution(* com.example.service.*.*(..))")
-    public Object cacheResult(ProceedingJoinPoint joinPoint) throws Throwable {
-        // Check cache, proceed to method, cache result
-        return joinPoint.proceed();
-    }
-}
-</code></pre>
+                <div class="code">
+                    <span class="keyword">@Aspect</span><br>
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">CachingAspect</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Around</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method">cacheResult</span>(<span class="classname">ProceedingJoinPoint</span> <span class="variable">joinPoint</span>) throws <span class="classname">Throwable</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Check cache, proceed to method, cache result<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">joinPoint</span>.proceed();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
 
                 <h2>6. Advanced Topics</h2>
 
                 <h3>6.1 AspectJ Integration</h3>
                 <p><strong>AspectJ:</strong> A more advanced AOP framework for compile-time or load-time weaving.</p>
                 <p><strong>Dependency:</strong></p>
-                <pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
-    &lt;artifactId&gt;aspectjrt&lt;/artifactId&gt;
-    &lt;version&gt;1.9.9&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
+                <div class="code">
+                    <span class="keyword">&lt;dependency&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;groupId&gt;</span><span class="value">org.aspectj</span><span class="keyword">&lt;/groupId&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;artifactId&gt;</span><span class="value">aspectjrt</span><span class="keyword">&lt;/artifactId&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;version&gt;</span><span class="value">1.9.9</span><span class="keyword">&lt;/version&gt;</span><br>
+                    <span class="keyword">&lt;/dependency&gt;</span><br>
+                </div>
 
                 <h3>6.2 Performance Considerations</h3>
                 <p><strong>Impact:</strong> AOP can introduce some overhead due to proxy creation and advice execution.
@@ -671,35 +671,38 @@ public class CachingAspect {
 
                 <h3>6.3 Creating Custom Annotations</h3>
                 <p><strong>Purpose:</strong> To create specific annotations for your own AOP concerns.</p>
-                <pre><div class="code og oh">import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+                <div class="code">
+                    <span class="keyword">import</span> <span class="package">java.lang.annotation.ElementType</span>;<br>
+                    <span class="keyword">import</span> <span class="package">java.lang.annotation.Retention</span>;<br>
+                    <span class="keyword">import</span> <span class="package">java.lang.annotation.RetentionPolicy</span>;<br>
+                    <span class="keyword">import</span> <span class="package">java.lang.annotation.Target</span>;<br><br>
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface Loggable {}
-</code></pre>
-                <pre><code>@Aspect
-@Component
-public class CustomAnnotationAspect {
-    @Before("@annotation(com.example.annotation.Loggable)")
-    public void logBefore(JoinPoint joinPoint) {
-        System.out.println("Loggable annotation applied to: " + joinPoint.getSignature());
-    }
-}
-</code></pre>
+                    <span class="keyword">@Retention</span>(<span class="value">RetentionPolicy.RUNTIME</span>)<br>
+                    <span class="keyword">@Target</span>(<span class="value">ElementType.METHOD</span>)<br>
+                    <span class="keyword">public @interface</span> <span class="classname">Loggable</span> {}<br>
+                </div>
+                <div class="code">
+                    <span class="keyword">@Aspect</span><br>
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="classname">CustomAnnotationAspect</span> {<br>
+                    &nbsp;&nbsp;<span class="keyword">@Before</span>(<span class="value">@annotation(com.example.annotation.Loggable)</span>)<br>
+                    &nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="package">JoinPoint</span> <span class="variable">joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="value">"Loggable annotation applied to: "</span> <span class="operator">+</span> <span class="variable">joinPoint.getSignature()</span>);<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
 
                 <h3>6.4 Advice Order</h3>
                 <p><strong>Definition:</strong> Specifies the order of execution of multiple advices.</p>
-                <pre><code>@Order(1)
-@Aspect
-public class FirstAdvice {}
+                <div class="code">
+                    <span class="keyword">@Order</span>(<span class="value">1</span>)<br>
+                    <span class="keyword">@Aspect</span><br>
+                    <span class="keyword">public class</span> <span class="classname">FirstAdvice</span> {}<br><br>
 
-@Order(2)
-@Aspect
-public class SecondAdvice {}
-</code></pre>
+                    <span class="keyword">@Order</span>(<span class="value">2</span>)<br>
+                    <span class="keyword">@Aspect</span><br>
+                    <span class="keyword">public class</span> <span class="classname">SecondAdvice</span> {}<br>
+                </div>
 
                 <h2>7. Best Practices</h2>
 

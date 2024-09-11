@@ -250,27 +250,39 @@
                             <code class="cw ox oy oz pa b">*</code>
                         </p>
                         <h1>XML Configuration Example</h1>
-                        <pre class="code og oh">
-<code>
-&lt;web-app&gt;
-    &lt;!-- The front controller of this Spring Web application, responsible
-    for handling all application requests --&gt;
-    &lt;servlet&gt;
-        &lt;servlet-name&gt;Spring MVC Dispatcher Servlet&lt;/servlet-name&gt;
-        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
-        &lt;init-param&gt;
-            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
-            &lt;param-value&gt;/WEB-INF/config/web-application-config.xml&lt;/param-value&gt;
-        &lt;/init-param&gt;
-        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
-    &lt;/servlet&gt;
-    &lt;servlet-mapping&gt;
-        &lt;servlet-name&gt;example&lt;/servlet-name&gt;
-        &lt;url-pattern&gt;*&lt;/url-pattern&gt;
-    &lt;/servlet-mapping&gt;
-&lt;/web-app&gt;
-</code>
-    </pre>
+                        <div class="code">
+                            <span class="keyword">&lt;web-app&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- The front controller of this Spring Web application, responsible</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="comment">for handling all application requests --&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;servlet&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">&lt;servlet-name&gt;</span>Spring MVC Dispatcher Servlet<span
+                                class="keyword">&lt;/servlet-name&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">&lt;servlet-class&gt;</span>org.springframework.web.servlet.DispatcherServlet<span
+                                class="keyword">&lt;/servlet-class&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">&lt;init-param&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">&lt;param-name&gt;</span>contextConfigLocation<span class="keyword">&lt;/param-name&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">&lt;param-value&gt;</span>/WEB-INF/config/web-application-config.xml<span
+                                class="keyword">&lt;/param-value&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">&lt;/init-param&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;load-on-startup&gt;</span>1<span
+                                class="keyword">&lt;/load-on-startup&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;/servlet&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;servlet-mapping&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">&lt;servlet-name&gt;</span>example<span class="keyword">&lt;/servlet-name&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">&lt;url-pattern&gt;</span>*<span
+                                class="keyword">&lt;/url-pattern&gt;</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;/servlet-mapping&gt;</span><br>
+                            <span class="keyword">&lt;/web-app&gt;</span>
+                        </div>
                         <p>
                             The URL pattern is important, if the request matches the URL
                             pattern of DispatcherServlet then it will be processed by <a>Spring
@@ -320,31 +332,35 @@
                             URI.
 
                         <div class="code">
-                            <span class="annotation">@Controller</span><br>
-                            <span class="annotation">@RequestMapping("/appointments")</span><br>
-                            <span class="keyword">public</span> <span class="class-name">class</span> <span
-                                class="class-name">AppointmentsController</span> {<br>
-                            &nbsp;&nbsp;<span class="annotation">@GetMapping</span><br>
-                            &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">Map</span> <span
-                                class="method-name">get</span>() {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> appointmentBook.<span
-                                class="method-name">getAppointmentsForToday</span>();<br>
-                            &nbsp;&nbsp;}<br>
-                            <br>
-                            &nbsp;&nbsp;<span class="annotation">@PostMapping</span><br>
-                            &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">String</span> <span
-                                class="method-name">add</span>(<span class="annotation">@Valid</span> <span
-                                class="class-name">AppointmentForm</span> appointment, <span class="class-name">BindingResult</span>
-                            result) {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (result.<span class="method-name">hasErrors</span>())
-                            {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
-                                class="annotation">"appointments/new"</span>;<br>
+                            <span class="keyword">@Controller</span><br>
+                            <span class="keyword">@RequestMapping</span>(<span
+                                class="string">"/appointments"</span>)<br>
+                            <span class="keyword">public class</span> <span
+                                class="classname">AppointmentsController</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@GetMapping</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                class="return-type">Map</span> <span class="method">get</span>() {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                                class="variable">appointmentBook</span>.<span
+                                class="method">getAppointmentsForToday</span>();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@PostMapping</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                class="return-type">String</span> <span class="method">add</span>(<span class="keyword">@Valid</span>
+                            <span class="variable">AppointmentForm</span> <span class="variable">appointment</span>,
+                            <span class="keyword">BindingResult</span> <span class="variable">result</span>) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (<span
+                                class="variable">result</span>.<span class="method">hasErrors</span>()) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">return</span> <span class="string">"appointments/new"</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="variable">appointmentBook</span>.<span class="method">addAppointment</span>(<span
+                                class="variable">appointment</span>);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                                class="string">"redirect:/appointments"</span>;<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;appointmentBook.<span class="method-name">addAppointment</span>(appointment);<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="annotation">"redirect:/appointments"</span>;<br>
-                            &nbsp;&nbsp;}<br>
-                            }<br>
+                            }
                         </div>
                         After processing the request, the Controller returns a <strong class="oc gs">logical
                         view name</strong> and model to <a>DispatcherServlet
@@ -425,32 +441,54 @@
                             </ul>
                             <p><strong>pom.xml Example Configuration:</strong></p>
                             <div class="code">
-                                &lt;dependencies&gt;<br>
-                                &nbsp;&nbsp;&lt;!-- Spring Boot Starter Web for RESTful API support --&gt;<br>
-                                &nbsp;&nbsp;&lt;dependency&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;<br>
-                                &nbsp;&nbsp;&lt;/dependency&gt;<br>
-                                &nbsp;&nbsp;<br>
-                                &nbsp;&nbsp;&lt;!-- Spring Boot Starter Data JPA for database interactions --&gt;<br>
-                                &nbsp;&nbsp;&lt;dependency&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;<br>
-                                &nbsp;&nbsp;&lt;/dependency&gt;<br>
-                                &nbsp;&nbsp;<br>
-                                &nbsp;&nbsp;&lt;!-- H2 Database for an in-memory database (for demo purposes) --&gt;<br>
-                                &nbsp;&nbsp;&lt;dependency&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;com.h2database&lt;/groupId&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;h2&lt;/artifactId&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;scope&gt;runtime&lt;/scope&gt;<br>
-                                &nbsp;&nbsp;&lt;/dependency&gt;<br>
-                                &nbsp;&nbsp;<br>
-                                &nbsp;&nbsp;&lt;!-- Spring Boot Starter Security for security functionalities --&gt;<br>
-                                &nbsp;&nbsp;&lt;dependency&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;<br>
-                                &nbsp;&nbsp;&lt;/dependency&gt;<br>
-                                &lt;/dependencies&gt;
+                                <span class="keyword">&lt;dependencies&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Spring Boot Starter Web for RESTful API support --&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="dependency">&lt;dependency&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="keyword">&lt;groupId&gt;</span> <span
+                                    class="value">org.springframework.boot</span> <span
+                                    class="keyword">&lt;/groupId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="keyword">&lt;artifactId&gt;</span> <span class="value">spring-boot-starter-web</span>
+                                <span class="keyword">&lt;/artifactId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="dependency">&lt;/dependency&gt;</span><br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Spring Boot Starter Data JPA for database interactions --&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="dependency">&lt;dependency&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="keyword">&lt;groupId&gt;</span> <span
+                                    class="value">org.springframework.boot</span> <span
+                                    class="keyword">&lt;/groupId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="keyword">&lt;artifactId&gt;</span> <span class="value">spring-boot-starter-data-jpa</span>
+                                <span class="keyword">&lt;/artifactId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="dependency">&lt;/dependency&gt;</span><br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- H2 Database for an in-memory database (for demo purposes) --&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="dependency">&lt;dependency&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="keyword">&lt;groupId&gt;</span> <span class="value">com.h2database</span>
+                                <span class="keyword">&lt;/groupId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="keyword">&lt;artifactId&gt;</span> <span class="value">h2</span> <span
+                                    class="keyword">&lt;/artifactId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="keyword">&lt;scope&gt;</span> <span class="value">runtime</span> <span
+                                    class="keyword">&lt;/scope&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="dependency">&lt;/dependency&gt;</span><br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">&lt;!-- Spring Boot Starter Security for security functionalities --&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="dependency">&lt;dependency&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="keyword">&lt;groupId&gt;</span> <span
+                                    class="value">org.springframework.boot</span> <span
+                                    class="keyword">&lt;/groupId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="keyword">&lt;artifactId&gt;</span> <span class="value">spring-boot-starter-security</span>
+                                <span class="keyword">&lt;/artifactId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="dependency">&lt;/dependency&gt;</span><br><br>
+
+                                <span class="keyword">&lt;/dependencies&gt;</span>
                             </div>
                         </div>
 
@@ -461,36 +499,75 @@
                             <p>Create an entity class for the data model.</p>
                             <p><strong>Book Entity</strong></p>
                             <div class="code">
-                                <span class="annotation">import</span> javax.persistence.Entity;<br>
-                                <span class="annotation">import</span> javax.persistence.GeneratedValue;<br>
-                                <span class="annotation">import</span> javax.persistence.GenerationType;<br>
-                                <span class="annotation">import</span> javax.persistence.Id;<br>
-                                <br>
+                                <span class="keyword">import</span> <span
+                                    class="package">javax.persistence.Entity</span>;<br>
+                                <span class="keyword">import</span> <span class="package">javax.persistence.GeneratedValue</span>;<br>
+                                <span class="keyword">import</span> <span class="package">javax.persistence.GenerationType</span>;<br>
+                                <span class="keyword">import</span> <span
+                                    class="package">javax.persistence.Id</span>;<br><br>
+
                                 <span class="annotation">@Entity</span><br>
-                                <span class="keyword">public</span> <span class="keyword">class</span> <span
-                                    class="class-name">Book</span> {<br>
-                                &nbsp;&nbsp;<span class="annotation">@Id</span><br>
-                                &nbsp;&nbsp;<span
-                                    class="annotation">@GeneratedValue(strategy = GenerationType.IDENTITY)</span><br>
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="variable-name">Long</span>
-                                id;<br>
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span
-                                    class="variable-name">String</span> title;<br>
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span
-                                    class="variable-name">String</span> author;<br>
-                                &nbsp;&nbsp;<span class="comment">// Getters and Setters</span><br>
+                                <span class="keyword">public class</span> <span class="classname">Book</span> {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Id</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@GeneratedValue(strategy = GenerationType.IDENTITY)</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span
+                                    class="type">Long</span> <span class="variable">id</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span
+                                    class="type">String</span> <span class="variable">title</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span
+                                    class="type">String</span> <span class="variable">author</span>;<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Getters and Setters</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                    class="type">Long</span> <span class="method">getId</span>() {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
+                                <span class="variable">id</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                    class="keyword">void</span> <span class="method">setId</span>(<span class="type">Long</span>
+                                <span class="parameter">id</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span
+                                    class="variable">id</span> = <span class="parameter">id</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                    class="type">String</span> <span class="method">getTitle</span>() {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
+                                <span class="variable">title</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                    class="keyword">void</span> <span class="method">setTitle</span>(<span class="type">String</span>
+                                <span class="parameter">title</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span
+                                    class="variable">title</span> = <span class="parameter">title</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                    class="type">String</span> <span class="method">getAuthor</span>() {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
+                                <span class="variable">author</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                    class="keyword">void</span> <span class="method">setAuthor</span>(<span
+                                    class="type">String</span> <span class="parameter">author</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span
+                                    class="variable">author</span> = <span class="parameter">author</span>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                 }
                             </div>
                             <h3>3.2 Create the Repository</h3>
                             <p>Define a repository interface for data access.</p>
                             <p><strong>BookRepository</strong></p>
                             <div class="code">
-                                <span class="annotation">import</span>
-                                org.springframework.data.jpa.repository.JpaRepository;<br>
-                                <br>
-                                <span class="keyword">public</span> <span class="keyword">interface</span> <span
-                                    class="interface-name">BookRepository</span> extends JpaRepository&lt;<span
-                                    class="class-name">Book</span>, <span class="class-name">Long</span>&gt; {<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.data.jpa.repository.JpaRepository</span>;<br><br>
+
+                                <span class="keyword">public interface</span> <span
+                                    class="classname">BookRepository</span> <span class="keyword">extends</span> <span
+                                    class="package">JpaRepository</span><<span class="type">Book</span>, <span
+                                    class="type">Long</span>> {<br>
                                 }
                             </div>
 
@@ -498,39 +575,43 @@
                             <p>Create a service class for business logic.</p>
                             <p><strong>BookService</strong></p>
                             <div class="code">
-                                <span class="annotation">import</span>
-                                org.springframework.beans.factory.annotation.Autowired;<br>
-                                <span class="annotation">import</span> org.springframework.stereotype.Service;<br>
-                                <span class="annotation">import</span> java.util.List;<br>
-                                <br>
-                                <span class="annotation">@Service</span><br>
-                                <span class="keyword">public</span> <span class="keyword">class</span> <span
-                                    class="class-name">BookService</span> {<br>
-                                &nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.beans.factory.annotation.Autowired</span>;<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.stereotype.Service</span>;<br>
+                                <span class="keyword">import</span> <span class="package">java.util.List</span>;<br><br>
+
+                                <span class="keyword">@Service</span><br>
+                                <span class="keyword">public class</span> <span class="classname">BookService</span>
+                                {<br>
+                                &nbsp;&nbsp;<span class="keyword">@Autowired</span><br>
                                 &nbsp;&nbsp;<span class="keyword">private</span> <span
-                                    class="class-name">BookRepository</span> bookRepository;<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="variable-name">List&lt;Book&gt;</span>
-                                getAllBooks() {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
-                                bookRepository.findAll();<br>
-                                &nbsp;&nbsp;}<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">Book</span>
-                                getBookById(<span class="variable-name">Long</span> id) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
-                                bookRepository.findById(id).orElse(<span class="keyword">null</span>);<br>
-                                &nbsp;&nbsp;}<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">Book</span>
-                                saveBook(<span class="class-name">Book</span> book) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
-                                bookRepository.save(book);<br>
-                                &nbsp;&nbsp;}<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span>
-                                deleteBook(<span class="variable-name">Long</span> id) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;bookRepository.deleteById(id);<br>
+                                    class="classname">BookRepository</span> <span class="variable">bookRepository</span>;<br><br>
+
+                                &nbsp;&nbsp;<span class="keyword">public List&lt;Book&gt;</span> <span class="method">getAllBooks</span>()
+                                {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">bookRepository</span>.<span
+                                    class="method">findAll</span>();<br>
+                                &nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="classname">Book</span>
+                                <span class="method">getBookById</span>(<span class="keyword">Long</span> <span
+                                    class="variable">id</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">bookRepository</span>.<span
+                                    class="method">findById</span>(<span class="variable">id</span>).<span
+                                    class="method">orElse</span>(<span class="keyword">null</span>);<br>
+                                &nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="classname">Book</span>
+                                <span class="method">saveBook</span>(<span class="classname">Book</span> <span
+                                    class="variable">book</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">bookRepository</span>.<span
+                                    class="method">save</span>(<span class="variable">book</span>);<br>
+                                &nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;<span class="keyword">public void</span> <span
+                                    class="method">deleteBook</span>(<span class="keyword">Long</span> <span
+                                    class="variable">id</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">bookRepository</span>.<span
+                                    class="method">deleteById</span>(<span class="variable">id</span>);<br>
                                 &nbsp;&nbsp;}<br>
                                 }
                             </div>
@@ -539,57 +620,60 @@
                             <p>Define the controller class for handling HTTP requests.</p>
                             <p><strong>BookController</strong></p>
                             <div class="code">
-                                <span class="annotation">import</span>
-                                org.springframework.beans.factory.annotation.Autowired;<br>
-                                <span class="annotation">import</span> org.springframework.web.bind.annotation.*;<br>
-                                <span class="annotation">import</span> java.util.List;<br>
-                                <br>
-                                <span class="annotation">@RestController</span><br>
-                                <span class="annotation">@RequestMapping("/books")</span><br>
-                                <span class="keyword">public</span> <span class="keyword">class</span> <span
-                                    class="class-name">BookController</span> {<br>
-                                &nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.beans.factory.annotation.Autowired</span>;<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.web.bind.annotation.*</span>;<br>
+                                <span class="keyword">import</span> <span class="package">java.util.List</span>;<br><br>
+
+                                <span class="keyword">@RestController</span><br>
+                                <span class="keyword">@RequestMapping</span>(<span class="string">"/books"</span>)<br>
+                                <span class="keyword">public class</span> <span class="classname">BookController</span>
+                                {<br>
+                                &nbsp;&nbsp;<span class="keyword">@Autowired</span><br>
                                 &nbsp;&nbsp;<span class="keyword">private</span> <span
-                                    class="class-name">BookService</span> bookService;<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="annotation">@GetMapping</span><br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="variable-name">List&lt;Book&gt;</span>
-                                <span class="method-name">getAllBooks</span>() {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
-                                bookService.getAllBooks();<br>
-                                &nbsp;&nbsp;}<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="annotation">@GetMapping("/{id}")</span><br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">Book</span>
-                                <span class="method-name">getBookById</span>(<span
-                                    class="annotation">@PathVariable</span> <span class="variable-name">Long</span> id)
+                                    class="classname">BookService</span> <span
+                                    class="variable">bookService</span>;<br><br>
+
+                                &nbsp;&nbsp;<span class="keyword">@GetMapping</span><br>
+                                &nbsp;&nbsp;<span class="keyword">public List&lt;Book&gt;</span> <span class="method">getAllBooks</span>()
                                 {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> bookService.getBookById(id);<br>
-                                &nbsp;&nbsp;}<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="annotation">@PostMapping</span><br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">Book</span>
-                                <span class="method-name">createBook</span>(<span class="annotation">@RequestBody</span>
-                                <span class="class-name">Book</span> book) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
-                                bookService.saveBook(book);<br>
-                                &nbsp;&nbsp;}<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="annotation">@PutMapping("/{id}")</span><br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">Book</span>
-                                <span class="method-name">updateBook</span>(<span class="variable-name">Long</span> id,
-                                <span class="annotation">@RequestBody</span> <span class="class-name">Book</span> book)
-                                {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;book.setId(id);<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
-                                bookService.saveBook(book);<br>
-                                &nbsp;&nbsp;}<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="annotation">@DeleteMapping("/{id}")</span><br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
-                                    class="method-name">deleteBook</span>(<span class="variable-name">Long</span> id)
-                                {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;bookService.deleteBook(id);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">bookService</span>.<span
+                                    class="method">getAllBooks</span>();<br>
+                                &nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;<span class="keyword">@GetMapping</span>(<span class="string">"/{id}"</span>)<br>
+                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="classname">Book</span>
+                                <span class="method">getBookById</span>(<span class="keyword">@PathVariable</span> <span
+                                    class="keyword">Long</span> <span class="variable">id</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">bookService</span>.<span
+                                    class="method">getBookById</span>(<span class="variable">id</span>);<br>
+                                &nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;<span class="keyword">@PostMapping</span><br>
+                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="classname">Book</span>
+                                <span class="method">createBook</span>(<span class="keyword">@RequestBody</span> <span
+                                    class="classname">Book</span> <span class="variable">book</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">bookService</span>.<span
+                                    class="method">saveBook</span>(<span class="variable">book</span>);<br>
+                                &nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;<span class="keyword">@PutMapping</span>(<span class="string">"/{id}"</span>)<br>
+                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="classname">Book</span>
+                                <span class="method">updateBook</span>(<span class="keyword">Long</span> <span
+                                    class="variable">id</span>, <span class="keyword">@RequestBody</span> <span
+                                    class="classname">Book</span> <span class="variable">book</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">book</span>.<span
+                                    class="method">setId</span>(<span class="variable">id</span>);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">bookService</span>.<span
+                                    class="method">saveBook</span>(<span class="variable">book</span>);<br>
+                                &nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;<span class="keyword">@DeleteMapping</span>(<span
+                                    class="string">"/{id}"</span>)<br>
+                                &nbsp;&nbsp;<span class="keyword">public void</span> <span
+                                    class="method">deleteBook</span>(<span class="keyword">Long</span> <span
+                                    class="variable">id</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">bookService</span>.<span class="method">deleteBook</span>(<span
+                                    class="variable">id</span>);<br>
                                 &nbsp;&nbsp;}<br>
                                 }
                             </div>
@@ -613,25 +697,27 @@
                             <h3>4.3 Example Configuration</h3>
                             <p><strong>WebMvcConfig</strong></p>
                             <div class="code">
-                                <span class="annotation">import</span>
-                                org.springframework.context.annotation.Configuration;<br>
-                                <span class="annotation">import</span>
-                                org.springframework.web.servlet.config.annotation.CorsRegistry;<br>
-                                <span class="annotation">import</span>
-                                org.springframework.web.servlet.config.annotation.WebMvcConfigurer;<br>
-                                <br>
-                                <span class="annotation">@Configuration</span><br>
-                                <span class="keyword">public</span> <span class="keyword">class</span> <span
-                                    class="class-name">WebMvcConfig</span> <span class="keyword">implements</span>
-                                WebMvcConfigurer {<br>
-                                &nbsp;&nbsp;<span class="annotation">@Override</span><br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
-                                    class="method-name">addCorsMappings</span>(CorsRegistry registry) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;registry.addMapping("/**")<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">allowedOrigins</span>("http://localhost:3000")<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">allowedMethods</span>("GET",
-                                "POST", "PUT", "DELETE", "OPTIONS")<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">allowedHeaders</span>("*");<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.context.annotation.Configuration</span>;<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.web.servlet.config.annotation.CorsRegistry</span>;<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.web.servlet.config.annotation.WebMvcConfigurer</span>;<br><br>
+
+                                <span class="keyword">@Configuration</span><br>
+                                <span class="keyword">public class</span> <span class="classname">WebMvcConfig</span>
+                                <span class="keyword">implements</span> <span class="classname">WebMvcConfigurer</span>
+                                {<br>
+                                &nbsp;&nbsp;<span class="keyword">@Override</span><br>
+                                &nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">addCorsMappings</span>(<span
+                                    class="classname">CorsRegistry</span> <span class="variable">registry</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">registry</span>.<span class="method">addMapping</span>(<span
+                                    class="string">"/**"</span>)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. <span class="method">allowedOrigins</span>(<span
+                                    class="string">"http://localhost:3000"</span>)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. <span class="method">allowedMethods</span>(<span
+                                    class="string">"GET"</span>, <span class="string">"POST"</span>, <span
+                                    class="string">"PUT"</span>, <span class="string">"DELETE"</span>, <span
+                                    class="string">"OPTIONS"</span>)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. <span class="method">allowedHeaders</span>(<span
+                                    class="string">"*"</span>);<br>
                                 &nbsp;&nbsp;}<br>
                                 }
                             </div>
@@ -652,11 +738,12 @@
                             </ul>
                             <p><strong>Example:</strong></p>
                             <div class="code">
-                                <span class="annotation">@GetMapping("/hello")</span><br>
+                                <span class="keyword">@GetMapping</span>(<span class="string">"/hello"</span>)<br>
                                 <span class="keyword">public</span> <span class="keyword">String</span> <span
-                                    class="method-name">sayHello</span>() {<br>
-                                &nbsp;&nbsp;<span class="keyword">return</span> "Hello, World!";<br>
-                                }<br>
+                                    class="method">sayHello</span>() {<br>
+                                &nbsp;&nbsp;<span class="keyword">return</span> <span
+                                    class="string">"Hello, World!"</span>;<br>
+                                }
                             </div>
 
                             <h3>5.2 Path Variables and Request Parameters</h3>
@@ -670,12 +757,14 @@
                             </ul>
                             <p><strong>Example:</strong></p>
                             <div class="code">
-                                <span class="annotation">@GetMapping("/books/{id}")</span><br>
-                                <span class="keyword">public</span> <span class="class-name">Book</span> <span
-                                    class="method-name">getBook</span>(<span class="annotation">@PathVariable</span>
-                                <span class="variable-name">Long</span> id) {<br>
-                                &nbsp;&nbsp;<span class="keyword">return</span> bookService.getBookById(id);<br>
-                                }<br>
+                                <span class="keyword">@GetMapping</span>(<span class="string">"/books/{id}"</span>)<br>
+                                <span class="keyword">public</span> <span class="classname">Book</span> <span
+                                    class="method">getBook</span>(<span class="keyword">@PathVariable</span> <span
+                                    class="keyword">Long</span> <span class="variable">id</span>) {<br>
+                                &nbsp;&nbsp;<span class="keyword">return</span> <span
+                                    class="variable">bookService</span>.<span class="method">getBookById</span>(<span
+                                    class="variable">id</span>);<br>
+                                }
                             </div>
                         </div>
 
@@ -686,42 +775,42 @@
                             <p>Spring automatically binds request parameters to Java objects.</p>
                             <p><strong>Example:</strong></p>
                             <div class="code">
-                                <span class="annotation">@PostMapping("/books")</span><br>
-                                <span class="keyword">public</span> <span class="class-name">Book</span> <span
-                                    class="method-name">createBook</span>(<span class="annotation">@RequestBody</span>
-                                <span class="annotation">@Valid</span> <span class="class-name">Book</span> book) {<br>
-                                &nbsp;&nbsp;<span class="keyword">return</span> bookService.saveBook(book);<br>
-                                }<br>
+                                <span class="keyword">@PostMapping</span>(<span class="string">"/books"</span>)<br>
+                                <span class="keyword">public</span> <span class="classname">Book</span> <span
+                                    class="method">createBook</span>(<span class="keyword">@RequestBody</span> <span
+                                    class="keyword">@Valid</span> <span class="keyword">Book</span> <span
+                                    class="variable">book</span>) {<br>
+                                &nbsp;&nbsp;<span class="keyword">return</span> <span
+                                    class="variable">bookService</span>.<span class="method">saveBook</span>(<span
+                                    class="variable">book</span>);<br>
+                                }
                             </div>
-
                             <h3>6.2 Validation</h3>
                             <p>Use <span class="annotation">@Valid</span> annotation for validation and <span
                                     class="annotation">@NotNull</span>, <span class="annotation">@Size</span>, etc., for
                                 constraints.</p>
                             <p><strong>Book Entity with Validation</strong></p>
                             <div class="code">
-                                <span class="annotation">import</span> javax.validation.constraints.NotNull;<br>
-                                <span class="annotation">import</span> javax.validation.constraints.Size;<br>
-                                <br>
-                                <span class="annotation">@Entity</span><br>
-                                <span class="keyword">public</span> <span class="keyword">class</span> <span
-                                    class="class-name">Book</span> {<br>
-                                &nbsp;&nbsp;<span class="annotation">@Id</span><br>
-                                &nbsp;&nbsp;<span
-                                    class="annotation">@GeneratedValue(strategy = GenerationType.IDENTITY)</span><br>
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">Long</span>
-                                <span class="variable-name">id</span>;<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="annotation">@NotNull</span><br>
-                                &nbsp;&nbsp;<span class="annotation">@Size(min = 2, max = 100)</span><br>
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">String</span>
-                                <span class="variable-name">title</span>;<br>
-                                <br>
-                                &nbsp;&nbsp;<span class="annotation">@NotNull</span><br>
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">String</span>
-                                <span class="variable-name">author</span>;<br>
-                                <br>
-                                &nbsp;&nbsp;// Getters and Setters<br>
+                                <span class="keyword">import</span> <span class="package">javax.validation.constraints.NotNull</span>;<br>
+                                <span class="keyword">import</span> <span class="package">javax.validation.constraints.Size</span>;<br><br>
+                                <span class="keyword">@Entity</span><br>
+                                <span class="keyword">public class</span> <span class="classname">Book</span> {<br>
+                                &nbsp;&nbsp;<span class="keyword">@Id</span><br>
+                                &nbsp;&nbsp;<span class="keyword">@GeneratedValue</span>(<span
+                                    class="keyword">strategy</span> = <span
+                                    class="classname">GenerationType.IDENTITY</span>)<br>
+                                &nbsp;&nbsp;<span class="keyword">private Long</span> <span
+                                    class="variable">id</span>;<br><br>
+                                &nbsp;&nbsp;<span class="keyword">@NotNull</span><br>
+                                &nbsp;&nbsp;<span class="keyword">@Size</span>(<span class="keyword">min</span> = <span
+                                    class="number">2</span>, <span class="keyword">max</span> = <span
+                                    class="number">100</span>)<br>
+                                &nbsp;&nbsp;<span class="keyword">private String</span> <span
+                                    class="variable">title</span>;<br><br>
+                                &nbsp;&nbsp;<span class="keyword">@NotNull</span><br>
+                                &nbsp;&nbsp;<span class="keyword">private String</span> <span
+                                    class="variable">author</span>;<br><br>
+                                &nbsp;&nbsp;<span class="keyword">// Getters and Setters</span><br>
                                 }
                             </div>
                             <h3>6.3 Handling Validation Errors</h3>
@@ -729,26 +818,21 @@
                                 errors.</p>
                             <p><strong>GlobalExceptionHandler</strong></p>
                             <div class="code">
-                                <span class="annotation">import</span> org.springframework.http.HttpStatus;<br>
-                                <span class="annotation">import</span> org.springframework.http.ResponseEntity;<br>
-                                <span class="annotation">import</span>
-                                org.springframework.web.bind.MethodArgumentNotValidException;<br>
-                                <span class="annotation">import</span>
-                                org.springframework.web.bind.annotation.ExceptionHandler;<br>
-                                <span class="annotation">import</span>
-                                org.springframework.web.bind.annotation.RestControllerAdvice;<br>
-                                <br>
-                                <span class="annotation">@RestControllerAdvice</span><br>
-                                <span class="keyword">public</span> <span class="keyword">class</span> <span
-                                    class="class-name">GlobalExceptionHandler</span> {<br>
-                                &nbsp;&nbsp;<span class="annotation">@ExceptionHandler(MethodArgumentNotValidException.class)</span><br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span
-                                    class="class-name">ResponseEntity</span>&lt;<span class="class-name">String</span>&gt;
-                                <span class="method-name">handleValidationExceptions</span>(<span class="class-name">MethodArgumentNotValidException</span>
-                                ex) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="new">new</span>
-                                <span class="class-name">ResponseEntity</span>&lt;&gt;(ex.getBindingResult().getAllErrors().get(0).getDefaultMessage(),
-                                HttpStatus.BAD_REQUEST);<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.http.HttpStatus</span>;<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.http.ResponseEntity</span>;<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.web.bind.MethodArgumentNotValidException</span>;<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.web.bind.annotation.ExceptionHandler</span>;<br>
+                                <span class="keyword">import</span> <span class="package">org.springframework.web.bind.annotation.RestControllerAdvice</span>;<br><br>
+                                <span class="keyword">@RestControllerAdvice</span><br>
+                                <span class="keyword">public class</span> <span
+                                    class="classname">GlobalExceptionHandler</span> {<br>
+                                &nbsp;&nbsp;<span class="keyword">@ExceptionHandler</span>(<span class="classname">MethodArgumentNotValidException</span>.class)<br>
+                                &nbsp;&nbsp;<span class="keyword">public ResponseEntity&lt;String&gt;</span> <span
+                                    class="method">handleValidationExceptions</span>(<span class="classname">MethodArgumentNotValidException</span>
+                                <span class="variable">ex</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;return <span class="keyword">new</span> <span class="classname">ResponseEntity</span>&lt;&gt;(ex.getBindingResult().getAllErrors().get(<span
+                                    class="number">0</span>).getDefaultMessage(), <span
+                                    class="classname">HttpStatus</span>.<span class="constant">BAD_REQUEST</span>);<br>
                                 &nbsp;&nbsp;}<br>
                                 }
                             </div>
@@ -761,12 +845,12 @@
                             <h3>7.1 Thymeleaf</h3>
                             <p><strong>Add Dependency:</strong></p>
                             <div class="code">
-                                &lt;<span class="tag">dependency</span>&gt;<br>
-                                &nbsp;&nbsp;&lt;<span class="tag">groupId</span>&gt;<span class="value">org.springframework.boot</span>&lt;/<span
-                                    class="tag">groupId</span>&gt;<br>
-                                &nbsp;&nbsp;&lt;<span class="tag">artifactId</span>&gt;<span class="value">spring-boot-starter-thymeleaf</span>&lt;/<span
-                                    class="tag">artifactId</span>&gt;<br>
-                                &lt;/<span class="tag">dependency</span>&gt;<br>
+                                <span class="keyword">&lt;dependency&gt;</span><br>
+                                &nbsp;&nbsp;<span class="keyword">&lt;groupId&gt;</span>org.springframework.boot<span
+                                    class="keyword">&lt;/groupId&gt;</span><br>
+                                &nbsp;&nbsp;<span class="keyword">&lt;artifactId&gt;</span>spring-boot-starter-thymeleaf<span
+                                    class="keyword">&lt;/artifactId&gt;</span><br>
+                                <span class="keyword">&lt;/dependency&gt;</span>
                             </div>
                             <p><strong>Example Thymeleaf Template:</strong></p>
                             <div class="code">
@@ -786,32 +870,33 @@
                             </div>
                             <p><strong>Controller with Thymeleaf:</strong></p>
                             <div class="code">
-                                <span class="annotation">@GetMapping("/index")</span><br>
-                                <span class="keyword">public</span> <span class="class-name">String</span> <span
-                                    class="method-name">index</span>(<span class="class-name">Model</span> model) {<br>
-                                &nbsp;&nbsp;model.<span class="method-name">addAttribute</span>(<span
-                                    class="annotation">"message"</span>, <span
-                                    class="annotation">"Hello Thymeleaf!"</span>);<br>
-                                &nbsp;&nbsp;<span class="keyword">return</span> <span class="annotation">"index"</span>;<br>
-                                }<br>
+                                <span class="keyword">@GetMapping</span>(<span class="string">"/index"</span>)<br>
+                                <span class="keyword">public String</span> <span class="method">index</span>(<span
+                                    class="keyword">Model</span> <span class="variable">model</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">model.addAttribute</span>(<span
+                                    class="string">"message"</span>, <span
+                                    class="string">"Hello Thymeleaf!"</span>);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                                    class="string">"index"</span>;<br>
+                                }
                             </div>
 
                             <h3>7.2 JSP</h3>
                             <p><strong>Add Dependency:</strong></p>
                             <div class="code">
-                                &lt;<span class="tag">dependency</span>&gt;<br>
-                                &nbsp;&nbsp;&lt;<span class="tag">groupId</span>&gt;<span class="value">org.springframework.boot</span>&lt;/<span
-                                    class="tag">groupId</span>&gt;<br>
-                                &nbsp;&nbsp;&lt;<span class="tag">artifactId</span>&gt;<span class="value">spring-boot-starter-tomcat</span>&lt;/<span
-                                    class="tag">artifactId</span>&gt;<br>
-                                &lt;/<span class="tag">dependency</span>&gt;<br>
-                                <br>
-                                &lt;<span class="tag">dependency</span>&gt;<br>
-                                &nbsp;&nbsp;&lt;<span class="tag">groupId</span>&gt;<span class="value">org.apache.tomcat.embed</span>&lt;/<span
-                                    class="tag">groupId</span>&gt;<br>
-                                &nbsp;&nbsp;&lt;<span class="tag">artifactId</span>&gt;<span class="value">tomcat-embed-jasper</span>&lt;/<span
-                                    class="tag">artifactId</span>&gt;<br>
-                                &lt;/<span class="tag">dependency</span>&gt;
+                                <span class="keyword">&lt;dependency&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;groupId&gt;</span>org.springframework.boot<span
+                                    class="keyword">&lt;/groupId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;artifactId&gt;</span>spring-boot-starter-tomcat<span
+                                    class="keyword">&lt;/artifactId&gt;</span><br>
+                                <span class="keyword">&lt;/dependency&gt;</span><br><br>
+
+                                <span class="keyword">&lt;dependency&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;groupId&gt;</span>org.apache.tomcat.embed<span
+                                    class="keyword">&lt;/groupId&gt;</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;artifactId&gt;</span>tomcat-embed-jasper<span
+                                    class="keyword">&lt;/artifactId&gt;</span><br>
+                                <span class="keyword">&lt;/dependency&gt;</span>
                             </div>
                             <p><strong>Example JSP Template:</strong></p>
                             <div class="code">
@@ -831,14 +916,14 @@
                             </div>
                             <p><strong>Controller with JSP:</strong></p>
                             <div class="code">
-                                <span class="annotation">@GetMapping("/index")</span><br>
-                                <span class="keyword">public</span> <span class="class-name">String</span> <span
-                                    class="method-name">index</span>(<span class="class-name">Model</span> model) {<br>
-                                &nbsp;&nbsp;model.<span class="method-name">addAttribute</span>(<span
-                                    class="annotation">"message"</span>, <span
-                                    class="annotation">"Hello JSP!"</span>);<br>
-                                &nbsp;&nbsp;<span class="keyword">return</span> <span class="annotation">"index"</span>;<br>
-                                }<br>
+                                <span class="keyword">@GetMapping</span>(<span class="string">"/index"</span>)<br>
+                                <span class="keyword">public String</span> <span class="method">index</span>(<span
+                                    class="keyword">Model</span> <span class="variable">model</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">model.addAttribute</span>(<span
+                                    class="string">"message"</span>, <span class="string">"Hello JSP!"</span>);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                                    class="string">"index"</span>;<br>
+                                }
                             </div>
                         </div>
                     </div>

@@ -1438,3 +1438,28 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+    .code {
+        background-color: #2d2d2d;
+        color: #f8f8f2;
+        padding: 15px;
+        border-radius: 8px;
+        display: inline-block;
+        width: 100%;
+        overflow-x: auto;
+    }
+    .keyword {
+        color: #66d9ef;
+    }
+    .classname {
+        color: #a6e22e;
+    }
+    .method {
+        color: #fd971f;
+    }
+    .variable {
+        color: #f92672;
+    }
+    .comment {
+        color: #75715e;
+        font-style: italic;
+    }

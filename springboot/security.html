@@ -460,7 +460,7 @@
                         <span class="keyword">}</span>
                     </div>
 
-                    <p><strong>Configure Spring Security</strong><br>Configure Spring Security to use the JWT filter.
+                    <p><h3>3.3 Configure Spring Security</h3><br>Configure Spring Security to use the JWT filter.
                     </p>
                     <div class="code">
                         <span class="keyword">import</span> org.springframework.beans.factory.annotation.<span
@@ -527,6 +527,280 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                         <br>
                         <span class="keyword">}</span>
+                    </div>
+                    <div class="section">
+                        <h3>3.4 Create Authentication Controller</h3>
+                        <p>Handles user login and issues JWT tokens.</p>
+                        <div class="code">
+                            <span class="keyword">import</span> org.springframework.beans.factory.annotation.<span
+                                class="class-name">Autowired</span>;<br>
+                            <span class="keyword">import</span> org.springframework.web.bind.annotation.*;<br>
+                            <br>
+                            <span class="annotation">@RestController</span><br>
+                            <span class="keyword">public</span> <span class="class-name">class</span> <span
+                                class="class-name">AuthenticationController</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">private</span> <span class="class-name">AuthenticationManager</span>
+                            <span class="variable-name">authenticationManager</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">private</span> <span class="class-name">JwtUtil</span>
+                            <span class="variable-name">jwtUtil</span>;<br>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PostMapping</span>(<span class="string">"/authenticate"</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                class="class-name">String</span> <span class="method-name">authenticate</span>(<span
+                                class="annotation">@RequestBody</span> <span class="class-name">AuthRequest</span> <span
+                                class="variable-name">authRequest</span>) <span class="keyword">throws</span> <span
+                                class="class-name">Exception</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="variable-name">authenticationManager</span>.<span class="method-name">authenticate</span>(<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="class-name">UsernamePasswordAuthenticationToken</span>(<span
+                                class="variable-name">authRequest</span>.<span class="method-name">getUsername</span>(),
+                            <span class="variable-name">authRequest</span>.<span class="method-name">getPassword</span>())<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">catch</span> (<span class="class-name">BadCredentialsException</span>
+                            <span class="variable-name">e</span>) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw <span class="keyword">new</span> <span
+                                class="class-name">Exception</span>(<span class="string">"Incorrect username or password"</span>,
+                            <span class="variable-name">e</span>);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable-name">jwtUtil</span>.<span
+                                class="method-name">generateToken</span>(<span class="variable-name">authRequest</span>.<span
+                                class="method-name">getUsername</span>());<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            <br>
+                            <span class="keyword">}</span>
+                        </div>
+
+                        <p><strong>AuthRequest Model:</strong></p>
+                        <div class="code">
+                            <span class="keyword">public</span> <span class="class-name">class</span> <span
+                                class="class-name">AuthRequest</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">private</span> <span class="class-name">String</span>
+                            <span class="variable-name">username</span>;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">private</span> <span class="class-name">String</span>
+                            <span class="variable-name">password</span>;<br>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// <span class="comment">Getters and Setters</span><br>
+                            <span class="keyword">}</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>3.5 Refresh Tokens</h3>
+                        <p><strong>Refresh Token Concept:</strong></p>
+                        <ul>
+                            <li><strong>Purpose:</strong> Allows users to obtain a new access token using a refresh
+                                token when the current one expires.
+                            </li>
+                            <li><strong>Flow:</strong>
+                                <ol>
+                                    <li>User requests a new access token using a refresh token.</li>
+                                    <li>Server verifies the refresh token and issues a new access token.</li>
+                                </ol>
+                            </li>
+                        </ul>
+
+                        <p><strong>Generate Refresh Token</strong></p>
+                        <div class="code">
+                            <span class="keyword">public</span> <span class="class-name">String</span> <span
+                                class="method-name">generateRefreshToken</span>(<span class="class-name">String</span>
+                            <span class="variable-name">username</span>) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                                class="class-name">Jwts</span>.<span class="method-name">builder</span>()<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">setSubject</span>(<span
+                                class="variable-name">username</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
+                                class="method-name">setIssuedAt</span>(<span class="new-line">new <span
+                                class="class-name">Date</span>())</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
+                                class="method-name">setExpiration</span>(<span class="new-line">new <span
+                                class="class-name">Date</span>(<span class="variable-name">System</span>.<span
+                                class="method-name">currentTimeMillis</span>() + <span
+                                class="number">1000</span> * <span class="number">60</span> * <span
+                                class="number">60</span> * <span class="number">24</span> * <span
+                                class="number">7</span>))</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span
+                                class="method-name">signWith</span>(<span
+                                class="class-name">SignatureAlgorithm</span>.<span class="variable-name">HS256</span>,
+                            <span class="variable-name">secretKey</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">compact</span>();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        </div>
+
+                        <p><strong>Refresh Token Controller</strong></p>
+                        <div class="code">
+                            <span class="annotation">@RestController</span><br>
+                            <span class="keyword">public</span> <span class="class-name">class</span> <span
+                                class="class-name">RefreshTokenController</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">private</span> <span class="class-name">JwtUtil</span>
+                            <span class="variable-name">jwtUtil</span>;<br>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PostMapping</span>(<span class="string">"/refreshToken"</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                class="class-name">String</span> <span class="method-name">refreshToken</span>(<span
+                                class="annotation">@RequestBody</span> <span class="class-name">String</span> <span
+                                class="variable-name">refreshToken</span>) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">String</span> <span
+                                class="variable-name">username</span> = <span class="variable-name">jwtUtil</span>.<span
+                                class="method-name">extractUsername</span>(<span
+                                class="variable-name">refreshToken</span>);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (<span
+                                class="variable-name">jwtUtil</span>.<span
+                                class="method-name">validateToken</span>(<span class="variable-name">refreshToken</span>,
+                            <span class="variable-name">username</span>)) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">return</span> <span class="variable-name">jwtUtil</span>.<span
+                                class="method-name">generateToken</span>(<span
+                                class="variable-name">username</span>);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">else</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                class="keyword">throw</span> <span class="class-name">RuntimeException</span>(<span
+                                class="string">"Invalid refresh token"</span>);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            <br>
+                            <span class="keyword">}</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>3.6 Example Usage of JWT Authentication and Authorization</h3>
+                        <p><strong>Requesting a Token:</strong></p>
+                        <div class="code">
+                            <span class="keyword">curl</span> -X <span class="string">POST</span> <span class="string">http://localhost:8080/authenticate</span>
+                            -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">'{"username": "user", "password": "pass"}'</span>
+                        </div>
+
+                        <p><strong>Using the Token for Requests:</strong></p>
+                        <div class="code">
+                            <span class="keyword">curl</span> -X <span class="string">GET</span> <span class="string">http://localhost:8080/protected-endpoint</span>
+                            -H <span class="string">"Authorization: Bearer &lt;jwt_token&gt;"</span>
+                        </div>
+
+                        <p><strong>Refreshing the Token:</strong></p>
+                        <div class="code">
+                            <span class="keyword">curl</span> -X <span class="string">POST</span> <span class="string">http://localhost:8080/refreshToken</span>
+                            -H <span class="string">"Content-Type: application/json"</span> -d <span class="string">&lt;refresh_token&gt;</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>Key Points in JWT Authentication and Authorization</h3>
+                        <table border="1" cellpadding="10">
+                            <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><strong>Token Generation</strong></td>
+                                <td>Create JWT tokens using user credentials and issue them to clients.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Token Validation</strong></td>
+                                <td>Validate JWT tokens on each request to ensure they are not expired and are correctly
+                                    signed.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Authentication</strong></td>
+                                <td>Verify the user's identity using the provided credentials.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Authorization</strong></td>
+                                <td>Control access to resources based on user roles or claims in the JWT token.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Refresh Tokens</strong></td>
+                                <td>Allow the generation of new access tokens using a valid refresh token.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Security</strong></td>
+                                <td>Protect sensitive data using secure secret keys and HTTPS.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="section">
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li><strong>Use HTTPS:</strong> Always use HTTPS to protect JWT tokens from being
+                                intercepted.
+                            </li>
+                            <li><strong>Secure Secret Keys:</strong> Keep the JWT secret key safe and change it
+                                periodically.
+                            </li>
+                            <li><strong>Token Expiry:</strong> Set an appropriate expiration time for tokens to limit
+                                the impact of token leakage.
+                            </li>
+                            <li><strong>Store Tokens Securely:</strong> Store JWT tokens in secure storage mechanisms
+                                (not in local storage or as plain text).
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h3>Summary of Key Points</h3>
+                        <table border="1" cellpadding="10">
+                            <thead>
+                            <tr>
+                                <th>Concept</th>
+                                <th>Details</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><strong>JWT Structure</strong></td>
+                                <td>Header, Payload, Signature</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Authentication</strong></td>
+                                <td>Verifying user identity using username and password</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Authorization</strong></td>
+                                <td>Determining access to resources based on user roles or claims</td>
+                            </tr>
+                            <tr>
+                                <td><strong>JWT Generation</strong></td>
+                                <td>Create JWT and Refresh Tokens with <span class="class-name">JwtUtil</span> class
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Token Validation</strong></td>
+                                <td>Validate token’s authenticity and expiration in <span class="class-name">JwtRequestFilter</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>UserDetailsService</strong></td>
+                                <td>Load user-specific data and roles in <span class="class-name">CustomUserDetailsService</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Security Configuration</strong></td>
+                                <td>Define security rules and add JWT filter in <span
+                                        class="class-name">SecurityConfig</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Refresh Tokens</strong></td>
+                                <td>Generate and validate refresh tokens to obtain new access tokens</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Role-Based Access</strong></td>
+                                <td>Define endpoint access based on user roles (/admin/** and /user/** in <span
+                                        class="class-name">SecurityConfig</span>)
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
         </div>

@@ -390,8 +390,6 @@
 															class="ne gs">. </strong>So, for the example project, we’ll
 														use this library. First, we create a spring boot project with
 														these required dependencies:</p>
-													<img
-														src="https://medium.com/media/0e6fd83f6571619b62e32e371802b6cf" />
 													<p id="d9c4"
 														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
 														data-selectable-paragraph=""><strong
@@ -407,15 +405,6 @@
 														<strong class="ne gs">Open State</strong> when the response from
 														the request has passed the time unit threshold that we specify.
 													</p>
-													<figure class="pe pf pg ph pi pj">
-														<div class="qi jh l fg">
-															<div class="aea qk l"><iframe
-																	src="https://medium.com/media/390d35f8f6214fe481eebf50e77b574a"
-																	allowfullscreen="" frameborder="0" height="193"
-																	width="680" title="Circuit Breaker"
-																	class="fp n gf dv bg" scrolling="no"></iframe></div>
-														</div>
-													</figure>
 													<p id="4484"
 														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
 														data-selectable-paragraph="">Pay attention to line 3. An API
@@ -427,15 +416,6 @@
 														data-selectable-paragraph="">Next, we will configure what
 														conditions will cause the circuit breaker to trip to the <strong
 															class="ne gs">Open State</strong>.</p>
-													<figure class="pe pf pg ph pi pj">
-														<div class="qi jh l fg">
-															<div class="aeb qk l"><iframe
-																	src="https://medium.com/media/edfc40e9e268352e1f63285feba064b7"
-																	allowfullscreen="" frameborder="0" height="364"
-																	width="680" title="Circuit Breaker"
-																	class="fp n gf dv bg" scrolling="no"></iframe></div>
-														</div>
-													</figure>
 													<p id="92c6"
 														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
 														data-selectable-paragraph="">The above configuration will create
@@ -508,15 +488,6 @@
 														data-selectable-paragraph="">To simulate the circuit breaker
 														above, I will use the Integration Test on the REST API that has
 														been created.</p>
-													<figure class="pe pf pg ph pi pj">
-														<div class="qi jh l fg">
-															<div class="aec qk l"><iframe
-																	src="https://medium.com/media/041c4f984440fab35c4b6feeb6a399aa"
-																	allowfullscreen="" frameborder="0" height="435"
-																	width="680" title="Circuit Breaker"
-																	class="fp n gf dv bg" scrolling="no"></iframe></div>
-														</div>
-													</figure>
 													<p id="c970"
 														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
 														data-selectable-paragraph="">Pay attention to the code. I am
@@ -553,15 +524,6 @@
 														This causes the next request to be considered a failure. If we
 														look in more detail at the 6th iteration log we will find the
 														following log:</p>
-													<figure class="pe pf pg ph pi pj">
-														<div class="qi jh l fg">
-															<div class="aed qk l"><iframe
-																	src="https://medium.com/media/f0b28efc4d7137f46b29a95c3c4f950b"
-																	allowfullscreen="" frameborder="0" height="474"
-																	width="680" title="Circuit Breaker"
-																	class="fp n gf dv bg" scrolling="no"></iframe></div>
-														</div>
-													</figure>
 													<p id="d27a"
 														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
 														data-selectable-paragraph="">Resilience4J will <em
@@ -575,15 +537,6 @@
 															class="ne gs">@CircuitBreaker</strong> annotation and create
 														a function with the same name. Let’s add the following line of
 														code on the CircuitBreakerController file.</p>
-													<figure class="pe pf pg ph pi pj">
-														<div class="qi jh l fg">
-															<div class="aee qk l"><iframe
-																	src="https://medium.com/media/fc6c4ff8d4ccdd49971ab7f277e01343"
-																	allowfullscreen="" frameborder="0" height="325"
-																	width="680" title="Circuit Breaker"
-																	class="fp n gf dv bg" scrolling="no"></iframe></div>
-														</div>
-													</figure>
 													<p id="4dec"
 														class="pw-post-body-paragraph nb nc gr ne b nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw nx ny nz gk bj"
 														data-selectable-paragraph="">We will create a function with the

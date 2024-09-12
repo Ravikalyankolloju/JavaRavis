@@ -159,7 +159,560 @@
             <a class="div-to-desk"> <br>
             </a>
             <article>
-                <div class="entry-content" itemprop="text"></div>
+                <div class="entry-content" itemprop="text">
+                    <h1>Spring Boot Testing Tutorial</h1>
+
+                    <h2>1. Introduction to Testing in Spring Boot</h2>
+                    <p>Spring Boot provides several testing options out of the box. The core dependencies for testing in
+                        Spring Boot are:</p>
+                    <ul>
+                        <li><code>spring-boot-starter-test</code>: Includes libraries for JUnit, AssertJ, Hamcrest, and
+                            Mockito.
+                        </li>
+                    </ul>
+                    <p>You can add this dependency to your <code>pom.xml</code> for Maven:</p>
+                    <div class="code">
+                        &lt;dependency&gt;<br>
+                        &nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
+                        &nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;<br>
+                        &nbsp;&nbsp;&lt;scope&gt;test&lt;/scope&gt;<br>
+                        &lt;/dependency&gt;
+                    </div>
+                    <p>Or to <code>build.gradle</code> for Gradle:</p>
+                    <div class="code">
+                        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+                    </div>
+
+                    <h2>2. Unit Testing</h2>
+                    <p>Unit tests focus on testing individual components or classes. For unit testing, we typically use
+                        JUnit and Mockito.</p>
+
+                    <h3>2.1 Example: Testing a Service</h3>
+                    <p>Service Class (<code>UserService.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.service;<br><br>
+
+                        <span class="keyword">import</span> org.springframework.stereotype.<span class="class-name">Service</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">Service</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">UserService</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="variable-name">String</span> <span
+                            class="method-name">getUserNameById</span>(<span class="variable-name">Long</span> <span
+                            class="variable-name">id</span>) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;// Simulate fetching user name<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                            class="string">"John Doe"</span>;<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <p>Unit Test Class (<code>UserServiceTests.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.service;<br><br>
+
+                        <span class="keyword">import</span> static org.junit.jupiter.api.Assertions.<span
+                            class="method-name">assertEquals</span>;<br>
+                        <span class="keyword">import</span> org.junit.jupiter.api.<span
+                            class="class-name">Test</span>;<br>
+                        <span class="keyword">import</span> org.springframework.beans.factory.annotation.<span
+                            class="class-name">Autowired</span>;<br>
+                        <span class="keyword">import</span> org.springframework.boot.test.context.<span
+                            class="class-name">SpringBootTest</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">SpringBootTest</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">UserServiceTests</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Autowired</span><br>
+                        &nbsp;&nbsp;<span class="variable-name">private</span> <span
+                            class="class-name">UserService</span> <span
+                            class="variable-name">userService</span>;<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Test</span><br>
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
+                            class="method-name">testGetUserNameById</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">String</span> <span class="variable-name">userName</span>
+                        = <span class="variable-name">userService</span>.<span
+                            class="method-name">getUserNameById</span>(<span class="variable-name">1L</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">assertEquals</span>(<span class="string">"John Doe"</span>,
+                        <span class="variable-name">userName</span>);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <h2>3. Integration Testing</h2>
+                    <p>Integration tests ensure that different parts of the application work together as expected.
+                        Spring Boot provides various annotations and configurations to facilitate integration
+                        testing.</p>
+
+                    <h3>3.1 Example: Testing a REST Controller</h3>
+                    <p>Controller Class (<code>UserController.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.controller;<br><br>
+
+                        <span class="keyword">import</span> com.example.demo.service.<span class="class-name">UserService</span>;<br>
+                        <span class="keyword">import</span> org.springframework.web.bind.annotation.<span
+                            class="class-name">GetMapping</span>;<br>
+                        <span class="keyword">import</span> org.springframework.web.bind.annotation.<span
+                            class="class-name">PathVariable</span>;<br>
+                        <span class="keyword">import</span> org.springframework.web.bind.annotation.<span
+                            class="class-name">RestController</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">RestController</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">UserController</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">final</span> <span
+                            class="class-name">UserService</span> <span
+                            class="variable-name">userService</span>;<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span
+                            class="class-name">UserController</span>(<span class="class-name">UserService</span> <span
+                            class="variable-name">userService</span>) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable-name">userService</span>
+                        = <span class="variable-name">userService</span>;<br>
+                        &nbsp;&nbsp;}<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">GetMapping</span>(<span
+                            class="string">"/users/{id}"</span>)<br>
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="variable-name">String</span> <span
+                            class="method-name">getUser</span>(<span class="keyword">@</span><span class="annotation">PathVariable</span>
+                        <span class="variable-name">Long</span> <span class="variable-name">id</span>) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable-name">userService</span>.<span
+                            class="method-name">getUserNameById</span>(<span class="variable-name">id</span>);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <p>Integration Test Class (<code>UserControllerTests.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.controller;<br><br>
+
+                        <span class="keyword">import</span> static org.hamcrest.Matchers.<span
+                            class="method-name">is</span>;<br>
+                        <span class="keyword">import</span> static
+                        org.springframework.test.web.servlet.request.MockMvcRequestBuilders.<span class="method-name">get</span>;<br>
+                        <span class="keyword">import</span> static
+                        org.springframework.test.web.servlet.result.MockMvcResultMatchers.<span class="method-name">status</span>;<br>
+                        <span class="keyword">import</span> static
+                        org.springframework.test.web.servlet.result.MockMvcResultMatchers.<span class="method-name">content</span>;<br><br>
+
+                        <span class="keyword">import</span> org.junit.jupiter.api.<span
+                            class="class-name">Test</span>;<br>
+                        <span class="keyword">import</span> org.springframework.beans.factory.annotation.<span
+                            class="class-name">Autowired</span>;<br>
+                        <span class="keyword">import</span>
+                        org.springframework.boot.test.autoconfigure.web.servlet.<span
+                            class="class-name">WebMvcTest</span>;<br>
+                        <span class="keyword">import</span> org.springframework.test.web.servlet.<span
+                            class="class-name">MockMvc</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">WebMvcTest</span>(<span
+                            class="class-name">UserController</span>.<span class="class-name">class</span>)<br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">UserControllerTests</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Autowired</span><br>
+                        &nbsp;&nbsp;<span class="variable-name">private</span> <span class="class-name">MockMvc</span>
+                        <span class="variable-name">mockMvc</span>;<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Test</span><br>
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
+                            class="method-name">testGetUser</span>() <span class="keyword">throws</span> <span
+                            class="class-name">Exception</span> {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">mockMvc</span>.<span class="method-name">perform</span>(<span
+                            class="method-name">get</span>(<span class="string">"/users/1"</span>))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">andExpect</span>(<span
+                            class="method-name">status</span>().<span class="method-name">isOk</span>())<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">andExpect</span>(<span
+                            class="method-name">content</span>().<span class="method-name">string</span>(<span
+                            class="method-name">is</span>(<span class="string">"John Doe"</span>)));<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <h2>4. Mocking</h2>
+                    <p>Mocking is used to simulate the behavior of complex dependencies. Mockito is commonly used for
+                        this purpose.</p>
+
+                    <h3>4.1 Example: Mocking a Dependency</h3>
+                    <p>Service Class (<code>OrderService.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.service;<br><br>
+
+                        <span class="keyword">import</span> org.springframework.stereotype.<span class="class-name">Service</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">Service</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">OrderService</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">final</span> <span
+                            class="class-name">UserService</span> <span
+                            class="variable-name">userService</span>;<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span
+                            class="class-name">OrderService</span>(<span class="class-name">UserService</span> <span
+                            class="variable-name">userService</span>) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable-name">userService</span>
+                        = <span class="variable-name">userService</span>;<br>
+                        &nbsp;&nbsp;}<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="variable-name">String</span> <span
+                            class="method-name">processOrder</span>(<span class="variable-name">Long</span> <span
+                            class="variable-name">userId</span>) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">String</span> <span class="variable-name">userName</span>
+                        = <span class="variable-name">userService</span>.<span
+                            class="method-name">getUserNameById</span>(<span class="variable-name">userId</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Order processed for "</span>
+                        + <span class="variable-name">userName</span>;<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <p>Unit Test Class with Mocking (<code>OrderServiceTests.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.service;<br><br>
+
+                        <span class="keyword">import</span> static org.junit.jupiter.api.Assertions.<span
+                            class="method-name">assertEquals</span>;<br>
+                        <span class="keyword">import</span> static org.mockito.Mockito.<span
+                            class="method-name">when</span>;<br>
+                        <span class="keyword">import</span> static org.mockito.Mockito.<span
+                            class="method-name">mock</span>;<br><br>
+
+                        <span class="keyword">import</span> org.junit.jupiter.api.<span
+                            class="class-name">Test</span>;<br>
+                        <span class="keyword">import</span> org.springframework.boot.test.context.<span
+                            class="class-name">SpringBootTest</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">SpringBootTest</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">OrderServiceTests</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Test</span><br>
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
+                            class="method-name">testProcessOrder</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">UserService</span> <span class="variable-name">userService</span>
+                        = <span class="method-name">mock</span>(<span class="class-name">UserService</span>.<span
+                            class="class-name">class</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">when</span>(<span class="variable-name">userService</span>.<span
+                            class="method-name">getUserNameById</span>(<span class="variable-name">1L</span>)).<span
+                            class="method-name">thenReturn</span>(<span class="string">"John Doe"</span>);<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">OrderService</span> <span
+                            class="variable-name">orderService</span> = <span
+                            class="class-name">OrderService</span>(<span class="variable-name">userService</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">String</span> <span class="variable-name">result</span>
+                        = <span class="variable-name">orderService</span>.<span class="method-name">processOrder</span>(<span
+                            class="variable-name">1L</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">assertEquals</span>(<span class="string">"Order processed for John Doe"</span>,
+                        <span class="variable-name">result</span>);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <h2>5. End-to-End Testing</h2>
+                    <p>End-to-end tests ensure the application works from the user's perspective, often involving
+                        multiple layers of the stack.</p>
+
+                    <h3>5.1 Example: Using @SpringBootTest</h3>
+                    <p>End-to-End Test Class (<code>ApplicationTests.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo;<br><br>
+
+                        <span class="keyword">import</span> static org.junit.jupiter.api.Assertions.<span
+                            class="method-name">assertTrue</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">SpringBootTest</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">ApplicationTests</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Test</span><br>
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
+                            class="method-name">contextLoads</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">assertTrue</span>(<span
+                            class="keyword">true</span>);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <h2>6. Test Configuration</h2>
+                    <p>You can configure tests with <code>application-test.properties</code> or <code>application-test.yml</code>
+                        to provide specific configurations for testing.</p>
+                    <p>Example (<code>application-test.properties</code>):</p>
+                    <div class="code">
+                        <span class="keyword">#</span> Example test properties<br>
+                        <span class="variable-name">spring.datasource.url</span>=<span
+                            class="string">jdbc:h2:mem:testdb</span>
+                    </div>
+
+                    <h2>7. Running Tests</h2>
+                    <p>To run tests, use Maven or Gradle commands:</p>
+                    <ul>
+                        <li>Maven: <code>mvn test</code></li>
+                        <li>Gradle: <code>gradle test</code></li>
+                    </ul>
+
+                    <hr>
+
+                    <h2>Summary</h2>
+                    <ul>
+                        <li><strong>Unit Testing:</strong> Test individual components or classes using JUnit and
+                            Mockito.
+                        </li>
+                        <li><strong>Integration Testing:</strong> Test interactions between components, often using
+                            MockMvc for controllers.
+                        </li>
+                        <li><strong>Mocking:</strong> Simulate the behavior of dependencies using Mockito.</li>
+                        <li><strong>End-to-End Testing:</strong> Ensure the entire application works as expected from
+                            the user's perspective.
+                        </li>
+                        <li><strong>Test Configuration:</strong> Use specific configurations for tests to avoid
+                            affecting production settings.
+                        </li>
+                    </ul>
+                    <p>By leveraging these testing techniques and tools, you can ensure your Spring Boot application is
+                        robust, reliable, and maintainable.</p>
+
+                    <h2>Testing REST Controllers</h2>
+                    <p>Testing REST controllers typically involves verifying that the endpoints return the expected
+                        responses and handle various inputs correctly.</p>
+
+                    <h3>1. Using MockMvc for Controller Tests</h3>
+                    <p>MockMvc allows you to perform HTTP requests and validate responses in a test environment without
+                        starting a full server.</p>
+                    <p>Example: Testing a REST Controller</p>
+                    <p>Controller Class (<code>UserController.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.controller;<br><br>
+
+                        <span class="keyword">import</span> com.example.demo.service.<span class="class-name">UserService</span>;<br>
+                        <span class="keyword">import</span> org.springframework.web.bind.annotation.<span
+                            class="class-name">GetMapping</span>;<br>
+                        <span class="keyword">import</span> org.springframework.web.bind.annotation.<span
+                            class="class-name">PathVariable</span>;<br>
+                        <span class="keyword">import</span> org.springframework.web.bind.annotation.<span
+                            class="class-name">RestController</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">RestController</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">UserController</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">final</span> <span
+                            class="class-name">UserService</span> <span
+                            class="variable-name">userService</span>;<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span
+                            class="class-name">UserController</span>(<span class="class-name">UserService</span> <span
+                            class="variable-name">userService</span>) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable-name">userService</span>
+                        = <span class="variable-name">userService</span>;<br>
+                        &nbsp;&nbsp;}<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">GetMapping</span>(<span
+                            class="string">"/users/{id}"</span>)<br>
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="variable-name">String</span> <span
+                            class="method-name">getUser</span>(<span class="class-name">PathVariable</span> <span
+                            class="variable-name">Long</span> <span class="variable-name">id</span>) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable-name">userService</span>.<span
+                            class="method-name">getUserNameById</span>(<span class="variable-name">id</span>);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <p>Integration Test Class (<code>UserControllerTests.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.controller;<br><br>
+
+                        <span class="keyword">import</span> static org.hamcrest.Matchers.<span
+                            class="method-name">is</span>;<br>
+                        <span class="keyword">import</span> static
+                        org.springframework.test.web.servlet.request.MockMvcRequestBuilders.<span class="method-name">get</span>;<br>
+                        <span class="keyword">import</span> static
+                        org.springframework.test.web.servlet.result.MockMvcResultMatchers.<span class="method-name">status</span>;<br>
+                        <span class="keyword">import</span> static
+                        org.springframework.test.web.servlet.result.MockMvcResultMatchers.<span class="method-name">content</span>;<br><br>
+
+                        <span class="keyword">import</span> org.junit.jupiter.api.<span
+                            class="class-name">Test</span>;<br>
+                        <span class="keyword">import</span> org.springframework.beans.factory.annotation.<span
+                            class="class-name">Autowired</span>;<br>
+                        <span class="keyword">import</span>
+                        org.springframework.boot.test.autoconfigure.web.servlet.<span
+                            class="class-name">WebMvcTest</span>;<br>
+                        <span class="keyword">import</span> org.springframework.test.web.servlet.<span
+                            class="class-name">MockMvc</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">WebMvcTest</span>(<span
+                            class="class-name">UserController</span>.<span class="class-name">class</span>)<br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">UserControllerTests</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Autowired</span><br>
+                        &nbsp;&nbsp;<span class="variable-name">private</span> <span class="class-name">MockMvc</span>
+                        <span class="variable-name">mockMvc</span>;<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Test</span><br>
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
+                            class="method-name">testGetUser</span>() <span class="keyword">throws</span> <span
+                            class="class-name">Exception</span> {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">mockMvc</span>.<span class="method-name">perform</span>(<span
+                            class="method-name">get</span>(<span class="string">"/users/1"</span>))<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">andExpect</span>(<span
+                            class="method-name">status</span>().<span class="method-name">isOk</span>())<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">andExpect</span>(<span
+                            class="method-name">content</span>().<span class="method-name">string</span>(<span
+                            class="method-name">is</span>(<span class="string">"John Doe"</span>)));<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <h2>4. Mocking</h2>
+                    <p>Mocking is used to simulate the behavior of complex dependencies. Mockito is commonly used for
+                        this purpose.</p>
+
+                    <h3>4.1 Example: Mocking a Dependency</h3>
+                    <p>Service Class (<code>OrderService.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.service;<br><br>
+
+                        <span class="keyword">import</span> org.springframework.stereotype.<span class="class-name">Service</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">Service</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">OrderService</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">final</span> <span
+                            class="class-name">UserService</span> <span
+                            class="variable-name">userService</span>;<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span
+                            class="class-name">OrderService</span>(<span class="class-name">UserService</span> <span
+                            class="variable-name">userService</span>) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable-name">userService</span>
+                        = <span class="variable-name">userService</span>;<br>
+                        &nbsp;&nbsp;}<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="variable-name">String</span> <span
+                            class="method-name">processOrder</span>(<span class="variable-name">Long</span> <span
+                            class="variable-name">userId</span>) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">String</span> <span class="variable-name">userName</span>
+                        = <span class="variable-name">userService</span>.<span
+                            class="method-name">getUserNameById</span>(<span class="variable-name">userId</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Order processed for "</span>
+                        + <span class="variable-name">userName</span>;<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <p>Unit Test Class with Mocking (<code>OrderServiceTests.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo.service;<br><br>
+
+                        <span class="keyword">import</span> static org.junit.jupiter.api.Assertions.<span
+                            class="method-name">assertEquals</span>;<br>
+                        <span class="keyword">import</span> static org.mockito.Mockito.<span
+                            class="method-name">when</span>;<br>
+                        <span class="keyword">import</span> static org.mockito.Mockito.<span
+                            class="method-name">mock</span>;<br><br>
+
+                        <span class="keyword">import</span> org.junit.jupiter.api.<span
+                            class="class-name">Test</span>;<br>
+                        <span class="keyword">import</span> org.springframework.boot.test.context.<span
+                            class="class-name">SpringBootTest</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">SpringBootTest</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">OrderServiceTests</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Test</span><br>
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
+                            class="method-name">testProcessOrder</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">UserService</span> <span class="variable-name">userService</span>
+                        = <span class="method-name">mock</span>(<span class="class-name">UserService</span>.<span
+                            class="class-name">class</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">when</span>(<span class="variable-name">userService</span>.<span
+                            class="method-name">getUserNameById</span>(<span class="variable-name">1L</span>)).<span
+                            class="method-name">thenReturn</span>(<span class="string">"John Doe"</span>);<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">OrderService</span> <span
+                            class="variable-name">orderService</span> = <span
+                            class="class-name">OrderService</span>(<span class="variable-name">userService</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">String</span> <span class="variable-name">result</span>
+                        = <span class="variable-name">orderService</span>.<span class="method-name">processOrder</span>(<span
+                            class="variable-name">1L</span>);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">assertEquals</span>(<span class="string">"Order processed for John Doe"</span>,
+                        <span class="variable-name">result</span>);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <h2>5. End-to-End Testing</h2>
+                    <p>End-to-end tests ensure the application works from the user's perspective, often involving
+                        multiple layers of the stack.</p>
+
+                    <h3>5.1 Example: Using @SpringBootTest</h3>
+                    <p>End-to-End Test Class (<code>ApplicationTests.java</code>):</p>
+                    <div class="code">
+                        <span class="keyword">package</span> com.example.demo;<br><br>
+
+                        <span class="keyword">import</span> static org.junit.jupiter.api.Assertions.<span
+                            class="method-name">assertTrue</span>;<br><br>
+
+                        <span class="keyword">@</span><span class="annotation">SpringBootTest</span><br>
+                        <span class="keyword">public</span> <span class="class-name">class</span> <span
+                            class="class-name">ApplicationTests</span> {<br><br>
+
+                        &nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">Test</span><br>
+                        &nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
+                            class="method-name">contextLoads</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">assertTrue</span>(<span
+                            class="keyword">true</span>);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+
+                    <h2>6. Test Configuration</h2>
+                    <p>You can configure tests with <code>application-test.properties</code> or <code>application-test.yml</code>
+                        to provide specific configurations for testing.</p>
+                    <p>Example (<code>application-test.properties</code>):</p>
+                    <div class="code">
+                        <span class="keyword">#</span> Example test properties<br>
+                        <span class="variable-name">spring.datasource.url</span>=<span
+                            class="string">jdbc:h2:mem:testdb</span>
+                    </div>
+
+                    <h2>7. Running Tests</h2>
+                    <p>To run tests, use Maven or Gradle commands:</p>
+                    <ul>
+                        <li>Maven: <code>mvn test</code></li>
+                        <li>Gradle: <code>gradle test</code></li>
+                    </ul>
+
+                    <hr>
+
+                    <h2>Summary</h2>
+                    <ul>
+                        <li><strong>Unit Testing:</strong> Test individual components or classes using JUnit and
+                            Mockito.
+                        </li>
+                        <li><strong>Integration Testing:</strong> Test interactions between components, often using
+                            MockMvc for controllers.
+                        </li>
+                        <li><strong>Mocking:</strong> Simulate the behavior of dependencies using Mockito.</li>
+                        <li><strong>End-to-End Testing:</strong> Ensure the entire application works as expected from
+                            the user's perspective.
+                        </li>
+                        <li><strong>Test Configuration:</strong> Use specific configurations for tests to avoid
+                            affecting production settings.
+                        </li>
+                    </ul>
+                    <p>By leveraging these testing techniques and tools, you can ensure your Spring Boot application is
+                        robust, reliable, and maintainable.</p>
+
+                </div>
             </article>
         </div>
         <div class="card-footer">

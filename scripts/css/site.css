@@ -1474,3 +1474,36 @@ a {
    border: 1px solid #ddd;
    overflow-x: auto;
 }
+.code-block {
+            background-color: #f4f4f4;
+            border-left: 3px solid #007bff;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            overflow-x: auto;
+        }
+        .code-keyword {
+            color: #007bff;
+        }
+        .code-identifier {
+            color: white;
+        }
+        .code-value {
+            color: #d63384;
+        }
+        .note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .tag {
+                    color: #2980b9;
+                }
+                .property {
+                            color: #e74c3c;
+                        }
+                        .value {
+                            color: #27ae60;
+                        }

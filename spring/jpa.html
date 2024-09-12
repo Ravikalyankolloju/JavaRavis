@@ -95,33 +95,29 @@
             <div class="nav-panel-menu is-active" data-panel="menu">
                 <li class="nav-item" data-depth="0">
                     <ul class="nav-list">
-                        <h4>Spring</h4>
+                        <h4>Spring Concepts</h4>
                         <li class="nav-item" data-depth="1"><a class="nav-link"
                                                                href="../spring/introduction.html">Spring
                             Introduction</a></li>
-                        <h4>Spring MVC</h4>
+                        <li class="nav-item" data-depth="1"><a class="nav-link"
+                                                               href="../spring/spring-core.html">Spring Core</a>
+                        </li>
                         <li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/mvc.html">Spring
-                            MVC</a></li>
-                        <h4>Spring Exceptions</h4>
+                            Web</a></li>
+                        <li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
+                            AOP</a></li>
                         <li class="nav-item" data-depth="1"><a class="nav-link"
                                                                href="../spring/exceptions.html">Spring Exceptions</a>
                         </li>
-                        <h4>Spring AOP</h4>
-                        <li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/aop.html">Spring
-                            AOP</a></li>
-                        <h4>Spring JPA</h4>
                         <li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/jpa.html">Spring
                             JPA</a></li>
-                        <h4>Spring Transactions</h4>
                         <li class="nav-item" data-depth="1"><a class="nav-link"
                                                                href="../spring/transactions.html">Spring
                             Transactions</a></li>
-                        <h4>Spring Batch</h4>
                         <li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/batch.html">Spring
                             Batch</a></li>
-                        <h4>Spring Security</h4>
-                        <li class="nav-item" data-depth="1"><a class="nav-link"
-                                                               href="../spring/security.html">Spring Security</a></li>
+                        <li class="nav-item" data-depth="1"><a class="nav-link" href="../spring/resttemplate.html">Spring
+                            Rest Template</a></li>
                         <h4>Spring Annotations</h4>
                         <li class="nav-item" data-depth="1"><a class="nav-link"
                                                                href="../spring/annotations-core.html">Core
@@ -393,9 +389,952 @@
                     }
                 </div>
 
-                <h2>6. Creating Controller Layer</h2>
-                <p>Controllers handle HTTP requests and responses.</p>
-                <h3>UserController.java</h3>
+                <div>
+                    <h2>6. Creating Controller Layer</h2>
+                    <p>Controllers handle HTTP requests and responses.</p>
+                    <h3>UserController.java</h3>
+                    <div class="code">
+
+                        <span style="color:blue;">import</span>
+                        org.springframework.beans.factory.annotation.Autowired;<br>
+                        <span style="color:blue;">import</span> org.springframework.http.ResponseEntity;<br>
+                        <span style="color:blue;">import</span> org.springframework.web.bind.annotation.*;<br>
+                        <span style="color:blue;">import</span> java.util.List;<br>
+                        <span style="color:blue;">import</span> java.util.Optional;<br><br>
+
+                        <span style="color:blue;">@RestController</span><br>
+                        <span style="color:blue;">@RequestMapping</span>("api/users")<br>
+                        <span style="color:blue;">public class</span> <span
+                            style="color:green;">UserController</span> {<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Autowired</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color:green;">private UserService userService;</span><br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@GetMapping</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public List</span>
+                        <User><span style="color:green;">getAllUsers()</span> {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>
+                            userService.getAllUsers();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@GetMapping</span>("/{id}")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public ResponseEntity</span>
+                            <User><span style="color:green;">getUserById</span>(@PathVariable Long id) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                        style="color:blue;">Optional</span>&lt;User&gt; user =
+                                userService.getUserById(id);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">if</span>
+                                (user.isPresent()) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                        style="color:blue;">return</span> ResponseEntity.ok(user.get());<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span
+                                        style="color:blue;">else</span> {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                        style="color:blue;">return</span> ResponseEntity.notFound().build();<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@PostMapping</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public User</span> <span
+                                        style="color:green;">createUser</span>(@RequestBody User user) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                        style="color:blue;">return</span> userService.createUser(user);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@PutMapping</span>("/{id}")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public ResponseEntity</span>
+                                <User><span style="color:green;">updateUser</span>(@PathVariable Long id,
+                                    @RequestBody User userDetails) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            style="color:blue;">try</span> {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            style="color:blue;">User</span> updatedUser = userService.updateUser(id,
+                                    userDetails);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            style="color:blue;">return</span> ResponseEntity.ok(updatedUser);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span
+                                            style="color:blue;">catch</span>
+                                    (RuntimeException e) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            style="color:blue;">return</span> ResponseEntity.notFound().build();<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@DeleteMapping</span>("/{id}")<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public ResponseEntity</span>&lt;Void&gt;
+                                    <span style="color:green;">deleteUser</span>(@PathVariable Long id) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userService.deleteUser(id);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                            style="color:blue;">return</span>
+                                    ResponseEntity.noContent().build();<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    }
+
+                    </div>
+
+                    <h2>7. Running the Application</h2>
+                    <p>Create a main class to run the Spring Boot application.</p>
+                    <h3>SpringJpaApplication.java</h3>
+                    <div class="code">
+
+                        <span style="color:blue;">import</span> org.springframework.boot.SpringApplication;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.boot.autoconfigure.SpringBootApplication;<br><br>
+
+                        <span style="color:blue;">@SpringBootApplication</span><br>
+                        <span style="color:blue;">public class</span> <span
+                            style="color:green;">SpringJpaApplication</span>
+                        {<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public static void</span> <span
+                            style="color:green;">main</span>(String[] args) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpringApplication.run(SpringJpaApplication.class,
+                        args);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }
+
+                    </div>
+
+                    <h2>8. Advanced Topics</h2>
+                    <h3>8.1 Pagination and Sorting</h3>
+                    <p>Spring Data JPA supports pagination and sorting out-of-the-box.</p>
+                    <h3>UserService.java</h3>
+                    <div class="code">
+
+                        <span style="color:blue;">import</span> org.springframework.data.domain.Page;<br>
+                        <span style="color:blue;">import</span> org.springframework.data.domain.PageRequest;<br>
+                        <span style="color:blue;">import</span> org.springframework.data.domain.Sort;<br><br>
+
+                        <span style="color:blue;">public Page</span>&lt;User&gt; <span style="color:green;">getUsersWithPagination</span>(<span
+                            style="color:blue;">int</span> page, <span style="color:blue;">int</span> size) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>
+                        userRepository.findAll(PageRequest.of(page, size, Sort.by("name").ascending()));<br>
+                        }
+
+                    </div>
+
+                    <h3>8.2 Custom Queries</h3>
+                    <p>You can define custom queries using JPQL or native SQL.</p>
+                    <h3>UserRepository.java</h3>
+                    <div class="code">
+
+                        <span style="color:blue;">import</span> org.springframework.data.jpa.repository.Query;<br>
+                        <span style="color:blue;">import</span> org.springframework.data.repository.query.Param;<br><br>
+
+                        <span style="color:blue;">public interface</span> <span
+                            style="color:green;">UserRepository</span> <span
+                            style="color:blue;">extends JpaRepository</span>&lt;User,
+                        Long&gt; {<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Query</span>("SELECT u FROM User u WHERE
+                        u.name = :name")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">User findByName</span>(@Param("name")
+                        String name);<br>
+                        }
+
+                    </div>
+                </div>
+                <div>
+                    <h2>Summary of Key Points</h2>
+                    <table>
+                        <tr>
+                            <th>Component</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Entity</td>
+                            <td>Represents a table in the database with fields as columns.</td>
+                        </tr>
+                        <tr>
+                            <td>Repository</td>
+                            <td>Provides CRUD operations and query methods for interacting with the database.</td>
+                        </tr>
+                        <tr>
+                            <td>Service</td>
+                            <td>Contains business logic and interacts with repositories.</td>
+                        </tr>
+                        <tr>
+                            <td>Controller</td>
+                            <td>Handles HTTP requests and responses.</td>
+                        </tr>
+                        <tr>
+                            <td>Pagination and Sorting</td>
+                            <td>Supports pagination and sorting of query results.</td>
+                        </tr>
+                        <tr>
+                            <td>Custom Queries</td>
+                            <td>Allows defining custom queries using JPQL or native SQL.</td>
+                        </tr>
+                    </table>
+
+                    <h2>Configuring Two Databases</h2>
+                    <p>Here's a step-by-step guide on how to configure two databases:</p>
+
+                    <h3>1. Add Dependencies</h3>
+                    <p>Ensure you have the necessary dependencies in your pom.xml . You'll need Spring Data
+                        JPA, Spring Web, and the drivers for your databases (e.g., H2, MySQL).</p>
+
+                    <h3>Example pom.xml :</h3>
+                    <div class="code">
+
+                        &lt;dependencies&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Spring Data JPA --&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dependency&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/dependency&gt;<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Spring Web --&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dependency&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/dependency&gt;<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- H2 Database --&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dependency&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;com.h2database&lt;/groupId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;h2&lt;/artifactId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;scope&gt;runtime&lt;/scope&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/dependency&gt;<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- MySQL Database --&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dependency&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;mysql&lt;/groupId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;scope&gt;runtime&lt;/scope&gt;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/dependency&gt;<br>
+                        &lt;/dependencies&gt;
+
+                    </div>
+
+                    <h3>2. Configure Data Sources</h3>
+                    <p>Define the properties for both databases in the application.properties file.</p>
+
+                    <h3>Example application.properties :</h3>
+                    <div class="code">
+
+                        # Primary DataSource (H2)<br>
+                        spring.datasource.primary.url=jdbc:h2:mem:primarydb<br>
+                        spring.datasource.primary.driverClassName=org.h2.Driver<br>
+                        spring.datasource.primary.username=sa<br>
+                        spring.datasource.primary.password=password<br><br>
+
+                        # Secondary DataSource (MySQL)<br>
+                        spring.datasource.secondary.url=jdbc:mysql://localhost:3306/secondarydb<br>
+                        spring.datasource.secondary.driverClassName=com.mysql.cj.jdbc.Driver<br>
+                        spring.datasource.secondary.username=root<br>
+                        spring.datasource.secondary.password=yourpassword<br>
+
+                    </div>
+
+                    <h3>3. Configure Data Sources, EntityManagerFactory, and TransactionManager</h3>
+                    <p>Create configuration classes for each database.</p>
+
+                    <h3>Primary Database Configuration (H2):</h3>
+                    <div class="code">
+
+                        <span style="color:blue;">import</span>
+                        org.springframework.beans.factory.annotation.Qualifier;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.boot.context.properties.ConfigurationProperties;<br>
+                        <span style="color:blue;">import</span> org.springframework.boot.jdbc.DataSourceBuilder;<br>
+                        <span style="color:blue;">import</span> org.springframework.context.annotation.Bean;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.context.annotation.Configuration;<br>
+                        <span style="color:blue;">import</span> org.springframework.context.annotation.Primary;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.data.jpa.repository.config.EnableJpaRepositories;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.orm.jpa.JpaTransactionManager;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;<br><br>
+
+                        <span style="color:blue;">import</span> javax.sql.DataSource;<br>
+                        <span style="color:blue;">import</span> java.util.HashMap;<br>
+                        <span style="color:blue;">import</span> java.util.Map;<br><br>
+
+                        <span style="color:blue;">@Configuration</span><br>
+                        <span style="color:blue;">@EnableJpaRepositories</span>(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;basePackages = "com.example.primary.repository", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;entityManagerFactoryRef = "primaryEntityManagerFactory", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;transactionManagerRef = "primaryTransactionManager"<br>
+                        )<br>
+                        <span style="color:blue;">public class</span> <span
+                            style="color:green;">PrimaryDataSourceConfig</span>
+                        {<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Primary</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Bean</span>(name =
+                        "primaryDataSource")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@ConfigurationProperties</span>(prefix =
+                        "spring.datasource.primary")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public DataSource</span> <span
+                            style="color:green;">primaryDataSource</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>
+                        DataSourceBuilder.create().build();<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Primary</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Bean</span>(name =
+                        "primaryEntityManagerFactory")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color:blue;">public LocalContainerEntityManagerFactoryBean</span>
+                        <span style="color:green;">primaryEntityManagerFactory</span>(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Qualifier</span>("primaryDataSource")
+                        DataSource primaryDataSource, JpaProperties jpaProperties) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LocalContainerEntityManagerFactoryBean em =
+                        <span style="color:blue;">new</span> LocalContainerEntityManagerFactoryBean();<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em.setDataSource(primaryDataSource);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em.setPackagesToScan("com.example.primary.entity");<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HibernateJpaVendorAdapter vendorAdapter =
+                        <span style="color:blue;">new</span> HibernateJpaVendorAdapter();<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em.setJpaVendorAdapter(vendorAdapter);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em.setJpaPropertyMap(jpaProperties.getHibernateProperties(<span
+                            style="color:blue;">new</span> HibernateSettings()));<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>
+                        em;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Primary</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Bean</span>(name =
+                        "primaryTransactionManager")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public JpaTransactionManager</span> <span
+                            style="color:green;">primaryTransactionManager</span>(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Qualifier</span>("primaryEntityManagerFactory")
+                        LocalContainerEntityManagerFactoryBean primaryEntityManagerFactory) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>
+                        <span style="color:blue;">new</span>
+                        JpaTransactionManager(primaryEntityManagerFactory.getObject());<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }<br>
+
+                    </div>
+                </div>
+                <div>
+                    <h3>Secondary Database Configuration (MySQL):</h3>
+                    <div class="code">
+
+                        <span style="color:blue;">import</span>
+                        org.springframework.beans.factory.annotation.Qualifier;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.boot.context.properties.ConfigurationProperties;<br>
+                        <span style="color:blue;">import</span> org.springframework.boot.jdbc.DataSourceBuilder;<br>
+                        <span style="color:blue;">import</span> org.springframework.context.annotation.Bean;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.context.annotation.Configuration;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.data.jpa.repository.config.EnableJpaRepositories;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.orm.jpa.JpaTransactionManager;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;<br>
+                        <span style="color:blue;">import</span>
+                        org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;<br>
+                        <br>
+                        <span style="color:blue;">import</span> javax.sql.DataSource;<br><br>
+
+                        <span style="color:blue;">@Configuration</span><br>
+                        <span style="color:blue;">@EnableJpaRepositories</span>(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;basePackages = "com.example.secondary.repository",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;entityManagerFactoryRef = "secondaryEntityManagerFactory",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;transactionManagerRef = "secondaryTransactionManager"<br>
+                        )<br>
+                        <span style="color:blue;">public class</span> <span style="color:green;">SecondaryDataSourceConfig</span>
+                        {<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Bean</span>(name = "secondaryDataSource")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@ConfigurationProperties</span>(prefix =
+                        "spring.datasource.secondary")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public DataSource</span> <span
+                            style="color:green;">secondaryDataSource</span>() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>
+                        DataSourceBuilder.create().build();<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Bean</span>(name =
+                        "secondaryEntityManagerFactory")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span
+                            style="color:blue;">public LocalContainerEntityManagerFactoryBean</span>
+                        <span style="color:green;">secondaryEntityManagerFactory</span>(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Qualifier</span>("secondaryDataSource")
+                        DataSource secondaryDataSource, JpaProperties jpaProperties) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LocalContainerEntityManagerFactoryBean em =
+                        <span style="color:blue;">new</span> LocalContainerEntityManagerFactoryBean();<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em.setDataSource(secondaryDataSource);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em.setPackagesToScan("com.example.secondary.entity");<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HibernateJpaVendorAdapter vendorAdapter =
+                        <span style="color:blue;">new</span> HibernateJpaVendorAdapter();<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em.setJpaVendorAdapter(vendorAdapter);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em.setJpaPropertyMap(jpaProperties.getHibernateProperties(<span
+                            style="color:blue;">new</span> HibernateSettings()));<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>
+                        em;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Bean</span>(name =
+                        "secondaryTransactionManager")<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public JpaTransactionManager</span> <span
+                            style="color:green;">secondaryTransactionManager</span>(<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Qualifier</span>("secondaryEntityManagerFactory")
+                        LocalContainerEntityManagerFactoryBean secondaryEntityManagerFactory) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">return</span>
+                        <span style="color:blue;">new</span>
+                        JpaTransactionManager(secondaryEntityManagerFactory.getObject());<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }<br>
+
+                    </div>
+
+                    <h3>4. Define Entities for Each Database</h3>
+
+                    <h4>Primary Database Entity (H2):</h4>
+                    <div class="code">
+
+                        <span style="color:blue;">import</span> javax.persistence.Entity;<br>
+                        <span style="color:blue;">import</span> javax.persistence.GeneratedValue;<br>
+                        <span style="color:blue;">import</span> javax.persistence.GenerationType;<br>
+                        <span style="color:blue;">import</span> javax.persistence.Id;<br><br>
+
+                        <span style="color:blue;">@Entity</span><br>
+                        <span style="color:blue;">public class</span> <span style="color:green;">User</span>
+                        {<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Id</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@GeneratedValue</span>(strategy =
+                        GenerationType.IDENTITY)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">private Long</span> id;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">private String</span> name;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">private String</span> email;<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;// Getters and Setters<br>
+                        }<br>
+
+                    </div>
+
+                    <h4>Secondary Database Entity (MySQL):</h4>
+                    <div class="code">
+
+                        <span style="color:blue;">import</span> javax.persistence.Entity;<br>
+                        <span style="color:blue;">import</span> javax.persistence.GeneratedValue;<br>
+                        <span style="color:blue;">import</span> javax.persistence.GenerationType;<br>
+                        <span style="color:blue;">import</span> javax.persistence.Id;<br><br>
+
+                        <span style="color:blue;">@Entity</span><br>
+                        <span style="color:blue;">public class</span> <span style="color:green;">Product</span>
+                        {<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@Id</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">@GeneratedValue</span>(strategy =
+                        GenerationType.IDENTITY)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">private Long</span> id;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">private String</span> name;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">private Double</span> price;<br><br>
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;// Getters and Setters<br>
+                        }<br>
+
+                    </div>
+                </div>
+                <h5>5. Create Repositories for Each Database</h5>
+                <p>Define repository interfaces for each database.</p>
+
+                <h6>Primary Database Repository:</h6>
+                <p>Example UserRepository.java in com.example.primary.repository package:</p>
+                <div class="code">
+                    <span class="annotation">@Repository</span>
+                    <br>
+                    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="type">UserRepository</span>
+                    <span class="keyword">extends</span> <span class="type">JpaRepository</span>&lt;<span class="type">User</span>,
+                    <span class="type">Long</span>&gt; {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">User</span> <span
+                        class="function">findByEmail</span>(<span class="type">String</span> <span class="variable">email</span>);
+                    <br>
+                    }
+                </div>
+
+                <h6>Secondary Database Repository:</h6>
+                <p>Example ProductRepository.java in com.example.secondary.repository package:
+                </p>
+                <div class="code">
+                    <span class="annotation">@Repository</span>
+                    <br>
+                    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="type">ProductRepository</span>
+                    <span class="keyword">extends</span> <span class="type">JpaRepository</span>&lt;<span class="type">Product</span>,
+                    <span class="type">Long</span>&gt; {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">Product</span> <span
+                        class="function">findByName</span>(<span class="type">String</span> <span
+                        class="variable">name</span>);
+                    <br>
+                    }
+                </div>
+
+                <h5>6. Use Services to Interact with Repositories</h5>
+                <p>Create service classes to interact with repositories.</p>
+
+                <h6>Example UserService.java :</h6>
+                <div class="code">
+                    <span class="annotation">@Service</span>
+                    <br>
+                    <span class="keyword">public</span> <span class="keyword">class</span> <span class="type">UserService</span>
+                    {
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span
+                        class="type">UserRepository</span> <span class="variable">userRepository</span>;
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                        class="type">List&lt;User&gt;</span> <span class="function">getAllUsers</span>() {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">userRepository</span>.<span class="function">findAll</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                        class="type">Optional&lt;User&gt;</span> <span class="function">getUserById</span>(<span
+                        class="type">Long</span> <span class="variable">id</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">userRepository</span>.<span class="function">findById</span>(<span
+                        class="variable">id</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">User</span> <span
+                        class="function">createUser</span>(<span class="type">User</span> <span
+                        class="variable">user</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">userRepository</span>.<span class="function">save</span>(<span
+                        class="variable">user</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
+                        class="function">deleteUser</span>(<span class="type">Long</span> <span
+                        class="variable">id</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userRepository</span>.<span
+                        class="function">deleteById</span>(<span class="variable">id</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">User</span> <span
+                        class="function">updateUser</span>(<span class="type">Long</span> <span
+                        class="variable">id</span>, <span class="type">User</span> <span
+                        class="variable">userDetails</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">User</span> <span
+                        class="variable">user</span> = <span class="variable">userRepository</span>.<span
+                        class="function">findById</span>(<span class="variable">id</span>).<span class="function">orElseThrow</span>(()
+                    -&gt; <span class="keyword">new</span> <span class="type">RuntimeException</span>(<span
+                        class="string">"User not found"</span>));
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">user</span>.<span
+                        class="function">setName</span>(<span class="variable">userDetails</span>.<span
+                        class="function">getName</span>());
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">user</span>.<span
+                        class="function">setEmail</span>(<span class="variable">userDetails</span>.<span
+                        class="function">getEmail</span>());
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">userRepository</span>.<span class="function">save</span>(<span
+                        class="variable">user</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    }
+                </div>
+                <h5>Example ProductService.java:</h5>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="type">org.springframework.beans.factory.annotation.Autowired</span>;
+                    <br>
+                    <span class="keyword">import</span> <span class="type">org.springframework.stereotype.Service</span>;
+                    <br>
+                    <span class="keyword">import</span> <span class="type">java.util.List</span>;
+                    <br>
+                    <span class="keyword">import</span> <span class="type">java.util.Optional</span>;
+                    <br>
+                    <br>
+                    <span class="annotation">@Service</span>
+                    <br>
+                    <span class="keyword">public</span> <span class="keyword">class</span> <span class="type">ProductService</span>
+                    {
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span
+                        class="type">ProductRepository</span> <span class="variable">productRepository</span>;
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                        class="type">List&lt;Product&gt;</span> <span class="function">getAllProducts</span>() {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">productRepository</span>.<span class="function">findAll</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">Optional&lt;Product&gt;</span>
+                    <span class="function">getProductById</span>(<span class="type">Long</span> <span class="variable">id</span>)
+                    {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">productRepository</span>.<span class="function">findById</span>(<span
+                        class="variable">id</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">Product</span> <span
+                        class="function">createProduct</span>(<span class="type">Product</span> <span class="variable">product</span>)
+                    {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">productRepository</span>.<span class="function">save</span>(<span
+                        class="variable">product</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span
+                        class="function">deleteProduct</span>(<span class="type">Long</span> <span
+                        class="variable">id</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="variable">productRepository</span>.<span class="function">deleteById</span>(<span
+                        class="variable">id</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">Product</span> <span
+                        class="function">updateProduct</span>(<span class="type">Long</span> <span
+                        class="variable">id</span>, <span class="type">Product</span> <span class="variable">productDetails</span>)
+                    {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">Product</span> <span
+                        class="variable">product</span> = <span class="variable">productRepository</span>.<span
+                        class="function">findById</span>(<span class="variable">id</span>).<span class="function">orElseThrow</span>(()
+                    -&gt; <span class="keyword">new</span> <span class="type">RuntimeException</span>(<span
+                        class="string">"Product not found"</span>));
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">product</span>.<span
+                        class="function">setName</span>(<span class="variable">productDetails</span>.<span
+                        class="function">getName</span>());
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">product</span>.<span
+                        class="function">setPrice</span>(<span class="variable">productDetails</span>.<span
+                        class="function">getPrice</span>());
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">productRepository</span>.<span class="function">save</span>(<span
+                        class="variable">product</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    }
+                </div>
+
+                <h5>7. Create Controllers to Expose REST Endpoints</h5>
+                <p>Create controller classes to expose REST endpoints for your services.</p>
+
+                <h6>Example UserController.java:</h6>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="type">org.springframework.beans.factory.annotation.Autowired</span>;
+                    <br>
+                    <span class="keyword">import</span> <span
+                        class="type">org.springframework.http.ResponseEntity</span>;
+                    <br>
+                    <span class="keyword">import</span> <span
+                        class="type">org.springframework.web.bind.annotation.*</span>;
+                    <br>
+                    <span class="keyword">import</span> <span class="type">java.util.List</span>;
+                    <br>
+                    <span class="keyword">import</span> <span class="type">java.util.Optional</span>;
+                    <br>
+                    <br>
+                    <span class="annotation">@RestController</span>
+                    <br>
+                    <span class="annotation">@RequestMapping</span>(<span class="string">"/api/users"</span>)
+                    <br>
+                    <span class="keyword">public</span> <span class="keyword">class</span> <span class="type">UserController</span>
+                    {
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="type">UserService</span>
+                    <span class="variable">userService</span>;
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@GetMapping</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                        class="type">List&lt;User&gt;</span> <span class="function">getAllUsers</span>() {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">userService</span>.<span class="function">getAllUsers</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span
+                        class="string">"/{id}"</span>)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">ResponseEntity&lt;User&gt;</span>
+                    <span class="function">getUserById</span>(<span class="annotation">@PathVariable</span> <span
+                        class="type">Long</span> <span class="variable">id</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">Optional&lt;User&gt;</span> <span
+                        class="variable">user</span> = <span class="variable">userService</span>.<span class="function">getUserById</span>(<span
+                        class="variable">id</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (<span
+                        class="variable">user</span>.<span class="function">isPresent</span>()) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">return</span> <span class="type">ResponseEntity</span>.<span
+                        class="function">ok</span>(<span class="variable">user</span>.<span class="function">get</span>());
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">else</span> {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">return</span> <span class="type">ResponseEntity</span>.<span class="function">notFound</span>().<span
+                        class="function">build</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PostMapping</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">User</span> <span
+                        class="function">createUser</span>(<span class="annotation">@RequestBody</span> <span
+                        class="type">User</span> <span class="variable">user</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">userService</span>.<span class="function">createUser</span>(<span
+                        class="variable">user</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PutMapping</span>(<span
+                        class="string">"/{id}"</span>)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">ResponseEntity&lt;User&gt;</span>
+                    <span class="function">updateUser</span>(<span class="annotation">@PathVariable</span> <span
+                        class="type">Long</span> <span class="variable">id</span>, <span
+                        class="annotation">@RequestBody</span> <span class="type">User</span> <span class="variable">userDetails</span>)
+                    {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span> {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="type">User</span> <span class="variable">updatedUser</span> = <span class="variable">userService</span>.<span
+                        class="function">updateUser</span>(<span class="variable">id</span>, <span class="variable">userDetails</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">return</span> <span class="type">ResponseEntity</span>.<span
+                        class="function">ok</span>(<span class="variable">updatedUser</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">catch</span> (<span
+                        class="type">RuntimeException</span> <span class="variable">e</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">return</span> <span class="type">ResponseEntity</span>.<span class="function">notFound</span>().<span
+                        class="function">build</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@DeleteMapping</span>(<span
+                        class="string">"/{id}"</span>)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">ResponseEntity&lt;Void&gt;</span>
+                    <span class="function">deleteUser</span>(<span class="annotation">@PathVariable</span> <span
+                        class="type">Long</span> <span class="variable">id</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userService</span>.<span
+                        class="function">deleteUser</span>(<span class="variable">id</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="type">ResponseEntity</span>.<span class="function">noContent</span>().<span
+                        class="function">build</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                </div>
+
+                <h6>Example ProductController.java:</h6>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="type">org.springframework.beans.factory.annotation.Autowired</span>;
+                    <br>
+                    <span class="keyword">import</span> <span
+                        class="type">org.springframework.http.ResponseEntity</span>;
+                    <br>
+                    <span class="keyword">import</span> <span
+                        class="type">org.springframework.web.bind.annotation.*</span>;
+                    <br>
+                    <span class="keyword">import</span> <span class="type">java.util.List</span>;
+                    <br>
+                    <span class="keyword">import</span> <span class="type">java.util.Optional</span>;
+                    <br>
+                    <br>
+                    <span class="annotation">@RestController</span>
+                    <br>
+                    <span class="annotation">@RequestMapping</span>(<span class="string">"/api/products"</span>)
+                    <br>
+                    <span class="keyword">public</span> <span class="keyword">class</span> <span class="type">ProductController</span>
+                    {
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span
+                        class="type">ProductService</span> <span class="variable">productService</span>;
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@GetMapping</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                        class="type">List&lt;Product&gt;</span> <span class="function">getAllProducts</span>() {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">productService</span>.<span class="function">getAllProducts</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span
+                        class="string">"/{id}"</span>)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">ResponseEntity&lt;Product&gt;</span>
+                    <span class="function">getProductById</span>(<span class="annotation">@PathVariable</span> <span
+                        class="type">Long</span> <span class="variable">id</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">Optional&lt;Product&gt;</span>
+                    <span class="variable">product</span> = <span class="variable">productService</span>.<span
+                        class="function">getProductById</span>(<span class="variable">id</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (<span
+                        class="variable">product</span>.<span class="function">isPresent</span>()) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">return</span> <span class="type">ResponseEntity</span>.<span
+                        class="function">ok</span>(<span class="variable">product</span>.<span
+                        class="function">get</span>());
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">else</span> {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">return</span> <span class="type">ResponseEntity</span>.<span class="function">notFound</span>().<span
+                        class="function">build</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PostMapping</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">Product</span> <span
+                        class="function">createProduct</span>(<span class="annotation">@RequestBody</span> <span
+                        class="type">Product</span> <span class="variable">product</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">productService</span>.<span class="function">createProduct</span>(<span
+                        class="variable">product</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PutMapping</span>(<span
+                        class="string">"/{id}"</span>)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">ResponseEntity&lt;Product&gt;</span>
+                    <span class="function">updateProduct</span>(<span class="annotation">@PathVariable</span> <span
+                        class="type">Long</span> <span class="variable">id</span>, <span
+                        class="annotation">@RequestBody</span> <span class="type">Product</span> <span class="variable">productDetails</span>)
+                    {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span> {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="type">Product</span> <span class="variable">updatedProduct</span> = <span
+                        class="variable">productService</span>.<span class="function">updateProduct</span>(<span
+                        class="variable">id</span>, <span class="variable">productDetails</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">return</span> <span class="type">ResponseEntity</span>.<span
+                        class="function">ok</span>(<span class="variable">updatedProduct</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">catch</span> (<span
+                        class="type">RuntimeException</span> <span class="variable">e</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">return</span> <span class="type">ResponseEntity</span>.<span class="function">notFound</span>().<span
+                        class="function">build</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@DeleteMapping</span>(<span
+                        class="string">"/{id}"</span>)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">ResponseEntity&lt;Void&gt;</span>
+                    <span class="function">deleteProduct</span>(<span class="annotation">@PathVariable</span> <span
+                        class="type">Long</span> <span class="variable">id</span>) {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">productService</span>.<span
+                        class="function">deleteProduct</span>(<span class="variable">id</span>);
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="type">ResponseEntity</span>.<span class="function">noContent</span>().<span
+                        class="function">build</span>();
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                </div>
+
+                <p>By following these steps, you can configure and use two separate databases within a single Spring
+                    Data JPA application, allowing you to manage multiple data sources effectively.</p>
+
             </article>
         </div>
         <div class="card-footer">

@@ -228,25 +228,28 @@
 									class="hash-anchor" href="#dao-pattern-model-class" aria-hidden="true"
 									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Now, let’s put up our model object.</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.model;
-						
-						public class Books {
-						
-						    private int isbn;
-						    private String bookName;
-						
-						    public Books() {
-						    }
-						
-						    public Books(int isbn, String bookName) {
-						        this.isbn = isbn;
-						        this.bookName = bookName;
-						    }
-						
-						    // getter setter methods
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> com.javaravish.model;<br><br>
+
+								<span class="keyword">public</span> <span class="type">class</span> Books {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">private</span> <span class="type">int</span> isbn;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">private</span> <span class="type">String</span> bookName;<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> Books() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Default constructor</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> Books(<span class="type">int</span> isbn, <span class="type">String</span> bookName) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Parameterized constructor</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.isbn = isbn;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.bookName = bookName;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// getter setter methods</span><br>
+
+								}
+							</div>
 							<p>It is a simple object with just 2 properties to keep things simple.</p>
 							<h3 id="dao-pattern-interface"><a href="#dao-pattern-interface"
 									onclick="navigator.clipboard.writeText(this.href);">DAO Pattern Interface</a><a
@@ -254,98 +257,98 @@
 									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Let’s define the interface to access the data associated with it at persistence level.
 							</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.dao;
-						
-						import com.javaravish.model.Books;
-						
-						import java.util.List;
-						
-						public interface BookDao {
-						
-						    List&lt;Books&gt; getAllBooks();
-						    Books getBookByIsbn(int isbn);
-						    void saveBook(Books book);
-						    void deleteBook(Books book);
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> com.javaravish.dao;<br><br>
+
+								<span class="keyword">import</span> com.javaravish.model.Books;<br><br>
+								<span class="keyword">import</span> <span class="type">java.util.List</span>;<br><br>
+
+								<span class="keyword">public</span> <span class="type">interface</span> BookDao {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">List</span><<span class="type">Books</span>> <span class="method">getAllBooks</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">Books</span> <span class="method">getBookByIsbn</span>(<span class="type">int</span> isbn);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span> <span class="method">saveBook</span>(<span class="type">Books</span> book);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">void</span> <span class="method">deleteBook</span>(<span class="type">Books</span> book);<br>
+
+								}
+							</div>
 							<h3 id="dao-pattern-implementation"><a href="#dao-pattern-implementation"
 									onclick="navigator.clipboard.writeText(this.href);">DAO Pattern Implementation</a><a
 									class="hash-anchor" href="#dao-pattern-implementation" aria-hidden="true"
 									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Next, we create a concrete class implementing the above interface.</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.daoimpl;
-						
-						import com.javaravish.dao.BookDao;
-						import com.javaravish.model.Books;
-						
-						import java.util.ArrayList;
-						import java.util.List;
-						
-						public class BookDaoImpl implements BookDao {
-						
-						    //list is working as a database
-						    private List&lt;Books&gt; books;
-						
-						    public BookDaoImpl() {
-						        books = new ArrayList&lt;&gt;();
-						        books.add(new Books(1, "Java"));
-						        books.add(new Books(2, "Python"));
-						        books.add(new Books(3, "Android"));
-						    }
-						
-						    @Override
-						    public List&lt;Books&gt; getAllBooks() {
-						        return books;
-						    }
-						
-						    @Override
-						    public Books getBookByIsbn(int isbn) {
-						        return books.get(isbn);
-						    }
-						
-						    @Override
-						    public void saveBook(Books book) {
-						        books.add(book);
-						    }
-						
-						    @Override
-						    public void deleteBook(Books book) {
-						        books.remove(book);
-						    }
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> com.javaravish.daoimpl;<br><br>
+
+								<span class="keyword">import</span> com.javaravish.dao.BookDao;<br>
+								<span class="keyword">import</span> com.javaravish.model.Books;<br><br>
+
+								<span class="keyword">import</span> <span class="type">java.util.ArrayList</span>;<br>
+								<span class="keyword">import</span> <span class="type">java.util.List</span>;<br><br>
+
+								<span class="keyword">public</span> <span class="type">class</span> BookDaoImpl <span class="keyword">implements</span> BookDao {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;//<span class="comment">list is working as a database</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">private List</span><<span class="type">Books</span>> books;<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> BookDaoImpl() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;books = <span class="type">new ArrayList</span><>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;books.add(<span class="type">new Books</span>(1, <span class="string">"Java"</span>));<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;books.add(<span class="type">new Books</span>(2, <span class="string">"Python"</span>));<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;books.add(<span class="type">new Books</span>(3, <span class="string">"Android"</span>));<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">public</span> <span class="type">List</span><<span class="type">Books</span>> <span class="method">getAllBooks</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return books;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">public</span> <span class="type">Books</span> <span class="method">getBookByIsbn</span>(<span class="type">int</span> isbn) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return books.get(isbn);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span class="method">saveBook</span>(<span class="type">Books</span> book) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;books.add(book);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span class="method">deleteBook</span>(<span class="type">Books</span> book) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;books.remove(book);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+								}
+							</div>
 							<h3 id="using-dao-pattern"><a href="#using-dao-pattern"
 									onclick="navigator.clipboard.writeText(this.href);">Using DAO Pattern</a><a
 									class="hash-anchor" href="#using-dao-pattern" aria-hidden="true"
 									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Finally, we put this implementation to use in our main() method:</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.journaldev;
-						
-						import com.javaravish.dao.BookDao;
-						import com.javaravish.daoimpl.BookDaoImpl;
-						import com.javaravish.model.Books;
-						
-						public class AccessBook {
-						
-						    public static void main(String[] args) {
-						
-						        BookDao bookDao = new BookDaoImpl();
-						
-						        for (Books book : bookDao.getAllBooks()) {
-						            System.out.println("Book ISBN : " + book.getIsbn());
-						        }
-						
-						        //update student
-						        Books book = bookDao.getAllBooks().get(1);
-						        book.setBookName("Algorithms");
-						        bookDao.saveBook(book);
-						    }
-						}
-						
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> com.journaldev;<br><br>
+
+								<span class="keyword">import</span> com.javaravish.dao.BookDao;<br>
+								<span class="keyword">import</span> com.javaravish.daoimpl.BookDaoImpl;<br>
+								<span class="keyword">import</span> com.javaravish.model.Books;<br><br>
+
+								<span class="keyword">public</span> <span class="type">class</span> AccessBook {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="method">main</span>(<span class="type">String</span>[] <span class="keyword">args</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">BookDao</span> bookDao = <span class="type">new BookDaoImpl</span>();<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span> (<span class="type">Books</span> <span class="keyword">book</span> : bookDao.getAllBooks()) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System</span>.out.println(<span class="string">"Book ISBN : "</span> + <span class="keyword">book</span>.getIsbn());<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//<span class="comment">update student</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">Books</span> book = bookDao.getAllBooks().get(1);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;book.setBookName(<span class="string">"Algorithms"</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bookDao.saveBook(book);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+								}
+							</div>
 							<h3 id="advantages-of-dao-pattern"><a href="#advantages-of-dao-pattern"
 									onclick="navigator.clipboard.writeText(this.href);">Advantages of DAO pattern</a><a
 									class="hash-anchor" href="#advantages-of-dao-pattern" aria-hidden="true"
@@ -376,13 +379,6 @@
 								patterns are just based on a way of programming and so, is language and framework
 								independent. Feel free to leave your views in comments below. Download the DAO example
 								project from below link.</p>
-							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/projects/DaoPattern.zip"
-									rel="ugc nofollow">Download DAO Pattern Example Project</a></p>
-							<p>References: <a
-									href="https://www.oracle.com/technetwork/java/dataaccessobject-138824.html"
-									rel="ugc nofollow">Oracle Documentation</a>, <a
-									href="https://en.wikipedia.org/wiki/Data_access_object"
-									rel="ugc nofollow">Wikipedia</a>.</p>
 						</div>
 					</div>
 				</article>

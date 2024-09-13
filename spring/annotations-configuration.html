@@ -199,21 +199,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@SpringBootApplication</span>
-<span class="hljs-meta">@ComponentScan(basePackages = "com.example")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyApp</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span
-											class="hljs-keyword">void</span> <span
-											class="hljs-title function_">main</span><span
-											class="hljs-params">(String[] args)</span> {
-        SpringApplication.run(MyApp.class, args);
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@SpringBootApplication</span><br>
+									<span class="annotation">@ComponentScan</span>(<span class="keyword">basePackages</span> = <span class="value">"com.example"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">MyApp</span> {<br><br>
+									&nbsp;&nbsp;<span class="keyword">public static void</span> <span class="class-name">main</span>(<span class="keyword">String[]</span> <span class="keyword">args</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">SpringApplication</span>.<span class="keyword">run</span>(<span class="class-name">MyApp.class</span>, <span class="keyword">args</span>);<br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -226,22 +220,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyConfig</span> {
-    <span class="hljs-meta">@Bean</span>
-    <span class="hljs-keyword">public</span> MyBean <span
-											class="hljs-title function_">myBean</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-keyword">return</span> <span
-											class="hljs-keyword">new</span> <span
-											class="hljs-title class_">MyBean</span>();
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Bean</span><br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">MyBean</span> <span class="class-name">myBean</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">new</span> <span class="class-name">MyBean</span>();<br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -254,16 +241,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Component</span>
-<span class="hljs-meta">@Profile("dev")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">DevBean</span> {
-    <span class="hljs-comment">// Dev-specific implementation</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Component</span><br>
+									<span class="annotation">@Profile</span>(<span class="value">"dev"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">DevBean</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Dev-specific implementation</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -276,16 +260,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@Import({Config1.class, Config2.class})</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyConfig</span> {
-    <span class="hljs-comment">// Configuration class content</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@Import</span>(<span class="value">{Config1.class, Config2.class}</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">MyConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Configuration class content</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -298,16 +279,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@ImportResource("classpath:my-beans.xml")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyConfig</span> {
-    <span class="hljs-comment">// Configuration class content</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@ImportResource</span>(<span class="value">"classpath:my-beans.xml"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">MyConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Configuration class content</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -322,16 +300,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@PropertySource("classpath:application.properties")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyConfig</span> {
-    <span class="hljs-comment">// Configuration class content</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@PropertySource</span>(<span class="value">"classpath:application.properties"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">MyConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Configuration class content</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -345,20 +320,14 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@SpringBootApplication</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyApp</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span
-											class="hljs-keyword">void</span> <span
-											class="hljs-title function_">main</span><span
-											class="hljs-params">(String[] args)</span> {
-        SpringApplication.run(MyApp.class, args);
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@SpringBootApplication</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyApp</span> {<br><br>
+									&nbsp;&nbsp;<span class="keyword">public static void</span> <span class="method">main</span>(String[] <span class="value">args</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;SpringApplication.<span class="method">run</span>(<span class="class-name">MyApp</span>.class, <span class="value">args</span>);<br>
+									&nbsp;&nbsp;}<br><br>
+									}<br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -372,16 +341,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@SpringBootApplication</span>
-<span class="hljs-meta">@EnableAutoConfiguration</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyApp</span> {
-    <span class="hljs-comment">// Application content</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@SpringBootApplication</span><br>
+									<span class="annotation">@EnableAutoConfiguration</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyApp</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Application content</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -396,16 +362,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@ConditionalOnClass(name = "com.example.SomeClass")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyConfig</span> {
-    <span class="hljs-comment">// Configuration class content</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@ConditionalOnClass</span>(name = <span class="value">"com.example.SomeClass"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">MyConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Configuration class content</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -420,16 +383,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@ConditionalOnBean(name = "myBean")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyConfig</span> {
-    <span class="hljs-comment">// Configuration class content</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@ConditionalOnBean</span>(name = <span class="value">"myBean"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">MyConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Configuration class content</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -443,16 +403,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@ConditionalOnProperty(name = "my.property", havingValue = "true")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyConfig</span> {
-    <span class="hljs-comment">// Configuration class content</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@ConditionalOnProperty</span>(name = <span class="value">"my.property"</span>, havingValue = <span class="value">"true"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">MyConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Configuration class content</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -466,16 +423,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@ConditionalOnResource(resources = "classpath:my-resource.txt")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyConfig</span> {
-    <span class="hljs-comment">// Configuration class content</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@ConditionalOnResource</span>(resources = <span class="value">"classpath:my-resource.txt"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">MyConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Configuration class content</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -492,16 +446,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@ConditionalOnWebApplication</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">WebConfig</span> {
-    <span class="hljs-comment">// Web-specific configuration</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@ConditionalOnWebApplication</span><br>
+									<span class="keyword">public class</span> <span class="class-name">WebConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Web-specific configuration</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -516,16 +467,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@Conditional(MyCustomCondition.class)</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyConfig</span> {
-    <span class="hljs-comment">// Configuration class content</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@Conditional</span>(<span class="class-name">MyCustomCondition</span>.class)<br>
+									<span class="keyword">public class</span> <span class="class-name">MyConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Configuration class content</span><br>
+									}
+								</div>
 							</li>
 						</ol>
 					</div>

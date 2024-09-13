@@ -196,61 +196,60 @@
 									onclick="navigator.clipboard.writeText(this.href);">Adapter Design Pattern</a><a
 									class="hash-anchor" href="#adapter-design-pattern" aria-hidden="true"
 									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/adapter-design-pattern.jpg"
-									rel="ugc nofollow"><img
-										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/07/adapter-design-pattern.jpg"
-										alt="adapter design pattern, adapter design pattern in java, adapter pattern, adapter pattern java example"></a>
+							<p>
 								One of the great real life example of Adapter design pattern is mobile charger. Mobile
 								battery needs 3 volts to charge but the normal socket produces either 120V (US) or 240V
 								(India). So the mobile charger works as an adapter between mobile charging socket and
 								the wall socket. We will try to implement multi-adapter using adapter design pattern in
 								this tutorial. So first of all we will have two classes - <code>Volt</code> (to measure
 								volts) and <code>Socket</code> (producing constant volts of 120V).</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
-						
-						public class Volt {
-						
-							private int volts;
-							
-							public Volt(int v){
-								this.volts=v;
-							}
-						
-							public int getVolts() {
-								return volts;
-							}
-						
-							public void setVolts(int volts) {
-								this.volts = volts;
-							}
-							
-						}
-						</code></pre>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
-						
-						public class Socket {
-						
-							public Volt getVolt(){
-								return new Volt(120);
-							}
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="string">com.javaravish.design.adapter;</span><br><br>
+
+								<span class="keyword">public</span> <span class="class-name">class</span> <span class="class-name">Volt</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Private field to store voltage</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">int</span> <span class="variable">volts</span>;<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Constructor to initialize voltage</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span>(<span class="class-name">int</span> <span class="variable">v</span>){<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.volts</span> = <span class="variable">v</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Getter for volts</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">int</span> <span class="method-name">getVolts</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">volts</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Setter for volts</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="keyword">void</span> <span class="method-name">setVolts</span>(<span class="class-name">int</span> <span class="variable">volts</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.volts</span> = <span class="variable">volts</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
+							<div class="code">
+								<span class="keyword">package</span> <span class="string">com.javaravish.design.adapter;</span><br><br>
+
+								<span class="class-name">public</span> <span class="class-name">class</span> <span class="class-name">Socket</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Method to return a Volt instance</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">getVolt</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="class-name">new</span> <span class="class-name">Volt</span>(<span class="variable">120</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
 							<p>Now we want to build an adapter that can produce 3 volts, 12 volts and default 120 volts.
 								So first of all we will create an adapter interface with these methods.</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
-						
-						public interface SocketAdapter {
-						
-							public Volt get120Volt();
-								
-							public Volt get12Volt();
-							
-							public Volt get3Volt();
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="string">com.javaravish.design.adapter;</span><br><br>
+
+								<span class="class-name">public</span> <span class="class-name">interface</span> <span class="class-name">SocketAdapter</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">get120Volt</span>();<br><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">get12Volt</span>();<br><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">get3Volt</span>();<br>
+								}
+							</div>
 							<h3 id="two-way-adapter-pattern"><a href="#two-way-adapter-pattern"
 									onclick="navigator.clipboard.writeText(this.href);">Two Way Adapter Pattern</a><a
 									class="hash-anchor" href="#two-way-adapter-pattern" aria-hidden="true"
@@ -272,35 +271,34 @@
 									Adapter</a><a class="hash-anchor" href="#adapter-design-pattern-class-adapter"
 									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Here is the <strong>class adapter</strong> approach implementation of our adapter.</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
-						
-						//Using inheritance for adapter pattern
-						public class SocketClassAdapterImpl extends Socket implements SocketAdapter{
-						
-							@Override
-							public Volt get120Volt() {
-								return getVolt();
-							}
-						
-							@Override
-							public Volt get12Volt() {
-								Volt v= getVolt();
-								return convertVolt(v,10);
-							}
-						
-							@Override
-							public Volt get3Volt() {
-								Volt v= getVolt();
-								return convertVolt(v,40);
-							}
-							
-							private Volt convertVolt(Volt v, int i) {
-								return new Volt(v.getVolts()/i);
-							}
-						
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="string">com.javaravish.design.adapter;</span><br><br>
+
+								<span class="comment">//Using inheritance for adapter pattern</span><br>
+								<span class="class-name">public</span> <span class="class-name">class</span> <span class="class-name">SocketClassAdapterImpl</span> <span class="keyword">extends</span> <span class="class-name">Socket</span> <span class="keyword">implements</span> <span class="class-name">SocketAdapter</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">get120Volt</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">return</span> <span class="method-name">getVolt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">get12Volt</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v</span>= <span class="method-name">getVolt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">return</span> <span class="method-name">convertVolt</span>(<span class="variable-name">v</span>, <span class="number">10</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">get3Volt</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v</span>= <span class="method-name">getVolt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">return</span> <span class="method-name">convertVolt</span>(<span class="variable-name">v</span>, <span class="number">40</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">private</span> <span class="class-name">Volt</span> <span class="method-name">convertVolt</span>(<span class="class-name">Volt</span> <span class="variable-name">v</span>, <span class="class-name">int</span> <span class="variable-name">i</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">return</span> <span class="class-name">new</span> <span class="class-name">Volt</span>(<span class="variable-name">v</span>.<span class="method-name">getVolts</span>()/<span class="variable-name">i</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
 							<h3 id="adapter-design-pattern-object-adapter-implementation"><a
 									href="#adapter-design-pattern-object-adapter-implementation"
 									onclick="navigator.clipboard.writeText(this.href);">Adapter Design Pattern - Object
@@ -308,95 +306,93 @@
 									href="#adapter-design-pattern-object-adapter-implementation" aria-hidden="true"
 									onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Here is the <strong>Object adapter</strong> implementation of our adapter.</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.adapter;
-						
-						public class SocketObjectAdapterImpl implements SocketAdapter{
-						
-							//Using Composition for adapter pattern
-							private Socket sock = new Socket();
-							
-							@Override
-							public Volt get120Volt() {
-								return sock.getVolt();
-							}
-						
-							@Override
-							public Volt get12Volt() {
-								Volt v= sock.getVolt();
-								return convertVolt(v,10);
-							}
-						
-							@Override
-							public Volt get3Volt() {
-								Volt v= sock.getVolt();
-								return convertVolt(v,40);
-							}
-							
-							private Volt convertVolt(Volt v, int i) {
-								return new Volt(v.getVolts()/i);
-							}
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="string">com.javaravish.design.adapter;</span><br><br>
+
+								<span class="class-name">public</span> <span class="class-name">class</span> <span class="class-name">SocketObjectAdapterImpl</span> <span class="keyword">implements</span> <span class="class-name">SocketAdapter</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Using Composition for adapter pattern</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">private</span> <span class="class-name">Socket</span> <span class="variable-name">sock</span> <span class="keyword">=</span> <span class="class-name">new</span> <span class="class-name">Socket</span>();<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">get120Volt</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">return</span> <span class="variable-name">sock</span>.<span class="method-name">getVolt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">get12Volt</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v</span>= <span class="variable-name">sock</span>.<span class="method-name">getVolt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">return</span> <span class="method-name">convertVolt</span>(<span class="variable-name">v</span>, <span class="number">10</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">public</span> <span class="class-name">Volt</span> <span class="method-name">get3Volt</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v</span>= <span class="variable-name">sock</span>.<span class="method-name">getVolt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">return</span> <span class="method-name">convertVolt</span>(<span class="variable-name">v</span>, <span class="number">40</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">private</span> <span class="class-name">Volt</span> <span class="method-name">convertVolt</span>(<span class="class-name">Volt</span> <span class="variable-name">v</span>, <span class="class-name">int</span> <span class="variable-name">i</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">return</span> <span class="class-name">new</span> <span class="class-name">Volt</span>(<span class="variable-name">v</span>.<span class="method-name">getVolts</span>()/<span class="variable-name">i</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
 							<p>Notice that both the adapter implementations are almost same and they implement the
 								<code>SocketAdapter</code> interface. The adapter interface can also be an <a
 									href="/community/tutorials/abstract-class-in-java"><strong>abstract
 										class</strong></a>. Here is a test program to consume our adapter design pattern
 								implementation.</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.test;
-						
-						import com.javaravish.design.adapter.SocketAdapter;
-						import com.javaravish.design.adapter.SocketClassAdapterImpl;
-						import com.javaravish.design.adapter.SocketObjectAdapterImpl;
-						import com.javaravish.design.adapter.Volt;
-						
-						public class AdapterPatternTest {
-						
-							public static void main(String[] args) {
-								
-								testClassAdapter();
-								testObjectAdapter();
-							}
-						
-							private static void testObjectAdapter() {
-								SocketAdapter sockAdapter = new SocketObjectAdapterImpl();
-								Volt v3 = getVolt(sockAdapter,3);
-								Volt v12 = getVolt(sockAdapter,12);
-								Volt v120 = getVolt(sockAdapter,120);
-								System.out.println("v3 volts using Object Adapter="+v3.getVolts());
-								System.out.println("v12 volts using Object Adapter="+v12.getVolts());
-								System.out.println("v120 volts using Object Adapter="+v120.getVolts());
-							}
-						
-							private static void testClassAdapter() {
-								SocketAdapter sockAdapter = new SocketClassAdapterImpl();
-								Volt v3 = getVolt(sockAdapter,3);
-								Volt v12 = getVolt(sockAdapter,12);
-								Volt v120 = getVolt(sockAdapter,120);
-								System.out.println("v3 volts using Class Adapter="+v3.getVolts());
-								System.out.println("v12 volts using Class Adapter="+v12.getVolts());
-								System.out.println("v120 volts using Class Adapter="+v120.getVolts());
-							}
-							
-							private static Volt getVolt(SocketAdapter sockAdapter, int i) {
-								switch (i){
-								case 3: return sockAdapter.get3Volt();
-								case 12: return sockAdapter.get12Volt();
-								case 120: return sockAdapter.get120Volt();
-								default: return sockAdapter.get120Volt();
+							<div class="code">
+								<span class="keyword">package</span> <span class="string">com.javaravish.design.test;</span><br><br>
+
+								<span class="class-name">import</span> <span class="string">com.javaravish.design.adapter.SocketAdapter;</span><br>
+								<span class="class-name">import</span> <span class="string">com.javaravish.design.adapter.SocketClassAdapterImpl;</span><br>
+								<span class="class-name">import</span> <span class="string">com.javaravish.design.adapter.SocketObjectAdapterImpl;</span><br>
+								<span class="class-name">import</span> <span class="string">com.javaravish.design.adapter.Volt;</span><br><br>
+
+								<span class="class-name">public</span> <span class="class-name">class</span> <span class="class-name">AdapterPatternTest</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">static</span> <span class="class-name">void</span> <span class="method-name">main</span>(<span class="class-name">String</span>[] <span class="variable-name">args</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">testClassAdapter</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">testObjectAdapter</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">static</span> <span class="class-name">void</span> <span class="method-name">testObjectAdapter</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">SocketAdapter</span> <span class="variable-name">sockAdapter</span> <span class="keyword">=</span> <span class="class-name">new</span> <span class="class-name">SocketObjectAdapterImpl</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v3</span> <span class="keyword">=</span> <span class="method-name">getVolt</span>(<span class="variable-name">sockAdapter</span>, <span class="number">3</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v12</span> <span class="keyword">=</span> <span class="method-name">getVolt</span>(<span class="variable-name">sockAdapter</span>, <span class="number">12</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v120</span> <span class="keyword">=</span> <span class="method-name">getVolt</span>(<span class="variable-name">sockAdapter</span>, <span class="number">120</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System</span>.<span class="method-name">out</span>.<span class="method-name">println</span>(<span class="string">"v3 volts using Object Adapter="</span><span class="keyword">+</span><span class="variable-name">v3</span>.<span class="method-name">getVolts</span>());<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System</span>.<span class="method-name">out</span>.<span class="method-name">println</span>(<span class="string">"v12 volts using Object Adapter="</span><span class="keyword">+</span><span class="variable-name">v12</span>.<span class="method-name">getVolts</span>());<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System</span>.<span class="method-name">out</span>.<span class="method-name">println</span>(<span class="string">"v120 volts using Object Adapter="</span><span class="keyword">+</span><span class="variable-name">v120</span>.<span class="method-name">getVolts</span>());<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">static</span> <span class="class-name">void</span> <span class="method-name">testClassAdapter</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">SocketAdapter</span> <span class="variable-name">sockAdapter</span> <span class="keyword">=</span> <span class="class-name">new</span> <span class="class-name">SocketClassAdapterImpl</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v3</span> <span class="keyword">=</span> <span class="method-name">getVolt</span>(<span class="variable-name">sockAdapter</span>, <span class="number">3</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v12</span> <span class="keyword">=</span> <span class="method-name">getVolt</span>(<span class="variable-name">sockAdapter</span>, <span class="number">12</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Volt</span> <span class="variable-name">v120</span> <span class="keyword">=</span> <span class="method-name">getVolt</span>(<span class="variable-name">sockAdapter</span>, <span class="number">120</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System</span>.<span class="method-name">out</span>.<span class="method-name">println</span>(<span class="string">"v3 volts using Class Adapter="</span><span class="keyword">+</span><span class="variable-name">v3</span>.<span class="method-name">getVolts</span>());<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System</span>.<span class="method-name">out</span>.<span class="method-name">println</span>(<span class="string">"v12 volts using Class Adapter="</span><span class="keyword">+</span><span class="variable-name">v12</span>.<span class="method-name">getVolts</span>());<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System</span>.<span class="method-name">out</span>.<span class="method-name">println</span>(<span class="string">"v120 volts using Class Adapter="</span><span class="keyword">+</span><span class="variable-name">v120</span>.<span class="method-name">getVolts</span>());<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">static</span> <span class="class-name">Volt</span> <span class="method-name">getVolt</span>(<span class="class-name">SocketAdapter</span> <span class="variable-name">sockAdapter</span>, <span class="class-name">int</span> <span class="variable-name">i</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">switch</span> (<span class="variable-name">i</span>){<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span> <span class="number">3</span>: <span class="class-name">return</span> <span class="method-name">sockAdapter</span>.<span class="method-name">get3Volt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span> <span class="number">12</span>: <span class="class-name">return</span> <span class="method-name">sockAdapter</span>.<span class="method-name">get12Volt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span> <span class="number">120</span>: <span class="class-name">return</span> <span class="method-name">sockAdapter</span>.<span class="method-name">get120Volt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">default</span>: <span class="class-name">return</span> <span class="method-name">sockAdapter</span>.<span class="method-name">get120Volt</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 								}
-							}
-						}
-						</code></pre>
+							</div>
 							<p>When we run above test program, we get following output.</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>v3 volts using Class Adapter=3
-						v12 volts using Class Adapter=12
-						v120 volts using Class Adapter=120
-						v3 volts using Object Adapter=3
-						v12 volts using Object Adapter=12
-						v120 volts using Object Adapter=120
+<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>v3 volts using Class Adapter=3
+v12 volts using Class Adapter=12
+v120 volts using Class Adapter=120
+v3 volts using Object Adapter=3
+v12 volts using Object Adapter=12
+v120 volts using Object Adapter=120
 						</code></pre>
 							<h3 id="adapter-design-pattern-class-diagram"><a
 									href="#adapter-design-pattern-class-diagram"

@@ -200,21 +200,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@SpringBootApplication</span>
-<span class="hljs-meta">@EnableScheduling</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyApplication</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span
-											class="hljs-keyword">void</span> <span
-											class="hljs-title function_">main</span><span
-											class="hljs-params">(String[] args)</span> {
-        SpringApplication.run(MyApplication.class, args);
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@SpringBootApplication</span><br>
+									<span class="annotation">@EnableScheduling</span><br><br>
+									<span class="class-name">public class MyApplication</span> {<br><br>
+									&nbsp;&nbsp;<span class="keyword">public static void main</span>(<span class="keyword">String[] args</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">SpringApplication.run</span>(<span class="class-name">MyApplication.class</span>, <span class="variable">args</span>);<br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -227,21 +221,17 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyScheduledService</span> {
-    <span class="hljs-meta">@Scheduled(fixedRate = 5000)</span> <span
-											class="hljs-comment">// Executes every 5 seconds</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">myScheduledMethod</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to be executed periodically</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br><br>
+									<span class="class-name">public class MyScheduledService</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Scheduled</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">fixedRate</span> = <span class="variable">5000</span><br>
+									&nbsp;&nbsp;) <span class="comment">// Executes every 5 seconds</span><br>
+									&nbsp;&nbsp;<span class="keyword">public void myScheduledMethod</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to be executed periodically</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -255,21 +245,17 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyScheduledService</span> {
-    <span class="hljs-meta">@Scheduled(fixedDelay = 5000)</span> <span
-											class="hljs-comment">// Waits for 5 seconds after the completion of the previous execution</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">myScheduledMethod</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to be executed periodically</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br><br>
+									<span class="class-name">public class MyScheduledService</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Scheduled</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">fixedDelay</span> = <span class="value">5000</span><br>
+									&nbsp;&nbsp;) <span class="comment">// Waits for 5 seconds after the completion of the previous execution</span><br>
+									&nbsp;&nbsp;<span class="keyword">public void myScheduledMethod</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to be executed periodically</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -283,21 +269,19 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyScheduledService</span> {
-    <span class="hljs-meta">@Scheduled(initialDelay = 10000, fixedDelay = 5000)</span>
-    <span class="hljs-comment">// Initial delay of 10 seconds, then executes every 5 seconds</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">myScheduledMethod</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to be executed periodically</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br><br>
+									<span class="class-name">public class MyScheduledService</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Scheduled</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">initialDelay</span> = <span class="value">10000</span>,<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">fixedDelay</span> = <span class="value">5000</span><br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="comment">// Initial delay of 10 seconds, then executes every 5 seconds</span><br>
+									&nbsp;&nbsp;<span class="keyword">public void myScheduledMethod</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to be executed periodically</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -311,21 +295,17 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyScheduledService</span> {
-    <span class="hljs-meta">@Scheduled(fixedRate = 5000)</span> <span
-											class="hljs-comment">// Executes every 5 seconds, regardless of the previous execution's completion time</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">myScheduledMethod</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to be executed periodically</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br><br>
+									<span class="class-name">public class MyScheduledService</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Scheduled</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">fixedRate</span> = <span class="value">5000</span><br>
+									&nbsp;&nbsp;) <span class="comment">// Executes every 5 seconds, regardless of the previous execution's completion time</span><br>
+									&nbsp;&nbsp;<span class="keyword">public void myScheduledMethod</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to be executed periodically</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -338,21 +318,17 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyScheduledService</span> {
-    <span class="hljs-meta">@Scheduled(cron = "0 0 0 * * ?")</span> <span
-											class="hljs-comment">// Executes daily at midnight</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">myScheduledMethod</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to be executed periodically</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br><br>
+									<span class="class-name">public class MyScheduledService</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Scheduled</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">cron</span> = <span class="value">"0 0 0 * * ?"</span><br>
+									&nbsp;&nbsp;) <span class="comment">// Executes daily at midnight</span><br>
+									&nbsp;&nbsp;<span class="keyword">public void myScheduledMethod</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to be executed periodically</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -366,23 +342,22 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyScheduledService</span> {
-    <span class="hljs-meta">@Schedules({
-        @Scheduled(fixedRate = 5000),
-        @Scheduled(cron = "0 0 0 * * ?")
-    })</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">myScheduledMethod</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to be executed periodically</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br><br>
+									<span class="class-name">public class MyScheduledService</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Schedules</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="braces">@Scheduled</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">fixedRate</span> = <span class="value">5000</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;),<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="braces">@Scheduled</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">cron</span> = <span class="value">"0 0 0 * * ?"</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="keyword">public void myScheduledMethod</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to be executed periodically</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -395,20 +370,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyAsyncService</span> {
-    <span class="hljs-meta">@Async</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">myAsyncMethod</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to be executed asynchronously</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br><br>
+									<span class="class-name">public class MyAsyncService</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Async</span><br>
+									&nbsp;&nbsp;<span class="keyword">public void myAsyncMethod</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to be executed asynchronously</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -421,21 +391,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@SpringBootApplication</span>
-<span class="hljs-meta">@EnableAsync</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyApplication</span> {
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span
-											class="hljs-keyword">void</span> <span
-											class="hljs-title function_">main</span><span
-											class="hljs-params">(String[] args)</span> {
-        SpringApplication.run(MyApplication.class, args);
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@SpringBootApplication</span><br>
+									<span class="annotation">@EnableAsync</span><br><br>
+									<span class="class-name">public class MyApplication</span> {<br><br>
+									&nbsp;&nbsp;<span class="keyword">public static void main</span>(String[] <span class="attribute">args</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">SpringApplication.run</span>(<span class="class-name">MyApplication.class</span>, <span class="attribute">args</span>);<br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 								<p>
 									After enabling async support with
 									<code>@EnableAsync</code>

@@ -199,15 +199,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Controller</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyController</span> {
-    <span class="hljs-comment">// Controller methods and logic</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Controller</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyController</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Controller methods and logic</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -222,15 +219,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@RestController</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyRestController</span> {
-    <span class="hljs-comment">// RESTful controller methods and logic</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@RestController</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyRestController</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// RESTful controller methods and logic</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -243,21 +237,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Controller</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyController</span> {
-    <span class="hljs-meta">@RequestMapping("/hello")</span>
-    <span class="hljs-keyword">public</span> String <span
-											class="hljs-title function_">hello</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-keyword">return</span> <span
-											class="hljs-string">"Hello, World!"</span>;
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Controller</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyController</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@RequestMapping</span>(<span class="value">"/hello"</span>)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">String</span> <span class="method-name">hello</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="value">"Hello, World!"</span>;<br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -270,20 +258,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@RestController</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyRestController</span> {
-    <span class="hljs-meta">@PostMapping("/create")</span>
-    <span class="hljs-keyword">public</span> String <span
-											class="hljs-title function_">create</span><span
-											class="hljs-params">(<span class="hljs-meta">@RequestBody</span> MyObject myObject)</span> {
-        <span class="hljs-comment">// Logic to process the incoming JSON or XML data</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@RestController</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyRestController</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@PostMapping</span>(<span class="value">"/create"</span>)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">String</span> <span class="method-name">create</span>(<span class="annotation">@RequestBody</span> <span class="class-name">MyObject</span> <span class="method-name">myObject</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to process the incoming JSON or XML data</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -298,27 +281,20 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@RestController</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyRestController</span> {
-    <span class="hljs-meta">@GetMapping("/get")</span>
-    <span class="hljs-keyword">public</span> String <span
-											class="hljs-title function_">get</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic for handling GET requests</span>
-    }
+								<div class="code">
+									<span class="annotation">@RestController</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyRestController</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span class="value">"/get"</span>)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">String</span> <span class="method-name">get</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic for handling GET requests</span><br>
+									&nbsp;&nbsp;}<br><br>
 
-    <span class="hljs-meta">@PostMapping("/post")</span>
-    <span class="hljs-keyword">public</span> String <span
-											class="hljs-title function_">post</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic for handling POST requests</span>
-    }
-}
-</code>
-								</pre>
+									&nbsp;&nbsp;<span class="annotation">@PostMapping</span>(<span class="value">"/post"</span>)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">String</span> <span class="method-name">post</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic for handling POST requests</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -331,15 +307,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@ControllerAdvice</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">GlobalControllerAdvice</span> {
-    <span class="hljs-comment">// Global exception handling and other advice</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@ControllerAdvice</span><br>
+									<span class="keyword">public class</span> <span class="class-name">GlobalControllerAdvice</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Global exception handling and other advice</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -352,23 +325,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@ControllerAdvice</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">GlobalControllerAdvice</span> {
-    <span class="hljs-meta">@ExceptionHandler(Exception.class)</span>
-    <span class="hljs-keyword">public</span> ResponseEntity&lt;String&gt; <span
-											class="hljs-title function_">handleException</span><span
-											class="hljs-params">(Exception e)</span> {
-        <span class="hljs-keyword">return</span> <span
-											class="hljs-keyword">new</span> <span
-											class="hljs-title class_">ResponseEntity</span>&lt;&gt;(<span
-											class="hljs-string">"An error occurred: "</span> + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@ControllerAdvice</span><br>
+									<span class="keyword">public class</span> <span class="class-name">GlobalControllerAdvice</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@ExceptionHandler</span>(<span class="class-name">Exception</span>.class)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">ResponseEntity</span>&lt;<span class="keyword">String</span>&gt; <span class="method-name">handleException</span>(<span class="class-name">Exception</span> <span class="method-name">e</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="class-name">new</span> <span class="class-name">ResponseEntity</span>&lt;<span class="keyword">String</span>&gt;( <span class="value">"An error occurred: "</span> <span class="keyword">+</span> <span class="method-name">e.getMessage</span>(), <span class="class-name">HttpStatus</span>.<span class="keyword">INTERNAL_SERVER_ERROR</span>);<br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -382,21 +347,16 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@RestController</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyRestController</span> {
-    <span class="hljs-meta">@GetMapping("/data")</span>
-    <span class="hljs-meta">@ResponseBody</span>
-    <span class="hljs-keyword">public</span> MyData <span
-											class="hljs-title function_">getData</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic to return data as JSON</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@RestController</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyRestController</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span class="value">"/data"</span>)<br>
+									&nbsp;&nbsp;<span class="annotation">@ResponseBody</span><br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">MyData</span> <span class="method-name">getData</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to return data as JSON</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -409,21 +369,16 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@RestController</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyRestController</span> {
-    <span class="hljs-meta">@GetMapping("/notfound")</span>
-    <span class="hljs-meta">@ResponseStatus(HttpStatus.NOT_FOUND)</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">notFound</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic for handling 404 responses</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@RestController</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyRestController</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span class="value">"/notfound"</span>)<br>
+									&nbsp;&nbsp;<span class="annotation">@ResponseStatus</span>(<span class="class-name">HttpStatus</span>.<span class="value">NOT_FOUND</span>)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span class="method-name">notFound</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic for handling 404 responses</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -436,20 +391,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@RestController</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyRestController</span> {
-    <span class="hljs-meta">@GetMapping("/users/{userId}")</span>
-    <span class="hljs-keyword">public</span> String <span
-											class="hljs-title function_">getUser</span><span
-											class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Long userId)</span> {
-        <span class="hljs-comment">// Logic to retrieve user by ID</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@RestController</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyRestController</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span class="value">"/users/{userId}"</span>)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">String</span> <span class="method-name">getUser</span>(<span class="annotation">@PathVariable</span> <span class="keyword">Long</span> <span class="path-variable">userId</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to retrieve user by ID</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -462,20 +412,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@RestController</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyRestController</span> {
-    <span class="hljs-meta">@GetMapping("/search")</span>
-    <span class="hljs-keyword">public</span> String <span
-											class="hljs-title function_">search</span><span
-											class="hljs-params">(<span class="hljs-meta">@RequestParam</span> String query)</span> {
-        <span class="hljs-comment">// Logic to perform a search based on the query parameter</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@RestController</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyRestController</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span class="value">"/search"</span>)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">String</span> <span class="method-name">search</span>(<span class="annotation">@RequestParam</span> <span class="keyword">String</span> <span class="request-param">query</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to perform a search based on the query parameter</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -488,27 +433,20 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Controller</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyController</span> {
-    <span class="hljs-meta">@GetMapping("/edit")</span>
-    <span class="hljs-keyword">public</span> String <span
-											class="hljs-title function_">editForm</span><span
-											class="hljs-params">(<span class="hljs-meta">@ModelAttribute("user")</span> User user)</span> {
-        <span class="hljs-comment">// Logic to display an edit form with user data</span>
-    }
+								<div class="code">
+									<span class="annotation">@Controller</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyController</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span class="value">"/edit"</span>)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">String</span> <span class="method-name">editForm</span>(<span class="annotation">@ModelAttribute</span>(<span class="value">"user"</span>) <span class="keyword">User</span> <span class="model-attribute">user</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to display an edit form with user data</span><br>
+									&nbsp;&nbsp;}<br><br>
 
-    <span class="hljs-meta">@PostMapping("/edit")</span>
-    <span class="hljs-keyword">public</span> String <span
-											class="hljs-title function_">processEdit</span><span
-											class="hljs-params">(<span class="hljs-meta">@ModelAttribute("user")</span> User user)</span> {
-        <span class="hljs-comment">// Logic to process the edited user data</span>
-    }
-}
-</code>
-								</pre>
+									&nbsp;&nbsp;<span class="annotation">@PostMapping</span>(<span class="value">"/edit"</span>)<br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">String</span> <span class="method-name">processEdit</span>(<span class="annotation">@ModelAttribute</span>(<span class="value">"user"</span>) <span class="keyword">User</span> <span class="model-attribute">user</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic to process the edited user data</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -522,16 +460,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@RestController</span>
-<span class="hljs-meta">@CrossOrigin(origins = "http://localhost:8081")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyRestController</span> {
-    <span class="hljs-comment">// Controller methods with CORS enabled</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@RestController</span><br>
+									<span class="annotation">@CrossOrigin(origins = <span class="value">"http://localhost:8081"</span>)</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyRestController</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Controller methods with CORS enabled</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -544,22 +479,17 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Controller</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyController</span> {
-    <span class="hljs-meta">@InitBinder</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">initBinder</span><span
-											class="hljs-params">(WebDataBinder binder)</span> {
-        <span class="hljs-comment">// Custom initialization for data binding</span>
-    }
+								<div class="code">
+									<span class="annotation">@Controller</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyController</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@InitBinder</span><br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span class="method-name">initBinder</span>(<span class="keyword">WebDataBinder</span> <span class="method-name">binder</span>) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Custom initialization for data binding</span><br>
+									&nbsp;&nbsp;}<br><br>
 
-    <span class="hljs-comment">// Controller methods</span>
-}
-</code>
-								</pre>
+									&nbsp;&nbsp;<span class="comment">// Controller methods</span><br>
+									}
+								</div>
 							</li>
 						</ol>
 					</div>

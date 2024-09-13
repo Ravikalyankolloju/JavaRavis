@@ -169,13 +169,12 @@
 						</p>
 						<p>First let’s learn the basics of how to use @Async in our
 							application.</p>
-						<pre class="nz oa ob oc od oe of og bo oh ba bj">
-							<span id="e63b" class="oi oj gr of b bf ok ol l om on"
-								data-selectable-paragraph=""><span class="hljs-meta">@SpringBootApplication</span><br><span
-								class="hljs-meta">@EnableAsync</span><br><span
-								class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-								class="hljs-title.class">BackendAsjApplication</span> {<br>}</span>
-						</pre>
+						<div class="code">
+							<span class="annotation">@SpringBootApplication</span><br>
+							<span class="annotation">@EnableAsync</span><br>
+							<span class="keyword">public class</span> <span class="class-name">BackendAsjApplication</span> {<br>
+							}<br>
+						</div>
 						<p>
 							First of all, we need to enable <strong>@Async</strong> in our
 							Spring Boot application. To do this, we will need to add the <strong>@EnableAsync</strong>
@@ -190,40 +189,36 @@
 							of memory very soon. I usually also add a log to warn me when the
 							queue size is full and there are no more threads to pick up the
 							new incoming task.</p>
-						<pre class="nz oa ob oc od oe of og bo oh ba bj">
-							<span id="9489" class="oi oj gr of b bf ok ol l om on"
-								data-selectable-paragraph=""> <span class="hljs-meta">@Bean</span><br> <span
-								class="hljs-keyword">public</span> ThreadPoolTaskExecutor <span
-								class="hljs-title.function">taskExecutor</span><span
-								class="hljs-params">()</span> {<br>  <span
-								class="hljs-type">ThreadPoolTaskExecutor</span> <span
-								class="hljs-variable">executor</span> <span
-								class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span
-								class="hljs-title.class">ThreadPoolTaskExecutor</span>();<br>  executor.setCorePoolSize(<span
-								class="hljs-number">2</span>);<br>  executor.setMaxPoolSize(<span
-								class="hljs-number">2</span>);<br>  executor.setQueueCapacity(<span
-								class="hljs-number">500</span>);<br>  executor.setThreadNamePrefix(<span
-								class="hljs-string">"MyAsyncThread-"</span>);<br>  executor.setRejectedExecutionHandler((r, executor1) -&gt; log.warn(<span
-								class="hljs-string">"Task rejected, thread pool is full and queue is also full"</span>));<br>  executor.initialize();<br>  <span
-								class="hljs-keyword">return</span> executor;<br> }</span>
-						</pre>
+						<div class="code">
+							<span class="annotation">@Bean</span><br>
+							<span class="keyword">public</span> <span class="class-name">ThreadPoolTaskExecutor</span> <span class="method-name">taskExecutor</span><span class="keyword">()</span> {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">ThreadPoolTaskExecutor</span> <span class="variable">executor</span> <span class="keyword">= new</span> <span class="class-name">ThreadPoolTaskExecutor</span><span class="keyword">();</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">executor</span>.<span class="method-name">setCorePoolSize</span><span class="keyword">(</span><span class="value">2</span><span class="keyword">);</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">executor</span>.<span class="method-name">setMaxPoolSize</span><span class="keyword">(</span><span class="value">2</span><span class="keyword">);</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">executor</span>.<span class="method-name">setQueueCapacity</span><span class="keyword">(</span><span class="value">500</span><span class="keyword">);</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">executor</span>.<span class="method-name">setThreadNamePrefix</span><span class="keyword">(</span><span class="value">"MyAsyncThread-"</span><span class="keyword">);</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">executor</span>.<span class="method-name">setRejectedExecutionHandler</span><span class="keyword">(</span><span class="keyword">(</span><span class="variable">r</span>, <span class="variable">executor1</span><span class="keyword">) -></span> <span class="variable">log</span>.<span class="method-name">warn</span><span class="keyword">(</span><span class="value">"Task rejected, thread pool is full and queue is also full"</span><span class="keyword">));</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">executor</span>.<span class="method-name">initialize</span><span class="keyword">();</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">executor</span><span class="keyword">;</span><br>
+							}
+						</div>
 						<p>Now, let’s use it. Suppose we have a service class that
 							contains a method that we want to make asynchronous. We will
 							annotate this method with @Async.</p>
-						<pre class="nz oa ob oc od oe of og bo oh ba bj">
-							<span id="d9d8" class="oi oj gr of b bf ok ol l om on"
-								data-selectable-paragraph=""><span class="hljs-meta">@Service</span><br><span
-								class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-								class="hljs-title.class">PurchaseService</span> {<br><br>    <span
-								class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-								class="hljs-title.function">purchase</span><span
-								class="hljs-params">()</span>{<br>        sendEmail();<br>    }<br><br>    <span
-								class="hljs-meta">@Async</span><br>    <span
-								class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-								class="hljs-title.function">sendEmail</span><span
-								class="hljs-params">()</span>{<br>        <span
-								class="hljs-comment">// Asynchronous code</span><br>    }<br>}</span>
-						</pre>
+						<div class="code">
+							<span class="annotation">@Service</span><br>
+							<span class="keyword">public class</span> <span class="class-name">PurchaseService</span> {<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">purchase</span><span class="keyword">()</span> {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">sendEmail</span><span class="keyword">();</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Async</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">sendEmail</span><span class="keyword">()</span> {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Asynchronous code</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							}
+						</div>
 						<p>Now, when we call this method, it will return immediately,
 							freeing up the calling thread (usually the main thread) to
 							continue with other tasks. The method will continue to execute in

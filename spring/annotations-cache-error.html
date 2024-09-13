@@ -202,16 +202,13 @@
                                 <p>
                                     <strong>Example:</strong>
                                 </p>
-                                <pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@EnableCaching</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-                                                class="hljs-title class_">CachingConfig</span> {
-    <span class="hljs-comment">// Configuration class with caching support</span>
-}
-</code>
-									</pre>
+                                <div class="code">
+                                    <span class="annotation">@Configuration</span> <br>
+                                    <span class="annotation">@EnableCaching</span><br>
+                                    <span class="class-name">public class CachingConfig</span> {<br>
+                                    &nbsp;&nbsp;// Configuration class with caching support<br>
+                                    }
+                                </div>
                             </li>
                             <li>
                                 <p>
@@ -225,28 +222,19 @@
                                 <p>
                                     <strong>Example:</strong>
                                 </p>
-                                <pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-                                                class="hljs-title class_">MyService</span> {
-
-    <span class="hljs-meta">@Cacheable("myCache")</span>
-    <span class="hljs-keyword">public</span> String <span
-                                                class="hljs-title function_">getCachedData</span><span
-                                                class="hljs-params">(String key)</span> {
-        <span class="hljs-comment">// Method logic to fetch data</span>
-        <span class="hljs-keyword">return</span> fetchDataFromDatabase(key);
-    }
-
-    <span class="hljs-keyword">private</span> String <span
-                                                class="hljs-title function_">fetchDataFromDatabase</span><span
-                                                class="hljs-params">(String key)</span> {
-        <span class="hljs-comment">// Actual database retrieval logic</span>
-    }
-}
-</code>
-									</pre>
+                                <div class="code">
+                                    <span class="annotation">@Service</span><br><br>
+                                    <span class="class-name">public class MyService</span> {<br><br>
+                                    &nbsp;&nbsp;<span class="annotation">@Cacheable("myCache")</span><br>
+                                    &nbsp;&nbsp;<span class="method-name">public String getCachedData</span>(<span class="variable">String key</span>) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;// Method logic to fetch data<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">return fetchDataFromDatabase</span>(<span class="variable">key</span>);<br>
+                                    &nbsp;&nbsp;}<br><br>
+                                    &nbsp;&nbsp;<span class="method-name">private String fetchDataFromDatabase</span>(<span class="variable">String key</span>) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;// Actual database retrieval logic<br>
+                                    &nbsp;&nbsp;}<br>
+                                    }
+                                </div>
                             </li>
                             <li>
                                 <p>
@@ -261,28 +249,19 @@
                                 <p>
                                     <strong>Example:</strong>
                                 </p>
-                                <pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-                                                class="hljs-title class_">MyService</span> {
-
-    <span class="hljs-meta">@CachePut("myCache")</span>
-    <span class="hljs-keyword">public</span> String <span
-                                                class="hljs-title function_">updateCachedData</span><span
-                                                class="hljs-params">(String key, String newData)</span> {
-        <span class="hljs-comment">// Method logic to update data</span>
-        <span class="hljs-keyword">return</span> updateDataInDatabase(key, newData);
-    }
-
-    <span class="hljs-keyword">private</span> String <span
-                                                class="hljs-title function_">updateDataInDatabase</span><span
-                                                class="hljs-params">(String key, String newData)</span> {
-        <span class="hljs-comment">// Actual database update logic</span>
-    }
-}
-</code>
-									</pre>
+                                <div class="code">
+                                    <span class="annotation">@Service</span><br><br>
+                                    <span class="class-name">public class MyService</span> {<br><br>
+                                    &nbsp;&nbsp;<span class="annotation">@CachePut("myCache")</span><br>
+                                    &nbsp;&nbsp;<span class="method-name">public String updateCachedData</span>(<span class="variable">String key</span>, <span class="variable">String newData</span>) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;// Method logic to update data<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">return updateDataInDatabase</span>(<span class="variable">key</span>, <span class="variable">newData</span>);<br>
+                                    &nbsp;&nbsp;}<br><br>
+                                    &nbsp;&nbsp;<span class="method-name">private String updateDataInDatabase</span>(<span class="variable">String key</span>, <span class="variable">String newData</span>) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;// Actual database update logic<br>
+                                    &nbsp;&nbsp;}<br>
+                                    }
+                                </div>
                             </li>
                             <li>
                                 <p>
@@ -296,28 +275,19 @@
                                 <p>
                                     <strong>Example:</strong>
                                 </p>
-                                <pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-                                                class="hljs-title class_">MyService</span> {
-
-    <span class="hljs-meta">@CacheEvict("myCache")</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-                                                class="hljs-title function_">evictCachedData</span><span
-                                                class="hljs-params">(String key)</span> {
-        <span class="hljs-comment">// Method logic to remove data</span>
-        removeDataFromDatabase(key);
-    }
-
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span
-                                                class="hljs-title function_">removeDataFromDatabase</span><span
-                                                class="hljs-params">(String key)</span> {
-        <span class="hljs-comment">// Actual database removal logic</span>
-    }
-}
-</code>
-									</pre>
+                                <div class="code">
+                                    <span class="annotation">@Service</span><br><br>
+                                    <span class="class-name">public class MyService</span> {<br><br>
+                                    &nbsp;&nbsp;<span class="annotation">@CacheEvict("myCache")</span><br>
+                                    &nbsp;&nbsp;<span class="method-name">public void evictCachedData</span>(<span class="variable">String key</span>) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;// Method logic to remove data<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">removeDataFromDatabase</span>(<span class="variable">key</span>);<br>
+                                    &nbsp;&nbsp;}<br><br>
+                                    &nbsp;&nbsp;<span class="method-name">private void removeDataFromDatabase</span>(<span class="variable">String key</span>) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;// Actual database removal logic<br>
+                                    &nbsp;&nbsp;}<br>
+                                    }
+                                </div>
                             </li>
                             <li>
                                 <p>
@@ -331,31 +301,22 @@
                                 <p>
                                     <strong>Example:</strong>
                                 </p>
-                                <pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-                                                class="hljs-title class_">MyService</span> {
-
-    <span class="hljs-meta">@Caching(
-        cacheable = @Cacheable("myCache"),
-        put = @CachePut("myCache")
-    )</span>
-    <span class="hljs-keyword">public</span> String <span
-                                                class="hljs-title function_">getCachedOrPutData</span><span
-                                                class="hljs-params">(String key)</span> {
-        <span class="hljs-comment">// Method logic to fetch or update data</span>
-        <span class="hljs-keyword">return</span> fetchDataOrPutInDatabase(key);
-    }
-
-    <span class="hljs-keyword">private</span> String <span
-                                                class="hljs-title function_">fetchDataOrPutInDatabase</span><span
-                                                class="hljs-params">(String key)</span> {
-        <span class="hljs-comment">// Actual logic to fetch or update data</span>
-    }
-}
-</code>
-									</pre>
+                                <div class="code">
+                                    <span class="annotation">@Service</span><br><br>
+                                    <span class="class-name">public class MyService</span> {<br><br>
+                                    &nbsp;&nbsp;<span class="annotation">@Caching</span>(<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">cacheable</span> = <span class="annotation">@Cacheable("myCache")</span>,<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">put</span> = <span class="annotation">@CachePut("myCache")</span><br>
+                                    &nbsp;&nbsp;)<br>
+                                    &nbsp;&nbsp;<span class="method-name">public String getCachedOrPutData</span>(<span class="variable">String key</span>) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;// Method logic to fetch or update data<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="method-name">fetchDataOrPutInDatabase</span>(<span class="variable">key</span>);<br>
+                                    &nbsp;&nbsp;}<br><br>
+                                    &nbsp;&nbsp;<span class="method-name">private String fetchDataOrPutInDatabase</span>(<span class="variable">String key</span>) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;// Actual logic to fetch or update data<br>
+                                    &nbsp;&nbsp;}<br>
+                                    }
+                                </div>
                             </li>
                             <li>
                                 <p>
@@ -370,25 +331,18 @@
                                 <p>
                                     <strong>Example:</strong>
                                 </p>
-                                <pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@CacheConfig(cacheNames = "myCache")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-                                                class="hljs-title class_">MyService</span> {
-
-    <span class="hljs-meta">@Cacheable</span>
-    <span class="hljs-keyword">public</span> String <span
-                                                class="hljs-title function_">getCachedData</span><span
-                                                class="hljs-params">(String key)</span> {
-        <span class="hljs-comment">// Method logic to fetch data</span>
-        <span class="hljs-keyword">return</span> fetchDataFromDatabase(key);
-    }
-
-    <span class="hljs-comment">// Other methods with the same cache configuration</span>
-}
-</code>
-									</pre>
+                                <div class="code">
+                                    <span class="annotation">@Service</span><br>
+                                    <span class="annotation">@CacheConfig(cacheNames = "myCache")</span><br><br>
+                                    <span class="class-name">public class MyService</span> {<br><br>
+                                    &nbsp;&nbsp;<span class="annotation">@Cacheable</span><br>
+                                    &nbsp;&nbsp;<span class="method-name">public String getCachedData</span>(<span class="variable">String key</span>) {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Method logic to fetch data</span><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="method-name">fetchDataFromDatabase</span>(<span class="variable">key</span>);<br>
+                                    &nbsp;&nbsp;}<br><br>
+                                    &nbsp;&nbsp;<span class="comment">// Other methods with the same cache configuration</span><br>
+                                    }
+                                </div>
                             </li>
                         </ol>
                 </div>

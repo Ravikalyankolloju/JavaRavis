@@ -200,31 +200,22 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@Transactional</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyTransactionalService</span> {
-    <span class="hljs-comment">// Transactional methods</span>
-}
-</code>
-								</pre>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">AnotherService</span> {
-
-    <span class="hljs-meta">@Transactional</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">transactionalMethod</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Transactional logic</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="annotation">@Transactional</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyTransactionalService</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Transactional methods</span><br>
+									}
+								</div>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="keyword">public class</span> <span class="class-name">AnotherService</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Transactional</span><br>
+									&nbsp;&nbsp;<span class="keyword">public</span> <span class="keyword">void</span> <span class="method-name">transactionalMethod</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Transactional logic</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -239,16 +230,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@Transactional(propagation = Propagation.REQUIRED)</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyTransactionalService</span> {
-    <span class="hljs-comment">// Transactional methods with specific propagation behavior</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="annotation">@Transactional(propagation = <span class="value">Propagation.REQUIRED</span>)</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyTransactionalService</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Transactional methods with specific propagation behavior</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -264,16 +252,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@Transactional(isolation = Isolation.READ_COMMITTED)</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyTransactionalService</span> {
-    <span class="hljs-comment">// Transactional methods with specific isolation level</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="annotation">@Transactional(isolation = <span class="value">Isolation.READ_COMMITTED</span>)</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyTransactionalService</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Transactional methods with specific isolation level</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -287,16 +272,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@Transactional(readOnly = true)</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyTransactionalService</span> {
-    <span class="hljs-comment">// Read-only transactional methods</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="annotation">@Transactional(readOnly = <span class="value">true</span>)</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyTransactionalService</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Read-only transactional methods</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -309,16 +291,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@Transactional(rollbackFor = CustomException.class)</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyTransactionalService</span> {
-    <span class="hljs-comment">// Transactional methods with specific rollback behavior</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="annotation">@Transactional(rollbackFor = <span class="value">CustomException.class</span>)</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyTransactionalService</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Transactional methods with specific rollback behavior</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -332,16 +311,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@Transactional(noRollbackFor = CustomException.class)</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyTransactionalService</span> {
-    <span class="hljs-comment">// Transactional methods with specific no rollback behavior</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="annotation">@Transactional(noRollbackFor = <span class="value">CustomException.class</span>)</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyTransactionalService</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Transactional methods with specific no rollback behavior</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -355,16 +331,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@Transactional(timeout = 30)</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyTransactionalService</span> {
-    <span class="hljs-comment">// Transactional methods with a specific timeout</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="annotation">@Transactional(timeout = <span class="value">30</span>)</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyTransactionalService</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Transactional methods with a specific timeout</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -377,16 +350,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@Transactional(rollbackForClassName = "com.example.CustomException")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyTransactionalService</span> {
-    <span class="hljs-comment">// Transactional methods with specific rollback behavior</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="annotation">@Transactional(rollbackForClassName = <span class="value">"com.example.CustomException"</span>)</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyTransactionalService</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Transactional methods with specific rollback behavior</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -400,23 +370,20 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Service</span>
-<span class="hljs-meta">@Transactional(
-    propagation = Propagation.REQUIRED,
-    isolation = Isolation.READ_COMMITTED,
-    timeout = 30,
-    readOnly = false,
-    rollbackFor = CustomException.class,
-    noRollbackFor = AnotherException.class
-)</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyTransactionalService</span> {
-    <span class="hljs-comment">// Transactional methods with combined attributes</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Service</span><br>
+									<span class="annotation">@Transactional(<br>
+        &nbsp;&nbsp;<span class="keyword">propagation</span> = <span class="value">Propagation.REQUIRED</span>,<br>
+        &nbsp;&nbsp;<span class="keyword">isolation</span> = <span class="value">Isolation.READ_COMMITTED</span>,<br>
+        &nbsp;&nbsp;<span class="keyword">timeout</span> = <span class="value">30</span>,<br>
+        &nbsp;&nbsp;<span class="keyword">readOnly</span> = <span class="value">false</span>,<br>
+        &nbsp;&nbsp;<span class="keyword">rollbackFor</span> = <span class="value">CustomException.class</span>,<br>
+        &nbsp;&nbsp;<span class="keyword">noRollbackFor</span> = <span class="value">AnotherException.class</span><br>
+        )</span><br>
+									<span class="keyword">public class</span> <span class="class-name">MyTransactionalService</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Transactional methods with combined attributes</span><br>
+									}
+								</div>
 							</li>
 						</ol>
 						<h1>
@@ -434,22 +401,16 @@
 									<p>
 										<strong>Example:</strong>
 									</p>
-									<pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@Controller</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-												class="hljs-title class_">MyController</span> {
-
-    <span class="hljs-meta">@GetMapping("/custom-error")</span>
-    <span class="hljs-meta">@ResponseStatus(HttpStatus.BAD_REQUEST)</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-												class="hljs-title function_">handleCustomError</span><span
-												class="hljs-params">()</span> {
-        <span class="hljs-comment">// Logic that may throw an exception</span>
-    }
-}
-</code>
-									</pre>
+									<div class="code">
+										<span class="annotation">@Controller</span><br>
+										<span class="keyword">public class</span> <span class="class-name">MyController</span> {<br><br>
+										&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span class="value">"/custom-error"</span>)<br>
+										&nbsp;&nbsp;<span class="annotation">@ResponseStatus</span>(<span class="value">HttpStatus.BAD_REQUEST</span>)<br>
+										&nbsp;&nbsp;<span class="keyword">public void</span> <span class="class-name">handleCustomError</span>() {<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Logic that may throw an exception</span><br>
+										&nbsp;&nbsp;}<br>
+										}
+									</div>
 								</li>
 								<li>
 									<p>
@@ -463,33 +424,21 @@
 									<p>
 										<strong>Example:</strong>
 									</p>
-									<pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@Controller</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-												class="hljs-title class_">MyController</span> {
+									<div class="code">
+										<span class="annotation">@Controller</span><br>
+										<span class="keyword">public class</span> <span class="class-name">MyController</span> {<br><br>
+										&nbsp;&nbsp;<span class="annotation">@GetMapping</span>(<span class="value">"/handle-error"</span>)<br>
+										&nbsp;&nbsp;<span class="keyword">public String</span> <span class="class-name">handleError</span>() {<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throw</span> <span class="class-name">new CustomException</span>(<span class="value">"This is a custom exception."</span>);<br>
+										&nbsp;&nbsp;}<br><br>
 
-    <span class="hljs-meta">@GetMapping("/handle-error")</span>
-    <span class="hljs-keyword">public</span> String <span
-												class="hljs-title function_">handleError</span><span
-												class="hljs-params">()</span> {
-        <span class="hljs-keyword">throw</span> <span
-												class="hljs-keyword">new</span> <span
-												class="hljs-title class_">CustomException</span>(<span
-												class="hljs-string">"This is a custom exception."</span>);
-    }
-
-    <span class="hljs-meta">@ExceptionHandler(CustomException.class)</span>
-    <span class="hljs-meta">@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)</span>
-    <span class="hljs-keyword">public</span> String <span
-												class="hljs-title function_">handleCustomException</span><span
-												class="hljs-params">(CustomException ex)</span> {
-        <span class="hljs-keyword">return</span> <span
-												class="hljs-string">"custom-error-page"</span>;
-    }
-}
-</code>
-									</pre>
+										&nbsp;&nbsp;<span class="annotation">@ExceptionHandler</span>(<span class="class-name">CustomException.class</span>)<br>
+										&nbsp;&nbsp;<span class="annotation">@ResponseStatus</span>(<span class="value">HttpStatus.INTERNAL_SERVER_ERROR</span>)<br>
+										&nbsp;&nbsp;<span class="keyword">public String</span> <span class="class-name">handleCustomException</span>(<span class="class-name">CustomException</span> <span class="keyword">ex</span>) {<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="value">"custom-error-page"</span>;<br>
+										&nbsp;&nbsp;}<br>
+										}
+									</div>
 								</li>
 								<li>
 									<p>
@@ -503,22 +452,15 @@
 									<p>
 										<strong>Example:</strong>
 									</p>
-									<pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@ControllerAdvice</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-												class="hljs-title class_">GlobalControllerAdvice</span> {
-
-    <span class="hljs-meta">@ExceptionHandler(Exception.class)</span>
-    <span class="hljs-keyword">public</span> String <span
-												class="hljs-title function_">handleGlobalException</span><span
-												class="hljs-params">(Exception ex)</span> {
-        <span class="hljs-keyword">return</span> <span
-												class="hljs-string">"global-error-page"</span>;
-    }
-}
-</code>
-									</pre>
+									<div class="code">
+										<span class="annotation">@ControllerAdvice</span><br>
+										<span class="keyword">public class</span> <span class="class-name">GlobalControllerAdvice</span> {<br><br>
+										&nbsp;&nbsp;<span class="annotation">@ExceptionHandler</span>(<span class="class-name">Exception.class</span>)<br>
+										&nbsp;&nbsp;<span class="keyword">public String</span> <span class="class-name">handleGlobalException</span>(<span class="class-name">Exception</span> <span class="keyword">ex</span>) {<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="value">"global-error-page"</span>;<br>
+										&nbsp;&nbsp;}<br>
+										}
+									</div>
 								</li>
 								<li>
 									<p>
@@ -534,28 +476,20 @@
 									<p>
 										<strong>Example:</strong>
 									</p>
-									<pre class="nz oa ob oc od oe of og bo oh ba bj">
-										<code class="!whitespace-pre hljs language-java">
-											<span class="hljs-meta">@RestControllerAdvice</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-												class="hljs-title class_">GlobalRestControllerAdvice</span> {
+									<div class="code">
+										<span class="annotation">@RestControllerAdvice</span><br>
+										<span class="keyword">public class</span> <span class="class-name">GlobalRestControllerAdvice</span> {<br><br>
 
-    <span class="hljs-meta">@ExceptionHandler(Exception.class)</span>
-    <span class="hljs-meta">@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)</span>
-    <span class="hljs-keyword">public</span> Map&lt;String, String&gt; <span
-												class="hljs-title function_">handleGlobalException</span><span
-												class="hljs-params">(Exception ex)</span> {
-        Map&lt;String, String&gt; errorResponse = <span
-												class="hljs-keyword">new</span> <span
-												class="hljs-title class_">HashMap</span>&lt;&gt;();
-        errorResponse.put(<span class="hljs-string">"error"</span>, <span
-												class="hljs-string">"Internal Server Error"</span>);
-        errorResponse.put(<span class="hljs-string">"message"</span>, ex.getMessage());
-        <span class="hljs-keyword">return</span> errorResponse;
-    }
-}
-</code>
-									</pre>
+										&nbsp;&nbsp;<span class="annotation">@ExceptionHandler</span>(<span class="class-name">Exception.class</span>)<br>
+										&nbsp;&nbsp;<span class="annotation">@ResponseStatus</span>(<span class="class-name">HttpStatus.INTERNAL_SERVER_ERROR</span>)<br>
+										&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">Map&lt;String, String&gt;</span> <span class="class-name">handleGlobalException</span>(<span class="class-name">Exception</span> <span class="keyword">ex</span>) {<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Map&lt;String, String&gt;</span> <span class="class-name">errorResponse</span> = <span class="keyword">new</span> <span class="class-name">HashMap&lt;&gt;</span>&lt;&gt;();<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">errorResponse</span>.<span class="keyword">put</span>(<span class="value">"error"</span>, <span class="value">"Internal Server Error"</span>);<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">errorResponse</span>.<span class="keyword">put</span>(<span class="value">"message"</span>, <span class="class-name">ex</span>.<span class="keyword">getMessage</span>());<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="class-name">errorResponse</span>;<br>
+										&nbsp;&nbsp;}<br>
+										}
+									</div>
 									<p>
 										In the above example, when an exception occurs in any
 										controller, the

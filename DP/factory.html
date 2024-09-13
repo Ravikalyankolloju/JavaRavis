@@ -195,10 +195,7 @@
 									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern</a><a
 									class="hash-anchor" href="#factory-design-pattern" aria-hidden="true"
 									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-design-pattern.jpg"
-									rel="ugc nofollow"><img
-										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-design-pattern.jpg"
-										alt="factory design pattern, factory design pattern in java, factory pattern, factory method pattern, factory pattern example"></a>
+							<p>
 								The factory design pattern is used when we have a superclass with multiple sub-classes
 								and based on input, we need to return one of the sub-class. This pattern takes out the
 								responsibility of the instantiation of a class from the client program to the factory
@@ -219,88 +216,91 @@
 								<code>toString()</code> method for testing purpose.
 							</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.model;
-						
-						public abstract class Computer {
-							
-							public abstract String getRAM();
-							public abstract String getHDD();
-							public abstract String getCPU();
-							
-							@Override
-							public String toString(){
-								return "RAM= "+this.getRAM()+", HDD="+this.getHDD()+", CPU="+this.getCPU();
-							}
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="variable">com.javaravish.design.model</span>;<br><br>
+
+								<span class="keyword">public abstract class</span> <span class="class-name">Computer</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public abstract</span> <span class="method-name">String</span> <span class="method-name">getRAM</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public abstract</span> <span class="method-name">String</span> <span class="method-name">getHDD</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public abstract</span> <span class="method-name">String</span> <span class="method-name">getCPU</span>();<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="method-name">String</span> <span class="method-name">toString</span> () {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="value">"RAM= "</span> <span class="keyword">+</span> <span class="variable">this</span>.<span class="method-name">getRAM</span>() <span class="keyword">+</span> <span class="value">", HDD="</span> <span class="keyword">+</span> <span class="variable">this</span>.<span class="method-name">getHDD</span>() <span class="keyword">+</span> <span class="value">", CPU="</span> <span class="keyword">+</span> <span class="variable">this</span>.<span class="method-name">getCPU</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
 							<h3 id="factory-design-pattern-sub-classes"><a href="#factory-design-pattern-sub-classes"
 									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern Sub
 									Classes</a><a class="hash-anchor" href="#factory-design-pattern-sub-classes"
 									aria-hidden="true" onclick="navigator.clipboard.writeText(this.href);"></a></h3>
 							<p>Let’s say we have two sub-classes PC and Server with below implementation.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.model;
-						
-						public class PC extends Computer {
-						
-							private String ram;
-							private String hdd;
-							private String cpu;
-							
-							public PC(String ram, String hdd, String cpu){
-								this.ram=ram;
-								this.hdd=hdd;
-								this.cpu=cpu;
-							}
-							@Override
-							public String getRAM() {
-								return this.ram;
-							}
-						
-							@Override
-							public String getHDD() {
-								return this.hdd;
-							}
-						
-							@Override
-							public String getCPU() {
-								return this.cpu;
-							}
-						
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="variable">com.javaravish.design.model</span>;<br><br>
+
+								<span class="keyword">public class</span> <span class="class-name">PC</span> <span class="keyword">extends</span> <span class="class-name">Computer</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="method-name">String</span> <span class="variable">ram</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="method-name">String</span> <span class="variable">hdd</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="method-name">String</span> <span class="variable">cpu</span>;<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">PC</span>(<span class="method-name">String</span> <span class="variable">ram</span>, <span class="method-name">String</span> <span class="variable">hdd</span>, <span class="method-name">String</span> <span class="variable">cpu</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">ram</span> <span class="keyword">=</span> <span class="variable">ram</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">hdd</span> <span class="keyword">=</span> <span class="variable">hdd</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">cpu</span> <span class="keyword">=</span> <span class="variable">cpu</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="method-name">String</span> <span class="method-name">getRAM</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">this</span>.<span class="variable">ram</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="method-name">String</span> <span class="method-name">getHDD</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">this</span>.<span class="variable">hdd</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="method-name">String</span> <span class="method-name">getCPU</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">this</span>.<span class="variable">cpu</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
 							<p>Notice that both the classes are extending <code>Computer</code> super class.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.model;
-						
-						public class Server extends Computer {
-						
-							private String ram;
-							private String hdd;
-							private String cpu;
-							
-							public Server(String ram, String hdd, String cpu){
-								this.ram=ram;
-								this.hdd=hdd;
-								this.cpu=cpu;
-							}
-							@Override
-							public String getRAM() {
-								return this.ram;
-							}
-						
-							@Override
-							public String getHDD() {
-								return this.hdd;
-							}
-						
-							@Override
-							public String getCPU() {
-								return this.cpu;
-							}
-						
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="variable">com.javaravish.design.model</span>;<br><br>
+
+								<span class="keyword">public class</span> <span class="class-name">Server</span> <span class="keyword">extends</span> <span class="class-name">Computer</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="method-name">String</span> <span class="variable">ram</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="method-name">String</span> <span class="variable">hdd</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="method-name">String</span> <span class="variable">cpu</span>;<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">Server</span>(<span class="method-name">String</span> <span class="variable">ram</span>, <span class="method-name">String</span> <span class="variable">hdd</span>, <span class="method-name">String</span> <span class="variable">cpu</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">ram</span> <span class="keyword">=</span> <span class="variable">ram</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">hdd</span> <span class="keyword">=</span> <span class="variable">hdd</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">cpu</span> <span class="keyword">=</span> <span class="variable">cpu</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="method-name">String</span> <span class="method-name">getRAM</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">this</span>.<span class="variable">ram</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="method-name">String</span> <span class="method-name">getHDD</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">this</span>.<span class="variable">hdd</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="method-name">String</span> <span class="method-name">getCPU</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">this</span>.<span class="variable">cpu</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
 							<h3 id="factory-class"><a href="#factory-class"
 									onclick="navigator.clipboard.writeText(this.href);">Factory Class</a><a
 									class="hash-anchor" href="#factory-class" aria-hidden="true"
@@ -308,22 +308,23 @@
 							<p>Now that we have super classes and sub-classes ready, we can write our factory class.
 								Here is the basic implementation.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.factory;
-						
-						import com.javaravish.design.model.Computer;
-						import com.javaravish.design.model.PC;
-						import com.javaravish.design.model.Server;
-						
-						public class ComputerFactory {
-						
-							public static Computer getComputer(String type, String ram, String hdd, String cpu){
-								if("PC".equalsIgnoreCase(type)) return new PC(ram, hdd, cpu);
-								else if("Server".equalsIgnoreCase(type)) return new Server(ram, hdd, cpu);
-								
-								return null;
-							}
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="variable">com.javaravish.design.factory</span>;<br><br>
+
+								<span class="keyword">import</span> <span class="variable">com.javaravish.design.model.Computer</span>;<br>
+								<span class="keyword">import</span> <span class="variable">com.javaravish.design.model.PC</span>;<br>
+								<span class="keyword">import</span> <span class="variable">com.javaravish.design.model.Server</span>;<br><br>
+
+								<span class="keyword">public class</span> <span class="class-name">ComputerFactory</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static</span> <span class="class-name">Computer</span> <span class="method-name">getComputer</span>(<span class="method-name">String</span> <span class="variable">type</span>, <span class="method-name">String</span> <span class="variable">ram</span>, <span class="method-name">String</span> <span class="variable">hdd</span>, <span class="method-name">String</span> <span class="variable">cpu</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>(<span class="value">"PC"</span>.<span class="method-name">equalsIgnoreCase</span>(<span class="variable">type</span>)) <span class="keyword">return</span> <span class="class-name">new PC</span>(<span class="variable">ram</span>, <span class="variable">hdd</span>, <span class="variable">cpu</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">else if</span>(<span class="value">"Server"</span>.<span class="method-name">equalsIgnoreCase</span>(<span class="variable">type</span>)) <span class="keyword">return</span> <span class="class-name">new Server</span>(<span class="variable">ram</span>, <span class="variable">hdd</span>, <span class="variable">cpu</span>);<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">null</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
 							<p>Some important points about Factory Design Pattern method are;</p>
 							<ol>
 								<li>We can keep Factory class Singleton or we can keep the method that returns the
@@ -333,34 +334,38 @@
 								<li>Notice that based on the input parameter, different subclass is created and
 									returned. <code>getComputer</code> is the factory method.</li>
 							</ol>
-							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-pattern-java.png"
-									rel="ugc nofollow"><img
-										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/05/factory-pattern-java-450x327.png"
-										alt="factory pattern java, factory pattern, factory design pattern, factory pattern class diagram"></a>
-								Here is a simple test client program that uses above factory design pattern
+							<p>Here is a simple test client program that uses above factory design pattern
 								implementation.</p>
 							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.test;
-						
-						import com.javaravish.design.factory.ComputerFactory;
-						import com.javaravish.design.model.Computer;
-						
-						public class TestFactory {
-						
-							public static void main(String[] args) {
-								Computer pc = ComputerFactory.getComputer("pc","2 GB","500 GB","2.4 GHz");
-								Computer server = ComputerFactory.getComputer("server","16 GB","1 TB","2.9 GHz");
-								System.out.println("Factory PC Config::"+pc);
-								System.out.println("Factory Server Config::"+server);
-							}
-						
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="variable">com.javaravish.design.test</span>;<br><br>
+
+								<span class="keyword">import</span> <span class="variable">com.javaravish.design.factory.ComputerFactory</span>;<br>
+								<span class="keyword">import</span> <span class="variable">com.javaravish.design.model.Computer</span>;<br><br>
+
+								<span class="keyword">public class</span> <span class="class-name">TestFactory</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static void</span> <span class="method-name">main</span>(<span class="method-name">String</span>[] <span class="variable">args</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Computer</span> <span class="variable">pc</span> = <span class="class-name">ComputerFactory</span>.<span class="method-name">getComputer</span>(<span class="value">"pc"</span>, <span class="value">"2 GB"</span>, <span class="value">"500 GB"</span>, <span class="value">"2.4 GHz"</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Computer</span> <span class="variable">server</span> = <span class="class-name">ComputerFactory</span>.<span class="method-name">getComputer</span>(<span class="value">"server"</span>, <span class="value">"16 GB"</span>, <span class="value">"1 TB"</span>, <span class="value">"2.9 GHz"</span>);<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="value">"Factory PC Config::"</span> + <span class="variable">pc</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="value">"Factory Server Config::"</span> + <span class="variable">server</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
 							<p>Output of above program is:</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>Factory PC Config::RAM= 2 GB, HDD=500 GB, CPU=2.4 GHz
-						Factory Server Config::RAM= 16 GB, HDD=1 TB, CPU=2.9 GHz
-						</code></pre>
+							<div class="code" title="">
+								<span class="label">Factory PC Config::</span><br>
+								<span class="label">RAM</span>= <span class="value">2 GB</span>,
+								<span class="label">HDD</span>= <span class="value">500 GB</span>,
+								<span class="label">CPU</span>= <span class="value">2.4 GHz</span><br><br>
+
+								<span class="label">Factory Server Config::</span><br>
+								<span class="label">RAM</span>= <span class="value">16 GB</span>,
+								<span class="label">HDD</span>= <span class="value">1 TB</span>,
+								<span class="label">CPU</span>= <span class="value">2.9 GHz</span>
+							</div>
 							<h3 id="factory-design-pattern-advantages"><a href="#factory-design-pattern-advantages"
 									onclick="navigator.clipboard.writeText(this.href);">Factory Design Pattern
 									Advantages</a><a class="hash-anchor" href="#factory-design-pattern-advantages"

@@ -199,16 +199,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Configuration</span>
-<span class="hljs-meta">@EnableAspectJAutoProxy</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">AppConfig</span> {
-    <span class="hljs-comment">// Configuration class with AOP support</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Configuration</span><br>
+									<span class="annotation">@EnableAspectJAutoProxy</span><br><br>
+									<span class="keyword">public class</span> <span class="class-name">AppConfig</span> {<br><br>
+									&nbsp;&nbsp;<span class="comment">// Configuration class with AOP support</span><br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -221,22 +218,18 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Aspect</span>
-<span class="hljs-meta">@Component</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyAspect</span> {
-
-    <span class="hljs-meta">@Before("execution(* com.example.MyService.*(..))")</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">beforeAdvice</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Advice logic to run before the method execution</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Aspect</span><br>
+									<span class="annotation">@Component</span><br><br>
+									<span class="keyword">public class</span> <span class="class-name">MyAspect</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Before</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"execution(* com.example.MyService.*(..))"</span><br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">beforeAdvice</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Advice logic to run before the method execution</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -249,29 +242,24 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Aspect</span>
-<span class="hljs-meta">@Component</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyAspect</span> {
-
-    <span class="hljs-meta">@Pointcut("execution(* com.example.MyService.*(..))")</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">myServiceMethods</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Pointcut expression for MyService methods</span>
-    }
-
-    <span class="hljs-meta">@Before("myServiceMethods()")</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">beforeAdvice</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Advice logic to run before the method execution</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Aspect</span><br>
+									<span class="annotation">@Component</span><br><br>
+									<span class="keyword">public class</span> <span class="class-name">MyAspect</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Pointcut</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"execution(* com.example.MyService.*(..))"</span><br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">myServiceMethods</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Pointcut expression for MyService methods</span><br>
+									&nbsp;&nbsp;}<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Before</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">myServiceMethods</span>()<br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">beforeAdvice</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Advice logic to run before the method execution</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -284,22 +272,18 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Aspect</span>
-<span class="hljs-meta">@Component</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyAspect</span> {
-
-    <span class="hljs-meta">@Before("execution(* com.example.MyService.*(..))")</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">beforeAdvice</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Advice logic to run before the method execution</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Aspect</span><br>
+									<span class="annotation">@Component</span><br><br>
+									<span class="keyword">public class</span> <span class="class-name">MyAspect</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Before</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"execution(* com.example.MyService.*(..))"</span><br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">beforeAdvice</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Advice logic to run before the method execution</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -313,22 +297,18 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Aspect</span>
-<span class="hljs-meta">@Component</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyAspect</span> {
-
-    <span class="hljs-meta">@After("execution(* com.example.MyService.*(..))")</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">afterAdvice</span><span
-											class="hljs-params">()</span> {
-        <span class="hljs-comment">// Advice logic to run after the method execution</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Aspect</span><br>
+									<span class="annotation">@Component</span><br><br>
+									<span class="keyword">public class</span> <span class="class-name">MyAspect</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@After</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"execution(* com.example.MyService.*(..))"</span><br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">afterAdvice</span>() {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Advice logic to run after the method execution</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -341,22 +321,21 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Aspect</span>
-<span class="hljs-meta">@Component</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyAspect</span> {
-
-    <span class="hljs-meta">@AfterReturning(pointcut = "execution(* com.example.MyService.*(..))", returning = "result")</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">afterReturningAdvice</span><span
-											class="hljs-params">(Object result)</span> {
-        <span class="hljs-comment">// Advice logic to run after a successful method execution</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Aspect</span><br>
+									<span class="annotation">@Component</span><br><br>
+									<span class="keyword">public class</span> <span class="class-name">MyAspect</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@AfterReturning</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">pointcut</span> = <span class="value">"execution(* com.example.MyService.*(..))"</span>,<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">returning</span> = <span class="value">"result"</span><br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">afterReturningAdvice</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">Object result</span><br>
+									&nbsp;&nbsp;) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Advice logic to run after a successful method execution</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -370,22 +349,21 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Aspect</span>
-<span class="hljs-meta">@Component</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyAspect</span> {
-
-    <span class="hljs-meta">@AfterThrowing(pointcut = "execution(* com.example.MyService.*(..))", throwing = "ex")</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span
-											class="hljs-title function_">afterThrowingAdvice</span><span
-											class="hljs-params">(Exception ex)</span> {
-        <span class="hljs-comment">// Advice logic to run after an exception is thrown</span>
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Aspect</span><br>
+									<span class="annotation">@Component</span><br><br>
+									<span class="keyword">public class</span> <span class="class-name">MyAspect</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@AfterThrowing</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">pointcut</span> = <span class="value">"execution(* com.example.MyService.*(..))"</span>,<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throwing</span> = <span class="value">"ex"</span><br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">afterThrowingAdvice</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">Exception ex</span><br>
+									&nbsp;&nbsp;) {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Advice logic to run after an exception is thrown</span><br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 							<li>
 								<p>
@@ -399,29 +377,23 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Aspect</span>
-<span class="hljs-meta">@Component</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">MyAspect</span> {
-
-    <span class="hljs-meta">@Around("execution(* com.example.MyService.*(..))")</span>
-    <span class="hljs-keyword">public</span> Object <span
-											class="hljs-title function_">aroundAdvice</span><span
-											class="hljs-params">(ProceedingJoinPoint joinPoint)</span> <span
-											class="hljs-keyword">throws</span> Throwable {
-        <span class="hljs-comment">// Advice logic before the method execution</span>
-        <span class="hljs-type">Object</span> <span
-											class="hljs-variable">result</span> <span
-											class="hljs-operator">=</span> joinPoint.proceed(); <span
-											class="hljs-comment">// Proceed with the method execution</span>
-        <span class="hljs-comment">// Advice logic after the method execution</span>
-        <span class="hljs-keyword">return</span> result;
-    }
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Aspect</span><br>
+									<span class="annotation">@Component</span><br><br>
+									<span class="keyword">public class</span> <span class="class-name">MyAspect</span> {<br><br>
+									&nbsp;&nbsp;<span class="annotation">@Around</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"execution(* com.example.MyService.*(..))"</span><br>
+									&nbsp;&nbsp;)<br>
+									&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method-name">aroundAdvice</span>(<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">ProceedingJoinPoint joinPoint</span><br>
+									&nbsp;&nbsp;) <span class="keyword">throws</span> <span class="value">Throwable</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Advice logic before the method execution</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span class="method-name">result</span> = <span class="parameter">joinPoint</span>.<span class="method-name">proceed</span>(); <span class="comment">// Proceed with the method execution</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Advice logic after the method execution</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="method-name">result</span>;<br>
+									&nbsp;&nbsp;}<br>
+									}
+								</div>
 							</li>
 						</ol>
 					</div>

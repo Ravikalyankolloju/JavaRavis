@@ -199,16 +199,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Entity</span>
-<span class="hljs-meta">@Table(name = "employees", indexes = {@Index(name = "idx_lastname", columnList = "last_name")})</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">Employee</span> {
-    <span class="hljs-comment">// Entity class properties</span>
-}
-</code>
-								</pre>
+								<div class="code">
+								<span class="annotation">@Entity</span><br>
+								<span class="annotation">@Table</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employees"</span>, <span class="attribute">indexes</span> <span class="keyword">=</span> <span class="keyword">{</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Index</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"idx_lastname"</span>, <span class="attribute">columnList</span> <span class="keyword">=</span> <span class="value">"last_name"</span>)<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">}</span>)<br>
+								<span class="keyword">public class</span> <span class="class-name">Employee</span> {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Entity class properties</span><br>
+								}<br><br>
+							</div>
 							</li>
 							<li>
 								<p>
@@ -221,16 +220,13 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Entity</span>
-<span class="hljs-meta">@Table(name = "users")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">User</span> {
-    <span class="hljs-comment">// Entity class properties</span>
-}
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Entity</span><br>
+									<span class="annotation">@Table</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"users"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">User</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Entity class properties</span><br>
+									}<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -242,12 +238,10 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Column(name = "user_name", nullable = false, length = 50)</span>
-<span class="hljs-keyword">private</span> String userName;
-</code>
-								</pre>
+								<div class="code">
+									<span class="annotation">@Column</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"user_name"</span>, <span class="attribute">nullable</span> <span class="keyword">=</span> <span class="keyword">false</span>, <span class="attribute">length</span> <span class="keyword">=</span> <span class="number">50</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">String</span> <span class="variable">userName</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -260,13 +254,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Id</span>
-<span class="hljs-meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span>
-<span class="hljs-keyword">private</span> Long id;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Id</span><br>
+									<span class="annotation">@GeneratedValue</span>(<span class="attribute">strategy</span> <span class="keyword">=</span> <span class="class-name">GenerationType</span>.<span class="value">IDENTITY</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Long</span> <span class="variable">id</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -278,12 +271,11 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Id</span>
-<span class="hljs-keyword">private</span> Long id;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Id</span><br>
+									<span class="keyword">private</span> <span class="class-name">Long</span> <span class="variable">id</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -304,12 +296,11 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Lob</span>
-<span class="hljs-keyword">private</span> <span class="hljs-type">byte</span>[] imageData;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Lob</span><br>
+									<span class="keyword">private</span> <span class="class-name">byte[]</span> <span class="variable">imageData</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -322,13 +313,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@ManyToOne</span>
-<span class="hljs-meta">@JoinColumn(name = "department_id")</span>
-<span class="hljs-keyword">private</span> Department department;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@ManyToOne</span><br>
+									<span class="annotation">@JoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"department_id"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Department</span> <span class="variable">department</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -340,16 +330,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@ManyToOne</span>
-<span class="hljs-meta">@JoinColumns({
-    @JoinColumn(name = "department_id", referencedColumnName = "id"),
-    @JoinColumn(name = "location_id", referencedColumnName = "location_id")
-})</span>
-<span class="hljs-keyword">private</span> Department department;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@ManyToOne</span><br>
+									<span class="annotation">@JoinColumns</span>(<span class="keyword">{</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@JoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"department_id"</span>, <span class="attribute">referencedColumnName</span> <span class="keyword">=</span> <span class="value">"id"</span>),<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@JoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"location_id"</span>, <span class="attribute">referencedColumnName</span> <span class="keyword">=</span> <span class="value">"location_id"</span>)<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">}</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Department</span> <span class="variable">department</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -362,17 +351,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@ManyToMany</span>
-<span class="hljs-meta">@JoinTable(
-    name = "user_role",
-    joinColumns = @JoinColumn(name = "user_id"),
-    inverseJoinColumns = @JoinColumn(name = "role_id")
-)</span>
-<span class="hljs-keyword">private</span> Set&lt;Role&gt; roles;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@ManyToMany</span><br>
+									<span class="annotation">@JoinTable</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"user_role"</span>,<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">joinColumns</span> <span class="keyword">=</span> <span class="annotation">@JoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"user_id"</span>),<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">inverseJoinColumns</span> <span class="keyword">=</span> <span class="annotation">@JoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"role_id"</span>)<br>
+									)<br>
+									<span class="keyword">private</span> <span class="class-name">Set</span>&lt;<span class="class-name">Role</span>&gt; <span class="variable">roles</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -385,13 +372,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToOne</span>
-<span class="hljs-meta">@JoinColumn(name = "address_id")</span>
-<span class="hljs-keyword">private</span> Address address;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToOne</span><br>
+									<span class="annotation">@JoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"address_id"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Address</span> <span class="variable">address</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -404,12 +390,11 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">List</span>&lt;<span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -422,13 +407,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@ManyToOne</span>
-<span class="hljs-meta">@JoinColumn(name = "department_id")</span>
-<span class="hljs-keyword">private</span> Department department;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@ManyToOne</span><br>
+									<span class="annotation">@JoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"department_id"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Department</span> <span class="variable">department</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -441,12 +425,11 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@ManyToMany(mappedBy = "users")</span>
-<span class="hljs-keyword">private</span> Set&lt;Role&gt; roles;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@ManyToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"users"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Set</span>&lt;<span class="class-name">Role</span>&gt; <span class="variable">roles</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -459,16 +442,14 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Entity</span>
-<span class="hljs-meta">@TableGenerator(name = "emp_gen", table = "id_gen", pkColumnName = "gen_name", valueColumnName = "gen_value")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">Employee</span> {
-    <span class="hljs-comment">// Entity class properties</span>
-}
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Entity</span><br>
+									<span class="annotation">@TableGenerator</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"emp_gen"</span>, <span class="attribute">table</span> <span class="keyword">=</span> <span class="value">"id_gen"</span>, <span class="attribute">pkColumnName</span> <span class="keyword">=</span> <span class="value">"gen_name"</span>, <span class="attribute">valueColumnName</span> <span class="keyword">=</span> <span class="value">"gen_value"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">Employee</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Entity class properties</span><br>
+									}<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -481,12 +462,11 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Temporal(TemporalType.DATE)</span>
-<span class="hljs-keyword">private</span> Date birthDate;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Temporal</span>(<span class="class-name">TemporalType</span>.<span class="value">DATE</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Date</span> <span class="variable">birthDate</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -499,12 +479,11 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Transient</span>
-<span class="hljs-keyword">private</span> transientField;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Transient</span><br>
+									<span class="keyword">private</span> <span class="class-name">transientField</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -517,11 +496,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "username")})</span>
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Table</span>(<span class="attribute">uniqueConstraints</span> <span class="keyword">=</span> <span class="keyword">{</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@UniqueConstraint</span>(<span class="attribute">columnNames</span> <span class="keyword">=</span> <span class="value">"username"</span>)<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">}</span>)<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -534,12 +514,11 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Version</span>
-<span class="hljs-keyword">private</span> <span class="hljs-type">int</span> version;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Version</span><br>
+									<span class="keyword">private</span> <span class="class-name">int</span> <span class="variable">version</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -552,16 +531,14 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Entity</span>
-<span class="hljs-meta">@SequenceGenerator(name = "emp_seq", sequenceName = "employee_sequence")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">Employee</span> {
-    <span class="hljs-comment">// Entity class properties</span>
-}
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Entity</span><br>
+									<span class="annotation">@SequenceGenerator</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"emp_seq"</span>, <span class="attribute">sequenceName</span> <span class="keyword">=</span> <span class="value">"employee_sequence"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">Employee</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Entity class properties</span><br>
+									}<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -574,16 +551,14 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Entity</span>
-<span class="hljs-meta">@PrimaryKeyJoinColumn(name = "employee_id")</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">EmployeeDetails</span> {
-    <span class="hljs-comment">// Entity class properties</span>
-}
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Entity</span><br>
+									<span class="annotation">@PrimaryKeyJoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employee_id"</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">EmployeeDetails</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Entity class properties</span><br>
+									}<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -596,19 +571,17 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Entity</span>
-<span class="hljs-meta">@PrimaryKeyJoinColumns({
-    @PrimaryKeyJoinColumn(name = "employee_id"),
-    @PrimaryKeyJoinColumn(name = "company_id")
-})</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">EmployeeDetails</span> {
-    <span class="hljs-comment">// Entity class properties</span>
-}
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@Entity</span><br>
+									<span class="annotation">@PrimaryKeyJoinColumns</span>(<span class="keyword">{</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PrimaryKeyJoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employee_id"</span>),<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@PrimaryKeyJoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"company_id"</span>)<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">}</span>)<br>
+									<span class="keyword">public class</span> <span class="class-name">EmployeeDetails</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Entity class properties</span><br>
+									}<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -620,13 +593,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@OrderBy("lastName ASC, firstName DESC")</span>
-<span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="annotation">@OrderBy</span>(<span class="value">"lastName ASC, firstName DESC"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">List</span>&lt;<span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -639,13 +611,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@OrderColumn(name = "employee_order")</span>
-<span class="hljs-keyword">private</span> List&lt;Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="annotation">@OrderColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employee_order"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">List</span>&lt;<span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -659,13 +630,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@MapKey(name = "employeeId")</span>
-<span class="hljs-keyword">private</span> Map&lt;Long, Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="annotation">@MapKey</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employeeId"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Map</span>&lt;<span class="class-name">Long</span>, <span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -679,13 +649,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@MapKeyClass(EmployeeId.class)</span>
-<span class="hljs-keyword">private</span> Map&lt;EmployeeId, Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="annotation">@MapKeyClass</span>(<span class="class-name">EmployeeId</span>.<span class="keyword">class</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Map</span>&lt;<span class="class-name">EmployeeId</span>, <span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -699,13 +668,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@MapKeyColumn(name = "employee_key")</span>
-<span class="hljs-keyword">private</span> Map&lt;String, Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="annotation">@MapKeyColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employee_key"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Map</span>&lt;<span class="class-name">String</span>, <span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -719,13 +687,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@MapKeyEnumerated(EnumType.STRING)</span>
-<span class="hljs-keyword">private</span> Map&lt;EmployeeType, Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="annotation">@MapKeyEnumerated</span>(<span class="class-name">EnumType</span>.<span class="value">STRING</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Map</span>&lt;<span class="class-name">EmployeeType</span>, <span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -739,13 +706,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@MapKeyJoinColumn(name = "employee_key_id")</span>
-<span class="hljs-keyword">private</span> Map&lt;EmployeeKey, Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="annotation">@MapKeyJoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employee_key_id"</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Map</span>&lt;<span class="class-name">EmployeeKey</span>, <span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -759,16 +725,15 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@MapKeyJoinColumns({
-    @MapKeyJoinColumn(name = "employee_key_id"),
-    @MapKeyJoinColumn(name = "employee_key_type")
-})</span>
-<span class="hljs-keyword">private</span> Map&lt;EmployeeKey, Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="annotation">@MapKeyJoinColumns</span>(<span class="keyword">{</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@MapKeyJoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employee_key_id"</span>),<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@MapKeyJoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employee_key_type"</span>)<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">}</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Map</span>&lt;<span class="class-name">EmployeeKey</span>, <span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -782,13 +747,12 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@OneToMany(mappedBy = "department")</span>
-<span class="hljs-meta">@MapKeyTemporal(TemporalType.DATE)</span>
-<span class="hljs-keyword">private</span> Map&lt;Date, Employee&gt; employees;
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@OneToMany</span>(<span class="attribute">mappedBy</span> <span class="keyword">=</span> <span class="value">"department"</span>)<br>
+									<span class="annotation">@MapKeyTemporal</span>(<span class="class-name">TemporalType</span>.<span class="value">DATE</span>)<br>
+									<span class="keyword">private</span> <span class="class-name">Map</span>&lt;<span class="class-name">Date</span>, <span class="class-name">Employee</span>&gt; <span class="variable">employees</span>;<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -801,16 +765,14 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@MappedSuperclass</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span
-											class="hljs-keyword">class</span> <span
-											class="hljs-title class_">BaseEntity</span> {
-    <span class="hljs-comment">// Mapped superclass common attributes</span>
-}
-</code>
-								</pre>
+								<div class="code">
+
+									<span class="annotation">@MappedSuperclass</span><br>
+									<span class="keyword">public abstract class</span> <span class="class-name">Person</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">String</span> <span class="variable">name</span>;<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">String</span> <span class="variable">address</span>;<br>
+									}<br><br>
+								</div>
 							</li>
 							<li>
 								<p>
@@ -823,22 +785,19 @@
 								<p>
 									<strong>Example:</strong>
 								</p>
-								<pre class="nz oa ob oc od oe of og bo oh ba bj">
-									<code class="!whitespace-pre hljs language-java">
-										<span class="hljs-meta">@Entity</span>
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span
-											class="hljs-title class_">EmployeeDetails</span> {
+								<div class="code">
+									<strong>@Entity</strong>:<br>
+									<span class="description">Marks a class as an entity, which will be mapped to a database table.</span><br>
+									<span class="keyword">public class</span> <span class="class-name">EmployeeDetails</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Id</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">Long</span> <span class="variable">employeeId</span>;<br><br>
 
-    <span class="hljs-meta">@Id</span>
-    <span class="hljs-keyword">private</span> Long employeeId;
-
-    <span class="hljs-meta">@MapsId</span>
-    <span class="hljs-meta">@OneToOne</span>
-    <span class="hljs-meta">@JoinColumn(name = "employee_id")</span>
-    <span class="hljs-keyword">private</span> Employee employee;
-}
-</code>
-								</pre>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@MapsId</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@OneToOne</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@JoinColumn</span>(<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"employee_id"</span>)<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">Employee</span> <span class="variable">employee</span>;<br>
+									}<br>
+								</div>
 							</li>
 
 						</ol>

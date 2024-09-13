@@ -255,65 +255,51 @@
                     </ul>
                     <h3>4. Implementing Circuit Breaker with Hystrix</h3>
                     <h4>1. Add Hystrix dependency:</h4>
-                    <pre class="nz oa ob oc od oe of og bo oh ba bj"><span class="hljs-tag"><span class="citation-0">&lt;</span><span
-                            class="hljs-name"><span class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><br><span
-                            class="hljs-tag"><span class="citation-0">&lt;</span><span class="hljs-name"><span
-                            class="citation-0">groupId</span></span><span class="citation-0">&gt;</span></span><span
-                            class="citation-0">org.springframework.cloud</span><span class="hljs-tag"><span
-                            class="citation-0">&lt;/</span><span class="hljs-name"><span
-                            class="citation-0">groupId</span></span><span class="citation-0">&gt;</span></span><br><span
-                            class="hljs-tag"><span class="citation-0">&lt;</span><span class="hljs-name"><span
-                            class="citation-0">artifactId</span></span><span class="citation-0">&gt;</span></span><span
-                            class="citation-0">spring-cloud-starter-netflix-hystrix</span><span class="hljs-tag"><span
-                            class="citation-0">&lt;/</span><span class="hljs-name"><span
-                            class="citation-0">artifactId</span></span><span
-                            class="citation-0">&gt;</span></span><br><span class="hljs-tag"><span class="citation-0">&lt;/</span><span
-                            class="hljs-name"><span class="citation-0">dependency</span></span><span class="citation-0">&gt;</span></span><span
-                            class="citation-0 citation-end-0"></span>
-                        </code></pre>
+                    <div class="code">
+                        <span class="tag">&lt;dependency&gt;</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;groupId&gt;</span>org.springframework.cloud<span class="tag">&lt;/groupId&gt;</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-hystrix<span class="tag">&lt;/artifactId&gt;</span><br>
+                        <span class="tag">&lt;/dependency&gt;</span>
+                    </div>
                     <h4>2. Enable Hystrix:</h4>
-                    <pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text"
-                                                                           class="code-container"><span
-                            class="hljs-meta">@SpringBootApplication</span>
-<span class="hljs-meta">@EnableHystrix</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span
-                                class="hljs-title">YourApplicationClass</span> </span>{
-    <span class="hljs-comment">// ...</span>
-}
-</code></pre>
+                    <div class="code">
+                        <span class="annotation">@SpringBootApplication</span><br>
+                        <span class="annotation">@EnableHystrix</span><br>
+                        <span class="keyword">public class</span> <span class="class-name">YourApplicationClass</span> {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ...</span><br>
+                        }
+                    </div>
                     <p><strong>@EnableHystrix</strong> − This annotation scans our packages and looks out for
                         methods which are
                         using <strong>@HystrixCommand</strong> annotation.</p>
                     <h4>3. Apply Hystrix to a method:</h4>
-                    <pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text"
-                                                                           class="code-container"><span
-                            class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span
-                                class="hljs-title">MyService</span> </span>{
-
-    <span class="hljs-meta">@HystrixCommand(fallbackMethod = "reliable")</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">callExternalService</span><span
-            class="hljs-params">()</span> </span>{
-        <span class="hljs-comment">// Call a potentially unreliable external service</span>
-        <span class="hljs-keyword">return</span> externalService.doSomething();
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">reliable</span><span
-            class="hljs-params">()</span> </span>{
-        <span class="hljs-comment">// Fallback method in case of failure</span>
-        <span class="hljs-keyword">return</span> <span
-                                class="hljs-string">"External service is down, using fallback"</span>;
-    }
-}
-</code></pre>
+                    <div class="code">
+                        <span class="annotation">@Service</span><br>
+                        <span class="keyword">public class</span> <span class="class-name">MyService</span> {<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@HystrixCommand</span><span class="keyword">(</span><span class="attribute">fallbackMethod</span> <span class="keyword">=</span> <span class="value">"reliable"</span><span class="keyword">)</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">String</span> <span class="method-name">callExternalService</span><span class="keyword">()</span> {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Call a potentially unreliable external service</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">externalService</span>.<span class="method-name">doSomething</span><span class="keyword">();</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">String</span> <span class="method-name">reliable</span><span class="keyword">()</span> {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Fallback method in case of failure</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="value">"External service is down, using fallback"</span><span class="keyword">;</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }
+                    </div>
                     <h4>4. Customize Hystrix behavior (optional):</h4>
-                    <pre class="nz oa ob oc od oe of og bo oh ba bj"><code _ngcontent-ng-c1279875957="" role="text"
-                                                                           class="code-container"><span
-                            class="hljs-meta">@<span class="citation-1 citation-end-1">HystrixCommand(fallbackMethod = "reliable",
-                commandProperties = {
-                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",</span> value = "5000")
-                })</span>
-</code></pre>
+                    <div class="code">
+                        <span class="annotation">@HystrixCommand</span><span class="keyword">(</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">fallbackMethod</span> <span class="keyword">=</span> <span class="value">"reliable"</span>,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">commandProperties</span> <span class="keyword">=</span> <span class="keyword">{</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@HystrixProperty</span><span class="keyword">(</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">name</span> <span class="keyword">=</span> <span class="value">"execution.isolation.thread.timeoutInMilliseconds"</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">value</span> <span class="keyword">=</span> <span class="value">"5000"</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">)</span><span class="keyword">,</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">}</span><span class="keyword">)</span>
+                    </div>
                     <p>Now, let us understand couple of points from the above code −</p>
                     <p><strong>HystrixCommand annotation</strong> − This is responsible for wrapping the function
                         call that is

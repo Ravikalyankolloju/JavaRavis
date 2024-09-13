@@ -189,22 +189,12 @@
 					<div class="entry-content" itemprop="text">
 						<div
 							class="Markdownstyles-sc-dd1icp-0 eRSaiw MarkdownStyles__StyledMarkdown-sc-bf598916-0 cwgpBh">
-							<p>Today we will look into Builder pattern in java. Builder design pattern is a
-								<strong>creational design pattern</strong> like <a
-									href="/community/tutorials/factory-design-pattern-in-java"
-									title="Factory Design Pattern in Java"><strong>Factory Pattern</strong></a> and <a
-									href="/community/tutorials/abstract-factory-design-pattern-in-java"
-									title="Abstract Factory Design Pattern in Java"><strong>Abstract Factory
-										Pattern</strong></a>.
-							</p>
+
 							<h2 id="builder-design-pattern"><a href="#builder-design-pattern"
 									onclick="navigator.clipboard.writeText(this.href);">Builder Design Pattern</a><a
 									class="hash-anchor" href="#builder-design-pattern" aria-hidden="true"
 									onclick="navigator.clipboard.writeText(this.href);"></a></h2>
-							<p><a href="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/06/builder-design-pattern.jpg"
-									rel="ugc nofollow"><img
-										src="https://journaldev.nyc3.cdn.digitaloceanspaces.com/2013/06/builder-design-pattern.jpg"
-										alt="builder pattern in java, builder design pattern, builder pattern"></a>
+							<p>
 								Builder pattern was introduced to solve some of the problems with Factory and Abstract
 								Factory design patterns when the Object contains a lot of attributes. There are three
 								major issues with Factory and Abstract Factory design patterns when the Object contains
@@ -247,97 +237,93 @@
 							</ol>
 							<p>Here is the sample builder pattern example code where we have a Computer class and
 								ComputerBuilder class to build it.</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.builder;
-						
-						public class Computer {
-							
-							//required parameters
-							private String HDD;
-							private String RAM;
-							
-							//optional parameters
-							private boolean isGraphicsCardEnabled;
-							private boolean isBluetoothEnabled;
-							
-						
-							public String getHDD() {
-								return HDD;
-							}
-						
-							public String getRAM() {
-								return RAM;
-							}
-						
-							public boolean isGraphicsCardEnabled() {
-								return isGraphicsCardEnabled;
-							}
-						
-							public boolean isBluetoothEnabled() {
-								return isBluetoothEnabled;
-							}
-							
-							private Computer(ComputerBuilder builder) {
-								this.HDD=builder.HDD;
-								this.RAM=builder.RAM;
-								this.isGraphicsCardEnabled=builder.isGraphicsCardEnabled;
-								this.isBluetoothEnabled=builder.isBluetoothEnabled;
-							}
-							
-							//Builder Class
-							public static class ComputerBuilder{
-						
-								// required parameters
-								private String HDD;
-								private String RAM;
-						
-								// optional parameters
-								private boolean isGraphicsCardEnabled;
-								private boolean isBluetoothEnabled;
-								
-								public ComputerBuilder(String hdd, String ram){
-									this.HDD=hdd;
-									this.RAM=ram;
+							<div class="code">
+								<span class="keyword">package</span> <span class="string">com.javaravish.design.builder;</span><br><br>
+
+								<span class="keyword">public</span> <span class="class-name">class</span> <span class="class-name">Computer</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//required parameters</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">String</span> <span class="variable">HDD</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">String</span> <span class="variable">RAM</span>;<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//optional parameters</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">boolean</span> <span class="variable">isGraphicsCardEnabled</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">boolean</span> <span class="variable">isBluetoothEnabled</span>;<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">String</span> <span class="method-name">getHDD</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">HDD</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">String</span> <span class="method-name">getRAM</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">RAM</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">boolean</span> <span class="method-name">isGraphicsCardEnabled</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">isGraphicsCardEnabled</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">boolean</span> <span class="method-name">isBluetoothEnabled</span>() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">isBluetoothEnabled</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">Computer</span>(<span class="class-name">ComputerBuilder</span> <span class="variable">builder</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.HDD</span>=<span class="variable">builder.HDD</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.RAM</span>=<span class="variable">builder.RAM</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.isGraphicsCardEnabled</span>=<span class="variable">builder.isGraphicsCardEnabled</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.isBluetoothEnabled</span>=<span class="variable">builder.isBluetoothEnabled</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Builder Class</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static class</span> <span class="class-name">ComputerBuilder</span>{<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// required parameters</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">String</span> <span class="variable">HDD</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">String</span> <span class="variable">RAM</span>;<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// optional parameters</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">boolean</span> <span class="variable">isGraphicsCardEnabled</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">boolean</span> <span class="variable">isBluetoothEnabled</span>;<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">ComputerBuilder</span>(<span class="class-name">String</span> <span class="variable">hdd</span>, <span class="class-name">String</span> <span class="variable">ram</span>){<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.HDD</span>=<span class="variable">hdd</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.RAM</span>=<span class="variable">ram</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">ComputerBuilder</span> <span class="method-name">setGraphicsCardEnabled</span>(<span class="class-name">boolean</span> <span class="variable">isGraphicsCardEnabled</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.isGraphicsCardEnabled</span> = <span class="variable">isGraphicsCardEnabled</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">this</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">ComputerBuilder</span> <span class="method-name">setBluetoothEnabled</span>(<span class="class-name">boolean</span> <span class="variable">isBluetoothEnabled</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">this.isBluetoothEnabled</span> = <span class="variable">isBluetoothEnabled</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">this</span>;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">Computer</span> <span class="method-name">build</span>()){<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="new">new</span> <span class="class-name">Computer</span>(<span class="variable">this</span>);<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 								}
-						
-								public ComputerBuilder setGraphicsCardEnabled(boolean isGraphicsCardEnabled) {
-									this.isGraphicsCardEnabled = isGraphicsCardEnabled;
-									return this;
-								}
-						
-								public ComputerBuilder setBluetoothEnabled(boolean isBluetoothEnabled) {
-									this.isBluetoothEnabled = isBluetoothEnabled;
-									return this;
-								}
-								
-								public Computer build(){
-									return new Computer(this);
-								}
-						
-							}
-						
-						}
-						</code></pre>
+							</div>
 							<p>Notice that Computer class has only getter methods and no public constructor. So the only
 								way to get a Computer object is through the ComputerBuilder class. Here is a builder
 								pattern example test program showing how to use Builder class to get the object.</p>
-							<div class="code-label" title=""></div>
-							<pre class="nz oa ob oc od oe of og bo oh ba bj"><code>package com.javaravish.design.test;
-						
-						import com.javaravish.design.builder.Computer;
-						
-						public class TestBuilderPattern {
-						
-							public static void main(String[] args) {
-								//Using builder to get the object in a single line of code and 
-						                //without any inconsistent state or arguments management issues		
-								Computer comp = new Computer.ComputerBuilder(
-										"500 GB", "2 GB").setBluetoothEnabled(true)
-										.setGraphicsCardEnabled(true).build();
-							}
-						
-						}
-						</code></pre>
+							<div class="code">
+								<span class="keyword">package</span> <span class="string">com.javaravish.design.test;</span><br><br>
+
+								<span class="keyword">import</span> <span class="string">com.javaravish.design.builder.Computer;</span><br><br>
+
+								<span class="keyword">public</span> <span class="class-name">class</span> <span class="class-name">TestBuilderPattern</span> {<br><br>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static void</span> <span class="method-name">main</span>(<span class="class-name">String</span>[] <span class="variable">args</span>) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//Using builder to get the object in a single line of code and </span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//without any inconsistent state or arguments management issues</span><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Computer</span> <span class="variable">comp</span> = <span class="class-name">new</span> <span class="class-name">Computer.ComputerBuilder</span>(<span class="string">"500 GB"</span>, <span class="string">"2 GB"</span>)<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">setBluetoothEnabled</span>(<span class="keyword">true</span>)<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">setGraphicsCardEnabled</span>(<span class="keyword">true</span>)<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method-name">build</span>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+								}
+							</div>
 							<h3 id="builder-design-pattern-example-in-jdk"><a
 									href="#builder-design-pattern-example-in-jdk"
 									onclick="navigator.clipboard.writeText(this.href);">Builder Design Pattern Example

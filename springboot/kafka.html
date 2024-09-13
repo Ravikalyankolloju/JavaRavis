@@ -281,35 +281,18 @@
 							in the correct order:</p>
 						<p>3. Start Zookeeper service.</p>
 						<p>Use the below command to start the Zookeeper service:</p>
-						<pre class="line-numbers language-bash nz oa ob oc od oe of og bo oh ba bj"
-							style="background: rgb(245, 242, 240); border-color: rgb(229, 229, 229); border-style: solid; border-width: 0.1rem 0.5rem; box-sizing: border-box; counter-reset: linenumber 0; font-family: Consolas, Monaco,&amp; amp; amp; amp; amp; amp; amp; amp; quot; Andale Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Ubuntu Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 15px; hyphens: none; line-height: 1.5; margin-bottom: 0.5em; margin-top: 0.5em; overflow-wrap: normal; overflow: auto; padding: 1em 1em 1em 3.8em; position: relative; tab-size: 4; text-shadow: rgb(255, 255, 255) 0px 1px; word-break: normal;">
-							<code class="language-bash hljs"
-								style="background: 0px 0px; border-radius: 0px; border: none; box-sizing: border-box; font-family: Consolas, Monaco,&amp; amp; amp; amp; amp; amp; amp; amp; quot; Andale Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Ubuntu Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 1em; hyphens: none; line-height: 1.5; margin: 0px; overflow-wrap: normal; padding: 0px; position: relative; tab-size: 4; text-shadow: rgb(255, 255, 255) 0px 1px; white-space: inherit; word-break: normal; word-spacing: normal;">
-								<span class="token comment"
-									style="box-sizing: border-box; color: slategrey;"><span
-									class="hljs-comment"># Start the ZooKeeper service</span></span>
-<span class="token comment"
-									style="box-sizing: border-box; color: slategrey;"><span
-									class="hljs-comment"># Note: Soon, ZooKeeper will no longer be required by Apache Kafka.</span></span>
-$ bin/zookeeper-server-start.sh config/zookeeper.properties</code>
-						</pre>
+						<div class="code">
+							<span class="comment"># Start the ZooKeeper service</span><br>
+							<span class="comment"># Note: Soon, ZooKeeper will no longer be required by Apache Kafka.</span><br>
+							<span class="command">$</span> <span class="path">bin/zookeeper-server-start.sh</span> <span class="argument">config/zookeeper.properties</span>
+						</div>
 						<p>4. Start Kafka Broker</p>
 						<p>Open another terminal session and run the below command to
 							start the Kafka broker:</p>
-						<pre class="line-numbers language-bash nz oa ob oc od oe of og bo oh ba bj"
-							style="background: rgb(245, 242, 240); border-color: rgb(229, 229, 229); border-style: solid; border-width: 0.1rem 0.5rem; box-sizing: border-box; counter-reset: linenumber 0; font-family: Consolas, Monaco,&amp; amp; amp; amp; amp; amp; amp; amp; quot; Andale Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Ubuntu Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 15px; hyphens: none; line-height: 1.5; margin-bottom: 0.5em; margin-top: 0.5em; overflow-wrap: normal; overflow: auto; padding: 1em 1em 1em 3.8em; position: relative; tab-size: 4; text-shadow: rgb(255, 255, 255) 0px 1px; word-break: normal;">
-							<code class="language-bash hljs"
-								style="background: 0px 0px; border-radius: 0px; border: none; box-sizing: border-box; font-family: Consolas, Monaco,&amp; amp; amp; amp; amp; amp; amp; amp; quot; Andale Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Ubuntu Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 1em; hyphens: none; line-height: 1.5; margin: 0px; overflow-wrap: normal; padding: 0px; position: relative; tab-size: 4; text-shadow: rgb(255, 255, 255) 0px 1px; white-space: inherit; word-break: normal; word-spacing: normal;">
-								<span class="token comment"
-									style="box-sizing: border-box; color: slategrey;"><span
-									class="hljs-comment"># Start the Kafka broker service</span></span>
-$ bin/kafka-server-start.sh config/server.properties<span
-									aria-hidden="true" class="line-numbers-rows"
-									style="border-right: 1px solid rgb(153, 153, 153); box-sizing: border-box; left: -3.8em; letter-spacing: -1px; pointer-events: none; position: absolute; top: 0px; user-select: none; width: 3em;"><span
-									style="box-sizing: border-box; counter-increment: linenumber 1; display: block;"></span><span
-									style="box-sizing: border-box; counter-increment: linenumber 1; display: block;"></span></span>
-							</code>
-						</pre>
+						<div class="code">
+							<span class="comment"># Start the Kafka broker service</span><br>
+							<span class="command">$</span> <span class="path">bin/kafka-server-start.sh</span> <span class="argument">config/server.properties</span>
+						</div>
 						<p>Once all services have successfully launched, you will have
 							a basic Kafka environment running and ready to use.</p>
 						<h1>2. Create and Setup Spring Boot Project in IntelliJ</h1>
@@ -318,25 +301,17 @@ $ bin/kafka-server-start.sh config/server.properties<span
 								href="https://start.spring.io/">https://start.spring.io/</a>
 						</P>
 						<p>Add dependencies:</p>
-						<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
-							style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
-							<code class="notranslate hljs xml"
-								style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">
-								<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span
-									class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-web<span
-									class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-   
- <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.kafka<span
-									class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-kafka<span
-									class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
-</code>
-						</pre>
+						<div class="code">
+							<span class="tag">&lt;dependency&gt;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;groupId&gt;</span>org.springframework.boot<span class="tag">&lt;/groupId&gt;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="tag">&lt;/artifactId&gt;</span><br>
+							<span class="tag">&lt;/dependency&gt;</span><br><br>
+
+							<span class="tag">&lt;dependency&gt;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;groupId&gt;</span>org.springframework.kafka<span class="tag">&lt;/groupId&gt;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;artifactId&gt;</span>spring-kafka<span class="tag">&lt;/artifactId&gt;</span><br>
+							<span class="tag">&lt;/dependency&gt;</span>
+						</div>
 						<p>Import in IntelliJ and run the spring boot application</p>
 						<h1>3. Configure Kafka Producer and Consumer in an
 							application.properties File</h1>
@@ -349,75 +324,17 @@ $ bin/kafka-server-start.sh config/server.properties<span
 							Open the&nbsp;<i>application.properties</i>&nbsp;file and the
 							following content to it:
 						</p>
-						<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
-							style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
-							<code class="notranslate hljs css"
-								style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">
-								<span class="hljs-selector-tag">spring</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.consumer</span><span
-									class="hljs-selector-class">.bootstrap-servers</span>: <span
-									class="hljs-selector-tag">localhost</span><span
-									class="hljs-selector-pseudo">:9092</span>
-<span class="hljs-selector-tag">spring</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.consumer</span><span
-									class="hljs-selector-class">.group-id</span>: <span
-									class="hljs-selector-tag">group-id</span>
-<span class="hljs-selector-tag">spring</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.consumer</span><span
-									class="hljs-selector-class">.auto-offset-reset</span>: <span
-									class="hljs-selector-tag">earliest</span>
-<span class="hljs-selector-tag">spring</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.consumer</span><span
-									class="hljs-selector-class">.key-deserializer</span>: <span
-									class="hljs-selector-tag">org</span><span
-									class="hljs-selector-class">.apache</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.common</span><span
-									class="hljs-selector-class">.serialization</span><span
-									class="hljs-selector-class">.StringDeserializer</span>
-<span class="hljs-selector-tag">spring</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.consumer</span><span
-									class="hljs-selector-class">.value-deserializer</span>: <span
-									class="hljs-selector-tag">org</span><span
-									class="hljs-selector-class">.apache</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.common</span><span
-									class="hljs-selector-class">.serialization</span><span
-									class="hljs-selector-class">.StringDeserializer</span>
+						<div class="code">
+							<span class="property">spring.kafka.consumer.bootstrap-servers</span><span class="separator">:</span> <span class="value">localhost:9092</span><br>
+							<span class="property">spring.kafka.consumer.group-id</span><span class="separator">:</span> <span class="value">group-id</span><br>
+							<span class="property">spring.kafka.consumer.auto-offset-reset</span><span class="separator">:</span> <span class="value">earliest</span><br>
+							<span class="property">spring.kafka.consumer.key-deserializer</span><span class="separator">:</span> <span class="class-name">org.apache.kafka.common.serialization.StringDeserializer</span><br>
+							<span class="property">spring.kafka.consumer.value-deserializer</span><span class="separator">:</span> <span class="class-name">org.apache.kafka.common.serialization.StringDeserializer</span><br><br>
 
-<span class="hljs-selector-tag">spring</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.producer</span><span
-									class="hljs-selector-class">.bootstrap-servers</span>: <span
-									class="hljs-selector-tag">localhost</span><span
-									class="hljs-selector-pseudo">:9092</span>
-<span class="hljs-selector-tag">spring</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.producer</span><span
-									class="hljs-selector-class">.key-serializer</span>: <span
-									class="hljs-selector-tag">org</span><span
-									class="hljs-selector-class">.apache</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.common</span><span
-									class="hljs-selector-class">.serialization</span><span
-									class="hljs-selector-class">.StringSerializer</span>
-<span class="hljs-selector-tag">spring</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.producer</span><span
-									class="hljs-selector-class">.value-serializer</span>: <span
-									class="hljs-selector-tag">org</span><span
-									class="hljs-selector-class">.apache</span><span
-									class="hljs-selector-class">.kafka</span><span
-									class="hljs-selector-class">.common</span><span
-									class="hljs-selector-class">.serialization</span><span
-									class="hljs-selector-class">.StringSerializer</span>
-</code>
-						</pre>
+							<span class="property">spring.kafka.producer.bootstrap-servers</span><span class="separator">:</span> <span class="value">localhost:9092</span><br>
+							<span class="property">spring.kafka.producer.key-serializer</span><span class="separator">:</span> <span class="class-name">org.apache.kafka.common.serialization.StringSerializer</span><br>
+							<span class="property">spring.kafka.producer.value-serializer</span><span class="separator">:</span> <span class="class-name">org.apache.kafka.common.serialization.StringSerializer</span>
+						</div>
 						<p>Let's understand the above spring boot provided Kafka
 							properties:</p>
 						<p style="background-color: white; box-sizing: border-box; color: #24292f;">
@@ -451,56 +368,23 @@ $ bin/kafka-server-start.sh config/server.properties<span
 								</p>
 								Let's create a&nbsp;<i>KafkaTopicConfig</i>&nbsp;file and add
 								the following content:
-								<div class="snippet-clipboard-content position-relative overflow-auto"
-									style="box-sizing: border-box; overflow: auto; position: relative;">
-									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
-										style="border-radius: 6px; box-sizing: border-box; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
-										<code class="notranslate hljs css"
-											style="background-attachment: initial; background-clip: initial; background-image: initial; background-origin: initial; background-position: initial; background-repeat: initial; background-size: initial; border-radius: 6px; border: 0px; box-sizing: border-box; color: #24292f; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 13.6px; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">
-											<span class="hljs-selector-tag">package</span> <span
-												class="hljs-selector-tag">net</span><span
-												class="hljs-selector-class">.javaguides</span><span
-												class="hljs-selector-class">.springbootkafka</span>;
+								<div class="code">
+									<span class="keyword">package</span> <span class="value">net.javaguides.springbootkafka</span><span class="keyword">;</span><br><br>
 
-<span class="hljs-selector-tag">import</span> <span
-												class="hljs-selector-tag">org</span><span
-												class="hljs-selector-class">.apache</span><span
-												class="hljs-selector-class">.kafka</span><span
-												class="hljs-selector-class">.clients</span><span
-												class="hljs-selector-class">.admin</span><span
-												class="hljs-selector-class">.NewTopic</span>;
-<span class="hljs-selector-tag">import</span> <span
-												class="hljs-selector-tag">org</span><span
-												class="hljs-selector-class">.springframework</span><span
-												class="hljs-selector-class">.context</span><span
-												class="hljs-selector-class">.annotation</span><span
-												class="hljs-selector-class">.Bean</span>;
-<span class="hljs-selector-tag">import</span> <span
-												class="hljs-selector-tag">org</span><span
-												class="hljs-selector-class">.springframework</span><span
-												class="hljs-selector-class">.context</span><span
-												class="hljs-selector-class">.annotation</span><span
-												class="hljs-selector-class">.Configuration</span>;
-<span class="hljs-selector-tag">import</span> <span
-												class="hljs-selector-tag">org</span><span
-												class="hljs-selector-class">.springframework</span><span
-												class="hljs-selector-class">.kafka</span><span
-												class="hljs-selector-class">.config</span><span
-												class="hljs-selector-class">.TopicBuilder</span>;
+									<span class="keyword">import</span> <span class="class-name">org.apache.kafka.clients.admin.NewTopic</span><span class="keyword">;</span><br>
+									<span class="keyword">import</span> <span class="class-name">org.springframework.context.annotation.Bean</span><span class="keyword">;</span><br>
+									<span class="keyword">import</span> <span class="class-name">org.springframework.context.annotation.Configuration</span><span class="keyword">;</span><br>
+									<span class="keyword">import</span> <span class="class-name">org.springframework.kafka.config.TopicBuilder</span><span class="keyword">;</span><br><br>
 
-<span class="hljs-keyword">@Configuration</span>
-public class KafkaTopicConfig {
-
-    <span class="hljs-keyword">@Bean</span>
-    public NewTopic javaguidesTopic(){
-        <span class="hljs-selector-tag">return</span> <span
-												class="hljs-selector-tag">TopicBuilder</span><span
-												class="hljs-selector-class">.name</span>("<span
-												class="hljs-selector-tag">javaguides</span>")
-                <span class="hljs-selector-class">.build</span>();
-    }
-}</code>
-									</pre>
+									<span class="annotation">@Configuration</span><br>
+									<span class="keyword">public class</span> <span class="class-name">KafkaTopicConfig</span> {<br>
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Bean</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">NewTopic</span> <span class="method-name">javaguidesTopic</span><span class="keyword">()</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="class-name">TopicBuilder</span>.<span class="method-name">name</span><span class="keyword">(</span><span class="value">"javaguides"</span><span class="keyword">)</span>.<span class="method-name">build</span><span class="keyword">();</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+									}
+								</div>
 									<h2 style="text-align: left;">5. Create Kafka Producer</h2>
 									<div>
 										<p>Creating a producer will write our messages on the
@@ -512,69 +396,44 @@ public class KafkaTopicConfig {
 											autowire it directly in your own beans.
 										</p>
 										<p>For example:</p>
-										<div class="snippet-clipboard-content position-relative overflow-auto"
-											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; amp; amp; amp; amp; amp; amp; amp; quot; system-ui &amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Helvetica , Arial, sans-serif, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Apple Color Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot;; font-size: 16px; overflow: auto; position: relative;">
-											<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
-												style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
-												<code class="notranslate hljs typescript"
-													style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">package net.javaguides.springbootkafka.kafka;
+										<div class="code">
+											<span class="keyword">package</span> <span class="value">net.javaguides.springbootkafka.kafka</span><span class="keyword">;</span><br><br>
 
-<span class="hljs-keyword">import</span> net.javaguides.springbootkafka.utils.AppConstants;
-<span class="hljs-keyword">import</span> org.apache.kafka.clients.admin.NewTopic;
-<span class="hljs-keyword">import</span> org.slf4j.Logger;
-<span class="hljs-keyword">import</span> org.slf4j.LoggerFactory;
-<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
-<span class="hljs-keyword">import</span> org.springframework.kafka.core.KafkaTemplate;
-<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+											<span class="keyword">import</span> <span class="class-name">net.javaguides.springbootkafka.utils.AppConstants</span><span class="keyword">;</span><br>
+											<span class="keyword">import</span> <span class="class-name">org.apache.kafka.clients.admin.NewTopic</span><span class="keyword">;</span><br>
+											<span class="keyword">import</span> <span class="class-name">org.slf4j.Logger</span><span class="keyword">;</span><br>
+											<span class="keyword">import</span> <span class="class-name">org.slf4j.LoggerFactory</span><span class="keyword">;</span><br>
+											<span class="keyword">import</span> <span class="class-name">org.springframework.beans.factory.annotation.Autowired</span><span class="keyword">;</span><br>
+											<span class="keyword">import</span> <span class="class-name">org.springframework.kafka.core.KafkaTemplate</span><span class="keyword">;</span><br>
+											<span class="keyword">import</span> <span class="class-name">org.springframework.stereotype.Service</span><span class="keyword">;</span><br><br>
 
-<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span
-														class="hljs-keyword">class</span> <span class="hljs-title">KafkaProducer</span> </span>{
-
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> final Logger LOGGER = LoggerFactory.getLogger(KafkaProducer.class);
-
-    <span class="hljs-meta">@Autowired</span>
-    <span class="hljs-keyword">private</span> KafkaTemplate&lt;<span
-														class="hljs-built_in">String</span>, <span
-														class="hljs-built_in">String</span>&gt; kafkaTemplate;
-
-    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span
-														class="hljs-function"><span class="hljs-title">sendMessage</span>(<span
-														class="hljs-params"><span class="hljs-built_in">String</span> message</span>)</span>{
-        LOGGER.info(<span class="hljs-built_in">String</span>.format(<span
-														class="hljs-string">"Message sent -&gt; %s"</span>, message));
-        kafkaTemplate.send(AppConstants.TOPIC_NAME, message);
-    }
-}
-</code>
-											</pre>
+											<span class="annotation">@Service</span><br>
+											<span class="keyword">public class</span> <span class="class-name">KafkaProducer</span> {<br>
+											<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private static final</span> <span class="class-name">Logger</span> <span class="variable">LOGGER</span> <span class="keyword">=</span> <span class="class-name">LoggerFactory</span>.<span class="method-name">getLogger</span><span class="keyword">(</span><span class="class-name">KafkaProducer</span>.<span class="method-name">class</span><span class="keyword">)</span><span class="keyword">;</span><br>
+											<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Autowired</span><br>
+											&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">KafkaTemplate</span><span class="keyword">&lt;</span><span class="class-name">String</span><span class="keyword">,</span> <span class="class-name">String</span><span class="keyword">&gt;</span> <span class="variable">kafkaTemplate</span><span class="keyword">;</span><br>
+											<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">sendMessage</span><span class="keyword">(</span><span class="class-name">String</span> <span class="variable">message</span><span class="keyword">)</span> {<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">LOGGER</span>.<span class="method-name">info</span><span class="keyword">(</span><span class="class-name">String</span>.<span class="method-name">format</span><span class="keyword">(</span><span class="value">"Message sent -> %s"</span><span class="keyword">,</span> <span class="variable">message</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">;</span><br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">kafkaTemplate</span>.<span class="method-name">send</span><span class="keyword">(</span><span class="class-name">AppConstants</span>.<span class="variable">TOPIC_NAME</span><span class="keyword">,</span> <span class="variable">message</span><span class="keyword">)</span><span class="keyword">;</span><br>
+											&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+											}
 										</div>
 										<p>
 											Create a <i>utils </i>package and within this package
 											create&nbsp;<i>AppConstants</i>&nbsp;with the following
 											content:
-										</p>
-										<div class="snippet-clipboard-content position-relative overflow-auto"
-											style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; amp; amp; amp; amp; amp; amp; amp; quot; system-ui &amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Helvetica , Arial, sans-serif, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Apple Color Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot;; font-size: 16px; overflow: auto; position: relative;">
-											<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
-												style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
-												<code class="notranslate hljs java"
-													style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">
-													<span class="hljs-keyword">package</span> net.javaguides.springbootkafka.utils;
+										<div class="code">
+											<span class="keyword">package</span> <span class="value">net.javaguides.springbootkafka.utils</span><span class="keyword">;</span><br><br>
 
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span
-														class="hljs-keyword">class</span> <span class="hljs-title">AppConstants</span> </span>{
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span
-														class="hljs-keyword">final</span> String TOPIC_NAME = <span
-														class="hljs-string">"javaguides"</span>;
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span
-														class="hljs-keyword">final</span> String GROUP_ID = <span
-														class="hljs-string">"group_id"</span>;
-}
-</code>
-											</pre>
+											<span class="keyword">public class</span> <span class="class-name">AppConstants</span> {<br>
+											<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static final</span> <span class="class-name">String</span> <span class="variable">TOPIC_NAME</span> <span class="keyword">=</span> <span class="value">"javaguides"</span><span class="keyword">;</span><br>
+											&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static final</span> <span class="class-name">String</span> <span class="variable">GROUP_ID</span> <span class="keyword">=</span> <span class="value">"group_id"</span><span class="keyword">;</span><br>
+											}
 										</div>
-										<p>
 											<i>KafKaProducer</i>&nbsp;class uses&nbsp;<i>KafkaTemplate</i>&nbsp;to
 											send messages to the configured topic name.
 										</p>
@@ -589,57 +448,38 @@ public class KafkaTopicConfig {
 									create&nbsp;<i>KafkaProducerController</i>&nbsp;with the
 									following content to it:
 								</p>
-								<div class="snippet-clipboard-content position-relative overflow-auto"
-									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; amp; amp; amp; amp; amp; amp; amp; quot; system-ui &amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Helvetica , Arial, sans-serif, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Apple Color Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot;; font-size: 16px; overflow: auto; position: relative;">
-									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
-										style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
-										<code class="notranslate hljs kotlin"
-											style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">
-											<span class="hljs-keyword">package</span> net.javaguides.springbootkafka;
+								<div class="code">
+									<span class="keyword">package</span> <span class="value">net.javaguides.springbootkafka</span><span class="keyword">;</span><br><br>
 
-<span class="hljs-keyword">import</span> net.javaguides.springbootkafka.kafka.KafkaProducer;
-<span class="hljs-keyword">import</span> org.springframework.http.ResponseEntity;
-<span class="hljs-keyword">import</span> org.springframework.web.bind.<span
-												class="hljs-keyword">annotation</span>.*;
+									<span class="keyword">import</span> <span class="class-name">net.javaguides.springbootkafka.kafka.KafkaProducer</span><span class="keyword">;</span><br>
+									<span class="keyword">import</span> <span class="class-name">org.springframework.http.ResponseEntity</span><span class="keyword">;</span><br>
+									<span class="keyword">import</span> <span class="class-name">org.springframework.web.bind.annotation.*</span><span class="keyword">;</span><br><br>
 
-<span class="hljs-meta">@RestController</span>
-<span class="hljs-meta">@RequestMapping(<span
-												class="hljs-meta-string">"/api/v1/kafka"</span>)</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span
-												class="hljs-keyword">class</span> <span class="hljs-title">KafkaProducerController</span> </span>{
-
-    <span class="hljs-keyword">private</span> KafkaProducer kafkaProducer;
-
-    <span class="hljs-keyword">public</span> KafkaProducerController(KafkaProducer kafkaProducer) {
-        <span class="hljs-keyword">this</span>.kafkaProducer = kafkaProducer;
-    }
-
-    <span class="hljs-meta">@GetMapping(<span
-												class="hljs-meta-string">"/publish"</span>)</span>
-    <span class="hljs-keyword">public</span> ResponseEntity&lt;String&gt; publish(<span
-												class="hljs-meta">@RequestParam(<span
-												class="hljs-meta-string">"message"</span>)</span> String message){
-        kafkaProducer.sendMessage(message);
-        <span class="hljs-keyword">return</span> ResponseEntity.ok(<span
-												class="hljs-string">"Message sent to kafka topic"</span>);
-    }
-}</code>
-									</pre>
+									<span class="annotation">@RestController</span><br>
+									<span class="annotation">@RequestMapping</span><span class="keyword">(</span><span class="value">"/api/v1/kafka"</span><span class="keyword">)</span><br>
+									<span class="keyword">public class</span> <span class="class-name">KafkaProducerController</span> {<br>
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">KafkaProducer</span> <span class="variable">kafkaProducer</span><span class="keyword">;</span><br>
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">KafkaProducerController</span><span class="keyword">(</span><span class="class-name">KafkaProducer</span> <span class="variable">kafkaProducer</span><span class="keyword">)</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.<span class="variable">kafkaProducer</span> <span class="keyword">=</span> <span class="variable">kafkaProducer</span><span class="keyword">;</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@GetMapping</span><span class="keyword">(</span><span class="value">"/publish"</span><span class="keyword">)</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public ResponseEntity&lt;</span><span class="class-name">String</span><span class="keyword">&gt;</span> <span class="method-name">publish</span><span class="keyword">(</span><span class="keyword">@RequestParam</span><span class="keyword">(</span><span class="value">"message"</span><span class="keyword">)</span> <span class="class-name">String</span> <span class="variable">message</span><span class="keyword">)</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">kafkaProducer</span>.<span class="method-name">sendMessage</span><span class="keyword">(</span><span class="variable">message</span><span class="keyword">)</span><span class="keyword">;</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="class-name">ResponseEntity</span>.<span class="method-name">ok</span><span class="keyword">(</span><span class="value">"Message sent to kafka topic"</span><span class="keyword">)</span><span class="keyword">;</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+									}
 								</div>
 							</div>
 							<div>
 								<h3>See Topic Messages via Command Line:</h3>
 								<div class="snippet-clipboard-content position-relative overflow-auto"
 									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; amp; amp; amp; amp; amp; amp; amp; quot; system-ui &amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Helvetica , Arial, sans-serif, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Apple Color Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot;; font-size: 16px; overflow: auto; position: relative;">
-									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
-										style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
-										<code class="notranslate hljs coffeescript"
-											style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">bin/kafka-<span
-												class="hljs-built_in">console</span>-consumer.sh --topic javaguides --<span
-												class="hljs-keyword">from</span>-beginning --bootstrap-server localhost:<span
-												class="hljs-number">9092</span>
-</code>
-									</pre>
+									<div class="code">
+										<span class="path">bin/kafka-console-consumer.sh</span> <span class="option">--topic</span> <span class="value">javaguides</span> <span class="option">--from-beginning</span> <span class="option">--bootstrap-server</span> <span class="value">localhost:9092</span>
+									</div>
 								</div>
 								<p>Make sure to change the topic name. In our case
 									"javaguides" is the topic name.</p>
@@ -650,37 +490,29 @@ public class KafkaTopicConfig {
 									responsible for reading messages and processing them according
 									to the needs of your own business logic.&nbsp;</p>
 								<p>To set it up, enter the following:</p>
-								<div class="snippet-clipboard-content position-relative overflow-auto"
-									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; amp; amp; amp; amp; amp; amp; amp; quot; system-ui &amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Helvetica , Arial, sans-serif, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Apple Color Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot;; font-size: 16px; overflow: auto; position: relative;">
-									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
-										style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
-										<code class="notranslate hljs java"
-											style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">
-											<span class="hljs-keyword">package</span> net.javaguides.springbootkafka.kafka;
+								<div class="code">
+									<span class="keyword">package</span> <span class="value">net.javaguides.springbootkafka.kafka</span><span class="keyword">;</span><br><br>
 
-<span class="hljs-keyword">import</span> net.javaguides.springbootkafka.utils.AppConstants;
-<span class="hljs-keyword">import</span> org.slf4j.Logger;
-<span class="hljs-keyword">import</span> org.slf4j.LoggerFactory;
-<span class="hljs-keyword">import</span> org.springframework.kafka.annotation.KafkaListener;
-<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+									<span class="keyword">import</span> <span class="class-name">net.javaguides.springbootkafka.utils.AppConstants</span><span class="keyword">;</span><br>
+									<span class="keyword">import</span> <span class="class-name">org.slf4j.Logger</span><span class="keyword">;</span><br>
+									<span class="keyword">import</span> <span class="class-name">org.slf4j.LoggerFactory</span><span class="keyword">;</span><br>
+									<span class="keyword">import</span> <span class="class-name">org.springframework.kafka.annotation.KafkaListener</span><span class="keyword">;</span><br>
+									<span class="keyword">import</span> <span class="class-name">org.springframework.stereotype.Service</span><span class="keyword">;</span><br><br>
 
-<span class="hljs-meta">@Service</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span
-												class="hljs-keyword">class</span> <span class="hljs-title">KafKaConsumer</span> </span>{
-
-    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span
-												class="hljs-keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(KafKaConsumer.class);
-
-    <span class="hljs-meta">@KafkaListener(topics = AppConstants.TOPIC_NAME,
-                    groupId = AppConstants.GROUP_ID)</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span
-												class="hljs-keyword">void</span> <span class="hljs-title">consume</span><span
-												class="hljs-params">(String message)</span></span>{
-        LOGGER.info(String.format(<span class="hljs-string">"Message received -&gt; %s"</span>, message));
-    }
-}
-</code>
-									</pre>
+									<span class="annotation">@Service</span><br>
+									<span class="keyword">public class</span> <span class="class-name">KafKaConsumer</span> {<br>
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">private static final</span> <span class="class-name">Logger</span> <span class="variable">LOGGER</span> <span class="keyword">=</span> <span class="class-name">LoggerFactory</span>.<span class="method-name">getLogger</span><span class="keyword">(</span><span class="class-name">KafKaConsumer</span>.<span class="method-name">class</span><span class="keyword">)</span><span class="keyword">;</span><br>
+									<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@KafkaListener</span><span class="keyword">(</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">topics</span> <span class="keyword">=</span> <span class="class-name">AppConstants</span>.<span class="variable">TOPIC_NAME</span><span class="keyword">,</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">groupId</span> <span class="keyword">=</span> <span class="class-name">AppConstants</span>.<span class="variable">GROUP_ID</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">)</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method-name">consume</span><span class="keyword">(</span><span class="class-name">String</span> <span class="variable">message</span><span class="keyword">)</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">LOGGER</span>.<span class="method-name">info</span><span class="keyword">(</span><span class="class-name">String</span>.<span class="method-name">format</span><span class="keyword">(</span><span class="value">"Message received -> %s"</span><span class="keyword">,</span> <span class="variable">message</span><span class="keyword">)</span><span class="keyword">)</span><span class="keyword">;</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+									}
+								</div>
 									<div class="zeroclipboard-container position-absolute right-0 top-0"
 										style="animation: 200ms ease 0s 1 normal both running fade-in; box-sizing: border-box; position: absolute; right: 0px; top: 0px;">
 										<clipboard-copy aria-label="Copy"
@@ -724,21 +556,14 @@ public class KafKaConsumer {
 									the application log. In your real application, you can handle
 									messages the way your business requires you to.</p>
 								<p>KafkaListener endpoint:</p>
-								<div class="snippet-clipboard-content position-relative overflow-auto"
-									style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; amp; amp; amp; amp; amp; amp; amp; quot; system-ui &amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Helvetica , Arial, sans-serif, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Apple Color Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot; , &amp; amp; amp; amp; amp; amp; amp; amp; quot; Segoe UI Emoji&amp;amp; amp; amp; amp; amp; amp; amp; quot;; font-size: 16px; margin-bottom: 0px; overflow: auto; position: relative;">
-									<pre class="notranslate nz oa ob oc od oe of og bo oh ba bj"
-										style="background-color: var(- -color-canvas-subtle); border-radius: 6px; box-sizing: border-box; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; font-size: 13.6px; line-height: 1.45; margin-bottom: 16px; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 16px;">
-										<code class="notranslate hljs typescript"
-											style="background: transparent; border-radius: 6px; border: 0px; box-sizing: border-box; display: inline; font-family: ui-monospace, SFMono-Regular,&amp; amp; amp; amp; amp; amp; amp; amp; quot; SF Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , Menlo , Consolas, &amp;amp; amp; amp; amp; amp; amp; amp; quot; Liberation Mono&amp;amp; amp; amp; amp; amp; amp; amp; quot; , monospace; line-height: inherit; margin: 0px; overflow-wrap: normal; overflow: visible; padding: 0px; word-break: normal;">    <span
-												class="hljs-meta">@KafkaListener</span>(topics = AppConstants.TOPIC_NAME,
-                    groupId = AppConstants.GROUP_ID)
-    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span
-												class="hljs-function"><span class="hljs-title">consume</span>(<span
-												class="hljs-params"><span class="hljs-built_in">String</span> message</span>)</span>{
-        LOGGER.info(<span class="hljs-built_in">String</span>.format(<span
-												class="hljs-string">"Message received -&gt; %s"</span>, message));
-    }</code>
-									</pre>
+								<div class="code">
+									<span class="annotation">@KafkaListener</span><span class="keyword">(</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">topics</span> <span class="keyword">=</span> <span class="class-name">AppConstants</span>.<span class="variable">TOPIC_NAME</span><span class="keyword">,</span><br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">groupId</span> <span class="keyword">=</span> <span class="class-name">AppConstants</span>.<span class="variable">GROUP_ID</span><br>
+									<span class="keyword">)</span><br>
+									<span class="keyword">public void</span> <span class="method-name">consume</span><span class="keyword">(</span><span class="class-name">String</span> <span class="variable">message</span><span class="keyword">)</span> {<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">LOGGER</span>.<span class="method-name">info</span><span class="keyword">(</span><span class="class-name">String</span>.<span class="method-name">format</span><span class="keyword">(</span><span class="value">"Message received -> %s"</span><span class="keyword">,</span> <span class="variable">message</span><span class="keyword">)</span><span class="keyword">);</span><br>
+									}
 								</div>
 							</div>
 							<h2 style="text-align: left;">8. Demo</h2>

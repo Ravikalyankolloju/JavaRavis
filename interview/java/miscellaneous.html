@@ -173,6 +173,493 @@
 
             </nav>
             <article>
+                <strong><span
+                        style="font-size: 12pt; line-height: 115%;">Table of Content:</span></strong>
+                <p></p>
+                <p style="margin-left: 0.5in;"><a href="#synchronized">1. Collections.synchronizedXXX</a></p>
+                <p style="margin-left: 0.5in;"><a href="#concurrent">2. Concurrent Classes and Interfaces</a></p>
+                <p style="margin-left: 0.5in;"><a href="#weak">3. Weak Collections</a></p>
+                <h1><a name="synchronized">1. Collections.synchronizedXXX</a></h1>
+                <p>The <code>Collections.synchronizedXXX</code> methods in Java provide a way to create synchronized
+                    (thread-safe) versions of standard collections. These methods ensure that operations on the
+                    collections are thread-safe, meaning they are safe to use in a concurrent environment. However, they
+                    use traditional locking mechanisms, which can lead to contention and may not be as performant as
+                    some of the concurrent collections provided in the <code>java.util.concurrent</code> package.</p>
+                <p>Here's a detailed overview of <code>Collections.synchronizedXXX</code> methods and their usage:</p>
+
+                <h4>Key Points:</h4>
+                <ul>
+                    <li><strong>Thread Safety:</strong> The synchronized wrappers ensure that all methods are
+                        synchronized, so only one thread can access the collection at a time.
+                    </li>
+                    <li><strong>Performance:</strong> These synchronized wrappers can lead to contention and reduced
+                        performance due to locking. They might be less efficient compared to concurrent collections
+                        designed specifically for high concurrency.
+                    </li>
+                    <li><strong>Explicit Synchronization:</strong> When iterating over these synchronized collections,
+                        you must manually synchronize on the collection to avoid
+                        <code>ConcurrentModificationException</code>.
+                    </li>
+                </ul>
+
+                <h4>Common Methods:</h4>
+
+                <h3>Collections.synchronizedList(List&lt;T&gt; list)</h3>
+                <ul>
+                    <li><strong>Description:</strong> Returns a synchronized (thread-safe) list backed by the specified
+                        list.
+                    </li>
+                    <li><strong>Usage:</strong> You need to manually synchronize on the returned list when iterating
+                        over it.
+                    </li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Collections</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">List</span>;
+
+                    <span class="keyword">public class</span> <span class="class">SynchronizedListExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span
+                        class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">List</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span>
+                    = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+                    <span class="variable">list</span>.<span class="method">add</span>(<span
+                        class="string">"Apple"</span>);
+                    <span class="variable">list</span>.<span class="method">add</span>(<span
+                        class="string">"Banana"</span>);
+
+                    <span class="keyword">List</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">synchronizedList</span>
+                    = <span class="keyword">Collections</span>.<span class="method">synchronizedList</span>(<span
+                        class="variable">list</span>);
+
+                    <span class="comment">// Iterating over the synchronized list</span>
+                    <span class="keyword">synchronized</span> (<span class="variable">synchronizedList</span>) {
+                    <span class="keyword">for</span> (<span class="keyword">String</span> <span
+                        class="variable">item</span> : <span class="variable">synchronizedList</span>) {
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="variable">item</span>);
+                    }
+                    }
+                    }
+                    }
+                </div>
+
+                <h3>Collections.synchronizedSet(Set&lt;T&gt; set)</h3>
+                <ul>
+                    <li><strong>Description:</strong> Returns a synchronized (thread-safe) set backed by the specified
+                        set.
+                    </li>
+                    <li><strong>Usage:</strong> Synchronize on the returned set when iterating over it.</li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">HashSet</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Collections</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span
+                        class="keyword">Set</span>;
+
+                    <span class="keyword">public class</span> <span class="class">SynchronizedSetExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span
+                        class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">Set</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">set</span>
+                    = <span class="keyword">new</span> <span class="keyword">HashSet</span>&lt;&gt;();
+                    <span class="variable">set</span>.<span class="method">add</span>(<span
+                        class="string">"Apple"</span>);
+                    <span class="variable">set</span>.<span class="method">add</span>(<span
+                        class="string">"Banana"</span>);
+
+                    <span class="keyword">Set</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">synchronizedSet</span>
+                    = <span class="keyword">Collections</span>.<span class="method">synchronizedSet</span>(<span
+                        class="variable">set</span>);
+
+                    <span class="comment">// Iterating over the synchronized set</span>
+                    <span class="keyword">synchronized</span> (<span class="variable">synchronizedSet</span>) {
+                    <span class="keyword">for</span> (<span class="keyword">String</span> <span
+                        class="variable">item</span> : <span class="variable">synchronizedSet</span>) {
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="variable">item</span>);
+                    }
+                    }
+                    }
+                    }
+                </div>
+
+                <h3>Collections.synchronizedMap(Map&lt;K, V&gt; map)</h3>
+                <ul>
+                    <li><strong>Description:</strong> Returns a synchronized (thread-safe) map backed by the specified
+                        map.
+                    </li>
+                    <li><strong>Usage:</strong> Synchronize on the returned map when iterating over it.</li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">HashMap</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span
+                        class="keyword">Map</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Collections</span>;
+
+                    <span class="keyword">public class</span> <span class="class">SynchronizedMapExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span
+                        class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">Map</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt;
+                    <span class="variable">map</span> = <span class="keyword">new</span> <span
+                        class="keyword">HashMap</span>&lt;&gt;();
+                    <span class="variable">map</span>.<span class="method">put</span>(<span
+                        class="string">"Apple"</span>, <span class="string">"Fruit"</span>);
+                    <span class="variable">map</span>.<span class="method">put</span>(<span
+                        class="string">"Carrot"</span>, <span class="string">"Vegetable"</span>);
+
+                    <span class="keyword">Map</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt;
+                    <span class="variable">synchronizedMap</span> = <span class="keyword">Collections</span>.<span
+                        class="method">synchronizedMap</span>(<span class="variable">map</span>);
+
+                    <span class="comment">// Iterating over the synchronized map</span>
+                    <span class="keyword">synchronized</span> (<span class="variable">synchronizedMap</span>) {
+                    <span class="keyword">for</span> (<span class="keyword">Map.Entry</span>&lt;<span class="keyword">String</span>,
+                    <span class="keyword">String</span>&gt; <span class="variable">entry</span> : <span
+                        class="variable">synchronizedMap</span>.<span class="method">entrySet</span>()) {
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="variable">entry</span>.<span
+                        class="method">getKey</span>() + <span class="string">": "</span> + <span
+                        class="variable">entry</span>.<span class="method">getValue</span>());
+                    }
+                    }
+                    }
+                    }
+                </div>
+
+                <h3>Collections.synchronizedSortedSet(SortedSet&lt;T&gt; sortedSet)</h3>
+                <ul>
+                    <li><strong>Description:</strong> Returns a synchronized (thread-safe) sorted set backed by the
+                        specified sorted set.
+                    </li>
+                    <li><strong>Usage:</strong> Synchronize on the returned sorted set when iterating over it.</li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">TreeSet</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Collections</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">SortedSet</span>;
+
+                    <span class="keyword">public class</span> <span class="class">SynchronizedSortedSetExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span
+                        class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">SortedSet</span>&lt;<span class="keyword">String</span>&gt; <span
+                        class="variable">sortedSet</span> = <span class="keyword">new</span> <span class="keyword">TreeSet</span>&lt;&gt;();
+                    <span class="variable">sortedSet</span>.<span class="method">add</span>(<span
+                        class="string">"Apple"</span>);
+                    <span class="variable">sortedSet</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+                    <span class="keyword">SortedSet</span>&lt;<span class="keyword">String</span>&gt; <span
+                        class="variable">synchronizedSortedSet</span> = <span class="keyword">Collections</span>.<span
+                        class="method">synchronizedSortedSet</span>(<span class="variable">sortedSet</span>);
+
+                    <span class="comment">// Iterating over the synchronized sorted set</span>
+                    <span class="keyword">synchronized</span> (<span class="variable">synchronizedSortedSet</span>) {
+                    <span class="keyword">for</span> (<span class="keyword">String</span> <span
+                        class="variable">item</span> : <span class="variable">synchronizedSortedSet</span>) {
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="variable">item</span>);
+                    }
+                    }
+                    }
+                    }
+                </div>
+
+                <h3>Collections.synchronizedSortedMap(SortedMap&lt;K, V&gt; sortedMap)</h3>
+                <ul>
+                    <li><strong>Description:</strong> Returns a synchronized (thread-safe) sorted map backed by the
+                        specified sorted map.
+                    </li>
+                    <li><strong>Usage:</strong> Synchronize on the returned sorted map when iterating over it.</li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">TreeMap</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Collections</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">SortedMap</span>;
+
+                    <span class="keyword">public class</span> <span class="class">SynchronizedSortedMapExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span
+                        class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">SortedMap</span>&lt;<span class="keyword">String</span>, <span
+                        class="keyword">String</span>&gt; <span class="variable">sortedMap</span> = <span
+                        class="keyword">new</span> <span class="keyword">TreeMap</span>&lt;&gt;();
+                    <span class="variable">sortedMap</span>.<span class="method">put</span>(<span
+                        class="string">"Apple"</span>, <span class="string">"Fruit"</span>);
+                    <span class="variable">sortedMap</span>.<span class="method">put</span>(<span class="string">"Carrot"</span>,
+                    <span class="string">"Vegetable"</span>);
+
+                    <span class="keyword">SortedMap</span>&lt;<span class="keyword">String</span>, <span
+                        class="keyword">String</span>&gt; <span class="variable">synchronizedSortedMap</span> = <span
+                        class="keyword">Collections</span>.<span class="method">synchronizedSortedMap</span>(<span
+                        class="variable">sortedMap</span>);
+
+                    <span class="comment">// Iterating over the synchronized sorted map</span>
+                    <span class="keyword">synchronized</span> (<span class="variable">synchronizedSortedMap</span>) {
+                    <span class="keyword">for</span> (<span class="keyword">Map.Entry</span>&lt;<span class="keyword">String</span>,
+                    <span class="keyword">String</span>&gt; <span class="variable">entry</span> : <span
+                        class="variable">synchronizedSortedMap</span>.<span class="method">entrySet</span>()) {
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="variable">entry</span>.<span
+                        class="method">getKey</span>() + <span class="string">": "</span> + <span
+                        class="variable">entry</span>.<span class="method">getValue</span>());
+                    }
+                    }
+                    }
+                    }
+                </div>
+
+                <h4>Summary</h4>
+                <ul>
+                    <li><strong>Synchronized Wrappers:</strong> The <code>Collections.synchronizedXXX</code> methods
+                        provide a way to wrap standard collections with synchronization, making them thread-safe.
+                    </li>
+                    <li><strong>Manual Synchronization:</strong> You need to manually synchronize on these collections
+                        when iterating over them to avoid <code>ConcurrentModificationException</code>.
+                    </li>
+                    <li><strong>Performance:</strong> For higher concurrency and better performance, consider using
+                        concurrent collections from the <code>java.util.concurrent</code> package.
+                    </li>
+                </ul>
+                <p>These synchronized wrappers are suitable for applications where the thread safety of a standard
+                    collection is required but where high concurrency is not a critical concern.</p>
+                <h1><a name="concurrent">2. Concurrent Classes and Interfaces</a></h1>
+                <p>In Java, the <code>java.util.concurrent</code> package provides thread-safe implementations of collection interfaces designed for concurrent use. These classes and interfaces are crucial for multi-threaded programming, as they help manage concurrent access to collections without needing explicit synchronization. Here's an overview of some important concurrent collections:</p>
+
+                <h4>Key Concurrent Classes and Interfaces</h4>
+
+                <h3>ConcurrentHashMap</h3>
+                <ul>
+                    <li><strong>Description:</strong> A thread-safe map implementation with high concurrency. It allows concurrent reads and updates without locking the entire map.</li>
+                    <li><strong>Key Points:</strong>
+                        <ul>
+                            <li>Divides the map into segments to reduce contention.</li>
+                            <li>Provides O(1) time complexity for basic operations (e.g., get, put).</li>
+                            <li>Supports null keys or values (depending on the version of Java).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util.concurrent</span>.<span class="keyword">ConcurrentHashMap</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Map</span>;
+
+                    <span class="keyword">public class</span> <span class="class">ConcurrentHashMapExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">Map</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; <span class="variable">map</span> = <span class="keyword">new</span> <span class="keyword">ConcurrentHashMap</span>&lt;&gt;();
+                    <span class="variable">map</span>.<span class="method">put</span>(<span class="string">"Apple"</span>, <span class="string">"Fruit"</span>);
+                    <span class="variable">map</span>.<span class="method">put</span>(<span class="string">"Carrot"</span>, <span class="string">"Vegetable"</span>);
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Map: "</span> + <span class="variable">map</span>);
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Value for 'Apple': "</span> + <span class="variable">map</span>.<span class="method">get</span>(<span class="string">"Apple"</span>));
+                    }
+                    }
+                </div>
+
+                <h3>ConcurrentSkipListMap</h3>
+                <ul>
+                    <li><strong>Description:</strong> A concurrent navigable map based on a skip list. It provides a sorted map with efficient concurrent operations.</li>
+                    <li><strong>Key Points:</strong>
+                        <ul>
+                            <li>Provides O(log n) time complexity for get, put, and remove operations.</li>
+                            <li>Maintains a sorted order of keys.</li>
+                            <li>Useful for applications requiring concurrent access to a sorted map.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util.concurrent</span>.<span class="keyword">ConcurrentSkipListMap</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Map</span>;
+
+                    <span class="keyword">public class</span> <span class="class">ConcurrentSkipListMapExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">Map</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; <span class="variable">map</span> = <span class="keyword">new</span> <span class="keyword">ConcurrentSkipListMap</span>&lt;&gt;();
+                    <span class="variable">map</span>.<span class="method">put</span>(<span class="string">"Apple"</span>, <span class="string">"Fruit"</span>);
+                    <span class="variable">map</span>.<span class="method">put</span>(<span class="string">"Carrot"</span>, <span class="string">"Vegetable"</span>);
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Map: "</span> + <span class="variable">map</span>);
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Value for 'Apple': "</span> + <span class="variable">map</span>.<span class="method">get</span>(<span class="string">"Apple"</span>));
+                    }
+                    }
+                </div>
+
+                <h3>CopyOnWriteArrayList</h3>
+                <ul>
+                    <li><strong>Description:</strong> A thread-safe variant of ArrayList where modifications (e.g., add or remove) result in a new copy of the array. It is optimized for scenarios with more reads than writes.</li>
+                    <li><strong>Key Points:</strong>
+                        <ul>
+                            <li>Suitable for lists with a high read-to-write ratio.</li>
+                            <li>Provides O(1) time complexity for read operations.</li>
+                            <li>Write operations involve copying the entire underlying array, which can be costly.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util.concurrent</span>.<span class="keyword">CopyOnWriteArrayList</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">List</span>;
+
+                    <span class="keyword">public class</span> <span class="class">CopyOnWriteArrayListExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">List</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">CopyOnWriteArrayList</span>&lt;&gt;();
+                    <span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+                    <span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Element at index 1: "</span> + <span class="variable">list</span>.<span class="method">get</span>(<span class="number">1</span>));
+                    }
+                    }
+                </div>
+
+                <h3>CopyOnWriteArraySet</h3>
+                <ul>
+                    <li><strong>Description:</strong> A thread-safe variant of HashSet backed by a CopyOnWriteArrayList. It is suitable for sets with more reads than writes.</li>
+                    <li><strong>Key Points:</strong>
+                        <ul>
+                            <li>Provides similar characteristics to CopyOnWriteArrayList, but for sets.</li>
+                            <li>Ensures thread-safe access with a copy-on-write strategy.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util.concurrent</span>.<span class="keyword">CopyOnWriteArraySet</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Set</span>;
+
+                    <span class="keyword">public class</span> <span class="class">CopyOnWriteArraySetExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">Set</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">set</span> = <span class="keyword">new</span> <span class="keyword">CopyOnWriteArraySet</span>&lt;&gt;();
+                    <span class="variable">set</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+                    <span class="variable">set</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Set: "</span> + <span class="variable">set</span>);
+                    }
+                    }
+                </div>
+
+                <h4>Summary</h4>
+                <ul>
+                    <li><strong>ConcurrentHashMap:</strong> Provides a thread-safe map with high concurrency and no global locks. Suitable for concurrent access and updates.</li>
+                    <li><strong>ConcurrentSkipListMap:</strong> A thread-safe, sorted map with efficient concurrent operations, useful for scenarios requiring sorted data.</li>
+                    <li><strong>CopyOnWriteArrayList:</strong> A thread-safe list optimized for scenarios with frequent reads and infrequent writes.</li>
+                    <li><strong>CopyOnWriteArraySet:</strong> A thread-safe set optimized for frequent reads with infrequent writes.</li>
+                </ul>
+                <p>These concurrent collections are designed to handle multiple threads accessing and modifying the collection simultaneously, ensuring thread safety without the need for explicit synchronization.</p>
+                <h1><a name="weak">3. Weak Collections</a></h1>
+                <p>In Java, weak collections are used to handle memory management in a way that allows garbage collection to reclaim memory for objects that are no longer strongly referenced. This can be particularly useful for implementing caches or other structures where you want to automatically discard entries when memory is low.</p>
+
+                <h4>Key Concepts</h4>
+                <ol>
+                    <li><strong>Weak References:</strong> Weak references allow objects to be collected by the garbage collector when they are no longer strongly reachable, but before they are removed from memory. This helps avoid memory leaks by allowing unused objects to be cleaned up.</li>
+                    <li><strong>Weak Collections:</strong> These collections use weak references for their keys or values. This means that the entries in these collections are not strongly referenced and can be garbage collected when no longer in use.</li>
+                </ol>
+
+                <h4>Common Weak Collections</h4>
+
+                <h3>WeakHashMap</h3>
+                <ul>
+                    <li><strong>Description:</strong> A map where the keys are weakly referenced. If a key is no longer referenced elsewhere, it can be garbage collected, and the corresponding entry in the map will be automatically removed.</li>
+                    <li><strong>Key Points:</strong>
+                        <ul>
+                            <li>Useful for implementing caches where you want to allow entries to be removed when they are no longer in use.</li>
+                            <li>The values are strongly referenced and will not be garbage collected unless explicitly removed from the map.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Map</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">WeakHashMap</span>;
+
+                    <span class="keyword">public class</span> <span class="class">WeakHashMapExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">Map</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; <span class="variable">map</span> = <span class="keyword">new</span> <span class="keyword">WeakHashMap</span>&lt;&gt;();
+
+                    <span class="keyword">String</span> <span class="variable">key</span> = <span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"Key"</span>); <span class="comment">// Key is a new String object</span>
+                    <span class="keyword">String</span> <span class="variable">value</span> = <span class="string">"Value"</span>;
+
+                    <span class="variable">map</span>.<span class="method">put</span>(<span class="variable">key</span>, <span class="variable">value</span>);
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Map before GC: "</span> + <span class="variable">map</span>);
+
+                    <span class="variable">key</span> = <span class="keyword">null</span>; <span class="comment">// Remove strong reference to the key</span>
+
+                    <span class="keyword">System</span>.<span class="method">gc</span>(); <span class="comment">// Suggest garbage collection</span>
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Map after GC: "</span> + <span class="variable">map</span>);
+                    }
+                    }
+                </div>
+
+                <h3>WeakReference</h3>
+                <ul>
+                    <li><strong>Description:</strong> WeakReference is not a collection itself, but it can be used within collections or standalone. It holds a weak reference to an object, allowing the object to be collected when it is no longer referenced elsewhere.</li>
+                    <li><strong>Key Points:</strong>
+                        <ul>
+                            <li>Can be used to create custom weak collections or caches.</li>
+                            <li>Allows more control over individual weak references to objects.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.lang.ref</span>.<span class="keyword">WeakReference</span>;
+
+                    <span class="keyword">public class</span> <span class="class">WeakReferenceExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">Object</span> <span class="variable">obj</span> = <span class="keyword">new</span> <span class="keyword">Object</span>();
+                    <span class="keyword">WeakReference</span>&lt;<span class="keyword">Object</span>&gt; <span class="variable">weakRef</span> = <span class="keyword">new</span> <span class="keyword">WeakReference</span>&lt;&gt;(<span class="variable">obj</span>);
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Before GC: "</span> + <span class="variable">weakRef</span>.<span class="method">get</span>());
+
+                    <span class="variable">obj</span> = <span class="keyword">null</span>; <span class="comment">// Remove strong reference to the object</span>
+
+                    <span class="keyword">System</span>.<span class="method">gc</span>(); <span class="comment">// Suggest garbage collection</span>
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"After GC: "</span> + <span class="variable">weakRef</span>.<span class="method">get</span>());
+                    }
+                    }
+                </div>
+
+                <h3>WeakIdentityHashMap (Java 9+)</h3>
+                <ul>
+                    <li><strong>Description:</strong> A map where both the keys and values are weakly referenced. It allows entries to be removed when their keys are no longer strongly reachable.</li>
+                    <li><strong>Key Points:</strong>
+                        <ul>
+                            <li>Similar to WeakHashMap, but also applies weak references to values.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Example:</strong></li>
+                </ul>
+                <div class="code">
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Map</span>;
+                    <span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">WeakIdentityHashMap</span>;
+
+                    <span class="keyword">public class</span> <span class="class">WeakIdentityHashMapExample</span> {
+                    <span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+                    <span class="keyword">Map</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; <span class="variable">map</span> = <span class="keyword">new</span> <span class="keyword">WeakIdentityHashMap</span>&lt;&gt;();
+
+                    <span class="keyword">String</span> <span class="variable">key</span> = <span class="keyword">new</span> <span class="keyword">String</span>(<span class="string">"Key"</span>); <span class="comment">// Key is a new String object</span>
+                    <span class="keyword">String</span> <span class="variable">value</span> = <span class="string">"Value"</span>;
+
+                    <span class="variable">map</span>.<span class="method">put</span>(<span class="variable">key</span>, <span class="variable">value</span>);
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Map before GC: "</span> + <span class="variable">map</span>);
+
+                    <span class="variable">key</span> = <span class="keyword">null</span>; <span class="comment">// Remove strong reference to the key</span>
+
+                    <span class="keyword">System</span>.<span class="method">gc</span>(); <span class="comment">// Suggest garbage collection</span>
+
+                    <span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Map after GC: "</span> + <span class="variable">map</span>);
+                    }
+                    }
+                </div>
+
+                <h4>Summary</h4>
+                <ul>
+                    <li><strong>WeakHashMap:</strong> Allows garbage collection of keys when they are no longer in use, while values are strongly referenced.</li>
+                    <li><strong>WeakReference:</strong> Provides a weak reference to an object, which can be used for custom weak reference management.</li>
+                    <li><strong>WeakIdentityHashMap:</strong> Similar to WeakHashMap but applies weak references to both keys and values.</li>
+                </ul>
+                <p>These weak collections are useful for implementing memory-sensitive caches and other scenarios where you want to avoid memory leaks and allow objects to be automatically removed when they are no longer needed.</p>
 
             </article>
         </div>

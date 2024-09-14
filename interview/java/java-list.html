@@ -173,8 +173,740 @@
 				</nav>
 				<article>
 					<h4>Java List Interview Questions</h4>
-					<div class="card-body">
+					<div>
+						<details id="details1" onclick="closeOtherDetails('details1')">
+							<summary>1. What is the difference between List and Set in Java?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> A <code>List</code> allows duplicate elements and maintains the order of insertion, while a <code>Set</code> does not allow duplicate elements and does not guarantee any specific order.</p>
+							</div>
+						</details></br>
 
+						<details id="details2" onclick="closeOtherDetails('details2')">
+							<summary>2. What are the main implementations of the List interface in Java?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> The main implementations of the <code>List</code> interface are <code>ArrayList</code>, <code>LinkedList</code>, and <code>Vector</code>.</p>
+							</div>
+						</details></br>
+
+						<details id="details3" onclick="closeOtherDetails('details3')">
+							<summary>3. What is the difference between ArrayList and LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong></p>
+								<ul>
+									<li><strong>ArrayList:</strong> Uses a dynamic array to store elements. Provides fast random access and is better for storing and accessing data. However, adding and removing elements can be slow as it requires shifting elements.</li>
+									<li><strong>LinkedList:</strong> Uses a doubly linked list to store elements. Provides faster insertion and deletion but slower access time compared to <code>ArrayList</code> because it requires traversing the list.</li>
+								</ul>
+							</div>
+						</details></br>
+
+						<details id="details4" onclick="closeOtherDetails('details4')">
+							<summary>4. What is the difference between Vector and ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong></p>
+								<ul>
+									<li><strong>Vector:</strong> Is synchronized, meaning it is thread-safe. It is generally slower than <code>ArrayList</code> due to synchronization overhead. It has been largely replaced by <code>ArrayList</code> in new code.</li>
+									<li><strong>ArrayList:</strong> Is not synchronized, making it faster than <code>Vector</code> for non-thread-safe scenarios.</li>
+								</ul>
+							</div>
+						</details></br>
+
+						<details id="details5" onclick="closeOtherDetails('details5')">
+							<summary>5. How do you create an ArrayList in Java?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can create an <code>ArrayList</code> by using the following code:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">ArrayListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details6" onclick="closeOtherDetails('details6')">
+							<summary>6. How do you create a LinkedList in Java?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can create a <code>LinkedList</code> by using the following code:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">LinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details7" onclick="closeOtherDetails('details7')">
+							<summary>7. How do you create a Vector in Java?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can create a <code>Vector</code> by using the following code:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Vector</span>;
+
+									<span class="keyword">public class</span> <span class="class">VectorExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">Vector</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">vector</span> = <span class="keyword">new</span> <span class="keyword">Vector</span>&lt;&gt;();
+									<span class="variable">vector</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">vector</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Vector: "</span> + <span class="variable">vector</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details8" onclick="closeOtherDetails('details8')">
+							<summary>8. How does ArrayList handle resizing?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> <code>ArrayList</code> automatically resizes itself when elements are added beyond its initial capacity. It increases the size of the underlying array by 50% each time it needs more space.</p>
+							</div>
+						</details></br>
+
+						<details id="details9" onclick="closeOtherDetails('details9')">
+							<summary>9. How does LinkedList handle insertion and deletion?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> <code>LinkedList</code> handles insertion and deletion efficiently by adjusting the links between nodes. This allows it to perform these operations in constant time, given a reference to the node.</p>
+							</div>
+						</details></br>
+
+						<details id="details10" onclick="closeOtherDetails('details10')">
+							<summary>10. What is the default initial capacity of a Vector?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> The default initial capacity of a <code>Vector</code> is 10. If more elements are added, the <code>Vector</code> will grow as needed, typically doubling its size.</p>
+							</div>
+						</details></br>
+
+						<details id="details11" onclick="closeOtherDetails('details11')">
+							<summary>11. How can you synchronize an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can synchronize an <code>ArrayList</code> by using <code>Collections.synchronizedList</code>:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+									<span class="keyword">import</span> <span class="keyword">java.util.Collections</span>;
+
+									<span class="keyword">public class</span> <span class="class">SynchronizedArrayListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="keyword">List</span> <span class="variable">synchronizedList</span> = <span class="keyword">Collections</span>.<span class="method">synchronizedList</span>(<span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details12" onclick="closeOtherDetails('details12')">
+							<summary>12. How does LinkedList implement the Queue interface?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> <code>LinkedList</code> implements the <code>Queue</code> interface by providing methods such as <code>offer</code>, <code>poll</code>, and <code>peek</code>, which are used for queue operations.</p>
+							</div>
+						</details></br>
+
+						<details id="details13" onclick="closeOtherDetails('details13')">
+							<summary>13. Can Vector be used in a multi-threaded environment?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> Yes, <code>Vector</code> is synchronized and can be safely used in a multi-threaded environment. However, for better performance, consider using <code>Collections.synchronizedList</code> with <code>ArrayList</code> or other concurrent collections.</p>
+							</div>
+						</details></br>
+
+						<details id="details14" onclick="closeOtherDetails('details14')">
+							<summary>14. How do you convert a LinkedList to an Array?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can convert a <code>LinkedList</code> to an array using the <code>toArray</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">LinkedListToArrayExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">String</span>[] <span class="variable">array</span> = <span class="variable">list</span>.<span class="method">toArray</span>(<span class="keyword">new</span> <span class="keyword">String</span>[<span class="variable">list</span>.<span class="method">size</span>()]);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Array: "</span> + <span class="variable">array</span>[0] + <span class="string">", "</span> + <span class="variable">array</span>[1]);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details15" onclick="closeOtherDetails('details15')">
+							<summary>15. How do you find the index of an element in an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can find the index of an element in an <code>ArrayList</code> using the <code>indexOf</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">IndexOfExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">int</span> <span class="variable">index</span> = <span class="variable">list</span>.<span class="method">indexOf</span>(<span class="string">"Banana"</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Index of 'Banana': "</span> + <span class="variable">index</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details16" onclick="closeOtherDetails('details16')">
+							<summary>16. How do you remove duplicates from an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can remove duplicates from an <code>ArrayList</code> by using a <code>Set</code>:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+									<span class="keyword">import</span> <span class="keyword">java.util.HashSet</span>;
+									<span class="keyword">import</span> <span class="keyword">java.util.Set</span>;
+
+									<span class="keyword">public class</span> <span class="class">RemoveDuplicatesExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+
+									<span class="keyword">Set</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">set</span> = <span class="keyword">new</span> <span class="keyword">HashSet</span>&lt;&gt;(<span class="variable">list</span>);
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">uniqueList</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;(<span class="variable">set</span>);
+
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List without duplicates: "</span> + <span class="variable">uniqueList</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details17" onclick="closeOtherDetails('details17')">
+							<summary>17. What are the advantages of using LinkedList over ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong></p>
+								<ul>
+									<li><strong>Efficient Insertions/Deletions:</strong> <code>LinkedList</code> provides constant time complexity for insertion and deletion at both ends of the list.</li>
+									<li><strong>No Resizing Overhead:</strong> <code>LinkedList</code> does not require resizing like <code>ArrayList</code> does.</li>
+								</ul>
+							</div>
+						</details></br>
+
+						<details id="details18" onclick="closeOtherDetails('details18')">
+							<summary>18. What are the differences between the add() and addAll() methods in ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong></p>
+								<ul>
+									<li><strong>add(E e):</strong> Adds a single element to the end of the list.</li>
+									<li><strong>addAll(Collection<? extends E> c):</strong> Adds all elements from the specified collection to the end of the list.</li>
+								</ul>
+							</div>
+						</details></br>
+
+						<details id="details19" onclick="closeOtherDetails('details19')">
+							<summary>19. How do you get a sublist from an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can get a sublist from an <code>ArrayList</code> using the <code>subList</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">SubListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Cherry"</span>);
+
+									<span class="keyword">List</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">subList</span> = <span class="variable">list</span>.<span class="method">subList</span>(<span class="number">1</span>, <span class="number">3</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"SubList: "</span> + <span class="variable">subList</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details20" onclick="closeOtherDetails('details20')">
+							<summary>20. How do you get the first and last elements of a LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can get the first and last elements of a <code>LinkedList</code> using the <code>getFirst</code> and <code>getLast</code> methods:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">LinkedListFirstLastExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">String</span> <span class="variable">first</span> = <span class="variable">list</span>.<span class="method">getFirst</span>();
+									<span class="keyword">String</span> <span class="variable">last</span> = <span class="variable">list</span>.<span class="method">getLast</span>();
+
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"First: "</span> + <span class="variable">first</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Last: "</span> + <span class="variable">last</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details21" onclick="closeOtherDetails('details21')">
+							<summary>21. How do you check if an ArrayList is empty?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can check if an <code>ArrayList</code> is empty using the <code>isEmpty</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">IsEmptyExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+
+									<span class="keyword">boolean</span> <span class="variable">empty</span> = <span class="variable">list</span>.<span class="method">isEmpty</span>();
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Is list empty? "</span> + <span class="variable">empty</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details22" onclick="closeOtherDetails('details22')">
+							<summary>22. How do you iterate through elements of a Vector?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can iterate through elements of a <code>Vector</code> using an iterator:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">Vector</span>;
+									<span class="keyword">import</span> <span class="keyword">java.util.Iterator</span>;
+
+									<span class="keyword">public class</span> <span class="class">VectorIterationExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">Vector</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">vector</span> = <span class="keyword">new</span> <span class="keyword">Vector</span>&lt;&gt;();
+									<span class="variable">vector</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">vector</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">Iterator</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">iterator</span> = <span class="variable">vector</span>.<span class="method">iterator</span>();
+									<span class="keyword">while</span> (<span class="variable">iterator</span>.<span class="method">hasNext</span>()) {
+									<span class="keyword">String</span> <span class="variable">element</span> = <span class="variable">iterator</span>.<span class="method">next</span>();
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="variable">element</span>);
+									}
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details23" onclick="closeOtherDetails('details23')">
+							<summary>23. How do you add an element at a specific position in an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can add an element at a specific position in an <code>ArrayList</code> using the <code>add(int index, E element)</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">AddAtPositionExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="number">1</span>, <span class="string">"Orange"</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details24" onclick="closeOtherDetails('details24')">
+							<summary>24. How do you replace an element in an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can replace an element in an <code>ArrayList</code> using the <code>set(int index, E element)</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">ReplaceElementExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="variable">list</span>.<span class="method">set</span>(<span class="number">1</span>, <span class="string">"Orange"</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details25" onclick="closeOtherDetails('details25')">
+							<summary>25. How do you check if a LinkedList contains a specific element?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can check if a <code>LinkedList</code> contains a specific element using the <code>contains</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">ContainsElementExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">boolean</span> <span class="variable">contains</span> = <span class="variable">list</span>.<span class="method">contains</span>(<span class="string">"Banana"</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Contains 'Banana'? "</span> + <span class="variable">contains</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details26" onclick="closeOtherDetails('details26')">
+							<summary>26. How do you remove an element from a specific position in an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can remove an element from a specific position in an <code>ArrayList</code> using the <code>remove(int index)</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">RemoveAtPositionExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Cherry"</span>);
+
+									<span class="variable">list</span>.<span class="method">remove</span>(<span class="number">1</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details27" onclick="closeOtherDetails('details27')">
+							<summary>27. How do you check if an element exists in an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can check if an element exists in an <code>ArrayList</code> using the <code>contains</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">ContainsElementArrayListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">boolean</span> <span class="variable">contains</span> = <span class="variable">list</span>.<span class="method">contains</span>(<span class="string">"Apple"</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Contains 'Apple'? "</span> + <span class="variable">contains</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details28" onclick="closeOtherDetails('details28')">
+							<summary>28. How do you clear all elements from an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can clear all elements from an <code>ArrayList</code> using the <code>clear</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">ClearArrayListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="variable">list</span>.<span class="method">clear</span>();
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details29" onclick="closeOtherDetails('details29')">
+							<summary>29. How do you sort an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can sort an <code>ArrayList</code> using the <code>Collections.sort(List<T> list)</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+									<span class="keyword">import</span> <span class="keyword">java.util.Collections</span>;
+
+									<span class="keyword">public class</span> <span class="class">SortArrayListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+
+									<span class="keyword">Collections</span>.<span class="method">sort</span>(<span class="variable">list</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Sorted List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details30" onclick="closeOtherDetails('details30')">
+							<summary>30. How do you convert a LinkedList to an ArrayList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can convert a <code>LinkedList</code> to an <code>ArrayList</code> using the constructor of <code>ArrayList</code>:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+									<span class="keyword">import</span> <span class="keyword">java.util.ArrayList</span>;
+
+									<span class="keyword">public class</span> <span class="class">LinkedListToArrayListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">linkedList</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">linkedList</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">linkedList</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">arrayList</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;(<span class="variable">linkedList</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"ArrayList: "</span> + <span class="variable">arrayList</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details31" onclick="closeOtherDetails('details31')">
+							<summary>31. How do you add elements to a LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can add elements to a <code>LinkedList</code> using the <code>add</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">AddElementsLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Cherry"</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details32" onclick="closeOtherDetails('details32')">
+							<summary>32. How do you remove elements from a LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can remove elements from a <code>LinkedList</code> using the <code>remove</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">RemoveElementsLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Cherry"</span>);
+
+									<span class="variable">list</span>.<span class="method">remove</span>(<span class="string">"Banana"</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details33" onclick="closeOtherDetails('details33')">
+							<summary>33. How do you get the size of a LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can get the size of a <code>LinkedList</code> using the <code>size</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">SizeLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">int</span> <span class="variable">size</span> = <span class="variable">list</span>.<span class="method">size</span>();
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Size of List: "</span> + <span class="variable">size</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details34" onclick="closeOtherDetails('details34')">
+							<summary>34. How do you get the first and last elements of a LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can get the first and last elements of a <code>LinkedList</code> using the <code>getFirst</code> and <code>getLast</code> methods:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">FirstLastLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">String</span> <span class="variable">first</span> = <span class="variable">list</span>.<span class="method">getFirst</span>();
+									<span class="keyword">String</span> <span class="variable">last</span> = <span class="variable">list</span>.<span class="method">getLast</span>();
+
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"First Element: "</span> + <span class="variable">first</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Last Element: "</span> + <span class="variable">last</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details35" onclick="closeOtherDetails('details35')">
+							<summary>35. How do you convert an ArrayList to a LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can convert an <code>ArrayList</code> to a <code>LinkedList</code> using the constructor of <code>LinkedList</code>:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">ArrayList</span>;
+									<span class="keyword">import</span> <span class="keyword">java.util.LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">ArrayListToLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">ArrayList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">arrayList</span> = <span class="keyword">new</span> <span class="keyword">ArrayList</span>&lt;&gt;();
+									<span class="variable">arrayList</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">arrayList</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">linkedList</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;(<span class="variable">arrayList</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"LinkedList: "</span> + <span class="variable">linkedList</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details36" onclick="closeOtherDetails('details36')">
+							<summary>36. How do you check if a LinkedList contains an element?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can check if a <code>LinkedList</code> contains an element using the <code>contains</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">ContainsElementLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">boolean</span> <span class="variable">contains</span> = <span class="variable">list</span>.<span class="method">contains</span>(<span class="string">"Apple"</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Contains 'Apple'? "</span> + <span class="variable">contains</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details37" onclick="closeOtherDetails('details37')">
+							<summary>37. How do you remove all elements from a LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can remove all elements from a <code>LinkedList</code> using the <code>clear</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">ClearLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="variable">list</span>.<span class="method">clear</span>();
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details38" onclick="closeOtherDetails('details38')">
+							<summary>38. How do you sort a LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can sort a <code>LinkedList</code> using the <code>Collections.sort(List<T> list)</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+									<span class="keyword">import</span> <span class="keyword">java.util.Collections</span>;
+
+									<span class="keyword">public class</span> <span class="class">SortLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+
+									<span class="keyword">Collections</span>.<span class="method">sort</span>(<span class="variable">list</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Sorted List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details39" onclick="closeOtherDetails('details39')">
+							<summary>39. How do you convert a LinkedList to an Array?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can convert a <code>LinkedList</code> to an array using the <code>toArray</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">LinkedListToArrayExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="keyword">String</span>[] <span class="variable">array</span> = <span class="variable">list</span>.<span class="method">toArray</span>(<span class="keyword">new</span> <span class="keyword">String</span>[0]);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Array: "</span> + <span class="variable">array</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details40" onclick="closeOtherDetails('details40')">
+							<summary>40. How do you check if a LinkedList is empty?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can check if a <code>LinkedList</code> is empty using the <code>isEmpty</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">IsEmptyLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+
+									<span class="keyword">boolean</span> <span class="variable">isEmpty</span> = <span class="variable">list</span>.<span class="method">isEmpty</span>();
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"Is List Empty? "</span> + <span class="variable">isEmpty</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
+
+						<details id="details41" onclick="closeOtherDetails('details41')">
+							<summary>41. How do you replace an element in a LinkedList?</summary>
+							<div class="toggle-content">
+								<p><strong>Answer:</strong> You can replace an element in a <code>LinkedList</code> using the <code>set</code> method:</p>
+								<div class="code">
+									<span class="keyword">import</span> <span class="keyword">java.util</span>.<span class="keyword">LinkedList</span>;
+
+									<span class="keyword">public class</span> <span class="class">ReplaceElementLinkedListExample</span> {
+									<span class="keyword">public static void</span> <span class="keyword">main</span>(<span class="keyword">String</span>[] <span class="variable">args</span>) {
+									<span class="keyword">LinkedList</span>&lt;<span class="keyword">String</span>&gt; <span class="variable">list</span> = <span class="keyword">new</span> <span class="keyword">LinkedList</span>&lt;&gt;();
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Apple"</span>);
+									<span class="variable">list</span>.<span class="method">add</span>(<span class="string">"Banana"</span>);
+
+									<span class="variable">list</span>.<span class="method">set</span>(<span class="number">1</span>, <span class="string">"Cherry"</span>);
+									<span class="keyword">System.out</span>.<span class="method">println</span>(<span class="string">"List: "</span> + <span class="variable">list</span>);
+									}
+									}
+								</div>
+							</div>
+						</details></br>
 					</div>
 				</article>
 			</div>

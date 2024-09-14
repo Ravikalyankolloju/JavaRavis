@@ -127,8 +127,6 @@
                         <li class="nav-item"><a class="nav-link"
                                                 href="../springboot/interview-3.html">SpringBoot Interview-3</a>
                         <li class="nav-item"><a class="nav-link"
-                                                href="../springboot/jpa.html">JPA Interview</a>
-                        <li class="nav-item"><a class="nav-link"
                                                 href="../springboot/batch.html">Batch Interview</a>
                         <li class="nav-item"><a class="nav-link"
                                                 href="../springboot/security.html">Security Interview</a>
@@ -164,14 +162,14 @@
             </nav>
             <article>
                 <h1>Spring Boot Logging and Testing Interview Questions and Answers</h1>
-                <h1>1. Spring Boot Logging</h1>
-                <h2>• What is logging in Spring Boot?</h2>
+                <h3>1. Spring Boot Logging</h3>
+                <h4>1. What is logging in Spring Boot?</h4>
                 <p><strong>Answer:</strong> Logging in Spring Boot refers to the process of recording application events and errors to help with debugging and monitoring. Spring Boot provides built-in support for various logging frameworks, including Logback, Log4j2, and Java Util Logging.</p>
 
-                <h2>• What is the default logging framework used by Spring Boot?</h2>
+                <h4>2. What is the default logging framework used by Spring Boot?</h4>
                 <p><strong>Answer:</strong> Spring Boot uses Logback as the default logging framework. It is included as a dependency in Spring Boot’s starter modules.</p>
 
-                <h2>• How can you change the logging level in Spring Boot?</h2>
+                <h4>3. How can you change the logging level in Spring Boot?</h4>
                 <p><strong>Answer:</strong> You can change the logging level in Spring Boot by configuring the application.properties or application.yml file. For example:</p>
                 <div class="code">
                     <span class="annotation">logging.level.root</span>=<span class="keyword">DEBUG</span><br>
@@ -185,7 +183,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">org.springframework.web:</span> <span class="keyword">INFO</span>
                 </div>
 
-                <h2>• How do you configure a custom log file location in Spring Boot?</h2>
+                <h4>4. How do you configure a custom log file location in Spring Boot?</h4>
                 <p><strong>Answer:</strong> You can configure a custom log file location using the logging.file or logging.path properties in application.properties or application.yml:</p>
                 <div class="code">
                     <span class="annotation">logging.file.name</span>=<span class="string">/path/to/myapp.log</span>
@@ -197,7 +195,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">name:</span> <span class="string">/path/to/myapp.log</span>
                 </div>
 
-                <h2>• How can you set up asynchronous logging in Spring Boot?</h2>
+                <h4>5. How can you set up asynchronous logging in Spring Boot?</h4>
                 <p><strong>Answer:</strong> To set up asynchronous logging with Logback, you can configure it in the logback-spring.xml file by adding an AsyncAppender. Example:</p>
                 <div class="code">
                     <span class="annotation">&lt;appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender"&gt;</span><br>
@@ -208,7 +206,7 @@
                     <span class="annotation">&lt;/logger&gt;</span>
                 </div>
 
-                <h2>• How can you use a different logging framework other than Logback in Spring Boot?</h2>
+                <h4>6. How can you use a different logging framework other than Logback in Spring Boot?</h4>
                 <p><strong>Answer:</strong> To use a different logging framework like Log4j2, exclude the default Logback dependency and include the Log4j2 starter in pom.xml:</p>
                 <div class="code">
                     <span class="annotation">&lt;dependency&gt;</span><br>
@@ -218,7 +216,7 @@
                 </div>
                 <p>Also, provide a log4j2.xml configuration file.</p>
 
-                <h2>• How can you configure the logging format in Spring Boot?</h2>
+                <h4>7. How can you configure the logging format in Spring Boot?</h4>
                 <p><strong>Answer:</strong> You can configure the logging format using application.properties or application.yml:</p>
                 <div class="code">
                     <span class="annotation">logging.pattern.console</span>=<span class="string">%d{yyyy-MM-dd HH:mm:ss} - %msg%n</span><br>
@@ -232,7 +230,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">file:</span> <span class="string">"%d{yyyy-MM-dd HH:mm:ss} - %msg%n"</span>
                 </div>
 
-                <h2>• How do you enable logging for a specific package or class in Spring Boot?</h2>
+                <h4>8. How do you enable logging for a specific package or class in Spring Boot?</h4>
                 <p><strong>Answer:</strong> You can set the logging level for specific packages or classes in application.properties or application.yml:</p>
                 <div class="code">
                     <span class="annotation">logging.level.com.example.myapp</span>=<span class="keyword">TRACE</span>
@@ -244,7 +242,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">com.example.myapp:</span> <span class="keyword">TRACE</span>
                 </div>
 
-                <h2>• How do you log exceptions in Spring Boot?</h2>
+                <h4>9. How do you log exceptions in Spring Boot?</h4>
                 <p><strong>Answer:</strong> You can log exceptions using the logger’s error method. For example:</p>
                 <div class="code">
                     <span class="keyword">private</span> <span class="keyword">static final</span> <span class="class-name">Logger</span> <span class="variable-name">logger</span> = <span class="class-name">LoggerFactory</span>.<span class="method-name">getLogger</span>(<span class="class-name">MyClass.class</span>);<br><br>
@@ -255,7 +253,7 @@
                     }
                 </div>
 
-                <h2>• How can you log HTTP request and response details in Spring Boot?</h2>
+                <h4>10. How can you log HTTP request and response details in Spring Boot?</h4>
                 <p><strong>Answer:</strong> To log HTTP requests and responses, you can use Spring Boot’s CommonsRequestLoggingFilter. Configure it in a configuration class:</p>
                 <div class="code">
                     <span class="annotation">@Bean</span><br>
@@ -269,7 +267,7 @@
                     }
                 </div>
 
-                <h2>• How do you configure logging for a Spring Boot application using YAML?</h2>
+                <h4>11. How do you configure logging for a Spring Boot application using YAML?</h4>
                 <p><strong>Answer:</strong> Logging configuration in application.yml:</p>
                 <div class="code">
                     <span class="annotation">logging:</span><br>
@@ -282,10 +280,10 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">console:</span> <span class="string">"%d{yyyy-MM-dd HH:mm:ss} - %msg%n"</span>
                 </div>
 
-                <h2>• What is the purpose of the logging.level property in Spring Boot?</h2>
+                <h4>12. What is the purpose of the logging.level property in Spring Boot?</h4>
                 <p><strong>Answer:</strong> The logging.level property is used to set the logging level for different packages or classes. It controls the granularity of log messages and can be set to levels such as TRACE, DEBUG, INFO, WARN, or ERROR.</p>
 
-                <h2>• How can you log SQL queries in Spring Boot?</h2>
+                <h4>13. How can you log SQL queries in Spring Boot?</h4>
                 <p><strong>Answer:</strong> To log SQL queries, configure the logging level for the org.hibernate.SQL logger:</p>
                 <div class="code">
                     <span class="annotation">logging.level.org.hibernate.SQL</span>=<span class="keyword">DEBUG</span>
@@ -295,7 +293,7 @@
                     <span class="annotation">logging.level.org.hibernate.type.descriptor.sql.BasicBinder</span>=<span class="keyword">TRACE</span>
                 </div>
 
-                <h2>• How do you customize the log file rotation in Spring Boot?</h2>
+                <h4>14. How do you customize the log file rotation in Spring Boot?</h4>
                 <p><strong>Answer:</strong> Customize log file rotation using Logback’s logback-spring.xml configuration file. Example:</p>
                 <div class="code">
                     <span class="annotation">&lt;appender name="FILE" class="ch.qos.logback.core.FileAppender"&gt;</span><br>
@@ -311,19 +309,19 @@
                     <span class="annotation">&lt;/appender&gt;</span>
                 </div>
 
-                <h2>• How do you disable logging in Spring Boot?</h2>
+                <h4>15. How do you disable logging in Spring Boot?</h4>
                 <p><strong>Answer:</strong> To disable logging, set the logging level to OFF for the root logger in application.properties:</p>
                 <div class="code">
                     <span class="annotation">logging.level.root</span>=<span class="keyword">OFF</span>
                 </div>
 
-                <h2>• How do you handle logging configuration in different environments (e.g., development, production)?</h2>
+                <h4>16. How do you handle logging configuration in different environments (e.g., development, production)?</h4>
                 <p><strong>Answer:</strong> Use profiles to handle logging configurations for different environments. Define environment-specific properties files like application-dev.properties or application-prod.properties and configure logging levels and file locations accordingly.</p>
 
-                <h2>• What is the use of LoggingAspect in Spring Boot?</h2>
+                <h4>17. What is the use of LoggingAspect in Spring Boot?</h4>
                 <p><strong>Answer:</strong> LoggingAspect is used in Aspect-Oriented Programming (AOP) to create cross-cutting concerns for logging method execution details. It helps in logging method entry, exit, and exceptions in a centralized manner.</p>
 
-                <h2>• How do you log the execution time of a method in Spring Boot?</h2>
+                <h4>18. How do you log the execution time of a method in Spring Boot?</h4>
                 <p><strong>Answer:</strong> Use a custom <span class="annotation">@Around</span> advice with Spring AOP to log the execution time of methods:</p>
                 <div class="code">
                     <span class="annotation">@Aspect</span><br>
@@ -341,23 +339,23 @@
                     }
                 </div>
 
-                <h2>• How do you integrate logging with monitoring tools like ELK (Elasticsearch, Logstash, Kibana)?</h2>
+                <h4>19. How do you integrate logging with monitoring tools like ELK (Elasticsearch, Logstash, Kibana)?</h4>
                 <p><strong>Answer:</strong> To integrate logging with ELK, configure your logging framework to output logs in a format that can be ingested by Logstash (e.g., JSON). Then use Logstash to send logs to Elasticsearch and visualize them in Kibana.</p>
 
-                <h2>• What is the difference between info, debug, and trace log levels in Spring Boot?</h2>
+                <h4>20. What is the difference between info, debug, and trace log levels in Spring Boot?</h4>
                 <p><strong>Answer:</strong></p>
                 <ul>
                     <li><strong>TRACE:</strong> Provides the most detailed logging information, useful for debugging complex issues.</li>
                     <li><strong>DEBUG:</strong> Logs detailed information for development and debugging, less verbose than TRACE.</li>
                     <li><strong>INFO:</strong> Logs general information about the application’s progress and state, used for tracking normal operation.</li>
                 </ul>
-                <h1>2. Spring Boot Testing</h1>
-                <h2>1. What is Spring Boot testing?</h2>
+                <h3>2. Spring Boot Testing</h3>
+                <h4>1. What is Spring Boot testing?</h4>
                 <p><strong>Answer:</strong> Spring Boot testing refers to the process of verifying that Spring Boot
                     applications work as expected. It involves writing and running tests to check the functionality,
                     performance, and reliability of the application using various testing frameworks and tools.</p>
 
-                <h2>2. What are the common types of tests in Spring Boot?</h2>
+                <h4>2. What are the common types of tests in Spring Boot?</h4>
                 <p><strong>Answer:</strong> Common types of tests in Spring Boot include:</p>
                 <ul>
                     <li><strong>Unit Tests:</strong> Test individual components or methods in isolation.</li>
@@ -369,13 +367,13 @@
                     </li>
                 </ul>
 
-                <h2>3. Which annotation is used to write unit tests in Spring Boot?</h2>
+                <h4>3. Which annotation is used to write unit tests in Spring Boot?</h4>
                 <p><strong>Answer:</strong> The <span class="annotation">@SpringBootTest</span> annotation is commonly
                     used for integration tests, while <span class="annotation">@Test</span> from JUnit is used for
                     writing unit tests. For unit tests, <span class="annotation">@Mock</span> and <span
                             class="annotation">@InjectMocks</span> from Mockito are also frequently used.</p>
 
-                <h2>4. How do you write a basic unit test for a Spring Boot service?</h2>
+                <h4>4. How do you write a basic unit test for a Spring Boot service?</h4>
                 <p><strong>Answer:</strong> Here’s an example of a basic unit test for a Spring Boot service:</p>
                 <div class="code">
                     <span class="keyword">@RunWith</span>(<span class="class-name">MockitoJUnitRunner.class</span>)
@@ -409,12 +407,12 @@
                     }
                 </div>
 
-                <h2>5. What is @SpringBootTest used for?</h2>
+                <h4>5. What is @SpringBootTest used for?</h4>
                 <p><strong>Answer:</strong> The <span class="annotation">@SpringBootTest</span> annotation is used for
                     integration tests in Spring Boot. It loads the full application context and allows tests to run with
                     Spring Boot’s configuration and components.</p>
 
-                <h2>6. How do you use @MockBean in Spring Boot tests?</h2>
+                <h4>6. How do you use @MockBean in Spring Boot tests?</h4>
                 <p><strong>Answer:</strong> <span class="annotation">@MockBean</span> is used to create and inject mock
                     instances into the application context. It is useful for mocking dependencies in integration tests.
                     Example:</p>
@@ -450,7 +448,7 @@
                     }
                 </div>
 
-                <h2>7. How do you test a REST controller in Spring Boot?</h2>
+                <h4>7. How do you test a REST controller in Spring Boot?</h4>
                 <p><strong>Answer:</strong> To test a REST controller, you can use <span
                         class="annotation">@WebMvcTest</span> and <span class="class-name">MockMvc</span>. Example:</p>
                 <div class="code">
@@ -475,12 +473,12 @@
                     }
                 </div>
 
-                <h2>8. What is the difference between @Mock and @MockBean?</h2>
+                <h4>8. What is the difference between @Mock and @MockBean?</h4>
                 <p><strong>Answer:</strong> <span class="annotation">@Mock</span> is used in unit tests to create mocks
                     with Mockito, whereas <span class="annotation">@MockBean</span> is used in integration tests to
                     replace beans in the application context with mocks.</p>
 
-                <h2>9. How do you perform database testing with Spring Boot?</h2>
+                <h4>9. How do you perform database testing with Spring Boot?</h4>
                 <p><strong>Answer:</strong> For database testing, you can use <span
                         class="annotation">@DataJpaTest</span>, which sets up an in-memory database and configures
                     Spring Data JPA repositories. Example:</p>
@@ -512,7 +510,7 @@
                     }
                 </div>
 
-                <h2>10. How do you use @Transactional in tests?</h2>
+                <h4>10. How do you use @Transactional in tests?</h4>
                 <p><strong>Answer:</strong> The <span class="annotation">@Transactional</span> annotation is used in
                     tests to roll back changes made during the test. This ensures that the test does not affect the
                     database state. Example:</p>
@@ -534,12 +532,12 @@
                     }
                 </div>
 
-                <h2>11. What is @TestConfiguration used for?</h2>
+                <h4>11. What is @TestConfiguration used for?</h4>
                 <p><strong>Answer:</strong> <span class="annotation">@TestConfiguration</span> is used to define
                     additional beans or configurations specific to testing. It allows customization of the application
                     context for test scenarios.</p>
 
-                <h2>12. How can you mock HTTP calls in tests?</h2>
+                <h4>12. How can you mock HTTP calls in tests?</h4>
                 <p><strong>Answer:</strong> You can use <span class="class-name">MockRestServiceServer</span> to mock
                     HTTP calls in tests involving <span class="class-name">RestTemplate</span>. Example:</p>
                 <div class="code">
@@ -576,12 +574,12 @@
                     }
                 </div>
 
-                <h2>13. How do you test Spring Boot’s scheduled tasks?</h2>
+                <h4>13. How do you test Spring Boot’s scheduled tasks?</h4>
                 <p><strong>Answer:</strong> Use <span class="annotation">@EnableScheduling</span> and mock scheduled
                     methods using <span class="annotation">@MockBean</span> or test them manually by invoking the
                     methods directly in test cases.</p>
 
-                <h2>14. How do you test exception handling in Spring Boot?</h2>
+                <h4>14. How do you test exception handling in Spring Boot?</h4>
                 <p><strong>Answer:</strong> To test exception handling, you can use <span
                         class="class-name">MockMvc</span> to perform requests that trigger exceptions and assert the
                     responses. Example:</p>
@@ -607,18 +605,18 @@
                     }
                 </div>
 
-                <h2>15. What is @WebFluxTest used for?</h2>
+                <h4>15. What is @WebFluxTest used for?</h4>
                 <p><strong>Answer:</strong> <span class="annotation">@WebFluxTest</span> is used for testing Spring
                     WebFlux controllers and components. It sets up a minimal web environment and provides support for
                     testing reactive web applications.</p>
 
-                <h2>16. How do you test Spring Boot’s custom annotations?</h2>
+                <h4>16. How do you test Spring Boot’s custom annotations?</h4>
                 <p><strong>Answer:</strong> You can test custom annotations by creating unit tests for the components
                     that use them. For validation annotations, use <span class="annotation">@Valid</span> or <span
                             class="annotation">@Validated</span> with <span class="class-name">MockMvc</span> to test
                     their behavior.</p>
 
-                <h2>17. How can you assert the content of JSON responses in tests?</h2>
+                <h4>17. How can you assert the content of JSON responses in tests?</h4>
                 <p><strong>Answer:</strong> Use <span class="class-name">MockMvc</span> with <span class="method-name">andExpect</span>(<span
                         class="class-name">content</span>().<span class="method-name">json</span>(<span class="string">expectedJson</span>))
                     to assert the content of JSON responses. Example:</p>
@@ -631,12 +629,12 @@
                         class="method-name">json</span>(<span class="string">"{\"key\":\"value\"}"</span>));
                 </div>
 
-                <h2>18. What is @TestExecutionListeners and how is it used?</h2>
+                <h4>18. What is @TestExecutionListeners and how is it used?</h4>
                 <p><strong>Answer:</strong> <span class="annotation">@TestExecutionListeners</span> is used to specify
                     custom listeners for test execution phases. It allows adding additional behaviors to test execution,
                     such as setup and teardown operations.</p>
 
-                <h2>19. How do you run tests with different profiles in Spring Boot?</h2>
+                <h4>19. How do you run tests with different profiles in Spring Boot?</h4>
                 <p><strong>Answer:</strong> Use <span class="annotation">@ActiveProfiles</span> to specify the
                     profile(s) to use during test execution. Example:</p>
                 <div class="code">
@@ -648,7 +646,7 @@
                     }
                 </div>
 
-                <h2>20. How do you handle test data initialization in Spring Boot tests?</h2>
+                <h4>20. How do you handle test data initialization in Spring Boot tests?</h4>
                 <p><strong>Answer:</strong> Use <span class="annotation">@Sql</span> or <span class="annotation">@SqlGroup</span>
                     annotations to execute SQL scripts for data initialization before running tests. You can also use
                     <span class="annotation">@DataJpaTest</span> with <span class="annotation">@Transactional</span> to

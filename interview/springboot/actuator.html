@@ -112,7 +112,8 @@
                     <ul class="nav-list">
                         <h4>Interview Questions</h4>
                         <li class="nav-item"><a class="nav-link"
-                                                href="../springboot/springboot-interview-questions.html">SpringBoot Basic</a>
+                                                href="../springboot/springboot-interview-questions.html">SpringBoot
+                            Basic</a>
                         </li>
                         <li class="nav-item"><a class="nav-link"
                                                 href="../springboot/configuration.html">Configuration</a>
@@ -125,8 +126,6 @@
                                                 href="../springboot/interview-2.html">SpringBoot Interview-2</a>
                         <li class="nav-item"><a class="nav-link"
                                                 href="../springboot/interview-3.html">SpringBoot Interview-3</a>
-                        <li class="nav-item"><a class="nav-link"
-                                                href="../springboot/jpa.html">JPA Interview</a>
                         <li class="nav-item"><a class="nav-link"
                                                 href="../springboot/batch.html">Batch Interview</a>
                         <li class="nav-item"><a class="nav-link"
@@ -162,6 +161,983 @@
 
             </nav>
             <article>
+                <h1>Spring Boot Actuator FAQ</h1>
+
+                <h4>1. What is Spring Boot Actuator?</h4>
+                <div>Example Answer: Spring Boot Actuator is a project that provides production-ready features to help
+                    you monitor and manage your Spring Boot application. It exposes endpoints that give insights into
+                    the application's health, metrics, and other operational information, making it easier to manage and
+                    monitor applications in production.
+                </div>
+
+                <h4>2. What are some common Actuator endpoints, and what do they do?</h4>
+                <div>Example Answer: Common Actuator endpoints include:</div>
+                <ul>
+                    <li>/actuator/health: Provides health status of the application and its dependencies (e.g.,
+                        databases, external services).
+                    </li>
+                    <li>/actuator/metrics: Exposes various metrics related to the application's performance, such as JVM
+                        metrics, application-specific metrics, and more.
+                    </li>
+                    <li>/actuator/info: Displays arbitrary application information like build version, description, or
+                        custom metadata.
+                    </li>
+                    <li>/actuator/env: Shows environment properties and configuration properties of the application.
+                    </li>
+                </ul>
+
+                <h4>3. How do you enable Spring Boot Actuator in your application?</h4>
+                <div>Example Answer: To enable Actuator in a Spring Boot application, you need to add the Spring Boot
+                    Actuator dependency to your <code>pom.xml</code> (for Maven) or <code>build.gradle</code> (for
+                    Gradle):
+                </div>
+
+                <h3>For Maven:</h3>
+                <div class="code">
+                    <span class="keyword">&lt;dependency&gt;</span><br>
+                    &nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
+                    &nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;<br>
+                    <span class="keyword">&lt;/dependency&gt;</span>
+                </div>
+
+                <h3>For Gradle:</h3>
+                <div class="code">
+                    <span class="keyword">implementation</span> <span class="string">'org.springframework.boot:spring-boot-starter-actuator'</span>
+                </div>
+
+                <div>Actuator endpoints are then available by default. You can configure which endpoints are enabled or
+                    exposed in your <code>application.properties</code> or <code>application.yml</code>.
+                </div>
+
+                <h4>4. How can you configure which Actuator endpoints are exposed?</h4>
+                <div>Example Answer: You can configure endpoint exposure in <code>application.properties</code> or
+                    <code>application.yml</code>:
+                </div>
+
+                <h3>In application.properties:</h3>
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">health,info</span>
+                </div>
+
+                <h3>In application.yml:</h3>
+                <div class="code">
+                    <span class="keyword">management:</span><br>
+                    &nbsp;&nbsp;<span class="keyword">endpoints:</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">web:</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">exposure:</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">include:</span> <span
+                        class="string">health, info</span>
+                </div>
+
+                <div>This configuration will expose only the /actuator/health and /actuator/info endpoints.</div>
+
+                <h4>5. How do you secure Actuator endpoints?</h4>
+                <div>Example Answer: Securing Actuator endpoints is typically done using Spring Security. You can
+                    restrict access to these endpoints by configuring security settings. For example:
+                </div>
+
+                <h3>1. Add Spring Security dependency:</h3>
+                <div class="code">
+                    <span class="keyword">&lt;dependency&gt;</span><br>
+                    &nbsp;&nbsp;&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>
+                    &nbsp;&nbsp;&lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;<br>
+                    <span class="keyword">&lt;/dependency&gt;</span>
+                </div>
+
+                <h3>2. Configure security settings:</h3>
+                <div class="code">
+                    <span class="keyword">import</span> org.springframework.context.annotation.Bean;<br>
+                    <span class="keyword">import</span> org.springframework.context.annotation.Configuration;<br>
+                    <span class="keyword">import</span>
+                    org.springframework.security.config.annotation.web.builders.HttpSecurity;<br>
+                    <span class="keyword">import</span>
+                    org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;<br>
+                    <span class="keyword">import</span>
+                    org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;<br><br>
+
+                    <span class="keyword">@Configuration</span><br>
+                    <span class="keyword">@EnableWebSecurity</span><br>
+                    <span class="keyword">public class</span> <span class="variable">SecurityConfig</span> <span
+                        class="keyword">extends</span> WebSecurityConfigurerAdapter {<br><br>
+
+                    &nbsp;&nbsp;<span class="keyword">@Override</span><br>
+                    &nbsp;&nbsp;<span class="keyword">protected void</span> <span
+                        class="variable">configure</span>(<span class="keyword">HttpSecurity</span> <span
+                        class="variable">http</span>) <span class="keyword">throws</span> <span class="keyword">Exception</span>
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">http</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.authorizeRequests()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.antMatchers(<span
+                        class="string">"/actuator/**"</span>).hasRole(<span class="string">"ADMIN"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.and()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.httpBasic();<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
+
+                <h4>6. How can you add custom information to the /actuator/info endpoint?</h4>
+                <div>Example Answer: You can add custom information to the /actuator/info endpoint by creating a <span
+                        class="keyword">@Configuration</span> class that adds details to the <span class="keyword">InfoContributor</span>
+                    bean:
+                </div>
+
+                <div class="code">
+                    <span class="keyword">import</span> org.springframework.boot.actuate.info.Info;<br>
+                    <span class="keyword">import</span> org.springframework.boot.actuate.info.InfoContributor;<br>
+                    <span class="keyword">import</span> org.springframework.stereotype.Component;<br><br>
+
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="variable">CustomInfoContributor</span> <span
+                        class="keyword">implements</span> <span class="variable">InfoContributor</span> {<br><br>
+
+                    &nbsp;&nbsp;<span class="keyword">@Override</span><br>
+                    &nbsp;&nbsp;<span class="keyword">public void</span> <span class="variable">contribute</span>(<span
+                        class="keyword">Info.Builder</span> <span class="variable">builder</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">builder</span>.withDetail(<span class="string">"customProperty"</span>,
+                    <span class="string">"customValue"</span>);<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
+
+                <div>This will add <span class="string">customProperty</span> with <span
+                        class="string">customValue</span> to the /actuator/info endpoint output.
+                </div>
+
+                <h4>7. What is a health indicator in Spring Boot Actuator?</h4>
+                <div>Example Answer: A health indicator is a component that provides information about the health of a
+                    specific part of your application or its dependencies. It can be used to perform checks on
+                    databases, messaging systems, or other services your application depends on. You can use built-in
+                    health indicators or create custom ones by implementing the <span
+                            class="variable">HealthIndicator</span> interface.
+                </div>
+
+                <h4>8. How do you create a custom health indicator?</h4>
+                <div>Example Answer: To create a custom health indicator, implement the <span class="variable">HealthIndicator</span>
+                    interface:
+                </div>
+
+                <div class="code">
+                    <span class="keyword">import</span> org.springframework.boot.actuate.health.Health;<br>
+                    <span class="keyword">import</span> org.springframework.boot.actuate.health.HealthIndicator;<br>
+                    <span class="keyword">import</span> org.springframework.stereotype.Component;<br><br>
+
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="variable">MyCustomHealthIndicator</span>
+                    <span class="keyword">implements</span> <span class="variable">HealthIndicator</span> {<br><br>
+
+                    &nbsp;&nbsp;<span class="keyword">@Override</span><br>
+                    &nbsp;&nbsp;<span class="keyword">public Health</span> <span class="variable">health</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Custom health check logic<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">boolean</span> <span class="variable">healthy</span> =
+                    <span class="keyword">true</span>; <span
+                        class="comment">// replace with actual health check</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> (<span class="variable">healthy</span>)
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">Health</span>.up().withDetail(<span
+                        class="string">"status"</span>, <span class="string">"up"</span>).build();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">else</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">Health</span>.down().withDetail(<span
+                        class="string">"status"</span>, <span class="string">"down"</span>).build();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
+
+                <div>This will add a custom health indicator to the /actuator/health endpoint.</div>
+
+                <h4>9. How do you view Actuator metrics in your application?</h4>
+                <div>Example Answer: Once Actuator is included and properly configured, you can view metrics by
+                    accessing the /actuator/metrics endpoint. This endpoint provides a comprehensive list of application
+                    metrics, including those related to JVM, application performance, and custom metrics.
+                </div>
+
+                <h4>10. What is the purpose of the management.endpoints.web.exposure.include property?</h4>
+                <div>Example Answer: The <span class="keyword">management.endpoints.web.exposure.include</span> property
+                    is used to specify which Actuator endpoints should be exposed over the web. By default, not all
+                    endpoints are exposed. This property allows you to configure which endpoints you want to be
+                    accessible via HTTP. For example:
+                </div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">health,info,metrics</span>
+                </div>
+
+                <div>This configuration will expose the /actuator/health, /actuator/info, and /actuator/metrics
+                    endpoints.
+                </div>
+
+                <h4>11. How do you view the list of available Actuator endpoints?</h4>
+                <div>Example Answer: To view the list of available Actuator endpoints, you can access the /actuator
+                    endpoint. This endpoint provides a map of all available endpoints and their respective paths. For
+                    example, you would navigate to <span class="string">http://localhost:8080/actuator</span> in your
+                    browser or use a tool like curl:
+                </div>
+
+                <div class="code">
+                    <span class="keyword">curl</span> <span class="string">http://localhost:8080/actuator</span>
+                </div>
+
+                <div>This will return a JSON object with all available endpoints and their paths.</div>
+
+                <h4>12. How do you change the default base path for Actuator endpoints?</h4>
+                <div>Example Answer: You can change the default base path for Actuator endpoints using the <span
+                        class="keyword">management.endpoints.web.base-path</span> property in <code>application.properties</code>
+                    or <code>application.yml</code>. For example:
+                </div>
+
+                <h3>In application.properties:</h3>
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.base-path</span>=<span class="string">/admin</span>
+                </div>
+
+                <h3>In application.yml:</h3>
+                <div class="code">
+                    <span class="keyword">management:</span><br>
+                    &nbsp;&nbsp;<span class="keyword">endpoints:</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">web:</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">base-path:</span> <span class="string">/admin</span>
+                </div>
+
+                <div>With this configuration, the Actuator endpoints will now be accessible under <span class="string">/admin</span>,
+                    e.g., /admin/health and /admin/metrics.
+                </div>
+
+                <h4>13. How do you customize the response of the /actuator/health endpoint?</h4>
+                <div>Example Answer: You can customize the response of the /actuator/health endpoint by creating a
+                    custom health indicator or modifying the built-in ones. For example, to add custom details:
+                </div>
+
+                <h3>1. Implement a custom health indicator:</h3>
+                <div class="code">
+                    <span class="keyword">import</span> org.springframework.boot.actuate.health.Health;<br>
+                    <span class="keyword">import</span> org.springframework.boot.actuate.health.HealthIndicator;<br>
+                    <span class="keyword">import</span> org.springframework.stereotype.Component;<br><br>
+
+                    <span class="keyword">@Component</span><br>
+                    <span class="keyword">public class</span> <span class="variable">CustomHealthIndicator</span> <span
+                        class="keyword">implements</span> <span class="variable">HealthIndicator</span> {<br><br>
+
+                    &nbsp;&nbsp;<span class="keyword">@Override</span><br>
+                    &nbsp;&nbsp;<span class="keyword">public Health</span> <span class="variable">health</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Custom logic to check health<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">Health</span>.up().withDetail(<span
+                        class="string">"custom"</span>, <span class="string">"Everything is running smoothly"</span>).build();<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
+
+                <div>2. The custom health details will then be included in the /actuator/health response.</div>
+
+                <h4>14. What is the purpose of the management.endpoints.web.exposure.exclude property?</h4>
+                <div>Example Answer: The <span class="keyword">management.endpoints.web.exposure.exclude</span> property
+                    allows you to exclude specific Actuator endpoints from being exposed over the web. For example:
+                </div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.exclude</span>=<span class="string">metrics,env</span>
+                </div>
+
+                <div>This configuration will exclude the /actuator/metrics and /actuator/env endpoints from being
+                    accessible via HTTP, even if they are defined in your application.
+                </div>
+
+                <h4>15. How do you expose Actuator metrics in a format suitable for Prometheus?</h4>
+                <div>Example Answer: To expose Actuator metrics in a format suitable for Prometheus, you need to add the
+                    Micrometer Prometheus registry dependency and configure it:
+                </div>
+
+                <h3>1. Add the Micrometer Prometheus dependency:</h3>
+                <div class="code">
+                    <span class="keyword">&lt;dependency&gt;</span><br>
+                    &nbsp;&nbsp;&lt;groupId&gt;io.micrometer&lt;/groupId&gt;<br>
+                    &nbsp;&nbsp;&lt;artifactId&gt;micrometer-registry-prometheus&lt;/artifactId&gt;<br>
+                    <span class="keyword">&lt;/dependency&gt;</span>
+                </div>
+
+                <h3>2. Enable the Prometheus registry in application.properties:</h3>
+                <div class="code">
+                    <span class="keyword">management.metrics.export.prometheus.enabled</span>=<span
+                        class="string">true</span>
+                </div>
+
+                <div>3. Metrics will be available at the /actuator/prometheus endpoint, which Prometheus can scrape.
+                </div>
+
+                <h4>16. How do you use @Timed and @Counted annotations to monitor method execution?</h4>
+                <div>Example Answer: The <span class="variable">@Timed</span> and <span class="variable">@Counted</span>
+                    annotations from Micrometer allow you to monitor method execution and frequency.
+                </div>
+
+                <div><span class="variable">@Timed</span>: Measures the time taken by a method to execute. Example:
+                </div>
+
+                <div class="code">
+                    <span class="keyword">import</span> io.micrometer.core.annotation.Timed;<br>
+                    <span class="keyword">import</span> org.springframework.stereotype.Service;<br><br>
+
+                    <span class="keyword">@Service</span><br>
+                    <span class="keyword">public class</span> <span class="variable">MyService</span> {<br><br>
+
+                    &nbsp;&nbsp;<span class="variable">@Timed</span>(<span
+                        class="string">"myService.method.timer"</span>)<br>
+                    &nbsp;&nbsp;<span class="keyword">public void</span> <span class="variable">myMethod</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// method implementation<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
+
+                <div><span class="variable">@Counted</span>: Counts the number of times a method is called. Example:
+                </div>
+
+                <div class="code">
+                    <span class="keyword">import</span> io.micrometer.core.annotation.Counted;<br>
+                    <span class="keyword">import</span> org.springframework.stereotype.Service;<br><br>
+
+                    <span class="keyword">@Service</span><br>
+                    <span class="keyword">public class</span> <span class="variable">MyService</span> {<br><br>
+
+                    &nbsp;&nbsp;<span class="variable">@Counted</span>(<span
+                        class="string">"myService.method.calls"</span>)<br>
+                    &nbsp;&nbsp;<span class="keyword">public void</span> <span class="variable">anotherMethod</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// method implementation<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
+
+                <div>Metrics for these annotations will be available in the /actuator/metrics endpoint.</div>
+                <h4>17. How do you set up custom logging levels for Actuator endpoints?</h4>
+                <div>Example Answer: Custom logging levels for Actuator endpoints can be set using the <span
+                        class="keyword">logging.level</span> property in <code>application.properties</code> or <code>application.yml</code>.
+                    For example, to set the logging level for health checks:
+                </div>
+
+                <h3>In application.properties:</h3>
+                <div class="code">
+                    <span class="keyword">logging.level.org.springframework.boot.actuate</span>=<span class="string">DEBUG</span>
+                </div>
+
+                <h3>In application.yml:</h3>
+                <div class="code">
+                    <span class="keyword">logging:</span><br>
+                    &nbsp;&nbsp;<span class="keyword">level:</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">org.springframework.boot.actuate</span>: <span
+                        class="string">DEBUG</span>
+                </div>
+
+                <div>This will enable DEBUG level logging for Actuator components, allowing you to see detailed logs
+                    related to Actuator operations.
+                </div>
+
+                <h4>18. How can you view detailed information about the environment variables and configuration
+                    properties using Actuator?</h4>
+                <div>Example Answer: You can view detailed information about environment variables and configuration
+                    properties by accessing the /actuator/env endpoint. This endpoint provides details on environment
+                    properties, system properties, and configuration properties.
+                </div>
+                <div>To enable this endpoint, ensure it is included in your exposure settings:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">env</span>
+                </div>
+
+                <div>Accessing <span class="string">http://localhost:8080/actuator/env</span> will display a JSON object
+                    with all the environment and configuration details.
+                </div>
+
+                <h4>19. How do you create a custom Actuator endpoint?</h4>
+                <div>Example Answer: To create a custom Actuator endpoint, you can use the <span class="variable">@Endpoint</span>
+                    annotation:
+                </div>
+
+                <h3>1. Define a new endpoint:</h3>
+                <div class="code">
+                    <span class="keyword">import</span>
+                    org.springframework.boot.actuate.endpoint.annotation.Endpoint;<br>
+                    <span class="keyword">import</span>
+                    org.springframework.boot.actuate.endpoint.annotation.ReadOperation;<br>
+                    <span class="keyword">import</span> org.springframework.stereotype.Component;<br><br>
+
+                    <span class="keyword">@Component</span><br>
+                    <span class="variable">@Endpoint</span>(<span class="string">"custom"</span>)<br>
+                    <span class="keyword">public class</span> <span class="variable">CustomEndpoint</span> {<br><br>
+
+                    &nbsp;&nbsp;<span class="variable">@ReadOperation</span><br>
+                    &nbsp;&nbsp;<span class="keyword">public String</span> <span class="variable">custom</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Custom endpoint response"</span>;<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br>
+                </div>
+
+                <div>2. Access this endpoint at /actuator/custom (if using default configuration).</div>
+
+                <h4>20. What is the difference between management.endpoints.web.exposure.include and
+                    management.endpoints.web.exposure.exclude?</h4>
+                <div>Example Answer:</div>
+                <div>• <span class="keyword">management.endpoints.web.exposure.include</span>: Specifies which Actuator
+                    endpoints should be included and exposed over HTTP. For example, <span class="keyword">management.endpoints.web.exposure.include=health,info</span>
+                    will expose only the health and info endpoints.
+                </div>
+                <div>• <span class="keyword">management.endpoints.web.exposure.exclude</span>: Specifies which Actuator
+                    endpoints should be excluded from being exposed. For example, <span class="keyword">management.endpoints.web.exposure.exclude=metrics,env</span>
+                    will prevent these endpoints from being accessible even if they are defined.
+                </div>
+
+                <h3>1. /actuator/health</h3>
+                <div>Purpose:</div>
+                <div>The /actuator/health endpoint provides information about the health status of your application.
+                    This includes system checks, database connectivity, and any custom health indicators you have
+                    implemented.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a simple JSON object indicating whether the application is "UP" or "DOWN". For example:
+                </div>
+
+                <div class="code json">
+                    {
+                    "status": "UP"
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint in the response, ensure it is listed in the <span class="keyword">management.endpoints.web.exposure.include</span>
+                    property:
+                </div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">health</span>
+                </div>
+
+                <div>• To show detailed information, configure:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoint.health.show-details</span>=<span
+                        class="string">always</span>
+                </div>
+
+                <h3>2. /actuator/metrics</h3>
+                <div>Purpose:</div>
+                <div>The /actuator/metrics endpoint exposes various metrics collected by the application, such as JVM
+                    metrics, HTTP requests, and custom metrics.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a list of available metrics and their names. Example response:</div>
+
+                <div class="code json">
+                    {
+                    "names": [
+                    "jvm.memory.used",
+                    "http.server.requests",
+                    ...
+                    ]
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">metrics</span>
+                </div>
+
+                <h3>3. /actuator/env</h3>
+                <div>Purpose:</div>
+                <div>The /actuator/env endpoint exposes environment properties and configuration properties of the
+                    application.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a detailed view of environment properties, including system properties, environment
+                    variables, and configuration properties. Example:
+                </div>
+
+                <div class="code json">
+                    {
+                    "propertySources": [
+                    ...
+                    ],
+                    "systemProperties": {
+                    "java.version": "11.0.9",
+                    ...
+                    },
+                    "systemEnvironment": {
+                    "PATH": "/usr/local/bin",
+                    ...
+                    }
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• Ensure it is included in the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">env</span>
+                </div>
+
+                <h3>4. /actuator/info</h3>
+                <div>Purpose:</div>
+                <div>The /actuator/info endpoint provides arbitrary application information, which can be customized
+                    with additional details such as build version, description, and custom metadata.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a simple JSON object with application details. Example:</div>
+
+                <div class="code json">
+                    {
+                    "app": "MyApplication",
+                    "version": "1.0.0"
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">info</span>
+                </div>
+
+                <h3>5. /actuator/beans</h3>
+                <div>Purpose:</div>
+                <div>The /actuator/beans endpoint lists all Spring beans in the application context, along with their
+                    dependencies.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a JSON object with bean names and details. Example:</div>
+
+                <div class="code json">
+                    {
+                    "contexts": {
+                    "application": {
+                    "beans": {
+                    "myService": {
+                    "type": "com.example.MyService",
+                    ...
+                    },
+                    ...
+                    }
+                    }
+                    }
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">beans</span>
+                </div>
+
+                <h3>6. /actuator/threaddump</h3>
+                <div>Purpose:</div>
+                <div>The /actuator/threaddump endpoint provides a thread dump of the application, which helps in
+                    diagnosing thread-related issues.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a JSON representation of the current thread states. Example:</div>
+
+                <div class="code json">
+                    {
+                    "threads": [
+                    {
+                    "name": "main",
+                    "state": "RUNNABLE",
+                    ...
+                    },
+                    ...
+                    ]
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">threaddump</span>
+                </div>
+
+                <h3>7. /actuator/heapdump</h3>
+                <div>Purpose:</div>
+                <div>The /actuator/heapdump endpoint triggers a heap dump of the JVM, which is useful for analyzing
+                    memory usage and leaks.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a heap dump file, which can be accessed through a download link or saved directly depending
+                    on your configuration.
+                </div>
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">heapdump</span>
+                </div>
+                <h4>8. /actuator/auditevents</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/auditevents endpoint provides audit events recorded by the application, such as
+                    authentication and authorization events.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a list of recent audit events. Example:</div>
+
+                <div class="code json">
+                    {
+                    "events": [
+                    {
+                    "timestamp": "2024-09-13T10:00:00Z",
+                    "principal": "user",
+                    "type": "AUTHENTICATION_SUCCESS"
+                    },
+                    ...
+                    ]
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">auditevents</span>
+                </div>
+
+                <h4>9. /actuator/conditions</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/conditions endpoint provides details about the conditions and configurations that
+                    were used to create the beans in the application context.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a JSON object with conditions and their evaluation status. Example:</div>
+
+                <div class="code json">
+                    {
+                    "contexts": {
+                    "application": {
+                    "conditions": [
+                    {
+                    "condition": "ClassPathBeanDefinitionScanner",
+                    "match": true
+                    },
+                    ...
+                    ]
+                    }
+                    }
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">conditions</span>
+                </div>
+
+                <h4>10. /actuator/scheduledtasks</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/scheduledtasks endpoint provides information about scheduled tasks in the
+                    application, including their status and execution details.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns details about scheduled tasks, such as their names and execution status. Example:</div>
+
+                <div class="code json">
+                    {
+                    "tasks": [
+                    {
+                    "name": "myScheduledTask",
+                    "fixedRate": 10000,
+                    "initialDelay": 5000,
+                    "lastExecution": "2024-09-13T10:00:00Z"
+                    },
+                    ...
+                    ]
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">scheduledtasks</span>
+                </div>
+
+                <h4>11. /actuator/prometheus</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/prometheus endpoint exposes metrics in a format that Prometheus can scrape and
+                    collect.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns metrics in the Prometheus text-based format. Example:</div>
+
+                <div class="code plaintext">
+                    # HELP jvm_memory_bytes_used JVM memory bytes used<br>
+                    # TYPE jvm_memory_bytes_used gauge<br>
+                    jvm_memory_bytes_used{area="heap"} 1048576
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">prometheus</span>
+                </div>
+
+                <h4>12. /actuator/caches</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/caches endpoint provides information about the caches used in the application,
+                    including their statistics and status.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns details about the caches, such as their names and statistics. Example:</div>
+
+                <div class="code json">
+                    {
+                    "caches": [
+                    {
+                    "name": "cacheName",
+                    "type": "SimpleCache",
+                    "size": 100
+                    },
+                    ...
+                    ]
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">caches</span>
+                </div>
+
+                <h4>13. /actuator/loggers</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/loggers endpoint allows you to view and configure logging levels for various loggers
+                    in your application.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns current logging levels and allows configuration changes. Example:</div>
+
+                <div class="code json">
+                    {
+                    "levels": {
+                    "ROOT": "INFO",
+                    "org.springframework": "DEBUG",
+                    ...
+                    }
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">loggers</span>
+                </div>
+
+                <h4>14. /actuator/httptrace</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/httptrace endpoint provides trace information of HTTP requests and responses, useful
+                    for debugging.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a list of recent HTTP request and response traces. Example:</div>
+
+                <div class="code json">
+                    {
+                    "traces": [
+                    {
+                    "timestamp": "2024-09-13T10:00:00Z",
+                    "request": {
+                    "method": "GET",
+                    "uri": "/api/example"
+                    },
+                    "response": {
+                    "status": 200
+                    }
+                    },
+                    ...
+                    ]
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">httptrace</span>
+                </div>
+
+                <h4>15. /actuator/mappings</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/mappings endpoint provides information about the application's request mappings, such
+                    as URL patterns and their corresponding controllers.
+                </div>
+                <div>Default Behavior:</div>
+                <div>Returns a list of request mappings and their details. Example:</div>
+
+                <div class="code json">
+                    {
+                    "contexts": {
+                    "application": {
+                    "mappings": {
+                    "/api/example": "com.example.ExampleController#exampleMethod"
+                    }
+                    }
+                    }
+                    }
+                </div>
+
+                <div>Configuration:</div>
+                <div>• To include this endpoint, add it to the exposure list:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">mappings</span>
+                </div>
+
+                <h4>16. Configuration Summary</h4>
+                <div>To manage which endpoints are exposed and how they are configured, use properties in
+                    application.properties or application.yml. Here are some common properties for managing endpoints:
+                </div>
+
+                <div class="code">
+                    <span class="comment"># Include specific endpoints</span><br>
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">health,info,metrics</span><br><br>
+
+                    <span class="comment"># Exclude specific endpoints</span><br>
+                    <span class="keyword">management.endpoints.web.exposure.exclude</span>=<span class="string">env,beans</span><br><br>
+
+                    <span class="comment"># Show detailed health information</span><br>
+                    <span class="keyword">management.endpoint.health.show-details</span>=<span
+                        class="string">always</span><br><br>
+
+                    <span class="comment"># Enable Prometheus metrics endpoint</span><br>
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span class="string">prometheus</span>
+                </div>
+
+                <h4>17. /actuator/shutdown</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/shutdown endpoint allows you to gracefully shut down your Spring Boot application.
+                    This endpoint can be useful for integration with external systems or scripts that need to trigger
+                    application shutdown.
+                </div>
+                <div>Default Behavior:</div>
+                <div>When accessed, this endpoint triggers a graceful shutdown of the application, allowing it to
+                    complete ongoing tasks before shutting down.
+                </div>
+                <div>Configuration:</div>
+                <div>• To enable the shutdown endpoint, you need to include it in your application’s configuration:
+                </div>
+                <div>1. Add the dependency for actuator shutdown support:</div>
+
+                <div class="code xml">
+                    <dependency><br>
+                        <span class="keyword">&lt;groupId&gt;</span>org.springframework.boot<span class="keyword">&lt;/groupId&gt;</span><br>
+                        <span class="keyword">&lt;artifactId&gt;</span>spring-boot-starter-actuator<span
+                                class="keyword">&lt;/artifactId&gt;</span><br>
+                    </dependency>
+                </div>
+
+                <div>2. Enable the shutdown endpoint: In application.properties or application.yml:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">shutdown</span>
+                </div>
+
+                <div>3. Optional - Secure the endpoint: It is highly recommended to secure this endpoint to prevent
+                    unauthorized access. For example, using Spring Security:
+                </div>
+
+                <div class="code java">
+                    <span class="keyword">import</span> org.springframework.context.annotation.Bean;<br>
+                    <span class="keyword">import</span> org.springframework.context.annotation.Configuration;<br>
+                    <span class="keyword">import</span>
+                    org.springframework.security.config.annotation.web.builders.HttpSecurity;<br>
+                    <span class="keyword">import</span>
+                    org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;<br>
+                    <span class="keyword">import</span>
+                    org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;<br><br>
+
+                    <span class="keyword">@Configuration</span><br>
+                    <span class="keyword">@EnableWebSecurity</span><br>
+                    <span class="keyword">public</span> <span class="keyword" class="class">SecurityConfig</span> <span
+                        class="keyword">extends</span> WebSecurityConfigurerAdapter {<br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">protected</span> <span class="keyword">void</span>
+                    <span class="method">configure</span>(<span class="keyword">HttpSecurity</span> http) <span
+                        class="keyword">throws</span> <span class="keyword">Exception</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.authorizeRequests()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.antMatchers(<span
+                        class="string">"/actuator/shutdown"</span>).hasRole(<span class="string">"ADMIN"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.and()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.httpBasic();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
+
+                <div>Example Usage: To shut down the application, send a POST request to /actuator/shutdown.</div>
+
+                <h4>18. /actuator/refresh</h4>
+                <div>Purpose:</div>
+                <div>The /actuator/refresh endpoint is used to refresh the application’s configuration. This is
+                    particularly useful in scenarios where you use a configuration management tool like Spring Cloud
+                    Config and want to reload configuration changes without restarting the application.
+                </div>
+                <div>Default Behavior:</div>
+                <div>When accessed, this endpoint triggers a refresh of the application context, reloading properties
+                    from the configuration source.
+                </div>
+                <div>Configuration:</div>
+                <div>• To enable the refresh endpoint, you need to include it in your application’s configuration:</div>
+                <div>1. Add the dependency for Spring Boot Actuator with Spring Cloud:</div>
+
+                <div class="code xml">
+                    <dependency><br>
+                        <span class="keyword">&lt;groupId&gt;</span>org.springframework.cloud<span class="keyword">&lt;/groupId&gt;</span><br>
+                        <span class="keyword">&lt;artifactId&gt;</span>spring-cloud-starter-config<span class="keyword">&lt;/artifactId&gt;</span><br>
+                    </dependency>
+                </div>
+
+                <div>2. Enable the refresh endpoint: In application.properties or application.yml:</div>
+
+                <div class="code">
+                    <span class="keyword">management.endpoints.web.exposure.include</span>=<span
+                        class="string">refresh</span>
+                </div>
+
+                <div>3. Optional - Secure the endpoint: Similar to the shutdown endpoint, it is important to secure the
+                    refresh endpoint. For example:
+                </div>
+
+                <div class="code java">
+                    <span class="keyword">@Configuration</span><br>
+                    <span class="keyword">@EnableWebSecurity</span><br>
+                    <span class="keyword">public</span> <span class="keyword" class="class">SecurityConfig</span> <span
+                        class="keyword">extends</span> WebSecurityConfigurerAdapter {<br><br>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Override</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">protected</span> <span class="keyword">void</span>
+                    <span class="method">configure</span>(<span class="keyword">HttpSecurity</span> http) <span
+                        class="keyword">throws</span> <span class="keyword">Exception</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.authorizeRequests()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.antMatchers(<span
+                        class="string">"/actuator/refresh"</span>).hasRole(<span class="string">"ADMIN"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.and()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.httpBasic();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                    }
+                </div>
+
+                <div>Example Usage: To refresh the application context, send a POST request to /actuator/refresh.</div>
 
             </article>
         </div>

@@ -1499,11 +1499,11 @@ a {
             margin: 10px 0;
         }
         .tag {
-                    color: #2980b9;
-                }
-                .property {
-                            color: #e74c3c;
-                        }
-                        .value {
-                            color: #27ae60;
-                        }
+            color: #2980b9;
+           }
+          .property {
+           color: #e74c3c;
+           }
+          .value {
+          color: #27ae60;
+         }

@@ -250,7 +250,184 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<h3 id="composition:" level="3">Composition:</h3>
+						<p>Composition in java is a form of relation that is more tightly coupled. Composition
+							in java is also called Strong association. This association is also known as
+							Belongs-To association as one class, for all intents and purpose belongs to another
+							class, and exists because of it. In a Composition association, the classes cannot
+							exist independent of each other. If the larger class which holds the objects of the
+							smaller class is removed, it also means logically the smaller class cannot exist.
+							Let us explore this association clearly with an example</p>
+						<p><strong>Example</strong>: The association between College and Student. Below is how
+							it is defined.</p>
+						<ul>
+							<li>College class is defined with name and the list of students that are studying in
+								it
+							</li>
+							<li>A Student class is defined with name and the college he is studying at.</li>
+						</ul>
+						<p>Here a student must be studying in at least one college if he is to be called
+							Student. If the college class is removed, Student class cannot exist alone
+							logically, because if a person is not studying in any college then he is not a
+							student.</p>
+						<p><img alt="relation diagram in java composition" loading="lazy" width="864"
+								height="200" decoding="async" data-nimg="1"
+								class="markdown_image_container__jjYk1 markdown_loaded__iZ4O5"
+								src="https://scaler.com/topics/images/relation-diagram-in-java-composition.webp"
+								style="color: transparent; height: auto; max-width: 100%;"></p>
+						<h3 id="program:" level="3">Program:</h3>
+						<pre><div class="code-box_snippetContainer__cJ6zK"><pre
+								style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(40, 44, 52);"><code
+								class="language-java" style="white-space: pre;"><span
+								style="color: rgb(249, 38, 114);">import</span><span> java.util.*;
+</span><span></span><span style="color: rgb(177, 142, 177); font-style: italic;">//College class</span><span>
+</span><span></span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span
+								class="hljs-class"> </span><span class="hljs-class"
+																 style="color: rgb(97, 174, 238);">College</span><span>{
+</span><span></span><span style="color: rgb(249, 38, 114);">private</span><span> String name;
+</span>ArrayList&lt;Student&gt; studentList;
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span
+									style="color: rgb(97, 174, 238);">College</span><span
+									style="color: rgb(97, 174, 238);">(String name)</span><span
+									style="color: rgb(97, 174, 238);">  </span><span
+									style="color: rgb(177, 142, 177); font-style: italic;">//to assign college name</span><span
+									style="color: rgb(97, 174, 238);">
+</span><span style="color: rgb(97, 174, 238);"></span><span>{
+</span><span>   </span><span style="color: rgb(249, 38, 114);">this</span><span>.name = name;
+</span>}
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span
+									style="color: rgb(249, 38, 114);">void</span><span
+									style="color: rgb(97, 174, 238);"> </span><span
+									style="color: rgb(97, 174, 238);">setStudentList</span><span
+									style="color: rgb(97, 174, 238);">()</span><span
+									style="color: rgb(97, 174, 238);">  </span><span
+									style="color: rgb(177, 142, 177); font-style: italic;">//To set Students list</span><span
+									style="color: rgb(97, 174, 238);">
+</span><span style="color: rgb(97, 174, 238);"></span><span>{
+</span><span>    </span><span style="color: rgb(177, 142, 177); font-style: italic;">//Create three Student objects</span><span>
+</span><span>    Student student1 = </span><span style="color: rgb(249, 38, 114);">new</span><span> Student(</span><span
+									style="color: rgb(152, 195, 121);">"Abe"</span><span>);
+</span><span>    Student student2 = </span><span style="color: rgb(249, 38, 114);">new</span><span> Student(</span><span
+									style="color: rgb(152, 195, 121);">"lincoln"</span><span>);
+</span><span>    Student student3 = </span><span style="color: rgb(249, 38, 114);">new</span><span> Student(</span><span
+									style="color: rgb(152, 195, 121);">"Abraham"</span><span>);
+</span><span>    ArrayList&lt;Student&gt; students = </span><span style="color: rgb(249, 38, 114);">new</span><span> ArrayList&lt;Student&gt;();
+</span>    students.add(student1);
+    students.add(student2);
+    students.add(student3);
 
+<span>    </span><span style="color: rgb(249, 38, 114);">this</span><span>.studentList = students;
+</span>}
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span
+									style="color: rgb(97, 174, 238);"> String </span><span
+									style="color: rgb(97, 174, 238);">getName</span><span
+									style="color: rgb(97, 174, 238);">()</span><span
+									style="color: rgb(97, 174, 238);">
+</span><span style="color: rgb(97, 174, 238);"></span><span>{
+</span><span>  </span><span style="color: rgb(249, 38, 114);">return</span><span> </span><span
+									style="color: rgb(249, 38, 114);">this</span><span>.name;
+</span>}
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> List&lt;String&gt; </span><span
+									style="color: rgb(97, 174, 238);">getStudentList</span><span
+									style="color: rgb(97, 174, 238);">()</span><span
+									style="color: rgb(97, 174, 238);"> </span><span
+									style="color: rgb(177, 142, 177); font-style: italic;">//To get students list</span><span
+									style="color: rgb(97, 174, 238);">
+</span><span style="color: rgb(97, 174, 238);"></span><span>{
+</span><span> List&lt;Student&gt; students = </span><span style="color: rgb(249, 38, 114);">this</span><span>.studentList;
+</span><span> List&lt;String&gt; names = </span><span style="color: rgb(249, 38, 114);">new</span><span> ArrayList&lt;String&gt;();
+</span><span> </span><span style="color: rgb(249, 38, 114);">for</span><span>(Student student : students)
+</span> {
+     names.add(student.getName());
+ }
+<span> </span><span style="color: rgb(249, 38, 114);">return</span><span> names;
+</span>}
+}
+<span></span><span style="color: rgb(177, 142, 177); font-style: italic;">//Student class</span><span>
+</span><span></span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span
+									class="hljs-class"> </span><span class="hljs-class"
+																	 style="color: rgb(97, 174, 238);">Student</span><span>{
+</span><span></span><span style="color: rgb(249, 38, 114);">private</span><span> String name;
+</span><span> </span><span style="color: rgb(249, 38, 114);">public</span><span
+									style="color: rgb(97, 174, 238);"> </span><span
+									style="color: rgb(97, 174, 238);">Student</span><span
+									style="color: rgb(97, 174, 238);">(String name)</span><span
+									style="color: rgb(97, 174, 238);">  </span><span
+									style="color: rgb(177, 142, 177); font-style: italic;">//to assign Student name</span><span
+									style="color: rgb(97, 174, 238);">
+</span><span style="color: rgb(97, 174, 238);"></span><span>{
+</span><span>  </span><span style="color: rgb(249, 38, 114);">this</span><span>.name = name;
+</span>}
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span
+									style="color: rgb(97, 174, 238);"> String </span><span
+									style="color: rgb(97, 174, 238);">getName</span><span
+									style="color: rgb(97, 174, 238);">()</span><span
+									style="color: rgb(97, 174, 238);">
+</span><span style="color: rgb(97, 174, 238);"></span><span>{
+</span><span>  </span><span style="color: rgb(249, 38, 114);">return</span><span> </span><span
+									style="color: rgb(249, 38, 114);">this</span><span>.name;
+</span>}
+}
+<span></span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span
+									class="hljs-class"> </span><span class="hljs-class"
+																	 style="color: rgb(97, 174, 238);">Main</span><span
+									class="hljs-class"> </span><span>{
+</span><span></span><span style="color: rgb(249, 38, 114);">public</span><span
+									style="color: rgb(97, 174, 238);"> </span><span
+									style="color: rgb(249, 38, 114);">static</span><span
+									style="color: rgb(97, 174, 238);"> </span><span
+									style="color: rgb(249, 38, 114);">void</span><span
+									style="color: rgb(97, 174, 238);"> </span><span
+									style="color: rgb(97, 174, 238);">main</span><span
+									style="color: rgb(97, 174, 238);">(String[] args)</span><span
+									style="color: rgb(97, 174, 238);"> </span><span>{
+</span><span> </span><span style="color: rgb(177, 142, 177); font-style: italic;">//Create a College</span><span>
+</span><span> College college1 = </span><span style="color: rgb(249, 38, 114);">new</span><span> College(</span><span
+									style="color: rgb(152, 195, 121);">"MIB"</span><span>);
+</span><span> </span><span style="color: rgb(177, 142, 177); font-style: italic;">//set Student List in College Class</span><span>
+</span> college1.setStudentList();
+<span> </span><span style="color: rgb(177, 142, 177); font-style: italic;">//Outputting the Has-a association between College and Student</span><span>
+</span><span> System.out.println(</span><span
+									style="color: rgb(152, 195, 121);">"The students studying in "</span><span> + college1.getName() + </span><span
+									style="color: rgb(152, 195, 121);">" college are "</span><span> + college1.getStudentList());
+</span>}
+}
+</code></pre></div></pre>
+						<h3 id="output:" level="3">Output:</h3>
+						<pre><div class="code-box_snippetContainer__cJ6zK"><pre
+								style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(40, 44, 52);"><code
+								class="language-java" style="white-space: pre;"><span>The students studying in MIB college are [Abe, lincoln, Abraham]
+</span></code></pre></div></pre>
+						<h3 id="explanation:" level="3">Explanation:</h3>
+						<ul>
+							<li>Student class is defined with name and constructor to set the name during object
+								creation
+							</li>
+							<li>A method getName is defined in Student class to get the name of the student</li>
+							<li>College class is defined with name and list of students that are studying in
+								it.
+							</li>
+							<li>A constructor in College class is defined to set the name of the college during
+								the object creation. A method getName is defined to get the name of the college
+								and getStudentList is defined to get the names of the students studying in that
+								college.
+							</li>
+							<li>The method setStudentList is defined, which created three students’ objects
+								inside the College class and assigned them to the college studentList.So here,
+								the Student class objects are created and stored internally in the College
+								class, which creates a tightly bound association between the College and Student
+								classes. Because, if College class is removed, all student objects are removed
+								as well.
+							</li>
+							<li>All the students are to be part of the class, no student can exist
+								independently. And the result is outputted.
+							</li>
+							<li>Note here that no single student can exist without a college, but a college can
+								exist without the student. Student is the dependent class.
+							</li>
+						</ul>
+						</section>
+						<div></div>
 					</div>
 				</article>
 			</div>

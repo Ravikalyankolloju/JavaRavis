@@ -250,7 +250,209 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<div class="markdown-body"><section class="main"><p>Thread synchronization in Java is a way of programming several threads to carry out independent tasks easily. It is capable of controlling access to multiple threads to a particular shared resource.</p></section>
+							<section class="main"><h2 id="why-use-synchronization-" level="2">Why Use Synchronization?</h2><p>The main reasons for using thread synchronization in Java are as follows:</p><ul>
+								<li>To prevent interference between threads.</li>
+								<li>To prevent the problem of consistency.</li>
+							</ul></section>
+							<section class="main"><h2 id="types-of-synchronization" level="2">Types of Synchronization</h2><p>There are two types of thread synchronization in Java:</p><ol>
+								<li><strong>Process synchronization:</strong></li>
+							</ol><p>Process synchronization ensures that multiple processes in a system coordinate their actions to avoid conflicts and maintain consistency.</p><ol start="2">
+								<li><strong>Thread synchronization:</strong></li>
+							</ol><p>Thread synchronization involves coordinating the execution of threads to ensure proper sharing of resources and prevent data inconsistency in a multithreaded environment.</p></section>
+							<section class="main"><h2 id="thread-synchronization" level="2">Thread Synchronization</h2><p>Thread synchronization refers to the concept where only one thread is executed at a time while other threads are in the waiting state. This process is called thread synchronization. It is used because it avoids interference of thread and the problem of inconsistency.
+								There are two types of thread synchronization in Java:</p><ul>
+								<li><strong>Mutual exclusive-</strong> It will keep the threads from interfering with each other while sharing any resources.</li>
+								<li><strong>Inter-thread communication-</strong> It is a mechanism in Java in which a thread running in the critical section is paused and another thread is allowed to enter or lock the same critical section that is executed.</li>
+							</ul></section>
+							<section class="main"><h2 id="mutual-exclusive" level="2">Mutual Exclusive</h2><p>It is used for preventing threads from interfering with each other and to keep distance between the threads.
+								Mutual exclusive is achieved using the following:</p><ul>
+								<li>Synchronized Method</li>
+								<li>Synchronized Block</li>
+								<li>Static Synchronization</li>
+							</ul></section>
+							<section class="main"><h2 id="concept-of-lock-in-java" level="2">Concept of Lock in Java</h2><p>The concept of a lock in Java revolves around synchronization, where it's built around an internal entity called the lock or monitor. In Java, every object has a lock associated with it. As per convention, a thread requiring consistent access to an object's fields must acquire the object's lock before accessing them. Subsequently, the lock is released when the thread is finished with the fields. This ensures that only one thread can access the object's synchronized code block at any given time, preventing data corruption or inconsistencies due to concurrent access.</p></section>
+							<section class="main"><h2 id="understanding-the-problem-without-synchronization" level="2">Understanding the Problem without Synchronization</h2><p>Understanding the problem without synchronization involves recognizing situations where multiple threads accessing shared data simultaneously can lead to data inconsistency or corruption. Without synchronization mechanisms like locks, this can result in race conditions and program errors.</p><p><strong>Example:</strong></p><pre><div class="code-box_snippetContainer__cJ6zK"><pre style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(40, 44, 52);"><code class="language-java" style="white-space: pre;"><span style="color: rgb(249, 38, 114);">public</span><span> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">Table</span><span class="hljs-class"> </span><span>{
+</span><span>    </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">printTable</span><span style="color: rgb(97, 174, 238);">(</span><span style="color: rgb(249, 38, 114);">int</span><span style="color: rgb(97, 174, 238);"> n)</span><span style="color: rgb(97, 174, 238);"> </span><span>{ </span><span style="color: rgb(177, 142, 177); font-style: italic;">// non synchronized method</span><span>
+</span><span>        </span><span style="color: rgb(249, 38, 114);">for</span><span> (</span><span style="color: rgb(249, 38, 114);">int</span><span> i = </span><span style="color: rgb(209, 154, 102);">1</span><span>; i &lt;= </span><span style="color: rgb(209, 154, 102);">5</span><span>; i++) {
+</span>            System.out.println(n * i);
+<span>            </span><span style="color: rgb(249, 38, 114);">try</span><span> {
+</span><span>                Thread.sleep(</span><span style="color: rgb(209, 154, 102);">500</span><span>);
+</span><span>            } </span><span style="color: rgb(249, 38, 114);">catch</span><span> (InterruptedException ie) {
+</span>                System.out.println(ie);
+            }
+        }
+    }
+}
 
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">Thread1</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">extends</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">Thread</span><span class="hljs-class"> </span><span>{
+</span><span>    Table t; </span><span style="color: rgb(177, 142, 177); font-style: italic;">// Declaring t as class type table</span><span>
+</span>
+<span>    </span><span style="color: rgb(177, 142, 177); font-style: italic;">// Declaring parameterized constructor and passing variable t as a parameter to the thread.</span><span>
+</span>    Thread1(Table t) {
+<span>        </span><span style="color: rgb(249, 38, 114);">this</span><span>.t = t;
+</span>    }
+
+<span>    </span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">run</span><span style="color: rgb(97, 174, 238);">()</span><span style="color: rgb(97, 174, 238);"> </span><span>{
+</span><span>        t.printTable(</span><span style="color: rgb(209, 154, 102);">2</span><span>);
+</span>    }
+}
+
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">Thread2</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">extends</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">Thread</span><span class="hljs-class"> </span><span>{
+</span><span>    Table t; </span><span style="color: rgb(177, 142, 177); font-style: italic;">// Declaring t as class type table</span><span>
+</span>
+    Thread2(Table t) {
+<span>        </span><span style="color: rgb(249, 38, 114);">this</span><span>.t = t;
+</span>    }
+
+<span>    </span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">run</span><span style="color: rgb(97, 174, 238);">()</span><span style="color: rgb(97, 174, 238);"> </span><span>{
+</span><span>        t.printTable(</span><span style="color: rgb(209, 154, 102);">10</span><span>);
+</span>    }
+}
+
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">UnsynchronizedMethod</span><span class="hljs-class"> </span><span>{
+</span><span>    </span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">static</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">main</span><span style="color: rgb(97, 174, 238);">(String[] args)</span><span style="color: rgb(97, 174, 238);"> </span><span>{
+</span><span>        </span><span style="color: rgb(177, 142, 177); font-style: italic;">// Creating an object of Table class.</span><span>
+</span><span>        Table obj = </span><span style="color: rgb(249, 38, 114);">new</span><span> Table();
+</span><span>        Thread1 t1 = </span><span style="color: rgb(249, 38, 114);">new</span><span> Thread1(obj);
+</span><span>        Thread2 t2 = </span><span style="color: rgb(249, 38, 114);">new</span><span> Thread2(obj);
+</span>        t1.start();
+        t2.start();
+    }
+}
+</code></pre></div></pre><p><strong>Output:</strong></p><pre><div class="code-box_snippetContainer__cJ6zK"><pre style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(40, 44, 52);"><code class="language-plaintext" style="white-space: pre;"><span>2
+</span>10
+4
+20
+30
+6
+40
+8
+50
+10
+</code></pre></div></pre><p><strong>Explanation</strong></p><p>In this example, <span class="highlight--red">class thread1</span> extends the <span class="highlight--red">class thread</span> and has a method run that is void. The <span class="highlight--red">class thread2</span> extends the <span class="highlight--red">thread</span> and has a method run that is void. Both are printing tables of different numbers. In the <span class="highlight--red">main</span> class, the objects of threads 1 and 2 are created and the method <span class="highlight--red">start</span> is invoked.</p></section>
+							<section class="main"><h2 id="example-of-java-synchronization" level="2">Example of Java Synchronization</h2><p>It is a method that can be declared synchronized using the keyword “synchronized” before the method name. By writing this, it will make the code in a method thread-safe so that no resources are shared when the method is executed.</p><p><strong>Syntax:</strong></p><pre><div class="code-box_snippetContainer__cJ6zK"><pre style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(40, 44, 52);"><code class="language-java" style="white-space: pre;"><span style="color: rgb(249, 38, 114);">synchronized</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">methodName</span><span style="color: rgb(97, 174, 238);">()</span><span style="color: rgb(97, 174, 238);"> </span><span>{ }
+</span></code></pre></div></pre><pre><div class="code-box_snippetContainer__cJ6zK"><pre style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(40, 44, 52);"><code class="language-java" style="white-space: pre;"><span>
+</span><span></span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">Table</span><span>{
+</span><span> </span><span style="color: rgb(249, 38, 114);">synchronized</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">printTable</span><span style="color: rgb(97, 174, 238);">(</span><span style="color: rgb(249, 38, 114);">int</span><span style="color: rgb(97, 174, 238);"> n)</span><span>{</span><span style="color: rgb(177, 142, 177); font-style: italic;">//synchronized method  </span><span>
+</span><span>   </span><span style="color: rgb(249, 38, 114);">for</span><span>(</span><span style="color: rgb(249, 38, 114);">int</span><span> i=</span><span style="color: rgb(209, 154, 102);">1</span><span>;i&lt;=</span><span style="color: rgb(209, 154, 102);">5</span><span>;i++){
+</span>     System.out.println(n*i);
+<span>     </span><span style="color: rgb(249, 38, 114);">try</span><span>{
+</span><span>      Thread.sleep(</span><span style="color: rgb(209, 154, 102);">400</span><span>);
+</span><span>     }</span><span style="color: rgb(249, 38, 114);">catch</span><span>(Exception e){System.out.println(e);}
+</span>   }
+
+ }
+}
+
+<span></span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">MyThread1</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">extends</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">Thread</span><span>{
+</span>Table t;
+MyThread1(Table t){
+<span></span><span style="color: rgb(249, 38, 114);">this</span><span>.t=t;
+</span>}
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">run</span><span style="color: rgb(97, 174, 238);">()</span><span>{
+</span><span>t.printTable(</span><span style="color: rgb(209, 154, 102);">2</span><span>);
+</span>}
+
+}
+<span></span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">MyThread2</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">extends</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">Thread</span><span>{
+</span>Table t;
+MyThread2(Table t){
+<span></span><span style="color: rgb(249, 38, 114);">this</span><span>.t=t;
+</span>}
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">run</span><span style="color: rgb(97, 174, 238);">()</span><span>{
+</span><span>t.printTable(</span><span style="color: rgb(209, 154, 102);">10</span><span>);
+</span>}
+}
+
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">TestSynchronization2</span><span>{
+</span><span></span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">static</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">main</span><span style="color: rgb(97, 174, 238);">(String args[])</span><span>{
+</span><span>Table obj = </span><span style="color: rgb(249, 38, 114);">new</span><span> Table();</span><span style="color: rgb(177, 142, 177); font-style: italic;">//only one object  </span><span>
+</span><span>MyThread1 t1=</span><span style="color: rgb(249, 38, 114);">new</span><span> MyThread1(obj);
+</span><span>MyThread2 t2=</span><span style="color: rgb(249, 38, 114);">new</span><span> MyThread2(obj);
+</span>t1.start();
+t2.start();
+}
+}
+</code></pre></div></pre><p><strong>Output:</strong></p><pre><div class="code-box_snippetContainer__cJ6zK"><pre style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(40, 44, 52);"><code class="language-plaintext" style="white-space: pre;"><span>2
+</span>4
+6
+8
+10
+20
+30
+40
+50
+60
+</code></pre></div></pre><p><strong>Explanation:</strong></p><p>In the provided code, there's a Table class with a synchronized method printTable, which prints multiples of a given number. Two threads, MyThread1 and MyThread2, are created, each instantiated with the same Table object. Both threads invoke the printTable method with different input parameters. Since the method is synchronized, only one thread can execute it at a time, ensuring that the output is more orderly and synchronized. This prevents interleaving of output lines between different threads, leading to a more predictable and synchronized behavior.</p></section>
+							<section class="main"><h2 id="example-of-synchronized-method-by-using-an-anonymous-class" level="2">Example of Synchronized Method by Using an Anonymous Class</h2><p>Using anonymous classes for thread creation, resulting in shorter and more concise code.</p><pre><div class="code-box_snippetContainer__cJ6zK"><pre style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(40, 44, 52);"><code class="language-java" style="white-space: pre;"><span style="color: rgb(177, 142, 177); font-style: italic;">// Program of synchronized method by using anonymous class</span><span>
+</span><span></span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">Table</span><span class="hljs-class"> </span><span>{
+</span><span>    </span><span style="color: rgb(249, 38, 114);">synchronized</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">printTable</span><span style="color: rgb(97, 174, 238);">(</span><span style="color: rgb(249, 38, 114);">int</span><span style="color: rgb(97, 174, 238);"> n)</span><span style="color: rgb(97, 174, 238);"> </span><span>{ </span><span style="color: rgb(177, 142, 177); font-style: italic;">// synchronized method</span><span>
+</span><span>        </span><span style="color: rgb(249, 38, 114);">for</span><span> (</span><span style="color: rgb(249, 38, 114);">int</span><span> i = </span><span style="color: rgb(209, 154, 102);">1</span><span>; i &lt;= </span><span style="color: rgb(209, 154, 102);">5</span><span>; i++) {
+</span>            System.out.println(n * i);
+<span>            </span><span style="color: rgb(249, 38, 114);">try</span><span> {
+</span><span>                Thread.sleep(</span><span style="color: rgb(209, 154, 102);">400</span><span>);
+</span><span>            } </span><span style="color: rgb(249, 38, 114);">catch</span><span> (Exception e) {
+</span>                System.out.println(e);
+            }
+        }
+    }
+}
+
+<span></span><span style="color: rgb(249, 38, 114);">public</span><span> </span><span class="hljs-class" style="color: rgb(249, 38, 114);">class</span><span class="hljs-class"> </span><span class="hljs-class" style="color: rgb(97, 174, 238);">TestSynchronization3</span><span class="hljs-class"> </span><span>{
+</span><span>    </span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">static</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">main</span><span style="color: rgb(97, 174, 238);">(String args[])</span><span style="color: rgb(97, 174, 238);"> </span><span>{
+</span><span>        </span><span style="color: rgb(249, 38, 114);">final</span><span> Table obj = </span><span style="color: rgb(249, 38, 114);">new</span><span> Table(); </span><span style="color: rgb(177, 142, 177); font-style: italic;">// only one object</span><span>
+</span>
+<span>        Thread t1 = </span><span style="color: rgb(249, 38, 114);">new</span><span> Thread() {
+</span><span>            </span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">run</span><span style="color: rgb(97, 174, 238);">()</span><span style="color: rgb(97, 174, 238);"> </span><span>{
+</span><span>                obj.printTable(</span><span style="color: rgb(209, 154, 102);">2</span><span>);
+</span>            }
+        };
+<span>        Thread t2 = </span><span style="color: rgb(249, 38, 114);">new</span><span> Thread() {
+</span><span>            </span><span style="color: rgb(249, 38, 114);">public</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(249, 38, 114);">void</span><span style="color: rgb(97, 174, 238);"> </span><span style="color: rgb(97, 174, 238);">run</span><span style="color: rgb(97, 174, 238);">()</span><span style="color: rgb(97, 174, 238);"> </span><span>{
+</span><span>                obj.printTable(</span><span style="color: rgb(209, 154, 102);">10</span><span>);
+</span>            }
+        };
+
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre></div></pre><p><strong>Output:</strong></p><pre><div class="code-box_snippetContainer__cJ6zK"><pre style="display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(40, 44, 52);"><code class="language-plaintext" style="white-space: pre;"><span>2
+</span>4
+6
+8
+10
+20
+40
+60
+80
+100
+
+</code></pre></div></pre><p><strong>Explanation:</strong></p><p>In this program, the Table class has a synchronized method <span class="highlight--red">printTable(int n)</span>.
+								The main method creates a single instance of the Table class named obj.
+								Two threads (t1 and t2) are created using anonymous classes that override the run method.
+								Each thread invokes the printTable method on the shared Table object obj, with different arguments (2 for t1 and 10 for t2).
+								Due to synchronization, only one thread can execute the <span class="highlight--red">printTable</span> method at a time on the shared object, ensuring that the output is synchronized.</p></section>
+							<div></div>
+							<div></div>
+							<section class="summary"><h2 id="conclusion" level="2">Conclusion</h2><ul>
+								<li><span class="highlight--red">Thread synchronization</span> in Java is used to avoid the error called memory consistency which is caused due to inconsistency view of shared memory.</li>
+								<li>In Java, there are two types of thread synchronization:
+									<ul>
+										<li>Process Synchronization</li>
+										<li>Thread Synchronization
+											<ul>
+												<li>Mutual exclusive</li>
+												<li>Inter-thread communication</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>If a method is declared synchronized then the thread holds that object of the thread until the other thread is done executing.</li>
+								<li>It is used for controlling the access of multiple threads and to access shared resources.</li>
+								<li>It avoids the deadlock situations in the thread.</li>
+							</ul></section></div>
 					</div>
 				</article>
 			</div>

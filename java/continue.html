@@ -250,7 +250,114 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<div class="tutorial-content" id="mainContent">
 
+
+
+
+
+
+
+
+							<h2>Java continue Statement</h2>
+							<p>The <b>continue</b> statement can be used in any of the loop control structures. It causes the loop to immediately jump to the next iteration of the loop.</p>
+							<ul class="list">
+								<li><p>In a for loop, the continue keyword causes control to immediately jump to the update statement.</p></li>
+								<li><p>In a while loop or do/while loop, control immediately jumps to the Boolean expression.</p></li>
+							</ul>
+							<h2>Syntax</h2>
+							<p>The syntax of a continue is a single statement inside any loop −</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">continue</span><span class="token punctuation">;</span>
+</div></pre>
+							<h2>Flow Diagram</h2>
+							<img src="../scripts/images/java/java_continue_statement.jpg" alt="Java Continue Statement">
+
+							<h2>Examples</h2>
+							<h3>Example 1: Using continue with while loop</h3>
+							<p>In this example, we're showing the use of a continue statement to skip an element 15 in a while loop which is used to print element from 10 to 19. Here we've initialized an int variable x with a value of 10. Then in while loop, we're checking x as less than 20 and within while loop, we're printing the value of x and incrementing the value of x by 1. While loop will run until x becomes 15. Once x is 15, continue statement will jump the while loop while skipping the execution of the body and loop continues.</p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="0" id="0" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">while</span><span class="token punctuation">(</span> x <span class="token operator">&lt;</span> <span class="token number">20</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         x<span class="token operator">++</span><span class="token punctuation">;</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"value of x : "</span> <span class="token operator">+</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">value of x : 11
+value of x : 12
+value of x : 13
+value of x : 14
+value of x : 16
+value of x : 17
+value of x : 18
+value of x : 19
+value of x : 20
+</pre>
+							<h3>Example 2: Using continue with for loop</h3>
+							<p>In this example, we're showing the use of a continue statement within a for loop to skip an elements of an array to print. Here we're creating an array of integers as numbers and initialized it some values. We've created a variable named index to represent index of the array within for loop, check it against size of the array and incremented it by 1. Within for loop body, we're printing element of the array using index notation. Once 30 is encountered as value, continue statement jumps to the update section of for loop and loop continues.</p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="1" id="1" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> numbers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> index <span class="token operator">&lt;</span> numbers<span class="token punctuation">.</span>length<span class="token punctuation">;</span> index<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span>numbers<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"value of item : "</span> <span class="token operator">+</span> numbers<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">value of item : 10
+value of item : 20
+value of item : 40
+value of item : 50
+</pre>
+							<h3>Example 3: Using continue with do while loop</h3>
+							<p>In this example, we're showing the use of a continue statement to skip an element 15 in a do while loop which is used to print element from 10 to 19. Here we've initialized an int variable x with a value of 10. Then in do while loop, we're checking x as less than 20 after body and within while loop, we're printing the value of x and incrementing the value of x by 1. While loop will run until x becomes 15. Once x is 15, continue statement will jump the while loop while skipping the execution of the body and loop continues.</p>
+							<div class="code-wrapper"><div class="code-header"><div class="logo-side"><svg fill="white" xmlns="https://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><path d="M376.5 1.8l-7.3 22.8-144 448-7.3 22.8 45.7 14.7 7.3-22.8 144-448 7.3-22.8L376.5 1.8zm61.6 135.3l17.5 16.4L564.9 256 455.6 358.5l-17.5 16.4 32.8 35 17.5-16.4 128-120L635.1 256l-18.7-17.5-128-120-17.5-16.4-32.8 35zm-269-35l-17.5 16.4-128 120L4.9 256l18.7 17.5 128 120 17.5 16.4 32.8-35-17.5-16.4L75.1 256 184.4 153.5l17.5-16.4-32.8-35z"></path></svg></div><div class="button-side"><div class="execute"></div><div class="open-compiler">Open Compiler</div></div></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="2" id="2" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">do</span> <span class="token punctuation">{</span>
+         x<span class="token operator">++</span><span class="token punctuation">;</span>
+         <span class="token keyword">if</span><span class="token punctuation">(</span>x <span class="token operator">==</span> <span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">continue</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"value of x : "</span> <span class="token operator">+</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">while</span><span class="token punctuation">(</span> x <span class="token operator">&lt;</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">value of x : 11
+value of x : 12
+value of x : 13
+value of x : 14
+value of x : 16
+value of x : 17
+value of x : 18
+value of x : 19
+value of x : 20
+</pre>
+
+
+
+						</div>
 					</div>
 				</article>
 			</div>

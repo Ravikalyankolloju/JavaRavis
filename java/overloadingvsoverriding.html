@@ -250,7 +250,361 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+                        <div class="tutorial-content" id="mainContent">
+                            <h1>Java - Method Overloading</h1>
+                            <hr>
+                            <p>When a class has two or more methods by the same name but
+                                different parameters, at the time of calling based on the parameters passed respective
+                                method is called (or respective method body will be bonded with the calling line
+                                dynamically). This mechanism is known as method overloading.</p>
 
+                            <h2>Advantage of Method Overloading</h2>
+                            <p>Method overloading improves the code readability and reduces code redundancy. Method
+                                overloading also helps to achieve compile-time polymorphism.</p>
+
+
+                            <h2>Example of Method Overloading</h2>
+                            <p>If you observe the following example, Here we have created a class named Tester this class
+                                has two methods with same name (add) and return type, the only difference is the parameters
+                                they accept (one method accepts two integer variables and other accepts three integer
+                                variables).</p>
+                            <pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">Calculator</span><span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> c<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div></pre>
+                            <p>When you invoke the add() method based on the parameters you pass respective method body gets
+                                executed.</p>
+                            <pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">int</span> result <span class="token operator">=</span> <span class="token class-name">Calculator</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// returns 3;</span>
+result <span class="token operator">=</span> <span class="token class-name">Calculator</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// returns 6;</span>
+</div></pre>
+
+                            <h2>Different Ways of Java Method Overloading</h2>
+                            <p>Method overloading can be achieved using following ways while having same name methods in a
+                                class.</p>
+                            <ul class="list">
+                                <li>Use different number of arguments</li>
+                                <li>Use different type of arguments</li>
+                            </ul>
+
+                            <h2>Invalid Ways of Java Method Overloading</h2>
+                            <p>Method overloading cannot be achieved using following ways while having same name methods in
+                                a class. Compiler will complain of duplicate method presence.</p>
+                            <ul class="list">
+                                <li>Using different return type</li>
+                                <li>Using static and non-static methods</li>
+                            </ul>
+                            <h2>Method Overloading: Different Number of Arguments</h2>
+                            <p>You can implement method overloading based on the different number of arguments.</p>
+                            <h3>Example: Different Number of Arguments (Static Methods)</h3>
+                            <p>In this example, we've created a Calculator class having two static methods with same name
+                                but different arguments to add two and three int values respectively. In main() method,
+                                we're calling these methods and printing the result. Based on the type of arguments passed,
+                                compiler decides the method to be called and result is printed accordingly.</p>
+                            <div class="code-wrapper">
+                                <div class="code-header">
+
+
+                                </div>
+                                <pre class="demo-code notranslate language-java" data-lang="java" data-index="0" id="0" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>tutorialspoint</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Calculator</span><span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> c<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Tester</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Calculator</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Calculator</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre>
+                            </div>
+                            <h3>Output</h3>
+                            <pre class="result notranslate">60
+150
+</pre>
+                            <h3>Example: Different Number of Arguments (Non Static Methods)</h3>
+                            <p>In this example, we've created a Calculator class having two non-static methods with same
+                                name but different arguments to add two and three int values respectively. In main() method,
+                                we're calling these methods using object of Calculator class and printing the result. Based
+                                on the number of arguments passed, compiler decides the method to be called and result is
+                                printed accordingly.</p>
+                            <div class="code-wrapper">
+                                <div class="code-header">
+
+
+                                </div>
+                                <pre class="demo-code notranslate language-java" data-lang="java" data-index="1" id="1" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>tutorialspoint</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Calculator</span><span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> c<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Tester</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token class-name">Calculator</span> calculator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Calculator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>calculator<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>calculator<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre>
+                            </div>
+                            <h3>Output</h3>
+                            <pre class="result notranslate">60
+150
+</pre>
+                            <div style="width: 100%; display: flex; flex-flow: wrap; justify-content: center; align-items: center;">
+
+                            </div>
+                            <div style="width: 100%; display: flex; flex-flow: wrap; justify-content: center; align-items: center;">
+                                <div id="tutorialspointcom47473-2" data-pg-ad-spot="tutorialspointcom47473"></div>
+                            </div>
+                            <h2>Method Overloading: Different Type of Arguments</h2>
+                            <p>You can implement method overloading based on the different type of arguments.</p>
+                            <h3>Example: Different Type of Arguments</h3>
+                            <p>In this example, we've created a Calculator class having two non-static methods with same
+                                name but different types of arguments to add two int values and two double values
+                                respectively. In main() method, we're calling these methods using object of Calculator class
+                                and printing the result. Based on the type of arguments passed, compiler decides the method
+                                to be called and result is printed accordingly.</p>
+                            <div class="code-wrapper">
+                                <div class="code-header">
+
+
+                                </div>
+                                <pre class="demo-code notranslate language-java" data-lang="java" data-index="2" id="2" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>tutorialspoint</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Calculator</span><span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">double</span> a<span class="token punctuation">,</span> <span class="token keyword">double</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Tester</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token class-name">Calculator</span> calculator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Calculator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>calculator<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>calculator<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">20.0</span><span class="token punctuation">,</span> <span class="token number">40.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre>
+                            </div>
+                            <h3>Output</h3>
+                            <pre class="result notranslate">60
+60.0
+</pre>
+
+
+                            <h1>Java - Overriding</h1>
+                            <hr>
+                            <!-- TAGNAME: 728x90_Top -->
+
+
+
+
+
+                            <p>In the previous chapter, we talked about superclasses and subclasses. If a class inherits a
+                                method from its superclass, then there is a chance to override the method provided that it
+                                is not marked final.</p>
+
+                            <h2>Benefit of Overriding in Java</h2>
+                            <p>The benefit of overriding is: ability to define a behavior that's specific to the subclass
+                                type, which means a subclass can implement a parent class method based on its
+                                requirement.</p>
+                            <p>In object-oriented terms,
+                                overriding means to override the functionality of an existing method.</p>
+
+                            <h2>Java Method Overriding</h2>
+                            <p><b>Method overriding</b> allows us to achieve run-time polymorphism
+                                and is used for writing specific definitions of a subclass method that is already defined in
+                                the superclass.</p>
+                            <p>The method is superclass and overridden method in the subclass should have the same
+                                declaration signature such as parameters list, type, and return type.</p>
+
+
+                            <h2>Usage of Java Method Overriding</h2>
+                            <p>Following are the two important usages of method overriding in Java:</p>
+                            <ul class="list">
+                                <li>Method overriding is used for achieving run-time polymorphism.</li>
+                                <li>Method overriding is used for writing specific definition of a subclass method (this
+                                    method is known as the overridden method).
+                                </li>
+                            </ul>
+                            <h2>Example of Method Overriding in Java</h2>
+                            <p>Let us look at an example.</p>
+                            <div class="code-wrapper">
+                                <div class="code-header">
+
+
+                                </div>
+                                <pre class="demo-code notranslate language-java" data-lang="java" data-index="0" id="0" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Animals can move"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Dogs can walk and run"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestDog</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Animal reference and object</span>
+      <span class="token class-name">Animal</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Animal reference but Dog object</span>
+
+      a<span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// runs the method in Animal class</span>
+      b<span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// runs the method in Dog class</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre>
+                            </div>
+                            <h4>Output</h4>
+                            <pre class="result notranslate">Animals can move
+Dogs can walk and run
+</pre>
+                            <p>In the above example, you can see that even though <b>b</b> is a type of Animal it runs the
+                                move method in the Dog class. The reason for this is: In compile time, the check is made on
+                                the reference type. However, in the runtime, JVM figures out the object type and would run
+                                the method that belongs to that particular object.</p>
+                            <p>Therefore, in the above example, the program will compile properly since Animal class has the
+                                method move. Then, at the runtime, it runs the method specific for that object.</p>
+                            <p>Consider the following example −</p>
+                            <h3>Example</h3>
+                            <div class="code-wrapper">
+                                <div class="code-header">
+
+
+                                </div>
+                                <pre class="demo-code notranslate language-java" data-lang="java" data-index="1" id="1" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Animals can move"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Dogs can walk and run"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bark</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Dogs can bark"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestDog</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Animal reference and object</span>
+      <span class="token class-name">Animal</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Animal reference but Dog object</span>
+
+      a<span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// runs the method in Animal class</span>
+      b<span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// runs the method in Dog class</span>
+      b<span class="token punctuation">.</span><span class="token function">bark</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre>
+                            </div>
+                            <h4>Output</h4>
+                            <pre class="result notranslate">TestDog.java:26: error: cannot find symbol
+      b.bark();
+       ^
+  symbol:   method bark()
+  location: variable b of type Animal
+1 error
+</pre>
+                            <p>This program will throw a compile time error since b's reference type Animal doesn't have a
+                                method by the name of bark.</p>
+
+
+                            <h2>Rules for Method Overriding</h2>
+                            <ul class="list">
+                                <li><p>The argument list should be exactly the same as that of the overridden method.</p>
+                                </li>
+                                <li><p>The return type should be the same or a subtype of the return type declared in the
+                                    original overridden method in the superclass.</p></li>
+                                <li><p>The access level cannot be more restrictive than the overridden method's access
+                                    level. For example: If the superclass method is declared public then the overridding
+                                    method in the sub class cannot be either private or protected.</p></li>
+                                <li><p>Instance methods can be overridden only if they are inherited by the subclass.</p>
+                                </li>
+                                <li><p>A method declared final cannot be overridden.</p></li>
+                                <li><p>A method declared static cannot be overridden but can be re-declared.</p></li>
+                                <li><p>If a method cannot be inherited, then it cannot be overridden.</p></li>
+                                <li><p>A subclass within the same package as the instance's superclass can override any
+                                    superclass method that is not declared private or final.</p></li>
+                                <li><p>A subclass in a different package can only override the non-final methods declared
+                                    public or protected.</p></li>
+                                <li><p>An overriding method can throw any uncheck exceptions, regardless of whether the
+                                    overridden method throws exceptions or not. However, the overriding method should not
+                                    throw checked exceptions that are new or broader than the ones declared by the
+                                    overridden method. The overriding method can throw narrower or fewer exceptions than the
+                                    overridden method.</p></li>
+                                <li><p>Constructors cannot be overridden.</p></li>
+                            </ul>
+                            <h2>Java Method and Constructor Overriding</h2>
+                            <p>In Java, each class has a different name and the constructor's name is the same as the class
+                                name. Thus, we cannot override a constructor
+                                as they cannot have the same name.</p>
+
+
+                            <h2>Java Method Overriding: Using the super Keyword</h2>
+                            <p>When invoking a superclass version of an overridden method the <b>super</b> keyword is used.
+                            </p>
+                            <h3>Example: Using the super Keyword</h3>
+                            <div class="code-wrapper">
+                                <div class="code-header">
+
+
+                                </div>
+                                <pre class="demo-code notranslate language-java" data-lang="java" data-index="2" id="2" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Animals can move"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// invokes the super class method</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Dogs can walk and run"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestDog</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Animal</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// Animal reference but Dog object</span>
+      b<span class="token punctuation">.</span><span class="token function">move</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// runs the method in Dog class</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre>
+                            </div>
+                            <h4>Output</h4>
+                            <pre class="result notranslate">Animals can move
+Dogs can walk and run
+</pre>
+
+
+                        </div>
 					</div>
 				</article>
 			</div>

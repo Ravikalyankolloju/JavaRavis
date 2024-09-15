@@ -250,7 +250,295 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<div class="tutorial-content" id="mainContent">
+							<h1>Java - Encapsulation</h1>
+							<hr>
+							<div class="clearer"></div>
+							<h2>Java Encapsulation</h2>
+							<p><b>Encapsulation</b> is one of the four fundamental OOP concepts. The other three are inheritance, polymorphism, and abstraction.</p>
+							<p>Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as <b>data hiding</b>.</p>
+							<h2>Achieving Encapsulation in Java</h2>
+							<p>To achieve encapsulation in Java −</p>
+							<ul class="list">
+								<li><p>Declare the variables of a class as private.</p></li>
+								<li><p>Provide public setter and getter methods to modify and view the variables values.</p></li>
+							</ul>
+							<h2>Java Encapsulation Example</h2>
+							<p>Following is an example that demonstrates how to achieve Encapsulation in Java −</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token comment">/* File name : EncapTest.java */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EncapTest</span> <span class="token punctuation">{</span>
+   <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+   <span class="token keyword">private</span> <span class="token class-name">String</span> idNum<span class="token punctuation">;</span>
+   <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 
+   <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> age<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getIdNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> idNum<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span> <span class="token keyword">int</span> newAge<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      age <span class="token operator">=</span> newAge<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> newName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      name <span class="token operator">=</span> newName<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setIdNum</span><span class="token punctuation">(</span> <span class="token class-name">String</span> newId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      idNum <span class="token operator">=</span> newId<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div></pre>
+							<p>The public <span class="tp-codespan">setXXX()</span> and <span class="tp-codespan">getXXX()</span> methods are the access points of the instance variables of the <span class="tp-codespan">EncapTest</span> class. Normally, these methods are referred as getters and setters. Therefore, any class that wants to access the variables should access them through these getters and setters.</p>
+							<p>The variables of the <span class="tp-codespan">EncapTest</span> class can be accessed using the following program −</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token comment">/* File name : RunEncap.java */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RunEncap</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">EncapTest</span> encap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EncapTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      encap<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"James"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      encap<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      encap<span class="token punctuation">.</span><span class="token function">setIdNum</span><span class="token punctuation">(</span><span class="token string">"12343ms"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Name : "</span> <span class="token operator">+</span> encap<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" Age : "</span> <span class="token operator">+</span> encap<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EncapTest</span> <span class="token punctuation">{</span>
+   <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+   <span class="token keyword">private</span> <span class="token class-name">String</span> idNum<span class="token punctuation">;</span>
+   <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> age<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getIdNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> idNum<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span> <span class="token keyword">int</span> newAge<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      age <span class="token operator">=</span> newAge<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> newName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      name <span class="token operator">=</span> newName<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setIdNum</span><span class="token punctuation">(</span> <span class="token class-name">String</span> newId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      idNum <span class="token operator">=</span> newId<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div></pre>
+							<h3>Output</h3>
+							<pre class="result notranslate">Name : James Age : 20
+</pre>
+							<div style="width: 100%; display: flex; flex-flow: wrap; justify-content: center; align-items: center;"><div id="tutorialspointcom47464-1" data-pg-ad-spot="tutorialspointcom47464"></div></div><h2>Benefits of Encapsulation</h2>
+							<ul class="list">
+								<li><p>The fields of a class can be made read-only or write-only.</p></li>
+								<li><p>A class can have total control over what is stored in its fields.</p></li>
+							</ul>
+
+							<h2>Java Encapsulation: Read-Only Class</h2>
+							<p>A read-only class can have only getter methods to get the values of the attributes, there should not be any setter method.</p>
+							<h3>Example: Creating Read-Only Class</h3>
+							<p>In this example, we defined a class <span class="tp-codespan">Person</span> with two getter methods <span class="tp-codespan">getName()</span> and <span class="tp-codespan">getAge()</span>. These methods can be used to get the values of attributes declared as private in the class.</p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="0" id="0" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token comment">// Class "Person"</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token string">"Robert"</span><span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">21</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Getter methods</span>
+  <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Object to Person class</span>
+    <span class="token class-name">Person</span> per <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Getting and printing the values</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Name of the person is: "</span> <span class="token operator">+</span> per<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Age of the person is: "</span> <span class="token operator">+</span> per<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">Name of the person is: Robert
+Age of the person is: 21
+</pre>
+
+							<div style="width: 100%; display: flex; flex-flow: wrap; justify-content: center; align-items: center;"><div id="tutorialspointcom47464-2" data-pg-ad-spot="tutorialspointcom47464"></div></div><h2>Java Encapsulation: Write-Only Class</h2>
+							<p>A write-only class can have only setter methods to set the values of the attributes, there should not be any getter method.</p>
+							<h3>Example: Creating Write-Only Class</h3>
+							<p>In this example, we defined a class <span class="tp-codespan">Person</span> with two setter methods <span class="tp-codespan">setName()</span> and <span class="tp-codespan">setAge()</span>. These methods can be used to set the values of attributes declared as private in the class.</p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="1" id="1" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token comment">// Class "Person"</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+  <span class="token comment">// Setter Methods</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Object to Person class</span>
+    <span class="token class-name">Person</span> per <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Setting the values</span>
+    per<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"Robert"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    per<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+
+							<h2>Java Encapsulation: More Examples</h2>
+							<h3>Example 1: Person Class (Fully Encapsulated)</h3>
+							<p>This example creates a fully encapsulated class named "Person". This class has private class attributes, setter, and getter methods.</p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="2" id="2" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token comment">// Class "Person"</span>
+<span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+  <span class="token comment">// Setter Methods</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Getter methods</span>
+  <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// The Main class to test encapsulated class "Person"</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Objects to Person class</span>
+    <span class="token class-name">Person</span> per1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Person</span> per2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Setting the values</span>
+    per1<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"Robert"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    per1<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">21</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    per2<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"Riyan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    per2<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Printing the values</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Person 1: Name : "</span> <span class="token operator">+</span> per1<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" Age : "</span> <span class="token operator">+</span> per1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Person 2: Name : "</span> <span class="token operator">+</span> per2<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" Age : "</span> <span class="token operator">+</span> per2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">Person 1: Name : Robert Age : 21
+Person 2: Name : Riyan Age : 22
+</pre>
+
+							<h3>Example 2: Employee Class (Fully Encapsulated)</h3>
+							<p>This example creates a fully encapsulated class named "Employee". This class has private class attributes, setter, and getter methods.</p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="3" id="3" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token comment">// Class "Employee"</span>
+<span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> emp_name<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token class-name">String</span> emp_id<span class="token punctuation">;</span>
+  <span class="token keyword">private</span> <span class="token keyword">double</span> net_salary<span class="token punctuation">;</span>
+
+  <span class="token comment">// Constructor</span>
+  <span class="token keyword">public</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token class-name">String</span> emp_name<span class="token punctuation">,</span> <span class="token class-name">String</span> emp_id<span class="token punctuation">,</span> <span class="token keyword">double</span> net_salary<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>emp_name <span class="token operator">=</span> emp_name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>emp_id <span class="token operator">=</span> emp_id<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>net_salary <span class="token operator">=</span> net_salary<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Getter methods</span>
+  <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getEmpName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> emp_name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getEmpId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> emp_id<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getSalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> net_salary<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Setter methods</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setEmpName</span><span class="token punctuation">(</span><span class="token class-name">String</span> emp_name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>emp_name <span class="token operator">=</span> emp_name<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setEmpId</span><span class="token punctuation">(</span><span class="token class-name">String</span> emp_id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>emp_id <span class="token operator">=</span> emp_id<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setSalary</span><span class="token punctuation">(</span><span class="token keyword">double</span> net_salary<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>net_salary <span class="token operator">=</span> net_salary<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// The Main class to test encapsulated class "Employee"</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Objects to Employee class</span>
+    <span class="token comment">// First object - setting values using constructor</span>
+    <span class="token class-name">Employee</span> emp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token string">"Robert"</span><span class="token punctuation">,</span> <span class="token string">"EMP001"</span><span class="token punctuation">,</span> <span class="token number">75450.00</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Printing data</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Employee (Intial Values):"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>emp<span class="token punctuation">.</span><span class="token function">getEmpId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" , "</span> <span class="token operator">+</span> emp<span class="token punctuation">.</span><span class="token function">getEmpName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" , "</span> <span class="token operator">+</span> emp<span class="token punctuation">.</span><span class="token function">getSalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Updating values using setter methods</span>
+    emp<span class="token punctuation">.</span><span class="token function">setEmpName</span><span class="token punctuation">(</span><span class="token string">"Riyan"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    emp<span class="token punctuation">.</span><span class="token function">setEmpId</span><span class="token punctuation">(</span><span class="token string">"EMP002"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    emp<span class="token punctuation">.</span><span class="token function">setSalary</span><span class="token punctuation">(</span><span class="token number">90500.00</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Printing data</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Employee (Updated Values):"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>emp<span class="token punctuation">.</span><span class="token function">getEmpId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" , "</span> <span class="token operator">+</span> emp<span class="token punctuation">.</span><span class="token function">getEmpName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" , "</span> <span class="token operator">+</span> emp<span class="token punctuation">.</span><span class="token function">getSalary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">Employee (Intial Values):
+EMP001 , Robert , 75450.0
+Employee (Updated Values):
+EMP002 , Riyan , 90500.0
+</pre>
+
+						</div>
 					</div>
 				</article>
 			</div>

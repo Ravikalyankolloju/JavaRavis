@@ -250,7 +250,140 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<div class="tutorial-content" id="mainContent">
+							<h1>Java - Aggregation</h1>
+							<hr>
+							<p>An aggregation is a relationship between two classes where one class contains an instance of another class. For example, when an object A contains a reference to another object B or we can say Object A has a HAS-A relationship with Object B, then it is termed as Aggregation in Java Programming.</p>
 
+							<h2>Use of Java Aggregation</h2>
+							<p>Aggregation in Java helps in reusing the code. Object B can have utility methods and which can be utilized by multiple objects. Whichever class has object B then it can utilize its methods.</p>
+
+							<h2>Java Aggregation Examples</h2>
+							<h3>Example 1</h3>
+							<p>In this example, we're creating few classes like Vehicle, Speed. A Van class is defined which extends Vehicle class and has a Speed class object. Van class inherits properties from Vehicle class and Speed being its property, we're passing it from caller object. In output, we're printing the details of Van object.</p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="0" id="0" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>tutorialspoint</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Vehicle</span><span class="token punctuation">{</span>
+   <span class="token keyword">private</span> <span class="token class-name">String</span> vin<span class="token punctuation">;</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getVin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> vin<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setVin</span><span class="token punctuation">(</span><span class="token class-name">String</span> vin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>vin <span class="token operator">=</span> vin<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Speed</span><span class="token punctuation">{</span>
+   <span class="token keyword">private</span> <span class="token keyword">double</span> max<span class="token punctuation">;</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getMax</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setMax</span><span class="token punctuation">(</span><span class="token keyword">double</span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>max <span class="token operator">=</span> max<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Van</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+   <span class="token keyword">private</span> <span class="token class-name">Speed</span> speed<span class="token punctuation">;</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">Speed</span> <span class="token function">getSpeed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> speed<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setSpeed</span><span class="token punctuation">(</span><span class="token class-name">Speed</span> speed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>speed <span class="token operator">=</span> speed<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Vin: "</span> <span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getVin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">", Max Speed: "</span> <span class="token operator">+</span> speed<span class="token punctuation">.</span><span class="token function">getMax</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Tester</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Speed</span> speed <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Speed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      speed<span class="token punctuation">.</span><span class="token function">setMax</span><span class="token punctuation">(</span><span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">Van</span> van <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Van</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      van<span class="token punctuation">.</span><span class="token function">setVin</span><span class="token punctuation">(</span><span class="token string">"abcd1233"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      van<span class="token punctuation">.</span><span class="token function">setSpeed</span><span class="token punctuation">(</span>speed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      van<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">Vin: abcd1233, Max Speed: 120.0
+</pre>
+							<h3>Example 2</h3>
+							<p>In this  example, we're creating few classes like Student, Address. A student can has a address. So we've defined an address as an instance variable in Student class. In output, we're printing the student details.</p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="1" id="1" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>tutorialspoint</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Address</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> strNum<span class="token punctuation">;</span>
+   <span class="token class-name">String</span> city<span class="token punctuation">;</span>
+   <span class="token class-name">String</span> state<span class="token punctuation">;</span>
+   <span class="token class-name">String</span> country<span class="token punctuation">;</span>
+
+   <span class="token class-name">Address</span><span class="token punctuation">(</span><span class="token keyword">int</span> street<span class="token punctuation">,</span> <span class="token class-name">String</span> c<span class="token punctuation">,</span> <span class="token class-name">String</span> st<span class="token punctuation">,</span> <span class="token class-name">String</span> country<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>strNum <span class="token operator">=</span> street<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>city <span class="token operator">=</span> c<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> st<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>country <span class="token operator">=</span> country<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> rno<span class="token punctuation">;</span>
+   <span class="token class-name">String</span> stName<span class="token punctuation">;</span>
+
+   <span class="token class-name">Address</span> stAddr<span class="token punctuation">;</span>
+   <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token keyword">int</span> roll<span class="token punctuation">,</span> <span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token class-name">Address</span> address<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>rno <span class="token operator">=</span> roll<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>stName <span class="token operator">=</span> name<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>stAddr <span class="token operator">=</span> address<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Tester</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Address</span> ad<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Address</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"Bareilly"</span><span class="token punctuation">,</span> <span class="token string">"UP"</span><span class="token punctuation">,</span> <span class="token string">"India"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">Student</span> st<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Aashi"</span><span class="token punctuation">,</span> ad<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Roll no: "</span><span class="token operator">+</span> st<span class="token punctuation">.</span>rno<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Name: "</span><span class="token operator">+</span> st<span class="token punctuation">.</span>stName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Street: "</span><span class="token operator">+</span> st<span class="token punctuation">.</span>stAddr<span class="token punctuation">.</span>strNum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"City: "</span><span class="token operator">+</span> st<span class="token punctuation">.</span>stAddr<span class="token punctuation">.</span>city<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"State: "</span><span class="token operator">+</span> st<span class="token punctuation">.</span>stAddr<span class="token punctuation">.</span>state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Country: "</span><span class="token operator">+</span> st<span class="token punctuation">.</span>stAddr<span class="token punctuation">.</span>country<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">Roll no: 1
+Name: Aashi
+Street: 10
+City: Bareilly
+State: UP
+Country: India
+</pre>
+							<p>In a unique sense, this is a type of association. Aggregation is a one way directed relationship that precisely expresses HAS-A relationship between classes. Additionally, when two classes are aggregated, terminating one of them has no effect on the other. When compared to composition, it is frequently designated as a weak relationship. In comparison, the parent owns the child entity, which means the child entity cannot be accessed directly and cannot exist without the parent object. Contrarily, in an association, the parent and child entities may both exist in their own right.</p>
+							<h2>HAS-A Relationship</h2>
+							<p>These relationships are mainly based on the usage. This determines whether a certain class <b>HAS-A</b> certain thing. This relationship helps to reduce duplication of code as well as bugs.</p>
+							<h3>Example</h3>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Vehicle</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Speed</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Van</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+   <span class="token keyword">private</span> <span class="token class-name">Speed</span> sp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</div></pre>
+							<p>This shows that class Van HAS-A Speed. By having a separate class for Speed, we do not have to put the entire code that belongs to speed inside the Van class, which makes it possible to reuse the Speed class in multiple applications.</p>
+							<p>In Object-Oriented feature, the users do not need to bother about which object is doing the real work. To achieve this, the Van class hides the implementation details from the users of the Van class. So, basically what happens is the users would ask the Van class to do a certain action and the Van class will either do the work by itself or ask another class to perform the action.</p>
+
+						</div>
 					</div>
 				</article>
 			</div>

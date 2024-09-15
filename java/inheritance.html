@@ -250,7 +250,397 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<div class="tutorial-content" id="mainContent">
+							<h1>Java - Inheritance</h1>
+							<hr>
+							<p>In Java programming, the inheritance is an important of concept of Java OOPs. Inheritance is a process where one class acquires the properties (methods and attributes) of another. With the use of inheritance, the information is made manageable in a hierarchical order.</p>
+							<p>The class which inherits the properties of other is known as subclass (derived class, child class) and the class whose properties are inherited is known as superclass (base class, parent class).</p>
 
+							<h2>Need of Java Inheritance</h2>
+							<ul>
+								<li><strong>Code Reusability</strong>: The basic need of an inheritance is to reuse the features. If you have defined some functionality once, by using the inheritance you can easily use them in other classes and packages.</li>
+								<li><strong>Extensibility</strong>: The inheritance helps to extend the functionalities of a class. If you have a base class with some functionalities, you can extend them by using the inheritance in the derived class.</li>
+								<li><strong>Implantation of Method Overriding</strong>: Inheritance is required to achieve one of the concepts of Polymorphism which is Method overriding.</li>
+								<li><strong>Achieving Abstraction</strong>: Another concept of OOPs that is abstraction also needs inheritance.</li>
+							</ul>
+
+							<h2>Implementation of Java Inheritance</h2>
+							<p>To implement (use) inheritance in Java, the extends keyword is used. It inherits the properties (attributes or/and methods) of the base class to the derived class.  The word "extends" means to extend functionalities i.e., the extensibility of the features.</p>
+							<h3>Syntax to implement inheritance</h3>
+							<p>Consider the below syntax to implement (use) inheritance in Java:</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">Super</span> <span class="token punctuation">{</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Sub</span> <span class="token keyword">extends</span> <span class="token class-name">Super</span> <span class="token punctuation">{</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</div></pre>
+							<h2>Java Inheritance Example</h2>
+							<p>Following is an example demonstrating Java inheritance. In this example, you can observe two classes namely Calculation and My_Calculation.</p>
+							<p>Using extends keyword, the My_Calculation inherits the methods addition() and Subtraction() of Calculation class.</p>
+							<p>Copy and paste the following program in a file with name My_Calculation.java</p>
+							<h3>Java Program to Implement Inheritance</h3>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="0" id="0" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">Calculation</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> z<span class="token punctuation">;</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addition</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      z <span class="token operator">=</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The sum of the given numbers:"</span><span class="token operator">+</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token class-name">Subtraction</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      z <span class="token operator">=</span> x <span class="token operator">-</span> y<span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The difference between the given numbers:"</span><span class="token operator">+</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">My_Calculation</span> <span class="token keyword">extends</span> <span class="token class-name">Calculation</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">multiplication</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      z <span class="token operator">=</span> x <span class="token operator">*</span> y<span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The product of the given numbers:"</span><span class="token operator">+</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+      <span class="token class-name">My_Calculation</span> demo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">My_Calculation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      demo<span class="token punctuation">.</span><span class="token function">addition</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name"><span class="token namespace">demo<span class="token punctuation">.</span></span>Subtraction</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      demo<span class="token punctuation">.</span><span class="token function">multiplication</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<p>Compile and execute the above code as shown below.</p>
+							<pre class="result notranslate">javac My_Calculation.java
+java My_Calculation
+</pre>
+							<p>After executing the program, it will produce the following result −</p>
+							<p><b>Output</b></p>
+							<pre class="result notranslate">The sum of the given numbers:30
+The difference between the given numbers:10
+The product of the given numbers:200
+</pre>
+							<p>In the given program, when an object to <b>My_Calculation</b> class is created, a copy of the contents of the superclass is made within it. That is why, using the object of the subclass you can access the members of a superclass.</p>
+							<img src="../scripts/images/java/inheritance.jpg" alt="Inheritance">
+							<p>The Superclass reference variable can hold the subclass object, but using that variable you can access only the members of the superclass, so to access the members of both classes it is recommended to always create reference variable to the subclass.</p>
+							<p>If you consider the above program, you can instantiate the class as given below. But using the superclass reference variable ( <b>cal</b> in this case) you cannot call the method <b>multiplication()</b>, which belongs to the subclass My_Calculation.</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token class-name">Calculation</span> demo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">My_Calculation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+demo<span class="token punctuation">.</span><span class="token function">addition</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name"><span class="token namespace">demo<span class="token punctuation">.</span></span>Subtraction</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</div></pre>
+							<p><b>Note</b> − A subclass inherits all the members (fields, methods, and nested classes) from its superclass. Constructors are not members, so they are not inherited by subclasses, but the constructor of the superclass can be invoked from the subclass.</p>
+
+							<h2>Java Inheritance: The super Keyword</h2>
+							<p>The <b>super</b> keyword is similar to <b>this</b> keyword. Following are the scenarios where the super keyword is used.</p>
+							<ul class="list">
+								<li><p>It is used to <b>differentiate the members</b> of superclass from the members of subclass, if they have same names.</p></li>
+								<li><p>It is used to <b>invoke the superclass</b> constructor from subclass.</p></li>
+							</ul>
+							<h3>Differentiating the Members</h3>
+							<p>If a class is inheriting the properties of another class. And if the members of the superclass have the names same as the sub class, to differentiate these variables we use super keyword as shown below.</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">super</span><span class="token punctuation">.</span>variable
+<span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</div></pre>
+							<h3>Sample Code</h3>
+							<p>This section provides you a program that demonstrates the usage of the <b>super</b> keyword.</p>
+							<p>In the given program, you have two classes namely <i>Sub_class</i> and <i>Super_class</i>, both have a method named display() with different implementations, and a variable named num with different values. We are invoking display() method of both classes and printing the value of the variable num of both classes. Here you can observe that we have used super keyword to differentiate the members of superclass from subclass.</p>
+							<p>Copy and paste the program in a file with name Sub_class.java.</p>
+							<p><b>Example</b></p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="1" id="1" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">Super_class</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// display method of superclass</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"This is the display method of superclass"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Sub_class</span> <span class="token keyword">extends</span> <span class="token class-name">Super_class</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+   <span class="token comment">// display method of sub class</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"This is the display method of subclass"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">my_method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Instantiating subclass</span>
+      <span class="token class-name">Sub_class</span> sub <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sub_class</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Invoking the display() method of sub class</span>
+      sub<span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Invoking the display() method of superclass</span>
+      <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// printing the value of variable num of subclass</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"value of the variable named num in sub class:"</span><span class="token operator">+</span> sub<span class="token punctuation">.</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// printing the value of variable num of superclass</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"value of the variable named num in super class:"</span><span class="token operator">+</span> <span class="token keyword">super</span><span class="token punctuation">.</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Sub_class</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sub_class</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      obj<span class="token punctuation">.</span><span class="token function">my_method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<p>Compile and execute the above code using the following syntax.</p>
+							<pre class="result notranslate">javac Super_Demo
+java Super
+</pre>
+							<p>On executing the program, you will get the following result −</p>
+							<p><b>Output</b></p>
+							<pre class="result notranslate">This is the display method of subclass
+This is the display method of superclass
+value of the variable named num in sub class:10
+value of the variable named num in super class:20
+</pre>
+							<h2>Invoking Superclass Constructor</h2>
+							<p>If a class is inheriting the properties of another class, the subclass automatically acquires the default constructor of the superclass. But if you want to call a parameterized constructor of the superclass, you need to use the super keyword as shown below.</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">super</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</div></pre>
+							<h3>Sample Code</h3>
+							<p>The program given in this section demonstrates how to use the super keyword to invoke the parametrized constructor of the superclass. This program contains a superclass and a subclass, where the superclass contains a parameterized constructor which accepts a integer value, and we used the super keyword to invoke the parameterized constructor of the superclass.</p>
+							<p>Copy and paste the following program in a file with the name Subclass.java</p>
+							<p><b>Example</b></p>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="2" id="2" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">Superclass</span> <span class="token punctuation">{</span>
+   <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+   <span class="token class-name">Superclass</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"The value of the variable named age in super class is: "</span> <span class="token operator">+</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Subclass</span> <span class="token keyword">extends</span> <span class="token class-name">Superclass</span> <span class="token punctuation">{</span>
+   <span class="token class-name">Subclass</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">super</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Subclass</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Subclass</span><span class="token punctuation">(</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      s<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<p>Compile and execute the above code using the following syntax.</p>
+							<pre class="result notranslate">javac Subclass
+java Subclass
+</pre>
+							<p><b>Output</b></p>
+							<pre class="result notranslate">The value of the variable named age in super class is: 24
+</pre>
+							<h2>IS-A Relationship</h2>
+							<p>IS-A is a way of saying: This object is a type of that object. Let us see how the <b>extends</b> keyword is used to achieve inheritance.</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Mammal</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Reptile</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Mammal</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</div></pre>
+							<p>Now, based on the above example, in Object-Oriented terms, the following are true −</p>
+							<ul class="list">
+								<li>Animal is the superclass of Mammal class.</li>
+								<li>Animal is the superclass of Reptile class.</li>
+								<li>Mammal and Reptile are subclasses of Animal class.</li>
+								<li>Dog is the subclass of both Mammal and Animal classes.</li>
+							</ul>
+							<p>Now, if we consider the IS-A relationship, we can say −</p>
+							<ul class="list">
+								<li>Mammal IS-A Animal</li>
+								<li>Reptile IS-A Animal</li>
+								<li>Dog IS-A Mammal</li>
+								<li>Hence: Dog IS-A Animal as well</li>
+							</ul>
+							<p>With the use of the extends keyword, the subclasses will be able to inherit all the properties of the superclass except for the private properties of the superclass.</p>
+							<p>We can assure that Mammal is actually an Animal with the use of the instance operator.</p>
+							<h3>Example</h3>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="3" id="3" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Mammal</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Reptile</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Mammal</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Animal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">Mammal</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Mammal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">Dog</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>m <span class="token keyword">instanceof</span> <span class="token class-name">Animal</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d <span class="token keyword">instanceof</span> <span class="token class-name">Mammal</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d <span class="token keyword">instanceof</span> <span class="token class-name">Animal</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<p><b>Output</b></p>
+							<pre class="result notranslate">true
+true
+true
+</pre>
+							<p>Since we have a good understanding of the <b>extends</b> keyword, let us look into how the <b>implements</b> keyword is used to get the IS-A relationship.</p>
+							<p>Generally, the <b>implements</b> keyword is used with classes to inherit the properties of an interface. Interfaces can never be extended by a class.</p>
+							<p><b>Example</b></p>
+
+							<h2>Java Inheritance: The instanceof Keyword</h2>
+							<p>Let us use the <b>instanceof</b> operator to check determine whether Mammal is actually an Animal, and dog is actually an Animal.</p>
+							<h3>Example</h3>
+							<div class="code-wrapper"><div class="code-header"><div class="logo-side"><svg fill="white" xmlns="https://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><path d="M376.5 1.8l-7.3 22.8-144 448-7.3 22.8 45.7 14.7 7.3-22.8 144-448 7.3-22.8L376.5 1.8zm61.6 135.3l17.5 16.4L564.9 256 455.6 358.5l-17.5 16.4 32.8 35 17.5-16.4 128-120L635.1 256l-18.7-17.5-128-120-17.5-16.4-32.8 35zm-269-35l-17.5 16.4-128 120L4.9 256l18.7 17.5 128 120 17.5 16.4 32.8-35-17.5-16.4L75.1 256 184.4 153.5l17.5-16.4-32.8-35z"></path></svg></div><div class="button-side"><div class="execute"></div><div class="open-compiler">Open Compiler</div></div></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="4" id="4" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">interface</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Mammal</span> <span class="token keyword">implements</span> <span class="token class-name">Animal</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token keyword">extends</span> <span class="token class-name">Mammal</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Mammal</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Mammal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">Dog</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>m <span class="token keyword">instanceof</span> <span class="token class-name">Animal</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d <span class="token keyword">instanceof</span> <span class="token class-name">Mammal</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d <span class="token keyword">instanceof</span> <span class="token class-name">Animal</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<p><b>Output</b></p>
+							<pre class="result notranslate">true
+true
+true
+</pre>
+							<h2>HAS-A relationship</h2>
+							<p>These relationships are mainly based on the usage. This determines whether a certain class <b>HAS-A</b> certain thing. This relationship helps to reduce duplication of code as well as bugs.</p>
+							<p>Lets look into an example −</p>
+							<h3>Example</h3>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Vehicle</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Speed</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Van</span> <span class="token keyword">extends</span> <span class="token class-name">Vehicle</span> <span class="token punctuation">{</span>
+   <span class="token keyword">private</span> <span class="token class-name">Speed</span> sp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</div></pre>
+							<p>This shows that class Van HAS-A Speed. By having a separate class for Speed, we do not have to put the entire code that belongs to speed inside the Van class, which makes it possible to reuse the Speed class in multiple applications.</p>
+							<p>In Object-Oriented feature, the users do not need to bother about which object is doing the real work. To achieve this, the Van class hides the implementation details from the users of the Van class. So, basically what happens is the users would ask the Van class to do a certain action and the Van class will either do the work by itself or ask another class to perform the action.</p>
+
+							<h2>Types of Java Inheritance</h2>
+							<p>In Java, there are mainly three types of inheritances <b>Single</b>, <b>Multilevel</b>, and <b>Hierarchical</b>. Java does not support <b>Multiple</b> and <b>Hybrid</b> inheritance.</p>
+							<img src="../scripts/images/java/types_of_inheritance.jpg" alt="Types of Inheritance">
+							<p>A very important fact to remember is that Java does not support multiple and hybrid inheritances. This means that a class cannot extend more than one class. Therefore following is illegal −</p>
+							<h3>1. Java Single Inheritance</h3>
+							<p>The inheritance in which there is only one base class and one derived class is known as single inheritance. The single (or, single-level) inheritance inherits data from only one base class to only one derived class.</p>
+							<h4>Example of Java Single Inheritance</h4>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="5" id="5" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">One</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"printOne() method of One class."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">One</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Creating object of the derived class (Main)</span>
+    <span class="token class-name">Main</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Calling method</span>
+    obj<span class="token punctuation">.</span><span class="token function">printOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<p><b>Output</b></p>
+							<pre class="result notranslate">printOne() method of One class.
+</pre>
+
+							<h3>2. Java Multilevel Inheritance</h3>
+							<p>The inheritance in which a base class is inherited to a derived class and that derived class is further inherited to another derived class is known as multi-level inheritance. Multilevel inheritance involves multiple base classes.</p>
+							<h4>Example of Java Multilevel Inheritance</h4>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="6" id="6" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">class</span> <span class="token class-name">One</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"printOne() method of One class."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Two</span> <span class="token keyword">extends</span> <span class="token class-name">One</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"printTwo() method of Two class."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">Two</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Creating object of the derived class (Main)</span>
+    <span class="token class-name">Main</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Calling methods</span>
+    obj<span class="token punctuation">.</span><span class="token function">printOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    obj<span class="token punctuation">.</span><span class="token function">printTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<p><b>Output</b></p>
+							<pre class="result notranslate">printOne() method of One class.
+printTwo() method of Two class.
+</pre>
+
+							<h3>3. Java Hierarchical Inheritance</h3>
+							<p>The inheritance in which only one base class and multiple derived classes is known as hierarchical inheritance.</p>
+							<h4>Example of Java Hierarchical Inheritance</h4>
+							<div class="code-wrapper"><div class="code-header"></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="7" id="7" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token comment">// Base class</span>
+<span class="token keyword">class</span> <span class="token class-name">One</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"printOne() Method of Class One"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Derived class 1</span>
+<span class="token keyword">class</span> <span class="token class-name">Two</span> <span class="token keyword">extends</span> <span class="token class-name">One</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printTwo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Two() Method of Class Two"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Derived class 2</span>
+<span class="token keyword">class</span> <span class="token class-name">Three</span> <span class="token keyword">extends</span> <span class="token class-name">One</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">printThree</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"printThree() Method of Class Three"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Testing CLass</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Two</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Two</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Three</span> obj2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Three</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//All classes can access the method of class One</span>
+    obj1<span class="token punctuation">.</span><span class="token function">printOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    obj2<span class="token punctuation">.</span><span class="token function">printOne</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<p><b>Output</b></p>
+							<pre class="result notranslate">printOne() Method of Class One
+printOne() Method of Class One
+</pre>
+
+							<h3>Example</h3>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token keyword">extends</span> <span class="token class-name">Animal</span><span class="token punctuation">,</span> <span class="token class-name">Mammal</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+</div></pre>
+							<p>However, a class can implement one or more interfaces, which has helped Java get rid of the impossibility of multiple inheritance.</p>
+
+
+						</div>
 					</div>
 				</article>
 			</div>

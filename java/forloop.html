@@ -250,7 +250,152 @@
 				</a>
 				<article>
 					<div class="entry-content" itemprop="text">
+						<div class="tutorial-content" id="mainContent">
+							<h1>Java - for Loop</h1>
+							<p>A <b>for</b> loop is a repetition control structure that allows you to efficiently write a loop that needs to be executed a specific number of times.</p>
+							<p>A <b>for</b> loop is useful when you know how many times a task is to be repeated. Just like the while loop, the <b>for</b> loop is also an entry control loop where the given condition executes first.</p>
+							<h2>Syntax of for Loop</h2>
+							<p>The syntax of a for loop is −</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">for</span><span class="token punctuation">(</span>initialization<span class="token punctuation">;</span> <span class="token class-name">Boolean_expression</span><span class="token punctuation">;</span> update<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment">// Statements</span>
+<span class="token punctuation">}</span>
+</div></pre>
 
+							<h2>Parts of Java For Loop</h2>
+							<p>In Java, the for loop is constructed (implemented) using three parts. The following are the parts of a for loop in Java -</p>
+							<ul class="list">
+								<li><b>Initialization</b> - Contains the initialization statement (s) of the loop counter.</li>
+								<li><b>Boolean expression</b> - Contains the condition to be tested.</li>
+								<li><b>Body</b> - Contains the statements to be iterated till the given Boolean expression is true, also to update the loop counter.</li>
+							</ul>
+							<h2>Execution Process of a for Loop</h2>
+							<p>Here is the flow of control in a <b>for</b> loop −</p>
+							<ul class="list">
+								<li><p>The <b>initialization</b> step is executed first, and only once. This step allows you to declare and initialize any loop control variables and this step ends with a semi colon (;).</p></li>
+								<li><p>Next, the <b>Boolean expression</b> is evaluated. If it is true, the body of the loop is executed. If it is false, the body of the loop will not be executed and control jumps to the next statement past the for loop.</p></li>
+								<li><p>After the <b>body</b> of the for loop gets executed, the control jumps back up to the update statement. This statement allows you to update any loop control variables. This statement can be left blank with a semicolon at the end.</p></li>
+								<li><p>The Boolean expression is now evaluated again. If it is true, the loop executes and the process repeats (body of loop, then update step, then Boolean expression). After the Boolean expression is false, the for loop terminates.</p></li>
+							</ul>
+							<h2>Flow Diagram</h2>
+							<p>The following diagram shows the flow diagram (execution process) of a for loop in Java -</p>
+							<img src="../scripts/images/java/java_for_loop.jpg" alt="Java For Loop Flow Diagram">
+
+							<div style="width: 100%; display: flex; flex-flow: wrap; justify-content: center; align-items: center;"><div id="tutorialspointcom47464-1" data-pg-ad-spot="tutorialspointcom47464"></div></div><h2>Java for Loop Examples</h2>
+							<h3>Example 1: Printing Numbers in a Range Using for Loop</h3>
+							<p>In this example, we're showing the use of a for loop to print numbers starting from 10 to 19. Here we've initialized an int variable x with a value of 10 within initialization blook of for loop. Then in expression block, we're checking x as less than 20, and in the end under update block, we're incrementing x by 1. Within body of for loop, we're printing the value of x. For loop will run until x becomes 20. Once x is 20, loop will stop execution and program exits.</p>
+							<div class="code-wrapper"><div class="code-header"><div class="logo-side"><svg fill="white" xmlns="https://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><path d="M376.5 1.8l-7.3 22.8-144 448-7.3 22.8 45.7 14.7 7.3-22.8 144-448 7.3-22.8L376.5 1.8zm61.6 135.3l17.5 16.4L564.9 256 455.6 358.5l-17.5 16.4 32.8 35 17.5-16.4 128-120L635.1 256l-18.7-17.5-128-120-17.5-16.4-32.8 35zm-269-35l-17.5 16.4-128 120L4.9 256l18.7 17.5 128 120 17.5 16.4 32.8-35-17.5-16.4L75.1 256 184.4 153.5l17.5-16.4-32.8-35z"></path></svg></div><div class="button-side"><div class="execute"></div><div class="open-compiler">Open Compiler</div></div></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="0" id="0" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> x <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"value of x : "</span> <span class="token operator">+</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">value of x : 10
+value of x : 11
+value of x : 12
+value of x : 13
+value of x : 14
+value of x : 15
+value of x : 16
+value of x : 17
+value of x : 18
+value of x : 19
+</pre>
+
+							<h3>Example 2: Printing Array Elements Using for Loop</h3>
+							<p>In this example, we're showing the use of a for loop to print contents of an array. Here we're creating an array of integers as numbers and initialized it some values. We've created a variable named index to represent index of the array within for loop, check it against size of the array and incremented it by 1. Within for loop body, we're printing element of the array using index notation. Once index becomes same as array size, for loop exits and program quits.</p>
+							<div class="code-wrapper"><div class="code-header"><div class="logo-side"><svg fill="white" xmlns="https://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><path d="M376.5 1.8l-7.3 22.8-144 448-7.3 22.8 45.7 14.7 7.3-22.8 144-448 7.3-22.8L376.5 1.8zm61.6 135.3l17.5 16.4L564.9 256 455.6 358.5l-17.5 16.4 32.8 35 17.5-16.4 128-120L635.1 256l-18.7-17.5-128-120-17.5-16.4-32.8 35zm-269-35l-17.5 16.4-128 120L4.9 256l18.7 17.5 128 120 17.5 16.4 32.8-35-17.5-16.4L75.1 256 184.4 153.5l17.5-16.4-32.8-35z"></path></svg></div><div class="button-side"><div class="execute"></div><div class="open-compiler">Open Compiler</div></div></div><pre class="demo-code notranslate language-java" data-lang="java" data-index="1" id="1" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> numbers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> index <span class="token operator">&lt;</span> numbers<span class="token punctuation">.</span>length<span class="token punctuation">;</span> index<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"value of item : "</span> <span class="token operator">+</span> numbers<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div><div class="output-wrapper"><div class="console-close"></div><div class="code-output"></div></div></pre></div>
+							<h4>Output</h4>
+							<pre class="result notranslate">value of item : 10
+value of item : 20
+value of item : 30
+value of item : 40
+value of item : 50
+</pre>
+
+							<div style="width: 100%; display: flex; flex-flow: wrap; justify-content: center; align-items: center;"><div id="tutorialspointcom47464-2" data-pg-ad-spot="tutorialspointcom47464"></div></div><h2>Java Infinite for Loop</h2>
+							<p>An infinite loop never ends unless you stop manually by pressing <b>CTRL + C</b>. To implement an infinite for loop either use such a condition that is always true or directly use <i>true</i> as the condition.</p>
+							<h3>Example: Implementing Infinite for Loop</h3>
+							<p>In this example, we're showing the infinite loop using for loop. It will keep printing the numbers until you press ctrl+c to terminate the program.</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token punctuation">;</span><span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"value of x : "</span> <span class="token operator">+</span> x <span class="token punctuation">)</span><span class="token punctuation">;</span>
+         x<span class="token operator">++</span><span class="token punctuation">;</span>
+         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div></pre>
+							<h4>Output</h4>
+							<pre class="result notranslate">value of item : 10
+value of item : 11
+value of item : 12
+value of item : 13
+value of item : 14
+...
+ctrl+c
+</pre>
+							<h2>Nested for Loop in Java</h2>
+							<p>A nested for loop is a for loop containing another for loop inside it.</p>
+							<h3>Example: Print Tables from 1 to 10 Using Nested for Loop</h3>
+							<p>In this example, we are printing tables of the numbers from 1 to 10.</p>
+							<pre class="just-code notranslate language-java" data-lang="java" tabindex="0"><div class="code-mirror language-java" contenteditable="plaintext-only" spellcheck="false" style="outline: none; overflow-wrap: break-word; overflow-y: auto; white-space: pre-wrap;"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Implementing nested for loop</span>
+    <span class="token comment">// Initializing loop counters </span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// outer for loop</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>num <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> num <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> num<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">//inner for loop</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Table of "</span> <span class="token operator">+</span> num <span class="token operator">+</span> <span class="token string">" is : "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// printing table</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>num <span class="token operator">*</span> i <span class="token operator">+</span> <span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// printing a new line</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div></pre>
+							<h4>Output</h4>
+							<pre class="result notranslate">Table of 1 is : 1 2 3 4 5 6 7 8 9 10
+Table of 2 is : 2 4 6 8 10 12 14 16 18 20
+Table of 3 is : 3 6 9 12 15 18 21 24 27 30
+Table of 4 is : 4 8 12 16 20 24 28 32 36 40
+Table of 5 is : 5 10 15 20 25 30 35 40 45 50
+Table of 6 is : 6 12 18 24 30 36 42 48 54 60
+Table of 7 is : 7 14 21 28 35 42 49 56 63 70
+Table of 8 is : 8 16 24 32 40 48 56 64 72 80
+Table of 9 is : 9 18 27 36 45 54 63 72 81 90
+Table of 10 is : 10 20 30 40 50 60 70 80 90 100
+</pre>
+
+
+
+						</div>
 					</div>
 				</article>
 			</div>

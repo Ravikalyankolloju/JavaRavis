@@ -309,6 +309,16 @@ body ::-webkit-scrollbar-thumb {
 	height: 165px;
 }
 
+.dark-theme .nav-link1 {
+	border-radius: 3px;
+	display: block;
+	padding: .1rem 15px .1rem 1.1rem;
+	color: #6BC115;
+	box-shadow: 2px 2px 2px rgba(255, 255, 204),0px 4px 6px 0px rgba(0,0,0,.06);
+	width: 165px;
+	height: 165px;
+}
+
 .nav-link:hover,
 .nav-text:hover {
 	background: #ebf2f2;
@@ -328,6 +338,22 @@ body ::-webkit-scrollbar-thumb {
 	background: #262a2d;
 	color: rgb(255, 255, 255)
 }
+
+.nav-link2 {
+	border-radius: 3px;
+	display: block;
+	padding: .4rem 10px .4rem .5rem;
+	color: #6BC115
+}
+.dark-theme .nav-link2:hover {
+	background: #262a2d;
+	color: rgb(255, 255, 255)
+}
+.nav-link2:hover {
+	background: #f0f5f5;
+	color: rgb(255, 255, 255)
+}
+
 
 .nav-collapse {
 	background: var(--panel-background-color);
@@ -649,7 +675,7 @@ body {
 	font-size: 15.2px;
 	font-weight: 500;
 	line-height: var(--doc-line-height);
-	--padding: 0 1rem;
+	padding: .3rem;
 	transition: color .2s
 }
 

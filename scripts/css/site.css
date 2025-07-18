@@ -340,7 +340,7 @@ body ::-webkit-scrollbar-thumb {
 }
 
 .nav-link2 {
-	border-radius: 3px;
+	border-radius: 2px;
 	display: block;
 	padding: .4rem 10px .4rem .5rem;
 	color: #6BC115

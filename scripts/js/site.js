@@ -10,27 +10,76 @@
         }
     }.bind(t))
 }();
-! function() {
-    "use strict";
-    var e;
-    (e = document.getElementById("switch-theme-checkbox")) && (e.checked = document.documentElement.classList.contains("dark-theme"), e.addEventListener("change", function() {
-        document.documentElement.classList.toggle("dark-theme", this.checked), document.documentElement.setAttribute("data-theme", this.checked ? "dark" : "light"),
-            function(e) {
-                window.localStorage && window.localStorage.setItem("theme", e)
-            }(this.checked ? "dark" : "light"), this.checked ? this.parentElement.classList.add("active") : this.parentElement.classList.remove("active")
-    }.bind(e)))
+
+! function () {
+  "use strict";
+  var e = document.getElementById("switch-theme-checkbox");
+  if (!e) return;
+
+  // ✅ Load saved theme from localStorage on page load
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark-theme");
+    document.documentElement.setAttribute("data-theme", "dark");
+    e.checked = true;
+    e.parentElement.classList.add("active");
+  } else {
+    document.documentElement.classList.remove("dark-theme");
+    document.documentElement.setAttribute("data-theme", "light");
+    e.checked = false;
+    e.parentElement.classList.remove("active");
+  }
+
+  // ✅ Add listener for toggle change
+  e.addEventListener("change", function () {
+    document.documentElement.classList.toggle("dark-theme", this.checked);
+    document.documentElement.setAttribute("data-theme", this.checked ? "dark" : "light");
+
+    // Save to localStorage
+    localStorage.setItem("theme", this.checked ? "dark" : "light");
+
+    // Update class
+    this.checked
+      ? this.parentElement.classList.add("active")
+      : this.parentElement.classList.remove("active");
+  });
 }();
 
-! function() {
-    "use strict";
-    var e;
-    (e = document.getElementById("switch-theme-mobile")) && (e.checked = document.documentElement.classList.contains("dark-theme"), e.addEventListener("change", function() {
-        document.documentElement.classList.toggle("dark-theme", this.checked), document.documentElement.setAttribute("data-theme", this.checked ? "dark" : "light"),
-            function(e) {
-                window.localStorage && window.localStorage.setItem("theme", e)
-            }(this.checked ? "dark" : "light"), this.checked ? this.parentElement.classList.add("active") : this.parentElement.classList.remove("active")
-    }.bind(e)))
+
+! function () {
+  "use strict";
+  var e = document.getElementById("switch-theme-mobile");
+  if (!e) return;
+
+  // ✅ Load saved theme from localStorage on page load
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.documentElement.classList.add("dark-theme");
+    document.documentElement.setAttribute("data-theme", "dark");
+    e.checked = true;
+    e.parentElement.classList.add("active");
+  } else {
+    document.documentElement.classList.remove("dark-theme");
+    document.documentElement.setAttribute("data-theme", "light");
+    e.checked = false;
+    e.parentElement.classList.remove("active");
+  }
+
+  // ✅ Add listener for toggle change
+  e.addEventListener("change", function () {
+    document.documentElement.classList.toggle("dark-theme", this.checked);
+    document.documentElement.setAttribute("data-theme", this.checked ? "dark" : "light");
+
+    // Save to localStorage
+    localStorage.setItem("theme", this.checked ? "dark" : "light");
+
+    // Update class
+    this.checked
+      ? this.parentElement.classList.add("active")
+      : this.parentElement.classList.remove("active");
+  });
 }();
+
 
 ! function() {
     "use strict";

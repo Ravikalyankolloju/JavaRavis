@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="RaviKalyan">
-    <title>Bubble Sort</title>
+    <title>Selection Sort</title>
     <link rel="shortcut icon" type="image/x-icon" href="../scripts/images/tab_logo.png"/>
     <link rel="stylesheet" href="../scripts/css/site.css">
     <link rel='stylesheet' id='blogus-google-fonts-css'
@@ -81,15 +81,30 @@
                     <a class="navbar-link" href="../interview/interview-questions.html">Interview
                         Questions</a>
                 </div>
-                <label class="theme-toggler div-to-hide">
-                    <input type="checkbox" id="switch-theme-checkbox"/>
-                    <span class="icon"></span>
+                <label class="theme-toggler div-to-hide"> <input type="checkbox" id="switch-theme-checkbox"/>
+                    <span class="icon"><svg class="fa-moon moon"
+                                            viewBox="30 0 384 512"><path
+                            d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+        </svg>
+        <svg class="fa-sun sun" viewBox="50 0 512 512"><path
+                d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+        </svg></span>
                 </label>
             </div>
         </div>
     </div>
     <label class="theme-toggler div-to-desk" style="top: 22px;"> <input type="checkbox" id="switch-theme-mobile"/>
-        <span class="icon"></span>
+        <span class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="moon"
+                                class="svg-inline--fa fa-moon moon" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-250 0 384 512"><path fill="currentColor"
+                                                               d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+        </svg>
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sun" class="svg-inline--fa fa-sun sun"
+             role="img"
+             xmlns="http://www.w3.org/2000/svg" viewBox="-170 0 512 512">
+			<path fill="currentColor"
+                  d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+        </svg></span>
     </label>
 </nav>
 
@@ -100,17 +115,17 @@
                 <li class="nav-item" data-depth="0">
                     <ul class="nav-list">
                         <h4>Sorting</h4>
-                        <li class="nav-item"><a class="nav-link" href="../Sortings/bubble.html">Bubble Sort</a>
+                        <li class="nav-item"><a class="nav-link" href="/bubble.html">Bubble Sort</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="../Sortings/selection.html">Selection Sort</a>
+                        <li class="nav-item"><a class="nav-link" href="/selection.html">Selection Sort</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="../Sortings/insertion.html">Insertion Sort</a>
+                        <li class="nav-item"><a class="nav-link" href="/insertion.html">Insertion Sort</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="../Sortings/merge.html">Merge Sort</a>
+                        <li class="nav-item"><a class="nav-link" href="/merge.html">Merge Sort</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="../Sortings/quick.html">Quick Sort</a>
+                        <li class="nav-item"><a class="nav-link" href="/quick.html">Quick Sort</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="../Sortings/heap.html">Heap Sort</a>
+                        <li class="nav-item"><a class="nav-link" href="/heap.html">Heap Sort</a>
                         </li>
                     </ul>
                 </li>
@@ -123,108 +138,99 @@
                 <span></span> <span></span> <span></span>
             </button>
             <nav class="breadcrumbs">
-                <h4> Bubble Sort</h4>
+                <h4> Selection Sort</h4>
             </nav>
         </div>
         <div class="doc">
             <nav class="breadcrumbs div-to-hide">
-                <h4> Bubble Sort</h4>
+                <h4> Selection Sort</h4>
             </nav>
             <a class="div-to-desk"> <br>
             </a>
             <article>
                 <div class="entry-content" itemprop="text">
-                    <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                    <div class="column-center-inner">
                         <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                            <b style="font-weight: normal;"><br></b>
-                            <br>
-                            <a name="more"></a><b style="font-weight: normal;"><br></b>
+
+                            <b id="docs-internal-guid-0ea50cb5-d078-6382-7768-2857d901010d"
+                               style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Bubble Sort</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> is the simplest way of sorting the array. Complexity offered by bubble sort is </span><span
+                            </div>
+
+                            <b style="font-weight: normal;"><br></b>
+                            <br>
+                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Selection sort</span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> offers better performance as compared to Bubble Sort.</span>
+                            </div>
+                            <b style="font-weight: normal;"><br></b>
+                            <br>
+                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Complexity offered by Selection sort is </span><span
                                     style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O(</span><span
                                     style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">n</span><span
                                     style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 11.199999999999998px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: super; white-space: pre-wrap;">2</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">).</span>
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">)</span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> but later on in post we will see how Selection Sort is better than Bubble Sort.</span>
+                            </div>
+                            <b style="font-weight: normal;"><br></b>
+                            <br>
+
+
+                            <br>
+                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Diagram of Selection sort in java &gt;</span>
                             </div>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Diagram of bubble sort in java &gt;</span>
-                            </div>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Let’s see </span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">diagram </span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">below where we are going to arrange these people in ascending order of their &nbsp;heights using Bubble Sort.</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Let’s see diagram below where we are going to arrange these people in ascending order of their &nbsp;heights using Selection Sort.</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
                                 <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img
-                                        height="866"
-                                        src="https://lh3.googleusercontent.com/jUkhM3FSWDId3cK8ydd3sBuRAioVpSlveu3CtVJlXgvhwq_9i-yeRUzOnCS8BBQf7geGRWb4bmmAT-564rXemaqw6CbRF1akl9ct5x1TCteG04ZMXR9MIfYbLaGz53wRzMEUneQ"
-                                        style="-webkit-transform: rotate(0.00rad); border: 1px solid #000000; transform: rotate(0.00rad);"
-                                        width="459"></span></div>
+                                        height="833"
+                                        src="https://lh4.googleusercontent.com/9A-6_U_UcVEuPWBPglE4iBF7HgBw9gx2OljCtQlpW5VvVaeI7XUZy-KNHFOlfOlWt3YWRtvbSJ8K0YAIcjiXM3MqDvROvd0b_aGjibpvCQrVdsTHupgpu08Y5llIOX7An8YwNrc"
+                                        style="-webkit-transform: rotate(0.00rad); border: 3px solid #000000; transform: rotate(0.00rad);"
+                                        width="456"></span></div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
-                            <b style="font-weight: normal;"><br></b>
+
+
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Logic explanation of Bubble Sort in java &gt;</span>
-                            </div>
-                            <b style="font-weight: normal;"><br></b>
-                            <br>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Start comparing elements </span>
+                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Logic explanation of Selection Sort in java &gt;</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">If element in the left is taller as compared to element on immediate right, swap them.</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Start comparing these persons.</span>
                             </div>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">If element in the left is smaller as compared to element on immediate right, don’t swap them.</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Start at position 1, and finding the minimum, swap it with position 1.</span>
                             </div>
-                            <b style="font-weight: normal;"><br></b>
-                            <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Than, Move one position right.</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Continue this process until all the men’s become sorted.</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Continue this process until you reach the right end. You will end up placing tallest person on extreme right. </span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">In first pass, Swap the shortest person with the player on the 0th position or extreme left. You have now</span>
+                            </div>
+                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">sorted one person and made N-1 comparisons, but number of swaps done are only one.</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">After first pass, you would have made</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> N-1 </span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">comparisons and</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">In the next pass, follow exactly same process you did in first pass, ignore the person on the 0th position as we have already sorted that person in first pass. Thus, the algorithm starts the second pass at position 1, instead of 0. </span>
                             </div>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">somewhere between 0 and N-1 swaps, depending on the initial arrangement of</span>
-                            </div>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">the mens. The item at the end of the array is tallest(sorted) and we need not to move that element.</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">With each succeeding pass, one more person becomes sorted and placed on the left, and one less person needs to be considered when finding out the new minimum.</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Now you go back to starting point and start another pass from the left end of the line. Again,</span>
-                            </div>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">you go toward the right, following the above process of comparing and swapping. This time you can stop at position </span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">N-2</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> as last position was already sorted in first pass.</span>
-                            </div>
-                            <b style="font-weight: normal;"><br></b>
-                            <br>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Continue this process until all the men’s become sorted.</span>
-                            </div>
-                            <b style="font-weight: normal;"><br></b>
-                            <br>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Full Program/SourceCode/Example of Bubble Sort in java &gt;</span>
+                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Full Program/SourceCode/Example of Selection Sort in java &gt;</span>
                             </div>
                             <div dir="ltr" style="margin-left: 0pt;">
                                 <table style="border-collapse: collapse; border: none;">
@@ -248,7 +254,7 @@
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
-                                                <span style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> * And performs Bubble sorting in java</span>
+                                                <span style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> * And performs Selection sorting in java</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -257,7 +263,7 @@
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
                                                 <span style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">class</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> BubbleSortArray {</span>
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> SelectionSortArray {</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -329,12 +335,11 @@
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">public</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> BubbleSortArray(</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> SelectionSortArray(</span><span
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">int</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span
                                                     style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">maxSize</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">) </span><span
-                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// constructor</span>
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">)</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -418,7 +423,15 @@
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">int</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span
                                                     style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">value</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">) {</span>
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">)</span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
+                                                    class="Apple-tab-span"
+                                                    style="white-space: pre;"> </span></span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">{</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -448,6 +461,14 @@
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
                                                 <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
@@ -460,7 +481,7 @@
                                                     style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> * This method Sort Array using Bubble Sort</span>
+                                                    style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> * This method Sort Array using Selection Sort in java</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -479,7 +500,7 @@
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">public</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">void</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> bubbleSort(){</span>
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> selectionSort() {</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -491,7 +512,9 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span
                                                     style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">outer</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">, </span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">innner</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">inner</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">, </span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">minimum</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">;</span>
                                             </div>
                                             <div dir="ltr"
@@ -503,14 +526,33 @@
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">for</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> (</span><span
                                                     style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">outer</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> = </span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> = 0; </span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">outer</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &lt; </span><span
                                                     style="background-color: transparent; color: #0000c0; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">index</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> - 1; </span><span
                                                     style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">outer</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &gt; 0; </span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">++) </span><span
+                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// outer loop</span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
+                                                    class="Apple-tab-span"
+                                                    style="white-space: pre;"> </span></span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">{</span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
+                                                    class="Apple-tab-span"
+                                                    style="white-space: pre;"> </span></span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">minimum</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> = </span><span
                                                     style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">outer</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">--) </span><span
-                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// outer loop (in backward direction)</span>
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">;</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -520,15 +562,17 @@
                                                     style="white-space: pre;"> </span></span><span
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">for</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> (</span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">innner</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> = 0; </span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">innner</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &lt; </span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">inner</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> = </span><span
                                                     style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">outer</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> + 1; </span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">inner</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &lt; </span><span
+                                                    style="background-color: transparent; color: #0000c0; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">index</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">; </span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">innner</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">inner</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">++)</span><span
-                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// inner loop (in forward direction)</span>
+                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// inner loop</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -540,13 +584,13 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> (</span><span
                                                     style="background-color: transparent; color: #0000c0; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">ar</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">[</span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">innner</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">] &gt; </span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">inner</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">] &lt; </span><span
                                                     style="background-color: transparent; color: #0000c0; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">ar</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">[</span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">innner</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> + 1]) </span><span
-                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// out of order?</span>
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">minimum</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">]) </span><span
+                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// if minimum greater,</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -554,12 +598,36 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">minimum</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> = </span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">inner</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">; </span><span
+                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// we have a new minimum</span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
+                                                    class="Apple-tab-span"
+                                                    style="white-space: pre;"> </span></span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">swap(</span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">innner</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">outer</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">, </span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">innner</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> + 1); </span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">minimum</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">); </span><span
                                                     style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// swap them</span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
+                                                    class="Apple-tab-span"
+                                                    style="white-space: pre;"> </span></span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">}</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -567,8 +635,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">} </span><span
-                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">//End bubble sort method</span>
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">}</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -682,7 +749,9 @@
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
-                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span>
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
+                                                    class="Apple-tab-span" style="white-space: pre;"> </span></span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -717,7 +786,15 @@
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">public</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">void</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> display() {</span>
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> display()</span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
+                                                    class="Apple-tab-span"
+                                                    style="white-space: pre;"> </span></span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">{</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -792,13 +869,17 @@
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
                                                 <span style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">/**</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
                                                 <span style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> * Main class </span><span
                                                     style="background-color: transparent; color: #7f7f9f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">-</span><span
-                                                    style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> Which will call BubbleSorting class</span>
+                                                    style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> Which will call SelectionSorting class</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -809,7 +890,7 @@
                                                 <span style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">public</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">class</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> BubbleSortingAlgorithm {</span>
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> SelectionSortAlgorithmExample {</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -856,18 +937,20 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">BubbleSortArray </span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> =</span>
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">SelectionSortArray </span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">;</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
-                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> = </span><span
                                                     style="background-color: transparent; color: #7f0055; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">new</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> BubbleSortArray(</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> SelectionSortArray(</span><span
                                                     style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">maxSize</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">); </span><span
                                                     style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// creation of array</span>
@@ -884,7 +967,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(21);</span>
                                             </div>
                                             <div dir="ltr"
@@ -893,7 +976,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(1);</span>
                                             </div>
                                             <div dir="ltr"
@@ -902,7 +985,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(31);</span>
                                             </div>
                                             <div dir="ltr"
@@ -911,7 +994,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(51);</span>
                                             </div>
                                             <div dir="ltr"
@@ -920,7 +1003,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(41);</span>
                                             </div>
                                             <div dir="ltr"
@@ -929,7 +1012,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(91);</span>
                                             </div>
                                             <div dir="ltr"
@@ -938,7 +1021,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(61);</span>
                                             </div>
                                             <div dir="ltr"
@@ -947,7 +1030,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(32);</span>
                                             </div>
                                             <div dir="ltr"
@@ -956,7 +1039,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(36);</span>
                                             </div>
                                             <div dir="ltr"
@@ -965,14 +1048,18 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.insert(93);</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
-                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;</span><span
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span" style="white-space: pre;"> </span></span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -983,7 +1070,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">System.</span><span
                                                     style="background-color: transparent; color: #0000c0; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: italic; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">out</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.print(</span><span
-                                                    style="background-color: transparent; color: #2a00ff; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">"Display Array elements before bubble sorting: "</span><span
+                                                    style="background-color: transparent; color: #2a00ff; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">"Display Array elements before Selection sorting: "</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">);</span>
                                             </div>
                                             <div dir="ltr"
@@ -992,7 +1079,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.display(); </span><span
                                                     style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// display Array elements before sorting</span>
                                             </div>
@@ -1008,9 +1095,9 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
-                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.bubbleSort(); </span><span
-                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// bubble sort the array</span>
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.selectionSort(); </span><span
+                                                    style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// Selection sort the array</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -1027,7 +1114,7 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">System.</span><span
                                                     style="background-color: transparent; color: #0000c0; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: italic; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">out</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.print(</span><span
-                                                    style="background-color: transparent; color: #2a00ff; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">"Display Array elements after bubble sorting: "</span><span
+                                                    style="background-color: transparent; color: #2a00ff; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">"Display Array elements after Selection sorting: "</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">);</span>
                                             </div>
                                             <div dir="ltr"
@@ -1036,9 +1123,21 @@
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
                                                     class="Apple-tab-span"
                                                     style="white-space: pre;"> </span></span><span
-                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">bubbleSortArray</span><span
+                                                    style="background-color: transparent; color: #6a3e3e; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">selectionSortArray</span><span
                                                     style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.display(); </span><span
                                                     style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">// display Array elements after sorting</span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
+                                                    class="Apple-tab-span" style="white-space: pre;"> </span></span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+                                                    style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
+                                                    class="Apple-tab-span" style="white-space: pre;"> </span></span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -1058,7 +1157,11 @@
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
-                                                <span style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">/** OUTPUT</span>
+                                                <span style="background-color: transparent; color: black; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span>
+                                            </div>
+                                            <div dir="ltr"
+                                                 style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+                                                <span style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">/* OUTPUT</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -1066,11 +1169,11 @@
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
-                                                <span style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Display Array elements before bubble sorting: 21 1 31 51 41 91 61 32 36 93</span>
+                                                <span style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Display Array elements before Selection sorting: 21 1 31 51 41 91 61 32 36 93</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
-                                                <span style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Display Array elements after bubble sorting: 1 21 31 32 36 41 51 61 91 93</span>
+                                                <span style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Display Array elements after Selection sorting: 1 21 31 32 36 41 51 61 91 93</span>
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
@@ -1078,7 +1181,7 @@
                                             </div>
                                             <div dir="ltr"
                                                  style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
-                                                <span style="background-color: transparent; color: #3f5fbf; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">*/</span>
+                                                <span style="background-color: transparent; color: #3f7f5f; font-family: &quot;consolas&quot;; font-size: 13.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">*/</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -1088,26 +1191,23 @@
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">So, we wrote program to do Bubble Sort of array in java.</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">So, we wrote program to do Selection Sort of array in java.</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Complexity of Bubble Sort in java &gt;</span>
+                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Complexity of Selection Sort in java &gt;</span>
                             </div>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
                                 <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span>
                             </div>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;">Best,average and worst case &gt;</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Best,average and worst case of Selection Sort&gt;</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Best Case : </span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><span
-                                    class="Apple-tab-span" style="white-space: pre;"> </span></span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;</span><span
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Best Case : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
                                     style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O(n</span><span
                                     style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 9.6px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: super; white-space: pre-wrap;">2</span><span
                                     style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">)</span>
@@ -1144,19 +1244,22 @@
                                 <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">&gt;</span><span
                                     style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">No. of swaps :</span><span
                                     style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span
-                                    style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O(n</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 9.6px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: super; white-space: pre-wrap;">2</span><span
-                                    style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">)</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> in worst case &amp; </span>
+                                    style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O(n)</span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> in average/worst case </span>
                             </div>
                             <div dir="ltr"
                                  style="line-height: 1.38; margin-bottom: 0pt; margin-left: 36pt; margin-top: 0pt; text-indent: 36pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">0 in best case(When array is already sorted).</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">&amp; 0 in best case(When array is already sorted).</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;">Explanation of Bubble Sort in java&gt;</span>
+                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Explanation of complexity of Selection Sort in java&gt;</span>
+                            </div>
+                            <b style="font-weight: normal;"><br></b>
+                            <br>
+                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The number of comparisons made in selection sort are same as made in Bubble sort:</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
@@ -1207,27 +1310,21 @@
                                 <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span>
                             </div>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Sometimes </span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">swaps </span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">are less than comparisons because two elements are swapped only</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">But number of</span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> swaps </span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">made </span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">are few</span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">(as</span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> compared to Bubble Sort</span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">)&gt;</span>
                             </div>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">if they need to be. If the data is random, a swap is necessary made about half the time, so</span>
-                            </div>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">there will be about </span><span
-                                    style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">n</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 9.6px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: super; white-space: pre-wrap;">2</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">⁄4</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> swaps. (But in the worst case, when array is inversely sorted, a swap is made with every comparison.)</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">In case we have 10 elements- we may have to make 10 or even less than 10 swaps.</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Both swaps and comparisons are proportional to </span><span
-                                    style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">n</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 9.6px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: super; white-space: pre-wrap;">2</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">. Therefore we can say that bubble sort runs in </span><span
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Therefore we can say that Selection sort runs in </span><span
                                     style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O(</span><span
                                     style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">n</span><span
                                     style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 9.6px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: super; white-space: pre-wrap;">2</span><span
@@ -1237,44 +1334,54 @@
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Also, in bubble sort we see outer loop nested within inner loop, you can find out that an algorithm</span>
-                            </div>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">runs in </span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O(</span><span
-                                    style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">n</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 9.6px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: super; white-space: pre-wrap;">2</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">)</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> time. </span>
-                            </div>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">The outer loop executes N times, and the inner loop also executes N times for each cycle of the outer loop. This means we’re doing approximately n*n or </span><span
-                                    style="background-color: white; color: #222222; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">n</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 9.6px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: super; white-space: pre-wrap;">2</span><span
-                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> times.</span>
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Undoubtedly, Selection Sort is far more better than Bubble sort.</span>
                             </div>
                             <b style="font-weight: normal;"><br></b>
                             <br>
                             <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
-                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Complexity of Bubble Sort in graph &gt;</span>
+                                <span style="background-color: transparent; color: blue; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Complexity of Selection Sort in graph &gt;</span>
                             </div>
-                            <b style="font-weight: normal;"><br></b>
-                            <br>
-                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                            <div dir="ltr"
+                                 style="line-height: 1.2763636675747936; margin-bottom: 3pt; margin-top: 3pt;">
                                 <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img
                                         height="365"
-                                        src="https://lh4.googleusercontent.com/iupo-rG4CblVvQo8bBV351aOfWE4RYD2sCPtJx3pSBA2JQZs1o2nQD6JMDDf-YjxtWX7a2z8lVx2txkCAhOxN5z85SIhcQxoEVf7cFyVGPljG1kjW9i3MhDnb1v9qtI1Oe8rQtg"
-                                        style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);"
+                                        src="https://lh3.googleusercontent.com/mPyaa1Gkc2QA-DEyGqwBa5Uk4ip-qtcPDan-SqolOBbBqznxozjnBpjvIfwKcBk-3Clao4s0TNIDT_j_ZRQGkJTGB3w06jrz09_Dr1XKKP1OvnTsa3nepkKzzuPEtFnhNiEHXqY"
+                                        style="-webkit-transform: rotate(0.00rad); border: 1px solid #000000; transform: rotate(0.00rad);"
                                         width="416"></span></div>
                             <b style="font-weight: normal;"><br></b>
-                            <br></div>
+                            <br>
+                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Summary &gt;</span>
+                            </div>
+                            <b style="font-weight: normal;"><br></b>
+                            <br>
+                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">So in this data structure tutorial we learned diagram of Selection sort in java.</span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Logic explanation of Selection Sort in java. Full Program/Example of Selection Sort in java &gt;</span>
+                            </div>
+                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                                <span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Complexity of Selection Sort in java. Explanation of complexity of Selection Sort in java.</span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span
+                                    style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 18.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Complexity of Selection Sort in graph.</span>
+                            </div>
+                            <b style="font-weight: normal;"><br></b>
+                            <br>
+
+
+                            <b style="font-weight: normal;"><br></b><br>
+                            <div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+                            </div>
+
+                        </div>
                     </div>
-                </div>
             </article>
         </div>
         <div class="card-footer">
             <ul class="pagination justify-content-center mb-4">
-                <li class="page-item"><a class="page-link" href="./selection.html">Next
+                <li class="page-item"><a class="page-link btn-outline-primary" href="./bubble.html">&lArr;
+                    Previous</a></li>
+                <li class="page-item"><a class="page-link" href="./insertion.html">Next
                     &rArr;</a></li>
             </ul>
         </div>

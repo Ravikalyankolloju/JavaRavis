@@ -78,15 +78,30 @@
                 <div class="navbar-item is-hoverable">
                     <a class="navbar-link" href="../interview/interview-questions.html">Interview Questions</a>
                 </div>
-                <label class="theme-toggler div-to-hide">
-                    <input type="checkbox" id="switch-theme-checkbox"/>
-                    <span class="icon"></span>
+                <label class="theme-toggler div-to-hide"> <input type="checkbox" id="switch-theme-checkbox"/>
+                    <span class="icon"><svg class="fa-moon moon"
+                                            viewBox="30 0 384 512"><path
+                            d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+        </svg>
+        <svg class="fa-sun sun" viewBox="50 0 512 512"><path
+                d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+        </svg></span>
                 </label>
             </div>
         </div>
     </div>
     <label class="theme-toggler div-to-desk" style="top: 22px;"> <input type="checkbox" id="switch-theme-mobile"/>
-        <span class="icon"></span>
+        <span class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="moon"
+                                class="svg-inline--fa fa-moon moon" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-250 0 384 512"><path fill="currentColor"
+                                                               d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+        </svg>
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sun" class="svg-inline--fa fa-sun sun"
+             role="img"
+             xmlns="http://www.w3.org/2000/svg" viewBox="-170 0 512 512">
+			<path fill="currentColor"
+                  d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+        </svg></span>
     </label>
 </nav>
 
@@ -261,26 +276,38 @@
                             </div>
                             <div class="code">
                                 <span class="tag">&lt;dependency&gt;</span><br>
-                                &nbsp;&nbsp;<span class="tag">&lt;groupId&gt;</span>org.springframework.boot<span class="tag">&lt;/groupId&gt;</span><br>
-                                &nbsp;&nbsp;<span class="tag">&lt;artifactId&gt;</span>spring-boot-starter-webflux<span class="tag">&lt;/artifactId&gt;</span><br>
+                                &nbsp;&nbsp;<span class="tag">&lt;groupId&gt;</span>org.springframework.boot<span
+                                    class="tag">&lt;/groupId&gt;</span><br>
+                                &nbsp;&nbsp;<span class="tag">&lt;artifactId&gt;</span>spring-boot-starter-webflux<span
+                                    class="tag">&lt;/artifactId&gt;</span><br>
                                 <span class="tag">&lt;/dependency&gt;</span>
                             </div>
                             <h1 style="text-align: left;">Step 2:&nbsp;Configure
                                 WebClient as Spring Bean</h1>
                             <div class="code">
-                                <span class="keyword">package</span> <span class="type">net.javaravish.userservice</span>;<br><br>
+                                <span class="keyword">package</span> <span
+                                    class="type">net.javaravish.userservice</span>;<br><br>
                                 <span class="keyword">import</span> <span class="type">org.springframework.boot.SpringApplication</span>;<br>
                                 <span class="keyword">import</span> <span class="type">org.springframework.boot.autoconfigure.SpringBootApplication</span>;<br>
                                 <span class="keyword">import</span> <span class="type">org.springframework.context.annotation.Bean</span>;<br>
                                 <span class="keyword">import</span> <span class="type">org.springframework.web.reactive.function.client.WebClient</span>;<br><br>
                                 <span class="annotation">@SpringBootApplication</span><br>
-                                <span class="keyword">public class</span> <span class="type">UserServiceApplication</span> {<br><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static void</span> <span class="method">main</span>(<span class="keyword">String</span>[] <span class="type">args</span>) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="type">SpringApplication</span>.<span class="method">run</span>(<span class="type">UserServiceApplication</span>.<span class="method">class</span>, <span class="type">args</span>);<br>
+                                <span class="keyword">public class</span> <span
+                                    class="type">UserServiceApplication</span> {<br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static void</span> <span
+                                    class="method">main</span>(<span class="keyword">String</span>[] <span class="type">args</span>)
+                                {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                                    class="type">SpringApplication</span>.<span class="method">run</span>(<span
+                                    class="type">UserServiceApplication</span>.<span class="method">class</span>, <span
+                                    class="type">args</span>);<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Bean</span><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="type">WebClient</span> <span class="method">webClient</span>() {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="type">WebClient</span>.<span class="method">builder</span>().<span class="method">build</span>();<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                                    class="type">WebClient</span> <span class="method">webClient</span>() {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
+                                <span class="type">WebClient</span>.<span class="method">builder</span>().<span
+                                    class="method">build</span>();<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                 }<br>
                             </div>
@@ -289,8 +316,11 @@
                             </div>
                             <div class="code">
                                 <span class="annotation">@Bean</span><br>
-                                <span class="keyword">public</span> <span class="type">WebClient</span> <span class="method">webClient</span>() {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="type">WebClient</span>.<span class="method">builder</span>().<span class="method">build</span>();<br>
+                                <span class="keyword">public</span> <span class="type">WebClient</span> <span
+                                    class="method">webClient</span>() {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                                    class="type">WebClient</span>.<span class="method">builder</span>().<span
+                                    class="method">build</span>();<br>
                                 }
                             </div>
                             <h1 style="text-align: left;">Step 3: Inject and Use
@@ -300,10 +330,13 @@
                                 call:
                             </div>
                             <div class="code">
-                                <span class="type">DepartmentDto</span> <span class="variable">departmentDto</span> = <span class="variable">webClient</span>.<span class="method">get</span>()<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">uri</span>(<span class="string">"http://localhost:8080/api/departments/"</span> + <span class="variable">user</span>.<span class="method">getDepartmentId</span>())<br>
+                                <span class="type">DepartmentDto</span> <span class="variable">departmentDto</span> =
+                                <span class="variable">webClient</span>.<span class="method">get</span>()<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">uri</span>(<span class="string">"http://localhost:8080/api/departments/"</span>
+                                + <span class="variable">user</span>.<span class="method">getDepartmentId</span>())<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">retrieve</span>()<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">bodyToMono</span>(<span class="type">DepartmentDto</span>.<span class="method">class</span>)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">bodyToMono</span>(<span class="type">DepartmentDto</span>.<span
+                                    class="method">class</span>)<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">block</span>();<br>
                             </div>
                             <div>
@@ -317,51 +350,86 @@
                                 <span class="keyword">import</span> net.javaguides.userservice.dto.<span class="type">DepartmentDto</span>;<br>
                                 <span class="keyword">import</span> net.javaguides.userservice.dto.<span class="type">ResponseDto</span>;<br>
                                 <span class="keyword">import</span> net.javaguides.userservice.dto.<span class="type">UserDto</span>;<br>
-                                <span class="keyword">import</span> net.javaguides.userservice.entity.<span class="type">User</span>;<br>
-                                <span class="keyword">import</span> net.javaguides.userservice.repository.<span class="type">UserRepository</span>;<br>
-                                <span class="keyword">import</span> net.javaguides.userservice.service.<span class="type">UserService</span>;<br>
+                                <span class="keyword">import</span> net.javaguides.userservice.entity.<span
+                                    class="type">User</span>;<br>
+                                <span class="keyword">import</span> net.javaguides.userservice.repository.<span
+                                    class="type">UserRepository</span>;<br>
+                                <span class="keyword">import</span> net.javaguides.userservice.service.<span
+                                    class="type">UserService</span>;<br>
                                 <span class="keyword">import</span> org.springframework.stereotype.<span class="type">Service</span>;<br>
-                                <span class="keyword">import</span> org.springframework.web.reactive.function.client.<span class="type">WebClient</span>;<br><br>
+                                <span class="keyword">import</span>
+                                org.springframework.web.reactive.function.client.<span
+                                    class="type">WebClient</span>;<br><br>
 
                                 <span class="keyword">@Service</span><br>
                                 <span class="keyword">@AllArgsConstructor</span><br>
-                                <span class="keyword">public</span> <span class="type">class</span> <span class="type">UserServiceImpl</span> <span class="keyword">implements</span> <span class="type">UserService</span> {<br><br>
+                                <span class="keyword">public</span> <span class="type">class</span> <span class="type">UserServiceImpl</span>
+                                <span class="keyword">implements</span> <span class="type">UserService</span> {<br><br>
 
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="type">UserRepository</span> <span class="variable">userRepository</span>;<br>
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="type">RestTemplate</span> <span class="variable">restTemplate</span>;<br>
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="type">WebClient</span> <span class="variable">webClient</span>;<br><br>
+                                &nbsp;&nbsp;<span class="keyword">private</span> <span
+                                    class="type">UserRepository</span> <span class="variable">userRepository</span>;<br>
+                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="type">RestTemplate</span>
+                                <span class="variable">restTemplate</span>;<br>
+                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="type">WebClient</span>
+                                <span class="variable">webClient</span>;<br><br>
 
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="type">APIClient</span> <span class="variable">apiClient</span>;<br><br>
+                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="type">APIClient</span>
+                                <span class="variable">apiClient</span>;<br><br>
 
                                 &nbsp;&nbsp;<span class="keyword">@Override</span><br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="type">User</span> <span class="method">saveUser</span>(<span class="type">User</span> <span class="variable">user</span>) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;return <span class="variable">userRepository</span>.<span class="method">save</span>(<span class="variable">user</span>);<br>
+                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="type">User</span> <span
+                                    class="method">saveUser</span>(<span class="type">User</span> <span
+                                    class="variable">user</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;return <span class="variable">userRepository</span>.<span
+                                    class="method">save</span>(<span class="variable">user</span>);<br>
                                 &nbsp;&nbsp;}<br><br>
 
                                 &nbsp;&nbsp;<span class="keyword">@Override</span><br>
-                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="type">ResponseDto</span> <span class="method">getUser</span>(<span class="type">Long</span> <span class="variable">userId</span>) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">ResponseDto</span> <span class="variable">responseDto</span> = <span class="keyword">new</span> <span class="type">ResponseDto</span>();<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">User</span> <span class="variable">user</span> = <span class="variable">userRepository</span>.<span class="method">findById</span>(<span class="variable">userId</span>).<span class="method">get</span>();<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">UserDto</span> <span class="variable">userDto</span> = <span class="variable">mapToUser</span>(<span class="variable">user</span>);<br><br>
+                                &nbsp;&nbsp;<span class="keyword">public</span> <span class="type">ResponseDto</span>
+                                <span class="method">getUser</span>(<span class="type">Long</span> <span
+                                    class="variable">userId</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">ResponseDto</span> <span class="variable">responseDto</span>
+                                = <span class="keyword">new</span> <span class="type">ResponseDto</span>();<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">User</span> <span
+                                    class="variable">user</span> = <span class="variable">userRepository</span>.<span
+                                    class="method">findById</span>(<span class="variable">userId</span>).<span
+                                    class="method">get</span>();<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">UserDto</span> <span
+                                    class="variable">userDto</span> = <span class="variable">mapToUser</span>(<span
+                                    class="variable">user</span>);<br><br>
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">DepartmentDto</span> <span class="variable">departmentDto</span> = <span class="variable">webClient</span>.<span class="method">get</span>()<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">uri</span>(<span class="string">"http://localhost:8080/api/departments/"</span> + <span class="variable">user</span>.<span class="method">getDepartmentId</span>())<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">DepartmentDto</span> <span class="variable">departmentDto</span>
+                                = <span class="variable">webClient</span>.<span class="method">get</span>()<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">uri</span>(<span
+                                    class="string">"http://localhost:8080/api/departments/"</span> + <span
+                                    class="variable">user</span>.<span class="method">getDepartmentId</span>())<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">retrieve</span>()<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">bodyToMono</span>(<span class="type">DepartmentDto</span>.<span class="method">class</span>)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">bodyToMono</span>(<span
+                                    class="type">DepartmentDto</span>.<span class="method">class</span>)<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<span class="method">block</span>();<br><br>
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">responseDto</span>.<span class="method">setUser</span>(<span class="variable">userDto</span>);<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">responseDto</span>.<span class="method">setDepartment</span>(<span class="variable">departmentDto</span>);<br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">responseDto</span>.<span class="method">setUser</span>(<span
+                                    class="variable">userDto</span>);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">responseDto</span>.<span class="method">setDepartment</span>(<span
+                                    class="variable">departmentDto</span>);<br><br>
 
                                 &nbsp;&nbsp;&nbsp;&nbsp;return <span class="variable">responseDto</span>;<br>
                                 &nbsp;&nbsp;}<br><br>
 
-                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="type">UserDto</span> <span class="method">mapToUser</span>(<span class="type">User</span> <span class="variable">user</span>){<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">UserDto</span> <span class="variable">userDto</span> = <span class="keyword">new</span> <span class="type">UserDto</span>();<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userDto</span>.<span class="method">setId</span>(<span class="variable">user</span>.<span class="method">getId</span>());<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userDto</span>.<span class="method">setFirstName</span>(<span class="variable">user</span>.<span class="method">getFirstName</span>());<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userDto</span>.<span class="method">setLastName</span>(<span class="variable">user</span>.<span class="method">getLastName</span>());<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userDto</span>.<span class="method">setEmail</span>(<span class="variable">user</span>.<span class="method">getEmail</span>());<br>
+                                &nbsp;&nbsp;<span class="keyword">private</span> <span class="type">UserDto</span> <span
+                                    class="method">mapToUser</span>(<span class="type">User</span> <span
+                                    class="variable">user</span>){<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="type">UserDto</span> <span
+                                    class="variable">userDto</span> = <span class="keyword">new</span> <span
+                                    class="type">UserDto</span>();<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userDto</span>.<span
+                                    class="method">setId</span>(<span class="variable">user</span>.<span class="method">getId</span>());<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userDto</span>.<span class="method">setFirstName</span>(<span
+                                    class="variable">user</span>.<span class="method">getFirstName</span>());<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userDto</span>.<span class="method">setLastName</span>(<span
+                                    class="variable">user</span>.<span class="method">getLastName</span>());<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">userDto</span>.<span class="method">setEmail</span>(<span
+                                    class="variable">user</span>.<span class="method">getEmail</span>());<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;return <span class="variable">userDto</span>;<br>
                                 &nbsp;&nbsp;}<br>
                                 }

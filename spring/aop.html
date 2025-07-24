@@ -81,14 +81,30 @@
                     <a class="navbar-link" href="../interview/interview-questions.html">Interview
                         Questions</a>
                 </div>
-                <label class="theme-toggler div-to-hide"> <input type="checkbox" id="switch-theme-checkbox"/> <span
-                        class="icon"></span>
+                <label class="theme-toggler div-to-hide"> <input type="checkbox" id="switch-theme-checkbox"/>
+                    <span class="icon"><svg class="fa-moon moon"
+                                            viewBox="30 0 384 512"><path
+                            d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+        </svg>
+        <svg class="fa-sun sun" viewBox="50 0 512 512"><path
+                d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+        </svg></span>
                 </label>
             </div>
         </div>
     </div>
     <label class="theme-toggler div-to-desk" style="top: 22px;"> <input type="checkbox" id="switch-theme-mobile"/>
-        <span class="icon"></span>
+        <span class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="moon"
+                                class="svg-inline--fa fa-moon moon" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-250 0 384 512"><path fill="currentColor"
+                                                               d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+        </svg>
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sun" class="svg-inline--fa fa-sun sun"
+             role="img"
+             xmlns="http://www.w3.org/2000/svg" viewBox="-170 0 512 512">
+			<path fill="currentColor"
+                  d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+        </svg></span>
     </label>
 </nav>
 
@@ -215,8 +231,11 @@
                     <span class="annotation">@Aspect</span><br>
                     <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>() {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging before method execution"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">logBefore</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span
+                        class="string">"Logging before method execution"</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }
                 </div>
@@ -245,8 +264,10 @@
                 </ul>
                 <div class="code">
                     <span class="annotation">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    <span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="parameter">JoinPoint joinPoint</span>) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="parameter">joinPoint.getSignature()</span>);<br>
+                    <span class="keyword">public void</span> <span class="method">logBefore</span>(<span
+                        class="parameter">JoinPoint joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span>
+                    + <span class="parameter">joinPoint.getSignature()</span>);<br>
                     }
                 </div>
 
@@ -272,12 +293,17 @@
                     <span class="annotation">@Aspect</span><br>
                     <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Pointcut</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">serviceLayer</span>() {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Pointcut expression</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">serviceLayer</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="comment">// Pointcut expression</span><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Before</span>(<span class="parameter">"serviceLayer()"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>() {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging before method execution"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">logBefore</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span
+                        class="string">"Logging before method execution"</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }
                 </div>
@@ -324,8 +350,11 @@
                     <span class="annotation">@Component</span><br>
                     <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="parameter">JoinPoint joinPoint</span>) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">logBefore</span>(<span class="parameter">JoinPoint joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span
+                        class="parameter">joinPoint.getSignature().getName()</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }
                 </div>
@@ -344,8 +373,11 @@
                     <span class="annotation">@Component</span><br>
                     <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@After</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfter</span>(<span class="parameter">JoinPoint joinPoint</span>) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"After method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">logAfter</span>(<span class="parameter">JoinPoint joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span class="string">"After method: "</span> + <span
+                        class="parameter">joinPoint.getSignature().getName()</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }
                 </div>
@@ -364,13 +396,22 @@
                     <span class="annotation">@Component</span><br>
                     <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@AfterReturning</span>(<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">pointcut</span> = <span class="string">"execution(* com.example.service.*.*(..))"</span>,<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">returning</span> = <span class="string">"result"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">pointcut</span> = <span
+                        class="string">"execution(* com.example.service.*.*(..))"</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">returning</span> = <span
+                        class="string">"result"</span>)<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterReturning</span>(<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">JoinPoint joinPoint</span>,<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span class="parameter">result</span>) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"After returning from method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Method returned value is : "</span> + <span class="parameter">result</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="parameter">JoinPoint joinPoint</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span
+                        class="parameter">result</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span
+                        class="string">"After returning from method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span
+                        class="string">"Method returned value is : "</span> + <span
+                        class="parameter">result</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }
                 </div>
@@ -388,13 +429,22 @@
                     <span class="annotation">@Component</span><br>
                     <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@AfterThrowing</span>(<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">pointcut</span> = <span class="string">"execution(* com.example.service.*.*(..))"</span>,<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throwing</span> = <span class="string">"error"</span>)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">pointcut</span> = <span
+                        class="string">"execution(* com.example.service.*.*(..))"</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throwing</span> = <span
+                        class="string">"error"</span>)<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterThrowing</span>(<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">JoinPoint joinPoint</span>,<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Throwable</span> <span class="parameter">error</span>) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"An exception has been thrown in "</span> + <span class="parameter">joinPoint.getSignature().getName()</span> + <span class="string">"()"</span>);<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Cause: "</span> + <span class="parameter">error.getMessage()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="parameter">JoinPoint joinPoint</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Throwable</span> <span
+                        class="parameter">error</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span class="string">"An exception has been thrown in "</span>
+                    + <span class="parameter">joinPoint.getSignature().getName()</span> + <span
+                        class="string">"()"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span class="string">"Cause: "</span> + <span
+                        class="parameter">error.getMessage()</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }
                 </div>
@@ -414,18 +464,29 @@
                     <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Around</span>(<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method">logAround</span>(<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">ProceedingJoinPoint joinPoint</span>) <span class="keyword">throws</span> <span class="keyword">Throwable</span> {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span class="variable">result</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span
+                        class="method">logAround</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">ProceedingJoinPoint joinPoint</span>)
+                    <span class="keyword">throws</span> <span class="keyword">Throwable</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span
+                        class="parameter">joinPoint.getSignature().getName()</span>);<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span
+                        class="variable">result</span>;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">try</span> {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">result</span> = <span class="parameter">joinPoint.proceed()</span>; <span class="comment">// Proceed with the method call</span><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">catch</span> (<span class="keyword">Throwable</span> <span class="parameter">e</span>) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Exception in method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">throw</span> <span class="parameter">e</span>; <span class="comment">// Rethrow the exception</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">result</span>
+                    = <span class="parameter">joinPoint.proceed()</span>; <span class="comment">// Proceed with the method call</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="keyword">catch</span> (<span
+                        class="keyword">Throwable</span> <span class="parameter">e</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span
+                        class="string">"Exception in method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">throw</span> <span class="parameter">e</span>; <span class="comment">// Rethrow the exception</span><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"After method: "</span> + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">result</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"After method: "</span>
+                    + <span class="parameter">joinPoint.getSignature().getName()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">result</span>;<br>
                     }
                 </div>
                 <p><strong>Key Points:</strong></p>
@@ -485,12 +546,18 @@
 
                 <h2>Example of Multiple Advice Types</h2>
                 <div class="code">
-                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.After</span>;<br>
-                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.AfterReturning</span>;<br>
-                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.AfterThrowing</span>;<br>
-                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.Around</span>;<br>
-                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.Aspect</span>;<br>
-                    <span class="import">import</span> <span class="package">org.aspectj.lang.annotation.Before</span>;<br>
+                    <span class="import">import</span> <span
+                        class="package">org.aspectj.lang.annotation.After</span>;<br>
+                    <span class="import">import</span> <span
+                        class="package">org.aspectj.lang.annotation.AfterReturning</span>;<br>
+                    <span class="import">import</span> <span
+                        class="package">org.aspectj.lang.annotation.AfterThrowing</span>;<br>
+                    <span class="import">import</span> <span
+                        class="package">org.aspectj.lang.annotation.Around</span>;<br>
+                    <span class="import">import</span> <span
+                        class="package">org.aspectj.lang.annotation.Aspect</span>;<br>
+                    <span class="import">import</span> <span
+                        class="package">org.aspectj.lang.annotation.Before</span>;<br>
                     <span class="import">import</span> <span class="package">org.aspectj.lang.ProceedingJoinPoint</span>;<br><br>
 
                     <span class="annotation">@Aspect</span><br>
@@ -498,36 +565,54 @@
 
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Before</span>(<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>() {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging before method execution"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">logBefore</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span
+                        class="string">"Logging before method execution"</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
 
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@After</span>(<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfter</span>() {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging after method execution"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">logAfter</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span
+                        class="string">"Logging after method execution"</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
 
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@AfterReturning</span>(<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterReturning</span>() {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging after method returns"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterReturning</span>()
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span
+                        class="string">"Logging after method returns"</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
 
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@AfterThrowing</span>(<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterThrowing</span>() {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging after method throws an exception"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logAfterThrowing</span>()
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span class="string">"Logging after method throws an exception"</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
 
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Around</span>(<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method">logAround</span>(<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">ProceedingJoinPoint joinPoint</span>) <span class="keyword">throws</span> <span class="keyword">Throwable</span> {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging around method execution"</span>);<br><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span class="variable">result</span> = <span class="parameter">joinPoint.proceed()</span>;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Logging around method execution complete"</span>);<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">result</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span
+                        class="method">logAround</span>(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="parameter">ProceedingJoinPoint joinPoint</span>)
+                    <span class="keyword">throws</span> <span class="keyword">Throwable</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span
+                        class="string">"Logging around method execution"</span>);<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span
+                        class="variable">result</span> = <span class="parameter">joinPoint.proceed()</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span class="string">"Logging around method execution complete"</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">result</span>;<br>
                     }
                 </div>
                 <h2>3. AOP Expressions</h2>
@@ -542,7 +627,8 @@
                 <h3>3.2 Within Expression</h3>
                 <p><strong>Definition:</strong> Matches all methods within a particular type.</p>
                 <div class="code">
-                    <span class="keyword">@Pointcut</span>(<span class="value">"within(com.example.service.MyService)"</span>)<br>
+                    <span class="keyword">@Pointcut</span>(<span
+                        class="value">"within(com.example.service.MyService)"</span>)<br>
                     <span class="keyword">public void</span> <span class="method">serviceLayer</span>() {}<br>
                 </div>
                 <h3>3.3 Args Expression</h3>
@@ -582,8 +668,10 @@
                     <span class="keyword">@EnableAspectJAutoProxy</span><br>
                     <span class="keyword">public class</span> <span class="classname">AppConfig</span> {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Bean</span><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span class="classname">LoggingAspect</span> <span class="method">loggingAspect</span>() {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="new">new</span> <span class="classname">LoggingAspect</span>();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span> <span
+                        class="classname">LoggingAspect</span> <span class="method">loggingAspect</span>() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="new">new</span> <span class="classname">LoggingAspect</span>();<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }<br>
                 </div>
@@ -595,8 +683,12 @@
                     <span class="keyword">@Component</span><br>
                     <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Before</span>(<span class="keyword">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="classname">JoinPoint</span> <span class="variable">joinPoint</span>) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="variable">joinPoint.getSignature()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">logBefore</span>(<span class="classname">JoinPoint</span> <span class="variable">joinPoint</span>)
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span
+                        class="variable">joinPoint.getSignature()</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }<br>
                 </div>
@@ -610,8 +702,12 @@
                     <span class="keyword">@Component</span><br>
                     <span class="keyword">public class</span> <span class="classname">LoggingAspect</span> {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="classname">JoinPoint</span> <span class="variable">joinPoint</span>) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span class="variable">joinPoint.getSignature()</span>);<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">logBefore</span>(<span class="classname">JoinPoint</span> <span class="variable">joinPoint</span>)
+                    {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="keyword">System.out.println</span>(<span class="string">"Before method: "</span> + <span
+                        class="variable">joinPoint.getSignature()</span>);<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }<br>
                 </div>
@@ -622,11 +718,15 @@
                     <span class="keyword">@Component</span><br>
                     <span class="keyword">public class</span> <span class="classname">TransactionAspect</span> {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Around</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method">manageTransaction</span>(<span class="classname">ProceedingJoinPoint</span> <span class="variable">joinPoint</span>) <span class="keyword">throws</span> <span class="classname">Throwable</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method">manageTransaction</span>(<span
+                        class="classname">ProceedingJoinPoint</span> <span class="variable">joinPoint</span>) <span
+                        class="keyword">throws</span> <span class="classname">Throwable</span> {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Begin transaction<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span class="variable">result</span> = <span class="variable">joinPoint.proceed()</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">Object</span> <span
+                        class="variable">result</span> = <span class="variable">joinPoint.proceed()</span>;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Commit transaction<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">result</span>;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">result</span>;<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }<br>
                 </div>
@@ -638,7 +738,9 @@
                     <span class="keyword">@Component</span><br>
                     <span class="keyword">public class</span> <span class="classname">SecurityAspect</span> {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Before</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">checkSecurity</span>(<span class="classname">JoinPoint</span> <span class="variable">joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public void</span> <span
+                        class="method">checkSecurity</span>(<span class="classname">JoinPoint</span> <span
+                        class="variable">joinPoint</span>) {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Security checks<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }<br>
@@ -651,9 +753,12 @@
                     <span class="keyword">@Component</span><br>
                     <span class="keyword">public class</span> <span class="classname">CachingAspect</span> {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@Around</span>(<span class="string">"execution(* com.example.service.*.*(..))"</span>)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span class="method">cacheResult</span>(<span class="classname">ProceedingJoinPoint</span> <span class="variable">joinPoint</span>) throws <span class="classname">Throwable</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public Object</span> <span
+                        class="method">cacheResult</span>(<span class="classname">ProceedingJoinPoint</span> <span
+                        class="variable">joinPoint</span>) throws <span class="classname">Throwable</span> {<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Check cache, proceed to method, cache result<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">joinPoint</span>.proceed();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span
+                        class="variable">joinPoint</span>.proceed();<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                     }<br>
                 </div>
@@ -665,9 +770,12 @@
                 <p><strong>Dependency:</strong></p>
                 <div class="code">
                     <span class="keyword">&lt;dependency&gt;</span><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;groupId&gt;</span><span class="value">org.aspectj</span><span class="keyword">&lt;/groupId&gt;</span><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;artifactId&gt;</span><span class="value">aspectjrt</span><span class="keyword">&lt;/artifactId&gt;</span><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;version&gt;</span><span class="value">1.9.9</span><span class="keyword">&lt;/version&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;groupId&gt;</span><span
+                        class="value">org.aspectj</span><span class="keyword">&lt;/groupId&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;artifactId&gt;</span><span
+                        class="value">aspectjrt</span><span class="keyword">&lt;/artifactId&gt;</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">&lt;version&gt;</span><span class="value">1.9.9</span><span
+                        class="keyword">&lt;/version&gt;</span><br>
                     <span class="keyword">&lt;/dependency&gt;</span><br>
                 </div>
 
@@ -679,10 +787,13 @@
                 <h3>6.3 Creating Custom Annotations</h3>
                 <p><strong>Purpose:</strong> To create specific annotations for your own AOP concerns.</p>
                 <div class="code">
-                    <span class="keyword">import</span> <span class="package">java.lang.annotation.ElementType</span>;<br>
+                    <span class="keyword">import</span> <span
+                        class="package">java.lang.annotation.ElementType</span>;<br>
                     <span class="keyword">import</span> <span class="package">java.lang.annotation.Retention</span>;<br>
-                    <span class="keyword">import</span> <span class="package">java.lang.annotation.RetentionPolicy</span>;<br>
-                    <span class="keyword">import</span> <span class="package">java.lang.annotation.Target</span>;<br><br>
+                    <span class="keyword">import</span> <span
+                        class="package">java.lang.annotation.RetentionPolicy</span>;<br>
+                    <span class="keyword">import</span> <span
+                        class="package">java.lang.annotation.Target</span>;<br><br>
 
                     <span class="keyword">@Retention</span>(<span class="value">RetentionPolicy.RUNTIME</span>)<br>
                     <span class="keyword">@Target</span>(<span class="value">ElementType.METHOD</span>)<br>
@@ -691,10 +802,13 @@
                 <div class="code">
                     <span class="keyword">@Aspect</span><br>
                     <span class="keyword">@Component</span><br>
-                    <span class="keyword">public class</span> <span class="classname">CustomAnnotationAspect</span> {<br>
+                    <span class="keyword">public class</span> <span class="classname">CustomAnnotationAspect</span>
+                    {<br>
                     &nbsp;&nbsp;<span class="keyword">@Before</span>(<span class="value">@annotation(com.example.annotation.Loggable)</span>)<br>
-                    &nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>(<span class="package">JoinPoint</span> <span class="variable">joinPoint</span>) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="value">"Loggable annotation applied to: "</span> <span class="operator">+</span> <span class="variable">joinPoint.getSignature()</span>);<br>
+                    &nbsp;&nbsp;<span class="keyword">public void</span> <span class="method">logBefore</span>(<span
+                        class="package">JoinPoint</span> <span class="variable">joinPoint</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">System.out.println</span>(<span class="value">"Loggable annotation applied to: "</span>
+                    <span class="operator">+</span> <span class="variable">joinPoint.getSignature()</span>);<br>
                     &nbsp;&nbsp;}<br>
                     }<br>
                 </div>

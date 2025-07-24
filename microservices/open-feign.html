@@ -82,14 +82,30 @@
                     <a class="navbar-link" href="../interview/interview-questions.html">Interview
                         Questions</a>
                 </div>
-                <label class="theme-toggler div-to-hide"> <input type="checkbox" id="switch-theme-checkbox"/> <span
-                        class="icon"></span>
+                <label class="theme-toggler div-to-hide"> <input type="checkbox" id="switch-theme-checkbox"/>
+                    <span class="icon"><svg class="fa-moon moon"
+                                            viewBox="30 0 384 512"><path
+                            d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+        </svg>
+        <svg class="fa-sun sun" viewBox="50 0 512 512"><path
+                d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+        </svg></span>
                 </label>
             </div>
         </div>
     </div>
     <label class="theme-toggler div-to-desk" style="top: 22px;"> <input type="checkbox" id="switch-theme-mobile"/>
-        <span class="icon"></span>
+        <span class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="moon"
+                                class="svg-inline--fa fa-moon moon" role="img" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="-250 0 384 512"><path fill="currentColor"
+                                                               d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+        </svg>
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sun" class="svg-inline--fa fa-sun sun"
+             role="img"
+             xmlns="http://www.w3.org/2000/svg" viewBox="-170 0 512 512">
+			<path fill="currentColor"
+                  d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path>
+        </svg></span>
     </label>
 </nav>
 
@@ -281,13 +297,20 @@
                             <div class="code">
                                 <span class="keyword">package</span> net.javaravish.userservice;<br><br>
                                 <span class="keyword">import</span> org.springframework.boot.SpringApplication;<br>
-                                <span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;<br>
-                                <span class="keyword">import</span> org.springframework.cloud.openfeign.EnableFeignClients;<br><br>
+                                <span class="keyword">import</span>
+                                org.springframework.boot.autoconfigure.SpringBootApplication;<br>
+                                <span class="keyword">import</span>
+                                org.springframework.cloud.openfeign.EnableFeignClients;<br><br>
                                 <span class="keyword">@</span><span class="annotation">SpringBootApplication</span><br>
                                 <span class="keyword">@</span><span class="annotation">EnableFeignClients</span><br>
-                                <span class="keyword">public class</span> <span class="class-name">UserServiceApplication</span> {<br><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static void</span> <span class="method-name">main</span>(<span class="keyword">String[]</span> <span class="variable">args</span>) {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">SpringApplication.run</span>(<span class="class-name">UserServiceApplication</span>.class, <span class="variable">args</span>);<br>
+                                <span class="keyword">public class</span> <span class="class-name">UserServiceApplication</span>
+                                {<br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public static void</span> <span
+                                    class="method-name">main</span>(<span class="keyword">String[]</span> <span
+                                    class="variable">args</span>) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">SpringApplication.run</span>(<span
+                                    class="class-name">UserServiceApplication</span>.class, <span
+                                    class="variable">args</span>);<br>
                                 &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
                                 }
                             </div>
@@ -320,13 +343,24 @@
                         <div class="code">
                             <span class="keyword">package</span> net.javaravish.userservice.service;<br><br>
                             <span class="keyword">import</span> net.javaravish.userservice.dto.<span class="class-name">DepartmentDto</span>;<br>
-                            <span class="keyword">import</span> org.springframework.cloud.openfeign.<span class="class-name">FeignClient</span>;<br>
-                            <span class="keyword">import</span> org.springframework.web.bind.annotation.<span class="class-name">GetMapping</span>;<br>
-                            <span class="keyword">import</span> org.springframework.web.bind.annotation.<span class="class-name">PathVariable</span>;<br><br>
-                            <span class="keyword">@</span><span class="annotation">FeignClient</span>(<span class="keyword">value</span> = <span class="variable">"DEPARTMENT-SERVICE"</span>, <span class="keyword">url</span> = <span class="variable">"http://localhost:8080"</span>)<br>
-                            <span class="keyword">public interface</span> <span class="class-name">APIClient</span> {<br><br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@</span><span class="annotation">GetMapping</span>(<span class="keyword">value</span> = <span class="variable">"/api/departments/{id}"</span>)<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">DepartmentDto</span> <span class="method-name">getDepartmentById</span>(<span class="keyword">@</span><span class="annotation">PathVariable</span>(<span class="keyword">"id"</span>) <span class="keyword">Long</span> <span class="variable">departmentId</span>);<br>
+                            <span class="keyword">import</span> org.springframework.cloud.openfeign.<span
+                                class="class-name">FeignClient</span>;<br>
+                            <span class="keyword">import</span> org.springframework.web.bind.annotation.<span
+                                class="class-name">GetMapping</span>;<br>
+                            <span class="keyword">import</span> org.springframework.web.bind.annotation.<span
+                                class="class-name">PathVariable</span>;<br><br>
+                            <span class="keyword">@</span><span class="annotation">FeignClient</span>(<span
+                                class="keyword">value</span> = <span class="variable">"DEPARTMENT-SERVICE"</span>, <span
+                                class="keyword">url</span> = <span class="variable">"http://localhost:8080"</span>)<br>
+                            <span class="keyword">public interface</span> <span class="class-name">APIClient</span>
+                            {<br><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">@</span><span
+                                class="annotation">GetMapping</span>(<span class="keyword">value</span> = <span
+                                class="variable">"/api/departments/{id}"</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">DepartmentDto</span> <span
+                                class="method-name">getDepartmentById</span>(<span class="keyword">@</span><span
+                                class="annotation">PathVariable</span>(<span class="keyword">"id"</span>) <span
+                                class="keyword">Long</span> <span class="variable">departmentId</span>);<br>
                             }
                         </div>
                         <p data-sourcepos="112:1-112:60" dir="auto"
@@ -337,7 +371,9 @@
                         <div class="snippet-clipboard-content notranslate position-relative overflow-auto"
                              style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; amp; quot; system-ui &amp;amp; quot; , &amp; amp; quot; Segoe UI&amp;amp; quot; , Helvetica , Arial, sans-serif, &amp;amp; quot; Apple Color Emoji&amp;amp; quot; , &amp; amp; quot; Segoe UI Emoji&amp;amp; quot;; font-size: 16px; overflow: auto; position: relative;">
                             <div class="code">
-                                <span class="keyword">@</span><span class="annotation">FeignClient</span>(<span class="keyword">value</span> = <span class="variable">"DEPARTMENT-SERVICE"</span>)<br>
+                                <span class="keyword">@</span><span class="annotation">FeignClient</span>(<span
+                                    class="keyword">value</span> = <span
+                                    class="variable">"DEPARTMENT-SERVICE"</span>)<br>
                             </div>
                         </div>
                         <p data-sourcepos="120:1-120:153" dir="auto"
@@ -349,7 +385,9 @@
                         <div class="snippet-clipboard-content notranslate position-relative overflow-auto"
                              style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; amp; quot; system-ui &amp;amp; quot; , &amp; amp; quot; Segoe UI&amp;amp; quot; , Helvetica , Arial, sans-serif, &amp;amp; quot; Apple Color Emoji&amp;amp; quot; , &amp; amp; quot; Segoe UI Emoji&amp;amp; quot;; font-size: 16px; overflow: auto; position: relative;">
                             <div class="code">
-                                <span class="keyword">@</span><span class="annotation">FeignClient</span>(<span class="keyword">value</span> = <span class="string">"DEPARTMENT-SERVICE"</span>, <span class="keyword">url</span> = <span class="string">"http://localhost:8080"</span>)
+                                <span class="keyword">@</span><span class="annotation">FeignClient</span>(<span
+                                    class="keyword">value</span> = <span class="string">"DEPARTMENT-SERVICE"</span>,
+                                <span class="keyword">url</span> = <span class="string">"http://localhost:8080"</span>)
                             </div>
                         </div>
                         <p data-sourcepos="124:1-124:140" dir="auto"
@@ -373,7 +411,11 @@
                         <div class="snippet-clipboard-content notranslate position-relative overflow-auto"
                              style="background-color: white; box-sizing: border-box; color: #24292f; font-family: -apple-system,&amp; amp; quot; system-ui &amp;amp; quot; , &amp; amp; quot; Segoe UI&amp;amp; quot; , Helvetica , Arial, sans-serif, &amp;amp; quot; Apple Color Emoji&amp;amp; quot; , &amp; amp; quot; Segoe UI Emoji&amp;amp; quot;; font-size: 16px; overflow: auto; position: relative;">
                             <div class="code">
-                                <span class="class-name">DepartmentDto</span> <span class="variable-name">departmentDto</span> <span class="operator">=</span> <span class="variable-name">apiClient</span>.<span class="method-name">getDepartmentById</span>(<span class="variable-name">user</span>.<span class="method-name">getDepartmentId</span>());
+                                <span class="class-name">DepartmentDto</span> <span
+                                    class="variable-name">departmentDto</span> <span class="operator">=</span> <span
+                                    class="variable-name">apiClient</span>.<span
+                                    class="method-name">getDepartmentById</span>(<span class="variable-name">user</span>.<span
+                                    class="method-name">getDepartmentId</span>());
                             </div>
                         </div>
                         Here is the complete code of <i>UserServiceImpl</i> using Feign
@@ -385,46 +427,86 @@
                             <span class="keyword">import</span> net.javaguides.userservice.dto.<span class="class-name">DepartmentDto</span>;<br>
                             <span class="keyword">import</span> net.javaguides.userservice.dto.<span class="class-name">ResponseDto</span>;<br>
                             <span class="keyword">import</span> net.javaguides.userservice.dto.<span class="class-name">UserDto</span>;<br>
-                            <span class="keyword">import</span> net.javaguides.userservice.entity.<span class="class-name">User</span>;<br>
-                            <span class="keyword">import</span> net.javaguides.userservice.repository.<span class="class-name">UserRepository</span>;<br>
-                            <span class="keyword">import</span> net.javaguides.userservice.service.<span class="class-name">APIClient</span>;<br>
-                            <span class="keyword">import</span> net.javaguides.userservice.service.<span class="class-name">UserService</span>;<br>
+                            <span class="keyword">import</span> net.javaguides.userservice.entity.<span
+                                class="class-name">User</span>;<br>
+                            <span class="keyword">import</span> net.javaguides.userservice.repository.<span
+                                class="class-name">UserRepository</span>;<br>
+                            <span class="keyword">import</span> net.javaguides.userservice.service.<span
+                                class="class-name">APIClient</span>;<br>
+                            <span class="keyword">import</span> net.javaguides.userservice.service.<span
+                                class="class-name">UserService</span>;<br>
                             <span class="keyword">import</span> org.springframework.stereotype.<span class="class-name">Service</span>;<br><br>
 
                             <span class="class-name">@Service</span><br>
                             <span class="class-name">@AllArgsConstructor</span><br>
-                            <span class="keyword">public class</span> <span class="class-name">UserServiceImpl</span> <span class="keyword">implements</span> <span class="class-name">UserService</span> {<br><br>
+                            <span class="keyword">public class</span> <span class="class-name">UserServiceImpl</span>
+                            <span class="keyword">implements</span> <span class="class-name">UserService</span>
+                            {<br><br>
 
-                            &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">UserRepository</span> <span class="variable-name">userRepository</span>;<br>
+                            &nbsp;&nbsp;<span class="keyword">private</span> <span
+                                class="class-name">UserRepository</span> <span
+                                class="variable-name">userRepository</span>;<br>
                             <br>
-                            &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">APIClient</span> <span class="variable-name">apiClient</span>;<br><br>
+                            &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">APIClient</span>
+                            <span class="variable-name">apiClient</span>;<br><br>
 
                             &nbsp;&nbsp;<span class="class-name">@Override</span><br>
-                            &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">User</span> <span class="method-name">saveUser</span>(<span class="class-name">User</span> <span class="variable-name">user</span>) {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable-name">userRepository</span>.<span class="method-name">save</span>(<span class="variable-name">user</span>);<br>
+                            &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">User</span> <span
+                                class="method-name">saveUser</span>(<span class="class-name">User</span> <span
+                                class="variable-name">user</span>) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable-name">userRepository</span>.<span
+                                class="method-name">save</span>(<span class="variable-name">user</span>);<br>
                             &nbsp;&nbsp;}<br><br>
 
                             &nbsp;&nbsp;<span class="class-name">@Override</span><br>
-                            &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">ResponseDto</span> <span class="method-name">getUser</span>(<span class="keyword">Long</span> <span class="variable-name">userId</span>) {<br>
+                            &nbsp;&nbsp;<span class="keyword">public</span> <span class="class-name">ResponseDto</span>
+                            <span class="method-name">getUser</span>(<span class="keyword">Long</span> <span
+                                class="variable-name">userId</span>) {<br>
                             <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">ResponseDto</span> <span class="variable-name">responseDto</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="class-name">ResponseDto</span>();<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">User</span> <span class="variable-name">user</span> <span class="operator">=</span> <span class="variable-name">userRepository</span>.<span class="method-name">findById</span>(<span class="variable-name">userId</span>).<span class="method-name">get</span>();<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">UserDto</span> <span class="variable-name">userDto</span> <span class="operator">=</span> <span class="method-name">mapToUser</span>(<span class="variable-name">user</span>);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">ResponseDto</span> <span
+                                class="variable-name">responseDto</span> <span class="operator">=</span> <span
+                                class="keyword">new</span> <span class="class-name">ResponseDto</span>();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">User</span> <span class="variable-name">user</span>
+                            <span class="operator">=</span> <span class="variable-name">userRepository</span>.<span
+                                class="method-name">findById</span>(<span class="variable-name">userId</span>).<span
+                                class="method-name">get</span>();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">UserDto</span> <span class="variable-name">userDto</span>
+                            <span class="operator">=</span> <span class="method-name">mapToUser</span>(<span
+                                class="variable-name">user</span>);<br>
                             <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">DepartmentDto</span> <span class="variable-name">departmentDto</span> <span class="operator">=</span> <span class="variable-name">apiClient</span>.<span class="method-name">getDepartmentById</span>(<span class="variable-name">user</span>.<span class="method-name">getDepartmentId</span>());<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">responseDto</span>.<span class="method-name">setUser</span>(<span class="variable-name">userDto</span>);<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">responseDto</span>.<span class="method-name">setDepartment</span>(<span class="variable-name">departmentDto</span>);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">DepartmentDto</span> <span
+                                class="variable-name">departmentDto</span> <span class="operator">=</span> <span
+                                class="variable-name">apiClient</span>.<span
+                                class="method-name">getDepartmentById</span>(<span
+                                class="variable-name">user</span>.<span
+                                class="method-name">getDepartmentId</span>());<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">responseDto</span>.<span
+                                class="method-name">setUser</span>(<span class="variable-name">userDto</span>);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">responseDto</span>.<span
+                                class="method-name">setDepartment</span>(<span
+                                class="variable-name">departmentDto</span>);<br>
                             <br>
                             &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable-name">responseDto</span>;<br>
                             &nbsp;&nbsp;}<br><br>
 
-                            &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">UserDto</span> <span class="method-name">mapToUser</span>(<span class="class-name">User</span> <span class="variable-name">user</span>){<br>
+                            &nbsp;&nbsp;<span class="keyword">private</span> <span class="class-name">UserDto</span>
+                            <span class="method-name">mapToUser</span>(<span class="class-name">User</span> <span
+                                class="variable-name">user</span>){<br>
                             <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">UserDto</span> <span class="variable-name">userDto</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="class-name">UserDto</span>();<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">userDto</span>.<span class="method-name">setId</span>(<span class="variable-name">user</span>.<span class="method-name">getId</span>());<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">userDto</span>.<span class="method-name">setFirstName</span>(<span class="variable-name">user</span>.<span class="method-name">getFirstName</span>());<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">userDto</span>.<span class="method-name">setLastName</span>(<span class="variable-name">user</span>.<span class="method-name">getLastName</span>());<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">userDto</span>.<span class="method-name">setEmail</span>(<span class="variable-name">user</span>.<span class="method-name">getEmail</span>());<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">UserDto</span> <span class="variable-name">userDto</span>
+                            <span class="operator">=</span> <span class="keyword">new</span> <span class="class-name">UserDto</span>();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">userDto</span>.<span
+                                class="method-name">setId</span>(<span class="variable-name">user</span>.<span
+                                class="method-name">getId</span>());<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">userDto</span>.<span
+                                class="method-name">setFirstName</span>(<span class="variable-name">user</span>.<span
+                                class="method-name">getFirstName</span>());<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">userDto</span>.<span
+                                class="method-name">setLastName</span>(<span class="variable-name">user</span>.<span
+                                class="method-name">getLastName</span>());<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable-name">userDto</span>.<span
+                                class="method-name">setEmail</span>(<span class="variable-name">user</span>.<span
+                                class="method-name">getEmail</span>());<br>
                             <br>
                             &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable-name">userDto</span>;<br>
                             &nbsp;&nbsp;}<br>
